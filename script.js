@@ -898,7 +898,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // Заявка на подбор
     window.openRequestModal = function(){
         const m = document.getElementById('requestModal');
-        if (m) m.style.display = 'block';
+        if (!m) return;
+        m.style.display = 'block';
+        // фокус для мобильных
+        const firstField = document.getElementById('reqBrand');
+        if (firstField) setTimeout(()=> firstField.focus(), 50);
     }
     window.closeRequestModal = function(){
         const m = document.getElementById('requestModal');
