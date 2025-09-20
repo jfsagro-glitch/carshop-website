@@ -265,13 +265,13 @@ body {
 
 .car-image {
     width: 100%;
-    height: 360px;
+    height: 280px;
     background: #f3f4f6;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #9ca3af;
-    font-size: 3.5rem;
+    font-size: 3rem;
     overflow: hidden;
 }
 
@@ -822,7 +822,32 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .cars-grid {
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .car-image {
+        height: 260px;
+    }
+
+    .delivery-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .header-content {
         flex-direction: column;
         gap: 1rem;
@@ -830,47 +855,108 @@ body {
 
     .nav {
         gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero-content h1 {
         font-size: 2rem;
     }
 
+    .hero-content p {
+        font-size: 1rem;
+    }
+
     .hero-features {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .catalog-filters {
         flex-direction: column;
         align-items: stretch;
+        gap: 1rem;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        width: 100%;
+        min-width: auto;
     }
 
     .delivery-content {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .delivery-steps {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .cars-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .car-image {
+        height: 250px;
+        font-size: 2.5rem;
+    }
+
+    .car-info {
+        padding: 1rem;
+    }
+
+    .car-title {
+        font-size: 1.1rem;
+    }
+
+    .car-price {
+        font-size: 1.3rem;
+    }
+
+    .car-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 0.75rem 1rem;
     }
 
     .modal-content {
         width: 95%;
         margin: 10% auto;
+        padding: 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px;
+        padding: 0 10px;
     }
 
     .hero {
-        padding: 6rem 0 3rem;
+        padding: 5rem 0 2rem;
     }
 
     .hero-content h1 {
@@ -878,13 +964,42 @@ body {
     }
 
     .hero-content p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .catalog h2,
     .delivery h2,
     .about h2,
     .contact h2 {
+        font-size: 1.75rem;
+    }
+
+    .car-image {
+        height: 220px;
         font-size: 2rem;
+    }
+
+    .car-info {
+        padding: 0.8rem;
+    }
+
+    .car-title {
+        font-size: 1rem;
+    }
+
+    .car-price {
+        font-size: 1.2rem;
+    }
+
+    .contact-item {
+        padding: 0.8rem;
+    }
+
+    .step {
+        padding: 1rem;
+    }
+
+    .delivery-info {
+        padding: 1rem;
     }
 }
