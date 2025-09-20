@@ -41,6 +41,13 @@ body.premium .btn-primary { background: var(--accent); border-color: var(--accen
 body.premium .btn-primary:hover { background: #b89324; border-color: #b89324; }
 body.premium .btn-secondary { color: var(--text); border-color: var(--border); }
 body.premium .btn-secondary:hover { background: #0b1220; border-color: #2c3a52; }
+/* Yellow header button for Request */
+#openRequestBtn {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0b0f17;
+}
+#openRequestBtn:hover { background: #b89324; border-color: #b89324; }
 body.premium .car-card { background: #0e1626; border-color: var(--border); box-shadow: 0 8px 20px rgba(0,0,0,.35); }
 body.premium .car-card:hover { border-color: #2b3b55; box-shadow: 0 12px 28px rgba(0,0,0,.45); }
 body.premium .car-title { color: var(--text); }
