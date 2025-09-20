@@ -918,7 +918,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const model = document.getElementById('reqModel').value.trim();
         const yf = document.getElementById('reqYearFrom').value.trim();
         const yt = document.getElementById('reqYearTo').value.trim();
-        const pf = document.getElementById('reqPriceFrom').value.trim();
         const pt = document.getElementById('reqPriceTo').value.trim();
         const note = document.getElementById('reqNote').value.trim();
 
@@ -932,7 +931,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         payload.append('name', name);
         payload.append('phone', phone);
         if (email) payload.append('email', email);
-        payload.append('message', `Марка: ${brand}\nМодель: ${model}\nГод: ${yf || '-'} - ${yt || '-'}\nБюджет: ${pf || '-'} - ${pt || '-'} ₽\nПримечание: ${note || '-'}`);
+        payload.append('message', `Марка: ${brand}\nМодель: ${model}\nГод: ${yf || '-'} - ${yt || '-'}\nБюджет до: ${pt || '-'} ₽\nПримечание: ${note || '-'}`);
         payload.append('_captcha','false');
         payload.append('_subject','Заявка на подбор (сайт CarExport)');
 
