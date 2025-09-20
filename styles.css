@@ -60,6 +60,12 @@ body.premium .car-details { color: var(--muted); }
 body.premium .car-price { color: var(--text); }
 body.premium .catalog-filters { background: #0b1220; border-color: var(--border); }
 body.premium .contact-item { background: #0b1220; border-color: var(--border); }
+/* Contacts: dark yellow text */
+body.premium .contact-item h4 { color: var(--accent); }
+body.premium .contact-item p, 
+body.premium .contact-item p a, 
+body.premium .contact-item i { color: #caa131; }
+body.premium .contact-item p a:hover { color: #e0bd4a; }
 body.premium .footer { background: #0b1220; }
 body.premium .footer-section h4 { color: var(--text); }
 body.premium .footer-section p,
