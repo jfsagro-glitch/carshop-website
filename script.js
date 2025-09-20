@@ -532,7 +532,7 @@ function createCarCard(car) {
             <div class="car-details">
                 <div><strong>Двигатель:</strong> ${car.engine}L</div>
                 <div><strong>Пробег:</strong> ${car.mileage.toLocaleString()} км</div>
-                <div><strong>VIN:</strong> ${car.vin}</div>
+                <div><strong>VIN:</strong> <a href="https://bid.cars/?s=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></div>
                 <div><strong>Дата выпуска:</strong> ${car.date}</div>
             </div>
             <div class="car-price">${car.price.toLocaleString()} ₽</div>
@@ -675,7 +675,7 @@ function showCarDetails(carId) {
                     <li><strong>Год:</strong> ${car.year}</li>
                     <li><strong>Двигатель:</strong> ${car.engine}L</li>
                     <li><strong>Пробег:</strong> ${car.mileage.toLocaleString()} км</li>
-                    <li><strong>VIN:</strong> ${car.vin}</li>
+                    <li><strong>VIN:</strong> <a href="https://bid.cars/?s=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></li>
                     <li><strong>Дата выпуска:</strong> ${car.date}</li>
                 </ul>
             </div>
