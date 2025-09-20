@@ -20,7 +20,8 @@ function New-SquareImage {
         [string]$OutFile
     )
 
-    $bmp = New-Object System.Drawing.Bitmap $Size, $Size, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb
+    # Create bitmap with default 32bpp ARGB to avoid enum binding issues in some PS versions
+    $bmp = New-Object System.Drawing.Bitmap ($Size, $Size)
     $gfx = [System.Drawing.Graphics]::FromImage($bmp)
     $gfx.SmoothingMode = 'HighQuality'
     $gfx.InterpolationMode = 'HighQualityBicubic'
