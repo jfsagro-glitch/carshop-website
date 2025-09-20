@@ -894,6 +894,50 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const m = document.getElementById('customsModal');
         if (m) m.style.display = 'none';
     }
+
+    // Заявка на подбор
+    window.openRequestModal = function(){
+        const m = document.getElementById('requestModal');
+        if (m) m.style.display = 'block';
+    }
+    window.closeRequestModal = function(){
+        const m = document.getElementById('requestModal');
+        if (m) m.style.display = 'none';
+    }
+
+    const requestBtn = document.getElementById('requestSubmit');
+    if (requestBtn) requestBtn.addEventListener('click', async ()=>{
+        const name = document.getElementById('reqName').value.trim();
+        const phone = document.getElementById('reqPhone').value.trim();
+        const email = document.getElementById('reqEmail').value.trim();
+        const brand = document.getElementById('reqBrand').value.trim();
+        const model = document.getElementById('reqModel').value.trim();
+        const yf = document.getElementById('reqYearFrom').value.trim();
+        const yt = document.getElementById('reqYearTo').value.trim();
+        const pf = document.getElementById('reqPriceFrom').value.trim();
+        const pt = document.getElementById('reqPriceTo').value.trim();
+        const note = document.getElementById('reqNote').value.trim();
+
+        if(!name || !phone || !brand || !model){
+            const s = document.getElementById('requestStatus');
+            s.style.display='block'; s.textContent='Пожалуйста, заполните обязательные поля: имя, телефон, марка, модель.'; return;
+        }
+
+        // отправка через formsubmit.co (без сервера)
+        const payload = new URLSearchParams();
+        payload.append('name', name);
+        payload.append('phone', phone);
+        if (email) payload.append('email', email);
+        payload.append('message', `Марка: ${brand}\nМодель: ${model}\nГод: ${yf || '-'} - ${yt || '-'}\nБюджет: ${pf || '-'} - ${pt || '-'} ₽\nПримечание: ${note || '-'}`);
+        payload.append('_captcha','false');
+        payload.append('_subject','Заявка на подбор (сайт CarExport)');
+
+        const resp = await fetch('https://formsubmit.co/carexportgeo@bk.ru', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: payload});
+        const s = document.getElementById('requestStatus');
+        s.style.display='block';
+        if (resp.ok){ s.textContent='Заявка отправлена! Мы свяжемся с вами.'; }
+        else { s.textContent='Не удалось отправить заявку. Попробуйте позже.'; }
+    });
 });
 
 // Добавляем CSS анимации и стили для скрытия названий файлов

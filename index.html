@@ -32,6 +32,7 @@
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count" id="cartCount">0</span>
                     </button>
+                    <button class="btn-secondary" onclick="openRequestModal()">Заявка на подбор</button>
                 </div>
             </div>
         </div>
@@ -80,12 +81,7 @@
                         </div>
                         <div class="calc-row">
                             <label for="age">Возраст</label>
-                            <select id="age">
-                                <option value="lt3">меньше 3-х лет</option>
-                                <option value="3to5">3 - 5 лет</option>
-                                <option value="5to7">5 - 7 лет</option>
-                                <option value="gt7">больше 7 лет</option>
-                            </select>
+                            <input id="age" value="3 - 5 лет" disabled>
                         </div>
                         <div class="calc-actions">
                             <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
@@ -312,6 +308,66 @@
                 <button type="button" class="btn-secondary" onclick="closeCheckoutModal()">Отмена</button>
             </form>
             <p style="color:#9ca3af; font-size:0.9rem;">Мы свяжемся с вами для подтверждения заказа.</p>
+        </div>
+    </div>
+
+    <!-- Request Modal -->
+    <div id="requestModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Заявка на подбор</h3>
+                <span class="close" onclick="closeRequestModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="requestForm" class="calc-form" onsubmit="return false;">
+                    <div class="calc-row">
+                        <label for="reqBrand">Марка</label>
+                        <input id="reqBrand" placeholder="Например, Toyota" required>
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqModel">Модель</label>
+                        <input id="reqModel" placeholder="Например, Camry" required>
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqYearFrom">Год выпуска (от)</label>
+                        <input type="number" id="reqYearFrom" placeholder="2018" min="1990" max="2100">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqYearTo">Год выпуска (до)</label>
+                        <input type="number" id="reqYearTo" placeholder="2024" min="1990" max="2100">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqPriceFrom">Стоимость (от), ₽</label>
+                        <input type="number" id="reqPriceFrom" placeholder="1000000" min="0" step="1000">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqPriceTo">Стоимость (до), ₽</label>
+                        <input type="number" id="reqPriceTo" placeholder="3000000" min="0" step="1000">
+                    </div>
+                    <div class="calc-row" style="grid-column: 1/-1;">
+                        <label for="reqNote">Примечание</label>
+                        <textarea id="reqNote" rows="4" placeholder="Пожелания по комплектации, цвету и т.д."></textarea>
+                    </div>
+                    <div class="calc-row" style="grid-column: 1/-1; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+                        <div>
+                            <label for="reqName">Ваше имя</label>
+                            <input id="reqName" placeholder="Иван" required>
+                        </div>
+                        <div>
+                            <label for="reqPhone">Телефон</label>
+                            <input id="reqPhone" placeholder="+7..." required>
+                        </div>
+                        <div>
+                            <label for="reqEmail">Email</label>
+                            <input type="email" id="reqEmail" placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div class="calc-actions" style="grid-column:1/-1;">
+                        <button class="btn-primary" id="requestSubmit" type="button">Отправить на подбор</button>
+                    </div>
+                </form>
+                <div id="requestStatus" class="calc-result" style="display:none;"></div>
+            </div>
         </div>
     </div>
 
