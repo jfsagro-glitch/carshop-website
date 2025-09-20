@@ -835,6 +835,58 @@ function setupEventListeners() {
     });
 }
 
+// === Таможенный калькулятор ===
+async function fetchEurRateRub() {
+    try {
+        // Курсы ЦБ РФ JSON: https://www.cbr-xml-daily.ru/daily_json.js
+        const resp = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+        const data = await resp.json();
+        const eur = data?.Valute?.EUR?.Value;
+        if (typeof eur === 'number' && eur > 0) return eur;
+    } catch (e) { /* ignore */ }
+    // Фолбэк курс EUR→RUB, если сеть недоступна
+    return 100; // приблизительное значение; пользователь увидит ориентировочную сумму
+}
+
+function customsRatePerCc(cc){
+    if (cc <= 999) return 1.5;
+    if (cc <= 1499) return 1.7;
+    if (cc <= 1999) return 2.7;
+    if (cc <= 2999) return 3.0;
+    return 3.6;
+}
+
+function customsClearanceFee(costUsd){
+    if (costUsd <= 14999) return 4269;
+    if (costUsd <= 40000) return 11746;
+    return 16524;
+}
+
+async function handleCalc(){
+    const costUsd = parseFloat(document.getElementById('costUsd').value);
+    const cc = parseInt(document.getElementById('engineCc').value, 10);
+    const age = document.getElementById('age').value; // зарезервировано для будущей логики
+
+    if (!isFinite(costUsd) || costUsd <= 0 || !isFinite(cc) || cc <= 0){
+        document.getElementById('calcResult').textContent = 'Введите корректные значения стоимости и объема двигателя.';
+        return;
+    }
+
+    const eurPerCc = customsRatePerCc(cc); // евро на см³
+    const eurAmount = eurPerCc * cc;       // сумма в евро
+    const eurRub = await fetchEurRateRub();// курс EUR→RUB
+    const rubByCc = eurAmount * eurRub;    // рубли по объему
+    const fee = customsClearanceFee(costUsd); // пошлина оформления
+    const totalRub = Math.round(rubByCc + fee);
+
+    document.getElementById('calcResult').textContent = `${totalRub.toLocaleString('ru-RU')} ₽`;
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    const btn = document.getElementById('calcBtn');
+    if (btn) btn.addEventListener('click', handleCalc);
+});
+
 // Добавляем CSS анимации и стили для скрытия названий файлов
 const style = document.createElement('style');
 style.textContent = `
