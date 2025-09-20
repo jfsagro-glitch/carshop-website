@@ -75,7 +75,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
 }
 
 .logo {
@@ -101,13 +101,13 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .nav a {
     text-decoration: none;
-    color: #6b7280;
-    font-weight: 400;
+    color: #e5e7eb;
+    font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav a:hover {
-    color: #374151;
+    color: #ffffff;
 }
 
 .header-actions {
@@ -118,9 +118,9 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .cart-btn {
     position: relative;
-    background: #ffffff;
-    color: #374151;
-    border: 1px solid #d1d5db;
+    background: #0b1220;
+    color: #e5e7eb;
+    border: 1px solid #1f2937;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
@@ -129,8 +129,8 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .cart-btn:hover {
-    background: #f3f4f6;
-    border-color: #9ca3af;
+    background: #111827;
+    border-color: #2b3b55;
 }
 
 .cart-count {
