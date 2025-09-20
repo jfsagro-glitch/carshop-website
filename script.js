@@ -988,7 +988,7 @@ async function initializeGallery(car){
         const img = document.createElement('img');
         img.src = src;
         img.alt = `${car.year} ${car.brand} ${car.model}`;
-        img.style.cssText = 'width:100%;height:100%;object-fit:cover;flex:0 0 100%;';
+        img.style.cssText = 'width:100%;height:100%;object-fit:contain;flex:0 0 100%;';
         track.appendChild(img);
 
         const dot = document.createElement('div');

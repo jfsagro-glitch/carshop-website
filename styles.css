@@ -296,12 +296,12 @@ body {
     .car-image img {
         object-fit: contain;
         object-position: center;
-        transform: scale(0.49);
+        transform: none;
     }
 
     /* Apply the same scaling to images inside the modal gallery */
     .gallery-container img {
-        transform: scale(0.49);
+        transform: none;
     }
 }
 
