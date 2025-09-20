@@ -541,7 +541,7 @@ function createCarCard(car) {
             </div>
             <div class="car-actions">
                 <button class="btn-primary" onclick="addToCart(${car.id})">
-                    <i class="fas fa-shopping-cart"></i> В корзину
+                    <i class="fas fa-shopping-cart"></i> Заказать
                 </button>
                 <button class="btn-secondary" onclick="showCarDetails(${car.id})">
                     <i class="fas fa-eye"></i> Подробнее
@@ -591,7 +591,7 @@ function addToCart(carId) {
             cart.push({ ...car, quantity: 1 });
         }
         updateCartCount();
-        showNotification('Автомобиль добавлен в корзину!');
+        showNotification('Автомобиль добавлен в заказ!');
     }
 }
 
