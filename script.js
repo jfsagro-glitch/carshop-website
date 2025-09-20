@@ -456,6 +456,19 @@ const carsData = [
         date: "01.03.2022",
         photos: "https://drive.google.com/drive/folders/1hmGbI2RO3F72KXOX8EkYXoMq6uHxISgl?usp=sharing",
         folderId: "1hmGbI2RO3F72KXOX8EkYXoMq6uHxISgl"
+    },
+    {
+        id: 34,
+        brand: "Ford",
+        model: "Escape SEL",
+        year: 2022,
+        engine: "2,0",
+        vin: "1FMCU0H6XNUA48711",
+        price: 1526849,
+        mileage: 90400,
+        date: "янв.22",
+        photos: "images/car34",
+        folderId: "local"
     }
 ];
 
