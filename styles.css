@@ -12,6 +12,51 @@ body {
     background-color: #111827;
 }
 
+/* Premium theme overrides */
+body.premium {
+    --bg: #0b0f17;
+    --card-bg: #0f172a;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #1f2937;
+    --accent: #d4af37; /* gold */
+}
+
+body.premium {
+    color: var(--text);
+    background: var(--bg);
+}
+
+body.premium .header,
+body.premium .hero,
+body.premium .catalog,
+body.premium .contact,
+body.premium .footer {
+    background: var(--card-bg);
+    border-color: var(--border);
+}
+
+body.premium .logo span { color: var(--text); }
+body.premium .logo i { color: var(--accent); }
+body.premium .cta-btn,
+body.premium .filter-btn,
+body.premium .btn-primary { background: var(--accent); border-color: var(--accent); color: #0b0f17; }
+body.premium .btn-primary:hover { background: #b89324; border-color: #b89324; }
+body.premium .btn-secondary { color: var(--text); border-color: var(--border); }
+body.premium .btn-secondary:hover { background: #0b1220; border-color: #2c3a52; }
+body.premium .car-card { background: #0e1626; border-color: var(--border); box-shadow: 0 8px 20px rgba(0,0,0,.35); }
+body.premium .car-card:hover { border-color: #2b3b55; box-shadow: 0 12px 28px rgba(0,0,0,.45); }
+body.premium .car-title { color: var(--text); }
+body.premium .car-details { color: var(--muted); }
+body.premium .car-price { color: var(--text); }
+body.premium .catalog-filters { background: #0b1220; border-color: var(--border); }
+body.premium .contact-item { background: #0b1220; border-color: var(--border); }
+body.premium .footer { background: #0b1220; }
+body.premium .footer-section h4 { color: var(--text); }
+body.premium .footer-section p,
+body.premium .footer-section a { color: var(--muted); }
+body.premium .footer-section a:hover { color: var(--text); }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
