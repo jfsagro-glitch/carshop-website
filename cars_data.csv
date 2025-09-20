@@ -1,0 +1,12 @@
+id,brand,model,year,price,mileage,fuel_type,transmission,color,description,photos
+1,Toyota,Camry,2020,2500000,45000,Бензин,Автомат,Белый,"Отличное состояние, один владелец, полная комплектация","https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800,https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=600"
+2,BMW,X5,2019,4200000,62000,Бензин,Автомат,Черный,"Премиум комплектация, кожаный салон, навигация","https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800,https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600"
+3,Audi,A4,2021,3200000,28000,Бензин,Автомат,Серый,"Новый автомобиль, гарантия, полный пакет опций","https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800,https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600"
+4,Mercedes-Benz,E-Class,2022,4500000,15000,Бензин,Автомат,Серебристый,"Новый автомобиль, полная комплектация, гарантия","https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800,https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600"
+5,Volkswagen,Golf,2020,1800000,55000,Бензин,Механика,Синий,"Экономичный автомобиль, отличное состояние","https://images.unsplash.com/photo-1549317336-206569e8475c?w=800,https://images.unsplash.com/photo-1549317336-206569e8475c?w=600"
+6,Hyundai,Elantra,2021,2200000,35000,Бензин,Автомат,Красный,"Современный дизайн, экономичный расход","https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800,https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600"
+7,Ford,Mustang,2019,3500000,40000,Бензин,Автомат,Желтый,"Спортивный автомобиль, мощный двигатель","https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800,https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600"
+8,Nissan,Qashqai,2020,2800000,48000,Бензин,Автомат,Белый,"Кроссовер, высокий клиренс, полный привод","https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800,https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=600"
+9,Skoda,Octavia,2021,1900000,30000,Бензин,Автомат,Серый,"Практичный седан, большой багажник","https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800,https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600"
+10,Peugeot,308,2020,2100000,42000,Бензин,Автомат,Черный,"Французский стиль, комфортный салон","https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800,https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600"
+

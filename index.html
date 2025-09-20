@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автомобили из Грузии - Доставка в Россию</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.svg" alt="CarExport" class="logo-img" onerror="this.onerror=null; this.src='images/logo.png'">
+                <span>CarExport</span>
+            </div>
+                <nav class="nav">
+                    <a href="#catalog">Каталог</a>
+                    <a href="#delivery">Доставка</a>
+                    <a href="#about">О нас</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Автомобили из Грузии с доставкой в Россию</h1>
+                <p>Широкий выбор качественных автомобилей с пробегом. <strong>Все цены включают растаможку и доставку!</strong> Никаких скрытых платежей.</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Гарантия качества</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-truck"></i>
+                        <span>Доставка по РФ</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Полное оформление</span>
+                    </div>
+                </div>
+                <button class="cta-btn" onclick="document.getElementById('catalog').scrollIntoView()">
+                    Смотреть каталог
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2>Каталог автомобилей</h2>
+            <div class="catalog-filters">
+                <div class="filter-group">
+                    <label>Марка:</label>
+                    <select id="brandFilter">
+                        <option value="">Все марки</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Цена от:</label>
+                    <input type="number" id="priceFrom" placeholder="Минимум">
+                </div>
+                <div class="filter-group">
+                    <label>Цена до:</label>
+                    <input type="number" id="priceTo" placeholder="Максимум">
+                </div>
+                <div class="filter-group">
+                    <label>Пробег до:</label>
+                    <input type="number" id="mileageTo" placeholder="км">
+                </div>
+                <button class="filter-btn" onclick="applyFilters()">Применить</button>
+            </div>
+            <div class="cars-grid" id="carsGrid">
+                <!-- Cars will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section id="delivery" class="delivery">
+        <div class="container">
+            <h2>Доставка и оформление</h2>
+            <div class="delivery-content">
+                <div class="delivery-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Выбор автомобиля</h3>
+                        <p>Выберите понравившийся автомобиль из нашего каталога</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Оформление заказа</h3>
+                        <p>Заполните форму заказа и внесите предоплату</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Растаможка</h3>
+                        <p>Мы оформляем все необходимые документы и растаможку</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Доставка</h3>
+                        <p>Доставляем автомобиль в любой город России</p>
+                    </div>
+                </div>
+                <div class="delivery-info">
+                    <h3>Что включено в цену</h3>
+                    <ul>
+                        <li><i class="fas fa-check" style="color: #10b981;"></i> Растаможка автомобиля</li>
+                        <li><i class="fas fa-check" style="color: #10b981;"></i> Доставка по России</li>
+                        <li><i class="fas fa-check" style="color: #10b981;"></i> Оформление документов</li>
+                        <li><i class="fas fa-check" style="color: #10b981;"></i> Полное юридическое сопровождение</li>
+                    </ul>
+                    <p style="color: #10b981; font-weight: 500; margin-top: 1rem;">
+                        <i class="fas fa-info-circle"></i> Никаких скрытых платежей!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="about-features">
+                <div class="about-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Проверенные автомобили</h3>
+                    <p>Все автомобили проходят тщательную проверку перед продажей</p>
+                </div>
+                <div class="about-feature">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Честные цены</h3>
+                    <p>Прозрачное ценообразование без скрытых платежей</p>
+                </div>
+                <div class="about-feature">
+                    <i class="fas fa-clock"></i>
+                    <h3>Быстрое оформление</h3>
+                    <p>Полное оформление документов за 7-14 дней</p>
+                </div>
+                <div class="about-feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Круглосуточная поддержка клиентов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p>+7 (915) 444-12-08</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>carexportgeo@bk.ru</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Оставить заявку</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="tel" placeholder="Телефон" required>
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Сообщение"></textarea>
+                        <button type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CarExport</h4>
+                    <p>Надежный партнер в покупке автомобилей из Грузии</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li>Продажа автомобилей</li>
+                        <li>Растаможка</li>
+                        <li>Доставка</li>
+                        <li>Оформление документов</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>+7 (915) 444-12-08</p>
+                    <p>carexportgeo@bk.ru</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CarExport. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <span class="close" onclick="closeCart()">&times;</span>
+            </div>
+            <div class="modal-body" id="cartBody">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Итого: <span id="cartTotal">0</span> ₽</strong>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Contact Modal -->
+    <div id="checkoutModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeCheckoutModal()">&times;</span>
+            <h3 style="margin-top:0;">Контактные данные для оформления</h3>
+            <form id="checkoutContactForm" style="display:flex; flex-direction:column; gap:12px;">
+                <input type="text" id="contactName" placeholder="Ваше имя" required>
+                <input type="tel" id="contactPhone" placeholder="Телефон" required>
+                <input type="email" id="contactEmail" placeholder="Email" required>
+                <button type="submit" class="btn-primary">Отправить заказ</button>
+                <button type="button" class="btn-secondary" onclick="closeCheckoutModal()">Отмена</button>
+            </form>
+            <p style="color:#9ca3af; font-size:0.9rem;">Мы свяжемся с вами для подтверждения заказа.</p>
+        </div>
+    </div>
+
+    <!-- Hidden email form (fallback via formsubmit.co) -->
+    <form id="emailFallbackForm" action="https://formsubmit.co/carexportgeo@bk.ru" method="POST" style="display:none;">
+        <input type="hidden" name="name" id="fs_name">
+        <input type="hidden" name="phone" id="fs_phone">
+        <input type="hidden" name="email" id="fs_email">
+        <input type="hidden" name="message" id="fs_message">
+        <!-- Disable Captcha and redirect back to site -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Новый заказ с сайта CarExport">
+    </form>
+
+    <!-- Car Details Modal -->
+    <div id="carModal" class="modal">
+        <div class="modal-content car-modal">
+            <div class="modal-header">
+                <h3 id="carModalTitle"></h3>
+                <span class="close" onclick="closeCarModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="carModalBody">
+                <!-- Car details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿# Download Instructions for BMW X2 Xdrive28I
+
+## Google Drive Link:
+https://drive.google.com/drive/folders/1G3wdYypzFOTNVuuUFiXwKnXZtu5y5VXl
+
+## Steps:
+1. Open the link above in your browser
+2. Download all photos from the folder
+3. Place them in folder: images\car28
+4. Rename main photo as 'main.jpg'
+5. Name other photos as '2.jpg', '3.jpg', etc.
+
+## File Structure:
+- main.jpg (main photo)
+- 2.jpg, 3.jpg, 4.jpg... (additional photos)
+
+## After downloading:
+- Update script.js to display real photos
+- Check that all images load correctly
