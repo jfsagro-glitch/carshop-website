@@ -9,7 +9,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
     color: #374151;
-    background-color: #f9fafb;
+    background-color: #111827;
 }
 
 .container {
@@ -283,11 +283,25 @@ body {
     object-position: center;
 }
 
-/* Мобильные устройства - заполняем всю ширину */
+/* Ensure gallery images in modal are fully visible and not cropped */
+.gallery-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Мобильные устройства - уменьшаем размер фотографий на 35% */
 @media (max-width: 768px) {
     .car-image img {
-        object-fit: cover;
-        object-position: center top;
+        object-fit: contain;
+        object-position: center;
+        transform: scale(0.49);
+    }
+
+    /* Apply the same scaling to images inside the modal gallery */
+    .gallery-container img {
+        transform: scale(0.49);
     }
 }
 
