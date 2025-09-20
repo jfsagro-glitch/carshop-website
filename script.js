@@ -623,7 +623,7 @@ function updateCartModal() {
     const cartTotal = document.getElementById('cartTotal');
     
     if (cart.length === 0) {
-        cartBody.innerHTML = '<p style="text-align: center; color: #64748b;">Корзина пуста</p>';
+        cartBody.innerHTML = '<p style="text-align: center; color: #64748b;">Ваш заказ пуст</p>';
         cartTotal.textContent = '0';
         return;
     }
@@ -691,7 +691,7 @@ function showCarDetails(carId) {
             </p>
             <p style="color: #9ca3af; margin-bottom: 1.5rem;">Никаких дополнительных платежей!</p>
             <button class="btn-primary" onclick="addToCart(${car.id}); closeCarModal();" style="margin-right: 1rem;">
-                <i class="fas fa-shopping-cart"></i> Добавить в корзину
+                <i class="fas fa-shopping-cart"></i> Сделать заказ
             </button>
             <button class="btn-secondary" onclick="closeCarModal();">
                 Закрыть
@@ -720,7 +720,7 @@ function closeCarModal() {
 
 function checkout() {
     if (cart.length === 0) {
-        showNotification('Корзина пуста!', 'error');
+        showNotification('Ваш заказ пуст!', 'error');
         return;
     }
     // Открываем модал ввода контактов
@@ -885,6 +885,15 @@ async function handleCalc(){
 document.addEventListener('DOMContentLoaded', ()=>{
     const btn = document.getElementById('calcBtn');
     if (btn) btn.addEventListener('click', handleCalc);
+    // Калькулятор в модалке
+    window.openCustomsModal = function(){
+        const m = document.getElementById('customsModal');
+        if (m) m.style.display = 'block';
+    }
+    window.closeCustomsModal = function(){
+        const m = document.getElementById('customsModal');
+        if (m) m.style.display = 'none';
+    }
 });
 
 // Добавляем CSS анимации и стили для скрытия названий файлов

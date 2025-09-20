@@ -27,7 +27,7 @@
                     <a href="#delivery">Доставка</a>
                     <a href="#about">О нас</a>
                     <a href="#contact">Контакты</a>
-                    <a href="#customs">Калькулятор</a>
+                    <a href="#" onclick="openCustomsModal(); return false;">Калькулятор</a>
                 </nav>
                 <div class="header-actions">
                     <button class="cart-btn" id="cartBtn">
@@ -66,37 +66,42 @@
         </div>
     </section>
 
-    <!-- Customs Calculator Section -->
-    <section id="customs" class="customs">
-        <div class="container">
-            <h2>Таможенный калькулятор</h2>
-            <div class="customs-content">
-                <form id="customsForm" class="calc-form" onsubmit="return false;">
-                    <div class="calc-row">
-                        <label for="costUsd">Стоимость (USD)</label>
-                        <input type="number" id="costUsd" placeholder="Например, 25000" min="0" step="0.01" required>
-                    </div>
-                    <div class="calc-row">
-                        <label for="engineCc">Объем, см³</label>
-                        <input type="number" id="engineCc" placeholder="Например, 1998" min="0" step="1" required>
-                    </div>
-                    <div class="calc-row">
-                        <label for="age">Возраст</label>
-                        <select id="age">
-                            <option value="lt3">меньше 3-х лет</option>
-                            <option value="3to5">3 - 5 лет</option>
-                            <option value="5to7">5 - 7 лет</option>
-                            <option value="gt7">больше 7 лет</option>
-                        </select>
-                    </div>
-                    <div class="calc-actions">
-                        <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
-                    </div>
-                </form>
-                <div class="calc-result" id="calcResult" aria-live="polite"></div>
+    <!-- Customs Calculator Modal -->
+    <div id="customsModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Таможенный калькулятор</h3>
+                <span class="close" onclick="closeCustomsModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customs-content">
+                    <form id="customsForm" class="calc-form" onsubmit="return false;">
+                        <div class="calc-row">
+                            <label for="costUsd">Стоимость (USD)</label>
+                            <input type="number" id="costUsd" placeholder="Например, 25000" min="0" step="0.01" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="engineCc">Объем, см³</label>
+                            <input type="number" id="engineCc" placeholder="Например, 1998" min="0" step="1" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="age">Возраст</label>
+                            <select id="age">
+                                <option value="lt3">меньше 3-х лет</option>
+                                <option value="3to5">3 - 5 лет</option>
+                                <option value="5to7">5 - 7 лет</option>
+                                <option value="gt7">больше 7 лет</option>
+                            </select>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
+                        </div>
+                    </form>
+                    <div class="calc-result" id="calcResult" aria-live="polite"></div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Catalog Section -->
     <section id="catalog" class="catalog">
@@ -285,7 +290,7 @@
     <div id="cartModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Корзина</h3>
+                <h3>Ваш заказ</h3>
                 <span class="close" onclick="closeCart()">&times;</span>
             </div>
             <div class="modal-body" id="cartBody">
