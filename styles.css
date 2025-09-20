@@ -283,6 +283,14 @@ body {
     object-position: center;
 }
 
+/* Мобильные устройства - заполняем всю ширину */
+@media (max-width: 768px) {
+    .car-image img {
+        object-fit: cover;
+        object-position: center top;
+    }
+}
+
 .car-info {
     padding: 1.2rem;
 }
@@ -918,7 +926,7 @@ body {
     }
 
     .car-image {
-        height: 300px;
+        height: 350px;
         font-size: 2.5rem;
     }
 
@@ -983,7 +991,7 @@ body {
     }
 
     .car-image {
-        height: 280px;
+        height: 320px;
         font-size: 2rem;
     }
 
