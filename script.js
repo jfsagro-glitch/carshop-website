@@ -941,7 +941,53 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if (resp.ok){ s.textContent='Заявка отправлена! Мы свяжемся с вами.'; }
         else { s.textContent='Не удалось отправить заявку. Попробуйте позже.'; }
     });
+
+    // Самостоятельный просчет
+    window.openSelfCalcModal = function(){
+        const m = document.getElementById('selfCalcModal');
+        if (m) m.style.display = 'block';
+    }
+    window.closeSelfCalcModal = function(){
+        const m = document.getElementById('selfCalcModal');
+        if (m) m.style.display = 'none';
+    }
+    const selfBtn = document.getElementById('selfCalcBtn');
+    if (selfBtn) selfBtn.addEventListener('click', handleSelfCalc);
 });
+
+async function handleSelfCalc(){
+    const costUsd = parseFloat(document.getElementById('selfCostUsd').value);
+    const cc = parseInt(document.getElementById('selfEngineCc').value, 10);
+    if (!isFinite(costUsd) || costUsd <= 0 || !isFinite(cc) || cc <= 0){
+        document.getElementById('selfCalcResult').textContent = 'Введите корректные значения стоимости и объема.';
+        return;
+    }
+    // 1) Растаможка по тому же алгоритму, что и калькулятор: евро/см3
+    const eurPerCc = customsRatePerCc(cc);
+    const eurAmount = eurPerCc * cc; // евро
+    const eurRub = await fetchEurRateRub();
+    const customsRub = eurAmount * eurRub;
+
+    // 2) Стоимость автомобиля в рублях: USD * курс ЦБ USD * 1.5%
+    const usdRub = await fetchUsdRateRub();
+    const carRub = costUsd * usdRub * 1.015; // +1.5%
+
+    // 3) Плюс 2400 USD по курсу ЦБ РФ
+    const serviceRub = 2400 * usdRub;
+
+    const total = Math.round(customsRub + carRub + serviceRub);
+    document.getElementById('selfCalcResult').textContent = `${total.toLocaleString('ru-RU')} ₽`;
+}
+
+async function fetchUsdRateRub(){
+    try{
+        const resp = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+        const data = await resp.json();
+        const usd = data?.Valute?.USD?.Value;
+        if (typeof usd === 'number' && usd > 0) return usd;
+    }catch(e){}
+    return 90; // фолбэк
+}
 
 // Добавляем CSS анимации и стили для скрытия названий файлов
 const style = document.createElement('style');

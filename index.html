@@ -33,6 +33,7 @@
                         <span class="cart-count" id="cartCount">0</span>
                     </button>
                     <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()">Заявка на подбор</button>
+                    <button class="btn-primary" id="openSelfCalcBtn" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
                 </div>
             </div>
         </div>
@@ -238,6 +239,39 @@
                 <button type="button" class="btn-secondary" onclick="closeCheckoutModal()">Отмена</button>
             </form>
             <p style="color:#9ca3af; font-size:0.9rem;">Мы свяжемся с вами для подтверждения заказа.</p>
+        </div>
+    </div>
+
+    <!-- Self Service Modal -->
+    <div id="selfCalcModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Вы можете самостоятельно выбрать автомобиль на сайтах в Грузии, мы его проверим, привезем к вам и растаможим.</h3>
+                <span class="close" onclick="closeSelfCalcModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customs-content">
+                    <p style="margin-bottom:1rem; color:#9ca3af;">
+                        Сайты: <a href="https://ap.ge/ru/usd" target="_blank">ap.ge</a>, 
+                        <a href="https://myauto.ge/ru" target="_blank">myauto.ge</a>, 
+                        <a href="https://autoline-ge.com/-/avtomobili--c1169" target="_blank">autoline-ge.com</a>
+                    </p>
+                    <form id="selfCalcForm" class="calc-form" onsubmit="return false;">
+                        <div class="calc-row">
+                            <label for="selfCostUsd">Стоимость авто в Грузии (USD)</label>
+                            <input type="number" id="selfCostUsd" placeholder="Например, 12000" min="0" step="0.01" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="selfEngineCc">Объем двигателя, см³</label>
+                            <input type="number" id="selfEngineCc" placeholder="Например, 1998" min="0" step="1" required>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-primary" id="selfCalcBtn" type="button">Рассчитать</button>
+                        </div>
+                    </form>
+                    <div class="calc-result" id="selfCalcResult" aria-live="polite"></div>
+                </div>
+            </div>
         </div>
     </div>
 
