@@ -532,7 +532,7 @@ function createCarCard(car) {
             <div class="car-details">
                 <div><strong>Двигатель:</strong> ${car.engine}L</div>
                 <div><strong>Пробег:</strong> ${car.mileage.toLocaleString()} км</div>
-                <div><strong>VIN:</strong> <a href="https://bid.cars/?s=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></div>
+                <div><strong>VIN:</strong> <a href="https://bid.cars/ru/search/archived/results?search-type=filters&status=All&type=Automobile&make=All&model=All&year-from=1900&year-to=2026&auction-type=All&vin=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></div>
                 <div><strong>Дата выпуска:</strong> ${car.date}</div>
             </div>
             <div class="car-price">${car.price.toLocaleString()} ₽</div>
@@ -675,7 +675,7 @@ function showCarDetails(carId) {
                     <li><strong>Год:</strong> ${car.year}</li>
                     <li><strong>Двигатель:</strong> ${car.engine}L</li>
                     <li><strong>Пробег:</strong> ${car.mileage.toLocaleString()} км</li>
-                    <li><strong>VIN:</strong> <a href="https://bid.cars/?s=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></li>
+                    <li><strong>VIN:</strong> <a href="https://bid.cars/ru/search/archived/results?search-type=filters&status=All&type=Automobile&make=All&model=All&year-from=1900&year-to=2026&auction-type=All&vin=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></li>
                     <li><strong>Дата выпуска:</strong> ${car.date}</li>
                 </ul>
             </div>
