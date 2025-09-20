@@ -8,8 +8,8 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
-    color: #374151;
-    background-color: #111827;
+    color: #e5e7eb;
+    background-color: #000000;
 }
 
 /* Premium theme overrides */
@@ -22,10 +22,7 @@ body.premium {
     --accent: #d4af37; /* gold */
 }
 
-body.premium {
-    color: var(--text);
-    background: var(--bg);
-}
+body.premium { color: #e5e7eb; background: #000000; }
 
 body.premium .header,
 body.premium .hero,
@@ -36,7 +33,7 @@ body.premium .footer {
     border-color: var(--border);
 }
 
-body.premium .logo span { color: var(--text); }
+body.premium .logo span { color: #f3f4f6; }
 body.premium .logo i { color: var(--accent); }
 body.premium .cta-btn,
 body.premium .filter-btn,
