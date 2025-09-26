@@ -22,7 +22,7 @@ function createCarGallery(car) {
                 <div id="gallery-dots-${car.id}" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;"></div>
                 ${car.sold ? `
                 <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5;">
-                    <div style="transform:rotate(-22deg);font-size:clamp(28px,7vw,80px);font-weight:900;letter-spacing:6px;color:#fff;text-shadow:0 4px 10px rgba(0,0,0,0.6);padding:0.25em 0.6em;border:6px solid rgba(255,255,255,0.95);border-radius:10px;background:rgba(220,38,38,0.75);">ПРОДАНО</div>
+                    <div style="transform:rotate(-22deg);font-size:clamp(28px,7vw,80px);font-weight:900;letter-spacing:6px;color:rgba(220,38,38,.6);text-shadow:0 4px 10px rgba(0,0,0,.45);-webkit-text-stroke:4px rgba(255,255,255,.85);">ПРОДАНО</div>
                 </div>
                 ` : ''}
             </div>
@@ -550,8 +550,8 @@ function createCarCard(car) {
                     </div>
                 </div>
                 ${car.sold ? `
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:3;">
-                    <div style="transform:rotate(-22deg);font-size:clamp(26px,7vw,76px);font-weight:900;letter-spacing:6px;color:#fff;text-shadow:0 4px 10px rgba(0,0,0,0.6);padding:0.25em 0.6em;border:6px solid rgba(255,255,255,0.95);border-radius:10px;background:rgba(220,38,38,0.75);">ПРОДАНО</div>
+                <div style=\"position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:3;\">
+                    <div style=\"transform:rotate(-22deg);font-size:clamp(26px,7vw,76px);font-weight:900;letter-spacing:6px;color:rgba(220,38,38,.6);text-shadow:0 4px 10px rgba(0,0,0,.45);-webkit-text-stroke:4px rgba(255,255,255,.85);\">ПРОДАНО</div>
                 </div>
                 ` : ''}
             </div>
@@ -570,12 +570,12 @@ function createCarCard(car) {
             </div>
             <div class="car-actions">
                 ${car.sold ? `
-                <button class="btn-primary" disabled style="opacity:.6;cursor:not-allowed;">
-                    ПРОДАНО
+                <button class="btn-primary" onclick="openSimilarRequest(${car.id})">
+                    Подобрать аналогичный
                 </button>
                 ` : `
                 <button class="btn-primary" onclick="addToCart(${car.id})">
-                    <i class=\"fas fa-shopping-cart\"></i> Заказать
+                    <i class=\\"fas fa-shopping-cart\\"></i> Заказать
                 </button>
                 `}
                 <button class="btn-secondary" onclick="showCarDetails(${car.id})">
@@ -727,7 +727,7 @@ function showCarDetails(carId) {
             </p>
             <p style="color: #9ca3af; margin-bottom: 1.5rem;">Никаких дополнительных платежей!</p>
             ${car.sold ? `
-            <button class="btn-primary" disabled style="margin-right: 1rem; opacity:.6;cursor:not-allowed;">ПРОДАНО</button>
+            <button class="btn-primary" onclick="openSimilarRequest(${car.id})" style="margin-right: 1rem;">Подобрать аналогичный</button>
             ` : `
             <button class="btn-primary" onclick="addToCart(${car.id}); closeCarModal();" style="margin-right: 1rem;">
                 <i class=\"fas fa-shopping-cart\"></i> Сделать заказ
@@ -873,6 +873,21 @@ function setupEventListeners() {
             }
         });
     });
+    // Хелпер для заявки на аналогичный автомобиль
+    window.openSimilarRequest = function(carId){
+        const car = carsData.find(c=>c.id===carId);
+        if(!car) return;
+        openRequestModal();
+        try{
+            document.getElementById('reqBrand').value = car.brand || '';
+            document.getElementById('reqModel').value = car.model || '';
+            document.getElementById('reqYearFrom').value = car.year ? Math.max(1990, parseInt(car.year)-2) : '';
+            document.getElementById('reqYearTo').value = car.year || '';
+            document.getElementById('reqPriceTo').value = car.price || '';
+            const note = document.getElementById('reqNote');
+            note.value = `Ищу аналогичный автомобилю: ${car.year} ${car.brand} ${car.model}. VIN: ${car.vin}.`;
+        }catch(_){}
+    }
 }
 
 // === Таможенный калькулятор ===
