@@ -1,4 +1,7 @@
-﻿// Функция для получения прямых ссылок на изображения из Google Drive
+﻿// Версия для кэш-бастинга изображений
+const CACHE_BUSTER = 'v2025-09-26-01';
+
+// Функция для получения прямых ссылок на изображения из Google Drive
 function getGoogleDriveImageUrl(folderId) {
     // Для Google Drive папок используем специальный формат
     return `https://drive.google.com/thumbnail?id=${folderId}&sz=w400-h300`;
@@ -522,7 +525,7 @@ function createCarCard(car) {
             <div class="single-photo-container" style="position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 8px; background: #374151; cursor: pointer;" onclick="showCarDetails(${car.id})">
                 <!-- Попытка загрузить реальное фото -->
                 <img 
-                    src="images/car${car.id}/main.jpg" 
+                    src="images/car${car.id}/main.jpg?${CACHE_BUSTER}" 
                     alt="${car.year} ${car.brand} ${car.model}"
                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
@@ -1153,7 +1156,7 @@ async function initializeGallery(car){
 
     photos.forEach((src,idx)=>{
         const img = document.createElement('img');
-        img.src = src;
+        img.src = src + '?' + CACHE_BUSTER;
         img.alt = `${car.year} ${car.brand} ${car.model}`;
         img.style.cssText = 'width:100%;height:100%;object-fit:contain;flex:0 0 100%;';
         track.appendChild(img);
