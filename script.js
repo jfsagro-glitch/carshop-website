@@ -1,7 +1,4 @@
-﻿// Версия для кэш-бастинга изображений
-const CACHE_BUSTER = 'v2025-09-26-01';
-
-// Функция для получения прямых ссылок на изображения из Google Drive
+﻿// Функция для получения прямых ссылок на изображения из Google Drive
 function getGoogleDriveImageUrl(folderId) {
     // Для Google Drive папок используем специальный формат
     return `https://drive.google.com/thumbnail?id=${folderId}&sz=w400-h300`;
@@ -23,6 +20,11 @@ function createCarGallery(car) {
                 <button class="gallery-prev" onclick="prevPhoto(${car.id})" aria-label="Предыдущая" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;">‹</button>
                 <button class="gallery-next" onclick="nextPhoto(${car.id})" aria-label="Следующая" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;">›</button>
                 <div id="gallery-dots-${car.id}" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;"></div>
+                ${car.sold ? `
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5;">
+                    <div style="transform:rotate(-22deg);font-size:clamp(28px,7vw,80px);font-weight:900;letter-spacing:6px;color:#fff;text-shadow:0 4px 10px rgba(0,0,0,0.6);padding:0.25em 0.6em;border:6px solid rgba(255,255,255,0.95);border-radius:10px;background:rgba(220,38,38,0.75);">ПРОДАНО</div>
+                </div>
+                ` : ''}
             </div>
         </div>
     `;
@@ -38,11 +40,12 @@ const carsData = [
         year: 2021,
         engine: "200",
         vin: "JTHX3JBH2M2040913",
-        price: 2530000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 2590000, // Включает растаможку и доставку
         mileage: 62400,
         date: "01.04.2021",
         photos: "https://drive.google.com/drive/folders/1FR5s24AvCCFwheEODFLvBXko11UaIBwx?usp=sharing",
-        folderId: "1FR5s24AvCCFwheEODFLvBXko11UaIBwx"
+        folderId: "1FR5s24AvCCFwheEODFLvBXko11UaIBwx",
+        sold: true
     },
     {
         id: 2,
@@ -51,7 +54,7 @@ const carsData = [
         year: 2021,
         engine: "1,6",
         vin: "5XXG64J21MG051872",
-        price: 1800000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1840000, // Включает растаможку и доставку
         mileage: 71300,
         date: "01.12.2020",
         photos: "https://drive.google.com/drive/folders/1vnofqhi60SeZPumd6qTSg2Z1zcqUi7SE?usp=sharing",
@@ -64,7 +67,7 @@ const carsData = [
         year: 2021,
         engine: "1,6",
         vin: "5XXG64J20MG066301",
-        price: 1950000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 2000000, // Включает растаможку и доставку
         mileage: 85300,
         date: "01.02.2021",
         photos: "https://drive.google.com/drive/folders/1cxKqcrwCT3Thfbg_7xBaK-IbCpXbfJ67?usp=sharing",
@@ -77,7 +80,7 @@ const carsData = [
         year: 2022,
         engine: "1,6",
         vin: "5XXG64J26NG143772",
-        price: 1920000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1960000, // Включает растаможку и доставку
         mileage: 89000,
         date: "01.02.2022",
         photos: "https://drive.google.com/drive/folders/1o8lInW7TKO72m27HWOxpJAhoK6NxAz7b?usp=sharing",
@@ -90,7 +93,7 @@ const carsData = [
         year: 2022,
         engine: "1,5",
         vin: "3GNAXKEV2NL254391",
-        price: 1830000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1830000, // Включает растаможку и доставку
         mileage: 22800,
         date: "01.06.2022",
         photos: "https://drive.google.com/drive/folders/1Hf_3NXGoBhXKrAQ8Be6COWo6eqNNm0gK?usp=sharing",
@@ -103,7 +106,7 @@ const carsData = [
         year: 2022,
         engine: "1,5",
         vin: "3GNAXUEV7NL295692",
-        price: 1830000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1860000, // Включает растаможку и доставку
         mileage: 25400,
         date: "01.08.2022",
         photos: "https://drive.google.com/drive/folders/1fFYDIuWwluL7-cLQzgq6deQUzdFGW5XT?usp=sharing",
@@ -116,7 +119,7 @@ const carsData = [
         year: 2021,
         engine: "1,5",
         vin: "2GNAXKEV6M6147749",
-        price: 1490000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1520000, // Включает растаможку и доставку
         mileage: 99000,
         date: "01.01.2021",
         photos: "https://drive.google.com/drive/folders/1ItE8WnTKXEjK4oxU7i1WJcYFBRfZ3hiB?usp=sharing",
@@ -129,7 +132,7 @@ const carsData = [
         year: 2022,
         engine: "1,5",
         vin: "1G1ZD5ST8NF204106",
-        price: 1420000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1450000, // Включает растаможку и доставку
         mileage: 52800,
         date: "01.09.2022",
         photos: "https://drive.google.com/drive/folders/1QrIeum3tr8F73TqlI3F8bt9j7Wp3exud?usp=sharing",
@@ -142,7 +145,7 @@ const carsData = [
         year: 2022,
         engine: "1,5",
         vin: "1G1ZD5ST7NF142830",
-        price: 1320000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1350000, // Включает растаможку и доставку
         mileage: 65000,
         date: "01.04.2022",
         photos: "https://drive.google.com/drive/folders/1SLPy7kA6U3GHvmaWMCv1aLV1hgJp78ht?usp=sharing",
@@ -155,7 +158,7 @@ const carsData = [
         year: 2021,
         engine: "1,4",
         vin: "KL7CJPSB3MB359450",
-        price: 1260000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1260000, // Включает растаможку и доставку
         mileage: 53700,
         date: "01.02.2021",
         photos: "https://drive.google.com/drive/folders/1AneTIy_JInzve71jMfyHRAaMmdmv0p9e?usp=sharing",
@@ -168,7 +171,7 @@ const carsData = [
         year: 2022,
         engine: "2,0",
         vin: "KNDPRCA6XN7979842",
-        price: 2110000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 2170000, // Включает растаможку и доставку
         mileage: 76000,
         date: "01.05.2021",
         photos: "https://drive.google.com/drive/folders/1fndY8K0rjlF0JbqnNSl7KRF-kvpyfElP?usp=sharing",
@@ -181,7 +184,7 @@ const carsData = [
         year: 2021,
         engine: "2,4",
         vin: "KNDPMCAC6N7951184",
-        price: 2010000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 2070000, // Включает растаможку и доставку
         mileage: 80000,
         date: "01.03.2021",
         photos: "https://drive.google.com/drive/folders/1vI6ngtd-7pS-Q6GZyx3cT1TAbLP02cJ2?usp=sharing",
@@ -194,7 +197,7 @@ const carsData = [
         year: 2021,
         engine: "2,4",
         vin: "KNDPMCAC1N7022584",
-        price: 2030000, // Включает растаможку и доставку
+        price: 2090000, // Включает растаможку и доставку
         mileage: 25600,
         date: "01.11.2021",
         photos: "https://drive.google.com/drive/folders/1ktbbcV03TNaxOo85hcxdRI12cf48PDlA?usp=sharing",
@@ -207,7 +210,7 @@ const carsData = [
         year: 2021,
         engine: "1,6",
         vin: "5NPLP4AG4MH039503",
-        price: 1770000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1850000, // Включает растаможку и доставку
         mileage: 70400,
         date: "01.04.2021",
         photos: "https://drive.google.com/drive/folders/1T_WJeiasoMStwqfsrrKCQMrqhauDO2HV?usp=sharing",
@@ -220,7 +223,7 @@ const carsData = [
         year: 2022,
         engine: "1,6",
         vin: "KMHLR4AF0NU363102",
-        price: 1880000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1930000, // Включает растаможку и доставку
         mileage: 44600,
         date: "01.04.2021",
         photos: "https://drive.google.com/drive/folders/11m3ri2m9na7jmqV-Zf2gRwhoXTga4Ruo?usp=sharing",
@@ -233,7 +236,7 @@ const carsData = [
         year: 2021,
         engine: "2,0",
         vin: "3MW5R7J0XM8B93091",
-        price: 3150000, // Включает растаможку и доставку
+        price: 3220000, // Включает растаможку и доставку
         mileage: 79000,
         date: "01.03.2021",
         photos: "https://drive.google.com/drive/folders/1wbbCZ90K5ph9vunmCnuQJTxSx2sqxQ8n?usp=sharing",
@@ -246,7 +249,7 @@ const carsData = [
         year: 2021,
         engine: "2,0",
         vin: "1VWMA7A31MC010344",
-        price: 1960000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 2020000, // Включает растаможку и доставку
         mileage: 75000,
         date: "01.03.2021",
         photos: "https://drive.google.com/drive/folders/1lts5r3t6ftPayg55mjSHdMbwRBGMoz78?usp=sharing",
@@ -259,7 +262,7 @@ const carsData = [
         year: 2021,
         engine: "1,4",
         vin: "3VWC57BUXMM099157",
-        price: 1390000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1400000, // Включает растаможку и доставку
         mileage: 67200,
         date: "01.12.2021",
         photos: "https://drive.google.com/drive/folders/18gkgVMN3UWPXSSVtB73M1SUxj7Sd6BpG?usp=sharing",
@@ -272,7 +275,7 @@ const carsData = [
         year: 2022,
         engine: "2,0",
         vin: "JF2GTAPC6N8230227",
-        price: 1730000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1790000, // Включает растаможку и доставку
         mileage: 89000,
         date: "01.01.2022",
         photos: "https://drive.google.com/drive/folders/1PMVX5wAq0amBEmIotp7DN0Xfvpb1bPHU?usp=sharing",
@@ -285,7 +288,7 @@ const carsData = [
         year: 2021,
         engine: "2,0",
         vin: "3KPF24AD3ME354590",
-        price: 1480000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1540000, // Включает растаможку и доставку
         mileage: 23195,
         date: "01.03.2021",
         photos: "https://drive.google.com/drive/folders/1PV5UOJxvCIn52_qrxFJdcvcWuiyE3yM4?usp=sharing",
@@ -298,11 +301,12 @@ const carsData = [
         year: 2022,
         engine: "1,5",
         vin: "1HGCV1F43NA097759",
-        price: 1910000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1940000, // Включает растаможку и доставку
         mileage: 92000,
         date: "01.10.2022",
         photos: "https://drive.google.com/drive/folders/1lkew_BKZI_6xKdInzK4JKEpzgRNsHl3H?usp=sharing",
-        folderId: "1lkew_BKZI_6xKdInzK4JKEpzgRNsHl3H"
+        folderId: "1lkew_BKZI_6xKdInzK4JKEpzgRNsHl3H",
+        sold: true
     },
     {
         id: 22,
@@ -311,7 +315,7 @@ const carsData = [
         year: 2021,
         engine: "2,5",
         vin: "JTEAAAAH4MJ071578",
-        price: 2520000, // Включает растаможку и доставку
+        price: 2580000, // Включает растаможку и доставку
         mileage: 67000,
         date: "01.08.2021",
         photos: "https://drive.google.com/drive/folders/1PpnoOBW5SxQvATGHODbNrDco5SBFXgAc?usp=sharing",
@@ -324,7 +328,7 @@ const carsData = [
         year: 2022,
         engine: "2,0",
         vin: "JA4ARUAU4NU014433",
-        price: 1590000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1640000, // Включает растаможку и доставку
         mileage: 84000,
         date: "01.04.2022",
         photos: "https://drive.google.com/drive/folders/1bv6Te0NZyRaskQVJ1bYJItgprQMYlbAZ?usp=sharing",
@@ -337,11 +341,12 @@ const carsData = [
         year: 2021,
         engine: "2,0",
         vin: "JA4ARUAU8MU024316",
-        price: 1750000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1810000, // Включает растаможку и доставку
         mileage: 93600,
         date: "01.02.2021",
         photos: "https://drive.google.com/drive/folders/1P4HH2NfEva269zYtUZsFSfzeQxQfpzYG?usp=sharing",
-        folderId: "1P4HH2NfEva269zYtUZsFSfzeQxQfpzYG"
+        folderId: "1P4HH2NfEva269zYtUZsFSfzeQxQfpzYG",
+        sold: true
     },
     {
         id: 25,
@@ -350,7 +355,7 @@ const carsData = [
         year: 2021,
         engine: "2,4",
         vin: "JA4ATVAA9NZ001578",
-        price: 1700000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1730000, // Включает растаможку и доставку
         mileage: 83300,
         date: "01.01.2021",
         photos: "https://drive.google.com/drive/folders/1u9kNrW8mwUnRMku1O4hjx3bdVHcyCpKI?usp=sharing",
@@ -363,7 +368,7 @@ const carsData = [
         year: 2021,
         engine: "2,4",
         vin: "JA4ATUAA6NZ055186",
-        price: 1680000, // Р’РєР»СЋС‡Р°РµС‚ СЂР°СЃС‚Р°РјРѕР¶РєСѓ Рё РґРѕСЃС‚Р°РІРєСѓ
+        price: 1720000, // Включает растаможку и доставку
         mileage: 80600,
         date: "01.11.2021",
         photos: "https://drive.google.com/drive/folders/1m4mktjJLI0feWy8EtHAuEBZB5OetMWqg?usp=sharing",
@@ -376,7 +381,7 @@ const carsData = [
         year: 2022,
         engine: "2,0",
         vin: "WAUEAAF44NN014025",
-        price: 3070000, // Включает растаможку и доставку
+        price: 3140000, // Включает растаможку и доставку
         mileage: 93000,
         date: "01.05.2022",
         photos: "https://drive.google.com/drive/folders/1cZ0NU_NfNc8VKCBdRklkQBETifuKhMLe?usp=sharing",
@@ -389,7 +394,7 @@ const carsData = [
         year: 2021,
         engine: "2,0",
         vin: "WBXYJ1C00N5U30528",
-        price: 2360000, // Включает растаможку и доставку
+        price: 2420000, // Включает растаможку и доставку
         mileage: 108000,
         date: "01.09.2021",
         photos: "https://drive.google.com/drive/folders/1G3wdYypzFOTNVuuUFiXwKnXZtu5y5VXl?usp=sharing",
@@ -402,11 +407,12 @@ const carsData = [
         year: 2021,
         engine: "2,0",
         vin: "5UX43DP0XN9J97749",
-        price: 3240000, // Включает растаможку и доставку
+        price: 3180000, // Включает растаможку и доставку
         mileage: 41500,
         date: "01.10.2021",
         photos: "https://drive.google.com/drive/folders/1dAJ-gcvjwwYCN8kO7wAIFIdCJcjEnRqG?usp=sharing",
-        folderId: "1dAJ-gcvjwwYCN8kO7wAIFIdCJcjEnRqG"
+        folderId: "1dAJ-gcvjwwYCN8kO7wAIFIdCJcjEnRqG",
+        sold: true
     },
     {
         id: 30,
@@ -415,11 +421,12 @@ const carsData = [
         year: 2022,
         engine: "2,0",
         vin: "5UX43DP04N9L08991",
-        price: 3490000, // Включает растаможку и доставку
+        price: 3560000, // Включает растаможку и доставку
         mileage: 11500,
         date: "01.01.2022",
         photos: "https://drive.google.com/drive/folders/1os_egVR07QtwJMgWaN6SHWNz5ntSiwaO?usp=sharing",
-        folderId: "1os_egVR07QtwJMgWaN6SHWNz5ntSiwaO"
+        folderId: "1os_egVR07QtwJMgWaN6SHWNz5ntSiwaO",
+        sold: true
     },
     {
         id: 31,
@@ -428,7 +435,7 @@ const carsData = [
         year: 2021,
         engine: "2,0",
         vin: "A1AUCF31N1001715",
-        price: 2940000, // Включает растаможку и доставку
+        price: 3010000, // Включает растаможку и доставку
         mileage: 44500,
         date: "01.06.2021",
         photos: "https://drive.google.com/drive/folders/17TPAkN76U8TCT_l81FJbnpHJLyQGcwo2?usp=sharing",
@@ -441,7 +448,7 @@ const carsData = [
         year: 2021,
         engine: "2,0",
         vin: "5UXTY5C00M9G20624",
-        price: 3030000, // Включает растаможку и доставку
+        price: 3100000, // Включает растаможку и доставку
         mileage: 105500,
         date: "01.03.2021",
         photos: "https://drive.google.com/drive/folders/12IE_Wr0f6VJ3h5wiFnyCQnzYhu8Fxgyu?usp=sharing",
@@ -454,7 +461,7 @@ const carsData = [
         year: 2022,
         engine: "2,0",
         vin: "WA1GAAFY8N2089627",
-        price: 3110000, // Включает растаможку и доставку
+        price: 3180000, // Включает растаможку и доставку
         mileage: 45000,
         date: "01.03.2022",
         photos: "https://drive.google.com/drive/folders/1hmGbI2RO3F72KXOX8EkYXoMq6uHxISgl?usp=sharing",
@@ -471,7 +478,8 @@ const carsData = [
         mileage: 90400,
         date: "янв.22",
         photos: "images/car34",
-        folderId: "local"
+        folderId: "local",
+        sold: true
     }
 ];
 
@@ -525,7 +533,7 @@ function createCarCard(car) {
             <div class="single-photo-container" style="position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 8px; background: #374151; cursor: pointer;" onclick="showCarDetails(${car.id})">
                 <!-- Попытка загрузить реальное фото -->
                 <img 
-                    src="images/car${car.id}/main.jpg?${CACHE_BUSTER}" 
+                    src="images/car${car.id}/main.jpg" 
                     alt="${car.year} ${car.brand} ${car.model}"
                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
@@ -541,6 +549,11 @@ function createCarCard(car) {
                         </div>
                     </div>
                 </div>
+                ${car.sold ? `
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:3;">
+                    <div style="transform:rotate(-22deg);font-size:clamp(26px,7vw,76px);font-weight:900;letter-spacing:6px;color:#fff;text-shadow:0 4px 10px rgba(0,0,0,0.6);padding:0.25em 0.6em;border:6px solid rgba(255,255,255,0.95);border-radius:10px;background:rgba(220,38,38,0.75);">ПРОДАНО</div>
+                </div>
+                ` : ''}
             </div>
         </div>
         <div class="car-info">
@@ -556,9 +569,15 @@ function createCarCard(car) {
                 <i class="fas fa-check-circle"></i> Включает растаможку и доставку
             </div>
             <div class="car-actions">
-                <button class="btn-primary" onclick="addToCart(${car.id})">
-                    <i class="fas fa-shopping-cart"></i> Заказать
+                ${car.sold ? `
+                <button class="btn-primary" disabled style="opacity:.6;cursor:not-allowed;">
+                    ПРОДАНО
                 </button>
+                ` : `
+                <button class="btn-primary" onclick="addToCart(${car.id})">
+                    <i class=\"fas fa-shopping-cart\"></i> Заказать
+                </button>
+                `}
                 <button class="btn-secondary" onclick="showCarDetails(${car.id})">
                     <i class="fas fa-eye"></i> Подробнее
                 </button>
@@ -600,6 +619,7 @@ function applyFilters() {
 function addToCart(carId) {
     const car = carsData.find(c => c.id === carId);
     if (car) {
+        if (car.sold) { showNotification('Автомобиль уже продан', 'error'); return; }
         const existingItem = cart.find(item => item.id === carId);
         if (existingItem) {
             existingItem.quantity += 1;
@@ -706,9 +726,13 @@ function showCarDetails(carId) {
                 <i class="fas fa-check-circle"></i> Цена включает растаможку и доставку по России
             </p>
             <p style="color: #9ca3af; margin-bottom: 1.5rem;">Никаких дополнительных платежей!</p>
+            ${car.sold ? `
+            <button class="btn-primary" disabled style="margin-right: 1rem; opacity:.6;cursor:not-allowed;">ПРОДАНО</button>
+            ` : `
             <button class="btn-primary" onclick="addToCart(${car.id}); closeCarModal();" style="margin-right: 1rem;">
-                <i class="fas fa-shopping-cart"></i> Сделать заказ
+                <i class=\"fas fa-shopping-cart\"></i> Сделать заказ
             </button>
+            `}
             <button class="btn-secondary" onclick="closeCarModal();">
                 Закрыть
             </button>
@@ -1156,7 +1180,7 @@ async function initializeGallery(car){
 
     photos.forEach((src,idx)=>{
         const img = document.createElement('img');
-        img.src = src + '?' + CACHE_BUSTER;
+        img.src = src;
         img.alt = `${car.year} ${car.brand} ${car.model}`;
         img.style.cssText = 'width:100%;height:100%;object-fit:contain;flex:0 0 100%;';
         track.appendChild(img);
