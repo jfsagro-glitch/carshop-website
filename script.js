@@ -841,14 +841,17 @@ function extractBrandModel(name){
 }
 
 function openCheckoutModal(){
-    document.getElementById('checkoutModal').style.display = 'block';
+    const modal = document.getElementById('checkoutModal');
+    if (modal) modal.style.display = 'block';
 }
 function closeCheckoutModal(){
-    document.getElementById('checkoutModal').style.display = 'none';
+    const modal = document.getElementById('checkoutModal');
+    if (modal) modal.style.display = 'none';
 }
 
 function loadCars() {
     const carsGrid = document.getElementById('carsGrid');
+    if (!carsGrid) return;
     carsGrid.innerHTML = '';
 
     filteredCars.forEach(car => {
@@ -922,6 +925,7 @@ function createCarCard(car) {
 
 function populateBrandFilter() {
     const brandFilter = document.getElementById('brandFilter');
+    if (!brandFilter) return;
     const brands = [...new Set(carsData.map(car => car.brand))].sort();
     
     brands.forEach(brand => {
@@ -933,10 +937,17 @@ function populateBrandFilter() {
 }
 
 function applyFilters() {
-    const brandFilter = document.getElementById('brandFilter').value;
-    const priceFrom = parseInt(document.getElementById('priceFrom').value) || 0;
-    const priceTo = parseInt(document.getElementById('priceTo').value) || Infinity;
-    const mileageTo = parseInt(document.getElementById('mileageTo').value) || Infinity;
+    const brandFilterEl = document.getElementById('brandFilter');
+    const priceFromEl = document.getElementById('priceFrom');
+    const priceToEl = document.getElementById('priceTo');
+    const mileageToEl = document.getElementById('mileageTo');
+
+    if (!brandFilterEl || !priceFromEl || !priceToEl || !mileageToEl) return;
+
+    const brandFilter = brandFilterEl.value;
+    const priceFrom = parseInt(priceFromEl.value) || 0;
+    const priceTo = parseInt(priceToEl.value) || Infinity;
+    const mileageTo = parseInt(mileageToEl.value) || Infinity;
 
     filteredCars = carsData.filter(car => {
         const brandMatch = !brandFilter || car.brand === brandFilter;
@@ -972,24 +983,28 @@ function removeFromCart(carId) {
 
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
+    if (!cartCount) return;
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
 }
 
 function showCart() {
     const cartModal = document.getElementById('cartModal');
+    if (!cartModal) return;
     cartModal.style.display = 'block';
     updateCartModal();
 }
 
 function closeCart() {
     const cartModal = document.getElementById('cartModal');
+    if (!cartModal) return;
     cartModal.style.display = 'none';
 }
 
 function updateCartModal() {
     const cartBody = document.getElementById('cartBody');
     const cartTotal = document.getElementById('cartTotal');
+    if (!cartBody || !cartTotal) return;
     
     if (cart.length === 0) {
         cartBody.innerHTML = '<p style="text-align: center; color: #64748b;">Ваш заказ пуст</p>';
@@ -1088,7 +1103,7 @@ function navigateGallery(carId, direction) {
 
 function closeCarModal() {
     const carModal = document.getElementById('carModal');
-    carModal.style.display = 'none';
+    if (carModal) carModal.style.display = 'none';
 }
 
 function checkout() {
@@ -1132,7 +1147,8 @@ function showNotification(message, type = 'success') {
 
 function setupEventListeners() {
     // Корзина
-    document.getElementById('cartBtn').addEventListener('click', showCart);
+    const cartBtn = document.getElementById('cartBtn');
+    if (cartBtn) cartBtn.addEventListener('click', showCart);
     
     // Закрытие модальных окон по клику вне их
     window.addEventListener('click', function(event) {
@@ -1148,15 +1164,19 @@ function setupEventListeners() {
     });
 
     // Форма обратной связи
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        showNotification('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-        this.reset();
-    });
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+    }
 
     // Форма контактов для заказа
     const checkoutForm = document.getElementById('checkoutContactForm');
-    checkoutForm.addEventListener('submit', async function(e){
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', async function(e){
         e.preventDefault();
         const name = document.getElementById('contactName').value.trim();
         const phone = document.getElementById('contactPhone').value.trim();
@@ -1191,7 +1211,8 @@ function setupEventListeners() {
         updateCartCount();
         closeCheckoutModal();
         closeCart();
-    });
+        });
+    }
 
     // Плавная прокрутка для навигации
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

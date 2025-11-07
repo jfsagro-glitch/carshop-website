@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Заказ автомобилей из США - CarExport</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="premium">
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="CarExport" class="logo-img" onerror="this.onerror=null; this.src='images/logo.svg'">
+                    <span>CarExport</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html#catalog">Каталог</a>
+                    <a href="#usa-orders" class="active">США</a>
+                    <a href="#contact">Контакты</a>
+                    <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()">Заявка на подбор</button>
+                    <button class="btn-primary" id="openSelfCalcBtn" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="background:#0b1220;color:#f3f4f6;border-bottom:1px solid #1f2937;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Заказ автомобилей из США</h1>
+                <p>Выбираем на аукционах Copart, IAAI, Manheim. Полная проверка, доставка, растаможка и передача «под ключ».</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-car"></i>
+                        <span>Подбор по VIN и Carfax</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-ship"></i>
+                        <span>Доставка США → Грузия → РФ</span>
+                    </div>
+                </div>
+                <button class="cta-btn" onclick="document.getElementById('usa-orders').scrollIntoView({behavior:'smooth'});">
+                    Смотреть предложения
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="usa-orders" class="usa-orders">
+        <div class="container">
+            <div class="usa-header">
+                <div>
+                    <h2>Заказ автомобилей из США</h2>
+                    <p>Покупаем автомобили на американских аукционах, доставляем в Грузию и оформляем поставку в Россию «под ключ». Ниже выгрузка актуального листинга из исходных CSV файлов проекта.</p>
+                </div>
+                <div class="usa-badges">
+                    <span class="usa-badge">Аукционы Copart, IAAI, Manheim</span>
+                    <span class="usa-badge">Проверка по VIN и Carfax</span>
+                </div>
+            </div>
+
+            <div class="usa-metrics" id="usaMetrics" aria-live="polite">
+                <div class="usa-metric">
+                    <span class="usa-metric-label">Авто в базе</span>
+                    <span class="usa-metric-value" data-metric="count">—</span>
+                </div>
+                <div class="usa-metric">
+                    <span class="usa-metric-label">Средний бюджет</span>
+                    <span class="usa-metric-value" data-metric="avg">—</span>
+                </div>
+                <div class="usa-metric">
+                    <span class="usa-metric-label">Минимальная цена</span>
+                    <span class="usa-metric-value" data-metric="min">—</span>
+                </div>
+            </div>
+
+            <div class="usa-orders-grid" id="usaOrdersGrid">
+                <div class="usa-empty-state">Загружаем предложения...</div>
+            </div>
+
+            <div class="usa-subsection">
+                <h3>Авто до 160 л.с. (льготный утильсбор)</h3>
+                <p class="usa-subsection-note">Подбор автомобилей, укладывающихся в порог 160 л.с. для оформления по льготному утильсбору. Цены указаны «под ключ» с доставкой и растаможкой.</p>
+                <div class="usa-preferential-grid" id="usaPreferentialGrid"></div>
+            </div>
+
+            <p class="usa-note">Источник: файлы <code>cars_extended.csv</code> и <code>cars_data.csv</code>. Данные обновляются при их замене.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p>+7 (915) 444-12-08</p>
+                            <p>+7 (918) 414-06-36</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>carexportgeo@bk.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <div>
+                            <h4>Telegram</h4>
+                            <p><a href="https://t.me/Aleksandr_N_444" target="_blank">@Aleksandr_N_444</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/79184140636" target="_blank">+7-918-414-06-36</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Оставить заявку</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="tel" placeholder="Телефон" required>
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Сообщение"></textarea>
+                        <button type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CarExport</h4>
+                    <p>Надежный партнер в покупке автомобилей из Грузии и США</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li>Продажа автомобилей</li>
+                        <li>Растаможка</li>
+                        <li>Доставка</li>
+                        <li>Оформление документов</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>+7 (915) 444-12-08</p>
+                    <p>+7 (918) 414-06-36</p>
+                    <p>carexportgeo@bk.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Соцсети</h4>
+                    <p><a href="https://t.me/Aleksandr_N_444" target="_blank">Telegram</a></p>
+                    <p><a href="https://wa.me/79184140636" target="_blank">WhatsApp</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 CarExport. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ваш заказ</h3>
+                <span class="close" onclick="closeCart()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartBody"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-summary">
+                    <span>Итого: <strong id="cartTotal">0</strong> ₽</span>
+                </div>
+                <button class="btn-primary" onclick="checkout()">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Контактные данные</h3>
+                <span class="close" onclick="closeCheckoutModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutContactForm">
+                    <label for="contactName">Имя</label>
+                    <input type="text" id="contactName" required>
+                    <label for="contactPhone">Телефон</label>
+                    <input type="tel" id="contactPhone" required>
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" required>
+                    <button type="submit" class="btn-primary" style="margin-top:1rem;">Отправить</button>
+                </form>
+                <form id="emailFallbackForm" action="https://formsubmit.co/carexportgeo@bk.ru" method="POST" style="display:none;">
+                    <input type="hidden" name="name" id="fs_name">
+                    <input type="hidden" name="phone" id="fs_phone">
+                    <input type="hidden" name="email" id="fs_email">
+                    <input type="hidden" name="message" id="fs_message">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Новый заказ с сайта CarExport">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customs Calculator Modal -->
+    <div id="customsModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Таможенный калькулятор</h3>
+                <span class="close" onclick="closeCustomsModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customs-content">
+                    <form id="customsForm" class="calc-form" onsubmit="return false;">
+                        <div class="calc-row">
+                            <label for="costUsd">Стоимость (USD)</label>
+                            <input type="number" id="costUsd" placeholder="Например, 25000" min="0" step="0.01" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="engineCc">Объем, см³</label>
+                            <input type="number" id="engineCc" placeholder="Например, 1998" min="0" step="1" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="age">Возраст</label>
+                            <input id="age" value="3 - 5 лет" disabled>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
+                        </div>
+                    </form>
+                    <div class="calc-result" id="calcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Modal -->
+    <div id="requestModal" class="modal" style="display:none;">
+        <div class="modal-content" style="max-width:600px;">
+            <div class="modal-header">
+                <h3>Заявка на подбор</h3>
+                <span class="close" onclick="closeRequestModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="request-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reqBrand">Марка*</label>
+                            <input type="text" id="reqBrand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reqModel">Модель*</label>
+                            <input type="text" id="reqModel" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reqYearFrom">Год от</label>
+                            <input type="number" id="reqYearFrom" min="1990" max="2025">
+                        </div>
+                        <div class="form-group">
+                            <label for="reqYearTo">Год до</label>
+                            <input type="number" id="reqYearTo" min="1990" max="2025">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reqPriceTo">Бюджет до, ₽</label>
+                        <input type="number" id="reqPriceTo" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="reqName">Ваше имя*</label>
+                        <input type="text" id="reqName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reqPhone">Телефон*</label>
+                        <input type="tel" id="reqPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reqEmail">Email</label>
+                        <input type="email" id="reqEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="reqNote">Комментарий</label>
+                        <textarea id="reqNote" rows="4"></textarea>
+                    </div>
+                    <div id="requestStatus" style="display:none;color:#facc15;margin-bottom:1rem;"></div>
+                    <button class="btn-primary" id="requestSubmit" type="button">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Self Calc Modal -->
+    <div id="selfCalcModal" class="modal" style="display:none;">
+        <div class="modal-content" style="max-width:600px;">
+            <div class="modal-header">
+                <h3>Самостоятельный просчет</h3>
+                <span class="close" onclick="closeSelfCalcModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="calc-form">
+                    <div class="calc-row">
+                        <label for="selfCostUsd">Стоимость авто (USD)</label>
+                        <input type="number" id="selfCostUsd" min="0" step="0.01" placeholder="Например, 22000">
+                    </div>
+                    <div class="calc-row">
+                        <label for="selfEngineCc">Объем двигателя, см³</label>
+                        <input type="number" id="selfEngineCc" min="0" step="1" placeholder="Например, 1998">
+                    </div>
+                    <button class="btn-primary" id="selfCalcBtn" type="button">Рассчитать</button>
+                    <div class="calc-result" id="selfCalcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
