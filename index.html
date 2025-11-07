@@ -24,6 +24,7 @@
             </div>
                 <nav class="nav">
                     <a href="#catalog">Каталог</a>
+                    <a href="#usa-orders">США</a>
                     <a href="#contact">Контакты</a>
                     <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
                 </nav>
@@ -59,6 +60,49 @@
                     Смотреть каталог
                 </button>
             </div>
+        </div>
+    </section>
+
+    <!-- USA Orders Section -->
+    <section id="usa-orders" class="usa-orders">
+        <div class="container">
+            <div class="usa-header">
+                <div>
+                    <h2>Заказ автомобилей из США</h2>
+                    <p>Покупаем автомобили на американских аукционах, доставляем в Грузию и оформляем поставку в Россию «под ключ». Ниже выгрузка актуального листинга из исходных CSV файлов проекта.</p>
+                </div>
+                <div class="usa-badges">
+                    <span class="usa-badge">Аукционы Copart, IAAI, Manheim</span>
+                    <span class="usa-badge">Проверка по VIN и Carfax</span>
+                </div>
+            </div>
+
+            <div class="usa-metrics" id="usaMetrics" aria-live="polite">
+                <div class="usa-metric">
+                    <span class="usa-metric-label">Авто в базе</span>
+                    <span class="usa-metric-value" data-metric="count">—</span>
+                </div>
+                <div class="usa-metric">
+                    <span class="usa-metric-label">Средний бюджет</span>
+                    <span class="usa-metric-value" data-metric="avg">—</span>
+                </div>
+                <div class="usa-metric">
+                    <span class="usa-metric-label">Минимальная цена</span>
+                    <span class="usa-metric-value" data-metric="min">—</span>
+                </div>
+            </div>
+
+            <div class="usa-orders-grid" id="usaOrdersGrid">
+                <div class="usa-empty-state">Загружаем предложения...</div>
+            </div>
+
+            <div class="usa-subsection">
+                <h3>Авто до 160 л.с. (льготный утильсбор)</h3>
+                <p class="usa-subsection-note">Подбор автомобилей, укладывающихся в порог 160 л.с. для оформления по льготному утильсбору. Цены указаны «под ключ» с доставкой и растаможкой.</p>
+                <div class="usa-preferential-grid" id="usaPreferentialGrid"></div>
+            </div>
+
+            <p class="usa-note">Источник: файлы <code>cars_extended.csv</code> и <code>cars_data.csv</code>. Данные обновляются при их замене.</p>
         </div>
     </section>
 

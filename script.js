@@ -499,10 +499,345 @@ function initializeApp() {
     populateBrandFilter();
     updateCartCount();
     setupEventListeners();
+    loadUsaOrdersSection();
     // Обработчики свайпа для всех галерей (делегирование)
     document.addEventListener('touchstart', onTouchStart, { passive: true });
     document.addEventListener('touchmove', onTouchMove, { passive: true });
     document.addEventListener('touchend', onTouchEnd, { passive: true });
+}
+
+const preferentialCars = [
+    {
+        name: 'Mini Cooper',
+        engine: '1.5 л',
+        power: '134 л.с.',
+        drive: 'Передний',
+        price: 1800000
+    },
+    {
+        name: 'Mini Countryman',
+        engine: '1.5 л',
+        power: '134 л.с.',
+        drive: 'Полный / передний',
+        price: 2000000
+    },
+    {
+        name: 'Subaru Impreza',
+        engine: '2.0 л',
+        power: '152 л.с.',
+        drive: 'Полный',
+        price: 1500000
+    },
+    {
+        name: 'Subaru Crosstrek',
+        engine: '2.0 л',
+        power: '152 л.с.',
+        drive: 'Полный',
+        price: 1600000
+    },
+    {
+        name: 'Mazda CX-3',
+        engine: '2.0 л',
+        power: '148 л.с.',
+        drive: 'Полный / передний',
+        price: 1800000
+    }
+];
+
+async function loadUsaOrdersSection(){
+    const grid = document.getElementById('usaOrdersGrid');
+    const metrics = document.getElementById('usaMetrics');
+    if (!grid || !metrics) return;
+
+    const formatter = new Intl.NumberFormat('ru-RU');
+
+    const render = (entries)=>{
+        if (!entries.length){
+            grid.innerHTML = '<div class="usa-empty-state">Нет данных для отображения</div>';
+            return;
+        }
+
+        const total = entries.length;
+        const prices = entries.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
+        const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
+        const min = prices.length ? prices[0] : null;
+
+        metrics.querySelector('[data-metric="count"]').textContent = formatter.format(total);
+        metrics.querySelector('[data-metric="avg"]').textContent = avg ? `${formatter.format(avg)} ₽` : '—';
+        metrics.querySelector('[data-metric="min"]').textContent = min ? `${formatter.format(min)} ₽` : '—';
+
+        grid.innerHTML = '';
+        entries.slice(0,6).forEach(entry=>{
+            const card = document.createElement('article');
+            card.className = 'usa-order-card';
+
+            const title = document.createElement('h3');
+            title.className = 'usa-order-title';
+            title.textContent = entry.name;
+
+            const price = document.createElement('div');
+            price.className = 'usa-order-price';
+            price.textContent = entry.price ? `${formatter.format(entry.price)} ₽` : 'Цена по запросу';
+
+            const meta = document.createElement('div');
+            meta.className = 'usa-order-meta';
+            meta.innerHTML = `
+                <span><strong>VIN:</strong> ${entry.vin || '—'}</span>
+                <span><strong>Пробег:</strong> ${entry.mileage ? formatter.format(entry.mileage) + ' км' : '—'}</span>
+                <span><strong>Дата выпуска:</strong> ${entry.productionDate || '—'}</span>
+            `;
+
+            const actions = document.createElement('div');
+            actions.className = 'usa-order-actions';
+
+            if (entry.photos) {
+                const linkBtn = document.createElement('button');
+                linkBtn.type = 'button';
+                linkBtn.className = 'btn-secondary';
+                linkBtn.textContent = 'Фото с аукциона';
+                linkBtn.addEventListener('click', ()=>{
+                    window.open(entry.photos, '_blank');
+                });
+                actions.appendChild(linkBtn);
+            }
+
+            const requestBtn = document.createElement('button');
+            requestBtn.type = 'button';
+            requestBtn.className = 'btn-primary';
+            requestBtn.textContent = 'Запросить расчет';
+            requestBtn.addEventListener('click', ()=>{
+                openRequestModal();
+                prefillUsaRequest(entry);
+            });
+            actions.appendChild(requestBtn);
+
+            card.appendChild(title);
+            card.appendChild(price);
+            card.appendChild(meta);
+            card.appendChild(actions);
+            grid.appendChild(card);
+        });
+    };
+
+    const fetchText = async (url)=>{
+        try{
+            const resp = await fetch(url);
+            if (!resp.ok) return null;
+            return await resp.text();
+        }catch(e){
+            return null;
+        }
+    };
+
+    try {
+        const [extendedText, baseText] = await Promise.all([
+            fetchText('cars_extended.csv'),
+            fetchText('cars_data.csv')
+        ]);
+
+        const entries = [];
+        if (extendedText) entries.push(...parseUsaCsv(extendedText));
+        if (baseText) entries.push(...parseBaseCsv(baseText));
+
+        if (!entries.length) throw new Error('no csv data');
+
+        const deduped = Array.from(new Map(entries.map(entry=>{
+            const key = entry.vin || `${entry.id}-${entry.name}`;
+            return [key, entry];
+        })).values());
+
+        deduped.sort((a,b)=>{
+            if (!a.price && !b.price) return 0;
+            if (!a.price) return 1;
+            if (!b.price) return -1;
+            return a.price - b.price;
+        });
+
+        render(deduped);
+    } catch (err) {
+        // Fallback: используем данные, уже загруженные в каталоге
+        const fallback = carsData.map(car=>({
+            id: car.id,
+            name: `${car.year} ${car.brand} ${car.model}`,
+            vin: car.vin,
+            price: car.price,
+            mileage: car.mileage,
+            productionDate: car.date,
+            photos: car.photos
+        }));
+        render(fallback);
+    }
+
+    renderPreferentialCars();
+}
+
+function parseUsaCsv(text){
+    const lines = text.split(/\r?\n/).map(line=>line.trim()).filter(Boolean);
+    const entries = [];
+    for (const line of lines){
+        const parts = line.split(';').map(part=>part.trim());
+        if (parts.length < 7) continue;
+        const id = parseInt(parts[0], 10);
+        if (!Number.isFinite(id)) continue;
+        const name = parts[1].replace(/\s+/g,' ').trim();
+        const vin = parts[2];
+        const price = safeParseNumber(parts[3]);
+        const photos = parts[4];
+        const mileage = safeParseNumber(parts[5]);
+        const productionDate = parts[6];
+        entries.push({ id, name, vin, price, photos, mileage, productionDate });
+    }
+    return entries;
+}
+
+function parseBaseCsv(text){
+    const lines = text.split(/\r?\n/);
+    if (!lines.length) return [];
+    const entries = [];
+    for (let i = 1; i < lines.length; i++){
+        const line = lines[i];
+        if (!line || !line.trim()) continue;
+        const parts = splitCsvLine(line);
+        if (parts.length < 11) continue;
+        const id = safeParseNumber(parts[0]);
+        if (!Number.isFinite(id)) continue;
+        const brand = parts[1];
+        const model = parts[2];
+        const year = parts[3];
+        const price = safeParseNumber(parts[4]);
+        const mileage = safeParseNumber(parts[5]);
+        const vin = null;
+        const name = `${year} ${brand} ${model}`.trim();
+        entries.push({ id, name, vin, price, mileage, productionDate: year, photos: parts[10] || '' });
+    }
+    return entries;
+}
+
+function splitCsvLine(line){
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++){
+        const char = line[i];
+        if (char === '"'){
+            if (inQuotes && line[i+1] === '"'){
+                current += '"';
+                i++;
+            } else {
+                inQuotes = !inQuotes;
+            }
+        } else if (char === ',' && !inQuotes){
+            result.push(current.trim());
+            current = '';
+        } else {
+            current += char;
+        }
+    }
+    result.push(current.trim());
+    return result;
+}
+
+function safeParseNumber(value){
+    if (!value) return null;
+    const numeric = String(value).replace(/[^0-9]/g, '');
+    if (!numeric) return null;
+    const num = parseInt(numeric, 10);
+    return Number.isFinite(num) ? num : null;
+}
+
+function renderPreferentialCars(){
+    const container = document.getElementById('usaPreferentialGrid');
+    if (!container) return;
+
+    if (!preferentialCars.length){
+        container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по льготному утильсбору</div>';
+        return;
+    }
+
+    const formatter = new Intl.NumberFormat('ru-RU');
+    container.innerHTML = '';
+
+    preferentialCars.forEach(car=>{
+        const card = document.createElement('article');
+        card.className = 'usa-order-card usa-preferential-card';
+
+        const header = document.createElement('div');
+        header.style.display = 'flex';
+        header.style.justifyContent = 'space-between';
+        header.style.alignItems = 'center';
+
+        const title = document.createElement('h4');
+        title.textContent = car.name;
+
+        const badge = document.createElement('span');
+        badge.className = 'usa-preferential-badge';
+        badge.innerHTML = '<i class="fas fa-leaf"></i> льготный утильсбор';
+
+        header.appendChild(title);
+        header.appendChild(badge);
+
+        const metaList = document.createElement('ul');
+        metaList.className = 'usa-preferential-meta';
+        metaList.innerHTML = `
+            <li><strong>Двигатель:</strong> ${car.engine}</li>
+            <li><strong>Мощность:</strong> ${car.power}</li>
+            <li><strong>Привод:</strong> ${car.drive}</li>
+        `;
+
+        const price = document.createElement('div');
+        price.className = 'usa-preferential-price';
+        price.textContent = `от ${formatter.format(car.price)} ₽`;
+
+        card.appendChild(header);
+        card.appendChild(metaList);
+        card.appendChild(price);
+
+        container.appendChild(card);
+    });
+}
+
+function prefillUsaRequest(entry){
+    try{
+        const brandModel = extractBrandModel(entry.name);
+        const brandEl = document.getElementById('reqBrand');
+        const modelEl = document.getElementById('reqModel');
+        const yearFromEl = document.getElementById('reqYearFrom');
+        const yearToEl = document.getElementById('reqYearTo');
+        const priceEl = document.getElementById('reqPriceTo');
+        const note = document.getElementById('reqNote');
+        if (!brandEl || !modelEl || !yearFromEl || !yearToEl || !priceEl || !note) return;
+        brandEl.value = brandModel.brand;
+        modelEl.value = brandModel.model;
+        yearFromEl.value = brandModel.year || '';
+        yearToEl.value = brandModel.year || '';
+        priceEl.value = entry.price || '';
+        const parts = [
+            `Автомобиль из США: ${entry.name}`,
+            entry.vin ? `VIN: ${entry.vin}` : null,
+            entry.photos ? `Фото / лот: ${entry.photos}` : null,
+            entry.mileage ? `Пробег: ${new Intl.NumberFormat('ru-RU').format(entry.mileage)} км` : null
+        ].filter(Boolean);
+        note.value = parts.join('\n');
+    }catch(e){ /* ignore */ }
+}
+
+function extractBrandModel(name){
+    const result = { brand: '', model: '', year: '' };
+    if (!name) return result;
+    const clean = name.split(',')[0].trim();
+    const yearMatch = clean.match(/^(\d{4})\s+(.+)$/);
+    if (yearMatch){
+        result.year = yearMatch[1];
+        const rest = yearMatch[2].trim();
+        const parts = rest.split(/\s+/);
+        result.brand = parts.shift() || '';
+        result.model = parts.join(' ');
+    } else {
+        const segments = clean.split(/\s+/);
+        result.brand = segments.shift() || '';
+        result.model = segments.join(' ');
+    }
+    return result;
 }
 
 function openCheckoutModal(){
