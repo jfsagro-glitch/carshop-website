@@ -25,6 +25,8 @@
                 <nav class="nav">
                     <a href="#catalog">Каталог</a>
                     <a href="usa-orders.html">США</a>
+                    <a href="korea-orders.html">Корея</a>
+                    <a href="china-orders.html">Китай</a>
                     <a href="#contact">Контакты</a>
                     <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
                 </nav>
@@ -63,46 +65,42 @@
         </div>
     </section>
 
-    <!-- USA Orders Section -->
-    <section id="usa-orders" class="usa-orders">
+    <!-- USA Orders CTA -->
+    <section class="orders-cta">
         <div class="container">
-            <div class="usa-header">
+            <div class="orders-cta-content">
                 <div>
                     <h2>Заказ автомобилей из США</h2>
-                    <p>Покупаем автомобили на американских аукционах, доставляем в Грузию и оформляем поставку в Россию «под ключ». Ниже выгрузка актуального листинга из исходных CSV файлов проекта.</p>
+                    <p>Выбираем автомобили на Copart, IAAI и Manheim, доставляем в Грузию и оформляем под ключ в Россию. Отдельный каталог с лотами и подбором по VIN доступен на выделенной странице.</p>
                 </div>
-                <div class="usa-badges">
-                    <span class="usa-badge">Аукционы Copart, IAAI, Manheim</span>
-                    <span class="usa-badge">Проверка по VIN и Carfax</span>
-                </div>
+                <a class="btn-primary" href="usa-orders.html">Перейти в каталог США</a>
             </div>
+        </div>
+    </section>
 
-            <div class="usa-metrics" id="usaMetrics" aria-live="polite">
-                <div class="usa-metric">
-                    <span class="usa-metric-label">Авто в базе</span>
-                    <span class="usa-metric-value" data-metric="count">—</span>
+    <!-- China Orders CTA -->
+    <section class="orders-cta" style="background:#111827;">
+        <div class="container">
+            <div class="orders-cta-content">
+                <div>
+                    <h2>Заказ автомобилей из Китая</h2>
+                    <p>Официальные поставки из КНР: заводские комплектации, гарантия производителя, логистика до Владивостока и растаможка с доставкой по России. Узнайте актуальные цены и доступные модели.</p>
                 </div>
-                <div class="usa-metric">
-                    <span class="usa-metric-label">Средний бюджет</span>
-                    <span class="usa-metric-value" data-metric="avg">—</span>
+                <a class="btn-primary" href="china-orders.html">Каталог из Китая</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Korea Orders CTA -->
+    <section class="orders-cta" style="background:#0d1320;">
+        <div class="container">
+            <div class="orders-cta-content">
+                <div>
+                    <h2>Заказ автомобилей из Кореи</h2>
+                    <p>Свежие Hyundai, Kia и Genesis с подтвержденной сервисной историей в Корее. Доступны премиальные комплектации, пробеги до 30 тыс. км и поставка «под ключ».</p>
                 </div>
-                <div class="usa-metric">
-                    <span class="usa-metric-label">Минимальная цена</span>
-                    <span class="usa-metric-value" data-metric="min">—</span>
-                </div>
+                <a class="btn-primary" href="korea-orders.html">Каталог из Кореи</a>
             </div>
-
-            <div class="usa-orders-grid" id="usaOrdersGrid">
-                <div class="usa-empty-state">Загружаем предложения...</div>
-            </div>
-
-            <div class="usa-subsection">
-                <h3>Авто до 160 л.с. (льготный утильсбор)</h3>
-                <p class="usa-subsection-note">Подбор автомобилей, укладывающихся в порог 160 л.с. для оформления по льготному утильсбору. Цены указаны «под ключ» с доставкой и растаможкой.</p>
-                <div class="usa-preferential-grid" id="usaPreferentialGrid"></div>
-            </div>
-
-            <p class="usa-note">Источник: файлы <code>cars_extended.csv</code> и <code>cars_data.csv</code>. Данные обновляются при их замене.</p>
         </div>
     </section>
 

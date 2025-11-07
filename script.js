@@ -500,47 +500,439 @@ function initializeApp() {
     updateCartCount();
     setupEventListeners();
     loadUsaOrdersSection();
+    loadChinaOrdersSection();
     // Обработчики свайпа для всех галерей (делегирование)
     document.addEventListener('touchstart', onTouchStart, { passive: true });
     document.addEventListener('touchmove', onTouchMove, { passive: true });
     document.addEventListener('touchend', onTouchEnd, { passive: true });
 }
 
-const preferentialCars = [
+const usaUnder160Cars = [
     {
-        name: 'Mini Cooper',
-        engine: '1.5 л',
-        power: '134 л.с.',
-        drive: 'Передний',
-        price: 1800000
-    },
-    {
-        name: 'Mini Countryman',
-        engine: '1.5 л',
-        power: '134 л.с.',
-        drive: 'Полный / передний',
-        price: 2000000
-    },
-    {
-        name: 'Subaru Impreza',
-        engine: '2.0 л',
-        power: '152 л.с.',
-        drive: 'Полный',
-        price: 1500000
-    },
-    {
-        name: 'Subaru Crosstrek',
-        engine: '2.0 л',
-        power: '152 л.с.',
-        drive: 'Полный',
-        price: 1600000
-    },
-    {
-        name: 'Mazda CX-3',
+        name: 'Mitsubishi Outlander Sport',
+        brand: 'Mitsubishi',
+        model: 'Outlander Sport',
         engine: '2.0 л',
         power: '148 л.с.',
         drive: 'Полный / передний',
-        price: 1800000
+        price: 2000000,
+        image: 'https://cdn.motor1.com/images/mgl/7xxk8/s1/2020-mitsubishi-outlander-sport-gt-awc.jpg'
+    },
+    {
+        name: 'Mitsubishi Eclipse Cross',
+        brand: 'Mitsubishi',
+        model: 'Eclipse Cross',
+        engine: '1.5 л',
+        power: '152 л.с.',
+        drive: 'Полный',
+        price: 1900000,
+        image: 'https://cdn.motor1.com/images/mgl/MVVkg/s1/2023-mitsubishi-eclipse-cross.jpg'
+    },
+    {
+        name: 'Mitsubishi Mirage',
+        brand: 'Mitsubishi',
+        model: 'Mirage',
+        engine: '1.2 л',
+        power: '78 л.с.',
+        drive: 'Передний',
+        price: 1300000,
+        image: 'https://cdn.motor1.com/images/mgl/BbE2G/s1/2020-mitsubishi-mirage.jpg'
+    },
+    {
+        name: 'Nissan Rogue Sport',
+        brand: 'Nissan',
+        model: 'Rogue Sport',
+        engine: '2.0 л',
+        power: '141 л.с.',
+        drive: 'Полный / передний',
+        price: 1800000,
+        image: 'https://cdn.motor1.com/images/mgl/1PEJK/s1/2017-nissan-rogue-sport.jpg'
+    },
+    {
+        name: 'Nissan Sentra',
+        brand: 'Nissan',
+        model: 'Sentra',
+        engine: '2.0 л',
+        power: '149 л.с.',
+        drive: 'Передний',
+        price: 1600000,
+        image: 'https://cdn.motor1.com/images/mgl/qk1bx/s1/2020-nissan-sentra.jpg'
+    },
+    {
+        name: 'Nissan Versa',
+        brand: 'Nissan',
+        model: 'Versa',
+        engine: '1.6 л',
+        power: '122 л.с.',
+        drive: 'Передний',
+        price: 1500000,
+        image: 'https://cdn.motor1.com/images/mgl/6qA4e/s1/2020-nissan-versa.jpg'
+    },
+    {
+        name: 'Nissan Kicks',
+        brand: 'Nissan',
+        model: 'Kicks',
+        engine: '1.6 л',
+        power: '122 л.с.',
+        drive: 'Передний',
+        price: 1600000,
+        image: 'https://cdn.motor1.com/images/mgl/o2Bno/s1/2021-nissan-kicks.jpg'
+    },
+    {
+        name: 'Kia Seltos',
+        brand: 'Kia',
+        model: 'Seltos',
+        engine: '2.0 л',
+        power: '147 л.с.',
+        drive: 'Полный / передний',
+        price: 1900000,
+        image: 'https://cdn.motor1.com/images/mgl/0r3oy/s1/2024-kia-seltos.jpg'
+    },
+    {
+        name: 'Kia Forte',
+        brand: 'Kia',
+        model: 'Forte',
+        engine: '2.0 л',
+        power: '147 л.с.',
+        drive: 'Передний',
+        price: 1600000,
+        image: 'https://cdn.motor1.com/images/mgl/Nrqo7/s1/2024-kia-forte.jpg'
+    },
+    {
+        name: 'Kia Soul',
+        brand: 'Kia',
+        model: 'Soul',
+        engine: '2.0 л',
+        power: '147 л.с.',
+        drive: 'Передний',
+        price: 1900000,
+        image: 'https://cdn.motor1.com/images/mgl/bq8z1/s1/2023-kia-soul-gt-line.jpg'
+    },
+    {
+        name: 'Kia Rio',
+        brand: 'Kia',
+        model: 'Rio',
+        engine: '1.6 л',
+        power: '120 л.с.',
+        drive: 'Передний',
+        price: 1700000,
+        image: 'https://cdn.motor1.com/images/mgl/BN3zv/s1/2021-kia-rio.jpg'
+    },
+    {
+        name: 'Kia K4 (2025)',
+        brand: 'Kia',
+        model: 'K4',
+        engine: '2.0 л',
+        power: '147 л.с.',
+        drive: 'Передний',
+        price: 2300000,
+        image: 'https://cdn.motor1.com/images/mgl/AYWjL/s1/2025-kia-k4.jpg'
+    },
+    {
+        name: 'Hyundai Elantra',
+        brand: 'Hyundai',
+        model: 'Elantra',
+        engine: '2.0 л',
+        power: '147 л.с.',
+        drive: 'Передний',
+        price: 1800000,
+        image: 'https://cdn.motor1.com/images/mgl/QlLk6/s1/2024-hyundai-elantra.jpg'
+    },
+    {
+        name: 'Hyundai Kona',
+        brand: 'Hyundai',
+        model: 'Kona',
+        engine: '2.0 л',
+        power: '147 л.с.',
+        drive: 'Полный / передний',
+        price: 1700000,
+        image: 'https://cdn.motor1.com/images/mgl/NRn20/s1/2024-hyundai-kona.jpg'
+    },
+    {
+        name: 'Hyundai Venue',
+        brand: 'Hyundai',
+        model: 'Venue',
+        engine: '1.6 л',
+        power: '121 л.с.',
+        drive: 'Передний',
+        price: 1500000,
+        image: 'https://cdn.motor1.com/images/mgl/A4NQp/s1/2022-hyundai-venue.jpg'
+    },
+    {
+        name: 'Hyundai Accent',
+        brand: 'Hyundai',
+        model: 'Accent',
+        engine: '1.6 л',
+        power: '120 л.с.',
+        drive: 'Передний',
+        price: 1400000,
+        image: 'https://cdn.motor1.com/images/mgl/zPPwY/s1/2022-hyundai-accent.jpg'
+    },
+    {
+        name: 'Toyota C-HR',
+        brand: 'Toyota',
+        model: 'C-HR',
+        engine: '2.0 л',
+        power: '145 л.с.',
+        drive: 'Передний',
+        price: 2000000,
+        image: 'https://cdn.motor1.com/images/mgl/WJ8Xq/s1/2022-toyota-c-hr.jpg'
+    },
+    {
+        name: 'Honda HR-V',
+        brand: 'Honda',
+        model: 'HR-V',
+        engine: '1.8 л',
+        power: '141 л.с.',
+        drive: 'Полный / передний',
+        price: 1700000,
+        image: 'https://cdn.motor1.com/images/mgl/6n0bK/s1/2023-honda-hr-v.jpg'
+    },
+    {
+        name: 'Chevrolet Trailblazer',
+        brand: 'Chevrolet',
+        model: 'Trailblazer',
+        engine: '1.3 л',
+        power: '155 л.с.',
+        drive: 'Полный',
+        price: 1600000,
+        image: 'https://cdn.motor1.com/images/mgl/40kYQ/s1/2024-chevrolet-trailblazer.jpg'
+    },
+    {
+        name: 'Chevrolet Trax',
+        brand: 'Chevrolet',
+        model: 'Trax',
+        engine: '1.5 л',
+        power: '155 л.с.',
+        drive: 'Передний',
+        price: 1300000,
+        image: 'https://cdn.motor1.com/images/mgl/Vk0V2/s1/2024-chevrolet-trax.jpg'
+    },
+    {
+        name: 'Chevrolet Spark',
+        brand: 'Chevrolet',
+        model: 'Spark',
+        engine: '1.4 л',
+        power: '98 л.с.',
+        drive: 'Передний',
+        price: 1300000,
+        image: 'https://cdn.motor1.com/images/mgl/2b6jK/s1/2022-chevrolet-spark.jpg'
+    },
+    {
+        name: 'Buick Encore',
+        brand: 'Buick',
+        model: 'Encore',
+        engine: '1.4 л',
+        power: '155 л.с.',
+        drive: 'Полный / передний',
+        price: 1400000,
+        image: 'https://cdn.motor1.com/images/mgl/R8jVB/s1/2022-buick-encore.jpg'
+    },
+    {
+        name: 'Ford EcoSport',
+        brand: 'Ford',
+        model: 'EcoSport',
+        engine: '1.0 л',
+        power: '123 л.с.',
+        drive: 'Передний',
+        price: 1200000,
+        image: 'https://cdn.motor1.com/images/mgl/e6P4Z/s1/2021-ford-ecosport.jpg'
+    },
+    {
+        name: 'Volkswagen Jetta',
+        brand: 'Volkswagen',
+        model: 'Jetta',
+        engine: '1.4 л',
+        power: '147 л.с.',
+        drive: 'Передний',
+        price: 1800000,
+        image: 'https://cdn.motor1.com/images/mgl/n8RrW/s1/2022-volkswagen-jetta.jpg'
+    },
+    {
+        name: 'Mini Cooper',
+        brand: 'MINI',
+        model: 'Cooper',
+        engine: '1.5 л',
+        power: '134 л.с.',
+        drive: 'Передний',
+        price: 1800000,
+        image: 'https://cdn.motor1.com/images/mgl/3wJzv/s1/2022-mini-cooper-s-hardtop.jpg'
+    },
+    {
+        name: 'Mini Countryman',
+        brand: 'MINI',
+        model: 'Countryman',
+        engine: '1.5 л',
+        power: '134 л.с.',
+        drive: 'Полный / передний',
+        price: 2000000,
+        image: 'https://cdn.motor1.com/images/mgl/Bb4YK/s1/2023-mini-countryman.jpg'
+    },
+    {
+        name: 'Subaru Impreza',
+        brand: 'Subaru',
+        model: 'Impreza',
+        engine: '2.0 л',
+        power: '152 л.с.',
+        drive: 'Полный',
+        price: 1500000,
+        image: 'https://cdn.motor1.com/images/mgl/On09X/s1/2024-subaru-impreza-rs.jpg'
+    },
+    {
+        name: 'Subaru Crosstrek',
+        brand: 'Subaru',
+        model: 'Crosstrek',
+        engine: '2.0 л',
+        power: '152 л.с.',
+        drive: 'Полный',
+        price: 1600000,
+        image: 'https://cdn.motor1.com/images/mgl/6b2XQ/s1/2024-subaru-crosstrek.jpg'
+    },
+    {
+        name: 'Mazda CX-3',
+        brand: 'Mazda',
+        model: 'CX-3',
+        engine: '2.0 л',
+        power: '148 л.с.',
+        drive: 'Полный / передний',
+        price: 1800000,
+        image: 'https://cdn.motor1.com/images/mgl/E499B/s1/2021-mazda-cx-3.jpg'
+    },
+    {
+        name: 'Mazda 3',
+        brand: 'Mazda',
+        model: '3',
+        engine: '2.5 л',
+        power: '155 л.с.',
+        drive: 'Передний',
+        price: 1800000,
+        image: 'https://cdn.motor1.com/images/mgl/KKx4G/s1/2024-mazda3-sedan.jpg'
+    }
+];
+
+const chinaCars = [
+    {
+        name: 'Chery Tiggo 7 Pro Max',
+        brand: 'Chery',
+        model: 'Tiggo 7 Pro Max',
+        engine: '1.6 л',
+        power: '186 л.с.',
+        drive: 'Полный',
+        leadTime: '45-55 дней',
+        highlights: ['Гарантия 3 года или 100 000 км', 'Пакет «Зима» и медиасистема в базе'],
+        price: 2590000,
+        image: 'https://cdn.motor1.com/images/mgl/1B4eB/s1/2023-chery-tiggo-7-pro.jpg'
+    },
+    {
+        name: 'Haval Dargo X',
+        brand: 'Haval',
+        model: 'Dargo X',
+        engine: '2.0 л',
+        power: '204 л.с.',
+        drive: 'Полный',
+        leadTime: '50-60 дней',
+        highlights: ['Блокировки дифференциалов', 'Комплект зимних шин включён'],
+        price: 2890000,
+        image: 'https://cdn.motor1.com/images/mgl/mMNg4/s1/haval-dargo-x.jpg'
+    },
+    {
+        name: 'Geely Monjaro 2.0T',
+        brand: 'Geely',
+        model: 'Monjaro',
+        engine: '2.0 л',
+        power: '238 л.с.',
+        drive: 'Полный',
+        leadTime: '55-65 дней',
+        highlights: ['Премиум салон Nappa', 'Панорамная крыша и HUD'],
+        price: 3190000,
+        image: 'https://cdn.motor1.com/images/mgl/qWGy4/s1/2022-geely-monjaro.jpg'
+    },
+    {
+        name: 'Exeed RX 400T AWD',
+        brand: 'Exeed',
+        model: 'RX',
+        engine: '2.0 л',
+        power: '249 л.с.',
+        drive: 'Полный',
+        leadTime: '60-70 дней',
+        highlights: ['Пневмоподвеска, матричный свет', 'Полный пакет опций'],
+        price: 3690000,
+        image: 'https://cdn.motor1.com/images/mgl/qrpmq/s1/2023-exeed-rx.jpg'
+    },
+    {
+        name: 'Zeekr X Long Range',
+        brand: 'Zeekr',
+        model: 'X',
+        engine: 'Электро 66 кВт·ч',
+        power: '272 л.с.',
+        drive: 'Полный',
+        leadTime: '65-75 дней',
+        highlights: ['Запас хода 512 км CLTC', 'Быстрая зарядка 10-80% за 30 минут'],
+        price: 3490000,
+        image: 'https://cdn.motor1.com/images/mgl/6oO7E/s1/2023-zeekr-x.jpg'
+    }
+];
+
+const koreaCars = [
+    {
+        name: 'Hyundai Palisade Calligraphy',
+        brand: 'Hyundai',
+        model: 'Palisade',
+        engine: '3.8 л',
+        power: '295 л.с.',
+        drive: 'Полный',
+        leadTime: '60-70 дней',
+        highlights: ['7 мест, вентиляция сидений', 'Премиальная акустика Harman Kardon'],
+        price: 3990000,
+        image: 'https://cdn.motor1.com/images/mgl/4mZxG/s1/2023-hyundai-palisade.jpg'
+    },
+    {
+        name: 'Kia Carnival Hi-Limousine',
+        brand: 'Kia',
+        model: 'Carnival',
+        engine: '3.5 л',
+        power: '294 л.с.',
+        drive: 'Передний',
+        leadTime: '65-75 дней',
+        highlights: ['Капсула с подсветкой и креслами Relax', 'Двухпанорамная крыша и медиасистема'],
+        price: 3890000,
+        image: 'https://cdn.motor1.com/images/mgl/vB6eE/s1/2022-kia-carnival-hi-limousine.jpg'
+    },
+    {
+        name: 'Kia Sorento Hybrid AWD',
+        brand: 'Kia',
+        model: 'Sorento Hybrid',
+        engine: '1.6 л гибрид',
+        power: '230 л.с.',
+        drive: 'Полный',
+        leadTime: '55-65 дней',
+        highlights: ['Расход 6.5 л/100 км', 'Полный пакет систем безопасности Drive Wise'],
+        price: 3290000,
+        image: 'https://cdn.motor1.com/images/mgl/2rJ0k/s1/2023-kia-sorento-hybrid.jpg'
+    },
+    {
+        name: 'Genesis GV70 2.5T AWD',
+        brand: 'Genesis',
+        model: 'GV70',
+        engine: '2.5 л турбо',
+        power: '304 л.с.',
+        drive: 'Полный',
+        leadTime: '65-75 дней',
+        highlights: ['Салон из кожи Napa и дерево', 'Электронная подвеска и проекция'],
+        price: 4590000,
+        image: 'https://cdn.motor1.com/images/mgl/y6Opn/s1/2022-genesis-gv70.jpg'
+    },
+    {
+        name: 'Genesis G80 2.5T',
+        brand: 'Genesis',
+        model: 'G80',
+        engine: '2.5 л турбо',
+        power: '304 л.с.',
+        drive: 'Полный / задний',
+        leadTime: '60-70 дней',
+        highlights: ['Пакет Smart Sense', 'Салон с комфортными креслами Relax'],
+        price: 3990000,
+        image: 'https://cdn.motor1.com/images/mgl/Onq9Q/s1/2021-genesis-g80.jpg'
     }
 ];
 
@@ -746,10 +1138,10 @@ function safeParseNumber(value){
 }
 
 function renderPreferentialCars(){
-    const container = document.getElementById('usaPreferentialGrid');
+    const container = document.getElementById('usaUnder160Grid');
     if (!container) return;
 
-    if (!preferentialCars.length){
+    if (!usaUnder160Cars.length){
         container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по льготному утильсбору</div>';
         return;
     }
@@ -757,48 +1149,145 @@ function renderPreferentialCars(){
     const formatter = new Intl.NumberFormat('ru-RU');
     container.innerHTML = '';
 
-    preferentialCars.forEach(car=>{
+    usaUnder160Cars.forEach(car=>{
         const card = document.createElement('article');
-        card.className = 'usa-order-card usa-preferential-card';
-
-        const header = document.createElement('div');
-        header.style.display = 'flex';
-        header.style.justifyContent = 'space-between';
-        header.style.alignItems = 'center';
-
-        const title = document.createElement('h4');
-        title.textContent = car.name;
-
-        const badge = document.createElement('span');
-        badge.className = 'usa-preferential-badge';
-        badge.innerHTML = '<i class="fas fa-leaf"></i> льготный утильсбор';
-
-        header.appendChild(title);
-        header.appendChild(badge);
-
-        const metaList = document.createElement('ul');
-        metaList.className = 'usa-preferential-meta';
-        metaList.innerHTML = `
-            <li><strong>Двигатель:</strong> ${car.engine}</li>
-            <li><strong>Мощность:</strong> ${car.power}</li>
-            <li><strong>Привод:</strong> ${car.drive}</li>
+        card.className = 'orders-card usa-under-card';
+        card.innerHTML = `
+            <img src="${car.image}" alt="${car.name}" loading="lazy">
+            <div class="orders-card-body">
+                <h4>${car.name}</h4>
+                <span class="usa-preferential-badge"><i class="fas fa-leaf"></i> льготный утильсбор</span>
+                <ul class="usa-preferential-meta">
+                    <li><span>Двигатель:</span> ${car.engine}</li>
+                    <li><span>Мощность:</span> ${car.power}</li>
+                    <li><span>Привод:</span> ${car.drive}</li>
+                </ul>
+                <div class="usa-preferential-price">от ${formatter.format(car.price)} ₽</div>
+                <div class="usa-order-actions" style="margin-top:0.5rem;">
+                    <button class="btn-primary" type="button">Запросить расчет</button>
+                </div>
+            </div>
         `;
 
-        const price = document.createElement('div');
-        price.className = 'usa-preferential-price';
-        price.textContent = `от ${formatter.format(car.price)} ₽`;
-
-        card.appendChild(header);
-        card.appendChild(metaList);
-        card.appendChild(price);
+        const actionBtn = card.querySelector('.btn-primary');
+        if (actionBtn) {
+            actionBtn.addEventListener('click', ()=>{
+                openRequestModal();
+                prefillUsaRequest({ name: car.name, brand: car.brand, model: car.model, price: car.price });
+            });
+        }
 
         container.appendChild(card);
     });
 }
 
+function loadChinaOrdersSection(){
+    const grid = document.getElementById('chinaOrdersGrid');
+    const metrics = document.getElementById('chinaMetrics');
+    if (!grid || !metrics) return;
+
+    const formatter = new Intl.NumberFormat('ru-RU');
+    const prices = chinaCars.map(car=>car.price).filter(Boolean).sort((a,b)=>a-b);
+    const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
+    const min = prices.length ? prices[0] : null;
+
+    metrics.querySelector('[data-metric="count"]').textContent = formatter.format(chinaCars.length);
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? `${formatter.format(avg)} ₽` : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? `${formatter.format(min)} ₽` : '—';
+
+    grid.innerHTML = '';
+
+    chinaCars.forEach(car=>{
+        const card = document.createElement('article');
+        card.className = 'orders-card china-card';
+        const highlightsHtml = car.highlights && car.highlights.length
+            ? `<ul class="orders-highlights">${car.highlights.map(item=>`<li><i class=\"fas fa-check\"></i>${item}</li>`).join('')}</ul>`
+            : '';
+        card.innerHTML = `
+            <img src="${car.image}" alt="${car.name}" loading="lazy">
+            <div class="orders-card-body">
+                <h4>${car.name}</h4>
+                <ul class="usa-preferential-meta">
+                    <li><span>Двигатель:</span> ${car.engine}</li>
+                    <li><span>Мощность:</span> ${car.power}</li>
+                    <li><span>Привод:</span> ${car.drive}</li>
+                    <li><span>Срок:</span> ${car.leadTime || '45-70 дней'}</li>
+                </ul>
+                ${highlightsHtml}
+                <div class="usa-preferential-price">от ${formatter.format(car.price)} ₽</div>
+                <div class="usa-order-actions" style="margin-top:0.5rem;">
+                    <button class="btn-primary" type="button">Запросить расчет</button>
+                </div>
+            </div>
+        `;
+
+        const btn = card.querySelector('.btn-primary');
+        if (btn) {
+            btn.addEventListener('click', ()=>{
+                openRequestModal();
+                prefillChinaRequest(car);
+            });
+        }
+
+        grid.appendChild(card);
+    });
+}
+
+function loadKoreaOrdersSection(){
+    const grid = document.getElementById('koreaOrdersGrid');
+    const metrics = document.getElementById('koreaMetrics');
+    if (!grid || !metrics) return;
+
+    const formatter = new Intl.NumberFormat('ru-RU');
+    const prices = koreaCars.map(car=>car.price).filter(Boolean).sort((a,b)=>a-b);
+    const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
+    const min = prices.length ? prices[0] : null;
+
+    metrics.querySelector('[data-metric="count"]').textContent = formatter.format(koreaCars.length);
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? `${formatter.format(avg)} ₽` : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? `${formatter.format(min)} ₽` : '—';
+
+    grid.innerHTML = '';
+
+    koreaCars.forEach(car=>{
+        const highlightsHtml = car.highlights && car.highlights.length
+            ? `<ul class="orders-highlights">${car.highlights.map(item=>`<li><i class=\"fas fa-check\"></i>${item}</li>`).join('')}</ul>`
+            : '';
+        const card = document.createElement('article');
+        card.className = 'orders-card korea-card';
+        card.innerHTML = `
+            <img src="${car.image}" alt="${car.name}" loading="lazy">
+            <div class="orders-card-body">
+                <h4>${car.name}</h4>
+                <ul class="usa-preferential-meta">
+                    <li><span>Двигатель:</span> ${car.engine}</li>
+                    <li><span>Мощность:</span> ${car.power}</li>
+                    <li><span>Привод:</span> ${car.drive}</li>
+                    <li><span>Срок:</span> ${car.leadTime || '60-75 дней'}</li>
+                </ul>
+                ${highlightsHtml}
+                <div class="usa-preferential-price">от ${formatter.format(car.price)} ₽</div>
+                <div class="usa-order-actions" style="margin-top:0.5rem;">
+                    <button class="btn-primary" type="button">Запросить расчет</button>
+                </div>
+            </div>
+        `;
+
+        const btn = card.querySelector('.btn-primary');
+        if (btn) {
+            btn.addEventListener('click', ()=>{
+                openRequestModal();
+                prefillKoreaRequest(car);
+            });
+        }
+
+        grid.appendChild(card);
+    });
+}
+
 function prefillUsaRequest(entry){
     try{
-        const brandModel = extractBrandModel(entry.name);
+        const brandModel = extractBrandModel(entry.name || `${entry.brand || ''} ${entry.model || ''}`.trim());
         const brandEl = document.getElementById('reqBrand');
         const modelEl = document.getElementById('reqModel');
         const yearFromEl = document.getElementById('reqYearFrom');
@@ -806,8 +1295,8 @@ function prefillUsaRequest(entry){
         const priceEl = document.getElementById('reqPriceTo');
         const note = document.getElementById('reqNote');
         if (!brandEl || !modelEl || !yearFromEl || !yearToEl || !priceEl || !note) return;
-        brandEl.value = brandModel.brand;
-        modelEl.value = brandModel.model;
+        brandEl.value = entry.brand || brandModel.brand;
+        modelEl.value = entry.model || brandModel.model;
         yearFromEl.value = brandModel.year || '';
         yearToEl.value = brandModel.year || '';
         priceEl.value = entry.price || '';
@@ -818,6 +1307,48 @@ function prefillUsaRequest(entry){
             entry.mileage ? `Пробег: ${new Intl.NumberFormat('ru-RU').format(entry.mileage)} км` : null
         ].filter(Boolean);
         note.value = parts.join('\n');
+    }catch(e){ /* ignore */ }
+}
+
+function prefillChinaRequest(car){
+    try{
+        const brandEl = document.getElementById('reqBrand');
+        const modelEl = document.getElementById('reqModel');
+        const priceEl = document.getElementById('reqPriceTo');
+        const noteEl = document.getElementById('reqNote');
+        if (!brandEl || !modelEl || !priceEl || !noteEl) return;
+        brandEl.value = car.brand || '';
+        modelEl.value = car.model || car.name || '';
+        priceEl.value = car.price || '';
+        const details = [
+            `Авто из Китая: ${car.name}`,
+            car.engine ? `Двигатель: ${car.engine}` : null,
+            car.power ? `Мощность: ${car.power}` : null,
+            car.drive ? `Привод: ${car.drive}` : null,
+            car.leadTime ? `Срок поставки: ${car.leadTime}` : null
+        ].filter(Boolean).join('\n');
+        noteEl.value = details;
+    }catch(e){ /* ignore */ }
+}
+
+function prefillKoreaRequest(car){
+    try{
+        const brandEl = document.getElementById('reqBrand');
+        const modelEl = document.getElementById('reqModel');
+        const priceEl = document.getElementById('reqPriceTo');
+        const noteEl = document.getElementById('reqNote');
+        if (!brandEl || !modelEl || !priceEl || !noteEl) return;
+        brandEl.value = car.brand || '';
+        modelEl.value = car.model || car.name || '';
+        priceEl.value = car.price || '';
+        const details = [
+            `Авто из Кореи: ${car.name}`,
+            car.engine ? `Двигатель: ${car.engine}` : null,
+            car.power ? `Мощность: ${car.power}` : null,
+            car.drive ? `Привод: ${car.drive}` : null,
+            car.leadTime ? `Срок поставки: ${car.leadTime}` : null
+        ].filter(Boolean).join('\n');
+        noteEl.value = details;
     }catch(e){ /* ignore */ }
 }
 

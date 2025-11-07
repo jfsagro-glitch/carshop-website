@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Заказ автомобилей из США - CarExport</title>
+    <title>Заказ автомобилей из Китая - CarExport</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -23,8 +23,8 @@
                 </div>
                 <nav class="nav">
                     <a href="index.html#catalog">Каталог</a>
-                    <a href="#usa-orders" class="active">США</a>
-                    <a href="china-orders.html">Китай</a>
+                    <a href="usa-orders.html">США</a>
+                    <a href="#china-orders" class="active">Китай</a>
                     <a href="korea-orders.html">Корея</a>
                     <a href="#contact">Контакты</a>
                     <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
@@ -34,8 +34,8 @@
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count" id="cartCount">0</span>
                     </button>
-                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()">Заявка на подбор</button>
-                    <button class="btn-primary" id="openSelfCalcBtn" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
+                    <button class="btn-secondary" type="button" onclick="openRequestModal()">Заявка на подбор</button>
+                    <button class="btn-primary" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
                 </div>
             </div>
         </div>
@@ -44,41 +44,41 @@
     <section class="hero" style="background:#0b1220;color:#f3f4f6;border-bottom:1px solid #1f2937;">
         <div class="container">
             <div class="hero-content">
-                <h1>Заказ автомобилей из США</h1>
-                <p>Выбираем на аукционах Copart, IAAI, Manheim. Полная проверка, доставка, растаможка и передача «под ключ».</p>
+                <h1>Заказ автомобилей из Китая</h1>
+                <p>Прямые поставки с заводов Chery, Haval, Geely, Exeed, Zeekr. Полный цикл: контракт, логистика до Владивостока, растаможка и доставка в ваш регион.</p>
                 <div class="hero-features">
                     <div class="feature">
-                        <i class="fas fa-car"></i>
-                        <span>Подбор по VIN и Carfax</span>
+                        <i class="fas fa-ship"></i>
+                        <span>Транспортировка морем и ЖД</span>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-ship"></i>
-                        <span>Доставка США → Грузия → РФ</span>
+                        <i class="fas fa-certificate"></i>
+                        <span>Гарантия производителя</span>
                     </div>
                 </div>
-                <button class="cta-btn" onclick="document.getElementById('usa-orders').scrollIntoView({behavior:'smooth'});">
+                <button class="cta-btn" onclick="document.getElementById('china-orders').scrollIntoView({behavior:'smooth'});">
                     Смотреть предложения
                 </button>
             </div>
         </div>
     </section>
 
-    <section id="usa-orders" class="usa-orders">
+    <section id="china-orders" class="usa-orders">
         <div class="container">
             <div class="usa-header">
                 <div>
-                    <h2>Заказ автомобилей из США</h2>
-                    <p>Покупаем автомобили на американских аукционах, доставляем в Грузию и оформляем поставку в Россию «под ключ». Ниже выгрузка актуального листинга из исходных CSV файлов проекта.</p>
+                    <h2>Каталог автомобилей из Китая</h2>
+                    <p>Все цены указаны «под ключ» с учетом логистики, растаможки и оформления. Срок поставки зависит от модели и составляет в среднем 45-75 дней.</p>
                 </div>
                 <div class="usa-badges">
-                    <span class="usa-badge">Аукционы Copart, IAAI, Manheim</span>
-                    <span class="usa-badge">Проверка по VIN и Carfax</span>
+                    <span class="usa-badge">Заводские VIN и ПТС</span>
+                    <span class="usa-badge">Премиальные комплектации</span>
                 </div>
             </div>
 
-            <div class="usa-metrics" id="usaMetrics" aria-live="polite">
+            <div class="usa-metrics" id="chinaMetrics" aria-live="polite">
                 <div class="usa-metric">
-                    <span class="usa-metric-label">Авто в базе</span>
+                    <span class="usa-metric-label">Авто в каталоге</span>
                     <span class="usa-metric-value" data-metric="count">—</span>
                 </div>
                 <div class="usa-metric">
@@ -91,17 +91,11 @@
                 </div>
             </div>
 
-            <div class="usa-orders-grid" id="usaOrdersGrid">
+            <div class="usa-under-grid" id="chinaOrdersGrid">
                 <div class="usa-empty-state">Загружаем предложения...</div>
             </div>
 
-            <div class="usa-subsection" id="usa-under160">
-                <h3>Авто из США до 160 л.с. (льготный утильсбор)</h3>
-                <p class="usa-subsection-note">Готовые комплектации с заводскими VIN, подходящие под льготный утильсбор: актуальные цены «под ключ», доставка до РФ, все документы.</p>
-                <div class="usa-under-grid" id="usaUnder160Grid"></div>
-            </div>
-
-            <p class="usa-note">Источник: файлы <code>cars_extended.csv</code> и <code>cars_data.csv</code>. Данные обновляются при их замене.</p>
+            <p class="usa-note">Для уточнения комплектаций и расчета доставки оставьте заявку — подготовим индивидуальное предложение в течение одного рабочего дня.</p>
         </div>
     </section>
 
@@ -159,15 +153,15 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>CarExport</h4>
-                    <p>Надежный партнер в покупке автомобилей из Грузии и США</p>
+                    <p>Комплексный подбор и поставка автомобилей из Китая, США и Кореи</p>
                 </div>
                 <div class="footer-section">
                     <h4>Услуги</h4>
                     <ul>
-                        <li>Продажа автомобилей</li>
-                        <li>Растаможка</li>
-                        <li>Доставка</li>
-                        <li>Оформление документов</li>
+                        <li>Подбор и проверка VIN</li>
+                        <li>Логистика и растаможка</li>
+                        <li>Сертификация и постановка на учет</li>
+                        <li>Гарантийная поддержка</li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -188,7 +182,7 @@
         </div>
     </footer>
 
-    <!-- Cart Modal -->
+    <!-- Повторяем модальные окна и скрипты -->
     <div id="cartModal" class="modal" style="display:none;">
         <div class="modal-content">
             <div class="modal-header">
@@ -207,7 +201,6 @@
         </div>
     </div>
 
-    <!-- Checkout Modal -->
     <div id="checkoutModal" class="modal" style="display:none;">
         <div class="modal-content">
             <div class="modal-header">
@@ -236,7 +229,6 @@
         </div>
     </div>
 
-    <!-- Customs Calculator Modal -->
     <div id="customsModal" class="modal" style="display:none;">
         <div class="modal-content">
             <div class="modal-header">
@@ -268,7 +260,6 @@
         </div>
     </div>
 
-    <!-- Request Modal -->
     <div id="requestModal" class="modal" style="display:none;">
         <div class="modal-content" style="max-width:600px;">
             <div class="modal-header">
@@ -324,7 +315,6 @@
         </div>
     </div>
 
-    <!-- Self Calc Modal -->
     <div id="selfCalcModal" class="modal" style="display:none;">
         <div class="modal-content" style="max-width:600px;">
             <div class="modal-header">
