@@ -501,10 +501,25 @@ function initializeApp() {
     setupEventListeners();
     loadUsaOrdersSection();
     loadChinaOrdersSection();
+    loadKoreaOrdersSection();
     // Обработчики свайпа для всех галерей (делегирование)
     document.addEventListener('touchstart', onTouchStart, { passive: true });
     document.addEventListener('touchmove', onTouchMove, { passive: true });
     document.addEventListener('touchend', onTouchEnd, { passive: true });
+}
+
+const CAR_IMAGE_BASE = 'https://cdn.imagin.studio/getImage';
+
+function makeImageUrl(brand, modelFamily, year = 2022, angle = 23) {
+    const params = new URLSearchParams({
+        customer: 'img',
+        make: brand,
+        modelFamily,
+        modelYear: year,
+        zoomType: 'fullscreen',
+        angle
+    });
+    return `${CAR_IMAGE_BASE}?${params.toString()}`;
 }
 
 const usaUnder160Cars = [
@@ -516,7 +531,7 @@ const usaUnder160Cars = [
         power: '148 л.с.',
         drive: 'Полный / передний',
         price: 2000000,
-        image: 'https://cdn.motor1.com/images/mgl/7xxk8/s1/2020-mitsubishi-outlander-sport-gt-awc.jpg'
+        image: makeImageUrl('Mitsubishi', 'Outlander Sport', 2021)
     },
     {
         name: 'Mitsubishi Eclipse Cross',
@@ -526,7 +541,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1900000,
-        image: 'https://cdn.motor1.com/images/mgl/MVVkg/s1/2023-mitsubishi-eclipse-cross.jpg'
+        image: makeImageUrl('Mitsubishi', 'Eclipse Cross', 2022)
     },
     {
         name: 'Mitsubishi Mirage',
@@ -536,7 +551,7 @@ const usaUnder160Cars = [
         power: '78 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: 'https://cdn.motor1.com/images/mgl/BbE2G/s1/2020-mitsubishi-mirage.jpg'
+        image: makeImageUrl('Mitsubishi', 'Mirage', 2021)
     },
     {
         name: 'Nissan Rogue Sport',
@@ -546,7 +561,7 @@ const usaUnder160Cars = [
         power: '141 л.с.',
         drive: 'Полный / передний',
         price: 1800000,
-        image: 'https://cdn.motor1.com/images/mgl/1PEJK/s1/2017-nissan-rogue-sport.jpg'
+        image: makeImageUrl('Nissan', 'Rogue Sport', 2022)
     },
     {
         name: 'Nissan Sentra',
@@ -556,7 +571,7 @@ const usaUnder160Cars = [
         power: '149 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: 'https://cdn.motor1.com/images/mgl/qk1bx/s1/2020-nissan-sentra.jpg'
+        image: makeImageUrl('Nissan', 'Sentra', 2022)
     },
     {
         name: 'Nissan Versa',
@@ -566,7 +581,7 @@ const usaUnder160Cars = [
         power: '122 л.с.',
         drive: 'Передний',
         price: 1500000,
-        image: 'https://cdn.motor1.com/images/mgl/6qA4e/s1/2020-nissan-versa.jpg'
+        image: makeImageUrl('Nissan', 'Versa', 2022)
     },
     {
         name: 'Nissan Kicks',
@@ -576,7 +591,7 @@ const usaUnder160Cars = [
         power: '122 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: 'https://cdn.motor1.com/images/mgl/o2Bno/s1/2021-nissan-kicks.jpg'
+        image: makeImageUrl('Nissan', 'Kicks', 2022)
     },
     {
         name: 'Kia Seltos',
@@ -586,7 +601,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Полный / передний',
         price: 1900000,
-        image: 'https://cdn.motor1.com/images/mgl/0r3oy/s1/2024-kia-seltos.jpg'
+        image: makeImageUrl('Kia', 'Seltos', 2023)
     },
     {
         name: 'Kia Forte',
@@ -596,7 +611,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: 'https://cdn.motor1.com/images/mgl/Nrqo7/s1/2024-kia-forte.jpg'
+        image: makeImageUrl('Kia', 'Forte', 2023)
     },
     {
         name: 'Kia Soul',
@@ -606,7 +621,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1900000,
-        image: 'https://cdn.motor1.com/images/mgl/bq8z1/s1/2023-kia-soul-gt-line.jpg'
+        image: makeImageUrl('Kia', 'Soul', 2023)
     },
     {
         name: 'Kia Rio',
@@ -616,7 +631,7 @@ const usaUnder160Cars = [
         power: '120 л.с.',
         drive: 'Передний',
         price: 1700000,
-        image: 'https://cdn.motor1.com/images/mgl/BN3zv/s1/2021-kia-rio.jpg'
+        image: makeImageUrl('Kia', 'Rio', 2022)
     },
     {
         name: 'Kia K4 (2025)',
@@ -626,7 +641,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 2300000,
-        image: 'https://cdn.motor1.com/images/mgl/AYWjL/s1/2025-kia-k4.jpg'
+        image: makeImageUrl('Kia', 'K4', 2025)
     },
     {
         name: 'Hyundai Elantra',
@@ -636,7 +651,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: 'https://cdn.motor1.com/images/mgl/QlLk6/s1/2024-hyundai-elantra.jpg'
+        image: makeImageUrl('Hyundai', 'Elantra', 2022)
     },
     {
         name: 'Hyundai Kona',
@@ -646,7 +661,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Полный / передний',
         price: 1700000,
-        image: 'https://cdn.motor1.com/images/mgl/NRn20/s1/2024-hyundai-kona.jpg'
+        image: makeImageUrl('Hyundai', 'Kona', 2023)
     },
     {
         name: 'Hyundai Venue',
@@ -656,7 +671,7 @@ const usaUnder160Cars = [
         power: '121 л.с.',
         drive: 'Передний',
         price: 1500000,
-        image: 'https://cdn.motor1.com/images/mgl/A4NQp/s1/2022-hyundai-venue.jpg'
+        image: makeImageUrl('Hyundai', 'Venue', 2022)
     },
     {
         name: 'Hyundai Accent',
@@ -666,7 +681,7 @@ const usaUnder160Cars = [
         power: '120 л.с.',
         drive: 'Передний',
         price: 1400000,
-        image: 'https://cdn.motor1.com/images/mgl/zPPwY/s1/2022-hyundai-accent.jpg'
+        image: makeImageUrl('Hyundai', 'Accent', 2022)
     },
     {
         name: 'Toyota C-HR',
@@ -676,7 +691,7 @@ const usaUnder160Cars = [
         power: '145 л.с.',
         drive: 'Передний',
         price: 2000000,
-        image: 'https://cdn.motor1.com/images/mgl/WJ8Xq/s1/2022-toyota-c-hr.jpg'
+        image: makeImageUrl('Toyota', 'C-HR', 2022)
     },
     {
         name: 'Honda HR-V',
@@ -686,7 +701,7 @@ const usaUnder160Cars = [
         power: '141 л.с.',
         drive: 'Полный / передний',
         price: 1700000,
-        image: 'https://cdn.motor1.com/images/mgl/6n0bK/s1/2023-honda-hr-v.jpg'
+        image: makeImageUrl('Honda', 'HR-V', 2023)
     },
     {
         name: 'Chevrolet Trailblazer',
@@ -696,7 +711,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Полный',
         price: 1600000,
-        image: 'https://cdn.motor1.com/images/mgl/40kYQ/s1/2024-chevrolet-trailblazer.jpg'
+        image: makeImageUrl('Chevrolet', 'Trailblazer', 2024)
     },
     {
         name: 'Chevrolet Trax',
@@ -706,7 +721,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: 'https://cdn.motor1.com/images/mgl/Vk0V2/s1/2024-chevrolet-trax.jpg'
+        image: makeImageUrl('Chevrolet', 'Trax', 2024)
     },
     {
         name: 'Chevrolet Spark',
@@ -716,7 +731,7 @@ const usaUnder160Cars = [
         power: '98 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: 'https://cdn.motor1.com/images/mgl/2b6jK/s1/2022-chevrolet-spark.jpg'
+        image: makeImageUrl('Chevrolet', 'Spark', 2022)
     },
     {
         name: 'Buick Encore',
@@ -726,7 +741,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Полный / передний',
         price: 1400000,
-        image: 'https://cdn.motor1.com/images/mgl/R8jVB/s1/2022-buick-encore.jpg'
+        image: makeImageUrl('Buick', 'Encore', 2022)
     },
     {
         name: 'Ford EcoSport',
@@ -736,7 +751,7 @@ const usaUnder160Cars = [
         power: '123 л.с.',
         drive: 'Передний',
         price: 1200000,
-        image: 'https://cdn.motor1.com/images/mgl/e6P4Z/s1/2021-ford-ecosport.jpg'
+        image: makeImageUrl('Ford', 'EcoSport', 2021)
     },
     {
         name: 'Volkswagen Jetta',
@@ -746,7 +761,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: 'https://cdn.motor1.com/images/mgl/n8RrW/s1/2022-volkswagen-jetta.jpg'
+        image: makeImageUrl('Volkswagen', 'Jetta', 2022)
     },
     {
         name: 'Mini Cooper',
@@ -756,7 +771,7 @@ const usaUnder160Cars = [
         power: '134 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: 'https://cdn.motor1.com/images/mgl/3wJzv/s1/2022-mini-cooper-s-hardtop.jpg'
+        image: makeImageUrl('Mini', 'Cooper', 2023)
     },
     {
         name: 'Mini Countryman',
@@ -766,7 +781,7 @@ const usaUnder160Cars = [
         power: '134 л.с.',
         drive: 'Полный / передний',
         price: 2000000,
-        image: 'https://cdn.motor1.com/images/mgl/Bb4YK/s1/2023-mini-countryman.jpg'
+        image: makeImageUrl('Mini', 'Countryman', 2023)
     },
     {
         name: 'Subaru Impreza',
@@ -776,7 +791,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1500000,
-        image: 'https://cdn.motor1.com/images/mgl/On09X/s1/2024-subaru-impreza-rs.jpg'
+        image: makeImageUrl('Subaru', 'Impreza', 2024)
     },
     {
         name: 'Subaru Crosstrek',
@@ -786,7 +801,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1600000,
-        image: 'https://cdn.motor1.com/images/mgl/6b2XQ/s1/2024-subaru-crosstrek.jpg'
+        image: makeImageUrl('Subaru', 'Crosstrek', 2024)
     },
     {
         name: 'Mazda CX-3',
@@ -796,7 +811,7 @@ const usaUnder160Cars = [
         power: '148 л.с.',
         drive: 'Полный / передний',
         price: 1800000,
-        image: 'https://cdn.motor1.com/images/mgl/E499B/s1/2021-mazda-cx-3.jpg'
+        image: makeImageUrl('Mazda', 'CX-3', 2021)
     },
     {
         name: 'Mazda 3',
@@ -806,7 +821,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: 'https://cdn.motor1.com/images/mgl/KKx4G/s1/2024-mazda3-sedan.jpg'
+        image: makeImageUrl('Mazda', 'Mazda3', 2023)
     }
 ];
 
@@ -937,128 +952,20 @@ const koreaCars = [
 ];
 
 async function loadUsaOrdersSection(){
-    const grid = document.getElementById('usaOrdersGrid');
     const metrics = document.getElementById('usaMetrics');
-    if (!grid || !metrics) return;
+    if (!metrics) {
+        renderPreferentialCars();
+        return;
+    }
 
     const formatter = new Intl.NumberFormat('ru-RU');
+    const prices = usaUnder160Cars.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
+    const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
+    const min = prices.length ? prices[0] : null;
 
-    const render = (entries)=>{
-        if (!entries.length){
-            grid.innerHTML = '<div class="usa-empty-state">Нет данных для отображения</div>';
-            return;
-        }
-
-        const total = entries.length;
-        const prices = entries.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
-        const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
-        const min = prices.length ? prices[0] : null;
-
-        metrics.querySelector('[data-metric="count"]').textContent = formatter.format(total);
-        metrics.querySelector('[data-metric="avg"]').textContent = avg ? `${formatter.format(avg)} ₽` : '—';
-        metrics.querySelector('[data-metric="min"]').textContent = min ? `${formatter.format(min)} ₽` : '—';
-
-        grid.innerHTML = '';
-        entries.slice(0,6).forEach(entry=>{
-            const card = document.createElement('article');
-            card.className = 'usa-order-card';
-
-            const title = document.createElement('h3');
-            title.className = 'usa-order-title';
-            title.textContent = entry.name;
-
-            const price = document.createElement('div');
-            price.className = 'usa-order-price';
-            price.textContent = entry.price ? `${formatter.format(entry.price)} ₽` : 'Цена по запросу';
-
-            const meta = document.createElement('div');
-            meta.className = 'usa-order-meta';
-            meta.innerHTML = `
-                <span><strong>VIN:</strong> ${entry.vin || '—'}</span>
-                <span><strong>Пробег:</strong> ${entry.mileage ? formatter.format(entry.mileage) + ' км' : '—'}</span>
-                <span><strong>Дата выпуска:</strong> ${entry.productionDate || '—'}</span>
-            `;
-
-            const actions = document.createElement('div');
-            actions.className = 'usa-order-actions';
-
-            if (entry.photos) {
-                const linkBtn = document.createElement('button');
-                linkBtn.type = 'button';
-                linkBtn.className = 'btn-secondary';
-                linkBtn.textContent = 'Фото с аукциона';
-                linkBtn.addEventListener('click', ()=>{
-                    window.open(entry.photos, '_blank');
-                });
-                actions.appendChild(linkBtn);
-            }
-
-            const requestBtn = document.createElement('button');
-            requestBtn.type = 'button';
-            requestBtn.className = 'btn-primary';
-            requestBtn.textContent = 'Запросить расчет';
-            requestBtn.addEventListener('click', ()=>{
-                openRequestModal();
-                prefillUsaRequest(entry);
-            });
-            actions.appendChild(requestBtn);
-
-            card.appendChild(title);
-            card.appendChild(price);
-            card.appendChild(meta);
-            card.appendChild(actions);
-            grid.appendChild(card);
-        });
-    };
-
-    const fetchText = async (url)=>{
-        try{
-            const resp = await fetch(url);
-            if (!resp.ok) return null;
-            return await resp.text();
-        }catch(e){
-            return null;
-        }
-    };
-
-    try {
-        const [extendedText, baseText] = await Promise.all([
-            fetchText('cars_extended.csv'),
-            fetchText('cars_data.csv')
-        ]);
-
-        const entries = [];
-        if (extendedText) entries.push(...parseUsaCsv(extendedText));
-        if (baseText) entries.push(...parseBaseCsv(baseText));
-
-        if (!entries.length) throw new Error('no csv data');
-
-        const deduped = Array.from(new Map(entries.map(entry=>{
-            const key = entry.vin || `${entry.id}-${entry.name}`;
-            return [key, entry];
-        })).values());
-
-        deduped.sort((a,b)=>{
-            if (!a.price && !b.price) return 0;
-            if (!a.price) return 1;
-            if (!b.price) return -1;
-            return a.price - b.price;
-        });
-
-        render(deduped);
-    } catch (err) {
-        // Fallback: используем данные, уже загруженные в каталоге
-        const fallback = carsData.map(car=>({
-            id: car.id,
-            name: `${car.year} ${car.brand} ${car.model}`,
-            vin: car.vin,
-            price: car.price,
-            mileage: car.mileage,
-            productionDate: car.date,
-            photos: car.photos
-        }));
-        render(fallback);
-    }
+    metrics.querySelector('[data-metric="count"]').textContent = formatter.format(usaUnder160Cars.length);
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? `${formatter.format(avg)} ₽` : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? `${formatter.format(min)} ₽` : '—';
 
     renderPreferentialCars();
 }
