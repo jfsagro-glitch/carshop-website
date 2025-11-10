@@ -509,6 +509,7 @@ function initializeApp() {
 }
 
 const CAR_IMAGE_BASE = 'https://cdn.imagin.studio/getImage';
+const AI_FALLBACK_BASE = 'https://image.pollinations.ai/prompt';
 
 function makeImageUrl(brand, modelFamily, year = 2022, angle = 23) {
     const params = new URLSearchParams({
@@ -520,6 +521,13 @@ function makeImageUrl(brand, modelFamily, year = 2022, angle = 23) {
         angle
     });
     return `${CAR_IMAGE_BASE}?${params.toString()}`;
+}
+
+function makeAiFallbackUrl(brand, modelFamily, year = 2022) {
+    const prompt = encodeURIComponent(
+        `premium studio photo of ${year} ${brand} ${modelFamily}, 3/4 front view, gloss black background, cinematic lighting, ultra detailed`
+    );
+    return `${AI_FALLBACK_BASE}/${prompt}?nologo=true&width=1280&height=720`;
 }
 
 const usaUnder160Cars = [
@@ -1084,6 +1092,17 @@ function renderPreferentialCars(){
             });
         }
 
+        const imageEl = card.querySelector('img');
+        if (imageEl) {
+            const brandModel = extractBrandModel(car.name);
+            const fallbackUrl = makeAiFallbackUrl(car.brand || brandModel.brand, car.model || brandModel.model, car.year || 2023);
+            imageEl.addEventListener('error', ()=>{
+                if (imageEl.dataset.fallbackApplied) return;
+                imageEl.dataset.fallbackApplied = '1';
+                imageEl.src = fallbackUrl;
+            });
+        }
+
         container.appendChild(card);
     });
 }
@@ -1136,6 +1155,17 @@ function loadChinaOrdersSection(){
             });
         }
 
+        const imageEl = card.querySelector('img');
+        if (imageEl) {
+            const brandModel = extractBrandModel(car.name);
+            const fallbackUrl = makeAiFallbackUrl(car.brand || brandModel.brand, car.model || brandModel.model, car.year || 2023);
+            imageEl.addEventListener('error', ()=>{
+                if (imageEl.dataset.fallbackApplied) return;
+                imageEl.dataset.fallbackApplied = '1';
+                imageEl.src = fallbackUrl;
+            });
+        }
+
         grid.appendChild(card);
     });
 }
@@ -1185,6 +1215,17 @@ function loadKoreaOrdersSection(){
             btn.addEventListener('click', ()=>{
                 openRequestModal();
                 prefillKoreaRequest(car);
+            });
+        }
+
+        const imageEl = card.querySelector('img');
+        if (imageEl) {
+            const brandModel = extractBrandModel(car.name);
+            const fallbackUrl = makeAiFallbackUrl(car.brand || brandModel.brand, car.model || brandModel.model, car.year || 2023);
+            imageEl.addEventListener('error', ()=>{
+                if (imageEl.dataset.fallbackApplied) return;
+                imageEl.dataset.fallbackApplied = '1';
+                imageEl.src = fallbackUrl;
             });
         }
 
