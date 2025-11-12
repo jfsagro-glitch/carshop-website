@@ -506,20 +506,6 @@ function initializeApp() {
     document.addEventListener('touchend', onTouchEnd, { passive: true });
 }
 
-const AI_IMAGE_BASE = 'https://image.pollinations.ai/prompt';
-
-function buildGeneratedCarImage(brand, modelFamily, year = 2023) {
-    const prompt = encodeURIComponent(
-        `premium studio photo of ${year} ${brand} ${modelFamily}, front three-quarter view, cinematic lighting, glossy black background, hyper-realistic car photography`
-    );
-    const params = new URLSearchParams({
-        nologo: 'true',
-        width: '1280',
-        height: '720'
-    });
-    return `${AI_IMAGE_BASE}/${prompt}?${params.toString()}`;
-}
-
 function buildSvgPlaceholder(title) {
     const safeTitle = (title || 'CarExport').replace(/[<>&]/g, char => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[char]));
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#1f2937"/></linearGradient></defs><rect width="1600" height="900" fill="url(#grad)"/><text x="50%" y="50%" fill="#374151" font-family="Inter,Arial,sans-serif" font-size="96" text-anchor="middle" dominant-baseline="middle">${safeTitle}</text></svg>`;
@@ -554,7 +540,7 @@ const usaUnder160Cars = [
         power: '148 л.с.',
         drive: 'Полный / передний',
         price: 2000000,
-        image: buildGeneratedCarImage('Mitsubishi', 'Outlander Sport', 2021)
+        image: 'images/PHOTO USA/Mitsubishi Outlander Sport.jpg'
     },
     {
         name: 'Mitsubishi Eclipse Cross',
@@ -584,7 +570,7 @@ const usaUnder160Cars = [
         power: '141 л.с.',
         drive: 'Полный / передний',
         price: 1800000,
-        image: buildGeneratedCarImage('Nissan', 'Rogue Sport', 2022)
+        image: 'images/PHOTO USA/Nissan Rogue Sport.jpg'
     },
     {
         name: 'Nissan Sentra',
@@ -614,7 +600,7 @@ const usaUnder160Cars = [
         power: '122 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: buildGeneratedCarImage('Nissan', 'Kicks', 2022)
+        image: 'images/PHOTO USA/Nissan Kicks.jpg'
     },
     {
         name: 'Kia Seltos',
@@ -634,7 +620,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: buildGeneratedCarImage('Kia', 'Forte', 2023)
+        image: 'images/PHOTO USA/Kia Forte.jpg'
     },
     {
         name: 'Kia Soul',
@@ -694,7 +680,7 @@ const usaUnder160Cars = [
         power: '121 л.с.',
         drive: 'Передний',
         price: 1500000,
-        image: buildGeneratedCarImage('Hyundai', 'Venue', 2022)
+        image: 'images/PHOTO USA/Hyundai Venue.jpg'
     },
     {
         name: 'Hyundai Accent',
@@ -704,7 +690,7 @@ const usaUnder160Cars = [
         power: '120 л.с.',
         drive: 'Передний',
         price: 1400000,
-        image: buildGeneratedCarImage('Hyundai', 'Accent', 2022)
+        image: 'images/PHOTO USA/Hyundai Accent.jpg'
     },
     {
         name: 'Toyota C-HR',
@@ -714,7 +700,7 @@ const usaUnder160Cars = [
         power: '145 л.с.',
         drive: 'Передний',
         price: 2000000,
-        image: buildGeneratedCarImage('Toyota', 'C-HR', 2022)
+        image: 'images/PHOTO USA/Toyota C-HR.jpg'
     },
     {
         name: 'Honda HR-V',
@@ -724,7 +710,7 @@ const usaUnder160Cars = [
         power: '141 л.с.',
         drive: 'Полный / передний',
         price: 1700000,
-        image: buildGeneratedCarImage('Honda', 'HR-V', 2023)
+        image: 'images/PHOTO USA/Honda HR-V.jpg'
     },
     {
         name: 'Chevrolet Trailblazer',
@@ -744,7 +730,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: buildGeneratedCarImage('Chevrolet', 'Trax', 2024)
+        image: 'images/PHOTO USA/Chevrolet Trax.jpeg'
     },
     {
         name: 'Chevrolet Spark',
@@ -754,7 +740,7 @@ const usaUnder160Cars = [
         power: '98 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: buildGeneratedCarImage('Chevrolet', 'Spark', 2022)
+        image: 'images/PHOTO USA/Chevrolet Spark.jpg'
     },
     {
         name: 'Buick Encore',
