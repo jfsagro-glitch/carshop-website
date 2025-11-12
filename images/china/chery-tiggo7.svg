@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M96 236c18-58 88-102 184-102h80c96 0 166 44 184 102"/>
+    <path d="M152 252h336"/>
+    <path d="M204 214c26-40 82-60 116-60h0c34 0 90 20 116 60"/>
+    <circle cx="220" cy="252" r="30"/>
+    <circle cx="420" cy="252" r="30"/>
+  </g>
+  <text x="320" y="116" text-anchor="middle" fill="#f3f4f6" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600">Chery Tiggo 7 Pro</text>
+  <text x="320" y="156" text-anchor="middle" fill="#9ca3af" font-family="Inter, Arial, sans-serif" font-size="18">Prestige · 1.5T · 147 л.с.</text>
+  <text x="320" y="198" text-anchor="middle" fill="#cbd5f5" font-family="Inter, Arial, sans-serif" font-size="18">Каталог CarExport × kitaj-rulit.ru</text>
+</svg>
+

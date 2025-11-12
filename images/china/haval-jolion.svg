@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g fill="none" stroke="#facc15" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M96 236c24-64 88-108 176-108h96c88 0 152 44 176 108"/>
+    <path d="M144 252h352"/>
+    <path d="M188 206c24-42 88-66 132-66h0c44 0 108 24 132 66"/>
+    <circle cx="208" cy="252" r="34"/>
+    <circle cx="432" cy="252" r="34"/>
+  </g>
+  <text x="320" y="120" text-anchor="middle" fill="#f3f4f6" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600">Haval Jolion</text>
+  <text x="320" y="158" text-anchor="middle" fill="#9ca3af" font-family="Inter, Arial, sans-serif" font-size="18">Tech Plus · 1.5T · 143 л.с.</text>
+  <text x="320" y="198" text-anchor="middle" fill="#cbd5f5" font-family="Inter, Arial, sans-serif" font-size="18">Каталог CarExport × kitaj-rulit.ru</text>
+</svg>
+

@@ -836,64 +836,76 @@ const usaUnder160Cars = [
 
 const chinaCars = [
     {
-        name: 'Chery Tiggo 7 Pro Max',
-        brand: 'Chery',
-        model: 'Tiggo 7 Pro Max',
-        engine: '1.6 л',
-        power: '186 л.с.',
-        drive: 'Полный',
-        leadTime: '45-55 дней',
-        highlights: ['Гарантия 3 года или 100 000 км', 'Пакет «Зима» и медиасистема в базе'],
-        price: 2590000,
-        image: 'https://cdn.motor1.com/images/mgl/1B4eB/s1/2023-chery-tiggo-7-pro.jpg'
-    },
-    {
-        name: 'Haval Dargo X',
+        name: 'Haval Jolion Tech Plus',
         brand: 'Haval',
-        model: 'Dargo X',
-        engine: '2.0 л',
-        power: '204 л.с.',
-        drive: 'Полный',
+        model: 'Jolion',
+        engine: '1.5 л, турбо, CVT',
+        power: '143 л.с.',
+        drive: 'Передний',
         leadTime: '50-60 дней',
-        highlights: ['Блокировки дифференциалов', 'Комплект зимних шин включён'],
-        price: 2890000,
-        image: 'https://cdn.motor1.com/images/mgl/mMNg4/s1/haval-dargo-x.jpg'
+        highlights: ['Комплекс ADAS L2', 'Салон из эко-кожи', 'Камеры 360°'],
+        price: 2390000,
+        image: 'images/china/haval-jolion.svg'
     },
     {
-        name: 'Geely Monjaro 2.0T',
+        name: 'Chery Tiggo 7 Pro Prestige',
+        brand: 'Chery',
+        model: 'Tiggo 7 Pro',
+        engine: '1.5 л, турбо, CVT',
+        power: '147 л.с.',
+        drive: 'Передний',
+        leadTime: '45-55 дней',
+        highlights: ['Панорамная крыша', 'Подогрев всех сидений', 'Бесключевой доступ'],
+        price: 2490000,
+        image: 'images/china/chery-tiggo7.svg'
+    },
+    {
+        name: 'Geely Coolray Flagship',
         brand: 'Geely',
-        model: 'Monjaro',
-        engine: '2.0 л',
-        power: '238 л.с.',
+        model: 'Coolray',
+        engine: '1.5 л, турбо, 7DCT',
+        power: '150 л.с.',
+        drive: 'Передний',
+        leadTime: '55-65 дней',
+        highlights: ['Цифровая приборная панель', 'Парктроники 360°', 'Адаптивный круиз-контроль'],
+        price: 2280000,
+        image: 'images/china/geely-coolray.svg'
+    },
+    {
+        name: 'Exeed LX Premium',
+        brand: 'Exeed',
+        model: 'LX',
+        engine: '1.5 л, турбо, 7DCT',
+        power: '147 л.с.',
+        drive: 'Передний',
+        leadTime: '55-70 дней',
+        highlights: ['Стерео камера ADAS', 'Вентиляция передних сидений', 'Матрица 7680×4320 в медиасистеме'],
+        price: 2830000,
+        image: 'images/china/exeed-lx.svg'
+    },
+    {
+        name: 'Omoda C5 Ultimate AWD',
+        brand: 'Omoda',
+        model: 'C5',
+        engine: '1.6 л, турбо, 7DCT',
+        power: '150 л.с.',
         drive: 'Полный',
         leadTime: '55-65 дней',
-        highlights: ['Премиум салон Nappa', 'Панорамная крыша и HUD'],
-        price: 3190000,
-        image: 'https://cdn.motor1.com/images/mgl/qWGy4/s1/2022-geely-monjaro.jpg'
+        highlights: ['Полный привод AWD', 'Набор систем безопасности ADAS', 'Акустика Sony'],
+        price: 2940000,
+        image: 'images/china/omoda-c5.svg'
     },
     {
-        name: 'Exeed RX 400T AWD',
-        brand: 'Exeed',
-        model: 'RX',
-        engine: '2.0 л',
-        power: '249 л.с.',
-        drive: 'Полный',
-        leadTime: '60-70 дней',
-        highlights: ['Пневмоподвеска, матричный свет', 'Полный пакет опций'],
-        price: 3690000,
-        image: 'https://cdn.motor1.com/images/mgl/qrpmq/s1/2023-exeed-rx.jpg'
-    },
-    {
-        name: 'Zeekr X Long Range',
-        brand: 'Zeekr',
-        model: 'X',
-        engine: 'Электро 66 кВт·ч',
-        power: '272 л.с.',
-        drive: 'Полный',
-        leadTime: '65-75 дней',
-        highlights: ['Запас хода 512 км CLTC', 'Быстрая зарядка 10-80% за 30 минут'],
-        price: 3490000,
-        image: 'https://cdn.motor1.com/images/mgl/6oO7E/s1/2023-zeekr-x.jpg'
+        name: 'Changan CS35 Plus Luxe',
+        brand: 'Changan',
+        model: 'CS35 Plus',
+        engine: '1.4 л, турбо, 7DCT',
+        power: '150 л.с.',
+        drive: 'Передний',
+        leadTime: '45-55 дней',
+        highlights: ['Зимний пакет', 'Электропривод сиденья водителя', 'CarPlay/Android Auto'],
+        price: 2170000,
+        image: 'images/china/changan-cs35.svg'
     }
 ];
 

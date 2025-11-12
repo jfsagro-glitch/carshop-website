@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g fill="none" stroke="#f97316" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M88 236c20-60 90-104 176-104h112c86 0 156 44 176 104"/>
+    <path d="M140 254h360"/>
+    <path d="M200 210c26-36 86-58 120-58s94 22 120 58"/>
+    <circle cx="222" cy="254" r="30"/>
+    <circle cx="418" cy="254" r="30"/>
+  </g>
+  <text x="320" y="116" text-anchor="middle" fill="#f3f4f6" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600">Exeed LX</text>
+  <text x="320" y="156" text-anchor="middle" fill="#d1d5db" font-family="Inter, Arial, sans-serif" font-size="18">Premium · 1.5T · 147 л.с.</text>
+  <text x="320" y="198" text-anchor="middle" fill="#cbd5f5" font-family="Inter, Arial, sans-serif" font-size="18">Каталог CarExport × kitaj-rulit.ru</text>
+</svg>
+
