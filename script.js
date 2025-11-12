@@ -564,7 +564,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1900000,
-        image: buildGeneratedCarImage('Mitsubishi', 'Eclipse Cross', 2022)
+        image: 'images/PHOTO USA/Mitsubishi Eclipse Cross.webp'
     },
     {
         name: 'Mitsubishi Mirage',
@@ -574,7 +574,7 @@ const usaUnder160Cars = [
         power: '78 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: buildGeneratedCarImage('Mitsubishi', 'Mirage', 2021)
+        image: 'images/PHOTO USA/Mitsubishi Mirage.webp'
     },
     {
         name: 'Nissan Rogue Sport',
@@ -594,7 +594,7 @@ const usaUnder160Cars = [
         power: '149 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: buildGeneratedCarImage('Nissan', 'Sentra', 2022)
+        image: 'images/PHOTO USA/Nissan Sentra.webp'
     },
     {
         name: 'Nissan Versa',
@@ -604,7 +604,7 @@ const usaUnder160Cars = [
         power: '122 л.с.',
         drive: 'Передний',
         price: 1500000,
-        image: buildGeneratedCarImage('Nissan', 'Versa', 2022)
+        image: 'images/PHOTO USA/Nissan Versa.webp'
     },
     {
         name: 'Nissan Kicks',
@@ -624,7 +624,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Полный / передний',
         price: 1900000,
-        image: buildGeneratedCarImage('Kia', 'Seltos', 2023)
+        image: 'images/PHOTO USA/Kia Seltos.webp'
     },
     {
         name: 'Kia Forte',
@@ -644,7 +644,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1900000,
-        image: buildGeneratedCarImage('Kia', 'Soul', 2023)
+        image: 'images/PHOTO USA/Kia Soul.webp'
     },
     {
         name: 'Kia Rio',
@@ -654,7 +654,7 @@ const usaUnder160Cars = [
         power: '120 л.с.',
         drive: 'Передний',
         price: 1700000,
-        image: buildGeneratedCarImage('Kia', 'Rio', 2022)
+        image: 'images/PHOTO USA/Kia Rio.webp'
     },
     {
         name: 'Kia K4 (2025)',
@@ -664,7 +664,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 2300000,
-        image: buildGeneratedCarImage('Kia', 'K4', 2025)
+        image: 'images/PHOTO USA/Kia K4.webp'
     },
     {
         name: 'Hyundai Elantra',
@@ -674,7 +674,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: buildGeneratedCarImage('Hyundai', 'Elantra', 2022)
+        image: 'images/PHOTO USA/Hyundai Elantra.webp'
     },
     {
         name: 'Hyundai Kona',
@@ -684,7 +684,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Полный / передний',
         price: 1700000,
-        image: buildGeneratedCarImage('Hyundai', 'Kona', 2023)
+        image: 'images/PHOTO USA/Hyundai Kona.webp'
     },
     {
         name: 'Hyundai Venue',
@@ -734,7 +734,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Полный',
         price: 1600000,
-        image: buildGeneratedCarImage('Chevrolet', 'Trailblazer', 2024)
+        image: 'images/PHOTO USA/Chevrolet Trailblazer.webp'
     },
     {
         name: 'Chevrolet Trax',
@@ -764,7 +764,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Полный / передний',
         price: 1400000,
-        image: buildGeneratedCarImage('Buick', 'Encore', 2022)
+        image: 'images/PHOTO USA/Buick Encore.webp'
     },
     {
         name: 'Ford EcoSport',
@@ -774,7 +774,7 @@ const usaUnder160Cars = [
         power: '123 л.с.',
         drive: 'Передний',
         price: 1200000,
-        image: buildGeneratedCarImage('Ford', 'EcoSport', 2021)
+        image: 'images/PHOTO USA/Ford EcoSport.webp'
     },
     {
         name: 'Volkswagen Jetta',
@@ -784,7 +784,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: buildGeneratedCarImage('Volkswagen', 'Jetta', 2022)
+        image: 'images/PHOTO USA/Volkswagen Jetta.webp'
     },
     {
         name: 'Mini Cooper',
@@ -794,7 +794,7 @@ const usaUnder160Cars = [
         power: '134 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: buildGeneratedCarImage('Mini', 'Cooper', 2023)
+        image: 'images/PHOTO USA/Mini Cooper.webp'
     },
     {
         name: 'Mini Countryman',
@@ -804,7 +804,7 @@ const usaUnder160Cars = [
         power: '134 л.с.',
         drive: 'Полный / передний',
         price: 2000000,
-        image: buildGeneratedCarImage('Mini', 'Countryman', 2023)
+        image: 'images/PHOTO USA/Mini Countryman.webp'
     },
     {
         name: 'Subaru Impreza',
@@ -814,7 +814,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1500000,
-        image: buildGeneratedCarImage('Subaru', 'Impreza', 2024)
+        image: 'images/PHOTO USA/Subaru Impreza.webp'
     },
     {
         name: 'Subaru Crosstrek',
@@ -824,7 +824,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1600000,
-        image: buildGeneratedCarImage('Subaru', 'Crosstrek', 2024)
+        image: 'images/PHOTO USA/Subaru Crosstrek.webp'
     },
     {
         name: 'Mazda CX-3',
@@ -834,7 +834,7 @@ const usaUnder160Cars = [
         power: '148 л.с.',
         drive: 'Полный / передний',
         price: 1800000,
-        image: buildGeneratedCarImage('Mazda', 'CX-3', 2021)
+        image: 'images/PHOTO USA/Mazda CX-3.webp'
     },
     {
         name: 'Mazda 3',
@@ -844,7 +844,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: buildGeneratedCarImage('Mazda', 'Mazda3', 2023)
+        image: 'images/PHOTO USA/Mazda 3.webp'
     }
 ];
 
