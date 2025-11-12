@@ -1,30 +1,31 @@
-﻿// Функция для получения прямых ссылок на изображения из Google Drive
-function getGoogleDriveImageUrl(folderId) {
-    // Для Google Drive папок используем специальный формат
-    return `https://drive.google.com/thumbnail?id=${folderId}&sz=w400-h300`;
-}
+﻿'use strict';
 
-// Функция для получения ID папки из Google Drive ссылки
-function extractFolderId(url) {
-    const match = url.match(/folders\/([a-zA-Z0-9_-]+)/);
-    return match ? match[1] : null;
-}
+const state = {
+    cart: [],
+    filteredCars: [],
+    carGalleries: {},
+    touch: {
+        startX: null,
+        galleryId: null
+    }
+};
+
+const numberFormatter = new Intl.NumberFormat('ru-RU');
+const formatCurrency = (value) => `${numberFormatter.format(Math.round(value))} ₽`;
 
 // Функция для создания галереи с реальными фотографиями
 function createCarGallery(car) {
-    // Локальная галерея со свайпом и стрелками, без ссылок на Google Drive
     return `
-        <div class="car-gallery" style="position: relative; margin-bottom: 1rem;">
-            <div id="gallery-${car.id}" class="gallery-container" data-car-id="${car.id}" style="position: relative; width: 100%; height: 500px; overflow: hidden; border-radius: 8px; background: #374151;">
-                <div class="gallery-track" style="display: flex; width: 100%; height: 100%; transition: transform 0.3s ease;"></div>
-                <button class="gallery-prev" onclick="prevPhoto(${car.id})" aria-label="Предыдущая" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;">‹</button>
-                <button class="gallery-next" onclick="nextPhoto(${car.id})" aria-label="Следующая" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;">›</button>
-                <div id="gallery-dots-${car.id}" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;"></div>
+        <div class="car-gallery">
+            <div id="gallery-${car.id}" class="gallery-container" data-car-id="${car.id}">
+                <div class="gallery-track"></div>
+                <button class="gallery-nav-btn gallery-prev" data-gallery-nav="prev" data-car-id="${car.id}" aria-label="Предыдущая">&#8249;</button>
+                <button class="gallery-nav-btn gallery-next" data-gallery-nav="next" data-car-id="${car.id}" aria-label="Следующая">&#8250;</button>
+                <div id="gallery-dots-${car.id}" class="gallery-dots"></div>
                 ${car.sold ? `
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5;">
-                    <div style="transform:rotate(-22deg);font-size:clamp(28px,7vw,80px);font-weight:900;letter-spacing:6px;color:rgba(255,255,255,0.8);text-shadow:0 4px 14px rgba(0,0,0,0.5);-webkit-text-stroke:3px rgba(220,38,38,0.85);">ПРОДАНО</div>
-                </div>
-                ` : ''}
+                <div class="sold-overlay">
+                    <div class="sold-overlay__label">ПРОДАНО</div>
+                </div>` : ''}
             </div>
         </div>
     `;
@@ -483,11 +484,8 @@ const carsData = [
     }
 ];
 
-// Р“Р»РѕР±Р°Р»СЊРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ
-let cart = [];
-let filteredCars = [...carsData];
-// Состояние галерей по carId
-const carGalleries = {};
+// Инициализация глобального состояния
+state.filteredCars = [...carsData];
 
 // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїСЂРё Р·Р°РіСЂСѓР·РєРµ СЃС‚СЂР°РЅРёС†С‹
 document.addEventListener('DOMContentLoaded', function() {
@@ -508,26 +506,43 @@ function initializeApp() {
     document.addEventListener('touchend', onTouchEnd, { passive: true });
 }
 
-const CAR_IMAGE_BASE = 'https://cdn.imagin.studio/getImage';
-const AI_FALLBACK_BASE = 'https://image.pollinations.ai/prompt';
+const AI_IMAGE_BASE = 'https://image.pollinations.ai/prompt';
 
-function makeImageUrl(brand, modelFamily, year = 2022, angle = 23) {
+function buildGeneratedCarImage(brand, modelFamily, year = 2023) {
+    const prompt = encodeURIComponent(
+        `premium studio photo of ${year} ${brand} ${modelFamily}, front three-quarter view, cinematic lighting, glossy black background, hyper-realistic car photography`
+    );
     const params = new URLSearchParams({
-        customer: 'img',
-        make: brand,
-        modelFamily,
-        modelYear: year,
-        zoomType: 'fullscreen',
-        angle
+        nologo: 'true',
+        width: '1280',
+        height: '720'
     });
-    return `${CAR_IMAGE_BASE}?${params.toString()}`;
+    return `${AI_IMAGE_BASE}/${prompt}?${params.toString()}`;
 }
 
-function makeAiFallbackUrl(brand, modelFamily, year = 2022) {
-    const prompt = encodeURIComponent(
-        `premium studio photo of ${year} ${brand} ${modelFamily}, 3/4 front view, gloss black background, cinematic lighting, ultra detailed`
-    );
-    return `${AI_FALLBACK_BASE}/${prompt}?nologo=true&width=1280&height=720`;
+function buildSvgPlaceholder(title) {
+    const safeTitle = (title || 'CarExport').replace(/[<>&]/g, char => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[char]));
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#1f2937"/></linearGradient></defs><rect width="1600" height="900" fill="url(#grad)"/><text x="50%" y="50%" fill="#374151" font-family="Inter,Arial,sans-serif" font-size="96" text-anchor="middle" dominant-baseline="middle">${safeTitle}</text></svg>`;
+    try {
+        if (typeof window !== 'undefined' && window.btoa) {
+            return `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
+        }
+    } catch (err) {
+        // ignore and fallback to UTF-8 variant
+    }
+    return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+
+function attachImageFallback(imageEl, car) {
+    if (!imageEl) return;
+    const fallbackTitle = (car && (car.name || `${car.brand || ''} ${car.model || ''}`.trim())) || 'CarExport';
+    const fallbackUrl = buildSvgPlaceholder(fallbackTitle);
+    imageEl.addEventListener('error', () => {
+        if (imageEl.dataset.fallbackApplied) return;
+        imageEl.dataset.fallbackApplied = '1';
+        imageEl.src = fallbackUrl;
+        imageEl.alt = `${fallbackTitle} (изображение временно недоступно)`;
+    }, { once: true });
 }
 
 const usaUnder160Cars = [
@@ -539,7 +554,7 @@ const usaUnder160Cars = [
         power: '148 л.с.',
         drive: 'Полный / передний',
         price: 2000000,
-        image: makeImageUrl('Mitsubishi', 'Outlander Sport', 2021)
+        image: buildGeneratedCarImage('Mitsubishi', 'Outlander Sport', 2021)
     },
     {
         name: 'Mitsubishi Eclipse Cross',
@@ -549,7 +564,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1900000,
-        image: makeImageUrl('Mitsubishi', 'Eclipse Cross', 2022)
+        image: buildGeneratedCarImage('Mitsubishi', 'Eclipse Cross', 2022)
     },
     {
         name: 'Mitsubishi Mirage',
@@ -559,7 +574,7 @@ const usaUnder160Cars = [
         power: '78 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: makeImageUrl('Mitsubishi', 'Mirage', 2021)
+        image: buildGeneratedCarImage('Mitsubishi', 'Mirage', 2021)
     },
     {
         name: 'Nissan Rogue Sport',
@@ -569,7 +584,7 @@ const usaUnder160Cars = [
         power: '141 л.с.',
         drive: 'Полный / передний',
         price: 1800000,
-        image: makeImageUrl('Nissan', 'Rogue Sport', 2022)
+        image: buildGeneratedCarImage('Nissan', 'Rogue Sport', 2022)
     },
     {
         name: 'Nissan Sentra',
@@ -579,7 +594,7 @@ const usaUnder160Cars = [
         power: '149 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: makeImageUrl('Nissan', 'Sentra', 2022)
+        image: buildGeneratedCarImage('Nissan', 'Sentra', 2022)
     },
     {
         name: 'Nissan Versa',
@@ -589,7 +604,7 @@ const usaUnder160Cars = [
         power: '122 л.с.',
         drive: 'Передний',
         price: 1500000,
-        image: makeImageUrl('Nissan', 'Versa', 2022)
+        image: buildGeneratedCarImage('Nissan', 'Versa', 2022)
     },
     {
         name: 'Nissan Kicks',
@@ -599,7 +614,7 @@ const usaUnder160Cars = [
         power: '122 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: makeImageUrl('Nissan', 'Kicks', 2022)
+        image: buildGeneratedCarImage('Nissan', 'Kicks', 2022)
     },
     {
         name: 'Kia Seltos',
@@ -609,7 +624,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Полный / передний',
         price: 1900000,
-        image: makeImageUrl('Kia', 'Seltos', 2023)
+        image: buildGeneratedCarImage('Kia', 'Seltos', 2023)
     },
     {
         name: 'Kia Forte',
@@ -619,7 +634,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1600000,
-        image: makeImageUrl('Kia', 'Forte', 2023)
+        image: buildGeneratedCarImage('Kia', 'Forte', 2023)
     },
     {
         name: 'Kia Soul',
@@ -629,7 +644,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1900000,
-        image: makeImageUrl('Kia', 'Soul', 2023)
+        image: buildGeneratedCarImage('Kia', 'Soul', 2023)
     },
     {
         name: 'Kia Rio',
@@ -639,7 +654,7 @@ const usaUnder160Cars = [
         power: '120 л.с.',
         drive: 'Передний',
         price: 1700000,
-        image: makeImageUrl('Kia', 'Rio', 2022)
+        image: buildGeneratedCarImage('Kia', 'Rio', 2022)
     },
     {
         name: 'Kia K4 (2025)',
@@ -649,7 +664,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 2300000,
-        image: makeImageUrl('Kia', 'K4', 2025)
+        image: buildGeneratedCarImage('Kia', 'K4', 2025)
     },
     {
         name: 'Hyundai Elantra',
@@ -659,7 +674,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: makeImageUrl('Hyundai', 'Elantra', 2022)
+        image: buildGeneratedCarImage('Hyundai', 'Elantra', 2022)
     },
     {
         name: 'Hyundai Kona',
@@ -669,7 +684,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Полный / передний',
         price: 1700000,
-        image: makeImageUrl('Hyundai', 'Kona', 2023)
+        image: buildGeneratedCarImage('Hyundai', 'Kona', 2023)
     },
     {
         name: 'Hyundai Venue',
@@ -679,7 +694,7 @@ const usaUnder160Cars = [
         power: '121 л.с.',
         drive: 'Передний',
         price: 1500000,
-        image: makeImageUrl('Hyundai', 'Venue', 2022)
+        image: buildGeneratedCarImage('Hyundai', 'Venue', 2022)
     },
     {
         name: 'Hyundai Accent',
@@ -689,7 +704,7 @@ const usaUnder160Cars = [
         power: '120 л.с.',
         drive: 'Передний',
         price: 1400000,
-        image: makeImageUrl('Hyundai', 'Accent', 2022)
+        image: buildGeneratedCarImage('Hyundai', 'Accent', 2022)
     },
     {
         name: 'Toyota C-HR',
@@ -699,7 +714,7 @@ const usaUnder160Cars = [
         power: '145 л.с.',
         drive: 'Передний',
         price: 2000000,
-        image: makeImageUrl('Toyota', 'C-HR', 2022)
+        image: buildGeneratedCarImage('Toyota', 'C-HR', 2022)
     },
     {
         name: 'Honda HR-V',
@@ -709,7 +724,7 @@ const usaUnder160Cars = [
         power: '141 л.с.',
         drive: 'Полный / передний',
         price: 1700000,
-        image: makeImageUrl('Honda', 'HR-V', 2023)
+        image: buildGeneratedCarImage('Honda', 'HR-V', 2023)
     },
     {
         name: 'Chevrolet Trailblazer',
@@ -719,7 +734,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Полный',
         price: 1600000,
-        image: makeImageUrl('Chevrolet', 'Trailblazer', 2024)
+        image: buildGeneratedCarImage('Chevrolet', 'Trailblazer', 2024)
     },
     {
         name: 'Chevrolet Trax',
@@ -729,7 +744,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: makeImageUrl('Chevrolet', 'Trax', 2024)
+        image: buildGeneratedCarImage('Chevrolet', 'Trax', 2024)
     },
     {
         name: 'Chevrolet Spark',
@@ -739,7 +754,7 @@ const usaUnder160Cars = [
         power: '98 л.с.',
         drive: 'Передний',
         price: 1300000,
-        image: makeImageUrl('Chevrolet', 'Spark', 2022)
+        image: buildGeneratedCarImage('Chevrolet', 'Spark', 2022)
     },
     {
         name: 'Buick Encore',
@@ -749,7 +764,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Полный / передний',
         price: 1400000,
-        image: makeImageUrl('Buick', 'Encore', 2022)
+        image: buildGeneratedCarImage('Buick', 'Encore', 2022)
     },
     {
         name: 'Ford EcoSport',
@@ -759,7 +774,7 @@ const usaUnder160Cars = [
         power: '123 л.с.',
         drive: 'Передний',
         price: 1200000,
-        image: makeImageUrl('Ford', 'EcoSport', 2021)
+        image: buildGeneratedCarImage('Ford', 'EcoSport', 2021)
     },
     {
         name: 'Volkswagen Jetta',
@@ -769,7 +784,7 @@ const usaUnder160Cars = [
         power: '147 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: makeImageUrl('Volkswagen', 'Jetta', 2022)
+        image: buildGeneratedCarImage('Volkswagen', 'Jetta', 2022)
     },
     {
         name: 'Mini Cooper',
@@ -779,7 +794,7 @@ const usaUnder160Cars = [
         power: '134 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: makeImageUrl('Mini', 'Cooper', 2023)
+        image: buildGeneratedCarImage('Mini', 'Cooper', 2023)
     },
     {
         name: 'Mini Countryman',
@@ -789,7 +804,7 @@ const usaUnder160Cars = [
         power: '134 л.с.',
         drive: 'Полный / передний',
         price: 2000000,
-        image: makeImageUrl('Mini', 'Countryman', 2023)
+        image: buildGeneratedCarImage('Mini', 'Countryman', 2023)
     },
     {
         name: 'Subaru Impreza',
@@ -799,7 +814,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1500000,
-        image: makeImageUrl('Subaru', 'Impreza', 2024)
+        image: buildGeneratedCarImage('Subaru', 'Impreza', 2024)
     },
     {
         name: 'Subaru Crosstrek',
@@ -809,7 +824,7 @@ const usaUnder160Cars = [
         power: '152 л.с.',
         drive: 'Полный',
         price: 1600000,
-        image: makeImageUrl('Subaru', 'Crosstrek', 2024)
+        image: buildGeneratedCarImage('Subaru', 'Crosstrek', 2024)
     },
     {
         name: 'Mazda CX-3',
@@ -819,7 +834,7 @@ const usaUnder160Cars = [
         power: '148 л.с.',
         drive: 'Полный / передний',
         price: 1800000,
-        image: makeImageUrl('Mazda', 'CX-3', 2021)
+        image: buildGeneratedCarImage('Mazda', 'CX-3', 2021)
     },
     {
         name: 'Mazda 3',
@@ -829,7 +844,7 @@ const usaUnder160Cars = [
         power: '155 л.с.',
         drive: 'Передний',
         price: 1800000,
-        image: makeImageUrl('Mazda', 'Mazda3', 2023)
+        image: buildGeneratedCarImage('Mazda', 'Mazda3', 2023)
     }
 ];
 
@@ -966,14 +981,13 @@ async function loadUsaOrdersSection(){
         return;
     }
 
-    const formatter = new Intl.NumberFormat('ru-RU');
     const prices = usaUnder160Cars.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
     const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
     const min = prices.length ? prices[0] : null;
 
-    metrics.querySelector('[data-metric="count"]').textContent = formatter.format(usaUnder160Cars.length);
-    metrics.querySelector('[data-metric="avg"]').textContent = avg ? `${formatter.format(avg)} ₽` : '—';
-    metrics.querySelector('[data-metric="min"]').textContent = min ? `${formatter.format(min)} ₽` : '—';
+    metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(usaUnder160Cars.length);
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
 
     renderPreferentialCars();
 }
@@ -1061,7 +1075,6 @@ function renderPreferentialCars(){
         return;
     }
 
-    const formatter = new Intl.NumberFormat('ru-RU');
     container.innerHTML = '';
 
     usaUnder160Cars.forEach(car=>{
@@ -1077,7 +1090,7 @@ function renderPreferentialCars(){
                     <li><span>Мощность:</span> ${car.power}</li>
                     <li><span>Привод:</span> ${car.drive}</li>
                 </ul>
-                <div class="usa-preferential-price">от ${formatter.format(car.price)} ₽</div>
+                <div class="usa-preferential-price">от ${formatCurrency(car.price)}</div>
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
                     <button class="btn-primary" type="button">Запросить расчет</button>
                 </div>
@@ -1092,16 +1105,7 @@ function renderPreferentialCars(){
             });
         }
 
-        const imageEl = card.querySelector('img');
-        if (imageEl) {
-            const brandModel = extractBrandModel(car.name);
-            const fallbackUrl = makeAiFallbackUrl(car.brand || brandModel.brand, car.model || brandModel.model, car.year || 2023);
-            imageEl.addEventListener('error', ()=>{
-                if (imageEl.dataset.fallbackApplied) return;
-                imageEl.dataset.fallbackApplied = '1';
-                imageEl.src = fallbackUrl;
-            });
-        }
+        attachImageFallback(card.querySelector('img'), car);
 
         container.appendChild(card);
     });
@@ -1112,14 +1116,13 @@ function loadChinaOrdersSection(){
     const metrics = document.getElementById('chinaMetrics');
     if (!grid || !metrics) return;
 
-    const formatter = new Intl.NumberFormat('ru-RU');
     const prices = chinaCars.map(car=>car.price).filter(Boolean).sort((a,b)=>a-b);
     const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
     const min = prices.length ? prices[0] : null;
 
-    metrics.querySelector('[data-metric="count"]').textContent = formatter.format(chinaCars.length);
-    metrics.querySelector('[data-metric="avg"]').textContent = avg ? `${formatter.format(avg)} ₽` : '—';
-    metrics.querySelector('[data-metric="min"]').textContent = min ? `${formatter.format(min)} ₽` : '—';
+    metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(chinaCars.length);
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
 
     grid.innerHTML = '';
 
@@ -1140,7 +1143,7 @@ function loadChinaOrdersSection(){
                     <li><span>Срок:</span> ${car.leadTime || '45-70 дней'}</li>
                 </ul>
                 ${highlightsHtml}
-                <div class="usa-preferential-price">от ${formatter.format(car.price)} ₽</div>
+                <div class="usa-preferential-price">от ${formatCurrency(car.price)}</div>
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
                     <button class="btn-primary" type="button">Запросить расчет</button>
                 </div>
@@ -1155,16 +1158,7 @@ function loadChinaOrdersSection(){
             });
         }
 
-        const imageEl = card.querySelector('img');
-        if (imageEl) {
-            const brandModel = extractBrandModel(car.name);
-            const fallbackUrl = makeAiFallbackUrl(car.brand || brandModel.brand, car.model || brandModel.model, car.year || 2023);
-            imageEl.addEventListener('error', ()=>{
-                if (imageEl.dataset.fallbackApplied) return;
-                imageEl.dataset.fallbackApplied = '1';
-                imageEl.src = fallbackUrl;
-            });
-        }
+        attachImageFallback(card.querySelector('img'), car);
 
         grid.appendChild(card);
     });
@@ -1175,14 +1169,13 @@ function loadKoreaOrdersSection(){
     const metrics = document.getElementById('koreaMetrics');
     if (!grid || !metrics) return;
 
-    const formatter = new Intl.NumberFormat('ru-RU');
     const prices = koreaCars.map(car=>car.price).filter(Boolean).sort((a,b)=>a-b);
     const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
     const min = prices.length ? prices[0] : null;
 
-    metrics.querySelector('[data-metric="count"]').textContent = formatter.format(koreaCars.length);
-    metrics.querySelector('[data-metric="avg"]').textContent = avg ? `${formatter.format(avg)} ₽` : '—';
-    metrics.querySelector('[data-metric="min"]').textContent = min ? `${formatter.format(min)} ₽` : '—';
+    metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(koreaCars.length);
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
 
     grid.innerHTML = '';
 
@@ -1203,7 +1196,7 @@ function loadKoreaOrdersSection(){
                     <li><span>Срок:</span> ${car.leadTime || '60-75 дней'}</li>
                 </ul>
                 ${highlightsHtml}
-                <div class="usa-preferential-price">от ${formatter.format(car.price)} ₽</div>
+                <div class="usa-preferential-price">от ${formatCurrency(car.price)}</div>
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
                     <button class="btn-primary" type="button">Запросить расчет</button>
                 </div>
@@ -1218,16 +1211,7 @@ function loadKoreaOrdersSection(){
             });
         }
 
-        const imageEl = card.querySelector('img');
-        if (imageEl) {
-            const brandModel = extractBrandModel(car.name);
-            const fallbackUrl = makeAiFallbackUrl(car.brand || brandModel.brand, car.model || brandModel.model, car.year || 2023);
-            imageEl.addEventListener('error', ()=>{
-                if (imageEl.dataset.fallbackApplied) return;
-                imageEl.dataset.fallbackApplied = '1';
-                imageEl.src = fallbackUrl;
-            });
-        }
+        attachImageFallback(card.querySelector('img'), car);
 
         grid.appendChild(card);
     });
@@ -1252,7 +1236,7 @@ function prefillUsaRequest(entry){
             `Автомобиль из США: ${entry.name}`,
             entry.vin ? `VIN: ${entry.vin}` : null,
             entry.photos ? `Фото / лот: ${entry.photos}` : null,
-            entry.mileage ? `Пробег: ${new Intl.NumberFormat('ru-RU').format(entry.mileage)} км` : null
+            entry.mileage ? `Пробег: ${numberFormatter.format(entry.mileage)} км` : null
         ].filter(Boolean);
         note.value = parts.join('\n');
     }catch(e){ /* ignore */ }
@@ -1333,7 +1317,7 @@ function loadCars() {
     if (!carsGrid) return;
     carsGrid.innerHTML = '';
 
-    filteredCars.forEach(car => {
+    state.filteredCars.forEach(car => {
         const carCard = createCarCard(car);
         carsGrid.appendChild(carCard);
     });
@@ -1342,33 +1326,26 @@ function loadCars() {
 function createCarCard(car) {
     const card = document.createElement('div');
     card.className = 'car-card';
-    
-    // Локальный предпросмотр первой фотографии, без ссылок на Google Drive
-    
+
     card.innerHTML = `
         <div class="car-image">
-            <div class="single-photo-container" style="position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 8px; background: #374151; cursor: pointer;" onclick="showCarDetails(${car.id})">
-                <!-- Попытка загрузить реальное фото -->
+            <div class="single-photo-container" data-action="show-details" data-car-id="${car.id}">
                 <img 
                     src="images/car${car.id}/main.jpg" 
                     alt="${car.year} ${car.brand} ${car.model}"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                
-                <!-- Fallback если фото не загрузилось -->
-                <div class="car-image-fallback" style="display: none; width: 100%; height: 400px; background: linear-gradient(135deg, #374151 0%, #4b5563 100%); align-items: center; justify-content: center; color: #f3f4f6; flex-direction: column;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 4rem; margin-bottom: 1rem;">🚗</div>
-                        <h4 style="color: #f3f4f6; margin-bottom: 0.5rem; font-size: 1.2rem;">${car.year} ${car.brand} ${car.model}</h4>
-                        <p style="color: #9ca3af; margin-bottom: 1rem; font-size: 0.9rem;">Нажмите для просмотра галереи</p>
-                        <div style="background: #6b7280; color: #f3f4f6; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; font-size: 0.9rem;">
-                            <i class="fas fa-images"></i> Галерея
-                        </div>
+                    class="car-photo"
+                    loading="lazy">
+                <div class="car-image-fallback">
+                    <div class="car-image-fallback-icon">🚗</div>
+                    <h4 class="car-image-fallback-title">${car.year} ${car.brand} ${car.model}</h4>
+                    <p class="car-image-fallback-text">Нажмите для просмотра галереи</p>
+                    <div class="car-image-fallback-cta">
+                        <i class="fas fa-images"></i> Галерея
                     </div>
                 </div>
                 ${car.sold ? `
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:3;">
-                    <div style="transform:rotate(-22deg);font-size:clamp(26px,7vw,76px);font-weight:900;letter-spacing:6px;color:rgba(255,255,255,0.8);text-shadow:0 4px 14px rgba(0,0,0,0.5);-webkit-text-stroke:3px rgba(220,38,38,0.85);">ПРОДАНО</div>
+                <div class="sold-overlay">
+                    <div class="sold-overlay__label">ПРОДАНО</div>
                 </div>
                 ` : ''}
             </div>
@@ -1377,28 +1354,55 @@ function createCarCard(car) {
             <h3 class="car-title">${car.year} ${car.brand} ${car.model}</h3>
             <div class="car-details">
                 <div><strong>Двигатель:</strong> ${car.engine}L</div>
-                <div><strong>Пробег:</strong> ${car.mileage.toLocaleString()} км</div>
+                <div><strong>Пробег:</strong> ${numberFormatter.format(car.mileage)} км</div>
                 <div><strong>VIN:</strong> <a href="https://www.google.com/search?q=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></div>
                 <div><strong>Дата выпуска:</strong> ${car.date}</div>
             </div>
-            <div class="car-price">${car.price.toLocaleString()} ₽</div>
-            <div class="price-note" style="font-size: 0.8rem; color: #10b981; margin-bottom: 1rem;">
+            <div class="car-price">${formatCurrency(car.price)}</div>
+            <div class="price-note">
                 <i class="fas fa-check-circle"></i> Включает растаможку и доставку
             </div>
             <div class="car-actions">
                 ${car.sold ? `
-                <button class="btn-primary" onclick="openSimilarRequest(${car.id})">Подобрать аналогичный</button>
+                <button class="btn-primary" data-action="request-similar" data-car-id="${car.id}">
+                    Подобрать аналогичный
+                </button>
                 ` : `
-                <button class="btn-primary" onclick="addToCart(${car.id})">
+                <button class="btn-primary" data-action="add-to-cart" data-car-id="${car.id}">
                     <i class="fas fa-shopping-cart"></i> Заказать
                 </button>
                 `}
-                <button class="btn-secondary" onclick="showCarDetails(${car.id})">
+                <button class="btn-secondary" data-action="show-details" data-car-id="${car.id}">
                     <i class="fas fa-eye"></i> Подробнее
                 </button>
             </div>
         </div>
     `;
+
+    const imageEl = card.querySelector('.car-photo');
+    const fallbackEl = card.querySelector('.car-image-fallback');
+    if (imageEl && fallbackEl) {
+        imageEl.addEventListener('error', () => {
+            imageEl.classList.add('is-hidden');
+            fallbackEl.style.display = 'flex';
+        }, { once: true });
+    }
+
+    const actionButtons = card.querySelectorAll('[data-action]');
+    actionButtons.forEach(button => {
+        const action = button.getAttribute('data-action');
+        const id = Number(button.getAttribute('data-car-id'));
+        if (!Number.isFinite(id)) return;
+
+        if (action === 'show-details') {
+            button.addEventListener('click', () => showCarDetails(id));
+        } else if (action === 'add-to-cart') {
+            button.addEventListener('click', () => addToCart(id));
+        } else if (action === 'request-similar') {
+            button.addEventListener('click', () => openSimilarRequest(id));
+        }
+    });
+
     return card;
 }
 
@@ -1428,7 +1432,7 @@ function applyFilters() {
     const priceTo = parseInt(priceToEl.value) || Infinity;
     const mileageTo = parseInt(mileageToEl.value) || Infinity;
 
-    filteredCars = carsData.filter(car => {
+    state.filteredCars = carsData.filter(car => {
         const brandMatch = !brandFilter || car.brand === brandFilter;
         const priceMatch = car.price >= priceFrom && car.price <= priceTo;
         const mileageMatch = car.mileage <= mileageTo;
@@ -1441,21 +1445,24 @@ function applyFilters() {
 
 function addToCart(carId) {
     const car = carsData.find(c => c.id === carId);
-    if (car) {
-        if (car.sold) { showNotification('Автомобиль уже продан', 'error'); return; }
-        const existingItem = cart.find(item => item.id === carId);
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({ ...car, quantity: 1 });
-        }
-        updateCartCount();
-        showNotification('Автомобиль добавлен в заказ!');
+    if (!car) return;
+    if (car.sold) {
+        showNotification('Автомобиль уже продан', 'error');
+        return;
     }
+
+    const existingItem = state.cart.find(item => item.id === carId);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        state.cart.push({ ...car, quantity: 1 });
+    }
+    updateCartCount();
+    showNotification('Автомобиль добавлен в заказ!');
 }
 
 function removeFromCart(carId) {
-    cart = cart.filter(item => item.id !== carId);
+    state.cart = state.cart.filter(item => item.id !== carId);
     updateCartCount();
     updateCartModal();
 }
@@ -1463,7 +1470,7 @@ function removeFromCart(carId) {
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
     if (!cartCount) return;
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalItems = state.cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
 }
 
@@ -1485,7 +1492,7 @@ function updateCartModal() {
     const cartTotal = document.getElementById('cartTotal');
     if (!cartBody || !cartTotal) return;
     
-    if (cart.length === 0) {
+    if (state.cart.length === 0) {
         cartBody.innerHTML = '<p style="text-align: center; color: #64748b;">Ваш заказ пуст</p>';
         cartTotal.textContent = '0';
         return;
@@ -1494,28 +1501,28 @@ function updateCartModal() {
     let total = 0;
     cartBody.innerHTML = '';
 
-    cart.forEach(item => {
+    state.cart.forEach(item => {
         total += item.price * item.quantity;
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
             <div class="cart-item-info">
                 <h4>${item.year} ${item.brand} ${item.model}</h4>
-                <p>Пробег: ${item.mileage.toLocaleString()} км</p>
+                <p>Пробег: ${numberFormatter.format(item.mileage)} км</p>
                 <p>Количество: ${item.quantity}</p>
                 <p style="color: #10b981; font-size: 0.8rem;"><i class="fas fa-check-circle"></i> Включает растаможку и доставку</p>
             </div>
             <div class="cart-item-price">
-                ${(item.price * item.quantity).toLocaleString()} ₽
+                ${formatCurrency(item.price * item.quantity)}
             </div>
-            <button class="remove-item" onclick="removeFromCart(${item.id})">
+            <button class="remove-item" data-remove-from-cart="${item.id}">
                 <i class="fas fa-trash"></i>
             </button>
         `;
         cartBody.appendChild(cartItem);
     });
 
-    cartTotal.textContent = total.toLocaleString();
+    cartTotal.textContent = numberFormatter.format(total);
 }
 
 function showCarDetails(carId) {
@@ -1537,7 +1544,7 @@ function showCarDetails(carId) {
                     <li><strong>Модель:</strong> ${car.model}</li>
                     <li><strong>Год:</strong> ${car.year}</li>
                     <li><strong>Двигатель:</strong> ${car.engine}L</li>
-                    <li><strong>Пробег:</strong> ${car.mileage.toLocaleString()} км</li>
+                    <li><strong>Пробег:</strong> ${numberFormatter.format(car.mileage)} км</li>
                     <li><strong>VIN:</strong> <a href="https://www.google.com/search?q=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></li>
                     <li><strong>Дата выпуска:</strong> ${car.date}</li>
                 </ul>
@@ -1548,7 +1555,7 @@ function showCarDetails(carId) {
             </div>
         </div>
         <div style="text-align: center; padding: 2rem; background: #1f2937; border-radius: 8px; border: 1px solid #374151;">
-            <h3 style="color: #f3f4f6; margin-bottom: 1rem;">${car.price.toLocaleString()} ₽</h3>
+            <h3 style="color: #f3f4f6; margin-bottom: 1rem;">${formatCurrency(car.price)}</h3>
             <p style="color: #10b981; margin-bottom: 1rem; font-weight: 500;">
                 <i class="fas fa-check-circle"></i> Цена включает растаможку и доставку по России
             </p>
@@ -1574,8 +1581,8 @@ function showCarDetails(carId) {
 
 // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РЅР°РІРёРіР°С†РёРё РїРѕ РіР°Р»РµСЂРµРµ (СѓРїСЂРѕС‰РµРЅРЅР°СЏ РІРµСЂСЃРёСЏ)
 function navigateGallery(carId, direction) {
-    if (!carGalleries[carId]) return;
-    const gallery = carGalleries[carId];
+    if (!state.carGalleries[carId]) return;
+    const gallery = state.carGalleries[carId];
     const nextIndex = (gallery.index + (direction === 'next' ? 1 : -1) + gallery.photos.length) % gallery.photos.length;
     setGalleryIndex(carId, nextIndex);
 }
@@ -1586,7 +1593,7 @@ function closeCarModal() {
 }
 
 function checkout() {
-    if (cart.length === 0) {
+    if (state.cart.length === 0) {
         showNotification('Ваш заказ пуст!', 'error');
         return;
     }
@@ -1628,6 +1635,17 @@ function setupEventListeners() {
     // Корзина
     const cartBtn = document.getElementById('cartBtn');
     if (cartBtn) cartBtn.addEventListener('click', showCart);
+    const cartBody = document.getElementById('cartBody');
+    if (cartBody) {
+        cartBody.addEventListener('click', (event) => {
+            const removeBtn = event.target.closest('[data-remove-from-cart]');
+            if (!removeBtn) return;
+            const carId = Number(removeBtn.getAttribute('data-remove-from-cart'));
+            if (Number.isFinite(carId)) {
+                removeFromCart(carId);
+            }
+        });
+    }
     
     // Закрытие модальных окон по клику вне их
     window.addEventListener('click', function(event) {
@@ -1667,9 +1685,9 @@ function setupEventListeners() {
         }
 
         // Собираем заказ
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        const items = cart.map(i => `${i.year} ${i.brand} ${i.model} — ${i.quantity} шт. — ${i.price.toLocaleString()} ₽`).join('\n');
-        const message = `Новый заказ с сайта CarExport\n\nИмя: ${name}\nТелефон: ${phone}\nEmail: ${email}\n\nТовары:\n${items}\n\nИтого: ${total.toLocaleString()} ₽`;
+        const total = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const items = state.cart.map(i => `${i.year} ${i.brand} ${i.model} — ${i.quantity} шт. — ${formatCurrency(i.price)}`).join('\n');
+        const message = `Новый заказ с сайта CarExport\n\nИмя: ${name}\nТелефон: ${phone}\nEmail: ${email}\n\nТовары:\n${items}\n\nИтого: ${formatCurrency(total)}`;
 
         // Пытаемся отправить через FormSubmit (без сервера)
         try{
@@ -1686,7 +1704,7 @@ function setupEventListeners() {
         }
 
         // Чистим корзину
-        cart = [];
+        state.cart = [];
         updateCartCount();
         closeCheckoutModal();
         closeCart();
@@ -1705,6 +1723,16 @@ function setupEventListeners() {
                 });
             }
         });
+    });
+
+    // Управление галереей
+    document.addEventListener('click', (event) => {
+        const navBtn = event.target.closest('[data-gallery-nav]');
+        if (!navBtn) return;
+        const carId = Number(navBtn.getAttribute('data-car-id'));
+        if (!Number.isFinite(carId)) return;
+        const direction = navBtn.getAttribute('data-gallery-nav') === 'next' ? 'next' : 'prev';
+        navigateGallery(carId, direction);
     });
 }
 
@@ -1752,7 +1780,7 @@ async function handleCalc(){
     const fee = customsClearanceFee(costUsd); // пошлина оформления
     const totalRub = Math.round(rubByCc + fee);
 
-    document.getElementById('calcResult').textContent = `${totalRub.toLocaleString('ru-RU')} ₽`;
+    document.getElementById('calcResult').textContent = `${numberFormatter.format(totalRub)} ₽`;
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -1864,7 +1892,7 @@ async function handleSelfCalc(){
     const serviceRub = 2400 * usdRub;
 
     const total = Math.round(customsRub + carRub + serviceRub);
-    document.getElementById('selfCalcResult').textContent = `${total.toLocaleString('ru-RU')} ₽`;
+    document.getElementById('selfCalcResult').textContent = `${numberFormatter.format(total)} ₽`;
 }
 
 async function fetchUsdRateRub(){
@@ -1876,60 +1904,6 @@ async function fetchUsdRateRub(){
     }catch(e){}
     return 90; // фолбэк
 }
-
-// Добавляем CSS анимации и стили для скрытия названий файлов
-const style = document.createElement('style');
-style.textContent = `
-    .gallery-dot{width:8px;height:8px;border-radius:50%;background:#9ca3af;opacity:.6}
-    .gallery-dot.active{background:#f3f4f6;opacity:1}
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
-    
-    /* Скрываем названия файлов в Google Drive iframe */
-    .car-image iframe,
-    .gallery-container iframe {
-        position: relative;
-    }
-    
-    /* Стили для скрытия списка файлов */
-    .car-image iframe[src*="embeddedfolderview"] {
-        background: #374151;
-    }
-    
-    /* Скрываем заголовки и списки в Google Drive */
-    .car-image iframe::before,
-    .gallery-container iframe::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 40px;
-        background: #374151;
-        z-index: 10;
-        pointer-events: none;
-    }
-`;
-document.head.appendChild(style);
 
 // ---------- Галерея: инициализация, рендер и свайпы ----------
 function buildPhotoCandidates(car){
@@ -2027,11 +2001,13 @@ async function initializeGallery(car){
     dotsWrap.innerHTML = '';
 
     photos.forEach((src,idx)=>{
+        const slide = document.createElement('div');
+        slide.className = 'gallery-slide';
         const img = document.createElement('img');
         img.src = src;
         img.alt = `${car.year} ${car.brand} ${car.model}`;
-        img.style.cssText = 'width:100%;height:100%;object-fit:contain;flex:0 0 100%;';
-        track.appendChild(img);
+        slide.appendChild(img);
+        track.appendChild(slide);
 
         const dot = document.createElement('div');
         dot.className = 'gallery-dot'+(idx===0?' active':'');
@@ -2041,18 +2017,21 @@ async function initializeGallery(car){
 
     // Если ни одной фотки — покажем заглушку
     if (photos.length === 0) {
-        const fallback = document.createElement('div');
-        fallback.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#f3f4f6;flex:0 0 100%;font-size:1rem;';
-        fallback.textContent = 'Фотографии скоро будут';
-        track.appendChild(fallback);
+        const fallbackSlide = document.createElement('div');
+        fallbackSlide.className = 'gallery-slide';
+        const placeholder = document.createElement('div');
+        placeholder.style.cssText = 'display:flex;align-items:center;justify-content:center;color:#f3f4f6;font-size:1rem;width:100%;height:100%;';
+        placeholder.textContent = 'Фотографии скоро будут';
+        fallbackSlide.appendChild(placeholder);
+        track.appendChild(fallbackSlide);
     }
 
-    carGalleries[car.id] = { index: 0, photos, container, track, dotsWrap };
+    state.carGalleries[car.id] = { index: 0, photos, container, track, dotsWrap };
     setGalleryIndex(car.id, 0);
 }
 
 function setGalleryIndex(carId, index){
-    const g = carGalleries[carId];
+    const g = state.carGalleries[carId];
     if(!g) return;
     const length = g.photos ? g.photos.length : g.track.children.length;
     if (length === 0) return;
@@ -2064,23 +2043,26 @@ function setGalleryIndex(carId, index){
     });
 }
 
-function prevPhoto(carId){ navigateGallery(carId, 'prev'); }
-function nextPhoto(carId){ navigateGallery(carId, 'next'); }
-
-let touchStartX = null; let touchActiveGalleryId = null;
 function onTouchStart(e){
     const gallery = e.target.closest?.('.gallery-container');
     if(!gallery) return;
-    touchActiveGalleryId = parseInt(gallery.getAttribute('data-car-id'));
-    touchStartX = e.touches[0].clientX;
+    const galleryId = Number(gallery.getAttribute('data-car-id'));
+    if (!Number.isFinite(galleryId)) {
+        state.touch.galleryId = null;
+        state.touch.startX = null;
+        return;
+    }
+    state.touch.galleryId = galleryId;
+    state.touch.startX = e.touches[0].clientX;
 }
 function onTouchMove(e){ /* пассивный слушатель, логика не нужна */ }
 function onTouchEnd(e){
-    if(touchStartX===null || touchActiveGalleryId===null) return;
+    if(state.touch.startX===null || state.touch.galleryId===null) return;
     const endX = (e.changedTouches && e.changedTouches[0]?.clientX) || 0;
-    const dx = endX - touchStartX;
+    const dx = endX - state.touch.startX;
     if(Math.abs(dx) > 40){
-        if(dx < 0) nextPhoto(touchActiveGalleryId); else prevPhoto(touchActiveGalleryId);
+        navigateGallery(state.touch.galleryId, dx < 0 ? 'next' : 'prev');
     }
-    touchStartX = null; touchActiveGalleryId = null;
+    state.touch.startX = null;
+    state.touch.galleryId = null;
 }

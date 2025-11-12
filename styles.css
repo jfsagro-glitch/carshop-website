@@ -9,7 +9,29 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
     color: #e5e7eb;
-    background-color: #000000;
+    background-color: #111827;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
 
 /* Premium theme overrides */
@@ -22,7 +44,7 @@ body.premium {
     --accent: #d4af37; /* gold */
 }
 
-body.premium { color: #e5e7eb; background: #000000; }
+body.premium { color: #e5e7eb; background: #111827; }
 
 body.premium .header,
 body.premium .hero,
@@ -99,24 +121,21 @@ body.premium .footer-section a:hover { color: var(--text); }
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #374151;
-}
-
-.logo i {
-    margin-right: 0.5rem;
-    font-size: 1.8rem;
-    color: #6b7280;
+    gap: 0.85rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #f3f4f6;
 }
 
 .logo-img {
-    width: 52px;
-    height: 52px;
+    width: 72px;
+    height: 72px;
     display: block;
-    animation: logoPulse 2.2s ease-in-out infinite;
+    border-radius: 16px;
+    animation: logoPulse 2.4s ease-in-out infinite;
     transform-origin: center;
     will-change: transform, filter;
+    box-shadow: 0 12px 24px rgba(12, 16, 24, 0.45);
 }
 
 @keyframes logoPulse {
@@ -684,43 +703,223 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .car-image {
     width: 100%;
-    height: 340px;
-    background: #f3f4f6;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     color: #9ca3af;
     font-size: 3rem;
-    overflow: hidden;
+}
+.single-photo-container {
     position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #1f2937;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.car-image img {
+.single-photo-container img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* Ensure gallery images in modal are fully visible and not cropped */
-.gallery-container img {
+.single-photo-container:hover img {
+    transform: scale(1.02);
+}
+
+.car-photo.is-hidden {
+    display: none;
+}
+
+.car-image-fallback {
+    display: none;
     width: 100%;
     height: 100%;
-    object-fit: contain !important;
-    object-position: center !important;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    align-items: center;
+    justify-content: center;
+    color: #f3f4f6;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
 }
 
-/* Мобильные устройства - уменьшаем размер фотографий на 35% */
+.car-image-fallback-icon {
+    font-size: 4rem;
+}
+
+.car-image-fallback-title {
+    color: #f3f4f6;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.car-image-fallback-text {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.car-image-fallback-cta {
+    background: #6b7280;
+    color: #f3f4f6;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.car-gallery {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #1f2937;
+}
+
+.gallery-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform-origin: center;
+}
+
+.gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: background 0.2s ease;
+}
+
+.gallery-nav-btn:hover {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.gallery-prev {
+    left: 12px;
+}
+
+.gallery-next {
+    right: 12px;
+}
+
+.gallery-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.gallery-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.6);
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.gallery-dot.active {
+    background: #f3f4f6;
+    opacity: 1;
+}
+
+.sold-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.sold-overlay__label {
+    transform: rotate(-18deg);
+    font-size: clamp(26px, 7vw, 76px);
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: rgba(255, 255, 255, 0.82);
+    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
+    -webkit-text-stroke: 3px rgba(220, 38, 38, 0.85);
+}
+
+@media (max-width: 1024px) {
+    .gallery-container {
+        height: 420px;
+    }
+}
+
 @media (max-width: 768px) {
-    .car-image img {
-        object-fit: contain;
-        object-position: center;
-        transform: none;
+    .gallery-container {
+        height: 360px;
     }
 
-    /* Apply the same scaling to images inside the modal gallery */
-    .gallery-container img {
-        transform: none;
+    .single-photo-container {
+        height: 320px;
+    }
+
+    .single-photo-container img,
+    .gallery-slide img {
+        transform: scale(0.6);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        height: 300px;
+    }
+
+    .single-photo-container {
+        height: 280px;
+    }
+
+    .single-photo-container img,
+    .gallery-slide img {
+        transform: scale(0.5);
     }
 }
 
@@ -749,6 +948,19 @@ body.premium .footer-section a:hover { color: var(--text); }
     font-weight: 500;
     color: #374151;
     margin-bottom: 1.2rem;
+}
+
+.price-note {
+    font-size: 0.85rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.price-note i {
+    color: currentColor;
 }
 
 .car-actions {
