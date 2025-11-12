@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Автомобили из Грузии - Доставка в Россию</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -19,7 +19,7 @@
         <div class="container">
             <div class="header-content">
             <div class="logo">
-                <img src="images/logo.png" alt="CarExport" class="logo-img" onerror="this.onerror=null; this.src='images/logo.svg'">
+                    <img src="images/logo.svg" alt="CarExport" class="logo-img" onerror="this.onerror=null; this.src='images/logo.png'">
                 <span>CarExport</span>
             </div>
                 <nav class="nav">
@@ -326,7 +326,7 @@
                 <span class="close" onclick="closeRequestModal()">&times;</span>
             </div>
             <div class="modal-body">
-                <form id="requestForm" class="calc-form" onsubmit="return false;">
+                <form id="requestForm" class="calc-form request-form" onsubmit="return false;">
                     <div class="calc-row">
                         <label for="reqBrand">Марка</label>
                         <input id="reqBrand" placeholder="Например, Toyota" required>
@@ -347,25 +347,27 @@
                         <label for="reqPriceTo">Стоимость (до), ₽</label>
                         <input type="number" id="reqPriceTo" placeholder="3000000" min="0" step="1000">
                     </div>
-                    <div class="calc-row" style="grid-column: 1/-1;">
+                    <div class="calc-row calc-row--full">
                         <label for="reqNote">Примечание</label>
                         <textarea id="reqNote" rows="4" placeholder="Пожелания по комплектации, цвету и т.д."></textarea>
                     </div>
-                    <div class="calc-row" style="grid-column: 1/-1; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
-                        <div>
-                            <label for="reqName">Ваше имя</label>
-                            <input id="reqName" placeholder="Иван" required>
-                        </div>
-                        <div>
-                            <label for="reqPhone">Телефон</label>
-                            <input id="reqPhone" placeholder="+7..." required>
-                        </div>
-                        <div>
-                            <label for="reqEmail">Email</label>
-                            <input type="email" id="reqEmail" placeholder="you@example.com">
+                    <div class="calc-row calc-row--full">
+                        <div class="request-form__contacts">
+                            <div class="request-form__field">
+                                <label for="reqName">Ваше имя</label>
+                                <input id="reqName" placeholder="Иван" required>
+                            </div>
+                            <div class="request-form__field">
+                                <label for="reqPhone">Телефон</label>
+                                <input id="reqPhone" placeholder="+7..." required>
+                            </div>
+                            <div class="request-form__field">
+                                <label for="reqEmail">Email</label>
+                                <input type="email" id="reqEmail" placeholder="you@example.com">
+                            </div>
                         </div>
                     </div>
-                    <div class="calc-actions" style="grid-column:1/-1;">
+                    <div class="calc-actions calc-actions--full">
                         <button class="btn-primary" id="requestSubmit" type="button">Отправить на подбор</button>
                     </div>
                 </form>

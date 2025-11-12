@@ -1084,6 +1084,40 @@ body.premium .footer-section a:hover { color: var(--text); }
 .calc-row input, .calc-row select { padding:0.6rem; border:1px solid #374151; border-radius:6px; background:#0b1220; color:#e5e7eb; }
 .calc-actions { display:flex; gap:0.75rem; }
 .calc-result { margin-top:1rem; padding:1rem; background:#0b1220; border:1px solid #1f2937; border-radius:6px; color:#e5e7eb; font-weight:500; }
+.calc-row--full { grid-column: 1 / -1; }
+.request-form .calc-row { align-items: flex-start; }
+.request-form__contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+.request-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.request-form__field input {
+    width: 100%;
+}
+.calc-actions--full {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+    .calc-form {
+        grid-template-columns: 1fr;
+    }
+    .request-form__contacts {
+        grid-template-columns: 1fr;
+    }
+    .calc-actions--full {
+        justify-content: stretch;
+    }
+    .calc-actions--full .btn-primary {
+        width: 100%;
+    }
+}
 
 .delivery-info h3 {
     font-size: 1.25rem;
