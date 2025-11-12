@@ -401,5 +401,30 @@
     </div>
 
     <script src="script.js"></script>
+
+    <aside class="floating-subscribe" aria-label="Подписка на Telegram">
+        <div class="floating-subscribe__inner">
+            <span class="floating-subscribe__title"><i class="fab fa-telegram"></i> Подпишись на нас в Telegram</span>
+            <a class="floating-subscribe__link" href="https://t.me/expo_mir" target="_blank" rel="noopener">Перейти в канал</a>
+            <button class="floating-subscribe__close" type="button" aria-label="Закрыть уведомление">&times;</button>
+        </div>
+    </aside>
+
+    <script>
+        (function(){
+            const widget = document.querySelector('.floating-subscribe');
+            if (!widget) return;
+            const closeBtn = widget.querySelector('.floating-subscribe__close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function(){
+                    widget.classList.add('floating-subscribe--hidden');
+                    localStorage.setItem('ce_subscribe_closed', '1');
+                });
+            }
+            if (localStorage.getItem('ce_subscribe_closed') === '1') {
+                widget.classList.add('floating-subscribe--hidden');
+            }
+        })();
+    </script>
 </body>
 </html>
