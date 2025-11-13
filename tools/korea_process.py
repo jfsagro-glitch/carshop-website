@@ -1,0 +1,155 @@
+import json
+import pathlib
+import re
+import shutil
+
+from bs4 import BeautifulSoup
+
+
+ROOT = pathlib.Path('images/Korea')
+DEST = ROOT / 'catalog'
+DEST.mkdir(parents=True, exist_ok=True)
+
+
+def slugify(*parts: str) -> str:
+    base = '-'.join(filter(None, parts))
+    base = base.lower()
+    base = re.sub(r'[^a-z0-9]+', '-', base).strip('-')
+    return base or 'car'
+
+
+def normalize_text(value: str) -> str:
+    return value.replace('\xa0', ' ').strip()
+
+
+image_lookup = {}
+for img_path in ROOT.glob('**/*.jpg'):
+    image_lookup.setdefault(img_path.name.lower(), img_path)
+
+
+cars = []
+seen_ids = set()
+
+html_paths = sorted(ROOT.glob('PAN AUTO *.html'), key=lambda p: p.name)
+
+for html_path in html_paths:
+    soup = BeautifulSoup(html_path.read_text(encoding='utf-8', errors='ignore'), 'html.parser')
+    cards = soup.select('a._carPreview_1ldw6_2')
+    for card in cards:
+        link = card.get('href', '')
+        id_match = re.search(r'(\d+)', link)
+        car_id = id_match.group(1) if id_match else None
+        if car_id and car_id in seen_ids:
+            continue
+
+        name_el = card.select_one('h2._titleXXXS_8e58f_24')
+        if not name_el:
+            continue
+        name = normalize_text(name_el.get_text(' ', strip=True))
+        if not name:
+            continue
+
+        parts = name.split()
+        brand = parts[0]
+        model = name[len(brand):].strip()
+
+        spec_entries = []
+        spec_paragraphs = card.select('p._textSDefault_g0usn_91')
+        if spec_paragraphs:
+            primary_text = normalize_text(spec_paragraphs[0].get_text(' ', strip=True))
+            main_parts = [normalize_text(part) for part in primary_text.split(',') if part.strip()]
+            if len(main_parts) > 0:
+                spec_entries.append(f'Мощность: {main_parts[0]}')
+            if len(main_parts) > 1:
+                spec_entries.append(f'Топливо: {main_parts[1]}')
+            if len(main_parts) > 2:
+                spec_entries.append(f'Объем двигателя: {main_parts[2]}')
+        if len(spec_paragraphs) >= 2:
+            mileage = normalize_text(spec_paragraphs[1].get_text(' ', strip=True))
+            if mileage:
+                spec_entries.append(f'Пробег: {mileage}')
+        if len(spec_paragraphs) >= 3:
+            date_text = normalize_text(spec_paragraphs[2].get_text(' ', strip=True))
+            if date_text:
+                spec_entries.append(f'Дата выпуска: {date_text}')
+
+        price_el = card.select_one('h2._titleXXS_8e58f_28')
+        price_text = normalize_text(price_el.get_text(' ', strip=True)) if price_el else ''
+        price_digits = re.sub(r'[^0-9]', '', price_text)
+        price_value = int(price_digits) if price_digits else None
+
+        city_badges = card.select('div._cityBadge_1ldw6_63')
+        if city_badges:
+            city_text = normalize_text(city_badges[0].get_text(' ', strip=True))
+            if city_text:
+                spec_entries.append(f'Логистика: {city_text}')
+
+        description_parts = []
+        label_el = card.select_one('p._todayLabel_1ldw6_16')
+        if label_el:
+            description_parts.append(normalize_text(label_el.get_text(' ', strip=True)))
+
+        new_fee_el = card.select_one('p._newFeeText_1ldw6_70')
+        if new_fee_el:
+            duty_text = normalize_text(new_fee_el.get_text(' ', strip=True))
+            duty_date = ''
+            if len(city_badges) > 1:
+                duty_date = normalize_text(city_badges[1].get_text(' ', strip=True))
+            duty_parts = [part for part in (duty_text, duty_date) if part]
+            if duty_parts:
+                description_parts.append(f"Пошлина: {' '.join(duty_parts)}")
+
+        badge_texts = [normalize_text(badge.get_text(' ', strip=True)) for badge in card.select('div._badge_12nz8_86')]
+        for badge in badge_texts:
+            if not badge:
+                continue
+            if '₽' in badge or '₽' in badge:
+                spec_entries.append(f'Дополнительная цена: {badge}')
+            elif badge not in description_parts:
+                description_parts.append(badge)
+
+        seen_spec = set()
+        filtered_specs = []
+        for spec in spec_entries:
+            if spec and spec not in seen_spec:
+                filtered_specs.append(spec)
+                seen_spec.add(spec)
+
+        image_el = card.find('img', class_='_image_zdk07_9')
+        if not image_el:
+            continue
+        src = image_el.get('src', '')
+        filename = src.split('/')[-1].split('?')[0].lower()
+        source_path = image_lookup.get(filename)
+        if not source_path or not source_path.exists():
+            continue
+
+        slug = slugify(brand, car_id or name)
+        dest_path = DEST / f'{slug}{source_path.suffix.lower()}'
+        counter = 2
+        while dest_path.exists():
+            dest_path = DEST / f'{slug}-{counter}{source_path.suffix.lower()}'
+            counter += 1
+        shutil.copy2(source_path, dest_path)
+
+        car_entry = {
+            'id': car_id,
+            'name': name,
+            'brand': brand,
+            'model': model,
+            'image': f'images/korea/catalog/{dest_path.name}',
+            'priceFrom': price_value,
+            'priceLabel': price_text or None,
+            'link': link or None,
+            'specs': filtered_specs,
+        }
+        if description_parts:
+            car_entry['description'] = ' · '.join(dict.fromkeys(description_parts))
+
+        cars.append(car_entry)
+        if car_id:
+            seen_ids.add(car_id)
+
+output_path = ROOT / 'korea_processed.json'
+output_path.write_text(json.dumps(cars, ensure_ascii=False, indent=2), encoding='utf-8')
+
