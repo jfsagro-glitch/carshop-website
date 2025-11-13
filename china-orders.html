@@ -67,12 +67,12 @@
         <div class="container">
             <div class="usa-header">
                 <div>
-                    <h2>Каталог автомобилей из Китая</h2>
-                    <p>Все цены указаны «под ключ» с учетом логистики, растаможки и оформления. Срок поставки зависит от модели и составляет в среднем 45-75 дней.</p>
+                    <h2>Авто из Китая до 160 л.с. (льготный утильсбор)</h2>
+                    <p>Подбор японских и европейских моделей, собранных в Китае и подпадающих под льготный утильсбор. Поставки «под ключ» с оформлением ПТС и доставкой по России.</p>
                 </div>
                 <div class="usa-badges">
-                    <span class="usa-badge">Заводские VIN и ПТС</span>
-                    <span class="usa-badge">Премиальные комплектации</span>
+                    <span class="usa-badge">Двигатели до 160 л.с.</span>
+                    <span class="usa-badge">Готовы к постановке на учет</span>
                 </div>
             </div>
 
@@ -91,25 +91,28 @@
                 </div>
             </div>
 
-            <div class="usa-under-grid" id="chinaOrdersGrid">
-                <div class="usa-empty-state">Загружаем предложения...</div>
-            </div>
-
-            <p class="usa-note">Для уточнения комплектаций и расчета доставки оставьте заявку — подготовим индивидуальное предложение в течение одного рабочего дня.</p>
-        </div>
-    </section>
-
-    <section id="china-under160" class="usa-orders usa-subsection">
-        <div class="container">
-            <div class="usa-header">
-                <div>
-                    <h2>Авто до 160 л.с. (льготный утильсбор)</h2>
-                    <p>Подбор японских и европейских моделей, собранных в Китае и подпадающих под льготный утильсбор. Поставки «под ключ» с оформлением ПТС и доставкой по РФ.</p>
+            <div class="china-filters" aria-label="Фильтры каталога">
+                <div class="filter-group">
+                    <label for="chinaBrandFilter">Марка</label>
+                    <select id="chinaBrandFilter">
+                        <option value="">Все марки</option>
+                    </select>
                 </div>
-                <div class="usa-badges">
-                    <span class="usa-badge">Двигатели до 160 л.с.</span>
-                    <span class="usa-badge">Готовы к постановке на учет</span>
+                <div class="filter-group">
+                    <label for="chinaModelSearch">Модель</label>
+                    <input type="text" id="chinaModelSearch" placeholder="Например, Sylphy">
                 </div>
+                <div class="filter-group">
+                    <label for="chinaSort">Сортировка</label>
+                    <select id="chinaSort">
+                        <option value="default">По умолчанию</option>
+                        <option value="price-asc">Цена: по возрастанию</option>
+                        <option value="price-desc">Цена: по убыванию</option>
+                        <option value="name-asc">Название: А→Я</option>
+                        <option value="name-desc">Название: Я→А</option>
+                    </select>
+                </div>
+                <button class="filter-btn" id="chinaResetFilters" type="button">Сбросить</button>
             </div>
 
             <div class="usa-orders-grid" id="chinaUnder160Grid">

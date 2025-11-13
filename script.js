@@ -7,7 +7,9 @@ const state = {
     touch: {
         startX: null,
         galleryId: null
-    }
+    },
+    chinaUnder160: null,
+    koreaUnder160: null
 };
 
 const numberFormatter = new Intl.NumberFormat('ru-RU');
@@ -836,698 +838,993 @@ const usaUnder160Cars = [
 
 const chinaCars = [
     {
-        name: 'Haval Jolion Tech Plus',
-        brand: 'Haval',
-        model: 'Jolion',
-        engine: '1.5 л, турбо, CVT',
-        power: '143 л.с.',
-        drive: 'Передний',
-        leadTime: '50-60 дней',
-        highlights: ['Комплекс ADAS L2', 'Салон из эко-кожи', 'Камеры 360°'],
-        price: 2390000,
-        image: 'images/china/haval-jolion.svg'
+        "name": "Nissan Sylphy",
+        "brand": "Nissan",
+        "model": "Sylphy",
+        "image": "images/china/catalog/nissan-sylphy.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 135",
+            "Макс. скорость, км/ч: 185",
+            "Привод: Передний",
+            "Разгон 0-100 км, сек: -",
+            "Расход топлива: 5.57-5.87"
+        ],
+        "engineType": "Бензин",
+        "power": "135 л.с.",
+        "maxSpeed": "185 км/ч",
+        "drive": "Передний",
+        "acceleration": "-",
+        "consumption": "5.57-5.87 л/100 км"
     },
     {
-        name: 'Chery Tiggo 7 Pro Prestige',
-        brand: 'Chery',
-        model: 'Tiggo 7 Pro',
-        engine: '1.5 л, турбо, CVT',
-        power: '147 л.с.',
-        drive: 'Передний',
-        leadTime: '45-55 дней',
-        highlights: ['Панорамная крыша', 'Подогрев всех сидений', 'Бесключевой доступ'],
-        price: 2490000,
-        image: 'images/china/chery-tiggo7.svg'
+        "name": "Nissan X-Trail",
+        "brand": "Nissan",
+        "model": "X-Trail",
+        "image": "images/china/catalog/nissan-x-trail.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 151",
+            "Макс. скорость, км/ч: 183",
+            "Привод: Передний",
+            "Объем двигателя: 1997",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "151 л.с.",
+        "maxSpeed": "183 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1997",
+        "transmission": "Вариатор"
     },
     {
-        name: 'Geely Coolray Flagship',
-        brand: 'Geely',
-        model: 'Coolray',
-        engine: '1.5 л, турбо, 7DCT',
-        power: '150 л.с.',
-        drive: 'Передний',
-        leadTime: '55-65 дней',
-        highlights: ['Цифровая приборная панель', 'Парктроники 360°', 'Адаптивный круиз-контроль'],
-        price: 2280000,
-        image: 'images/china/geely-coolray.svg'
+        "name": "Nissan Teana",
+        "brand": "Nissan",
+        "model": "Teana",
+        "image": "images/china/catalog/nissan-teana.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 156",
+            "Макс. скорость, км/ч: 197",
+            "Привод: Передний",
+            "Объем двигателя: 1997",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "156 л.с.",
+        "maxSpeed": "197 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1997",
+        "transmission": "Вариатор"
     },
     {
-        name: 'Exeed LX Premium',
-        brand: 'Exeed',
-        model: 'LX',
-        engine: '1.5 л, турбо, 7DCT',
-        power: '147 л.с.',
-        drive: 'Передний',
-        leadTime: '55-70 дней',
-        highlights: ['Стерео камера ADAS', 'Вентиляция передних сидений', 'Матрица 7680×4320 в медиасистеме'],
-        price: 2830000,
-        image: 'images/china/exeed-lx.svg'
+        "name": "Volkswagen Lavida",
+        "brand": "Volkswagen",
+        "model": "Lavida",
+        "image": "images/china/catalog/volkswagen-lavida.webp",
+        "priceFrom": 2600000,
+        "specs": [
+            "Тип двигателя: ДВС",
+            "Мощность, л.с.: 110/116/160",
+            "Макс. скорость, км/ч: 188/198/200",
+            "Привод: Задний",
+            "Объем двигателя: 1197/1498",
+            "Трансмиссия: Робот/Автомат"
+        ],
+        "engineType": "ДВС",
+        "power": "110/116/160 л.с.",
+        "maxSpeed": "188/198/200 км/ч",
+        "drive": "Задний",
+        "engineVolume": "1197/1498",
+        "transmission": "Робот/Автомат"
     },
     {
-        name: 'Omoda C5 Ultimate AWD',
-        brand: 'Omoda',
-        model: 'C5',
-        engine: '1.6 л, турбо, 7DCT',
-        power: '150 л.с.',
-        drive: 'Полный',
-        leadTime: '55-65 дней',
-        highlights: ['Полный привод AWD', 'Набор систем безопасности ADAS', 'Акустика Sony'],
-        price: 2940000,
-        image: 'images/china/omoda-c5.svg'
+        "name": "Honda Fit",
+        "brand": "Honda",
+        "model": "Fit",
+        "image": "images/china/catalog/honda-fit.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: ДВС",
+            "Мощность, л.с.: 124",
+            "Макс. скорость, км/ч: 188",
+            "Привод: Передний",
+            "Объем двигателя: 1498",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "ДВС",
+        "power": "124 л.с.",
+        "maxSpeed": "188 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1498",
+        "transmission": "Вариатор"
     },
     {
-        name: 'Changan CS35 Plus Luxe',
-        brand: 'Changan',
-        model: 'CS35 Plus',
-        engine: '1.4 л, турбо, 7DCT',
-        power: '150 л.с.',
-        drive: 'Передний',
-        leadTime: '45-55 дней',
-        highlights: ['Зимний пакет', 'Электропривод сиденья водителя', 'CarPlay/Android Auto'],
-        price: 2170000,
-        image: 'images/china/changan-cs35.svg'
+        "name": "Nissan Kick",
+        "brand": "Nissan",
+        "model": "Kick",
+        "image": "images/china/catalog/nissan-kick.webp",
+        "priceFrom": 1900000,
+        "specs": [
+            "Тип двигателя: ДВС",
+            "Мощность, л.с.: 122",
+            "Макс. скорость, км/ч: 170",
+            "Привод: Передний",
+            "Объем двигателя: 1498",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "ДВС",
+        "power": "122 л.с.",
+        "maxSpeed": "170 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1498",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Nissan Tiida",
+        "brand": "Nissan",
+        "model": "Tiida",
+        "image": "images/china/catalog/nissan-tiida.webp",
+        "priceFrom": 2000000,
+        "specs": [
+            "Тип двигателя: ДВС",
+            "Мощность, л.с.: 122",
+            "Макс. скорость, км/ч: 179",
+            "Привод: Передний",
+            "Объем двигателя: 1598",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "ДВС",
+        "power": "122 л.с.",
+        "maxSpeed": "179 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1598",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Mazda 3",
+        "brand": "Mazda",
+        "model": "3",
+        "image": "images/china/catalog/mazda-3.webp",
+        "priceFrom": 2286000,
+        "specs": [
+            "Тип двигателя: ДВС",
+            "Мощность, л.с.: 117",
+            "Макс. скорость, км/ч: 196",
+            "Привод: Передний",
+            "Объем двигателя: 1496",
+            "Трансмиссия: Механика"
+        ],
+        "engineType": "ДВС",
+        "power": "117 л.с.",
+        "maxSpeed": "196 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1496",
+        "transmission": "Механика"
+    },
+    {
+        "name": "Volkswagen Polo",
+        "brand": "Volkswagen",
+        "model": "Polo",
+        "image": "images/china/catalog/volkswagen-polo.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 110",
+            "Макс. скорость, км/ч: 182",
+            "Привод: Передний",
+            "Разгон 0-100 км, сек: -",
+            "Расход топлива: 5.60-5.90"
+        ],
+        "engineType": "Бензин",
+        "power": "110 л.с.",
+        "maxSpeed": "182 км/ч",
+        "drive": "Передний",
+        "acceleration": "-",
+        "consumption": "5.60-5.90 л/100 км"
+    },
+    {
+        "name": "Volkswagen Bora",
+        "brand": "Volkswagen",
+        "model": "Bora",
+        "image": "images/china/catalog/volkswagen-bora.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 116/150",
+            "Макс. скорость, км/ч: 200",
+            "Привод: Передний",
+            "Объем двигателя: 1197/1395",
+            "Трансмиссия: Механика"
+        ],
+        "engineType": "Бензин",
+        "power": "116/150 л.с.",
+        "maxSpeed": "200 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1197/1395",
+        "transmission": "Механика"
+    },
+    {
+        "name": "Volkswagen T-Cross",
+        "brand": "Volkswagen",
+        "model": "T-Cross",
+        "image": "images/china/catalog/volkswagen-t-cross.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 110",
+            "Макс. скорость, км/ч: 185",
+            "Привод: Передний",
+            "Объем двигателя: 1498",
+            "Трансмиссия: Механика"
+        ],
+        "engineType": "Бензин",
+        "power": "110 л.с.",
+        "maxSpeed": "185 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1498",
+        "transmission": "Механика"
+    },
+    {
+        "name": "Honda Life",
+        "brand": "Honda",
+        "model": "Life",
+        "image": "images/china/catalog/honda-life.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: ДВС",
+            "Мощность, л.с.: 124",
+            "Макс. скорость, км/ч: 188",
+            "Привод: Передний",
+            "Объем двигателя: 1496",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "ДВС",
+        "power": "124 л.с.",
+        "maxSpeed": "188 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1496",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Jetta VA7",
+        "brand": "Jetta",
+        "model": "VA7",
+        "image": "images/china/catalog/jetta-va7.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 200",
+            "Привод: Передний",
+            "Запас хода, км: 1395",
+            "Трансмиссия: Механика/Автомат"
+        ],
+        "engineType": "Бензин",
+        "power": "150 л.с.",
+        "maxSpeed": "200 км/ч",
+        "drive": "Передний",
+        "range": "1395 км",
+        "transmission": "Механика/Автомат"
+    },
+    {
+        "name": "Jetta VS8",
+        "brand": "Jetta",
+        "model": "VS8",
+        "image": "images/china/catalog/jetta-vs8.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 1 50",
+            "Макс. скорость, км/ч: 175",
+            "Привод: Передний",
+            "Объем двигателя: 1395",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "1 50 л.с.",
+        "maxSpeed": "175 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1395",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Hyundai Elantra",
+        "brand": "Hyundai",
+        "model": "Elantra",
+        "image": "images/china/catalog/hyundai-elantra.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 115-140",
+            "Макс. скорость, км/ч: 190/208",
+            "Привод: Передний",
+            "Запас хода, км: 1497/1353",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "115-140 л.с.",
+        "maxSpeed": "190/208 км/ч",
+        "drive": "Передний",
+        "range": "1497/1353 км",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Skoda Kamiq",
+        "brand": "Skoda",
+        "model": "Kamiq",
+        "image": "images/china/catalog/skoda-kamiq.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 109",
+            "Макс. скорость, км/ч: 178",
+            "Привод: Передний",
+            "Запас хода, км: 1498",
+            "Трансмиссия: Автомат"
+        ],
+        "engineType": "Бензин",
+        "power": "109 л.с.",
+        "maxSpeed": "178 км/ч",
+        "drive": "Передний",
+        "range": "1498 км",
+        "transmission": "Автомат"
+    },
+    {
+        "name": "Skoda Octavia",
+        "brand": "Skoda",
+        "model": "Octavia",
+        "image": "images/china/catalog/skoda-octavia.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 200",
+            "Привод: Передний",
+            "Объем двигателя: 1395",
+            "Трансмиссия: Робот"
+        ],
+        "engineType": "Бензин",
+        "power": "150 л.с.",
+        "maxSpeed": "200 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1395",
+        "transmission": "Робот"
+    },
+    {
+        "name": "Skoda Karoq",
+        "brand": "Skoda",
+        "model": "Karoq",
+        "image": "images/china/catalog/skoda-karoq.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 198",
+            "Привод: Передний",
+            "Объем двигателя: 1395",
+            "Трансмиссия: Робот"
+        ],
+        "engineType": "Бензин",
+        "power": "150 л.с.",
+        "maxSpeed": "198 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1395",
+        "transmission": "Робот"
+    },
+    {
+        "name": "Skoda Superb",
+        "brand": "Skoda",
+        "model": "Superb",
+        "image": "images/china/catalog/skoda-superb.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 210",
+            "Привод: Передний",
+            "Объем двигателя: 1395",
+            "Трансмиссия: Робот"
+        ],
+        "engineType": "Бензин",
+        "power": "150 л.с.",
+        "maxSpeed": "210 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1395",
+        "transmission": "Робот"
+    },
+    {
+        "name": "Mazda CX-30",
+        "brand": "Mazda",
+        "model": "CX-30",
+        "image": "images/china/catalog/mazda-cx-30.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 158",
+            "Макс. скорость, км/ч: 202-204",
+            "Привод: Передний",
+            "Объем двигателя: 1998",
+            "Трансмиссия: Механика"
+        ],
+        "engineType": "Бензин",
+        "power": "158 л.с.",
+        "maxSpeed": "202-204 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1998",
+        "transmission": "Механика"
+    },
+    {
+        "name": "Mazda CX-5",
+        "brand": "Mazda",
+        "model": "CX-5",
+        "image": "images/china/catalog/mazda-cx-5.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 1 55",
+            "Макс. скорость, км/ч: 187",
+            "Привод: Передний",
+            "Объем двигателя: 1998",
+            "Трансмиссия: Автомат"
+        ],
+        "engineType": "Бензин",
+        "power": "1 55 л.с.",
+        "maxSpeed": "187 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1998",
+        "transmission": "Автомат"
+    },
+    {
+        "name": "Mercedes-Benz A-Class",
+        "brand": "Mercedes-Benz",
+        "model": "A-Class",
+        "image": "images/china/catalog/mercedes-benz-a-class.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 136",
+            "Макс. скорость, км/ч: 218",
+            "Привод: Передний",
+            "Объем двигателя: 1332",
+            "Трансмиссия: Робот"
+        ],
+        "engineType": "Бензин",
+        "power": "136 л.с.",
+        "maxSpeed": "218 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1332",
+        "transmission": "Робот"
+    },
+    {
+        "name": "Honda Envix",
+        "brand": "Honda",
+        "model": "Envix",
+        "image": "images/china/catalog/honda-envix.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 122",
+            "Макс. скорость, км/ч: 190",
+            "Привод: Передний",
+            "Объем двигателя: 998",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "122 л.с.",
+        "maxSpeed": "190 км/ч",
+        "drive": "Передний",
+        "engineVolume": "998",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Honda Crider",
+        "brand": "Honda",
+        "model": "Crider",
+        "image": "images/china/catalog/honda-crider.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 122",
+            "Макс. скорость, км/ч: 190",
+            "Привод: Передний",
+            "Объем двигателя: 988",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "122 л.с.",
+        "maxSpeed": "190 км/ч",
+        "drive": "Передний",
+        "engineVolume": "988",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Honda Civic",
+        "brand": "Honda",
+        "model": "Civic",
+        "image": "images/china/catalog/honda-civic.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 1 29",
+            "Макс. скорость, км/ч: 200",
+            "Привод: Передний",
+            "Объем двигателя: 1498",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "1 29 л.с.",
+        "maxSpeed": "200 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1498",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Kia Sethus",
+        "brand": "Kia",
+        "model": "Sethus",
+        "image": "images/china/catalog/kia-sethus.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 115/140",
+            "Макс. скорость, км/ч: 172/190",
+            "Привод: Передний",
+            "Объем двигателя: 1497/1353",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "115/140 л.с.",
+        "maxSpeed": "172/190 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1497/1353",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Kia K3",
+        "brand": "Kia",
+        "model": "K3",
+        "image": "images/china/catalog/kia-k3.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 115/140",
+            "Макс. скорость, км/ч: 190/200",
+            "Привод: Передний",
+            "Объем двигателя: 1497/1353",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "115/140 л.с.",
+        "maxSpeed": "190/200 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1497/1353",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Toyota Levin",
+        "brand": "Toyota",
+        "model": "Levin",
+        "image": "images/china/catalog/toyota-levin.webp",
+        "priceFrom": 2100000,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 116/121",
+            "Макс. скорость, км/ч: 180",
+            "Привод: Передний",
+            "Объем двигателя: 1197/1490",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "116/121 л.с.",
+        "maxSpeed": "180 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1197/1490",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Toyota Corolla",
+        "brand": "Toyota",
+        "model": "Corolla",
+        "image": "images/china/catalog/toyota-corolla.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 116/121",
+            "Макс. скорость, км/ч: 180",
+            "Привод: Передний",
+            "Объем двигателя: 1197/1490",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "Бензин",
+        "power": "116/121 л.с.",
+        "maxSpeed": "180 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1197/1490",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Volkswagen Tharu",
+        "brand": "Volkswagen",
+        "model": "Tharu",
+        "image": "images/china/catalog/volkswagen-tharu.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 1 10",
+            "Макс. скорость, км/ч: 182",
+            "Привод: Передний",
+            "Объем двигателя: 1498",
+            "Трансмиссия: Автомат"
+        ],
+        "engineType": "Бензин",
+        "power": "1 10 л.с.",
+        "maxSpeed": "182 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1498",
+        "transmission": "Автомат"
+    },
+    {
+        "name": "Volkswagen T-Roc",
+        "brand": "Volkswagen",
+        "model": "T-Roc",
+        "image": "images/china/catalog/volkswagen-t-roc.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 200",
+            "Привод: Передний",
+            "Объем двигателя: 1395",
+            "Трансмиссия: Робот"
+        ],
+        "engineType": "Бензин",
+        "power": "150 л.с.",
+        "maxSpeed": "200 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1395",
+        "transmission": "Робот"
+    },
+    {
+        "name": "Volkswagen Passat",
+        "brand": "Volkswagen",
+        "model": "Passat",
+        "image": "images/china/catalog/volkswagen-passat.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 210",
+            "Привод: Передний",
+            "Объем двигателя: 1395",
+            "Трансмиссия: Робот"
+        ],
+        "engineType": "Бензин",
+        "power": "150 л.с.",
+        "maxSpeed": "210 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1395",
+        "transmission": "Робот"
+    },
+    {
+        "name": "Volkswagen Touran",
+        "brand": "Volkswagen",
+        "model": "Touran",
+        "image": "images/china/catalog/volkswagen-touran.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 190",
+            "Привод: Передний",
+            "Объем двигателя: 1395",
+            "Трансмиссия: Робот"
+        ],
+        "engineType": "Бензин",
+        "power": "150 л.с.",
+        "maxSpeed": "190 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1395",
+        "transmission": "Робот"
+    },
+    {
+        "name": "Nissan Qashqai",
+        "brand": "Nissan",
+        "model": "Qashqai",
+        "image": "images/china/catalog/nissan-qashqai.webp",
+        "priceFrom": 2934000,
+        "specs": [
+            "Тип двигателя: ДВС",
+            "Мощность, л.с.: 151",
+            "Макс. скорость, км/ч: 186",
+            "Привод: Передний",
+            "Объем двигателя: 1997",
+            "Трансмиссия: Вариатор"
+        ],
+        "engineType": "ДВС",
+        "power": "151 л.с.",
+        "maxSpeed": "186 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1997",
+        "transmission": "Вариатор"
+    },
+    {
+        "name": "Volkswagen Magotan",
+        "brand": "Volkswagen",
+        "model": "Magotan",
+        "image": "images/china/catalog/volkswagen-magotan.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Бензин",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 210",
+            "Привод: Передний",
+            "Объем двигателя: 1395",
+            "Трансмиссия: Робот"
+        ],
+        "engineType": "Бензин",
+        "power": "150 л.с.",
+        "maxSpeed": "210 км/ч",
+        "drive": "Передний",
+        "engineVolume": "1395",
+        "transmission": "Робот"
+    },
+    {
+        "name": "MG MG4",
+        "brand": "MG",
+        "model": "MG4",
+        "image": "images/china/catalog/mg-mg4.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 163",
+            "Макс. скорость, км/ч: 160",
+            "Привод: Передний",
+            "Энергия батареи, кВтч: 42.8",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "163 л.с.",
+        "maxSpeed": "160 км/ч",
+        "drive": "Передний",
+        "battery": "42.8 кВт·ч",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "Geely Galaxy Starwish",
+        "brand": "Geely",
+        "model": "Galaxy Starwish",
+        "image": "images/china/catalog/geely-galaxy-starwish.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 79-116",
+            "Макс. скорость, км/ч: 125-135",
+            "Привод: Задний",
+            "Энергия батареи, кВтч: 30.12-40.16",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "79-116 л.с.",
+        "maxSpeed": "125-135 км/ч",
+        "drive": "Задний",
+        "battery": "30.12-40.16 кВт·ч",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "Mazda EZ-6",
+        "brand": "Mazda",
+        "model": "EZ-6",
+        "image": "images/china/catalog/mazda-ez-6.webp",
+        "priceFrom": 3500000,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 217/95",
+            "Макс. скорость, км/ч: 170",
+            "Привод: Задний",
+            "Батарея, кВтч: 28.4",
+            "Запас хода, км: 200"
+        ],
+        "engineType": "Электро",
+        "power": "217/95 л.с.",
+        "maxSpeed": "170 км/ч",
+        "drive": "Задний",
+        "battery": "28.4 кВт·ч",
+        "range": "200 км"
+    },
+    {
+        "name": "BYD Seagull",
+        "brand": "BYD",
+        "model": "Seagull",
+        "image": "images/china/catalog/byd-seagull.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 75",
+            "Макс. скорость, км/ч: 130",
+            "Привод: Передний",
+            "Энергия батареи, кВтч: 30.08-38.88",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "75 л.с.",
+        "maxSpeed": "130 км/ч",
+        "drive": "Передний",
+        "battery": "30.08-38.88 кВт·ч",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "BYD Yuan UP",
+        "brand": "BYD",
+        "model": "Yuan UP",
+        "image": "images/china/catalog/byd-yuan-up.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 95",
+            "Макс. скорость, км/ч: 150-160",
+            "Привод: Передний",
+            "Энергия батареи, кВтч: 32-45.12",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "95 л.с.",
+        "maxSpeed": "150-160 км/ч",
+        "drive": "Передний",
+        "battery": "32-45.12 кВт·ч",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "BYD Qin Plus EV",
+        "brand": "BYD",
+        "model": "Qin Plus EV",
+        "image": "images/china/catalog/byd-qin-plus-ev.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 136",
+            "Макс. скорость, км/ч: 150",
+            "Привод: Передний",
+            "Энергия батареи, кВтч: 48-57.6",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "136 л.с.",
+        "maxSpeed": "150 км/ч",
+        "drive": "Передний",
+        "battery": "48-57.6 кВт·ч",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "BYD Qin L",
+        "brand": "BYD",
+        "model": "Qin L",
+        "image": "images/china/catalog/byd-qin-l.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 150",
+            "Макс. скорость, км/ч: 160",
+            "Привод: Задний",
+            "Энергия батареи, кВтч: 46.08",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "150 л.с.",
+        "maxSpeed": "160 км/ч",
+        "drive": "Задний",
+        "battery": "46.08 кВт·ч",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "Aion UT",
+        "brand": "Aion",
+        "model": "UT",
+        "image": "images/china/catalog/aion-ut.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 136",
+            "Макс. скорость, км/ч: 150",
+            "Привод: Передний",
+            "Энергия батареи, кВтч: 34.8-44.12",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "136 л.с.",
+        "maxSpeed": "150 км/ч",
+        "drive": "Передний",
+        "battery": "34.8-44.12 кВт·ч",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "JAC Yttrium 3",
+        "brand": "JAC",
+        "model": "Yttrium 3",
+        "image": "images/china/catalog/jac-yttrium-3.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 82/95/136",
+            "Макс. скорость, км/ч: 135-150",
+            "Привод: Передний",
+            "Энергия батареи, кВтч: -",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "82/95/136 л.с.",
+        "maxSpeed": "135-150 км/ч",
+        "drive": "Передний",
+        "battery": "-",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "Baojun Yep Plus",
+        "brand": "Baojun",
+        "model": "Yep Plus",
+        "image": "images/china/catalog/baojun-yep-plus.webp",
+        "priceFrom": null,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, л.с.: 102",
+            "Макс. скорость, км/ч: 150",
+            "Привод: Передний",
+            "Энергия батареи, кВтч: 31.9-54",
+            "Трансмиссия: Редуктор"
+        ],
+        "engineType": "Электро",
+        "power": "102 л.с.",
+        "maxSpeed": "150 км/ч",
+        "drive": "Передний",
+        "battery": "31.9-54 кВт·ч",
+        "transmission": "Редуктор"
+    },
+    {
+        "name": "Toyota BZ3X",
+        "brand": "Toyota",
+        "model": "BZ3X",
+        "image": "images/china/catalog/toyota-bz3x.webp",
+        "priceFrom": 2400000,
+        "specs": [
+            "Тип двигателя: Электро",
+            "Мощность, кВт: 150-165",
+            "Макс. скорость, км/ч: 160",
+            "Привод: Передний",
+            "Энергия аккумулятора, кВтч: 50.03-67.92",
+            "Запас хода, км: 430-610"
+        ],
+        "engineType": "Электро",
+        "power": "150-165 кВт",
+        "maxSpeed": "160 км/ч",
+        "drive": "Передний",
+        "battery": "50.03-67.92 кВт·ч",
+        "range": "430-610 км"
+    },
+    {
+        "name": "Geely Galaxy Starshine 6",
+        "brand": "Geely",
+        "model": "Galaxy Starshine 6",
+        "image": "images/china/catalog/geely-galaxy-starshine-6.webp",
+        "priceFrom": 1800608,
+        "specs": [
+            "Тип двигателя: Гибрид",
+            "Мощность, л.с.: 160",
+            "Макс. скорость, км/ч: 180",
+            "Привод: Передний",
+            "Энергия батареи, кВтч: 8.5-17",
+            "Трансмиссия: Гибридна я"
+        ],
+        "engineType": "Гибрид",
+        "power": "160 л.с.",
+        "maxSpeed": "180 км/ч",
+        "drive": "Передний",
+        "battery": "8.5-17 кВт·ч",
+        "transmission": "Гибридна я"
     }
-];
-
-const chinaUnder160Cars = [
-    {
-        name: 'Nissan Sylphy',
-        brand: 'Nissan',
-        model: 'Sylphy',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 135 л.с.',
-            'Макс. скорость: 185 км/ч',
-            'Привод: Передний',
-            'Расход топлива: 5.57–5.87 л/100 км'
-        ]
-    },
-    {
-        name: 'Nissan X-Trail',
-        brand: 'Nissan',
-        model: 'X-Trail',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 151 л.с.',
-            'Макс. скорость: 183 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 2.0 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Nissan Teana',
-        brand: 'Nissan',
-        model: 'Teana',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 156 л.с.',
-            'Макс. скорость: 197 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 2.0 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Volkswagen Lavida',
-        brand: 'Volkswagen',
-        model: 'Lavida',
-        priceFrom: 2600000,
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 110 / 116 / 160 л.с.',
-            'Макс. скорость: 188 / 198 / 200 км/ч',
-            'Привод: Задний',
-            'Объем двигателя: 1.2 / 1.5 л',
-            'Трансмиссия: Робот / Автомат'
-        ]
-    },
-    {
-        name: 'Honda Fit',
-        brand: 'Honda',
-        model: 'Fit',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 124 л.с.',
-            'Макс. скорость: 188 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Nissan Kick',
-        brand: 'Nissan',
-        model: 'Kick',
-        priceFrom: 1900000,
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 122 л.с.',
-            'Макс. скорость: 170 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Nissan Tiida',
-        brand: 'Nissan',
-        model: 'Tiida',
-        priceFrom: 2000000,
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 122 л.с.',
-            'Макс. скорость: 179 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.6 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Mazda 3',
-        brand: 'Mazda',
-        model: '3',
-        priceFrom: 2286000,
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 117 л.с.',
-            'Макс. скорость: 196 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 л',
-            'Трансмиссия: Механика'
-        ]
-    },
-    {
-        name: 'Volkswagen Polo',
-        brand: 'Volkswagen',
-        model: 'Polo',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 110 л.с.',
-            'Макс. скорость: 182 км/ч',
-            'Привод: Передний',
-            'Расход топлива: 5.60–5.90 л/100 км'
-        ]
-    },
-    {
-        name: 'Volkswagen Bora',
-        brand: 'Volkswagen',
-        model: 'Bora',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 116 / 150 л.с.',
-            'Макс. скорость: 200 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.2 / 1.4 л',
-            'Трансмиссия: Механика'
-        ]
-    },
-    {
-        name: 'Volkswagen T-Cross',
-        brand: 'Volkswagen',
-        model: 'T-Cross',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 110 л.с.',
-            'Макс. скорость: 185 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 л',
-            'Трансмиссия: Механика'
-        ]
-    },
-    {
-        name: 'Honda Life',
-        brand: 'Honda',
-        model: 'Life',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 124 л.с.',
-            'Макс. скорость: 188 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Jetta VA7',
-        brand: 'Jetta',
-        model: 'VA7',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 200 км/ч',
-            'Привод: Передний',
-            'Запас хода: 1 395 км',
-            'Трансмиссия: Механика / Автомат'
-        ]
-    },
-    {
-        name: 'Jetta VS8',
-        brand: 'Jetta',
-        model: 'VS8',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 175 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.4 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Hyundai Elantra',
-        brand: 'Hyundai',
-        model: 'Elantra',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 115–140 л.с.',
-            'Макс. скорость: 190 / 208 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 / 1.4 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Skoda Kamiq',
-        brand: 'Skoda',
-        model: 'Kamiq',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 109 л.с.',
-            'Макс. скорость: 178 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 л',
-            'Трансмиссия: Автомат'
-        ]
-    },
-    {
-        name: 'Skoda Octavia',
-        brand: 'Skoda',
-        model: 'Octavia',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 200 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.4 л',
-            'Трансмиссия: Робот'
-        ]
-    },
-    {
-        name: 'Skoda Karoq',
-        brand: 'Skoda',
-        model: 'Karoq',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 198 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.4 л',
-            'Трансмиссия: Робот'
-        ]
-    },
-    {
-        name: 'Skoda Superb',
-        brand: 'Skoda',
-        model: 'Superb',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 210 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.4 л',
-            'Трансмиссия: Робот'
-        ]
-    },
-    {
-        name: 'Mazda CX-30',
-        brand: 'Mazda',
-        model: 'CX-30',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 158 л.с.',
-            'Макс. скорость: 202–204 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 2.0 л',
-            'Трансмиссия: Механика'
-        ]
-    },
-    {
-        name: 'Mazda CX-5',
-        brand: 'Mazda',
-        model: 'CX-5',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 155 л.с.',
-            'Макс. скорость: 187 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 2.0 л',
-            'Трансмиссия: Автомат'
-        ]
-    },
-    {
-        name: 'Mercedes-Benz A-Class',
-        brand: 'Mercedes-Benz',
-        model: 'A-Class',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 136 л.с.',
-            'Макс. скорость: 218 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.33 л',
-            'Трансмиссия: Робот'
-        ]
-    },
-    {
-        name: 'Honda Envix',
-        brand: 'Honda',
-        model: 'Envix',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 122 л.с.',
-            'Макс. скорость: 190 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 0.998 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Honda Crider',
-        brand: 'Honda',
-        model: 'Crider',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 122 л.с.',
-            'Макс. скорость: 190 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 0.988 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Honda Civic',
-        brand: 'Honda',
-        model: 'Civic',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 129 л.с.',
-            'Макс. скорость: 200 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Kia Sethus',
-        brand: 'Kia',
-        model: 'Sethus',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 115 / 140 л.с.',
-            'Макс. скорость: 172 / 190 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 / 1.35 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Kia K3',
-        brand: 'Kia',
-        model: 'K3',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 115 / 140 л.с.',
-            'Макс. скорость: 190 / 200 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 / 1.35 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Toyota Levin',
-        brand: 'Toyota',
-        model: 'Levin',
-        priceFrom: 2100000,
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 116 / 121 л.с.',
-            'Макс. скорость: 180 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.2 / 1.49 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Toyota Corolla',
-        brand: 'Toyota',
-        model: 'Corolla',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 116 / 121 л.с.',
-            'Макс. скорость: 180 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.2 / 1.49 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Volkswagen Tharu',
-        brand: 'Volkswagen',
-        model: 'Tharu',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 110 л.с.',
-            'Макс. скорость: 182 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.5 л',
-            'Трансмиссия: Автомат'
-        ]
-    },
-    {
-        name: 'Volkswagen T-Roc',
-        brand: 'Volkswagen',
-        model: 'T-Roc',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 200 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.4 л',
-            'Трансмиссия: Робот'
-        ]
-    },
-    {
-        name: 'Volkswagen Passat',
-        brand: 'Volkswagen',
-        model: 'Passat',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 210 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.4 л',
-            'Трансмиссия: Робот'
-        ]
-    },
-    {
-        name: 'Volkswagen Touran',
-        brand: 'Volkswagen',
-        model: 'Touran',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 190 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.4 л',
-            'Трансмиссия: Робот'
-        ]
-    },
-    {
-        name: 'Nissan Qashqai',
-        brand: 'Nissan',
-        model: 'Qashqai',
-        priceFrom: 2934000,
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 151 л.с.',
-            'Макс. скорость: 186 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 2.0 л',
-            'Трансмиссия: Вариатор'
-        ]
-    },
-    {
-        name: 'Volkswagen Magotan',
-        brand: 'Volkswagen',
-        model: 'Magotan',
-        specs: [
-            'Тип двигателя: Бензин',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 210 км/ч',
-            'Привод: Передний',
-            'Объем двигателя: 1.4 л',
-            'Трансмиссия: Робот'
-        ]
-    },
-    {
-        name: 'MG4',
-        brand: 'MG',
-        model: 'MG4',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 163 л.с.',
-            'Макс. скорость: 160 км/ч',
-            'Привод: Передний',
-            'Энергия батареи: 42.8 кВт·ч',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'Geely Galaxy Starwish',
-        brand: 'Geely',
-        model: 'Galaxy Starwish',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 79–116 л.с.',
-            'Макс. скорость: 125–135 км/ч',
-            'Привод: Задний',
-            'Энергия батареи: 30.12–40.16 кВт·ч',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'Mazda EZ-6',
-        brand: 'Mazda',
-        model: 'EZ-6',
-        priceFrom: 3500000,
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 95 / 217 л.с.',
-            'Макс. скорость: 170 км/ч',
-            'Привод: Задний',
-            'Батарея: 28.4 кВт·ч',
-            'Запас хода: 200 км'
-        ]
-    },
-    {
-        name: 'BYD Seagull',
-        brand: 'BYD',
-        model: 'Seagull',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 75 л.с.',
-            'Макс. скорость: 130 км/ч',
-            'Привод: Передний',
-            'Энергия батареи: 30.08–38.88 кВт·ч',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'BYD Yuan UP',
-        brand: 'BYD',
-        model: 'Yuan UP',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 95 л.с.',
-            'Макс. скорость: 150–160 км/ч',
-            'Привод: Передний',
-            'Энергия батареи: 32–45.12 кВт·ч',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'BYD Qin Plus EV',
-        brand: 'BYD',
-        model: 'Qin Plus EV',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 136 л.с.',
-            'Макс. скорость: 150 км/ч',
-            'Привод: Передний',
-            'Энергия батареи: 48–57.6 кВт·ч',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'BYD Qin L',
-        brand: 'BYD',
-        model: 'Qin L',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 150 л.с.',
-            'Макс. скорость: 160 км/ч',
-            'Привод: Задний',
-            'Энергия батареи: 46.08 кВт·ч',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'Aion UT',
-        brand: 'Aion',
-        model: 'UT',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 136 л.с.',
-            'Макс. скорость: 150 км/ч',
-            'Привод: Передний',
-            'Энергия батареи: 34.8–44.12 кВт·ч',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'JAC Yttrium 3',
-        brand: 'JAC',
-        model: 'Yttrium 3',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 82 / 95 / 136 л.с.',
-            'Макс. скорость: 135–150 км/ч',
-            'Привод: Передний',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'Baojun Yep Plus',
-        brand: 'Baojun',
-        model: 'Yep Plus',
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 102 л.с.',
-            'Макс. скорость: 150 км/ч',
-            'Привод: Передний',
-            'Энергия батареи: 31.9–54 кВт·ч',
-            'Трансмиссия: Редуктор'
-        ]
-    },
-    {
-        name: 'Toyota bZ3X',
-        brand: 'Toyota',
-        model: 'bZ3X',
-        priceFrom: 2400000,
-        specs: [
-            'Тип двигателя: Электро',
-            'Мощность: 150–165 кВт',
-            'Макс. скорость: 160 км/ч',
-            'Привод: Передний',
-            'Батарея: 50.03–67.92 кВт·ч',
-            'Запас хода: 430–610 км'
-        ]
-    },
-    {
-        name: 'Geely Galaxy Starshine 6',
-        brand: 'Geely',
-        model: 'Galaxy Starshine 6',
-        priceFrom: 1800608,
-        specs: [
-            'Тип двигателя: Гибрид',
-            'Мощность: 160 л.с.',
-            'Макс. скорость: 180 км/ч',
-            'Привод: Передний',
-            'Энергия батареи: 8.5–17 кВт·ч',
-            'Трансмиссия: Гибридная'
-        ]
-    }
-];
+];;
 
 const koreaCars = [
     {
@@ -1589,6 +1886,559 @@ const koreaCars = [
         highlights: ['Пакет Smart Sense', 'Салон с комфортными креслами Relax'],
         price: 3990000,
         image: 'https://cdn.motor1.com/images/mgl/Onq9Q/s1/2021-genesis-g80.jpg'
+    }
+];
+
+const koreaUnder160Cars = [
+    {
+        name: 'Hyundai Casper',
+        brand: 'Hyundai',
+        model: 'Casper',
+        years: '2021–2025',
+        description: 'Компактный городской кроссовер с ярким дизайном и экономичным мотором.',
+        engineType: 'Бензин',
+        engineVolume: '1.0 / 1.0T',
+        power: '76–100 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Hyundai Venue',
+        brand: 'Hyundai',
+        model: 'Venue',
+        years: '2019–2023',
+        description: 'Небольшой SUV с простым обслуживанием и надёжным 1.6 MPI.',
+        engineType: 'Бензин',
+        engineVolume: '1.6 л',
+        power: '121 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Hyundai Avante (Elantra)',
+        brand: 'Hyundai',
+        model: 'Avante / Elantra',
+        years: '2018–2025',
+        description: 'Стильный седан с 1.6 MPI, доступна гибридная версия ~141 л.с.',
+        engineType: 'Бензин / Гибрид',
+        engineVolume: '1.6 л',
+        power: '123 л.с. / ~141 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Hyundai i30',
+        brand: 'Hyundai',
+        model: 'i30',
+        years: '2018–2020',
+        description: 'Европейский хэтчбек с плотной управляемостью и моторами 1.4/1.6.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.4 / 1.6 л',
+        power: '100–136 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Hyundai Sonata',
+        brand: 'Hyundai',
+        model: 'Sonata',
+        years: '2019–2023',
+        description: 'Седан D-класса с атмосферным 2.0 MPI и газовой версией.',
+        engineType: 'Бензин / Газ',
+        engineVolume: '2.0 л',
+        power: '146–160 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Hyundai Kona',
+        brand: 'Hyundai',
+        model: 'Kona',
+        years: '2020–2023',
+        description: 'Кроссовер с бодрым 2.0 MPI и современным дизайном.',
+        engineType: 'Бензин',
+        engineVolume: '2.0 л',
+        power: '149 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Hyundai Tucson',
+        brand: 'Hyundai',
+        model: 'Tucson',
+        years: '2018–2021',
+        description: 'Универсальный кроссовер с надёжным дизелем 1.6.',
+        engineType: 'Дизель',
+        engineVolume: '1.6 л',
+        power: '136 л.с.',
+        drive: 'Передний / полный'
+    },
+    {
+        name: 'Hyundai Ioniq Hybrid',
+        brand: 'Hyundai',
+        model: 'Ioniq Hybrid',
+        years: '2016–н.в.',
+        description: 'Экономичный гибрид с расходом менее 5 л/100 км.',
+        engineType: 'Гибрид',
+        engineVolume: '1.6 л',
+        power: '105 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Kia Morning (Picanto)',
+        brand: 'Kia',
+        model: 'Morning / Picanto',
+        years: '2018–2025',
+        description: 'Ультракомпактный городской хэтчбек, манёвренный и экономичный.',
+        engineType: 'Бензин',
+        engineVolume: '1.0 л',
+        power: '76 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Kia Ray',
+        brand: 'Kia',
+        model: 'Ray',
+        years: '2018–2025',
+        description: 'K-car со сдвижной дверью и просторным салоном.',
+        engineType: 'Бензин',
+        engineVolume: '1.0 л',
+        power: '76 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Kia K3 (Cerato/Forte)',
+        brand: 'Kia',
+        model: 'K3 / Cerato / Forte',
+        years: '2021–н.в.',
+        description: 'Седан С-класса с надёжным 1.6 MPI и мягким ходом.',
+        engineType: 'Бензин',
+        engineVolume: '1.6 л',
+        power: '123 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Kia Seltos (дорест)',
+        brand: 'Kia',
+        model: 'Seltos',
+        years: '2019–2022',
+        description: 'Компактный кроссовер с экономичным дизелем.',
+        engineType: 'Дизель',
+        engineVolume: '1.6 л',
+        power: '136 л.с.',
+        drive: 'Передний / полный'
+    },
+    {
+        name: 'Kia Seltos (рест)',
+        brand: 'Kia',
+        model: 'Seltos',
+        years: '2022–2025',
+        description: 'Обновлённая версия с бензиновым 2.0 MPI и вариатором.',
+        engineType: 'Бензин',
+        engineVolume: '2.0 л',
+        power: '149 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Kia Sportage',
+        brand: 'Kia',
+        model: 'Sportage',
+        years: '2018–2021',
+        description: 'Надёжный кроссовер, доступен с дизельными и бензиновыми моторами.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.6 / 2.0 л',
+        power: '136 / 152 л.с.',
+        drive: 'Передний / полный'
+    },
+    {
+        name: 'Kia K5',
+        brand: 'Kia',
+        model: 'K5',
+        years: '2019–2023',
+        description: 'Эффектный бизнес-седан с мотором 2.0 MPI и газовой версией.',
+        engineType: 'Бензин / Газ',
+        engineVolume: '2.0 л',
+        power: '146 / 152 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Kia Niro Hybrid',
+        brand: 'Kia',
+        model: 'Niro Hybrid',
+        years: '2016–2022',
+        description: 'Гибридный кроссовер с низким расходом и премиальной отделкой.',
+        engineType: 'Гибрид',
+        engineVolume: '1.6 л',
+        power: '105 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Kia Stonic',
+        brand: 'Kia',
+        model: 'Stonic',
+        years: '2018–2020',
+        description: 'Компактный кроссовер с бензиновыми и дизельными моторами.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.0 / 1.4 / 1.6 л',
+        power: '100 / 110 / 120 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Renault SM6 (Talisman)',
+        brand: 'Renault Korea',
+        model: 'SM6',
+        years: '2020–2022',
+        description: 'Стильный бизнес-седан с современным двигателем 1.3T.',
+        engineType: 'Бензин',
+        engineVolume: '1.3 л',
+        power: '152 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Renault XM3 (Arkana)',
+        brand: 'Renault Korea',
+        model: 'XM3 / Arkana',
+        years: '2020–2025',
+        description: 'Купе-кроссовер с моторами 1.6 или 1.3T и богатым оснащением.',
+        engineType: 'Бензин',
+        engineVolume: '1.6 / 1.3T',
+        power: '123 / 152 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Renault QM6 (Koleos II)',
+        brand: 'Renault Korea',
+        model: 'QM6',
+        years: '2019–2025',
+        description: 'Крупный кроссовер с бензиновым 2.0 и высоким уровнем комфорта.',
+        engineType: 'Бензин',
+        engineVolume: '2.0 л',
+        power: '144 л.с.',
+        drive: 'Передний / полный'
+    },
+    {
+        name: 'SsangYong Tivoli',
+        brand: 'SsangYong / KGM',
+        model: 'Tivoli',
+        years: '2019–2023',
+        description: 'Компактный SUV с надёжным дизелем 1.6 и отличной шумоизоляцией.',
+        engineType: 'Дизель',
+        engineVolume: '1.6 л',
+        power: '115 л.с.',
+        drive: 'Передний / полный'
+    },
+    {
+        name: 'SsangYong Tivoli (рестайлинг)',
+        brand: 'SsangYong / KGM',
+        model: 'Tivoli',
+        years: '2023–2025',
+        description: 'Обновлённая бензиновая версия с более динамичным 1.6.',
+        engineType: 'Бензин',
+        engineVolume: '1.6 л',
+        power: '126 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'SsangYong Korando',
+        brand: 'SsangYong / KGM',
+        model: 'Korando',
+        years: '2019–2023',
+        description: 'Среднеразмерный кроссовер с дизелем 1.6 и комфортной подвеской.',
+        engineType: 'Дизель',
+        engineVolume: '1.6 л',
+        power: '136 л.с.',
+        drive: 'Передний / полный'
+    },
+    {
+        name: 'Chevrolet Spark',
+        brand: 'Chevrolet (GM Korea)',
+        model: 'Spark',
+        years: '2018–2023',
+        description: 'Экономичный городской хэтчбек компактных размеров.',
+        engineType: 'Бензин',
+        engineVolume: '1.0 л',
+        power: '75 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Chevrolet Trax (рестайлинг)',
+        brand: 'Chevrolet (GM Korea)',
+        model: 'Trax',
+        years: '2016–2022',
+        description: 'Компактный кроссовер с моторами 1.4T и 1.6.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.4T / 1.6 л',
+        power: '135 / 140 л.с.',
+        drive: 'Передний / полный'
+    },
+    {
+        name: 'Chevrolet Trax (новое поколение)',
+        brand: 'Chevrolet (GM Korea)',
+        model: 'Trax',
+        years: '2023–2025',
+        description: 'Современный и более просторный кроссовер с мотором 1.2T.',
+        engineType: 'Бензин',
+        engineVolume: '1.2T',
+        power: '137 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Chevrolet Trailblazer',
+        brand: 'Chevrolet (GM Korea)',
+        model: 'Trailblazer',
+        years: '2020–2025',
+        description: 'Стильный SUV с моторами 1.2T и 1.3T.',
+        engineType: 'Бензин',
+        engineVolume: '1.2T / 1.3T',
+        power: '137 / 155 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Chevrolet Malibu',
+        brand: 'Chevrolet (GM Korea)',
+        model: 'Malibu',
+        years: '2018–2023',
+        description: 'Элегантный седан бизнес-класса с современными моторами.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.3T / 1.6D',
+        power: '136 / 156 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'BMW X1 (F46)',
+        brand: 'BMW',
+        model: 'X1',
+        years: '2018–2023',
+        description: 'Компактный премиум-кроссовер с дизелем 2.0.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний / Полный'
+    },
+    {
+        name: 'BMW X1 (U11)',
+        brand: 'BMW',
+        model: 'X1',
+        years: '2023–н.в.',
+        description: 'Новое поколение X1 с улучшенной эргономикой и надёжным дизелем.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний / Полный'
+    },
+    {
+        name: 'BMW X2 (F39)',
+        brand: 'BMW',
+        model: 'X2',
+        years: '2018–2024',
+        description: 'Стильный купе-кроссовер с динамичным поведением.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний / Полный'
+    },
+    {
+        name: 'BMW 1 Series 18d',
+        brand: 'BMW',
+        model: '1 Series',
+        years: '2020–2025',
+        description: 'Компактный хэтчбек с дизелем 2.0 и драйверским характером.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'BMW 2 Series 218d',
+        brand: 'BMW',
+        model: '2 Series',
+        years: '2019–н.в.',
+        description: 'Практичный лифтбек с экономичным дизелем 2.0.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'MINI Cooper',
+        brand: 'MINI',
+        model: 'Cooper',
+        years: '2021–н.в.',
+        description: 'Культовый хэтчбек с бодрым турбомотором и фирменным стилем.',
+        engineType: 'Бензин',
+        engineVolume: '1.5 л',
+        power: '136 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'MINI Clubman Cooper',
+        brand: 'MINI',
+        model: 'Clubman',
+        years: '2021–н.в.',
+        description: 'Практичный вариант с увеличенным багажником.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.5 л / 2.0d',
+        power: '136 / 150 л.с.',
+        drive: 'Передний / ALL4'
+    },
+    {
+        name: 'MINI Countryman Cooper',
+        brand: 'MINI',
+        model: 'Countryman',
+        years: '2021–н.в.',
+        description: 'Кроссовер с духом MINI и повышенной практичностью.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.5 л / 2.0d',
+        power: '136 / 150 л.с.',
+        drive: 'Передний / ALL4'
+    },
+    {
+        name: 'Audi A4 B9',
+        brand: 'Audi',
+        model: 'A4',
+        years: '2016–2025',
+        description: 'Бизнес-седан с дизельными 30/35 TDI и опцией quattro.',
+        engineType: 'Дизель / Бензин',
+        engineVolume: 'Разные',
+        power: '136 / 150 л.с.',
+        drive: 'Передний / Полный'
+    },
+    {
+        name: 'Audi Q2',
+        brand: 'Audi',
+        model: 'Q2',
+        years: '2017–2025',
+        description: 'Компактный SUV с дизелем 2.0 и фирменной динамикой.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний / Полный'
+    },
+    {
+        name: 'Audi Q3 / Q3 Sportback',
+        brand: 'Audi',
+        model: 'Q3 / Q3 Sportback',
+        years: '2018–2025',
+        description: 'Кроссовер среднего размера с 2.0 TDI и полным приводом.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Полный'
+    },
+    {
+        name: 'Mercedes A200d',
+        brand: 'Mercedes-Benz',
+        model: 'A-Class',
+        years: '2019–2025',
+        description: 'Дизельный седан с премиальным интерьером и комфортом.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Mercedes GLB200d',
+        brand: 'Mercedes-Benz',
+        model: 'GLB',
+        years: '2020–2025',
+        description: 'Компактный SUV с надёжным дизелем 2.0 и просторным салоном.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний / Полный'
+    },
+    {
+        name: 'Range Rover Evoque D150',
+        brand: 'Land Rover',
+        model: 'Range Rover Evoque',
+        years: '2020–2025',
+        description: 'Стильный компактный кроссовер с премиальной отделкой.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Полный'
+    },
+    {
+        name: 'Discovery Sport D150',
+        brand: 'Land Rover',
+        model: 'Discovery Sport',
+        years: '2020–2025',
+        description: 'Универсальный SUV для активной семьи.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Полный'
+    },
+    {
+        name: 'Volkswagen Golf',
+        brand: 'Volkswagen',
+        model: 'Golf',
+        years: '2022–2025',
+        description: 'Легендарный хэтчбек с дизелем 2.0.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Volkswagen Jetta',
+        brand: 'Volkswagen',
+        model: 'Jetta',
+        years: '2019–2025',
+        description: 'Классический седан с моторами 1.4T и 1.5T.',
+        engineType: 'Бензин',
+        engineVolume: '1.4T / 1.5T',
+        power: '136–150 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Volkswagen Tiguan / Tiguan Allspace',
+        brand: 'Volkswagen',
+        model: 'Tiguan / Tiguan Allspace',
+        years: '2016–2025',
+        description: 'Вместительный кроссовер с дизелем 2.0.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Полный'
+    },
+    {
+        name: 'Volkswagen T-Roc',
+        brand: 'Volkswagen',
+        model: 'T-Roc',
+        years: '2018–2025',
+        description: 'Стильный компактный SUV с дизельным 2.0.',
+        engineType: 'Дизель',
+        engineVolume: '2.0 л',
+        power: '150 л.с.',
+        drive: 'Передний / Полный'
+    },
+    {
+        name: 'Peugeot 2008 BlueHDi',
+        brand: 'Peugeot',
+        model: '2008',
+        years: '2018–2025',
+        description: 'Компактный кроссовер с дизелем 1.5 и экономичным расходом.',
+        engineType: 'Дизель',
+        engineVolume: '1.5 л',
+        power: '131 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Peugeot 3008',
+        brand: 'Peugeot',
+        model: '3008',
+        years: '2018–2025',
+        description: 'Яркий SUV с богатыми опциями и моторами от 1.2T до 2.0d.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.2T / 2.0d',
+        power: '131 / 150 л.с.',
+        drive: 'Передний'
+    },
+    {
+        name: 'Peugeot 5008',
+        brand: 'Peugeot',
+        model: '5008',
+        years: '2018–2025',
+        description: 'Семиместный кроссовер с тем же набором двигателей.',
+        engineType: 'Бензин / Дизель',
+        engineVolume: '1.2T / 2.0d',
+        power: '131 / 150 л.с.',
+        drive: 'Передний'
     }
 ];
 
@@ -1730,58 +2580,8 @@ function renderPreferentialCars(){
 }
 
 function loadChinaOrdersSection(){
-    const grid = document.getElementById('chinaOrdersGrid');
-    const metrics = document.getElementById('chinaMetrics');
-    if (!grid || !metrics) return;
-
-    const prices = chinaCars.map(car=>car.price).filter(Boolean).sort((a,b)=>a-b);
-    const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
-    const min = prices.length ? prices[0] : null;
-
-    metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(chinaCars.length);
-    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
-    metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
-
-    grid.innerHTML = '';
-
-    chinaCars.forEach(car=>{
-        const card = document.createElement('article');
-        card.className = 'orders-card china-card';
-        const highlightsHtml = car.highlights && car.highlights.length
-            ? `<ul class="orders-highlights">${car.highlights.map(item=>`<li><i class=\"fas fa-check\"></i>${item}</li>`).join('')}</ul>`
-            : '';
-        card.innerHTML = `
-            <img src="${car.image}" alt="${car.name}" loading="lazy">
-            <div class="orders-card-body">
-                <h4>${car.name}</h4>
-                <ul class="usa-preferential-meta">
-                    <li><span>Двигатель:</span> ${car.engine}</li>
-                    <li><span>Мощность:</span> ${car.power}</li>
-                    <li><span>Привод:</span> ${car.drive}</li>
-                    <li><span>Срок:</span> ${car.leadTime || '45-70 дней'}</li>
-                </ul>
-                ${highlightsHtml}
-                <div class="usa-preferential-price">от ${formatCurrency(car.price)}</div>
-                <div class="usa-order-actions" style="margin-top:0.5rem;">
-                    <button class="btn-primary" type="button">Запросить расчет</button>
-                </div>
-            </div>
-        `;
-
-        const btn = card.querySelector('.btn-primary');
-        if (btn) {
-            btn.addEventListener('click', ()=>{
-                openRequestModal();
-                prefillChinaRequest(car);
-            });
-        }
-
-        attachImageFallback(card.querySelector('img'), car);
-
-        grid.appendChild(card);
-    });
-
-    renderChinaUnder160Cars();
+    setupChinaUnder160Section();
+    updateChinaUnder160Counters();
 }
 
 function loadKoreaOrdersSection(){
@@ -1835,31 +2635,41 @@ function loadKoreaOrdersSection(){
 
         grid.appendChild(card);
     });
+
+    setupKoreaUnder160Section();
 }
 
 function renderChinaUnder160Cars(){
     const grid = document.getElementById('chinaUnder160Grid');
     if (!grid) return;
 
-    if (!chinaUnder160Cars.length){
+    const list = state.chinaUnder160 ? state.chinaUnder160.filtered : chinaCars;
+
+    if (!list.length){
         grid.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по льготному утильсбору</div>';
         return;
     }
 
     grid.innerHTML = '';
 
-    chinaUnder160Cars.forEach(car=>{
+    list.forEach(car=>{
+        const specs = buildUnder160CarSpecs(car);
+        const priceValue = getUnder160PriceValue(car);
+        const priceLabel = priceValue ? `от ${formatCurrency(priceValue)}` : 'Цена по запросу';
+        const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
+        const descriptionHtml = car.description ? `<p class="orders-card-desc">${car.description}</p>` : '';
+        const imageSrc = car.image || buildSvgPlaceholder(`${car.brand || ''} ${car.model || car.name || ''}`.trim() || car.name);
+
         const card = document.createElement('article');
         card.className = 'orders-card china-card';
-        const specsHtml = (car.specs || []).map(line => `<li>${line}</li>`).join('');
-        const priceLabel = car.priceFrom ? `от ${formatCurrency(car.priceFrom)}` : 'Цена по запросу';
-
         card.innerHTML = `
-            <img src="${buildSvgPlaceholder(car.name)}" alt="${car.name}" loading="lazy">
+            <img src="${imageSrc}" alt="${car.name}" loading="lazy">
             <div class="orders-card-body">
+                ${brandBadge}
                 <h4>${car.name}</h4>
+                ${descriptionHtml}
                 <ul class="usa-preferential-meta">
-                    ${specsHtml}
+                    ${specs.map(item => `<li>${item}</li>`).join('')}
                 </ul>
                 <div class="usa-preferential-price">${priceLabel}</div>
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
@@ -1872,15 +2682,13 @@ function renderChinaUnder160Cars(){
         if (btn) {
             btn.addEventListener('click', ()=>{
                 openRequestModal();
-                prefillChinaRequest({
-                    brand: car.brand,
-                    model: car.model || car.name,
-                    price: car.priceFrom || null,
-                    engine: car.specs?.find(line => line.toLowerCase().startsWith('тип двигателя')) || '',
-                    power: car.specs?.find(line => line.toLowerCase().includes('мощность')) || '',
-                    drive: car.specs?.find(line => line.toLowerCase().includes('привод')) || ''
-                });
+                prefillChinaRequest(car);
             });
+        }
+
+        const img = card.querySelector('img');
+        if (img) {
+            attachImageFallback(img, car);
         }
 
         grid.appendChild(card);
@@ -1921,15 +2729,28 @@ function prefillChinaRequest(car){
         if (!brandEl || !modelEl || !priceEl || !noteEl) return;
         brandEl.value = car.brand || '';
         modelEl.value = car.model || car.name || '';
-        priceEl.value = car.price || '';
+        const priceValue = getUnder160PriceValue(car);
+        priceEl.value = priceValue ? String(priceValue) : '';
         const details = [
             `Авто из Китая: ${car.name}`,
-            car.engine ? `Двигатель: ${car.engine}` : null,
+            car.engineType ? `Тип двигателя: ${car.engineType}` : null,
+            car.engineVolume ? `Объем двигателя: ${car.engineVolume}` : null,
             car.power ? `Мощность: ${car.power}` : null,
+            car.maxSpeed ? `Максимальная скорость: ${car.maxSpeed}` : null,
             car.drive ? `Привод: ${car.drive}` : null,
-            car.leadTime ? `Срок поставки: ${car.leadTime}` : null
-        ].filter(Boolean).join('\n');
-        noteEl.value = details;
+            car.transmission ? `Трансмиссия: ${car.transmission}` : null,
+            car.consumption ? `Расход топлива: ${car.consumption}` : null,
+            car.battery ? `Энергия батареи: ${car.battery}` : null,
+            car.range ? `Запас хода: ${car.range}` : null
+        ].filter(Boolean);
+        if (Array.isArray(car.specs) && car.specs.length){
+            car.specs.forEach(spec => {
+                if (!details.includes(spec)){
+                    details.push(spec);
+                }
+            });
+        }
+        noteEl.value = details.join('\n');
     }catch(e){ /* ignore */ }
 }
 
@@ -1942,13 +2763,17 @@ function prefillKoreaRequest(car){
         if (!brandEl || !modelEl || !priceEl || !noteEl) return;
         brandEl.value = car.brand || '';
         modelEl.value = car.model || car.name || '';
-        priceEl.value = car.price || '';
+        const priceValue = getUnder160PriceValue(car);
+        priceEl.value = priceValue ? String(priceValue) : '';
         const details = [
             `Авто из Кореи: ${car.name}`,
-            car.engine ? `Двигатель: ${car.engine}` : null,
+            car.years ? `Годы выпуска: ${car.years}` : null,
+            car.engineType ? `Тип двигателя: ${car.engineType}` : null,
+            car.engineVolume ? `Объем двигателя: ${car.engineVolume}` : null,
             car.power ? `Мощность: ${car.power}` : null,
             car.drive ? `Привод: ${car.drive}` : null,
-            car.leadTime ? `Срок поставки: ${car.leadTime}` : null
+            car.transmission ? `Трансмиссия: ${car.transmission}` : null,
+            car.description ? `Описание: ${car.description}` : null
         ].filter(Boolean).join('\n');
         noteEl.value = details;
     }catch(e){ /* ignore */ }
@@ -1996,7 +2821,7 @@ function loadCars() {
 function createCarCard(car) {
     const card = document.createElement('div');
     card.className = 'car-card';
-
+    
     card.innerHTML = `
         <div class="car-image">
             <div class="single-photo-container" data-action="show-details" data-car-id="${car.id}">
@@ -2010,7 +2835,7 @@ function createCarCard(car) {
                     <h4 class="car-image-fallback-title">${car.year} ${car.brand} ${car.model}</h4>
                     <p class="car-image-fallback-text">Нажмите для просмотра галереи</p>
                     <div class="car-image-fallback-cta">
-                        <i class="fas fa-images"></i> Галерея
+                            <i class="fas fa-images"></i> Галерея
                     </div>
                 </div>
                 ${car.sold ? `
@@ -2122,13 +2947,13 @@ function addToCart(carId) {
     }
 
     const existingItem = state.cart.find(item => item.id === carId);
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
         state.cart.push({ ...car, quantity: 1 });
-    }
-    updateCartCount();
-    showNotification('Автомобиль добавлен в заказ!');
+        }
+        updateCartCount();
+        showNotification('Автомобиль добавлен в заказ!');
 }
 
 function removeFromCart(carId) {
@@ -2735,4 +3560,364 @@ function onTouchEnd(e){
     }
     state.touch.startX = null;
     state.touch.galleryId = null;
+}
+
+function buildUnder160CarSpecs(car){
+    if (!car) return [];
+    if (Array.isArray(car.specs) && car.specs.length){
+        return car.specs.slice();
+    }
+    const specs = [
+        car.engineType ? `Тип двигателя: ${car.engineType}` : null,
+        car.engineVolume ? `Объем двигателя: ${car.engineVolume}` : null,
+        car.power ? `Мощность: ${car.power}` : null,
+        car.maxSpeed ? `Макс. скорость: ${car.maxSpeed}` : null,
+        car.drive ? `Привод: ${car.drive}` : null,
+        car.transmission ? `Трансмиссия: ${car.transmission}` : null,
+        car.consumption ? `Расход топлива: ${car.consumption}` : null,
+        car.range ? `Запас хода: ${car.range}` : null,
+        car.battery ? `Энергия батареи: ${car.battery}` : null
+    ].filter(Boolean);
+    return specs.length ? specs : ['Характеристики уточняйте у менеджера'];
+}
+
+function getUnder160PriceValue(car){
+    if (!car) return null;
+    if (typeof car.priceFrom === 'number' && car.priceFrom > 0) return car.priceFrom;
+    if (typeof car.price === 'number' && car.price > 0) return car.price;
+    return null;
+}
+
+function setupChinaUnder160Section(){
+    const grid = document.getElementById('chinaUnder160Grid');
+
+    if (!state.chinaUnder160) {
+        state.chinaUnder160 = {
+            data: chinaCars.map((car, index) => ({
+                ...car,
+                price: getUnder160PriceValue(car),
+                _order: index
+            })),
+            filtered: [],
+            filters: { brand: '', query: '', sort: 'default' },
+            initialized: false
+        };
+    }
+
+    if (!state.chinaUnder160.initialized) {
+        populateChinaUnder160Filters();
+        state.chinaUnder160.initialized = true;
+    }
+
+    if (grid) {
+        applyChinaUnder160Filters();
+    } else {
+        state.chinaUnder160.filtered = [...state.chinaUnder160.data];
+        updateChinaUnder160Counters();
+    }
+}
+
+function populateChinaUnder160Filters(){
+    const store = state.chinaUnder160;
+    if (!store) return;
+
+    const brandSelect = document.getElementById('chinaBrandFilter');
+    const modelInput = document.getElementById('chinaModelSearch');
+    const sortSelect = document.getElementById('chinaSort');
+    const resetBtn = document.getElementById('chinaResetFilters');
+
+    if (brandSelect) {
+        const brands = [...new Set(store.data.map(car => car.brand).filter(Boolean))]
+            .sort((a, b) => a.localeCompare(b, 'ru'));
+        brandSelect.innerHTML = '<option value="">Все марки</option>' + brands.map(brand => `<option value="${brand}">${brand}</option>`).join('');
+        brandSelect.addEventListener('change', () => {
+            store.filters.brand = brandSelect.value;
+            applyChinaUnder160Filters();
+        });
+    }
+
+    if (modelInput) {
+        modelInput.addEventListener('input', () => {
+            store.filters.query = modelInput.value.trim();
+            applyChinaUnder160Filters();
+        });
+    }
+
+    if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+            store.filters.sort = sortSelect.value;
+            applyChinaUnder160Filters();
+        });
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            store.filters = { brand: '', query: '', sort: 'default' };
+            if (brandSelect) brandSelect.value = '';
+            if (modelInput) modelInput.value = '';
+            if (sortSelect) sortSelect.value = 'default';
+            applyChinaUnder160Filters();
+        });
+    }
+}
+
+function applyChinaUnder160Filters(){
+    const store = state.chinaUnder160;
+    if (!store) return;
+
+    const { brand, query, sort } = store.filters;
+    let result = [...store.data];
+
+    if (brand) {
+        result = result.filter(car => car.brand === brand);
+    }
+
+    if (query) {
+        const q = query.toLowerCase();
+        result = result.filter(car => {
+            const text = `${car.name} ${car.model || ''}`.toLowerCase();
+            return text.includes(q);
+        });
+    }
+
+    switch (sort) {
+        case 'price-asc':
+            result.sort((a, b) => {
+                const priceA = getUnder160PriceValue(a);
+                const priceB = getUnder160PriceValue(b);
+                return (priceA ?? Infinity) - (priceB ?? Infinity);
+            });
+            break;
+        case 'price-desc':
+            result.sort((a, b) => {
+                const priceA = getUnder160PriceValue(a);
+                const priceB = getUnder160PriceValue(b);
+                return (priceB ?? -Infinity) - (priceA ?? -Infinity);
+            });
+            break;
+        case 'name-asc':
+            result.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'ru'));
+            break;
+        case 'name-desc':
+            result.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'ru'));
+            break;
+        default:
+            result.sort((a, b) => (a._order ?? 0) - (b._order ?? 0));
+    }
+
+    store.filtered = result;
+    renderChinaUnder160Cars();
+    updateChinaUnder160Counters();
+}
+
+function updateChinaUnder160Counters(){
+    const metrics = document.getElementById('chinaMetrics');
+    if (!metrics) return;
+
+    const list = state.chinaUnder160 ? state.chinaUnder160.filtered : chinaCars;
+
+    metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(list.length);
+
+    const prices = list
+        .map(getUnder160PriceValue)
+        .filter(value => typeof value === 'number' && value > 0)
+        .sort((a, b) => a - b);
+
+    const avg = prices.length ? Math.round(prices.reduce((sum, value) => sum + value, 0) / prices.length) : null;
+    const min = prices.length ? prices[0] : null;
+
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
+}
+
+function setupKoreaUnder160Section(){
+    const grid = document.getElementById('koreaUnder160Grid');
+
+    if (!state.koreaUnder160) {
+        state.koreaUnder160 = {
+            data: koreaUnder160Cars.map((car, index) => ({
+                ...car,
+                price: getUnder160PriceValue(car),
+                _order: index
+            })),
+            filtered: [],
+            filters: { brand: '', query: '', sort: 'default' },
+            initialized: false
+        };
+    }
+
+    if (!state.koreaUnder160.initialized) {
+        populateKoreaUnder160Filters();
+        state.koreaUnder160.initialized = true;
+    }
+
+    if (grid) {
+        applyKoreaUnder160Filters();
+    } else {
+        state.koreaUnder160.filtered = [...state.koreaUnder160.data];
+        updateKoreaUnder160Counters();
+    }
+}
+
+function populateKoreaUnder160Filters(){
+    const store = state.koreaUnder160;
+    if (!store) return;
+
+    const brandSelect = document.getElementById('koreaBrandFilter');
+    const modelInput = document.getElementById('koreaModelSearch');
+    const sortSelect = document.getElementById('koreaSort');
+    const resetBtn = document.getElementById('koreaResetFilters');
+
+    if (brandSelect) {
+        const brands = [...new Set(store.data.map(car => car.brand).filter(Boolean))]
+            .sort((a, b) => a.localeCompare(b, 'ru'));
+        brandSelect.innerHTML = '<option value="">Все марки</option>' + brands.map(brand => `<option value="${brand}">${brand}</option>`).join('');
+        brandSelect.addEventListener('change', () => {
+            store.filters.brand = brandSelect.value;
+            applyKoreaUnder160Filters();
+        });
+    }
+
+    if (modelInput) {
+        modelInput.addEventListener('input', () => {
+            store.filters.query = modelInput.value.trim();
+            applyKoreaUnder160Filters();
+        });
+    }
+
+    if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+            store.filters.sort = sortSelect.value;
+            applyKoreaUnder160Filters();
+        });
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            store.filters = { brand: '', query: '', sort: 'default' };
+            if (brandSelect) brandSelect.value = '';
+            if (modelInput) modelInput.value = '';
+            if (sortSelect) sortSelect.value = 'default';
+            applyKoreaUnder160Filters();
+        });
+    }
+}
+
+function applyKoreaUnder160Filters(){
+    const store = state.koreaUnder160;
+    if (!store) return;
+
+    const { brand, query, sort } = store.filters;
+    let result = [...store.data];
+
+    if (brand) {
+        result = result.filter(car => car.brand === brand);
+    }
+
+    if (query) {
+        const q = query.toLowerCase();
+        result = result.filter(car => {
+            const text = `${car.name} ${car.model || ''}`.toLowerCase();
+            return text.includes(q);
+        });
+    }
+
+    switch (sort) {
+        case 'price-asc':
+            result.sort((a, b) => {
+                const priceA = getUnder160PriceValue(a);
+                const priceB = getUnder160PriceValue(b);
+                return (priceA ?? Infinity) - (priceB ?? Infinity);
+            });
+            break;
+        case 'price-desc':
+            result.sort((a, b) => {
+                const priceA = getUnder160PriceValue(a);
+                const priceB = getUnder160PriceValue(b);
+                return (priceB ?? -Infinity) - (priceA ?? -Infinity);
+            });
+            break;
+        case 'name-asc':
+            result.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'ru'));
+            break;
+        case 'name-desc':
+            result.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'ru'));
+            break;
+        default:
+            result.sort((a, b) => (a._order ?? 0) - (b._order ?? 0));
+    }
+
+    store.filtered = result;
+    renderKoreaUnder160Cars();
+    updateKoreaUnder160Counters();
+}
+
+function updateKoreaUnder160Counters(){
+    const metrics = document.getElementById('koreaUnder160Metrics');
+    if (!metrics) return;
+
+    const list = state.koreaUnder160 ? state.koreaUnder160.filtered : koreaUnder160Cars;
+
+    metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(list.length);
+
+    const prices = list
+        .map(getUnder160PriceValue)
+        .filter(value => typeof value === 'number' && value > 0)
+        .sort((a, b) => a - b);
+
+    const avg = prices.length ? Math.round(prices.reduce((sum, value) => sum + value, 0) / prices.length) : null;
+    const min = prices.length ? prices[0] : null;
+
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
+}
+
+function renderKoreaUnder160Cars(){
+    const grid = document.getElementById('koreaUnder160Grid');
+    if (!grid) return;
+
+    const list = state.koreaUnder160 ? state.koreaUnder160.filtered : koreaUnder160Cars;
+
+    if (!list.length){
+        grid.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по льготному утильсбору</div>';
+        return;
+    }
+
+    grid.innerHTML = '';
+
+    list.forEach(car=>{
+        const specs = buildUnder160CarSpecs(car);
+        const priceValue = getUnder160PriceValue(car);
+        const priceLabel = priceValue ? `от ${formatCurrency(priceValue)}` : 'Цена по запросу';
+        const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
+        const descriptionHtml = car.description ? `<p class="orders-card-desc">${car.description}</p>` : '';
+
+        const card = document.createElement('article');
+        card.className = 'orders-card korea-card';
+        card.innerHTML = `
+            <img src="${buildSvgPlaceholder(`${car.brand || ''} ${car.model || car.name || ''}`.trim() || car.name)}" alt="${car.name}" loading="lazy">
+            <div class="orders-card-body">
+                ${brandBadge}
+                <h4>${car.name}</h4>
+                ${descriptionHtml}
+                <ul class="usa-preferential-meta">
+                    ${specs.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+                <div class="usa-preferential-price">${priceLabel}</div>
+                <div class="usa-order-actions" style="margin-top:0.5rem;">
+                    <button class="btn-primary" type="button">Запросить расчет</button>
+                </div>
+            </div>
+        `;
+
+        const btn = card.querySelector('.btn-primary');
+        if (btn) {
+            btn.addEventListener('click', ()=>{
+                openRequestModal();
+                prefillKoreaRequest(car);
+            });
+        }
+
+        grid.appendChild(card);
+    });
 }
