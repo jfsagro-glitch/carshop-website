@@ -754,7 +754,7 @@ body.premium .footer-section a:hover { color: var(--text); }
 .car-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 }
 
@@ -769,7 +769,7 @@ body.premium .footer-section a:hover { color: var(--text); }
 /* Мобильные устройства - уменьшаем размер фотографий на 35% */
 @media (max-width: 768px) {
     .car-image img {
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
         transform: none;
     }
