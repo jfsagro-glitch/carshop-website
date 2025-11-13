@@ -741,6 +741,7 @@ body.premium .footer-section a:hover { color: var(--text); }
 .car-image {
     width: 100%;
     height: 340px;
+    position: relative;
     background: #f3f4f6;
     display: flex;
     align-items: center;
@@ -757,6 +758,67 @@ body.premium .footer-section a:hover { color: var(--text); }
     object-fit: cover;
     object-position: center;
     display: block;
+}
+
+.single-photo-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-photo-container img.car-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.car-image-fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(160deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.92));
+    color: #e5e7eb;
+}
+
+.car-image-fallback-icon {
+    font-size: 2.5rem;
+}
+
+.car-image-fallback-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.car-image-fallback-text {
+    font-size: 0.95rem;
+    color: #cbd5f5;
+}
+
+.car-image-fallback-cta {
+    margin-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.18);
+    color: #facc15;
+    font-size: 0.85rem;
+}
+
+.car-photo.is-hidden {
+    opacity: 0;
 }
 
 /* Ensure gallery images in modal are fully visible and not cropped */
