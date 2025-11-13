@@ -2830,14 +2830,6 @@ function createCarCard(car) {
                     alt="${car.year} ${car.brand} ${car.model}"
                     class="car-photo"
                     loading="lazy">
-                <div class="car-image-fallback">
-                    <div class="car-image-fallback-icon">🚗</div>
-                    <h4 class="car-image-fallback-title">${car.year} ${car.brand} ${car.model}</h4>
-                    <p class="car-image-fallback-text">Нажмите для просмотра галереи</p>
-                    <div class="car-image-fallback-cta">
-                            <i class="fas fa-images"></i> Галерея
-                    </div>
-                </div>
                 ${car.sold ? `
                 <div class="sold-overlay">
                     <div class="sold-overlay__label">ПРОДАНО</div>
