@@ -9,6 +9,9 @@ from bs4 import BeautifulSoup
 ROOT = pathlib.Path('images/Korea')
 DEST = ROOT / 'catalog'
 DEST.mkdir(parents=True, exist_ok=True)
+for file in DEST.glob('*'):
+    if file.is_file():
+        file.unlink()
 
 
 def slugify(*parts: str) -> str:
@@ -27,7 +30,7 @@ for img_path in ROOT.glob('**/*.jpg'):
     image_lookup.setdefault(img_path.name.lower(), img_path)
 
 
-cars = []
+cars_map = {}
 seen_ids = set()
 
 html_paths = sorted(ROOT.glob('PAN AUTO *.html'), key=lambda p: p.name)
@@ -64,10 +67,12 @@ for html_path in html_paths:
                 spec_entries.append(f'Топливо: {main_parts[1]}')
             if len(main_parts) > 2:
                 spec_entries.append(f'Объем двигателя: {main_parts[2]}')
+        mileage_text = None
         if len(spec_paragraphs) >= 2:
-            mileage = normalize_text(spec_paragraphs[1].get_text(' ', strip=True))
-            if mileage:
-                spec_entries.append(f'Пробег: {mileage}')
+            mileage_text = normalize_text(spec_paragraphs[1].get_text(' ', strip=True))
+            if mileage_text:
+                spec_entries.append(f'Пробег: {mileage_text}')
+        date_text = None
         if len(spec_paragraphs) >= 3:
             date_text = normalize_text(spec_paragraphs[2].get_text(' ', strip=True))
             if date_text:
@@ -103,7 +108,7 @@ for html_path in html_paths:
         for badge in badge_texts:
             if not badge:
                 continue
-            if '₽' in badge or '₽' in badge:
+            if '₽' in badge:
                 spec_entries.append(f'Дополнительная цена: {badge}')
             elif badge not in description_parts:
                 description_parts.append(badge)
@@ -124,31 +129,117 @@ for html_path in html_paths:
         if not source_path or not source_path.exists():
             continue
 
-        slug = slugify(brand, car_id or name)
-        dest_path = DEST / f'{slug}{source_path.suffix.lower()}'
-        counter = 2
-        while dest_path.exists():
-            dest_path = DEST / f'{slug}-{counter}{source_path.suffix.lower()}'
-            counter += 1
-        shutil.copy2(source_path, dest_path)
+        mileage_value = None
+        if mileage_text:
+            mileage_digits = re.sub(r'[^\d]', '', mileage_text)
+            if mileage_digits:
+                try:
+                    mileage_value = int(mileage_digits)
+                except ValueError:
+                    mileage_value = None
 
-        car_entry = {
-            'id': car_id,
+        year_value = None
+        if date_text:
+            year_match = re.search(r'(\d{4})', date_text)
+            if year_match:
+                try:
+                    year_value = int(year_match.group(1))
+                except ValueError:
+                    year_value = None
+
+        entry = {
+            '_id': car_id,
             'name': name,
             'brand': brand,
             'model': model,
-            'image': f'images/korea/catalog/{dest_path.name}',
             'priceFrom': price_value,
             'priceLabel': price_text or None,
             'link': link or None,
             'specs': filtered_specs,
+            'description': ' · '.join(dict.fromkeys(description_parts)) if description_parts else None,
+            '_mileage': mileage_value,
+            '_year': year_value,
+            '_source_path': source_path,
+            '_slug': slugify(brand, model or (car_id or name)),
         }
-        if description_parts:
-            car_entry['description'] = ' · '.join(dict.fromkeys(description_parts))
 
-        cars.append(car_entry)
-        if car_id:
-            seen_ids.add(car_id)
+        key = (brand, model)
+        existing = cars_map.get(key)
+
+        def is_better(candidate, existing_entry):
+            if existing_entry is None:
+                return True
+            cp = candidate['priceFrom']
+            ep = existing_entry['priceFrom']
+            if cp is not None and ep is not None:
+                if cp < ep:
+                    return True
+                if cp > ep:
+                    return False
+            elif cp is not None:
+                return True
+            elif ep is not None:
+                return False
+
+            cm = candidate['_mileage']
+            em = existing_entry.get('_mileage')
+            if cm is not None and em is not None:
+                if cm < em:
+                    return True
+                if cm > em:
+                    return False
+            elif cm is not None:
+                return True
+            elif em is not None:
+                return False
+
+            cy = candidate['_year']
+            ey = existing_entry.get('_year')
+            if cy is not None and ey is not None:
+                if cy > ey:
+                    return True
+                if cy < ey:
+                    return False
+            elif cy is not None:
+                return True
+            elif ey is not None:
+                return False
+
+            return False
+
+        if is_better(entry, existing):
+            cars_map[key] = entry
+            if car_id:
+                seen_ids.add(car_id)
+
+
+def format_price_label(value: int) -> str:
+    return f"{value:,}".replace(',', ' ') + " ₽"
+
+
+cars = []
+for _, entry in sorted(cars_map.items(), key=lambda item: (item[0][0], item[0][1])):
+    source_path = entry.pop('_source_path', None)
+    if not source_path:
+        continue
+    slug = entry.pop('_slug', slugify(entry['brand'], entry['model']))
+    dest_path = DEST / f'{slug}{source_path.suffix.lower()}'
+    counter = 2
+    while dest_path.exists():
+        dest_path = DEST / f'{slug}-{counter}{source_path.suffix.lower()}'
+        counter += 1
+    shutil.copy2(source_path, dest_path)
+
+    entry['image'] = f'images/korea/catalog/{dest_path.name}'
+    if entry.get('priceFrom') is not None and not entry.get('priceLabel'):
+        entry['priceLabel'] = format_price_label(entry['priceFrom'])
+    if not entry.get('description'):
+        entry.pop('description', None)
+    entry.pop('_mileage', None)
+    entry.pop('_year', None)
+    entry.pop('_id', None)
+    cars.append(entry)
+
 
 output_path = ROOT / 'korea_processed.json'
 output_path.write_text(json.dumps(cars, ensure_ascii=False, indent=2), encoding='utf-8')
