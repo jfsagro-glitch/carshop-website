@@ -163,54 +163,10 @@ for html_path in html_paths:
             '_slug': slugify(brand, model or (car_id or name)),
         }
 
-        key = (brand, model)
-        existing = cars_map.get(key)
-
-        def is_better(candidate, existing_entry):
-            if existing_entry is None:
-                return True
-            cp = candidate['priceFrom']
-            ep = existing_entry['priceFrom']
-            if cp is not None and ep is not None:
-                if cp < ep:
-                    return True
-                if cp > ep:
-                    return False
-            elif cp is not None:
-                return True
-            elif ep is not None:
-                return False
-
-            cm = candidate['_mileage']
-            em = existing_entry.get('_mileage')
-            if cm is not None and em is not None:
-                if cm < em:
-                    return True
-                if cm > em:
-                    return False
-            elif cm is not None:
-                return True
-            elif em is not None:
-                return False
-
-            cy = candidate['_year']
-            ey = existing_entry.get('_year')
-            if cy is not None and ey is not None:
-                if cy > ey:
-                    return True
-                if cy < ey:
-                    return False
-            elif cy is not None:
-                return True
-            elif ey is not None:
-                return False
-
-            return False
-
-        if is_better(entry, existing):
-            cars_map[key] = entry
-            if car_id:
-                seen_ids.add(car_id)
+        # Убрана дедупликация - добавляем все автомобили
+        cars_map[len(cars_map)] = entry
+        if car_id:
+            seen_ids.add(car_id)
 
 
 def format_price_label(value: int) -> str:
@@ -218,7 +174,7 @@ def format_price_label(value: int) -> str:
 
 
 cars = []
-for _, entry in sorted(cars_map.items(), key=lambda item: (item[0][0], item[0][1])):
+for _, entry in cars_map.items():
     source_path = entry.pop('_source_path', None)
     if not source_path:
         continue
