@@ -116,7 +116,7 @@
             </div>
 
             <div class="usa-orders-grid" id="koreaUnder160Grid">
-                <div class="usa-empty-state">Загружаем предложения...</div>
+                <div class="usa-empty-state" id="koreaLoadingIndicator">Загружаем предложения...</div>
             </div>
 
             <p class="usa-note">Цены указаны ориентировочно. Для точного предложения оставьте заявку — проверим доступность, историю и рассчитаем доставку до вашего города.</p>
@@ -362,8 +362,40 @@
         </div>
     </div>
 
-    <script src="images/Korea/korea_processed.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Асинхронная загрузка данных Кореи
+        (async function() {
+            const loadingIndicator = document.getElementById('koreaLoadingIndicator');
+            
+            try {
+                const response = await fetch('images/Korea/korea_processed.json');
+                if (!response.ok) throw new Error('Failed to load Korea data');
+                const data = await response.json();
+                window.koreaUnder160CarsData = data;
+                
+                // Инициализация после загрузки данных
+                function initKoreaSection() {
+                    if (typeof setupKoreaUnder160Section === 'function') {
+                        setupKoreaUnder160Section();
+                        // Индикатор загрузки скроется автоматически при рендеринге
+                    }
+                }
+                
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initKoreaSection);
+                } else {
+                    initKoreaSection();
+                }
+            } catch (error) {
+                console.error('Error loading Korea catalog:', error);
+                window.koreaUnder160CarsData = [];
+                if (loadingIndicator) {
+                    loadingIndicator.textContent = 'Ошибка загрузки каталога. Пожалуйста, обновите страницу.';
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
 

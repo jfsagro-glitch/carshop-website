@@ -2085,7 +2085,10 @@ function loadKoreaOrdersSection(){
         grid.appendChild(card);
     });
 
-    setupKoreaUnder160Section();
+    // Инициализация секции под 160 л.с. только если данные уже загружены
+    if (Array.isArray(window.koreaUnder160CarsData) && window.koreaUnder160CarsData.length) {
+        setupKoreaUnder160Section();
+    }
 }
 
 function renderChinaUnder160Cars(){
@@ -3173,10 +3176,15 @@ function updateChinaUnder160Counters(){
 
 function setupKoreaUnder160Section(){
     const grid = document.getElementById('koreaUnder160Grid');
+    
+    // Обновляем данные из window.koreaUnder160CarsData если они загружены
+    const dataSource = Array.isArray(window.koreaUnder160CarsData) && window.koreaUnder160CarsData.length 
+        ? window.koreaUnder160CarsData 
+        : koreaUnder160Cars;
 
-    if (!state.koreaUnder160) {
+    if (!state.koreaUnder160 || state.koreaUnder160.data.length !== dataSource.length) {
         state.koreaUnder160 = {
-            data: koreaUnder160Cars.map((car, index) => ({
+            data: dataSource.map((car, index) => ({
                 ...car,
                 price: getUnder160PriceValue(car),
                 _order: index
@@ -3319,13 +3327,18 @@ function renderKoreaUnder160Cars(){
 
     const list = state.koreaUnder160 ? state.koreaUnder160.filtered : koreaUnder160Cars;
 
+    // Скрываем индикатор загрузки
+    const loadingIndicator = document.getElementById('koreaLoadingIndicator');
+    if (loadingIndicator) loadingIndicator.style.display = 'none';
+
     if (!list.length){
         grid.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по льготному утильсбору</div>';
         return;
     }
 
-    grid.innerHTML = '';
-
+    // Оптимизация: используем DocumentFragment для батчинга
+    const fragment = document.createDocumentFragment();
+    
     list.forEach(car=>{
         const specs = buildUnder160CarSpecs(car);
         const priceValue = getUnder160PriceValue(car);
@@ -3366,6 +3379,9 @@ function renderKoreaUnder160Cars(){
             attachImageFallback(img, car);
         }
 
-        grid.appendChild(card);
+        fragment.appendChild(card);
     });
+    
+    grid.innerHTML = '';
+    grid.appendChild(fragment);
 }
