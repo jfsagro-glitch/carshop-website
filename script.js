@@ -3339,19 +3339,27 @@ function renderKoreaUnder160Cars(){
     // Оптимизация: используем DocumentFragment для батчинга
     const fragment = document.createDocumentFragment();
     
-    list.forEach(car=>{
+    // Preload первых 3 изображений для быстрой загрузки
+    const preloadImages = [];
+    
+    list.forEach((car, index)=>{
         const specs = buildUnder160CarSpecs(car);
         const priceValue = getUnder160PriceValue(car);
         const priceLabel = priceValue ? `от ${formatCurrency(priceValue)}` : 'Цена по запросу';
         const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
         const descriptionHtml = car.description ? `<p class="orders-card-desc">${car.description}</p>` : '';
 
-        const imageSrc = car.image || buildSvgPlaceholder(`${car.brand || ''} ${car.model || car.name || ''}`.trim() || car.name);
+        // Нормализуем путь к изображению (исправляем регистр)
+        let imageSrc = car.image || '';
+        if (imageSrc && imageSrc.includes('images/korea/')) {
+            imageSrc = imageSrc.replace('images/korea/', 'images/Korea/');
+        }
+        imageSrc = imageSrc || buildSvgPlaceholder(`${car.brand || ''} ${car.model || car.name || ''}`.trim() || car.name);
 
         const card = document.createElement('article');
         card.className = 'orders-card korea-card';
         card.innerHTML = `
-            <img src="${imageSrc}" alt="${car.name}" loading="lazy">
+            <img src="${imageSrc}" alt="${car.name}" loading="lazy" decoding="async">
             <div class="orders-card-body">
                 ${brandBadge}
                 <h4>${car.name}</h4>
@@ -3376,6 +3384,15 @@ function renderKoreaUnder160Cars(){
 
         const img = card.querySelector('img');
         if (img) {
+            // Preload первых 3 изображений
+            if (index < 3 && img.src && !img.src.startsWith('data:')) {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = img.src;
+                document.head.appendChild(link);
+                preloadImages.push(link);
+            }
             attachImageFallback(img, car);
         }
 

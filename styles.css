@@ -566,6 +566,13 @@ body.premium .footer-section a:hover { color: var(--text); }
     margin: 0;
 }
 
+.orders-card-desc {
+    font-size: 0.75rem; /* Уменьшено с ~0.95rem (примерно в 1.27 раза, более читаемо) */
+    color: #9ca3af;
+    margin: 0;
+    line-height: 1.4;
+}
+
 .usa-preferential-badge {
     display: inline-flex;
     align-items: center;
@@ -588,7 +595,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     flex-direction: column;
     gap: 0.35rem;
     color: #cbd5f5;
-    font-size: 0.95rem;
+    font-size: 0.75rem; /* Уменьшено с 0.95rem (примерно в 1.27 раза, более читаемо) */
 }
 
 .usa-preferential-meta li {
