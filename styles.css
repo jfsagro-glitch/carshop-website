@@ -111,22 +111,30 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .logo-img {
-    width: 52px;
-    height: 52px;
+    width: 62px;
+    height: 62px;
     display: block;
     animation: logoPulse 2.2s ease-in-out infinite;
     transform-origin: center;
     will-change: transform, filter;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) 
+            drop-shadow(0 0 12px rgba(255, 255, 255, 0.6))
+            drop-shadow(0 0 16px rgba(255, 255, 255, 0.4));
 }
 
 @keyframes logoPulse {
     0%, 100% {
         transform: scale(1);
-        filter: drop-shadow(0 0 0 rgba(212, 175, 55, 0.0));
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) 
+                drop-shadow(0 0 12px rgba(255, 255, 255, 0.6))
+                drop-shadow(0 0 16px rgba(255, 255, 255, 0.4));
     }
     50% {
         transform: scale(1.12);
-        filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.45));
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1.0)) 
+                drop-shadow(0 0 18px rgba(255, 255, 255, 0.8))
+                drop-shadow(0 0 24px rgba(255, 255, 255, 0.6))
+                drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
     }
 }
 
@@ -567,7 +575,7 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .orders-card-desc {
-    font-size: 0.75rem; /* Уменьшено с ~0.95rem (примерно в 1.27 раза, более читаемо) */
+    font-size: 0.475rem; /* Уменьшено в два раза */
     color: #9ca3af;
     margin: 0;
     line-height: 1.4;
@@ -595,7 +603,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     flex-direction: column;
     gap: 0.35rem;
     color: #cbd5f5;
-    font-size: 0.75rem; /* Уменьшено с 0.95rem (примерно в 1.27 раза, более читаемо) */
+    font-size: 0.475rem; /* Уменьшено в два раза с 0.95rem */
 }
 
 .usa-preferential-meta li {
