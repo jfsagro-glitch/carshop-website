@@ -3347,7 +3347,8 @@ function renderKoreaUnder160Cars(){
         // Показываем конкретную цену автомобиля, а не "от минимальной"
         const priceLabel = car.priceLabel || (car.priceFrom ? formatCurrency(car.priceFrom) : 'Цена по запросу');
         const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
-        const descriptionHtml = car.description ? `<p class="orders-card-desc">${car.description}</p>` : '';
+        const utilBadge = '<span class="util-badge">льготный утильсбор</span>';
+        const descriptionHtml = car.description ? `<p class="orders-card-desc">${utilBadge} ${car.description}</p>` : `<p class="orders-card-desc">${utilBadge}</p>`;
 
         // Нормализуем путь к изображению (исправляем регистр)
         let imageSrc = car.image || '';

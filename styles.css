@@ -575,10 +575,22 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .orders-card-desc {
-    font-size: 0.475rem; /* Уменьшено в два раза */
+    font-size: 0.3325rem; /* Уменьшено на 30% (0.475 * 0.7) */
     color: #9ca3af;
     margin: 0;
     line-height: 1.4;
+}
+
+.util-badge {
+    display: inline-block;
+    background-color: #22c55e;
+    color: #ffffff;
+    font-size: 0.4rem;
+    font-weight: 600;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    margin-right: 0.3rem;
+    vertical-align: middle;
 }
 
 .usa-preferential-badge {
