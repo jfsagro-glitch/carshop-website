@@ -3190,7 +3190,7 @@ function setupKoreaUnder160Section(){
                 _order: index
             })),
             filtered: [],
-            filters: { sort: 'default' },
+            filters: { brand: '', query: '', sort: 'default' },
             initialized: false
         };
     }
@@ -3212,11 +3212,41 @@ function populateKoreaUnder160Filters(){
     const store = state.koreaUnder160;
     if (!store) return;
 
+    const brandSelect = document.getElementById('koreaBrandFilter');
+    const modelInput = document.getElementById('koreaModelSearch');
     const sortSelect = document.getElementById('koreaSort');
+    const resetBtn = document.getElementById('koreaResetFilters');
+
+    if (brandSelect) {
+        const brands = [...new Set(store.data.map(car => car.brand).filter(Boolean))]
+            .sort((a, b) => a.localeCompare(b, 'ru'));
+        brandSelect.innerHTML = '<option value="">Все марки</option>' + brands.map(brand => `<option value="${brand}">${brand}</option>`).join('');
+        brandSelect.addEventListener('change', () => {
+            store.filters.brand = brandSelect.value;
+            applyKoreaUnder160Filters();
+        });
+    }
+
+    if (modelInput) {
+        modelInput.addEventListener('input', () => {
+            store.filters.query = modelInput.value.trim();
+            applyKoreaUnder160Filters();
+        });
+    }
 
     if (sortSelect) {
         sortSelect.addEventListener('change', () => {
             store.filters.sort = sortSelect.value;
+            applyKoreaUnder160Filters();
+        });
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            store.filters = { brand: '', query: '', sort: 'default' };
+            if (brandSelect) brandSelect.value = '';
+            if (modelInput) modelInput.value = '';
+            if (sortSelect) sortSelect.value = 'default';
             applyKoreaUnder160Filters();
         });
     }
@@ -3226,8 +3256,20 @@ function applyKoreaUnder160Filters(){
     const store = state.koreaUnder160;
     if (!store) return;
 
-    const { sort } = store.filters;
+    const { brand, query, sort } = store.filters;
     let result = [...store.data];
+
+    if (brand) {
+        result = result.filter(car => car.brand === brand);
+    }
+
+    if (query) {
+        const q = query.toLowerCase();
+        result = result.filter(car => {
+            const text = `${car.name} ${car.model || ''}`.toLowerCase();
+            return text.includes(q);
+        });
+    }
 
     switch (sort) {
         case 'price-asc':
