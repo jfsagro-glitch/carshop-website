@@ -174,17 +174,35 @@ def format_price_label(value: int) -> str:
 
 
 cars = []
-for _, entry in cars_map.items():
+for idx, entry in cars_map.items():
     source_path = entry.pop('_source_path', None)
     if not source_path:
         continue
-    slug = entry.pop('_slug', slugify(entry['brand'], entry['model']))
+    
+    # Используем car_id для уникальности, если нет - используем индекс
+    car_id = entry.get('_id')
+    base_slug = entry.pop('_slug', slugify(entry['brand'], entry['model']))
+    
+    # Создаем уникальное имя файла
+    if car_id:
+        slug = f'{base_slug}-{car_id}'
+    else:
+        slug = f'{base_slug}-{idx}'
+    
     dest_path = DEST / f'{slug}{source_path.suffix.lower()}'
+    
+    # Если файл уже существует с таким именем, добавляем суффикс
     counter = 2
     while dest_path.exists():
-        dest_path = DEST / f'{slug}-{counter}{source_path.suffix.lower()}'
+        if car_id:
+            dest_path = DEST / f'{base_slug}-{car_id}-{counter}{source_path.suffix.lower()}'
+        else:
+            dest_path = DEST / f'{base_slug}-{idx}-{counter}{source_path.suffix.lower()}'
         counter += 1
-    shutil.copy2(source_path, dest_path)
+    
+    # Копируем файл только если его еще нет
+    if not dest_path.exists():
+        shutil.copy2(source_path, dest_path)
 
     entry['image'] = f'images/korea/catalog/{dest_path.name}'
     if entry.get('priceFrom') is not None and not entry.get('priceLabel'):
