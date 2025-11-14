@@ -585,7 +585,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     display: inline-block;
     background-color: #22c55e;
     color: #ffffff;
-    font-size: 0.4rem;
+    font-size: 0.576rem; /* увеличение на 44% */
     font-weight: 600;
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
@@ -615,7 +615,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     flex-direction: column;
     gap: 0.35rem;
     color: #cbd5f5;
-    font-size: 0.475rem; /* Уменьшено в два раза с 0.95rem */
+    font-size: 0.684rem; /* увеличение на 44% */
 }
 
 .usa-preferential-meta li {
