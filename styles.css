@@ -105,8 +105,8 @@ body.premium .footer-section a:hover { color: var(--text); }
     background-image: url('images/hero-logo.png');
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: 20px 20px; /* 3x smaller than previous ~62px */
-    padding-left: 28px; /* space for background logo */
+    background-size: 60px 60px;
+    padding-left: 70px; /* space for 60x60 background logo */
 }
 
 .logo i {
