@@ -102,7 +102,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     font-size: 1.25rem;
     font-weight: 500;
     color: #374151;
-    background-image: url('images/logo.png');
+    background-image: url('images/hero-logo.png');
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 20px 20px; /* 3x smaller than previous ~62px */
