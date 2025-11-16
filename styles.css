@@ -34,6 +34,11 @@ body.premium .footer {
 }
 
 body.premium .logo span { color: #f3f4f6; }
+body.premium .logo span {
+    text-shadow: 0 1px 0 rgba(0,0,0,0.9),
+                 0 2px 0 rgba(0,0,0,0.8),
+                 0 3px 2px rgba(0,0,0,0.6);
+}
 body.premium .logo i { color: var(--accent); }
 body.premium .cta-btn,
 body.premium .filter-btn,
@@ -154,10 +159,16 @@ body.premium .footer-section a:hover { color: var(--text); }
     color: #e5e7eb;
     font-weight: 500;
     transition: color 0.2s;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.9),
+                 0 2px 0 rgba(0,0,0,0.8),
+                 0 3px 2px rgba(0,0,0,0.6);
 }
 
 .nav a:hover {
     color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0,0,0,1),
+                 0 2px 0 rgba(0,0,0,0.9),
+                 0 4px 6px rgba(0,0,0,0.6);
 }
 
 .nav a.active {
