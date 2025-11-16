@@ -114,6 +114,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     width: 62px;
     height: 62px;
     display: block;
+    margin-right: 8px;
     animation: logoPulse 2.2s ease-in-out infinite;
     transform-origin: center;
     will-change: transform, filter;
@@ -221,6 +222,15 @@ body.premium .footer-section a:hover { color: var(--text); }
     margin-left: auto;
     margin-right: auto;
     color: #6b7280;
+}
+
+.hero-content p .hero-inline-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 .hero-features {
