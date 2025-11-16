@@ -218,55 +218,48 @@ body.premium .footer-section a:hover { color: var(--text); }
 .hero {
     background: #ffffff;
     color: #374151;
-    padding: 6rem 0 3rem;
+    padding: 3rem 0 1.5rem;
     text-align: center;
     border-bottom: 1px solid #d1d5db;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     line-height: 1.2;
     color: #374151;
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     color: #6b7280;
 }
 
-.hero-content p .hero-inline-logo {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    vertical-align: middle;
-    margin-right: 10px;
-}
+.hero-content p .hero-inline-logo { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; vertical-align: middle; margin-right: 8px; }
 
 .hero-features {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.9rem;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
 }
 
 .feature {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     color: #6b7280;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .feature i {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #9ca3af;
 }
 
@@ -686,9 +679,9 @@ body.premium .footer-section a:hover { color: var(--text); }
     background: #6b7280;
     color: #fff;
     border: 1px solid #6b7280;
-    padding: 0.75rem 1.5rem;
+    padding: 0.55rem 1.1rem;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     cursor: pointer;
     transition: all 0.2s;
@@ -1096,6 +1089,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     box-shadow: 0 16px 48px rgba(2, 6, 23, 0.55);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: subtlePulse 4s ease-in-out infinite;
 }
 
 .floating-subscribe__inner {
@@ -1135,6 +1129,15 @@ body.premium .footer-section a:hover { color: var(--text); }
 .floating-subscribe__link:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 24px rgba(108, 92, 231, 0.45);
+}
+
+.floating-subscribe__link {
+    animation: subtlePulse 4s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(108,92,231,0); }
+    50% { transform: scale(1.03); box-shadow: 0 8px 18px rgba(108,92,231,0.25); }
 }
 
 .floating-subscribe__close {
