@@ -102,6 +102,11 @@ body.premium .footer-section a:hover { color: var(--text); }
     font-size: 1.25rem;
     font-weight: 500;
     color: #374151;
+    background-image: url('images/logo.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 20px; /* 3x smaller than previous ~62px */
+    padding-left: 28px; /* space for background logo */
 }
 
 .logo i {
@@ -111,16 +116,7 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .logo-img {
-    width: 62px;
-    height: 62px;
-    display: block;
-    margin-right: 8px;
-    animation: logoPulse 2.2s ease-in-out infinite;
-    transform-origin: center;
-    will-change: transform, filter;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) 
-            drop-shadow(0 0 12px rgba(255, 255, 255, 0.6))
-            drop-shadow(0 0 16px rgba(255, 255, 255, 0.4));
+    display: none; /* use background instead */
 }
 
 @keyframes logoPulse {
