@@ -219,38 +219,42 @@ body.premium .footer-section a:hover { color: var(--text); }
 .hero {
     background: #ffffff;
     color: #374151;
-    padding: 3rem 0 1.5rem;
+    padding: 2rem 0 1rem;
     text-align: center;
     border-bottom: 1px solid #d1d5db;
 }
 
 .hero-content h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
     color: #374151;
 }
 
 .hero-content p {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     color: #6b7280;
+    text-align: left;
 }
 
 .hero-tagline {
     background-image: url('images/hero-logo.png');
     background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 300px 300px;
-    padding-left: 320px;
-    min-height: 300px;
+    background-position: 0 center;
+    background-size: 200px 200px;
+    padding-left: 220px;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    line-height: 1.5;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .hero-content p .hero-inline-logo { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; vertical-align: middle; margin-right: 8px; }
@@ -258,8 +262,8 @@ body.premium .footer-section a:hover { color: var(--text); }
 .hero-features {
     display: flex;
     justify-content: center;
-    gap: 0.9rem;
-    margin-bottom: 1rem;
+    gap: 0.7rem;
+    margin-bottom: 0.8rem;
     flex-wrap: wrap;
 }
 
@@ -1627,11 +1631,17 @@ body.premium .footer-section a:hover { color: var(--text); }
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 
     .hero-content p {
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .hero-tagline {
+        background-size: 150px 150px;
+        padding-left: 170px;
+        min-height: 150px;
     }
 
     .hero-features {
@@ -1768,15 +1778,21 @@ body.premium .footer-section a:hover { color: var(--text); }
     }
 
     .hero {
-        padding: 5rem 0 2rem;
+        padding: 4rem 0 1.5rem;
     }
 
     .hero-content h1 {
-        font-size: 1.75rem;
+        font-size: 1.1rem;
     }
 
     .hero-content p {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+    }
+    
+    .hero-tagline {
+        background-size: 120px 120px;
+        padding-left: 140px;
+        min-height: 120px;
     }
 
     .catalog h2,
