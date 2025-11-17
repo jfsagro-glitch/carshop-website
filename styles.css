@@ -153,7 +153,6 @@ body.premium .footer-section a:hover { color: var(--text); }
 .nav {
     display: flex;
     gap: 2rem;
-    align-items: center;
 }
 
 .nav a {
@@ -164,9 +163,6 @@ body.premium .footer-section a:hover { color: var(--text); }
     text-shadow: 0 1px 0 rgba(0,0,0,0.9),
                  0 2px 0 rgba(0,0,0,0.8),
                  0 3px 2px rgba(0,0,0,0.6);
-    display: inline-flex;
-    align-items: center;
-    height: 70px; /* align with logo circle height */
 }
 
 .nav a:hover {
@@ -1113,13 +1109,8 @@ body.premium .footer-section a:hover { color: var(--text); }
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    padding: 1.25rem 1.5rem 1.1rem 320px;
-    max-width: 480px;
-    min-height: 300px;
-    background-image: url('images/hero-logo.png');
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 300px 300px;
+    padding: 1.25rem 1.5rem 1.1rem;
+    max-width: 280px;
 }
 
 .floating-subscribe__title {
