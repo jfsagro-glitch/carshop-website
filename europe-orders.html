@@ -385,16 +385,35 @@
                     }
                     
                     grid.innerHTML = cars.map(car => {
-                        const price = car.price ? `${new Intl.NumberFormat('ru-RU').format(car.price)} €` : 'Цена по запросу';
-                        const mainImage = car.images && car.images.length > 0 
-                            ? `images/${car.images[0]}` 
+                        // Форматирование цены - проверяем на разумность
+                        let price = 'Цена по запросу';
+                        if (car.price && car.price > 0 && car.price <= 50000000) {
+                            price = `${new Intl.NumberFormat('ru-RU').format(Math.round(car.price))} €`;
+                        }
+                        
+                        // Фильтруем изображения - только jpg и jpeg (фотографии автомобилей)
+                        let filteredImages = (car.images || []).filter(img => {
+                            if (!img) return false;
+                            const imgLower = img.toLowerCase();
+                            // Пропускаем служебные изображения
+                            const exclude = ['webp', 'logo', 'icon', 'map', 'banner', 'static', 'modal', 'subscribe'];
+                            // Исключаем только если это явно служебное изображение, не исключаем все png
+                            if (exclude.some(kw => imgLower.includes(kw))) return false;
+                            // Берем только jpg/jpeg (png могут быть фотографиями, но обычно это иконки/графика)
+                            return imgLower.endsWith('.jpg') || imgLower.endsWith('.jpeg');
+                        });
+                        
+                        // Берем первое подходящее изображение
+                        const mainImage = filteredImages.length > 0 
+                            ? `images/${filteredImages[0]}` 
                             : 'images/logo.png';
                         
                         return `
                             <div class="usa-order-card">
                                 <div class="usa-order-image">
                                     <img src="${mainImage}" alt="${car.fullName || car.brand + ' ' + car.model}" 
-                                         onerror="this.src='images/logo.png'">
+                                         onerror="this.src='images/logo.png'"
+                                         style="width: 100%; height: 200px; object-fit: cover;">
                                 </div>
                                 <div class="usa-order-info">
                                     <h3>${car.fullName || car.brand + ' ' + car.model}</h3>
