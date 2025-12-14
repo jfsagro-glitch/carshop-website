@@ -2,567 +2,703 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заказ автомобилей из Европы - CarExport</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-width: 150px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .filters {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .car-image-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .car-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover .car-image {
+            transform: scale(1.05);
+        }
+
+        .image-count {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .car-info {
+            padding: 1.5rem;
+        }
+
+        .car-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .car-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .car-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .car-spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-view-images {
+            width: 100%;
+            padding: 0.75rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-view-images:hover {
+            background: #5568d3;
+        }
+
+        /* Модальное окно для фотографий */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .close-modal:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .modal-image-container {
+            position: relative;
+            max-width: 100%;
+            max-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .modal-nav:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .modal-nav.prev {
+            left: 20px;
+        }
+
+        .modal-nav.next {
+            right: 20px;
+        }
+
+        .modal-thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0 1rem;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+
+        .modal-thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s, transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .modal-thumbnail:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .modal-thumbnail.active {
+            opacity: 1;
+            border-color: #667eea;
+        }
+
+        .image-counter {
+            color: white;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .cars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                flex-direction: column;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+
+            .modal-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .modal-nav.prev {
+                left: 10px;
+            }
+
+            .modal-nav.next {
+                right: 10px;
+            }
+        }
+    </style>
 </head>
-<body class="premium">
-    <header class="header">
+<body>
+    <header>
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="images/logo.png" alt="CarExport" class="logo-img">
-                    <span>CarExport</span>
-                </div>
-                <nav class="nav">
-                    <a href="index.html#catalog">Грузия</a>
-                    <a href="usa-orders.html">США</a>
-                    <a href="china-orders.html">Китай</a>
-                    <a href="korea-orders.html">Корея</a>
-                    <a href="#europe-orders" class="active">Европа</a>
-                    <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
-                </nav>
-                <div class="header-actions">
-                    <button class="cart-btn" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
-                    </button>
-                    <button class="btn-secondary" type="button" onclick="openRequestModal()">Заявка на подбор</button>
-                    <button class="btn-primary" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
-                </div>
-            </div>
+            <h1>Заказ автомобилей из Европы</h1>
+            <p>Широкий выбор качественных автомобилей из Германии, Франции, Италии и других европейских стран</p>
         </div>
     </header>
 
-    <section class="hero" style="background:#1a1f2e;color:#f3f4f6;border-bottom:1px solid #1f2937;">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Заказ автомобилей из Европы</h1>
-                <p>Широкий выбор качественных автомобилей из Германии, Франции, Италии и других европейских стран. Официальные дилеры, проверенная история, доставка и растаможка под ключ в Россию.</p>
-                <div class="hero-features">
-                    <div class="feature">
-                        <i class="fas fa-file-signature"></i>
-                        <span>Проверенная история</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-car-side"></i>
-                        <span>Официальные дилеры</span>
-                    </div>
-                </div>
-                <button class="cta-btn" onclick="document.getElementById('europe-orders').scrollIntoView({behavior:'smooth'});">
-                    Смотреть предложения
-                </button>
+    <div class="container">
+        <div class="stats" id="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="total-cars">0</div>
+                <div class="stat-label">Авто в каталоге</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="total-images">0</div>
+                <div class="stat-label">Фотографий</div>
             </div>
         </div>
-    </section>
 
-    <section id="europe-orders" class="usa-orders">
-        <div class="container">
-            <div class="usa-header">
-                <div>
-                    <h2>Автомобили из Европы в наличии</h2>
-                    <p>Широкий выбор качественных автомобилей из Германии, Франции, Италии и других европейских стран. Официальные дилеры, проверенная история, доставка и растаможка под ключ.</p>
-                </div>
-                <div class="usa-badges">
-                    <span class="usa-badge">Проверенная история</span>
-                    <span class="usa-badge">Официальные дилеры</span>
-                </div>
+        <div class="filters">
+            <div class="filter-group">
+                <label>Марка:</label>
+                <select id="brand-filter">
+                    <option value="">Все марки</option>
+                </select>
             </div>
-
-            <div class="usa-metrics" id="europeMetrics" aria-live="polite">
-                <div class="usa-metric">
-                    <span class="usa-metric-label">Авто в каталоге</span>
-                    <span class="usa-metric-value" data-metric="count">—</span>
-                </div>
-                <div class="usa-metric">
-                    <span class="usa-metric-label">Средний бюджет</span>
-                    <span class="usa-metric-value" data-metric="avg">—</span>
-                </div>
-                <div class="usa-metric">
-                    <span class="usa-metric-label">Минимальная цена</span>
-                    <span class="usa-metric-value" data-metric="min">—</span>
-                </div>
+            <div class="filter-group">
+                <label>Цена от:</label>
+                <input type="number" id="price-from" placeholder="0">
             </div>
-
-            <div class="korea-filters" aria-label="Фильтры каталога">
-                <div class="filter-group">
-                    <label for="europeBrandFilter">Марка</label>
-                    <select id="europeBrandFilter">
-                        <option value="">Все марки</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="europeModelSearch">Модель</label>
-                    <input type="text" id="europeModelSearch" placeholder="Например, BMW">
-                </div>
-                <div class="filter-group">
-                    <label for="europeSort">Сортировка</label>
-                    <select id="europeSort">
-                        <option value="default">По умолчанию</option>
-                        <option value="price-asc">Цена: по возрастанию</option>
-                        <option value="price-desc">Цена: по убыванию</option>
-                        <option value="name-asc">Название: А→Я</option>
-                        <option value="name-desc">Название: Я→А</option>
-                    </select>
-                </div>
-                <button class="filter-btn" id="europeResetFilters" type="button">Сбросить</button>
+            <div class="filter-group">
+                <label>Цена до:</label>
+                <input type="number" id="price-to" placeholder="1000000">
             </div>
-
-            <div class="usa-orders-grid" id="europeGrid">
-                <div class="usa-empty-state" id="europeLoadingIndicator">Загружаем предложения...</div>
+            <div class="filter-group">
+                <label>Пробег до:</label>
+                <input type="number" id="mileage-to" placeholder="200000">
             </div>
-
-            <p class="usa-note">Цены указаны ориентировочно. Для точного предложения оставьте заявку — проверим доступность, историю и рассчитаем доставку до вашего города.</p>
+            <button class="btn btn-primary" id="apply-filters">Применить</button>
+            <button class="btn btn-secondary" id="reset-filters">Сбросить</button>
         </div>
-    </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Контакты</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Телефон</h4>
-                            <p>+7 (915) 444-12-08</p>
-                            <p>+7 (918) 414-06-36</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>carexportgeo@bk.ru</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-telegram"></i>
-                        <div>
-                            <h4>Telegram</h4>
-                            <p><a href="https://t.me/Aleksandr_N_444" target="_blank">@Aleksandr_N_444</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/79184140636" target="_blank">+7-918-414-06-36</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Оставить заявку</h3>
-                    <form id="contactForm">
-                        <input type="text" placeholder="Ваше имя" required>
-                        <input type="tel" placeholder="Телефон" required>
-                        <input type="email" placeholder="Email">
-                        <textarea placeholder="Сообщение"></textarea>
-                        <button type="submit">Отправить</button>
-                    </form>
-                </div>
-            </div>
+        <div id="cars-grid" class="cars-grid">
+            <div class="loading">Загружаем предложения...</div>
         </div>
-    </section>
+    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>CarExport</h4>
-                    <p>Проверенные автомобили из Европы с доставкой и оформлением «под ключ»</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Услуги</h4>
-                    <ul>
-                        <li>Проверка по европейским базам</li>
-                        <li>Логистика и таможенное оформление</li>
-                        <li>Сертификация и постановка на учет</li>
-                        <li>Гарантийная поддержка</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Контакты</h4>
-                    <p>+7 (915) 444-12-08</p>
-                    <p>+7 (918) 414-06-36</p>
-                    <p>carexportgeo@bk.ru</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Соцсети</h4>
-                    <p><a href="https://t.me/Aleksandr_N_444" target="_blank">Telegram</a></p>
-                    <p><a href="https://wa.me/79184140636" target="_blank">WhatsApp</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2024 CarExport. Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Модальные окна (те же что в index.html) -->
-    <div id="cartModal" class="modal" style="display:none;">
+    <!-- Модальное окно для фотографий -->
+    <div id="image-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Ваш заказ</h3>
-                <span class="close" onclick="closeCart()">&times;</span>
+                <div class="modal-title" id="modal-title"></div>
+                <button class="close-modal" id="close-modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <div id="cartBody"></div>
+            <div class="modal-image-container">
+                <button class="modal-nav prev" id="prev-image">‹</button>
+                <img id="modal-image" class="modal-image" src="" alt="">
+                <button class="modal-nav next" id="next-image">›</button>
             </div>
-            <div class="modal-footer">
-                <div class="cart-summary">
-                    <span>Итого: <strong id="cartTotal">0</strong> ₽</span>
-                </div>
-                <button class="btn-primary" onclick="checkout()">Оформить заказ</button>
-            </div>
+            <div class="image-counter" id="image-counter"></div>
+            <div class="modal-thumbnails" id="modal-thumbnails"></div>
         </div>
     </div>
 
-    <div id="checkoutModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Контактные данные</h3>
-                <span class="close" onclick="closeCheckoutModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="checkoutContactForm">
-                    <label for="contactName">Имя</label>
-                    <input type="text" id="contactName" required>
-                    <label for="contactPhone">Телефон</label>
-                    <input type="tel" id="contactPhone" required>
-                    <label for="contactEmail">Email</label>
-                    <input type="email" id="contactEmail" required>
-                    <button type="submit" class="btn-primary" style="margin-top:1rem;">Отправить</button>
-                </form>
-                <form id="emailFallbackForm" action="https://formsubmit.co/carexportgeo@bk.ru" method="POST" style="display:none;">
-                    <input type="hidden" name="name" id="fs_name">
-                    <input type="hidden" name="phone" id="fs_phone">
-                    <input type="hidden" name="email" id="fs_email">
-                    <input type="hidden" name="message" id="fs_message">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Новый заказ с сайта CarExport">
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="customsModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Таможенный калькулятор</h3>
-                <span class="close" onclick="closeCustomsModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="customs-content">
-                    <form id="customsForm" class="calc-form" onsubmit="return false;">
-                        <div class="calc-row">
-                            <label for="costUsd">Стоимость (USD)</label>
-                            <input type="number" id="costUsd" placeholder="Например, 35000" min="0" step="0.01" required>
-                        </div>
-                        <div class="calc-row">
-                            <label for="engineCc">Объем, см³</label>
-                            <input type="number" id="engineCc" placeholder="Например, 2497" min="0" step="1" required>
-                        </div>
-                        <div class="calc-row">
-                            <label for="age">Возраст</label>
-                            <input id="age" value="До 3 лет" disabled>
-                        </div>
-                        <div class="calc-actions">
-                            <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
-                        </div>
-                    </form>
-                    <div class="calc-result" id="calcResult" aria-live="polite"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="requestModal" class="modal" style="display:none;">
-        <div class="modal-content" style="max-width:600px;">
-            <div class="modal-header">
-                <h3>Заявка на подбор</h3>
-                <span class="close" onclick="closeRequestModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="request-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="reqBrand">Марка*</label>
-                            <input type="text" id="reqBrand" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="reqModel">Модель*</label>
-                            <input type="text" id="reqModel" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="reqYearFrom">Год от</label>
-                            <input type="number" id="reqYearFrom" min="1990" max="2025">
-                        </div>
-                        <div class="form-group">
-                            <label for="reqYearTo">Год до</label>
-                            <input type="number" id="reqYearTo" min="1990" max="2025">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="reqPriceTo">Бюджет до, ₽</label>
-                        <input type="number" id="reqPriceTo" min="0">
-                    </div>
-                    <div class="form-group">
-                        <label for="reqName">Ваше имя*</label>
-                        <input type="text" id="reqName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reqPhone">Телефон*</label>
-                        <input type="tel" id="reqPhone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reqEmail">Email</label>
-                        <input type="email" id="reqEmail">
-                    </div>
-                    <div class="form-group">
-                        <label for="reqNote">Комментарий</label>
-                        <textarea id="reqNote" rows="4"></textarea>
-                    </div>
-                    <div id="requestStatus" style="display:none;color:#facc15;margin-bottom:1rem;"></div>
-                    <button class="btn-primary" id="requestSubmit" type="button">Отправить</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="selfCalcModal" class="modal" style="display:none;">
-        <div class="modal-content" style="max-width:600px;">
-            <div class="modal-header">
-                <h3>Самостоятельный просчет</h3>
-                <span class="close" onclick="closeSelfCalcModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="calc-form">
-                    <div class="calc-row">
-                        <label for="selfCostUsd">Стоимость авто (USD)</label>
-                        <input type="number" id="selfCostUsd" min="0" step="0.01" placeholder="Например, 42000">
-                    </div>
-                    <div class="calc-row">
-                        <label for="selfEngineCc">Объем двигателя, см³</label>
-                        <input type="number" id="selfEngineCc" min="0" step="1" placeholder="Например, 2497">
-                    </div>
-                    <button class="btn-primary" id="selfCalcBtn" type="button">Рассчитать</button>
-                    <div class="calc-result" id="selfCalcResult" aria-live="polite"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
     <script>
-        // Загрузка данных о европейских автомобилях
-        (async function() {
-            const loadingIndicator = document.getElementById('europeLoadingIndicator');
-            
+        let carsData = [];
+        let filteredCars = [];
+        let currentCarIndex = -1;
+        let currentImageIndex = 0;
+
+        // Загрузка данных
+        async function loadCarsData() {
             try {
-                const response = await fetch('./cars_europe.json');
-                if (!response.ok) throw new Error('Failed to load Europe data');
-                const data = await response.json();
-                window.europeCarsData = data;
-                
-                // Функция для отображения автомобилей
-                function renderEuropeCars(cars) {
-                    const grid = document.getElementById('europeGrid');
-                    if (!grid) return;
-                    
-                    if (cars.length === 0) {
-                        grid.innerHTML = '<div class="usa-empty-state">Автомобили не найдены</div>';
-                        return;
-                    }
-                    
-                    grid.innerHTML = cars.map(car => {
-                        // Форматирование цены - проверяем на разумность
-                        let price = 'Цена по запросу';
-                        if (car.price && car.price > 0 && car.price <= 50000000) {
-                            price = `${new Intl.NumberFormat('ru-RU').format(Math.round(car.price))} €`;
-                        }
-                        
-                        // Фильтруем изображения - только jpg и jpeg (фотографии автомобилей)
-                        let filteredImages = (car.images || []).filter(img => {
-                            if (!img) return false;
-                            const imgLower = img.toLowerCase();
-                            // Пропускаем служебные изображения
-                            const exclude = ['webp', 'logo', 'icon', 'map', 'banner', 'static', 'modal', 'subscribe'];
-                            // Исключаем только если это явно служебное изображение, не исключаем все png
-                            if (exclude.some(kw => imgLower.includes(kw))) return false;
-                            // Берем только jpg/jpeg (png могут быть фотографиями, но обычно это иконки/графика)
-                            return imgLower.endsWith('.jpg') || imgLower.endsWith('.jpeg');
-                        });
-                        
-                        // Берем первое подходящее изображение
-                        const mainImage = filteredImages.length > 0 
-                            ? `images/${filteredImages[0]}` 
-                            : 'images/logo.png';
-                        
-                        return `
-                            <div class="usa-order-card">
-                                <div class="usa-order-image">
-                                    <img src="${mainImage}" alt="${car.fullName || car.brand + ' ' + car.model}" 
-                                         onerror="this.src='images/logo.png'"
-                                         style="width: 100%; height: 200px; object-fit: cover;">
-                                </div>
-                                <div class="usa-order-info">
-                                    <h3>${car.fullName || car.brand + ' ' + car.model}</h3>
-                                    <div class="usa-order-specs">
-                                        ${car.year ? `<span><i class="fas fa-calendar"></i> ${car.year}</span>` : ''}
-                                        ${car.mileage ? `<span><i class="fas fa-tachometer-alt"></i> ${new Intl.NumberFormat('ru-RU').format(car.mileage)} км</span>` : ''}
-                                        ${car.engine ? `<span><i class="fas fa-cog"></i> ${car.engine} л</span>` : ''}
-                                        ${car.power ? `<span><i class="fas fa-bolt"></i> ${car.power} л.с.</span>` : ''}
-                                    </div>
-                                    <div class="usa-order-price">${price}</div>
-                                    <button class="btn-primary" onclick="openRequestModal()">Оставить заявку</button>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-                }
-                
-                // Обновление метрик
-                function updateMetrics(cars) {
-                    const metrics = document.getElementById('europeMetrics');
-                    if (!metrics) return;
-                    
-                    const countEl = metrics.querySelector('[data-metric="count"]');
-                    const avgEl = metrics.querySelector('[data-metric="avg"]');
-                    const minEl = metrics.querySelector('[data-metric="min"]');
-                    
-                    if (countEl) countEl.textContent = cars.length;
-                    
-                    const prices = cars.filter(c => c.price).map(c => c.price);
-                    if (prices.length > 0) {
-                        const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
-                        const min = Math.min(...prices);
-                        if (avgEl) avgEl.textContent = `${new Intl.NumberFormat('ru-RU').format(Math.round(avg))} €`;
-                        if (minEl) minEl.textContent = `${new Intl.NumberFormat('ru-RU').format(Math.round(min))} €`;
-                    }
-                }
-                
-                // Фильтрация и сортировка
-                function filterAndRender() {
-                    const brandFilter = document.getElementById('europeBrandFilter');
-                    const modelSearch = document.getElementById('europeModelSearch');
-                    const sortSelect = document.getElementById('europeSort');
-                    
-                    let filtered = [...window.europeCarsData];
-                    
-                    if (brandFilter && brandFilter.value) {
-                        filtered = filtered.filter(c => c.brand === brandFilter.value);
-                    }
-                    
-                    if (modelSearch && modelSearch.value) {
-                        const search = modelSearch.value.toLowerCase();
-                        filtered = filtered.filter(c => 
-                            (c.model && c.model.toLowerCase().includes(search)) ||
-                            (c.fullName && c.fullName.toLowerCase().includes(search))
-                        );
-                    }
-                    
-                    // Сортировка
-                    if (sortSelect && sortSelect.value !== 'default') {
-                        filtered.sort((a, b) => {
-                            switch(sortSelect.value) {
-                                case 'price-asc':
-                                    return (a.price || 0) - (b.price || 0);
-                                case 'price-desc':
-                                    return (b.price || 0) - (a.price || 0);
-                                case 'name-asc':
-                                    return (a.fullName || '').localeCompare(b.fullName || '');
-                                case 'name-desc':
-                                    return (b.fullName || '').localeCompare(a.fullName || '');
-                                default:
-                                    return 0;
-                            }
-                        });
-                    }
-                    
-                    renderEuropeCars(filtered);
-                    updateMetrics(filtered);
-                }
-                
-                // Заполнение фильтра марок
-                function populateBrandFilter() {
-                    const brandFilter = document.getElementById('europeBrandFilter');
-                    if (!brandFilter) return;
-                    
-                    const brands = [...new Set(window.europeCarsData.map(c => c.brand).filter(Boolean))].sort();
-                    brands.forEach(brand => {
-                        const option = document.createElement('option');
-                        option.value = brand;
-                        option.textContent = brand;
-                        brandFilter.appendChild(option);
-                    });
-                }
-                
-                // Инициализация
-                function initEuropeSection() {
-                    populateBrandFilter();
-                    filterAndRender();
-                    
-                    document.getElementById('europeBrandFilter')?.addEventListener('change', filterAndRender);
-                    document.getElementById('europeModelSearch')?.addEventListener('input', filterAndRender);
-                    document.getElementById('europeSort')?.addEventListener('change', filterAndRender);
-                    document.getElementById('europeResetFilters')?.addEventListener('click', () => {
-                        document.getElementById('europeBrandFilter').value = '';
-                        document.getElementById('europeModelSearch').value = '';
-                        document.getElementById('europeSort').value = 'default';
-                        filterAndRender();
-                    });
-                    
-                    if (loadingIndicator) {
-                        loadingIndicator.style.display = 'none';
-                    }
-                }
-                
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', initEuropeSection);
+                const response = await fetch('./cars_europe_new.json');
+                if (response.ok) {
+                    carsData = await response.json();
+                    filteredCars = [...carsData];
+                    initializePage();
                 } else {
-                    initEuropeSection();
+                    document.getElementById('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
                 }
             } catch (error) {
-                console.error('Error loading Europe catalog:', error);
-                window.europeCarsData = [];
-                if (loadingIndicator) {
-                    loadingIndicator.textContent = 'Ошибка загрузки каталога. Пожалуйста, обновите страницу.';
+                console.error('Ошибка загрузки данных:', error);
+                document.getElementById('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
+            }
+        }
+
+        // Инициализация страницы
+        function initializePage() {
+            updateStats();
+            populateBrandFilter();
+            displayCars();
+            setupFilters();
+            setupModal();
+        }
+
+        // Обновление статистики
+        function updateStats() {
+            const totalCars = filteredCars.length;
+            const totalImages = filteredCars.reduce((sum, car) => sum + (car.images ? car.images.length : 0), 0);
+            document.getElementById('total-cars').textContent = totalCars;
+            document.getElementById('total-images').textContent = totalImages;
+        }
+
+        // Заполнение фильтра марок
+        function populateBrandFilter() {
+            const brandFilter = document.getElementById('brand-filter');
+            const brands = [...new Set(carsData.map(car => car.brand).filter(Boolean))].sort();
+            brands.forEach(brand => {
+                const option = document.createElement('option');
+                option.value = brand;
+                option.textContent = brand;
+                brandFilter.appendChild(option);
+            });
+        }
+
+        // Отображение автомобилей
+        function displayCars() {
+            const grid = document.getElementById('cars-grid');
+            if (filteredCars.length === 0) {
+                grid.innerHTML = '<div class="no-results">Автомобили не найдены</div>';
+                return;
+            }
+
+            grid.innerHTML = filteredCars.map((car, index) => {
+                const firstImage = car.images && car.images.length > 0 ? car.images[0].url : '';
+                const imageCount = car.images ? car.images.length : 0;
+                const price = car.price ? `${car.price.toLocaleString('ru-RU')} €` : 'Цена по запросу';
+                
+                return `
+                    <div class="car-card" data-index="${index}">
+                        <div class="car-image-container">
+                            ${firstImage ? `<img src="${firstImage}" alt="${car.brand} ${car.model}" class="car-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\'%3E%3Crect fill=\'%23ddd\' width=\'300\' height=\'200\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EНет фото%3C/text%3E%3C/svg%3E'">` : ''}
+                            ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
+                        </div>
+                        <div class="car-info">
+                            <div class="car-title">${car.brand} ${car.model}</div>
+                            <div class="car-price">${price}</div>
+                            <div class="car-specs">
+                                ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
+                                ${car.power_kw ? `<div class="car-spec-item">⚡ ${car.power_kw} kW (${car.power_hp || ''} PS)</div>` : ''}
+                                ${car.first_registration ? `<div class="car-spec-item">📅 ${car.first_registration}</div>` : ''}
+                            </div>
+                            ${imageCount > 0 ? `<button class="btn-view-images" onclick="openImageModal(${index})">Смотреть все фото (${imageCount})</button>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Настройка фильтров
+        function setupFilters() {
+            document.getElementById('apply-filters').addEventListener('click', applyFilters);
+            document.getElementById('reset-filters').addEventListener('click', resetFilters);
+        }
+
+        // Применение фильтров
+        function applyFilters() {
+            const brand = document.getElementById('brand-filter').value;
+            const priceFrom = parseFloat(document.getElementById('price-from').value) || 0;
+            const priceTo = parseFloat(document.getElementById('price-to').value) || Infinity;
+            const mileageTo = parseFloat(document.getElementById('mileage-to').value) || Infinity;
+
+            filteredCars = carsData.filter(car => {
+                if (brand && car.brand !== brand) return false;
+                if (car.price && (car.price < priceFrom || car.price > priceTo)) return false;
+                if (car.mileage && car.mileage > mileageTo) return false;
+                return true;
+            });
+
+            updateStats();
+            displayCars();
+        }
+
+        // Сброс фильтров
+        function resetFilters() {
+            document.getElementById('brand-filter').value = '';
+            document.getElementById('price-from').value = '';
+            document.getElementById('price-to').value = '';
+            document.getElementById('mileage-to').value = '';
+            filteredCars = [...carsData];
+            updateStats();
+            displayCars();
+        }
+
+        // Настройка модального окна
+        function setupModal() {
+            const modal = document.getElementById('image-modal');
+            const closeBtn = document.getElementById('close-modal');
+            const prevBtn = document.getElementById('prev-image');
+            const nextBtn = document.getElementById('next-image');
+
+            closeBtn.addEventListener('click', closeImageModal);
+            prevBtn.addEventListener('click', () => changeImage(-1));
+            nextBtn.addEventListener('click', () => changeImage(1));
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeImageModal();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (modal.classList.contains('active')) {
+                    if (e.key === 'Escape') closeImageModal();
+                    if (e.key === 'ArrowLeft') changeImage(-1);
+                    if (e.key === 'ArrowRight') changeImage(1);
                 }
-            }
-        })();
-    </script>
-    <aside class="floating-subscribe" aria-label="Подписка на Telegram">
-        <div class="floating-subscribe__inner">
-            <span class="floating-subscribe__title"><i class="fab fa-telegram"></i> Подпишись на нас в Telegram</span>
-            <a class="floating-subscribe__link" href="https://t.me/expo_mir" target="_blank" rel="noopener">Перейти в канал</a>
-            <button class="floating-subscribe__close" type="button" aria-label="Закрыть уведомление">&times;</button>
-        </div>
-    </aside>
-    <script>
-        (function(){
-            const widget = document.querySelector('.floating-subscribe');
-            if (!widget) return;
-            const closeBtn = widget.querySelector('.floating-subscribe__close');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function(){
-                    widget.classList.add('floating-subscribe--hidden');
-                    localStorage.setItem('ce_subscribe_closed', '1');
-                });
-            }
-            if (localStorage.getItem('ce_subscribe_closed') === '1') {
-                widget.classList.add('floating-subscribe--hidden');
-            }
-        })();
+            });
+        }
+
+        // Открытие модального окна
+        function openImageModal(carIndex) {
+            currentCarIndex = carIndex;
+            currentImageIndex = 0;
+            const car = filteredCars[carIndex];
+            
+            if (!car.images || car.images.length === 0) return;
+
+            document.getElementById('modal-title').textContent = `${car.brand} ${car.model}`;
+            updateModalImage();
+            updateModalThumbnails();
+            document.getElementById('image-modal').classList.add('active');
+        }
+
+        // Закрытие модального окна
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.remove('active');
+        }
+
+        // Обновление изображения в модальном окне
+        function updateModalImage() {
+            const car = filteredCars[currentCarIndex];
+            const images = car.images;
+            const image = images[currentImageIndex];
+            
+            document.getElementById('modal-image').src = image.url;
+            document.getElementById('image-counter').textContent = `${currentImageIndex + 1} / ${images.length}`;
+            
+            // Обновление активной миниатюры
+            const thumbnails = document.querySelectorAll('.modal-thumbnail');
+            thumbnails.forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentImageIndex);
+            });
+        }
+
+        // Обновление миниатюр
+        function updateModalThumbnails() {
+            const car = filteredCars[currentCarIndex];
+            const images = car.images;
+            const thumbnailsContainer = document.getElementById('modal-thumbnails');
+            
+            thumbnailsContainer.innerHTML = images.map((img, index) => 
+                `<img src="${img.url}" alt="Фото ${index + 1}" class="modal-thumbnail ${index === currentImageIndex ? 'active' : ''}" onclick="setImageIndex(${index})">`
+            ).join('');
+        }
+
+        // Установка индекса изображения
+        function setImageIndex(index) {
+            currentImageIndex = index;
+            updateModalImage();
+        }
+
+        // Смена изображения
+        function changeImage(direction) {
+            const car = filteredCars[currentCarIndex];
+            const images = car.images;
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+            if (currentImageIndex >= images.length) currentImageIndex = 0;
+            
+            updateModalImage();
+        }
+
+        // Загрузка данных при загрузке страницы
+        loadCarsData();
     </script>
 </body>
 </html>
+
