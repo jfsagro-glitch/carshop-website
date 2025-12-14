@@ -4,42 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заказ автомобилей из Европы - CarExport</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Дополнительные стили для страницы Европы */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            padding-top: 80px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .europe-hero {
+            background: linear-gradient(135deg, #1a1f2e 0%, #0d1320 100%);
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        header h1 {
+        .europe-hero h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        header p {
+        .europe-hero p {
             font-size: 1.1rem;
             opacity: 0.9;
+            color: #e5e7eb;
         }
 
         .stats {
@@ -52,121 +44,24 @@
 
         .stat-item {
             text-align: center;
-            padding: 1rem;
-            background: white;
+            padding: 1.5rem;
+            background: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #d1d5db;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             min-width: 150px;
         }
 
         .stat-value {
             font-size: 2rem;
-            font-weight: bold;
-            color: #667eea;
+            font-weight: 600;
+            color: #374151;
         }
 
         .stat-label {
-            color: #666;
+            color: #6b7280;
             font-size: 0.9rem;
-        }
-
-        .filters {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .filter-group label {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .filter-group select,
-        .filter-group input {
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .btn {
-            padding: 0.5rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #5568d3;
-        }
-
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #5a6268;
-        }
-
-        .cars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .car-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .car-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-        }
-
-        .car-image-container {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            background: #f0f0f0;
-        }
-
-        .car-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .car-card:hover .car-image {
-            transform: scale(1.05);
+            margin-top: 0.5rem;
         }
 
         .image-count {
@@ -180,31 +75,13 @@
             font-size: 0.85rem;
         }
 
-        .car-info {
-            padding: 1.5rem;
-        }
-
-        .car-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .car-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
         .car-specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin-bottom: 1.2rem;
         }
 
         .car-spec-item {
@@ -215,22 +92,24 @@
 
         .btn-view-images {
             width: 100%;
-            padding: 0.75rem;
-            background: #667eea;
-            color: white;
-            border: none;
+            padding: 0.6rem 1.2rem;
+            background: #6b7280;
+            color: #fff;
+            border: 1px solid #6b7280;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: all 0.2s;
         }
 
         .btn-view-images:hover {
-            background: #5568d3;
+            background: #4b5563;
+            border-color: #4b5563;
         }
 
         /* Модальное окно для фотографий */
-        .modal {
+        .image-modal {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -242,7 +121,7 @@
             animation: fadeIn 0.3s;
         }
 
-        .modal.active {
+        .image-modal.active {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -254,7 +133,7 @@
             to { opacity: 1; }
         }
 
-        .modal-content {
+        .image-modal-content {
             position: relative;
             max-width: 90%;
             max-height: 90%;
@@ -263,7 +142,7 @@
             align-items: center;
         }
 
-        .modal-header {
+        .image-modal-header {
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -273,12 +152,12 @@
             margin-bottom: 1rem;
         }
 
-        .modal-title {
+        .image-modal-title {
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 600;
         }
 
-        .close-modal {
+        .close-image-modal {
             background: none;
             border: none;
             color: white;
@@ -294,11 +173,11 @@
             transition: background 0.3s;
         }
 
-        .close-modal:hover {
+        .close-image-modal:hover {
             background: rgba(255,255,255,0.2);
         }
 
-        .modal-image-container {
+        .image-modal-image-container {
             position: relative;
             max-width: 100%;
             max-height: 70vh;
@@ -307,14 +186,14 @@
             justify-content: center;
         }
 
-        .modal-image {
+        .image-modal-image {
             max-width: 100%;
             max-height: 70vh;
             object-fit: contain;
             border-radius: 8px;
         }
 
-        .modal-nav {
+        .image-modal-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -332,19 +211,19 @@
             transition: background 0.3s;
         }
 
-        .modal-nav:hover {
+        .image-modal-nav:hover {
             background: rgba(255,255,255,0.3);
         }
 
-        .modal-nav.prev {
+        .image-modal-nav.prev {
             left: 20px;
         }
 
-        .modal-nav.next {
+        .image-modal-nav.next {
             right: 20px;
         }
 
-        .modal-thumbnails {
+        .image-modal-thumbnails {
             display: flex;
             gap: 0.5rem;
             margin-top: 1rem;
@@ -353,7 +232,7 @@
             max-width: 100%;
         }
 
-        .modal-thumbnail {
+        .image-modal-thumbnail {
             width: 80px;
             height: 80px;
             object-fit: cover;
@@ -364,14 +243,14 @@
             border: 2px solid transparent;
         }
 
-        .modal-thumbnail:hover {
+        .image-modal-thumbnail:hover {
             opacity: 1;
             transform: scale(1.1);
         }
 
-        .modal-thumbnail.active {
+        .image-modal-thumbnail.active {
             opacity: 1;
-            border-color: #667eea;
+            border-color: #6b7280;
         }
 
         .image-counter {
@@ -383,13 +262,13 @@
         .loading {
             text-align: center;
             padding: 2rem;
-            color: #666;
+            color: #6b7280;
         }
 
         .no-results {
             text-align: center;
             padding: 3rem;
-            color: #666;
+            color: #6b7280;
             font-size: 1.2rem;
         }
 
@@ -398,7 +277,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .filters {
+            .catalog-filters {
                 flex-direction: column;
             }
 
@@ -406,84 +285,108 @@
                 width: 100%;
             }
 
-            .modal-nav {
+            .image-modal-nav {
                 width: 40px;
                 height: 40px;
                 font-size: 1.2rem;
             }
 
-            .modal-nav.prev {
+            .image-modal-nav.prev {
                 left: 10px;
             }
 
-            .modal-nav.next {
+            .image-modal-nav.next {
                 right: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="CarExport" class="logo-img">
+                    <span>CarExport</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html#catalog">Грузия</a>
+                    <a href="usa-orders.html">США</a>
+                    <a href="korea-orders.html">Корея</a>
+                    <a href="china-orders.html">Китай</a>
+                    <a href="europe-orders.html">Европа</a>
+                    <a href="index.html" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="europe-hero">
         <div class="container">
             <h1>Заказ автомобилей из Европы</h1>
             <p>Широкий выбор качественных автомобилей из Германии, Франции, Италии и других европейских стран</p>
         </div>
-    </header>
+    </section>
 
-    <div class="container">
-        <div class="stats" id="stats">
-            <div class="stat-item">
-                <div class="stat-value" id="total-cars">0</div>
-                <div class="stat-label">Авто в каталоге</div>
+    <!-- Catalog Section -->
+    <section class="catalog">
+        <div class="container">
+            <div class="stats" id="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="total-cars">0</div>
+                    <div class="stat-label">Авто в каталоге</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="total-images">0</div>
+                    <div class="stat-label">Фотографий</div>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-value" id="total-images">0</div>
-                <div class="stat-label">Фотографий</div>
+
+            <div class="catalog-filters">
+                <div class="filter-group">
+                    <label>Марка:</label>
+                    <select id="brand-filter">
+                        <option value="">Все марки</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Цена от:</label>
+                    <input type="number" id="price-from" placeholder="Минимум">
+                </div>
+                <div class="filter-group">
+                    <label>Цена до:</label>
+                    <input type="number" id="price-to" placeholder="Максимум">
+                </div>
+                <div class="filter-group">
+                    <label>Пробег до:</label>
+                    <input type="number" id="mileage-to" placeholder="км">
+                </div>
+                <button class="filter-btn" id="apply-filters">Применить</button>
+                <button class="btn-secondary" id="reset-filters">Сбросить</button>
+            </div>
+
+            <div id="cars-grid" class="cars-grid">
+                <div class="loading">Загружаем предложения...</div>
             </div>
         </div>
-
-        <div class="filters">
-            <div class="filter-group">
-                <label>Марка:</label>
-                <select id="brand-filter">
-                    <option value="">Все марки</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Цена от:</label>
-                <input type="number" id="price-from" placeholder="0">
-            </div>
-            <div class="filter-group">
-                <label>Цена до:</label>
-                <input type="number" id="price-to" placeholder="1000000">
-            </div>
-            <div class="filter-group">
-                <label>Пробег до:</label>
-                <input type="number" id="mileage-to" placeholder="200000">
-            </div>
-            <button class="btn btn-primary" id="apply-filters">Применить</button>
-            <button class="btn btn-secondary" id="reset-filters">Сбросить</button>
-        </div>
-
-        <div id="cars-grid" class="cars-grid">
-            <div class="loading">Загружаем предложения...</div>
-        </div>
-    </div>
+    </section>
 
     <!-- Модальное окно для фотографий -->
-    <div id="image-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title" id="modal-title"></div>
-                <button class="close-modal" id="close-modal">&times;</button>
+    <div id="image-modal" class="image-modal">
+        <div class="image-modal-content">
+            <div class="image-modal-header">
+                <div class="image-modal-title" id="modal-title"></div>
+                <button class="close-image-modal" id="close-modal">&times;</button>
             </div>
-            <div class="modal-image-container">
-                <button class="modal-nav prev" id="prev-image">‹</button>
-                <img id="modal-image" class="modal-image" src="" alt="">
-                <button class="modal-nav next" id="next-image">›</button>
+            <div class="image-modal-image-container">
+                <button class="image-modal-nav prev" id="prev-image">‹</button>
+                <img id="modal-image" class="image-modal-image" src="" alt="">
+                <button class="image-modal-nav next" id="next-image">›</button>
             </div>
             <div class="image-counter" id="image-counter"></div>
-            <div class="modal-thumbnails" id="modal-thumbnails"></div>
+            <div class="image-modal-thumbnails" id="modal-thumbnails"></div>
         </div>
     </div>
 
@@ -554,8 +457,8 @@
                 
                 return `
                     <div class="car-card" data-index="${index}">
-                        <div class="car-image-container">
-                            ${firstImage ? `<img src="${firstImage}" alt="${car.brand} ${car.model}" class="car-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\'%3E%3Crect fill=\'%23ddd\' width=\'300\' height=\'200\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EНет фото%3C/text%3E%3C/svg%3E'">` : ''}
+                        <div class="car-image">
+                            ${firstImage ? `<img src="${firstImage}" alt="${car.brand} ${car.model}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\'%3E%3Crect fill=\'%23ddd\' width=\'300\' height=\'200\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EНет фото%3C/text%3E%3C/svg%3E'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
                             ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
                         </div>
                         <div class="car-info">
@@ -661,7 +564,7 @@
             document.getElementById('image-counter').textContent = `${currentImageIndex + 1} / ${images.length}`;
             
             // Обновление активной миниатюры
-            const thumbnails = document.querySelectorAll('.modal-thumbnail');
+            const thumbnails = document.querySelectorAll('.image-modal-thumbnail');
             thumbnails.forEach((thumb, index) => {
                 thumb.classList.toggle('active', index === currentImageIndex);
             });
@@ -674,7 +577,7 @@
             const thumbnailsContainer = document.getElementById('modal-thumbnails');
             
             thumbnailsContainer.innerHTML = images.map((img, index) => 
-                `<img src="${img.url}" alt="Фото ${index + 1}" class="modal-thumbnail ${index === currentImageIndex ? 'active' : ''}" onclick="setImageIndex(${index})">`
+                `<img src="${img.url}" alt="Фото ${index + 1}" class="image-modal-thumbnail ${index === currentImageIndex ? 'active' : ''}" onclick="setImageIndex(${index})">`
             ).join('');
         }
 
@@ -701,4 +604,3 @@
     </script>
 </body>
 </html>
-
