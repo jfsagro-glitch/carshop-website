@@ -587,8 +587,36 @@
                     const url = typeof img === 'string' ? img : (img.url || '');
                     if (!url) return false;
                     const u = url.toLowerCase();
-                    // отбрасываем очень маленькие превью
-                    if (u.includes('rule=mo-160')) return false;
+                    
+                    // Исключаем нерелевантные изображения
+                    const excludeKeywords = [
+                        'bewertungen',
+                        'review',
+                        'kaufen',
+                        'person',
+                        'man',
+                        'woman',
+                        'dealer',
+                        'logo'
+                    ];
+                    
+                    for (const keyword of excludeKeywords) {
+                        if (u.includes(keyword)) return false;
+                    }
+                    
+                    // Отбрасываем очень маленькие превью
+                    const smallRules = [
+                        'rule=mo-80',
+                        'rule=mo-80w',
+                        'rule=mo-160',
+                        'rule=mo-160w',
+                        'rule=mo-200'
+                    ];
+                    
+                    for (const rule of smallRules) {
+                        if (u.includes(rule)) return false;
+                    }
+                    
                     return true;
                 })
                 .map((img, idx) => ({
