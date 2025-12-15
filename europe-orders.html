@@ -462,7 +462,7 @@
         }
     </style>
 </head>
-<body class="premium">
+<body>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -477,16 +477,8 @@
                     <a href="korea-orders.html">Корея</a>
                     <a href="china-orders.html">Китай</a>
                     <a href="europe-orders.html">Европа</a>
-                    <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
+                    <a href="index.html" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
                 </nav>
-                <div class="header-actions">
-                    <button class="cart-btn" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
-                    </button>
-                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()">Заявка на подбор</button>
-                    <button class="btn-primary" id="openSelfCalcBtn" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
-                </div>
             </div>
         </div>
     </header>
@@ -793,6 +785,5 @@
         // Загрузка данных при загрузке страницы
         loadCarsData();
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
