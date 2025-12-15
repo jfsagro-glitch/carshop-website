@@ -477,8 +477,16 @@
                     <a href="korea-orders.html">Корея</a>
                     <a href="china-orders.html">Китай</a>
                     <a href="europe-orders.html">Европа</a>
-                    <a href="index.html" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
+                    <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
                 </nav>
+                <div class="header-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()">Заявка на подбор</button>
+                    <button class="btn-primary" id="openSelfCalcBtn" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
+                </div>
             </div>
         </div>
     </header>
@@ -855,6 +863,190 @@
 
         // Загрузка данных при загрузке страницы
         loadCarsData();
+    </script>
+
+    <!-- Customs Calculator Modal -->
+    <div id="customsModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Таможенный калькулятор</h3>
+                <span class="close" onclick="closeCustomsModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customs-content">
+                    <form id="customsForm" class="calc-form" onsubmit="return false;">
+                        <div class="calc-row">
+                            <label for="costUsd">Стоимость (USD)</label>
+                            <input type="number" id="costUsd" placeholder="Например, 25000" min="0" step="0.01" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="engineCc">Объем, см³</label>
+                            <input type="number" id="engineCc" placeholder="Например, 1998" min="0" step="1" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="age">Возраст</label>
+                            <input id="age" value="3 - 5 лет" disabled>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
+                        </div>
+                    </form>
+                    <div class="calc-result" id="calcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Self Service Modal -->
+    <div id="selfCalcModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Вы можете самостоятельно выбрать автомобиль на сайтах в Грузии, мы его проверим, привезем к вам и растаможим.</h3>
+                <span class="close" onclick="closeSelfCalcModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customs-content">
+                    <p style="margin-bottom:1rem; color:#9ca3af;">
+                        Сайты: <a href="https://ap.ge/ru/usd" target="_blank">ap.ge</a>, 
+                        <a href="https://myauto.ge/ru" target="_blank">myauto.ge</a>
+                    </p>
+                    <form id="selfCalcForm" class="calc-form" onsubmit="return false;">
+                        <div class="calc-row">
+                            <label for="selfCostUsd">Стоимость авто в Грузии (USD)</label>
+                            <input type="number" id="selfCostUsd" placeholder="Например, 12000" min="0" step="0.01" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="selfEngineCc">Объем двигателя, см³</label>
+                            <input type="number" id="selfEngineCc" placeholder="Например, 1998" min="0" step="1" required>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-primary" id="selfCalcBtn" type="button">Рассчитать</button>
+                        </div>
+                    </form>
+                    <div class="calc-result" id="selfCalcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Modal -->
+    <div id="requestModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Заявка на подбор</h3>
+                <span class="close" onclick="closeRequestModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="requestForm" class="calc-form request-form" onsubmit="return false;">
+                    <div class="calc-row">
+                        <label for="reqBrand">Марка</label>
+                        <input id="reqBrand" placeholder="Например, Toyota" required>
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqModel">Модель</label>
+                        <input id="reqModel" placeholder="Например, Camry" required>
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqYearFrom">Год выпуска (от)</label>
+                        <input type="number" id="reqYearFrom" placeholder="2018" min="1990" max="2100">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqYearTo">Год выпуска (до)</label>
+                        <input type="number" id="reqYearTo" placeholder="2024" min="1990" max="2100">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqPriceTo">Стоимость (до), ₽</label>
+                        <input type="number" id="reqPriceTo" placeholder="3000000" min="0" step="1000">
+                    </div>
+                    <div class="calc-row calc-row--full">
+                        <label for="reqNote">Примечание</label>
+                        <textarea id="reqNote" rows="4" placeholder="Пожелания по комплектации, цвету и т.д."></textarea>
+                    </div>
+                    <div class="calc-row calc-row--full">
+                        <div class="request-form__contacts">
+                            <div class="request-form__field">
+                                <label for="reqName">Ваше имя</label>
+                                <input type="text" id="reqName" placeholder="Имя" required>
+                            </div>
+                            <div class="request-form__field">
+                                <label for="reqPhone">Телефон</label>
+                                <input type="tel" id="reqPhone" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                            <div class="request-form__field">
+                                <label for="reqEmail">Email</label>
+                                <input type="email" id="reqEmail" placeholder="email@example.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-actions">
+                        <button class="btn-primary" id="requestSubmitBtn" type="button">Отправить заявку</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ваш заказ</h3>
+                <span class="close" onclick="closeCart()">&times;</span>
+            </div>
+            <div class="modal-body" id="cartBody">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Итого: <span id="cartTotal">0</span> €</strong>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openCustomsModal() {
+            document.getElementById('customsModal').style.display = 'block';
+        }
+        function closeCustomsModal() {
+            document.getElementById('customsModal').style.display = 'none';
+        }
+        function openRequestModal() {
+            document.getElementById('requestModal').style.display = 'block';
+        }
+        function closeRequestModal() {
+            document.getElementById('requestModal').style.display = 'none';
+        }
+        function openSelfCalcModal() {
+            document.getElementById('selfCalcModal').style.display = 'block';
+        }
+        function closeSelfCalcModal() {
+            document.getElementById('selfCalcModal').style.display = 'none';
+        }
+        function closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+        function checkout() {
+            alert('Функция оформления заказа будет реализована позже');
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = ['customsModal', 'requestModal', 'selfCalcModal', 'cartModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Cart functionality
+        document.getElementById('cartBtn')?.addEventListener('click', function() {
+            document.getElementById('cartModal').style.display = 'block';
+        });
     </script>
 </body>
 </html>
