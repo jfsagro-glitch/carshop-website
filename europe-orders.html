@@ -513,6 +513,12 @@
                     </select>
                 </div>
                 <div class="filter-group">
+                    <label>Модель:</label>
+                    <select id="model-filter">
+                        <option value="">Все модели</option>
+                    </select>
+                </div>
+                <div class="filter-group">
                     <label>Цена от:</label>
                     <input type="number" id="price-from" placeholder="Минимум">
                 </div>
@@ -595,6 +601,7 @@
         function initializePage() {
             updateStats();
             populateBrandFilter();
+            populateModelFilter();
             displayCars();
             setupFilters();
             setupModal();
@@ -617,6 +624,38 @@
                 option.value = brand;
                 option.textContent = brand;
                 brandFilter.appendChild(option);
+            });
+            
+            // Обновляем модели при изменении марки
+            brandFilter.addEventListener('change', function() {
+                populateModelFilter();
+                // Сбрасываем выбор модели при смене марки
+                document.getElementById('model-filter').value = '';
+            });
+        }
+
+        // Заполнение фильтра моделей
+        function populateModelFilter() {
+            const modelFilter = document.getElementById('model-filter');
+            const brandFilter = document.getElementById('brand-filter');
+            const selectedBrand = brandFilter.value;
+            
+            // Очищаем текущие опции
+            modelFilter.innerHTML = '<option value="">Все модели</option>';
+            
+            // Если марка не выбрана, показываем все модели
+            let modelsToShow = carsData;
+            if (selectedBrand) {
+                modelsToShow = carsData.filter(car => car.brand === selectedBrand);
+            }
+            
+            // Получаем уникальные модели
+            const models = [...new Set(modelsToShow.map(car => car.model).filter(Boolean))].sort();
+            models.forEach(model => {
+                const option = document.createElement('option');
+                option.value = model;
+                option.textContent = model;
+                modelFilter.appendChild(option);
             });
         }
 
@@ -666,12 +705,14 @@
         // Применение фильтров
         function applyFilters() {
             const brand = document.getElementById('brand-filter').value;
+            const model = document.getElementById('model-filter').value;
             const priceFrom = parseFloat(document.getElementById('price-from').value) || 0;
             const priceTo = parseFloat(document.getElementById('price-to').value) || Infinity;
             const mileageTo = parseFloat(document.getElementById('mileage-to').value) || Infinity;
 
             filteredCars = carsData.filter(car => {
                 if (brand && car.brand !== brand) return false;
+                if (model && car.model !== model) return false;
                 if (car.price && (car.price < priceFrom || car.price > priceTo)) return false;
                 if (car.mileage && car.mileage > mileageTo) return false;
                 return true;
@@ -684,9 +725,11 @@
         // Сброс фильтров
         function resetFilters() {
             document.getElementById('brand-filter').value = '';
+            document.getElementById('model-filter').value = '';
             document.getElementById('price-from').value = '';
             document.getElementById('price-to').value = '';
             document.getElementById('mileage-to').value = '';
+            populateModelFilter(); // Обновляем список моделей
             filteredCars = [...carsData];
             updateStats();
             displayCars();
