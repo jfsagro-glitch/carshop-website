@@ -920,8 +920,107 @@
             updateModalImage();
         }
 
+        // Функция добавления в корзину для европейских автомобилей
+        function addToCartEurope(carIndex) {
+            const car = filteredCars[carIndex];
+            if (!car) return;
+            
+            // Создаем объект для корзины
+            const cartItem = {
+                id: car.id || car.car_id || `europe-${carIndex}`,
+                brand: car.brand || '',
+                model: car.model || '',
+                price: car.price || 0,
+                source: 'europe',
+                fullTitle: car.full_title || `${car.brand} ${car.model}`,
+                url: car.url || ''
+            };
+            
+            // Получаем корзину из localStorage или создаем новую
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            
+            // Проверяем, есть ли уже такой автомобиль в корзине
+            const existingIndex = cart.findIndex(item => item.id === cartItem.id);
+            
+            if (existingIndex >= 0) {
+                cart[existingIndex].quantity = (cart[existingIndex].quantity || 1) + 1;
+            } else {
+                cartItem.quantity = 1;
+                cart.push(cartItem);
+            }
+            
+            // Сохраняем корзину
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Обновляем счетчик корзины
+            updateCartCount();
+            
+            // Показываем уведомление
+            showNotification('Автомобиль добавлен в корзину', 'success');
+        }
+        
+        // Функция обновления счетчика корзины
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const cartCountEl = document.getElementById('cartCount');
+            if (cartCountEl) {
+                cartCountEl.textContent = totalItems;
+            }
+        }
+        
+        // Функция показа уведомления
+        function showNotification(message, type = 'info') {
+            // Создаем элемент уведомления
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+                z-index: 10000;
+                animation: slideIn 0.3s ease-out;
+                max-width: 300px;
+            `;
+            notification.textContent = message;
+            
+            // Добавляем анимацию
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            `;
+            if (!document.querySelector('#notification-style')) {
+                style.id = 'notification-style';
+                document.head.appendChild(style);
+            }
+            
+            document.body.appendChild(notification);
+            
+            // Удаляем через 3 секунды
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease-out reverse';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+        
         // Загрузка данных при загрузке страницы
         loadCarsData();
+        
+        // Обновляем счетчик корзины при загрузке
+        updateCartCount();
     </script>
 
     <!-- Customs Calculator Modal -->
@@ -1104,8 +1203,68 @@
 
         // Cart functionality
         document.getElementById('cartBtn')?.addEventListener('click', function() {
-            document.getElementById('cartModal').style.display = 'block';
+            showCartModal();
         });
+        
+        // Функция показа модального окна корзины
+        function showCartModal() {
+            const cartModal = document.getElementById('cartModal');
+            if (!cartModal) return;
+            
+            const cartBody = document.getElementById('cartBody');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (!cartBody || !cartTotal) return;
+            
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            
+            if (cart.length === 0) {
+                cartBody.innerHTML = '<p style="text-align: center; color: #9ca3af; padding: 2rem;">Ваш заказ пуст</p>';
+                cartTotal.textContent = '0';
+            } else {
+                let total = 0;
+                cartBody.innerHTML = '';
+                
+                cart.forEach(item => {
+                    const itemTotal = (item.price || 0) * (item.quantity || 1);
+                    total += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.style.cssText = 'display: flex; justify-content: space-between; align-items: center; padding: 1rem; border-bottom: 1px solid #1f2937;';
+                    cartItem.innerHTML = `
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 0.5rem 0; color: #f3f4f6;">${item.fullTitle || `${item.brand} ${item.model}`}</h4>
+                            <p style="margin: 0; color: #9ca3af; font-size: 0.875rem;">Количество: ${item.quantity || 1}</p>
+                            <p style="margin: 0.25rem 0 0 0; color: #10b981; font-size: 0.8rem;">
+                                <i class="fas fa-check-circle"></i> Включает растаможку и доставку
+                            </p>
+                        </div>
+                        <div style="text-align: right; margin-right: 1rem;">
+                            <div style="color: #facc15; font-weight: 600; font-size: 1.1rem;">
+                                ${itemTotal.toLocaleString('ru-RU')} ${item.source === 'europe' ? '€' : '₽'}
+                            </div>
+                        </div>
+                        <button onclick="removeFromCartEurope('${item.id}')" style="background: #ef4444; color: white; border: none; padding: 0.5rem; border-radius: 4px; cursor: pointer;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    `;
+                    cartBody.appendChild(cartItem);
+                });
+                
+                cartTotal.textContent = total.toLocaleString('ru-RU');
+            }
+            
+            cartModal.style.display = 'block';
+        }
+        
+        // Функция удаления из корзины
+        function removeFromCartEurope(itemId) {
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            cart = cart.filter(item => item.id !== itemId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showCartModal();
+        }
     </script>
 </body>
 </html>
