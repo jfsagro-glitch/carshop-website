@@ -511,10 +511,6 @@
                     <div class="stat-value" id="total-cars">0</div>
                     <div class="stat-label">Авто в каталоге</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="total-images">0</div>
-                    <div class="stat-label">Фотографий</div>
-                </div>
             </div>
 
             <div class="catalog-filters">
@@ -663,9 +659,7 @@
         // Обновление статистики
         function updateStats() {
             const totalCars = filteredCars.length;
-            const totalImages = filteredCars.reduce((sum, car) => sum + filterImages(car.images).length, 0);
             document.getElementById('total-cars').textContent = totalCars;
-            document.getElementById('total-images').textContent = totalImages;
         }
 
         // Заполнение фильтра марок
