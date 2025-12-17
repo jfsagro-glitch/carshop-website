@@ -938,7 +938,7 @@
         // Смена изображения
         function changeImage(direction) {
             const car = filteredCars[currentCarIndex];
-            const images = car.images;
+            const images = car._filteredImages || filterImages(car.images);
             currentImageIndex += direction;
             
             if (currentImageIndex < 0) currentImageIndex = images.length - 1;
