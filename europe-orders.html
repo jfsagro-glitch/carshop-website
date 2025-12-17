@@ -692,6 +692,20 @@
                         if (u.includes(rule)) return false;
                     }
                     
+                    // Исключаем подозрительные размеры (рекламные баннеры)
+                    const sizeMatch = u.match(/rule=mo-(\d+)x(\d+)/);
+                    if (sizeMatch) {
+                        const width = parseInt(sizeMatch[1]);
+                        const height = parseInt(sizeMatch[2]);
+                        // Исключаем очень широкие или очень высокие изображения (баннеры)
+                        if (width / height > 3 || height / width > 3) return false;
+                    }
+                    
+                    // Должно быть изображение от mobile.de
+                    if (!u.includes('img.classistatic.de') && !u.includes('classistatic.de')) {
+                        return false;
+                    }
+                    
                     return true;
                 })
                 .map((img, idx) => ({
