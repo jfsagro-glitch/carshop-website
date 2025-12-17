@@ -268,6 +268,47 @@
             background: #2563eb;
             border-color: #2563eb;
         }
+        
+        .car-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .car-actions button {
+            flex: 1;
+            padding: 0.625rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .car-actions .btn-primary {
+            background: #3b82f6;
+            color: #fff;
+        }
+        
+        .car-actions .btn-primary:hover {
+            background: #2563eb;
+        }
+        
+        .car-actions .btn-secondary {
+            background: transparent;
+            color: #e5e7eb;
+            border: 1px solid #1f2937;
+        }
+        
+        .car-actions .btn-secondary:hover {
+            background: #111827;
+            border-color: #374151;
+        }
 
         /* Модальное окно для фотографий */
         .image-modal {
@@ -736,7 +777,14 @@
                                 ${car.power_kw ? `<div class="car-spec-item">⚡ ${car.power_kw} kW (${car.power_hp || ''} PS)</div>` : ''}
                                 ${car.first_registration ? `<div class="car-spec-item">📅 ${car.first_registration}</div>` : ''}
                             </div>
-                            ${imageCount > 0 ? `<button class="btn-view-images" onclick="openImageModal(${index})">Смотреть все фото (${imageCount})</button>` : ''}
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                ${imageCount > 0 ? `<button class="btn-secondary" onclick="openImageModal(${index})" style="flex: 1;">
+                                    <i class="fas fa-images"></i> Фото
+                                </button>` : ''}
+                                <button class="btn-primary" onclick="addToCartEurope(${index})" style="flex: 1;">
+                                    <i class="fas fa-shopping-cart"></i> Заказать
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `;
