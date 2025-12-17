@@ -637,7 +637,7 @@
                     if (!url) return false;
                     const u = url.toLowerCase();
                     
-                    // Исключаем нерелевантные изображения
+                    // Исключаем нерелевантные изображения и рекламу
                     const excludeKeywords = [
                         'bewertungen',
                         'review',
@@ -650,6 +650,19 @@
                         'zentrum',
                         'center',
                         'building',
+                        'emilfrey',
+                        'schutzbrief',
+                        'fahrzeug finden',
+                        'gratis schutz',
+                        'advertisement',
+                        'ad',
+                        'banner',
+                        'promo',
+                        'promotion',
+                        'werbung',
+                        'anzeige',
+                        'versicherung',
+                        'insurance',
                         'gebäude',
                         'haus',
                         'showroom',
