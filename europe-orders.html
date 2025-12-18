@@ -1354,13 +1354,138 @@
         function closeCart() {
             document.getElementById('cartModal').style.display = 'none';
         }
+        // Функция оформления заказа
         function checkout() {
-            alert('Функция оформления заказа будет реализована позже');
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            if (cart.length === 0) {
+                showNotification('Ваш заказ пуст!', 'error');
+                return;
+            }
+            
+            // Открываем модальное окно для ввода контактных данных
+            openCheckoutModal();
+        }
+        
+        // Открытие модального окна оформления заказа
+        function openCheckoutModal() {
+            const modal = document.getElementById('checkoutModal');
+            if (modal) {
+                modal.style.display = 'block';
+                // Очищаем форму
+                document.getElementById('checkoutName').value = '';
+                document.getElementById('checkoutPhone').value = '';
+                document.getElementById('checkoutEmail').value = '';
+            }
+        }
+        
+        // Закрытие модального окна оформления заказа
+        function closeCheckoutModal() {
+            const modal = document.getElementById('checkoutModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Отправка заказа
+        function submitOrder() {
+            const name = document.getElementById('checkoutName').value.trim();
+            const phone = document.getElementById('checkoutPhone').value.trim();
+            const email = document.getElementById('checkoutEmail').value.trim();
+            
+            // Валидация
+            if (!name || !phone || !email) {
+                showNotification('Заполните все поля', 'error');
+                return;
+            }
+            
+            // Проверка email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Введите корректный email', 'error');
+                return;
+            }
+            
+            // Получаем корзину
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            if (cart.length === 0) {
+                showNotification('Ваш заказ пуст!', 'error');
+                return;
+            }
+            
+            // Формируем данные заказа
+            let orderItems = '';
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = (item.price || 0) * (item.quantity || 1);
+                total += itemTotal;
+                orderItems += `${index + 1}. ${item.brand || ''} ${item.model || ''} (${item.fullTitle || ''})\n`;
+                orderItems += `   Цена: ${item.price ? item.price.toLocaleString('ru-RU') : '0'} €\n`;
+                orderItems += `   Количество: ${item.quantity || 1}\n`;
+                orderItems += `   Сумма: ${itemTotal.toLocaleString('ru-RU')} €\n`;
+                if (item.url) {
+                    orderItems += `   Ссылка: ${item.url}\n`;
+                }
+                orderItems += '\n';
+            });
+            
+            // Формируем текст письма
+            const subject = encodeURIComponent(`Новый заказ с сайта CarExport - ${name}`);
+            const body = encodeURIComponent(
+                `Новый заказ с сайта CarExport\n\n` +
+                `КОНТАКТНЫЕ ДАННЫЕ:\n` +
+                `Имя: ${name}\n` +
+                `Телефон: ${phone}\n` +
+                `Email: ${email}\n\n` +
+                `ДЕТАЛИ ЗАКАЗА:\n` +
+                `${orderItems}\n` +
+                `ИТОГО: ${total.toLocaleString('ru-RU')} €\n\n` +
+                `Дата заказа: ${new Date().toLocaleString('ru-RU')}\n` +
+                `Источник: Европа (europe-orders.html)`
+            );
+            
+            // Отправляем email через mailto
+            const mailtoLink = `mailto:carexportgeo@bk.ru?subject=${subject}&body=${body}`;
+            
+            // Создаем временную ссылку и кликаем по ней
+            const link = document.createElement('a');
+            link.href = mailtoLink;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Также пробуем отправить через скрытую форму (если браузер поддерживает)
+            try {
+                const form = document.getElementById('emailForm');
+                if (form) {
+                    form.action = `mailto:carexportgeo@bk.ru`;
+                    form.querySelector('[name="subject"]').value = decodeURIComponent(subject);
+                    form.querySelector('[name="body"]').value = decodeURIComponent(body);
+                    // Не отправляем форму автоматически, так как это может открыть почтовый клиент
+                }
+            } catch (e) {
+                console.log('Form submission fallback:', e);
+            }
+            
+            // Показываем уведомление
+            showNotification('Заказ отправлен! Мы свяжемся с вами в ближайшее время.', 'success');
+            
+            // Очищаем корзину
+            localStorage.setItem('cart', JSON.stringify([]));
+            updateCartCount();
+            
+            // Закрываем модальные окна
+            closeCheckoutModal();
+            closeCart();
+            
+            // Обновляем отображение корзины
+            showCartModal();
         }
 
         // Close modals when clicking outside
         window.onclick = function(event) {
-            const modals = ['customsModal', 'requestModal', 'selfCalcModal', 'cartModal'];
+            const modals = ['customsModal', 'requestModal', 'selfCalcModal', 'cartModal', 'checkoutModal'];
             modals.forEach(modalId => {
                 const modal = document.getElementById(modalId);
                 if (event.target == modal) {
