@@ -691,6 +691,25 @@
             }
         }
 
+        // Функция обновления URL изображения до большего размера
+        function upgradeImageUrl(url) {
+            if (!url || typeof url !== 'string') return url;
+            
+            // Обновляем маленькие rule параметры до mo-800 или mo-1600
+            const urlLower = url.toLowerCase();
+            
+            // Заменяем маленькие размеры на большие
+            if (urlLower.includes('rule=mo-360') || urlLower.includes('rule=mo-240')) {
+                return url.replace(/rule=mo-\d+/i, 'rule=mo-800');
+            }
+            if (urlLower.includes('rule=mo-80') || urlLower.includes('rule=mo-160') || urlLower.includes('rule=mo-200')) {
+                return url.replace(/rule=mo-\d+/i, 'rule=mo-800');
+            }
+            
+            // Если уже есть mo-800 или больше, оставляем как есть
+            return url;
+        }
+        
         function filterImages(images) {
             if (!images) return [];
             return images
@@ -721,7 +740,26 @@
                         'co2class',
                         'co2',
                         'emission',
-                        'energielabel'
+                        'energielabel',
+                        'emilfrey',
+                        'schutzbrief',
+                        'fahrzeug finden',
+                        'gratis schutz',
+                        'advertisement',
+                        'banner',
+                        'promo',
+                        'werbung',
+                        'anzeige',
+                        'versicherung',
+                        'insurance',
+                        'autohaus',
+                        'autohandel',
+                        'multiple',
+                        'several',
+                        'viele',
+                        'mehrere',
+                        'cars',
+                        'autos'
                     ];
                     
                     for (const keyword of excludeKeywords) {
@@ -741,12 +779,22 @@
                         if (u.includes(rule)) return false;
                     }
                     
+                    // Проверяем, что это изображение от mobile.de
+                    if (!u.includes('img.classistatic.de') && !u.includes('classistatic.de')) {
+                        return false;
+                    }
+                    
                     return true;
                 })
-                .map((img, idx) => ({
-                    url: typeof img === 'string' ? img : img.url,
-                    order: (img && img.order) ? img.order : idx + 1
-                }));
+                .map((img, idx) => {
+                    const originalUrl = typeof img === 'string' ? img : img.url;
+                    // Обновляем URL до большего размера
+                    const upgradedUrl = upgradeImageUrl(originalUrl);
+                    return {
+                        url: upgradedUrl,
+                        order: (img && img.order) ? img.order : idx + 1
+                    };
+                });
         }
 
         // Инициализация страницы
@@ -959,9 +1007,14 @@
             const images = car._filteredImages || filterImages(car.images);
             const thumbnailsContainer = document.getElementById('modal-thumbnails');
             
-            thumbnailsContainer.innerHTML = images.map((img, index) => 
-                `<img src="${img.url}" alt="Фото ${index + 1}" class="image-modal-thumbnail ${index === currentImageIndex ? 'active' : ''}" onclick="setImageIndex(${index})">`
-            ).join('');
+            thumbnailsContainer.innerHTML = images.map((img, index) => {
+                // Используем маленькие превью для миниатюр (mo-360 или mo-240)
+                let thumbnailUrl = img.url;
+                if (thumbnailUrl.includes('rule=mo-800') || thumbnailUrl.includes('rule=mo-1600')) {
+                    thumbnailUrl = thumbnailUrl.replace(/rule=mo-\d+/i, 'rule=mo-240');
+                }
+                return `<img src="${thumbnailUrl}" alt="Фото ${index + 1}" class="image-modal-thumbnail ${index === currentImageIndex ? 'active' : ''}" onclick="setImageIndex(${index})" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\'%3E%3Crect fill=\'%23ddd\' width=\'96\' height=\'96\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' font-size=\'12\' fill=\'%23999\'%3E?%3C/text%3E%3C/svg%3E'">`;
+            }).join('');
         }
 
         // Установка индекса изображения
