@@ -658,8 +658,9 @@
                     if (!url) return false;
                     const u = url.toLowerCase();
                     
-                    // Исключаем нерелевантные изображения, рекламу, здания, дилерские центры, людей
+                    // Исключаем нерелевантные изображения, рекламу, здания, дилерские центры, людей, несколько машин
                     const excludeKeywords = [
+                        // Общие исключения
                         'bewertungen', 'review', 'kaufen', 'person', 'man', 'woman', 'people',
                         'dealer', 'logo', 'zentrum', 'center', 'building', 'gebäude',
                         'haus', 'showroom', 'ausstellung', 'parkplatz', 'parking', 'lot',
@@ -671,7 +672,15 @@
                         'verkauf', 'verkaufs', 'standort', 'filiale', 'niederlassung',
                         'geschäft', 'geschäfts', 'büro', 'office', 'lager', 'warehouse',
                         'interior', 'innenraum', 'service', 'werkstatt',
-                        'multiple', 'several', 'viele', 'mehrere', 'cars', 'autos'
+                        // Несколько машин
+                        'multiple', 'several', 'viele', 'mehrere', 'cars', 'autos',
+                        // Дилерские центры и бренды дилеров
+                        'porsche zentrum', 'mercedes zentrum', 'bmw zentrum', 'audi zentrum',
+                        'junge sterne', 'junge s', 'autohaus', 'autohandel',
+                        // Здания и архитектура
+                        'skoda', 'dealership', 'händler', 'händlerzentrum',
+                        // Рекламные материалы
+                        'exclamation', 'warning', 'orange', 'reflective'
                     ];
                     
                     for (const keyword of excludeKeywords) {
