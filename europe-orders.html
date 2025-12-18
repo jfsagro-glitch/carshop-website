@@ -12,6 +12,8 @@
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS для автоматической отправки email -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         /* Тёмная тема + сетка 4 колонки */
         body {
@@ -1489,9 +1491,8 @@
             });
             
             // Формируем текст письма
-            const subject = encodeURIComponent(`Новый заказ с сайта CarExport - ${name}`);
-            const body = encodeURIComponent(
-                `Новый заказ с сайта CarExport\n\n` +
+            const subject = `Новый заказ с сайта CarExport - ${name}`;
+            const body = `Новый заказ с сайта CarExport\n\n` +
                 `КОНТАКТНЫЕ ДАННЫЕ:\n` +
                 `Имя: ${name}\n` +
                 `Телефон: ${phone}\n` +
@@ -1500,43 +1501,122 @@
                 `${orderItems}\n` +
                 `ИТОГО: ${total.toLocaleString('ru-RU')} €\n\n` +
                 `Дата заказа: ${new Date().toLocaleString('ru-RU')}\n` +
-                `Источник: Европа (europe-orders.html)`
-            );
+                `Источник: Европа (europe-orders.html)`;
             
-            // Отправляем email через mailto
-            const mailtoLink = `mailto:carexportgeo@bk.ru?subject=${subject}&body=${body}`;
+            // Отправляем email автоматически через EmailJS
+            sendOrderEmail(name, phone, email, orderItems, total, subject, body);
+        }
+        
+        // Функция автоматической отправки email через EmailJS
+        async function sendOrderEmail(name, phone, email, orderItems, total, subject, body) {
+            // Показываем индикатор загрузки
+            const submitBtn = document.querySelector('#checkoutForm button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
             
-            // Создаем временную ссылку и кликаем по ней
-            const link = document.createElement('a');
-            link.href = mailtoLink;
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Также пробуем отправить через скрытую форму (если браузер поддерживает)
             try {
-                const form = document.getElementById('emailForm');
-                if (form) {
-                    form.action = `mailto:carexportgeo@bk.ru`;
-                    form.querySelector('[name="subject"]').value = decodeURIComponent(subject);
-                    form.querySelector('[name="body"]').value = decodeURIComponent(body);
-                    // Не отправляем форму автоматически, так как это может открыть почтовый клиент
+                // Инициализация EmailJS (используем публичный ключ)
+                // ВАЖНО: Замените эти значения на ваши реальные из EmailJS
+                // Получить можно на https://www.emailjs.com/
+                const EMAILJS_SERVICE_ID = 'service_carexport'; // Замените на ваш Service ID
+                const EMAILJS_TEMPLATE_ID = 'template_order'; // Замените на ваш Template ID
+                const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Замените на ваш Public Key
+                
+                // Инициализируем EmailJS
+                if (typeof emailjs !== 'undefined') {
+                    emailjs.init(EMAILJS_PUBLIC_KEY);
+                    
+                    // Отправляем email
+                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        to_email: 'carexportgeo@bk.ru',
+                        from_name: name,
+                        from_email: email,
+                        from_phone: phone,
+                        subject: subject,
+                        message: body,
+                        order_total: `${total.toLocaleString('ru-RU')} €`,
+                        order_date: new Date().toLocaleString('ru-RU')
+                    });
+                    
+                    // Успешная отправка
+                    showNotification('Заказ успешно отправлен! Мы свяжемся с вами в ближайшее время.', 'success');
+                    
+                    // Очищаем корзину
+                    localStorage.setItem('cart', JSON.stringify([]));
+                    updateCartCount();
+                    
+                    // Закрываем модальные окна
+                    closeCheckoutModal();
+                    closeCart();
+                } else {
+                    // Fallback: если EmailJS не загрузился, используем Formspree или другой метод
+                    await sendOrderViaFormspree(name, phone, email, orderItems, total, subject, body);
                 }
-            } catch (e) {
-                console.log('Form submission fallback:', e);
+            } catch (error) {
+                console.error('Ошибка отправки email:', error);
+                
+                // Fallback: пробуем отправить через Formspree
+                try {
+                    await sendOrderViaFormspree(name, phone, email, orderItems, total, subject, body);
+                } catch (fallbackError) {
+                    console.error('Ошибка fallback отправки:', fallbackError);
+                    // Последний fallback: mailto
+                    const mailtoLink = `mailto:carexportgeo@bk.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    const link = document.createElement('a');
+                    link.href = mailtoLink;
+                    link.style.display = 'none';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    showNotification('Заказ отправлен через почтовый клиент. Мы свяжемся с вами в ближайшее время.', 'success');
+                    
+                    // Очищаем корзину
+                    localStorage.setItem('cart', JSON.stringify([]));
+                    updateCartCount();
+                    closeCheckoutModal();
+                    closeCart();
+                }
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
             }
+        }
+        
+        // Fallback: отправка через Formspree (бесплатный сервис для форм)
+        async function sendOrderViaFormspree(name, phone, email, orderItems, total, subject, body) {
+            // Formspree endpoint (нужно зарегистрироваться на formspree.io)
+            // ВАЖНО: Замените на ваш Formspree endpoint
+            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // Замените на ваш endpoint
             
-            // Показываем уведомление
-            showNotification('Заказ отправлен! Мы свяжемся с вами в ближайшее время.', 'success');
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: subject,
+                    _to: 'carexportgeo@bk.ru',
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    message: body,
+                    order_total: `${total.toLocaleString('ru-RU')} €`,
+                    order_date: new Date().toLocaleString('ru-RU')
+                })
+            });
             
-            // Очищаем корзину
-            localStorage.setItem('cart', JSON.stringify([]));
-            updateCartCount();
-            
-            // Закрываем модальные окна
-            closeCheckoutModal();
-            closeCart();
+            if (response.ok) {
+                showNotification('Заказ успешно отправлен! Мы свяжемся с вами в ближайшее время.', 'success');
+                localStorage.setItem('cart', JSON.stringify([]));
+                updateCartCount();
+                closeCheckoutModal();
+                closeCart();
+            } else {
+                throw new Error('Formspree error');
+            }
         }
 
         // Close modals when clicking outside
