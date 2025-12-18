@@ -1503,44 +1503,34 @@
                 `Дата заказа: ${new Date().toLocaleString('ru-RU')}\n` +
                 `Источник: Европа (europe-orders.html)`;
             
-            // Отправляем email автоматически через EmailJS
-            sendOrderEmail(name, phone, email, orderItems, total, subject, body);
+            // Отправляем заказ автоматически (email + Telegram)
+            await sendOrderAutomatically(name, phone, email, orderItems, total, subject, body);
         }
         
-        // Функция автоматической отправки email через EmailJS
-        async function sendOrderEmail(name, phone, email, orderItems, total, subject, body) {
-            // Показываем индикатор загрузки
+        // Автоматическая отправка заказа (email + Telegram)
+        async function sendOrderAutomatically(name, phone, email, orderItems, total, subject, body) {
             const submitBtn = document.querySelector('#checkoutForm button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.textContent = 'Отправка...';
             
             try {
-                // Инициализация EmailJS (используем публичный ключ)
-                // ВАЖНО: Замените эти значения на ваши реальные из EmailJS
-                // Получить можно на https://www.emailjs.com/
-                const EMAILJS_SERVICE_ID = 'service_carexport'; // Замените на ваш Service ID
-                const EMAILJS_TEMPLATE_ID = 'template_order'; // Замените на ваш Template ID
-                const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Замените на ваш Public Key
+                // Отправляем email и Telegram уведомление параллельно
+                const [emailResult, telegramResult] = await Promise.allSettled([
+                    sendOrderEmail(name, phone, email, orderItems, total, subject, body),
+                    sendTelegramNotification(name, phone, email, orderItems, total)
+                ]);
                 
-                // Инициализируем EmailJS
-                if (typeof emailjs !== 'undefined') {
-                    emailjs.init(EMAILJS_PUBLIC_KEY);
+                // Проверяем результаты
+                const emailSuccess = emailResult.status === 'fulfilled';
+                const telegramSuccess = telegramResult.status === 'fulfilled';
+                
+                if (emailSuccess || telegramSuccess) {
+                    const messages = [];
+                    if (emailSuccess) messages.push('Email отправлен');
+                    if (telegramSuccess) messages.push('Telegram уведомление отправлено');
                     
-                    // Отправляем email
-                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                        to_email: 'carexportgeo@bk.ru',
-                        from_name: name,
-                        from_email: email,
-                        from_phone: phone,
-                        subject: subject,
-                        message: body,
-                        order_total: `${total.toLocaleString('ru-RU')} €`,
-                        order_date: new Date().toLocaleString('ru-RU')
-                    });
-                    
-                    // Успешная отправка
-                    showNotification('Заказ успешно отправлен! Мы свяжемся с вами в ближайшее время.', 'success');
+                    showNotification(`Заказ успешно отправлен! ${messages.join(', ')}. Мы свяжемся с вами в ближайшее время.`, 'success');
                     
                     // Очищаем корзину
                     localStorage.setItem('cart', JSON.stringify([]));
@@ -1550,74 +1540,142 @@
                     closeCheckoutModal();
                     closeCart();
                 } else {
-                    // Fallback: если EmailJS не загрузился, используем Formspree или другой метод
-                    await sendOrderViaFormspree(name, phone, email, orderItems, total, subject, body);
+                    throw new Error('Ошибка отправки');
                 }
             } catch (error) {
-                console.error('Ошибка отправки email:', error);
-                
-                // Fallback: пробуем отправить через Formspree
-                try {
-                    await sendOrderViaFormspree(name, phone, email, orderItems, total, subject, body);
-                } catch (fallbackError) {
-                    console.error('Ошибка fallback отправки:', fallbackError);
-                    // Последний fallback: mailto
-                    const mailtoLink = `mailto:carexportgeo@bk.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    const link = document.createElement('a');
-                    link.href = mailtoLink;
-                    link.style.display = 'none';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    
-                    showNotification('Заказ отправлен через почтовый клиент. Мы свяжемся с вами в ближайшее время.', 'success');
-                    
-                    // Очищаем корзину
-                    localStorage.setItem('cart', JSON.stringify([]));
-                    updateCartCount();
-                    closeCheckoutModal();
-                    closeCart();
-                }
+                console.error('Ошибка отправки заказа:', error);
+                showNotification('Ошибка отправки. Попробуйте позже или свяжитесь с нами напрямую.', 'error');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
             }
         }
         
-        // Fallback: отправка через Formspree (бесплатный сервис для форм)
-        async function sendOrderViaFormspree(name, phone, email, orderItems, total, subject, body) {
-            // Formspree endpoint (нужно зарегистрироваться на formspree.io)
-            // ВАЖНО: Замените на ваш Formspree endpoint
-            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // Замените на ваш endpoint
+        // Отправка email через EmailJS
+        async function sendOrderEmail(name, phone, email, orderItems, total, subject, body) {
+            // Настройки EmailJS (замените на ваши реальные значения)
+            // Получить можно на https://www.emailjs.com/
+            const EMAILJS_SERVICE_ID = 'service_carexport'; // Замените на ваш Service ID
+            const EMAILJS_TEMPLATE_ID = 'template_order'; // Замените на ваш Template ID
+            const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Замените на ваш Public Key
             
-            const response = await fetch(FORMSPREE_ENDPOINT, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    _subject: subject,
-                    _to: 'carexportgeo@bk.ru',
-                    name: name,
-                    phone: phone,
-                    email: email,
+            if (typeof emailjs === 'undefined') {
+                // Если EmailJS не загружен, используем альтернативный метод
+                return sendOrderEmailViaAPI(name, phone, email, orderItems, total, subject, body);
+            }
+            
+            try {
+                emailjs.init(EMAILJS_PUBLIC_KEY);
+                
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                    to_email: 'carexportgeo@bk.ru',
+                    from_name: name,
+                    from_email: email,
+                    from_phone: phone,
+                    subject: subject,
                     message: body,
                     order_total: `${total.toLocaleString('ru-RU')} €`,
                     order_date: new Date().toLocaleString('ru-RU')
-                })
-            });
-            
-            if (response.ok) {
-                showNotification('Заказ успешно отправлен! Мы свяжемся с вами в ближайшее время.', 'success');
-                localStorage.setItem('cart', JSON.stringify([]));
-                updateCartCount();
-                closeCheckoutModal();
-                closeCart();
-            } else {
-                throw new Error('Formspree error');
+                });
+                
+                return true;
+            } catch (error) {
+                console.error('EmailJS error:', error);
+                // Fallback на альтернативный метод
+                return sendOrderEmailViaAPI(name, phone, email, orderItems, total, subject, body);
             }
         }
+        
+        // Альтернативный метод отправки email через API
+        async function sendOrderEmailViaAPI(name, phone, email, orderItems, total, subject, body) {
+            // Используем Web3Forms или другой сервис
+            // ВАЖНО: Замените на ваш реальный endpoint
+            const API_ENDPOINT = 'https://api.web3forms.com/submit'; // Или другой сервис
+            const ACCESS_KEY = 'YOUR_ACCESS_KEY'; // Замените на ваш ключ
+            
+            try {
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        access_key: ACCESS_KEY,
+                        subject: subject,
+                        from_name: name,
+                        from_email: email,
+                        phone: phone,
+                        message: body,
+                        to_email: 'carexportgeo@bk.ru'
+                    })
+                });
+                
+                if (response.ok) {
+                    return true;
+                } else {
+                    throw new Error('API error');
+                }
+            } catch (error) {
+                console.error('API email error:', error);
+                // Последний fallback: mailto
+                const mailtoLink = `mailto:carexportgeo@bk.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.open(mailtoLink);
+                return false;
+            }
+        }
+        
+        // Отправка уведомления в Telegram
+        async function sendTelegramNotification(name, phone, email, orderItems, total) {
+            // Настройки Telegram Bot
+            // ВАЖНО: Замените на ваши реальные значения
+            // 1. Создайте бота через @BotFather в Telegram
+            // 2. Получите Bot Token
+            // 3. Узнайте Chat ID пользователя @Aleksandr_N_444
+            const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN'; // Замените на ваш Bot Token
+            const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID'; // Замените на Chat ID пользователя
+            
+            // Если токен не настроен, пропускаем отправку
+            if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN' || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID') {
+                console.log('Telegram не настроен, пропускаем отправку');
+                return false;
+            }
+            
+            const telegramMessage = `🚗 *Новый заказ с сайта CarExport*\n\n` +
+                `👤 *Контактные данные:*\n` +
+                `Имя: ${name}\n` +
+                `Телефон: ${phone}\n` +
+                `Email: ${email}\n\n` +
+                `📦 *Детали заказа:*\n${orderItems}\n\n` +
+                `💰 *Итого: ${total.toLocaleString('ru-RU')} €*\n\n` +
+                `📅 Дата: ${new Date().toLocaleString('ru-RU')}\n` +
+                `🌍 Источник: Европа`;
+            
+            try {
+                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: telegramMessage,
+                        parse_mode: 'Markdown'
+                    })
+                });
+                
+                if (response.ok) {
+                    return true;
+                } else {
+                    const errorData = await response.json();
+                    console.error('Telegram API error:', errorData);
+                    return false;
+                }
+            } catch (error) {
+                console.error('Telegram error:', error);
+                return false;
+            }
+        }
+        
 
         // Close modals when clicking outside
         window.onclick = function(event) {
