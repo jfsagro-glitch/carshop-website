@@ -629,92 +629,84 @@
             }
         }
 
-        function filterImages(images) {
+        // Кэш для отфильтрованных изображений
+        const imageCache = new Map();
+        
+        function filterImages(images, brand = null) {
             if (!images) return [];
-            return images
+            
+            // Проверяем кэш
+            const cacheKey = `${JSON.stringify(images)}_${brand || ''}`;
+            if (imageCache.has(cacheKey)) {
+                return imageCache.get(cacheKey);
+            }
+            
+            const brandLower = brand ? brand.toLowerCase() : null;
+            const otherBrands = {
+                'audi': ['bmw', 'mercedes', 'porsche', 'volkswagen', 'vw'],
+                'bmw': ['audi', 'mercedes', 'porsche', 'volkswagen', 'vw'],
+                'mercedes': ['audi', 'bmw', 'porsche', 'volkswagen', 'vw'],
+                'mercedes-benz': ['audi', 'bmw', 'porsche', 'volkswagen', 'vw'],
+                'porsche': ['audi', 'bmw', 'mercedes', 'volkswagen', 'vw'],
+                'volkswagen': ['audi', 'bmw', 'mercedes', 'porsche'],
+                'vw': ['audi', 'bmw', 'mercedes', 'porsche']
+            };
+            
+            const filtered = images
                 .filter(img => {
                     const url = typeof img === 'string' ? img : (img.url || '');
                     if (!url) return false;
                     const u = url.toLowerCase();
                     
-                    // Исключаем нерелевантные изображения, рекламу, здания, дилерские центры
+                    // Исключаем нерелевантные изображения, рекламу, здания, дилерские центры, людей
                     const excludeKeywords = [
-                        'bewertungen',
-                        'review',
-                        'kaufen',
-                        'person',
-                        'man',
-                        'woman',
-                        'dealer',
-                        'logo',
-                        'zentrum',
-                        'center',
-                        'building',
-                        'emilfrey',
-                        'schutzbrief',
-                        'fahrzeug finden',
-                        'gratis schutz',
-                        'advertisement',
-                        'ad',
-                        'banner',
-                        'promo',
-                        'promotion',
-                        'werbung',
-                        'anzeige',
-                        'versicherung',
-                        'insurance',
-                        'gebäude',
-                        'haus',
-                        'showroom',
-                        'ausstellung',
-                        'parkplatz',
-                        'parking',
-                        'co2class',
-                        'co2',
-                        'emission',
-                        'energielabel',
-                        'autohaus',
-                        'autohandel',
-                        'automobile',
-                        'fahrzeug',
-                        'fahrzeuge',
-                        'verkauf',
-                        'verkaufs',
-                        'standort',
-                        'filiale',
-                        'niederlassung',
-                        'geschäft',
-                        'geschäfts',
-                        'büro',
-                        'office',
-                        'lager',
-                        'warehouse'
+                        'bewertungen', 'review', 'kaufen', 'person', 'man', 'woman', 'people',
+                        'dealer', 'logo', 'zentrum', 'center', 'building', 'gebäude',
+                        'haus', 'showroom', 'ausstellung', 'parkplatz', 'parking', 'lot',
+                        'emilfrey', 'schutzbrief', 'fahrzeug finden', 'gratis schutz',
+                        'advertisement', 'ad', 'banner', 'promo', 'promotion',
+                        'werbung', 'anzeige', 'versicherung', 'insurance',
+                        'co2class', 'co2', 'emission', 'energielabel',
+                        'autohaus', 'autohandel', 'automobile', 'fahrzeug', 'fahrzeuge',
+                        'verkauf', 'verkaufs', 'standort', 'filiale', 'niederlassung',
+                        'geschäft', 'geschäfts', 'büro', 'office', 'lager', 'warehouse',
+                        'interior', 'innenraum', 'service', 'werkstatt',
+                        'multiple', 'several', 'viele', 'mehrere', 'cars', 'autos'
                     ];
                     
                     for (const keyword of excludeKeywords) {
                         if (u.includes(keyword)) return false;
                     }
                     
+                    // Проверяем на наличие других марок (если указана марка)
+                    if (brandLower && otherBrands[brandLower]) {
+                        for (const otherBrand of otherBrands[brandLower]) {
+                            // Если в URL есть другая марка, но нет текущей - исключаем
+                            if (u.includes(otherBrand) && !u.includes(brandLower)) {
+                                return false;
+                            }
+                        }
+                    }
+                    
                     // Отбрасываем очень маленькие превью
                     const smallRules = [
-                        'rule=mo-80',
-                        'rule=mo-80w',
-                        'rule=mo-160',
-                        'rule=mo-160w',
-                        'rule=mo-200'
+                        'rule=mo-80', 'rule=mo-80w', 'rule=mo-160', 'rule=mo-160w', 
+                        'rule=mo-200', 'rule=mo-240'
                     ];
                     
                     for (const rule of smallRules) {
                         if (u.includes(rule)) return false;
                     }
                     
-                    // Исключаем подозрительные размеры (рекламные баннеры)
+                    // Исключаем подозрительные размеры (рекламные баннеры, панорамы)
                     const sizeMatch = u.match(/rule=mo-(\d+)x(\d+)/);
                     if (sizeMatch) {
                         const width = parseInt(sizeMatch[1]);
                         const height = parseInt(sizeMatch[2]);
                         // Исключаем очень широкие или очень высокие изображения (баннеры)
-                        if (width / height > 3 || height / width > 3) return false;
+                        if (width / height > 2.5 || height / width > 2.5) return false;
+                        // Исключаем очень маленькие изображения
+                        if (width < 360 || height < 239) return false;
                     }
                     
                     // Должно быть изображение от mobile.de
@@ -728,6 +720,15 @@
                     url: typeof img === 'string' ? img : img.url,
                     order: (img && img.order) ? img.order : idx + 1
                 }));
+            
+            // Сохраняем в кэш (ограничиваем размер кэша)
+            if (imageCache.size > 1000) {
+                const firstKey = imageCache.keys().next().value;
+                imageCache.delete(firstKey);
+            }
+            imageCache.set(cacheKey, filtered);
+            
+            return filtered;
         }
 
         // Инициализация страницы
@@ -790,7 +791,11 @@
             });
         }
 
-        // Отображение автомобилей
+        // Оптимизированное отображение автомобилей с ленивой загрузкой
+        let renderFrameId = null;
+        let visibleStart = 0;
+        let visibleEnd = 50; // Показываем первые 50 карточек сразу
+        
         function displayCars() {
             const grid = document.getElementById('cars-grid');
             if (filteredCars.length === 0) {
@@ -798,55 +803,138 @@
                 return;
             }
 
-            grid.innerHTML = filteredCars.map((car, index) => {
-                const images = filterImages(car.images);
-                const firstImage = images.length > 0 ? images[0].url : '';
-                const imageCount = images.length;
-                // кешируем отфильтрованные изображения для модалки
-                car._filteredImages = images;
-                const price = car.price ? `${car.price.toLocaleString('ru-RU')} €` : 'Цена по запросу';
+            // Отменяем предыдущий рендер, если он еще не выполнен
+            if (renderFrameId) {
+                cancelAnimationFrame(renderFrameId);
+            }
+            
+            // Используем requestAnimationFrame для плавного рендеринга
+            renderFrameId = requestAnimationFrame(() => {
+                const fragment = document.createDocumentFragment();
+                const tempDiv = document.createElement('div');
                 
-                return `
-                    <div class="car-card" data-index="${index}">
-                        <div class="car-image">
-                            ${firstImage ? `<img src="${firstImage}" alt="${car.brand} ${car.model}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\'%3E%3Crect fill=\'%23ddd\' width=\'300\' height=\'200\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EНет фото%3C/text%3E%3C/svg%3E'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
-                            ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
-                        </div>
-                        <div class="car-info">
-                            <div class="car-title">${car.brand} ${car.model}</div>
-                            <div class="car-price">${price}</div>
-                            <div class="car-specs">
-                                ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
-                                ${car.power_kw ? `<div class="car-spec-item">⚡ ${car.power_kw} kW (${car.power_hp || ''} PS)</div>` : ''}
-                                ${car.first_registration ? `<div class="car-spec-item">📅 ${car.first_registration}</div>` : ''}
+                // Рендерим видимые карточки
+                const cardsToRender = filteredCars.slice(visibleStart, Math.min(visibleEnd, filteredCars.length));
+                
+                tempDiv.innerHTML = cardsToRender.map((car, localIndex) => {
+                    const index = visibleStart + localIndex;
+                    const images = filterImages(car.images, car.brand);
+                    const firstImage = images.length > 0 ? images[0].url : '';
+                    const imageCount = images.length;
+                    // кешируем отфильтрованные изображения для модалки
+                    car._filteredImages = images;
+                    const price = car.price ? `${car.price.toLocaleString('ru-RU')} €` : 'Цена по запросу';
+                    
+                    return `
+                        <div class="car-card" data-index="${index}">
+                            <div class="car-image">
+                                ${firstImage ? `<img loading="lazy" src="${firstImage}" alt="${car.brand} ${car.model}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\'%3E%3Crect fill=\'%23ddd\' width=\'300\' height=\'200\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EНет фото%3C/text%3E%3C/svg%3E'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
+                                ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
                             </div>
-                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-                                ${imageCount > 0 ? `<button class="btn-secondary" onclick="openImageModal(${index})" style="flex: 1;">
-                                    <i class="fas fa-images"></i> Фото
-                                </button>` : ''}
-                                <button class="btn-primary" onclick="addToCartEurope(${index})" style="flex: 1;">
-                                    <i class="fas fa-shopping-cart"></i> Заказать
-                                </button>
+                            <div class="car-info">
+                                <div class="car-title">${car.brand} ${car.model}</div>
+                                <div class="car-price">${price}</div>
+                                <div class="car-specs">
+                                    ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
+                                    ${car.power_kw ? `<div class="car-spec-item">⚡ ${car.power_kw} kW (${car.power_hp || ''} PS)</div>` : ''}
+                                    ${car.first_registration ? `<div class="car-spec-item">📅 ${car.first_registration}</div>` : ''}
+                                </div>
+                                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                    ${imageCount > 0 ? `<button class="btn-secondary" onclick="openImageModal(${index})" style="flex: 1;">
+                                        <i class="fas fa-images"></i> Фото
+                                    </button>` : ''}
+                                    <button class="btn-primary" onclick="addToCartEurope(${index})" style="flex: 1;">
+                                        <i class="fas fa-shopping-cart"></i> Заказать
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `;
-            }).join('');
+                    `;
+                }).join('');
+                
+                // Очищаем и добавляем новые карточки
+                if (visibleStart === 0) {
+                    grid.innerHTML = '';
+                }
+                
+                Array.from(tempDiv.children).forEach(child => {
+                    fragment.appendChild(child);
+                });
+                
+                grid.appendChild(fragment);
+                
+                // Загружаем следующие карточки при прокрутке
+                if (visibleEnd < filteredCars.length) {
+                    setupInfiniteScroll();
+                }
+                
+                renderFrameId = null;
+            });
+        }
+        
+        // Бесконечная прокрутка для загрузки остальных карточек
+        function setupInfiniteScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && visibleEnd < filteredCars.length) {
+                        visibleEnd = Math.min(visibleEnd + 20, filteredCars.length);
+                        displayCars();
+                    }
+                });
+            }, { rootMargin: '200px' });
+            
+            const lastCard = document.querySelector('.car-card:last-child');
+            if (lastCard) {
+                observer.observe(lastCard);
+            }
         }
 
         // Настройка фильтров
         function setupFilters() {
             document.getElementById('apply-filters').addEventListener('click', applyFilters);
             document.getElementById('reset-filters').addEventListener('click', resetFilters);
+            
+            // Добавляем debounce для полей ввода
+            const filterInputs = ['brand-filter', 'model-filter', 'price-from', 'price-to', 'mileage-to'];
+            filterInputs.forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.addEventListener('input', applyFiltersDebounced);
+                    input.addEventListener('change', applyFilters);
+                }
+            });
         }
 
-        // Применение фильтров
+        // Debounce для фильтров
+        let filterTimeout = null;
+        function debounceFilter(func, wait = 300) {
+            return function(...args) {
+                clearTimeout(filterTimeout);
+                filterTimeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+        
+        // Применение фильтров (с debounce)
+        const applyFiltersDebounced = debounceFilter(function() {
+            const brand = document.getElementById('brand-filter').value;
+            const model = document.getElementById('model-filter').value;
+            const priceFrom = parseFloat(document.getElementById('price-from').value) || 0;
+            const priceTo = parseFloat(document.getElementById('price-to').value) || Infinity;
+            const mileageTo = parseFloat(document.getElementById('mileage-to').value) || Infinity;
+            
+            applyFilters();
+        });
+        
         function applyFilters() {
             const brand = document.getElementById('brand-filter').value;
             const model = document.getElementById('model-filter').value;
             const priceFrom = parseFloat(document.getElementById('price-from').value) || 0;
             const priceTo = parseFloat(document.getElementById('price-to').value) || Infinity;
             const mileageTo = parseFloat(document.getElementById('mileage-to').value) || Infinity;
+            
+            // Сбрасываем видимый диапазон
+            visibleStart = 0;
+            visibleEnd = 50;
 
             filteredCars = carsData.filter(car => {
                 if (brand && car.brand !== brand) return false;
@@ -903,7 +991,7 @@
             currentImageIndex = 0;
             const car = filteredCars[carIndex];
             
-            const images = car._filteredImages || filterImages(car.images);
+            const images = car._filteredImages || filterImages(car.images, car.brand);
             if (!images || images.length === 0) return;
             car._filteredImages = images;
 
@@ -921,7 +1009,7 @@
         // Обновление изображения в модальном окне
         function updateModalImage() {
             const car = filteredCars[currentCarIndex];
-            const images = car._filteredImages || filterImages(car.images);
+            const images = car._filteredImages || filterImages(car.images, car.brand);
             
             if (!images || images.length === 0) {
                 closeImageModal();
@@ -974,7 +1062,7 @@
         // Обновление миниатюр
         function updateModalThumbnails() {
             const car = filteredCars[currentCarIndex];
-            const images = car._filteredImages || filterImages(car.images);
+            const images = car._filteredImages || filterImages(car.images, car.brand);
             const thumbnailsContainer = document.getElementById('modal-thumbnails');
             
             thumbnailsContainer.innerHTML = images.map((img, index) => 
@@ -991,7 +1079,7 @@
         // Смена изображения
         function changeImage(direction) {
             const car = filteredCars[currentCarIndex];
-            const images = car._filteredImages || filterImages(car.images);
+            const images = car._filteredImages || filterImages(car.images, car.brand);
             currentImageIndex += direction;
             
             if (currentImageIndex < 0) currentImageIndex = images.length - 1;
