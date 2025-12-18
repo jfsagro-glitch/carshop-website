@@ -988,10 +988,59 @@
         // Обновление изображения в модальном окне
         function updateModalImage() {
             const car = filteredCars[currentCarIndex];
-            const images = car._filteredImages || filterImages(car.images);
-            const image = images[currentImageIndex];
+            if (!car) return;
             
-            document.getElementById('modal-image').src = image.url;
+            const images = car._filteredImages || filterImages(car.images);
+            if (!images || images.length === 0) {
+                document.getElementById('modal-image').src = '';
+                document.getElementById('image-counter').textContent = '0 / 0';
+                return;
+            }
+            
+            // Проверяем, что индекс в пределах массива
+            if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            }
+            
+            const image = images[currentImageIndex];
+            const modalImage = document.getElementById('modal-image');
+            
+            // Показываем индикатор загрузки
+            modalImage.style.opacity = '0.5';
+            
+            // Загружаем изображение с обработкой ошибок
+            const img = new Image();
+            img.onload = function() {
+                modalImage.src = image.url;
+                modalImage.style.opacity = '1';
+            };
+            img.onerror = function() {
+                // Если изображение не загрузилось, пробуем обновить URL до большего размера
+                const upgradedUrl = upgradeImageUrl(image.url);
+                if (upgradedUrl !== image.url) {
+                    const retryImg = new Image();
+                    retryImg.onload = function() {
+                        modalImage.src = upgradedUrl;
+                        modalImage.style.opacity = '1';
+                        // Обновляем URL в массиве
+                        images[currentImageIndex].url = upgradedUrl;
+                    };
+                    retryImg.onerror = function() {
+                        // Если и это не помогло, показываем placeholder
+                        modalImage.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'%3E%3Crect fill=\'%23ddd\' width=\'800\' height=\'600\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EИзображение не загружено%3C/text%3E%3C/svg%3E';
+                        modalImage.style.opacity = '1';
+                    };
+                    retryImg.src = upgradedUrl;
+                } else {
+                    modalImage.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'%3E%3Crect fill=\'%23ddd\' width=\'800\' height=\'600\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EИзображение не загружено%3C/text%3E%3C/svg%3E';
+                    modalImage.style.opacity = '1';
+                }
+            };
+            img.src = image.url;
+            
             document.getElementById('image-counter').textContent = `${currentImageIndex + 1} / ${images.length}`;
             
             // Обновление активной миниатюры
