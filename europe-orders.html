@@ -695,18 +695,30 @@
         function upgradeImageUrl(url) {
             if (!url || typeof url !== 'string') return url;
             
-            // Обновляем маленькие rule параметры до mo-800 или mo-1600
+            // Обновляем маленькие rule параметры до mo-1600 для лучшего качества
             const urlLower = url.toLowerCase();
             
-            // Заменяем маленькие размеры на большие
-            if (urlLower.includes('rule=mo-360') || urlLower.includes('rule=mo-240')) {
-                return url.replace(/rule=mo-\d+/i, 'rule=mo-800');
-            }
-            if (urlLower.includes('rule=mo-80') || urlLower.includes('rule=mo-160') || urlLower.includes('rule=mo-200')) {
-                return url.replace(/rule=mo-\d+/i, 'rule=mo-800');
+            // Заменяем ВСЕ маленькие размеры на mo-1600
+            // mo-36, mo-80, mo-160, mo-200, mo-240, mo-360, mo-480, mo-640, mo-800 -> mo-1600
+            if (urlLower.includes('rule=mo-')) {
+                // Извлекаем текущее значение rule
+                const ruleMatch = url.match(/rule=mo-(\d+)(w)?/i);
+                if (ruleMatch) {
+                    const ruleValue = parseInt(ruleMatch[1]);
+                    // Если меньше 1600, заменяем на mo-1600
+                    if (ruleValue < 1600) {
+                        return url.replace(/rule=mo-\d+(w)?/i, 'rule=mo-1600');
+                    }
+                }
+            } else if (urlLower.includes('img.classistatic.de') || urlLower.includes('classistatic.de')) {
+                // Если нет rule, но есть classistatic.de, добавляем rule=mo-1600
+                if (url.includes('?')) {
+                    return url + '&rule=mo-1600';
+                } else {
+                    return url + '?rule=mo-1600';
+                }
             }
             
-            // Если уже есть mo-800 или больше, оставляем как есть
             return url;
         }
         
@@ -780,7 +792,17 @@
                     }
                     
                     // Проверяем, что это изображение от mobile.de
+                    // Разрешаем img.classistatic.de и classistatic.de, но НЕ static.classistatic.de (favicon)
+                    if (u.includes('static.classistatic.de') && u.includes('favicon')) {
+                        return false;
+                    }
+                    
                     if (!u.includes('img.classistatic.de') && !u.includes('classistatic.de')) {
+                        return false;
+                    }
+                    
+                    // Дополнительная проверка: исключаем favicon даже если прошел предыдущие проверки
+                    if (u.includes('favicon') || u.includes('/static/favicons/')) {
                         return false;
                     }
                     
@@ -873,10 +895,16 @@
                 car._filteredImages = images;
                 const price = car.price ? `${car.price.toLocaleString('ru-RU')} €` : 'Цена по запросу';
                 
+                // Улучшаем URL первого изображения еще раз на всякий случай
+                let finalImageUrl = firstImage ? upgradeImageUrl(firstImage) : '';
+                
+                // Создаем безопасный placeholder для ошибки
+                const placeholderSvg = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27200%27%3E%3Crect fill=%27%23ddd%27 width=%27300%27 height=%27200%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27%3E%D0%9D%D0%B5%D1%82 %D1%84%D0%BE%D1%82%D0%BE%3C/text%3E%3C/svg%3E';
+                
                 return `
                     <div class="car-card" data-index="${index}">
                         <div class="car-image">
-                            ${firstImage ? `<img src="${firstImage}" alt="${car.brand} ${car.model}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\'%3E%3Crect fill=\'%23ddd\' width=\'300\' height=\'200\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EНет фото%3C/text%3E%3C/svg%3E'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
+                            ${finalImageUrl ? `<img src="${finalImageUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src='${placeholderSvg}'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
                             ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
                         </div>
                         <div class="car-info">

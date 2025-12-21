@@ -234,3 +234,6 @@ async function sendOrderEmail(name, phone, email, orderItems, total, subject, bo
 
 Самый простой вариант - использовать FormSubmit.co, который уже используется на других страницах сайта. Просто замените функцию отправки в `europe-orders.html`.
 
+
+
+
