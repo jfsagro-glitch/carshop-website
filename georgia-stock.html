@@ -994,6 +994,54 @@
             });
         }
 
+        // Извлечение года из URL
+        function extractYearFromUrl(url) {
+            if (!url) return null;
+            // Ищем 4-значный год в URL (например, jetta-2021)
+            const yearMatch = url.match(/-(\d{4})/);
+            if (yearMatch && yearMatch[1]) {
+                const year = parseInt(yearMatch[1]);
+                // Проверяем, что это разумный год (например, между 1990 и текущим годом + 1)
+                const currentYear = new Date().getFullYear();
+                if (year >= 1990 && year <= currentYear + 1) {
+                    return year;
+                }
+            }
+            return null;
+        }
+
+        // Извлечение года из first_registration
+        function extractYearFromRegistration(registration) {
+            if (!registration) return null;
+            // Ищем 4-значный год в строке регистрации
+            const yearMatch = registration.match(/(\d{4})/);
+            if (yearMatch && yearMatch[1]) {
+                const year = parseInt(yearMatch[1]);
+                const currentYear = new Date().getFullYear();
+                if (year >= 1990 && year <= currentYear + 1) {
+                    return year;
+                }
+            }
+            return null;
+        }
+
+        // Получение года автомобиля
+        function getCarYear(car) {
+            // Сначала пробуем получить из поля year
+            if (car.year) return car.year;
+            // Потом из first_registration
+            if (car.first_registration) {
+                const year = extractYearFromRegistration(car.first_registration);
+                if (year) return year;
+            }
+            // В конце из URL
+            if (car.url) {
+                const year = extractYearFromUrl(car.url);
+                if (year) return year;
+            }
+            return null;
+        }
+
         // Отображение автомобилей
         function displayCars() {
             const grid = document.getElementById('cars-grid');
@@ -1012,6 +1060,10 @@
                 const currency = car.price_currency === 'USD' ? '$' : (car.price_currency === 'EUR' ? '€' : '₽');
                 const price = car.price ? `${car.price.toLocaleString('ru-RU')} ${currency}` : 'Цена по запросу';
                 
+                // Получаем год выпуска
+                const year = getCarYear(car);
+                const yearDisplay = year ? ` ${year}` : '';
+                
                 // Улучшаем URL первого изображения еще раз на всякий случай
                 let finalImageUrl = firstImage ? upgradeImageUrl(firstImage) : '';
                 
@@ -1021,20 +1073,21 @@
                 return `
                     <div class="car-card" data-index="${index}">
                         <div class="car-image">
-                            ${finalImageUrl ? `<img src="${finalImageUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src=\'${placeholderSvg}\'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
+                            ${finalImageUrl ? `<img src="${finalImageUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model + yearDisplay).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src=\'${placeholderSvg}\'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
                             ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
                         </div>
                         <div class="car-info">
-                            <div class="car-title">${car.brand} ${car.model}</div>
+                            <div class="car-title">${car.brand} ${car.model}${yearDisplay}</div>
                             <div class="car-price">${price}</div>
                             ${car.price ? `<div class="car-price-full">
                                 <span class="car-price-full-label">Стоимость под ключ с доставкой и растаможкой в Краснодар:</span>
                                 <span class="car-price-full-value" id="full-price-${index}">${(() => { const fp = calculateFullPrice(car.price); return fp ? fp.toLocaleString('ru-RU') + ' ₽' : 'Загрузка...'; })()}</span>
                             </div>` : ''}
                             <div class="car-specs">
+                                ${year ? `<div class="car-spec-item">📅 ${year} год</div>` : ''}
                                 ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
                                 ${car.power_kw ? `<div class="car-spec-item">⚡ ${car.power_kw} kW (${car.power_hp || ''} PS)</div>` : ''}
-                                ${car.first_registration ? `<div class="car-spec-item">📅 ${car.first_registration}</div>` : ''}
+                                ${car.transmission ? `<div class="car-spec-item">⚙️ ${car.transmission}</div>` : ''}
                             </div>
                             <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
                                 ${imageCount > 0 ? `<button class="btn-secondary" onclick="openImageModal(${index})" style="flex: 1;">
@@ -1125,7 +1178,9 @@
             if (!images || images.length === 0) return;
             car._filteredImages = images;
 
-            document.getElementById('modal-title').textContent = `${car.brand} ${car.model}`;
+            const carYear = getCarYear(car);
+            const carYearDisplay = carYear ? ` ${carYear}` : '';
+            document.getElementById('modal-title').textContent = `${car.brand} ${car.model}${carYearDisplay}`;
             updateModalImage();
             updateModalThumbnails();
             document.getElementById('image-modal').classList.add('active');
