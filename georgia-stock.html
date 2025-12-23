@@ -1021,7 +1021,7 @@
                 return `
                     <div class="car-card" data-index="${index}">
                         <div class="car-image">
-                            ${finalImageUrl ? `<img src="${finalImageUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src='${placeholderSvg}'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
+                            ${finalImageUrl ? `<img src="${finalImageUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src=\'${placeholderSvg}\'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
                             ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
                         </div>
                         <div class="car-info">
