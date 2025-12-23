@@ -231,6 +231,27 @@
             margin-bottom: 0.65rem;
         }
 
+        .car-price-full {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #10b981;
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .car-price-full-label {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+
+        .car-price-full-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
         .image-count {
             position: absolute;
             top: 10px;
@@ -681,14 +702,59 @@
         let filteredCars = [];
         let currentCarIndex = -1;
         let currentImageIndex = 0;
+        let usdToRubRate = null; // Курс USD/RUB от ЦБ РФ
+
+        // Получение курса USD/RUB от ЦБ РФ
+        async function fetchUsdToRubRate() {
+            try {
+                const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+                if (response.ok) {
+                    const data = await response.json();
+                    // Получаем курс USD (код "USD")
+                    const usdRate = data.Valute?.USD;
+                    if (usdRate && usdRate.Value) {
+                        usdToRubRate = usdRate.Value;
+                        console.log(`Курс USD/RUB от ЦБ РФ: ${usdToRubRate}`);
+                        return usdToRubRate;
+                    }
+                }
+                throw new Error('Не удалось получить курс');
+            } catch (error) {
+                console.error('Ошибка получения курса ЦБ РФ:', error);
+                // Используем примерный курс, если API недоступен
+                usdToRubRate = 92.0; // Примерное значение
+                console.warn(`Используется примерный курс: ${usdToRubRate}`);
+                return usdToRubRate;
+            }
+        }
+
+        // Расчет стоимости "под ключ" в рублях
+        function calculateFullPrice(priceUsd) {
+            if (!priceUsd || priceUsd <= 0) return null;
+            if (!usdToRubRate) return null;
+            
+            // Формула: (цена в USD + 5700 USD) * курс ЦБ * 1.015
+            const totalUsd = priceUsd + 5700;
+            const totalRub = totalUsd * usdToRubRate * 1.015;
+            return Math.round(totalRub);
+        }
 
         // Загрузка данных
         async function loadCarsData() {
             try {
-                const response = await fetch('./cars_georgia_stock.json');
-                if (response.ok) {
-                    carsData = await response.json();
+                // Загружаем курс ЦБ РФ параллельно с данными (используем allSettled, чтобы не блокировать загрузку данных)
+                const [carsResult, rateResult] = await Promise.allSettled([
+                    fetch('./cars_georgia_stock.json'),
+                    fetchUsdToRubRate()
+                ]);
+                
+                if (carsResult.status === 'fulfilled' && carsResult.value.ok) {
+                    carsData = await carsResult.value.json();
                     filteredCars = [...carsData];
+                    // Если курс не загрузился, попробуем еще раз
+                    if (!usdToRubRate) {
+                        await fetchUsdToRubRate();
+                    }
                     initializePage();
                 } else {
                     document.getElementById('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
@@ -834,13 +900,42 @@
         }
 
         // Инициализация страницы
-        function initializePage() {
+        async function initializePage() {
+            // Обновляем курс при каждой загрузке страницы
+            await fetchUsdToRubRate();
             updateStats();
             populateBrandFilter();
             populateModelFilter();
             displayCars();
             setupFilters();
             setupModal();
+            // Обновляем цены "под ключ" после загрузки курса
+            updateFullPrices();
+        }
+
+        // Обновление цен "под ключ" для всех объявлений
+        function updateFullPrices() {
+            if (!usdToRubRate) {
+                // Если курс еще не загружен, пробуем загрузить еще раз через небольшую задержку
+                setTimeout(() => {
+                    fetchUsdToRubRate().then(() => {
+                        if (usdToRubRate) {
+                            updateFullPrices();
+                        }
+                    });
+                }, 1000);
+                return;
+            }
+            
+            filteredCars.forEach((car, index) => {
+                if (car.price) {
+                    const fullPrice = calculateFullPrice(car.price);
+                    const priceElement = document.getElementById(`full-price-${index}`);
+                    if (priceElement && fullPrice) {
+                        priceElement.textContent = fullPrice.toLocaleString('ru-RU') + ' ₽';
+                    }
+                }
+            });
         }
 
         // Обновление статистики
@@ -926,6 +1021,10 @@
                         <div class="car-info">
                             <div class="car-title">${car.brand} ${car.model}</div>
                             <div class="car-price">${price}</div>
+                            ${car.price ? `<div class="car-price-full">
+                                <span class="car-price-full-label">Стоимость под ключ с доставкой и растаможкой в Краснодар:</span>
+                                <span class="car-price-full-value" id="full-price-${index}">${(() => { const fp = calculateFullPrice(car.price); return fp ? fp.toLocaleString('ru-RU') + ' ₽' : 'Загрузка...'; })()}</span>
+                            </div>` : ''}
                             <div class="car-specs">
                                 ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
                                 ${car.power_kw ? `<div class="car-spec-item">⚡ ${car.power_kw} kW (${car.power_hp || ''} PS)</div>` : ''}
@@ -969,6 +1068,7 @@
 
             updateStats();
             displayCars();
+            updateFullPrices();
         }
 
         // Сброс фильтров
@@ -982,6 +1082,7 @@
             filteredCars = [...carsData];
             updateStats();
             displayCars();
+            updateFullPrices();
         }
 
         // Настройка модального окна
