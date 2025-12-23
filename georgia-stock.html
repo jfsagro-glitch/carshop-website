@@ -865,18 +865,21 @@
                         if (u.includes(rule)) return false;
                     }
                     
-                    // Проверяем, что это изображение от mobile.de
+                    // Для myauto.ge принимаем изображения со static.my.ge - проверяем ПЕРВЫМ
+                    if (u.includes('static.my.ge') || u.includes('myauto.ge')) {
+                        // Исключаем favicon даже для myauto.ge
+                        if (u.includes('favicon') || u.includes('/static/favicons/')) {
+                            return false;
+                        }
+                        return true;
+                    }
+                    
+                    // Для mobile.de: проверяем classistatic.de
                     // Разрешаем img.classistatic.de и classistatic.de, но НЕ static.classistatic.de (favicon)
                     if (u.includes('static.classistatic.de') && u.includes('favicon')) {
                         return false;
                     }
                     
-                    // Для myauto.ge принимаем изображения со static.my.ge
-                    if (u.includes('static.my.ge') || u.includes('myauto.ge')) {
-                        return true;
-                    }
-                    
-                    // Для mobile.de: проверяем classistatic.de
                     if (!u.includes('img.classistatic.de') && !u.includes('classistatic.de')) {
                         return false;
                     }
@@ -890,8 +893,11 @@
                 })
                 .map((img, idx) => {
                     const originalUrl = typeof img === 'string' ? img : img.url;
-                    // Обновляем URL до большего размера
-                    const upgradedUrl = upgradeImageUrl(originalUrl);
+                    // Для myauto.ge не нужно обновлять URL (они уже полного размера)
+                    // Обновляем только для mobile.de
+                    const upgradedUrl = originalUrl.includes('static.my.ge') || originalUrl.includes('myauto.ge') 
+                        ? originalUrl 
+                        : upgradeImageUrl(originalUrl);
                     return {
                         url: upgradedUrl,
                         order: (img && img.order) ? img.order : idx + 1
