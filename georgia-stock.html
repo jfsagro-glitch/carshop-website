@@ -1073,7 +1073,7 @@
                 return `
                     <div class="car-card" data-index="${index}">
                         <div class="car-image">
-                            ${finalImageUrl ? `<img src="${finalImageUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model + yearDisplay).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src=\'${placeholderSvg}\'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
+                            ${finalImageUrl ? `<img src="${finalImageUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model + yearDisplay).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src=&quot;${placeholderSvg}&quot;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
                             ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
                         </div>
                         <div class="car-info">
@@ -1268,7 +1268,8 @@
                 if (thumbnailUrl.includes('rule=mo-800') || thumbnailUrl.includes('rule=mo-1600')) {
                     thumbnailUrl = thumbnailUrl.replace(/rule=mo-\d+/i, 'rule=mo-240');
                 }
-                return `<img src="${thumbnailUrl}" alt="Фото ${index + 1}" class="image-modal-thumbnail ${index === currentImageIndex ? 'active' : ''}" onclick="setImageIndex(${index})" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\'%3E%3Crect fill=\'%23ddd\' width=\'96\' height=\'96\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' font-size=\'12\' fill=\'%23999\'%3E?%3C/text%3E%3C/svg%3E'">`;
+                const thumbPlaceholder = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2796%27 height=%2796%27%3E%3Crect fill=%27%23ddd%27 width=%2796%27 height=%2796%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 font-size=%2712%27 fill=%27%23999%27%3E?%3C/text%3E%3C/svg%3E';
+                return `<img src="${thumbnailUrl}" alt="Фото ${index + 1}" class="image-modal-thumbnail ${index === currentImageIndex ? 'active' : ''}" onclick="setImageIndex(${index})" onerror="this.onerror=null;this.src=&quot;${thumbPlaceholder}&quot;">`;
             }).join('');
         }
 
