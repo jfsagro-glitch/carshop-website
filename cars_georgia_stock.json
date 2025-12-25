@@ -1202,6 +1202,32 @@
     "imagesCount": 11
   },
   {
+    "id": "119814371",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": null,
+    "price_currency": "USD",
+    "mileage": 113600,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119814371/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-gori?offerType=superVip&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/4/1/8/large/119814371_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/4/1/8/large/119814371_2.jpg?v=0",
+        "order": 2
+      }
+    ],
+    "imagesCount": 2
+  },
+  {
     "id": "118547161",
     "brand": "Volkswagen",
     "model": "Jetta",
