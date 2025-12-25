@@ -3976,44 +3976,6 @@
     "imagesCount": 10
   },
   {
-    "id": "119758673",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": 13700,
-    "price_currency": "USD",
-    "mileage": 64000,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119758673/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-gori?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/8/5/7/large/119758673_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/8/5/7/large/119758673_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/8/5/7/large/119758673_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/8/5/7/large/119758673_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/8/5/7/large/119758673_5.jpg?v=0",
-        "order": 5
-      }
-    ],
-    "imagesCount": 5
-  },
-  {
     "id": "119565602",
     "brand": "Volkswagen",
     "model": "Jetta",
@@ -4590,6 +4552,56 @@
       }
     ],
     "imagesCount": 11
+  },
+  {
+    "id": "119808412",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": null,
+    "price_currency": "USD",
+    "mileage": 43200,
+    "transmission": "Автомат",
+    "vin": "3VWC57BU3MM060510",
+    "url": "https://myauto.ge/ru/pr/119808412/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-hobi?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/0/8/large/119808412_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/0/8/large/119808412_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/0/8/large/119808412_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/0/8/large/119808412_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/0/8/large/119808412_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/0/8/large/119808412_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/0/8/large/119808412_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/0/8/large/119808412_8.jpg?v=0",
+        "order": 8
+      }
+    ],
+    "imagesCount": 8
   },
   {
     "id": "109814001",
