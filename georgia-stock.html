@@ -704,6 +704,41 @@
         let currentCarIndex = -1;
         let currentImageIndex = 0;
         let usdToRubRate = null; // Курс USD/RUB от ЦБ РФ
+        
+        // Кэш DOM элементов для оптимизации
+        const domCache = {};
+        function getElement(id) {
+            if (!domCache[id]) {
+                domCache[id] = document.getElementById(id);
+            }
+            return domCache[id];
+        }
+        
+        // Кэш отфильтрованных изображений
+        const imageCache = new WeakMap();
+        
+        // Debounce функция для оптимизации фильтров
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // Оптимизированная функция сортировки (кэшируем результаты проверок)
+        function sortCars(cars) {
+            const sortKey = (car) => {
+                const hasVin = car.vin && car.vin.trim();
+                const hasPrice = car.price && car.price > 0;
+                return `${hasVin ? '0' : '1'}_${hasPrice ? '0' : '1'}`;
+            };
+            return [...cars].sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
+        }
 
         // Получение курса USD/RUB от ЦБ РФ
         async function fetchUsdToRubRate() {
@@ -715,16 +750,15 @@
                     const usdRate = data.Valute?.USD;
                     if (usdRate && usdRate.Value) {
                         usdToRubRate = usdRate.Value;
-                        console.log(`Курс USD/RUB от ЦБ РФ: ${usdToRubRate}`);
+                        // Убрали console.log для production
                         return usdToRubRate;
                     }
                 }
                 throw new Error('Не удалось получить курс');
             } catch (error) {
-                console.error('Ошибка получения курса ЦБ РФ:', error);
+                // Убрали console.error для production - используем fallback
                 // Используем примерный курс, если API недоступен
                 usdToRubRate = 92.0; // Примерное значение
-                console.warn(`Используется примерный курс: ${usdToRubRate}`);
                 return usdToRubRate;
             }
         }
@@ -754,21 +788,8 @@
                     carsData = await carsResult.value.json();
             filteredCars = [...carsData];
             
-            // Сортируем: сначала объявления с VIN, затем без VIN
-            // Внутри каждой группы: сначала с ценой, затем без цены
-            filteredCars.sort((a, b) => {
-                const hasVinA = a.vin && a.vin.trim();
-                const hasVinB = b.vin && b.vin.trim();
-                // Сначала объявления с VIN
-                if (hasVinA && !hasVinB) return -1;
-                if (!hasVinA && hasVinB) return 1;
-                // Затем сортируем по наличию цены
-                const hasPriceA = a.price && a.price > 0;
-                const hasPriceB = b.price && b.price > 0;
-                if (hasPriceA && !hasPriceB) return -1;
-                if (!hasPriceA && hasPriceB) return 1;
-                return 0;
-            });
+            // Используем оптимизированную функцию сортировки
+            filteredCars = sortCars(carsData);
             
             // Если курс не загрузился, попробуем еще раз
             if (!usdToRubRate) {
@@ -776,11 +797,11 @@
             }
             initializePage();
                 } else {
-                    document.getElementById('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
+                    getElement('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
                 }
             } catch (error) {
-                console.error('Ошибка загрузки данных:', error);
-                document.getElementById('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
+                // Убрали console.error для production
+                getElement('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
             }
         }
 
@@ -817,7 +838,11 @@
         
         function filterImages(images) {
             if (!images) return [];
-            return images
+            // Проверяем кэш
+            if (imageCache.has(images)) {
+                return imageCache.get(images);
+            }
+            const filtered = images
                 .filter(img => {
                     const url = typeof img === 'string' ? img : (img.url || '');
                     if (!url) return false;
@@ -922,6 +947,9 @@
                         order: (img && img.order) ? img.order : idx + 1
                     };
                 });
+            // Сохраняем в кэш
+            imageCache.set(images, filtered);
+            return filtered;
         }
 
         // Инициализация страницы
@@ -955,7 +983,7 @@
             filteredCars.forEach((car, index) => {
                 if (car.price) {
                     const fullPrice = calculateFullPrice(car.price);
-                    const priceElement = document.getElementById(`full-price-${index}`);
+                    const priceElement = getElement(`full-price-${index}`);
                     if (priceElement && fullPrice) {
                         priceElement.textContent = fullPrice.toLocaleString('ru-RU') + ' ₽';
                     }
@@ -966,12 +994,12 @@
         // Обновление статистики
         function updateStats() {
             const totalCars = filteredCars.length;
-            document.getElementById('total-cars').textContent = totalCars;
+            getElement('total-cars').textContent = totalCars;
         }
 
         // Заполнение фильтра марок
         function populateBrandFilter() {
-            const brandFilter = document.getElementById('brand-filter');
+            const brandFilter = getElement('brand-filter');
             const brands = [...new Set(carsData.map(car => car.brand).filter(Boolean))].sort();
             brands.forEach(brand => {
                 const option = document.createElement('option');
@@ -980,18 +1008,18 @@
                 brandFilter.appendChild(option);
             });
             
-            // Обновляем модели при изменении марки
-            brandFilter.addEventListener('change', function() {
+            // Обновляем модели при изменении марки (debounce для оптимизации)
+            brandFilter.addEventListener('change', debounce(function() {
                 populateModelFilter();
                 // Сбрасываем выбор модели при смене марки
-                document.getElementById('model-filter').value = '';
-            });
+                getElement('model-filter').value = '';
+            }, 150));
         }
 
         // Заполнение фильтра моделей
         function populateModelFilter() {
-            const modelFilter = document.getElementById('model-filter');
-            const brandFilter = document.getElementById('brand-filter');
+            const modelFilter = getElement('model-filter');
+            const brandFilter = getElement('brand-filter');
             const selectedBrand = brandFilter.value;
             
             // Очищаем текущие опции
@@ -1063,7 +1091,7 @@
 
         // Отображение автомобилей
         function displayCars() {
-            const grid = document.getElementById('cars-grid');
+            const grid = getElement('cars-grid');
             if (filteredCars.length === 0) {
                 grid.innerHTML = '<div class="no-results">Автомобили не найдены</div>';
                 return;
@@ -1125,17 +1153,18 @@
 
         // Настройка фильтров
         function setupFilters() {
-            document.getElementById('apply-filters').addEventListener('click', applyFilters);
-            document.getElementById('reset-filters').addEventListener('click', resetFilters);
+            getElement('apply-filters').addEventListener('click', applyFilters);
+            getElement('reset-filters').addEventListener('click', resetFilters);
         }
 
-        // Применение фильтров
+        // Применение фильтров (с debounce для оптимизации)
+        const applyFiltersDebounced = debounce(applyFilters, 200);
         function applyFilters() {
-            const brand = document.getElementById('brand-filter').value;
-            const model = document.getElementById('model-filter').value;
-            const priceFrom = parseFloat(document.getElementById('price-from').value) || 0;
-            const priceTo = parseFloat(document.getElementById('price-to').value) || Infinity;
-            const mileageTo = parseFloat(document.getElementById('mileage-to').value) || Infinity;
+            const brand = getElement('brand-filter').value;
+            const model = getElement('model-filter').value;
+            const priceFrom = parseFloat(getElement('price-from').value) || 0;
+            const priceTo = parseFloat(getElement('price-to').value) || Infinity;
+            const mileageTo = parseFloat(getElement('mileage-to').value) || Infinity;
 
             filteredCars = carsData.filter(car => {
                 if (brand && car.brand !== brand) return false;
@@ -1145,21 +1174,8 @@
                 return true;
             });
 
-            // Сортируем: сначала объявления с VIN, затем без VIN
-            // Внутри каждой группы: сначала с ценой, затем без цены
-            filteredCars.sort((a, b) => {
-                const hasVinA = a.vin && a.vin.trim();
-                const hasVinB = b.vin && b.vin.trim();
-                // Сначала объявления с VIN
-                if (hasVinA && !hasVinB) return -1;
-                if (!hasVinA && hasVinB) return 1;
-                // Затем сортируем по наличию цены
-                const hasPriceA = a.price && a.price > 0;
-                const hasPriceB = b.price && b.price > 0;
-                if (hasPriceA && !hasPriceB) return -1;
-                if (!hasPriceA && hasPriceB) return 1;
-                return 0;
-            });
+            // Используем оптимизированную функцию сортировки
+            filteredCars = sortCars(filteredCars);
 
             updateStats();
             displayCars();
@@ -1168,29 +1184,13 @@
 
         // Сброс фильтров
         function resetFilters() {
-            document.getElementById('brand-filter').value = '';
-            document.getElementById('model-filter').value = '';
-            document.getElementById('price-from').value = '';
-            document.getElementById('price-to').value = '';
-            document.getElementById('mileage-to').value = '';
+            getElement('brand-filter').value = '';
+            getElement('model-filter').value = '';
+            getElement('price-from').value = '';
+            getElement('price-to').value = '';
+            getElement('mileage-to').value = '';
             populateModelFilter(); // Обновляем список моделей
-            filteredCars = [...carsData];
-            
-            // Сортируем: сначала объявления с VIN, затем без VIN
-            // Внутри каждой группы: сначала с ценой, затем без цены
-            filteredCars.sort((a, b) => {
-                const hasVinA = a.vin && a.vin.trim();
-                const hasVinB = b.vin && b.vin.trim();
-                // Сначала объявления с VIN
-                if (hasVinA && !hasVinB) return -1;
-                if (!hasVinA && hasVinB) return 1;
-                // Затем сортируем по наличию цены
-                const hasPriceA = a.price && a.price > 0;
-                const hasPriceB = b.price && b.price > 0;
-                if (hasPriceA && !hasPriceB) return -1;
-                if (!hasPriceA && hasPriceB) return 1;
-                return 0;
-            });
+            filteredCars = sortCars(carsData);
             
             updateStats();
             displayCars();
@@ -1199,10 +1199,12 @@
 
         // Настройка модального окна
         function setupModal() {
-            const modal = document.getElementById('image-modal');
-            const closeBtn = document.getElementById('close-modal');
-            const prevBtn = document.getElementById('prev-image');
-            const nextBtn = document.getElementById('next-image');
+            const modal = getElement('image-modal');
+            const closeBtn = getElement('close-modal');
+            const prevBtn = getElement('prev-image');
+            const nextBtn = getElement('next-image');
+            
+            if (!modal || !closeBtn || !prevBtn || !nextBtn) return;
 
             closeBtn.addEventListener('click', closeImageModal);
             prevBtn.addEventListener('click', () => changeImage(-1));
@@ -1233,15 +1235,15 @@
 
             const carYear = getCarYear(car);
             const carYearDisplay = carYear ? ` ${carYear}` : '';
-            document.getElementById('modal-title').textContent = `${car.brand} ${car.model}${carYearDisplay}`;
+            getElement('modal-title').textContent = `${car.brand} ${car.model}${carYearDisplay}`;
             updateModalImage();
             updateModalThumbnails();
-            document.getElementById('image-modal').classList.add('active');
+            getElement('image-modal').classList.add('active');
         }
 
         // Закрытие модального окна
         function closeImageModal() {
-            document.getElementById('image-modal').classList.remove('active');
+            getElement('image-modal').classList.remove('active');
         }
 
         // Обновление изображения в модальном окне
@@ -1251,8 +1253,8 @@
             
             const images = car._filteredImages || filterImages(car.images);
             if (!images || images.length === 0) {
-                document.getElementById('modal-image').src = '';
-                document.getElementById('image-counter').textContent = '0 / 0';
+                getElement('modal-image').src = '';
+                getElement('image-counter').textContent = '0 / 0';
                 return;
             }
             
@@ -1265,7 +1267,7 @@
             }
             
             const image = images[currentImageIndex];
-            const modalImage = document.getElementById('modal-image');
+            const modalImage = getElement('modal-image');
             
             // Показываем индикатор загрузки
             modalImage.style.opacity = '0.5';
@@ -1300,7 +1302,7 @@
             };
             img.src = image.url;
             
-            document.getElementById('image-counter').textContent = `${currentImageIndex + 1} / ${images.length}`;
+            getElement('image-counter').textContent = `${currentImageIndex + 1} / ${images.length}`;
             
             // Обновление активной миниатюры
             const thumbnails = document.querySelectorAll('.image-modal-thumbnail');
@@ -1387,7 +1389,7 @@
         function updateCartCount() {
             const cart = JSON.parse(localStorage.getItem('cart') || '[]');
             const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-            const cartCountEl = document.getElementById('cartCount');
+            const cartCountEl = getElement('cartCount');
             if (cartCountEl) {
                 cartCountEl.textContent = totalItems;
             }
@@ -1620,25 +1622,25 @@
     <script>
         // Modal functions
         function openCustomsModal() {
-            document.getElementById('customsModal').style.display = 'block';
+            getElement('customsModal').style.display = 'block';
         }
         function closeCustomsModal() {
-            document.getElementById('customsModal').style.display = 'none';
+            getElement('customsModal').style.display = 'none';
         }
         function openRequestModal() {
-            document.getElementById('requestModal').style.display = 'block';
+            getElement('requestModal').style.display = 'block';
         }
         function closeRequestModal() {
-            document.getElementById('requestModal').style.display = 'none';
+            getElement('requestModal').style.display = 'none';
         }
         function openSelfCalcModal() {
-            document.getElementById('selfCalcModal').style.display = 'block';
+            getElement('selfCalcModal').style.display = 'block';
         }
         function closeSelfCalcModal() {
-            document.getElementById('selfCalcModal').style.display = 'none';
+            getElement('selfCalcModal').style.display = 'none';
         }
         function closeCart() {
-            document.getElementById('cartModal').style.display = 'none';
+            getElement('cartModal').style.display = 'none';
         }
         // Функция оформления заказа
         function checkout() {
@@ -1654,19 +1656,19 @@
         
         // Открытие модального окна оформления заказа
         function openCheckoutModal() {
-            const modal = document.getElementById('checkoutModal');
+            const modal = getElement('checkoutModal');
             if (modal) {
                 modal.style.display = 'block';
                 // Очищаем форму
-                document.getElementById('checkoutName').value = '';
-                document.getElementById('checkoutPhone').value = '';
-                document.getElementById('checkoutEmail').value = '';
+                getElement('checkoutName').value = '';
+                getElement('checkoutPhone').value = '';
+                getElement('checkoutEmail').value = '';
             }
         }
         
         // Закрытие модального окна оформления заказа
         function closeCheckoutModal() {
-            const modal = document.getElementById('checkoutModal');
+            const modal = getElement('checkoutModal');
             if (modal) {
                 modal.style.display = 'none';
             }
@@ -1674,9 +1676,9 @@
         
         // Отправка заказа
         async function submitOrder() {
-            const name = document.getElementById('checkoutName').value.trim();
-            const phone = document.getElementById('checkoutPhone').value.trim();
-            const email = document.getElementById('checkoutEmail').value.trim();
+            const name = getElement('checkoutName').value.trim();
+            const phone = getElement('checkoutPhone').value.trim();
+            const email = getElement('checkoutEmail').value.trim();
             
             // Валидация
             if (!name || !phone || !email) {
@@ -1769,7 +1771,7 @@
                     throw new Error('Ошибка отправки');
                 }
             } catch (error) {
-                console.error('Ошибка отправки заказа:', error);
+                // Убрали console.error для production
                 showNotification('Ошибка отправки. Попробуйте позже или свяжитесь с нами напрямую.', 'error');
             } finally {
                 if (submitBtn) {
@@ -1805,8 +1807,7 @@
                     throw new Error('FormSubmit error');
                 }
             } catch (error) {
-                console.error('FormSubmit error:', error);
-                // Fallback на альтернативный метод
+                // Убрали console.error для production - fallback на альтернативный метод
                 return sendOrderEmailAlternative(name, phone, email, orderItems, total, subject, body);
             }
         }
@@ -1852,7 +1853,7 @@
             
             // Если токен не настроен, пропускаем отправку
             if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN' || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID') {
-                console.log('Telegram не настроен, пропускаем отправку');
+                // Убрали console.log для production - Telegram не настроен
                 return false;
             }
             
@@ -1883,11 +1884,11 @@
                     return true;
                 } else {
                     const errorData = await response.json();
-                    console.error('Telegram API error:', errorData);
+                    // Убрали console.error для production
                     return false;
                 }
             } catch (error) {
-                console.error('Telegram error:', error);
+                // Убрали console.error для production
                 return false;
             }
         }
@@ -1896,7 +1897,7 @@
         window.onclick = function(event) {
             const modals = ['customsModal', 'requestModal', 'selfCalcModal', 'cartModal', 'checkoutModal'];
             modals.forEach(modalId => {
-                const modal = document.getElementById(modalId);
+                const modal = getElement(modalId);
                 if (event.target == modal) {
                     modal.style.display = 'none';
                 }
@@ -1910,11 +1911,11 @@
         
         // Функция показа модального окна корзины
         function showCartModal() {
-            const cartModal = document.getElementById('cartModal');
+            const cartModal = getElement('cartModal');
             if (!cartModal) return;
             
-            const cartBody = document.getElementById('cartBody');
-            const cartTotal = document.getElementById('cartTotal');
+            const cartBody = getElement('cartBody');
+            const cartTotal = getElement('cartTotal');
             
             if (!cartBody || !cartTotal) return;
             
