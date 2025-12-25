@@ -754,8 +754,15 @@
                     carsData = await carsResult.value.json();
             filteredCars = [...carsData];
             
-            // Сортируем: сначала объявления с ценой, затем без цены
+            // Сортируем: сначала объявления с VIN, затем без VIN
+            // Внутри каждой группы: сначала с ценой, затем без цены
             filteredCars.sort((a, b) => {
+                const hasVinA = a.vin && a.vin.trim();
+                const hasVinB = b.vin && b.vin.trim();
+                // Сначала объявления с VIN
+                if (hasVinA && !hasVinB) return -1;
+                if (!hasVinA && hasVinB) return 1;
+                // Затем сортируем по наличию цены
                 const hasPriceA = a.price && a.price > 0;
                 const hasPriceB = b.price && b.price > 0;
                 if (hasPriceA && !hasPriceB) return -1;
@@ -1100,6 +1107,7 @@
                                 ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
                                 ${car.power_kw ? `<div class="car-spec-item">⚡ ${car.power_kw} kW (${car.power_hp || ''} PS)</div>` : ''}
                                 ${car.transmission ? `<div class="car-spec-item">⚙️ ${car.transmission}</div>` : ''}
+                                ${car.vin && car.vin.trim() ? `<div class="car-spec-item">🔑 VIN: <a href="https://www.google.com/search?q=${encodeURIComponent(car.vin.trim())}" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; text-decoration: none; border-bottom: 1px solid #60a5fa;">${car.vin.trim()}</a></div>` : ''}
                             </div>
                             <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
                                 ${imageCount > 0 ? `<button class="btn-secondary" onclick="openImageModal(${index})" style="flex: 1;">
@@ -1137,8 +1145,15 @@
                 return true;
             });
 
-            // Сортируем: сначала объявления с ценой, затем без цены
+            // Сортируем: сначала объявления с VIN, затем без VIN
+            // Внутри каждой группы: сначала с ценой, затем без цены
             filteredCars.sort((a, b) => {
+                const hasVinA = a.vin && a.vin.trim();
+                const hasVinB = b.vin && b.vin.trim();
+                // Сначала объявления с VIN
+                if (hasVinA && !hasVinB) return -1;
+                if (!hasVinA && hasVinB) return 1;
+                // Затем сортируем по наличию цены
                 const hasPriceA = a.price && a.price > 0;
                 const hasPriceB = b.price && b.price > 0;
                 if (hasPriceA && !hasPriceB) return -1;
@@ -1161,8 +1176,15 @@
             populateModelFilter(); // Обновляем список моделей
             filteredCars = [...carsData];
             
-            // Сортируем: сначала объявления с ценой, затем без цены
+            // Сортируем: сначала объявления с VIN, затем без VIN
+            // Внутри каждой группы: сначала с ценой, затем без цены
             filteredCars.sort((a, b) => {
+                const hasVinA = a.vin && a.vin.trim();
+                const hasVinB = b.vin && b.vin.trim();
+                // Сначала объявления с VIN
+                if (hasVinA && !hasVinB) return -1;
+                if (!hasVinA && hasVinB) return 1;
+                // Затем сортируем по наличию цены
                 const hasPriceA = a.price && a.price > 0;
                 const hasPriceB = b.price && b.price > 0;
                 if (hasPriceA && !hasPriceB) return -1;
