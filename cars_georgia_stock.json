@@ -1,11 +1,61 @@
 [
   {
+    "id": "119305027",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 27000,
+    "price_currency": "USD",
+    "mileage": 114000,
+    "transmission": "Автомат",
+    "vin": "3VWE57BU8MM074167",
+    "url": "https://myauto.ge/ru/pr/119305027/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-rustavi?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/5/0/3/large/119305027_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/5/0/3/large/119305027_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/5/0/3/large/119305027_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/5/0/3/large/119305027_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/5/0/3/large/119305027_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/5/0/3/large/119305027_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/5/0/3/large/119305027_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/5/0/3/large/119305027_8.jpg?v=0",
+        "order": 8
+      }
+    ],
+    "imagesCount": 8
+  },
+  {
     "id": "119542358",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 29700,
     "price_currency": "USD",
     "mileage": 90000,
     "transmission": "Автомат",
@@ -67,7 +117,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 29700,
     "price_currency": "USD",
     "mileage": 148658,
     "transmission": "Автомат",
@@ -129,7 +179,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 31000,
     "price_currency": "USD",
     "mileage": 117000,
     "transmission": "Автомат",
@@ -191,7 +241,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32400,
     "price_currency": "USD",
     "mileage": 102346,
     "transmission": "Автомат",
@@ -253,7 +303,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32400,
     "price_currency": "USD",
     "mileage": 103000,
     "transmission": "Автомат",
@@ -315,7 +365,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 34000,
     "price_currency": "USD",
     "mileage": 45000,
     "transmission": "Автомат",
@@ -369,7 +419,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 34800,
     "price_currency": "USD",
     "mileage": 10800,
     "transmission": "Автомат",
@@ -418,74 +468,12 @@
     "imagesCount": 9
   },
   {
-    "id": "118496902",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 41600,
-    "transmission": "Автомат",
-    "vin": "F6MVA2EBFG79TTVC8",
-    "url": "https://myauto.ge/ru/pr/118496902/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/9/4/large/118496902_12.jpg?v=0",
-        "order": 12
-      }
-    ],
-    "imagesCount": 11
-  },
-  {
     "id": "119355727",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36400,
     "price_currency": "USD",
     "mileage": 96000,
     "transmission": "Автомат",
@@ -543,7 +531,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36400,
     "price_currency": "USD",
     "mileage": 55680,
     "transmission": "Автомат",
@@ -584,12 +572,70 @@
     "imagesCount": 7
   },
   {
+    "id": "119815373",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 36400,
+    "price_currency": "USD",
+    "mileage": 50000,
+    "transmission": "Автомат",
+    "vin": "3VWC57BU7MM085846",
+    "url": "https://myauto.ge/ru/pr/119815373/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-tbilisi?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/5/1/8/large/119815373_10.jpg?v=0",
+        "order": 10
+      }
+    ],
+    "imagesCount": 10
+  },
+  {
     "id": "119808412",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 38300,
     "price_currency": "USD",
     "mileage": 43200,
     "transmission": "Автомат",
@@ -639,7 +685,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39100,
     "price_currency": "USD",
     "mileage": 108000,
     "transmission": "Автомат",
@@ -693,7 +739,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 45800,
     "price_currency": "USD",
     "mileage": 69000,
     "transmission": "Автомат",
@@ -742,12 +788,70 @@
     "imagesCount": 9
   },
   {
+    "id": "118547161",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 27000,
+    "price_currency": "USD",
+    "mileage": 124800,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/118547161/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_10.jpg?v=0",
+        "order": 10
+      }
+    ],
+    "imagesCount": 10
+  },
+  {
     "id": "119758925",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": 10200,
+    "price": 27000,
     "price_currency": "USD",
     "mileage": 102400,
     "transmission": "Автомат",
@@ -800,12 +904,306 @@
     "imagesCount": 10
   },
   {
+    "id": "111278143",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 27800,
+    "price_currency": "USD",
+    "mileage": 70400,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/111278143/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_10.jpg?v=0",
+        "order": 10
+      }
+    ],
+    "imagesCount": 10
+  },
+  {
+    "id": "119793973",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 27800,
+    "price_currency": "USD",
+    "mileage": 120000,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119793973/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-gori?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_15.jpg?v=0",
+        "order": 15
+      }
+    ],
+    "imagesCount": 11
+  },
+  {
+    "id": "111860787",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 28300,
+    "price_currency": "USD",
+    "mileage": 132800,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/111860787/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_10.jpg?v=0",
+        "order": 10
+      }
+    ],
+    "imagesCount": 10
+  },
+  {
+    "id": "116488917",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 28300,
+    "price_currency": "USD",
+    "mileage": 70400,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/116488917/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_10.jpg?v=0",
+        "order": 10
+      }
+    ],
+    "imagesCount": 10
+  },
+  {
+    "id": "119260642",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 28300,
+    "price_currency": "USD",
+    "mileage": 57600,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119260642/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_10.jpg?v=0",
+        "order": 10
+      }
+    ],
+    "imagesCount": 10
+  },
+  {
     "id": "119283886",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": 10700,
+    "price": 28300,
     "price_currency": "USD",
     "mileage": 75200,
     "transmission": "Автомат",
@@ -867,7 +1265,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": 10700,
+    "price": 28300,
     "price_currency": "USD",
     "mileage": 56000,
     "transmission": "Автомат",
@@ -924,668 +1322,12 @@
     "imagesCount": 11
   },
   {
-    "id": "114850715",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": 11500,
-    "price_currency": "USD",
-    "mileage": 24000,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/114850715/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_10.jpg?v=0",
-        "order": 10
-      }
-    ],
-    "imagesCount": 10
-  },
-  {
-    "id": "119666981",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": 12200,
-    "price_currency": "USD",
-    "mileage": 180000,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119666981/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-gori?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_6.jpg?v=0",
-        "order": 6
-      }
-    ],
-    "imagesCount": 6
-  },
-  {
-    "id": "119612324",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2023,
-    "price": 13200,
-    "price_currency": "USD",
-    "mileage": 15200,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119612324/prodaetsya-mashini-sedan-volkswagen-jetta-2023-benzinvsprysk-tbilisi?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_12.jpg?v=0",
-        "order": 12
-      }
-    ],
-    "imagesCount": 11
-  },
-  {
-    "id": "119785658",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": 13200,
-    "price_currency": "USD",
-    "mileage": 157143,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119785658/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-batumi?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_9.jpg?v=0",
-        "order": 9
-      }
-    ],
-    "imagesCount": 9
-  },
-  {
-    "id": "119791332",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": 14000,
-    "price_currency": "USD",
-    "mileage": 77000,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119791332/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-rustavskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_15.jpg?v=0",
-        "order": 15
-      }
-    ],
-    "imagesCount": 11
-  },
-  {
-    "id": "119814371",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 113600,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119814371/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-gori?offerType=superVip&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/4/1/8/large/119814371_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/4/1/8/large/119814371_2.jpg?v=0",
-        "order": 2
-      }
-    ],
-    "imagesCount": 2
-  },
-  {
-    "id": "118547161",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 124800,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/118547161/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/7/4/5/large/118547161_10.jpg?v=0",
-        "order": 10
-      }
-    ],
-    "imagesCount": 10
-  },
-  {
-    "id": "111278143",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 70400,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/111278143/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/1/8/7/2/large/111278143_10.jpg?v=0",
-        "order": 10
-      }
-    ],
-    "imagesCount": 10
-  },
-  {
-    "id": "111860787",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 132800,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/111860787/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/7/0/6/8/large/111860787_10.jpg?v=0",
-        "order": 10
-      }
-    ],
-    "imagesCount": 10
-  },
-  {
-    "id": "116488917",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 70400,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/116488917/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/8/8/4/large/116488917_10.jpg?v=0",
-        "order": 10
-      }
-    ],
-    "imagesCount": 10
-  },
-  {
-    "id": "119260642",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 57600,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119260642/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/6/0/6/2/large/119260642_10.jpg?v=0",
-        "order": 10
-      }
-    ],
-    "imagesCount": 10
-  },
-  {
-    "id": "119793973",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 120000,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119793973/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-gori?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/9/3/9/7/large/119793973_15.jpg?v=0",
-        "order": 15
-      }
-    ],
-    "imagesCount": 11
-  },
-  {
     "id": "117553665",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 28800,
     "price_currency": "USD",
     "mileage": 41600,
     "transmission": "Автомат",
@@ -1643,7 +1385,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 28800,
     "price_currency": "USD",
     "mileage": 96000,
     "transmission": "Автомат",
@@ -1701,7 +1443,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 28800,
     "price_currency": "USD",
     "mileage": 104000,
     "transmission": "Автомат",
@@ -1763,7 +1505,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 29400,
     "price_currency": "USD",
     "mileage": 104000,
     "transmission": "Автомат",
@@ -1821,7 +1563,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 29400,
     "price_currency": "USD",
     "mileage": 97600,
     "transmission": "Автомат",
@@ -1879,7 +1621,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 29700,
     "price_currency": "USD",
     "mileage": 63000,
     "transmission": "Автомат",
@@ -1937,7 +1679,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 29700,
     "price_currency": "USD",
     "mileage": 100800,
     "transmission": "Автомат",
@@ -1995,7 +1737,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 29700,
     "price_currency": "USD",
     "mileage": 148800,
     "transmission": "Автомат",
@@ -2053,7 +1795,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 29700,
     "price_currency": "USD",
     "mileage": 148800,
     "transmission": "Автомат",
@@ -2111,7 +1853,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 30500,
     "price_currency": "USD",
     "mileage": 92800,
     "transmission": "Автомат",
@@ -2164,12 +1906,70 @@
     "imagesCount": 10
   },
   {
+    "id": "114850715",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 30500,
+    "price_currency": "USD",
+    "mileage": 24000,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/114850715/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/0/5/8/large/114850715_10.jpg?v=0",
+        "order": 10
+      }
+    ],
+    "imagesCount": 10
+  },
+  {
     "id": "118863190",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 30500,
     "price_currency": "USD",
     "mileage": 74000,
     "transmission": "Автомат",
@@ -2231,7 +2031,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 31000,
     "price_currency": "USD",
     "mileage": 50000,
     "transmission": "Автомат",
@@ -2289,7 +2089,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 31000,
     "price_currency": "USD",
     "mileage": 44000,
     "transmission": "Автомат",
@@ -2347,7 +2147,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 31000,
     "price_currency": "USD",
     "mileage": 115200,
     "transmission": "Автомат",
@@ -2405,7 +2205,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 31000,
     "price_currency": "USD",
     "mileage": 121600,
     "transmission": "Автомат",
@@ -2463,7 +2263,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 31500,
     "price_currency": "USD",
     "mileage": 29000,
     "transmission": "Автомат",
@@ -2525,7 +2325,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 31800,
     "price_currency": "USD",
     "mileage": 68800,
     "transmission": "Автомат",
@@ -2583,7 +2383,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32100,
     "price_currency": "USD",
     "mileage": 48000,
     "transmission": "Автомат",
@@ -2641,7 +2441,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32400,
     "price_currency": "USD",
     "mileage": 60800,
     "transmission": "Автомат",
@@ -2699,7 +2499,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32400,
     "price_currency": "USD",
     "mileage": 140800,
     "transmission": "Автомат",
@@ -2757,7 +2557,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32400,
     "price_currency": "USD",
     "mileage": 131200,
     "transmission": "Автомат",
@@ -2815,7 +2615,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32400,
     "price_currency": "USD",
     "mileage": 124800,
     "transmission": "Автомат",
@@ -2873,7 +2673,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32400,
     "price_currency": "USD",
     "mileage": 142400,
     "transmission": "Автомат",
@@ -2930,12 +2730,54 @@
     "imagesCount": 11
   },
   {
+    "id": "119666981",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 32400,
+    "price_currency": "USD",
+    "mileage": 180000,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119666981/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-gori?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/9/6/6/6/large/119666981_6.jpg?v=0",
+        "order": 6
+      }
+    ],
+    "imagesCount": 6
+  },
+  {
     "id": "119789379",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 32400,
     "price_currency": "USD",
     "mileage": 105579,
     "transmission": "Автомат",
@@ -2997,7 +2839,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 33200,
     "price_currency": "USD",
     "mileage": 84800,
     "transmission": "Автомат",
@@ -3055,7 +2897,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 33700,
     "price_currency": "USD",
     "mileage": 20800,
     "transmission": "Автомат",
@@ -3113,7 +2955,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 33700,
     "price_currency": "USD",
     "mileage": 41600,
     "transmission": "Автомат",
@@ -3171,7 +3013,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 33700,
     "price_currency": "USD",
     "mileage": 78000,
     "transmission": "Автомат",
@@ -3233,7 +3075,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 33700,
     "price_currency": "USD",
     "mileage": 142400,
     "transmission": "Автомат",
@@ -3291,7 +3133,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 33700,
     "price_currency": "USD",
     "mileage": 82000,
     "transmission": "Автомат",
@@ -3353,7 +3195,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 34000,
     "price_currency": "USD",
     "mileage": 73600,
     "transmission": "Автомат",
@@ -3411,7 +3253,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 34500,
     "price_currency": "USD",
     "mileage": 20000,
     "transmission": "Автомат",
@@ -3469,7 +3311,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 35000,
     "price_currency": "USD",
     "mileage": 66000,
     "transmission": "Автомат",
@@ -3527,7 +3369,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 35000,
     "price_currency": "USD",
     "mileage": 75200,
     "transmission": "Автомат",
@@ -3585,7 +3427,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 35000,
     "price_currency": "USD",
     "mileage": 97600,
     "transmission": "Автомат",
@@ -3643,7 +3485,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 35000,
     "price_currency": "USD",
     "mileage": 121600,
     "transmission": "Автомат",
@@ -3701,7 +3543,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 35000,
     "price_currency": "USD",
     "mileage": 96000,
     "transmission": "Автомат",
@@ -3759,7 +3601,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 35000,
     "price_currency": "USD",
     "mileage": 172800,
     "transmission": "Автомат",
@@ -3804,12 +3646,74 @@
     "imagesCount": 8
   },
   {
+    "id": "119612324",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2023,
+    "price": 35000,
+    "price_currency": "USD",
+    "mileage": 15200,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119612324/prodaetsya-mashini-sedan-volkswagen-jetta-2023-benzinvsprysk-tbilisi?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/2/1/6/large/119612324_12.jpg?v=0",
+        "order": 12
+      }
+    ],
+    "imagesCount": 11
+  },
+  {
     "id": "119643668",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 35000,
     "price_currency": "USD",
     "mileage": 63000,
     "transmission": "Автомат",
@@ -3862,12 +3766,66 @@
     "imagesCount": 10
   },
   {
+    "id": "119785658",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 35000,
+    "price_currency": "USD",
+    "mileage": 157143,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119785658/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-batumi?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/5/8/7/large/119785658_9.jpg?v=0",
+        "order": 9
+      }
+    ],
+    "imagesCount": 9
+  },
+  {
     "id": "110548171",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 35900,
     "price_currency": "USD",
     "mileage": 66000,
     "transmission": "Автомат",
@@ -3925,7 +3883,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36400,
     "price_currency": "USD",
     "mileage": 79000,
     "transmission": "Автомат",
@@ -3983,7 +3941,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36400,
     "price_currency": "USD",
     "mileage": 107200,
     "transmission": "Автомат",
@@ -4041,7 +3999,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36400,
     "price_currency": "USD",
     "mileage": 136000,
     "transmission": "Автомат",
@@ -4099,7 +4057,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36400,
     "price_currency": "USD",
     "mileage": 124000,
     "transmission": "Автомат",
@@ -4157,7 +4115,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36400,
     "price_currency": "USD",
     "mileage": 129600,
     "transmission": "Автомат",
@@ -4215,7 +4173,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36400,
     "price_currency": "USD",
     "mileage": 73600,
     "transmission": "Автомат",
@@ -4268,12 +4226,38 @@
     "imagesCount": 10
   },
   {
+    "id": "119814371",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 36400,
+    "price_currency": "USD",
+    "mileage": 113600,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119814371/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-gori?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/4/1/8/large/119814371_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/3/4/1/8/large/119814371_2.jpg?v=0",
+        "order": 2
+      }
+    ],
+    "imagesCount": 2
+  },
+  {
     "id": "119565602",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36700,
     "price_currency": "USD",
     "mileage": 36800,
     "transmission": "Автомат",
@@ -4331,7 +4315,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 36900,
     "price_currency": "USD",
     "mileage": 64000,
     "transmission": "Автомат",
@@ -4389,7 +4373,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 37200,
     "price_currency": "USD",
     "mileage": 99200,
     "transmission": "Автомат",
@@ -4447,7 +4431,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 37200,
     "price_currency": "USD",
     "mileage": 61000,
     "transmission": "Автомат",
@@ -4480,12 +4464,136 @@
     "imagesCount": 5
   },
   {
+    "id": "119791332",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 37200,
+    "price_currency": "USD",
+    "mileage": 77000,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119791332/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-rustavskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/1/9/7/large/119791332_15.jpg?v=0",
+        "order": 15
+      }
+    ],
+    "imagesCount": 11
+  },
+  {
+    "id": "119236090",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 37500,
+    "price_currency": "USD",
+    "mileage": 58000,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119236090/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-tbilisi?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/6/3/2/large/119236090_12.jpg?v=0",
+        "order": 12
+      }
+    ],
+    "imagesCount": 11
+  },
+  {
     "id": "110258331",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 37700,
     "price_currency": "USD",
     "mileage": 108800,
     "transmission": "Автомат",
@@ -4519,7 +4627,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 37700,
     "price_currency": "USD",
     "mileage": 89120,
     "transmission": "Автомат",
@@ -4577,7 +4685,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 37700,
     "price_currency": "USD",
     "mileage": 132800,
     "transmission": "Автомат",
@@ -4623,7 +4731,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 37700,
     "price_currency": "USD",
     "mileage": 108800,
     "transmission": "Автомат",
@@ -4676,12 +4784,70 @@
     "imagesCount": 10
   },
   {
+    "id": "119822414",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 37700,
+    "price_currency": "USD",
+    "mileage": 120000,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119822414/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/2/2/8/large/119822414_10.jpg?v=0",
+        "order": 10
+      }
+    ],
+    "imagesCount": 10
+  },
+  {
     "id": "119514886",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 38300,
     "price_currency": "USD",
     "mileage": 54400,
     "transmission": "Автомат",
@@ -4743,7 +4909,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39100,
     "price_currency": "USD",
     "mileage": 12000,
     "transmission": "Автомат",
@@ -4805,7 +4971,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39100,
     "price_currency": "USD",
     "mileage": 108800,
     "transmission": "Автомат",
@@ -4863,7 +5029,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39100,
     "price_currency": "USD",
     "mileage": 131200,
     "transmission": "Автомат",
@@ -4921,7 +5087,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39100,
     "price_currency": "USD",
     "mileage": 51200,
     "transmission": "Автомат",
@@ -4979,7 +5145,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39100,
     "price_currency": "USD",
     "mileage": 172800,
     "transmission": "Автомат",
@@ -5041,7 +5207,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39100,
     "price_currency": "USD",
     "mileage": 63000,
     "transmission": "Автомат",
@@ -5075,7 +5241,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39900,
     "price_currency": "USD",
     "mileage": 31000,
     "transmission": "Автомат",
@@ -5133,7 +5299,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 39900,
     "price_currency": "USD",
     "mileage": 86400,
     "transmission": "Автомат",
@@ -5191,7 +5357,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 40200,
     "price_currency": "USD",
     "mileage": 35000,
     "transmission": "Автомат",
@@ -5249,7 +5415,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 40400,
     "price_currency": "USD",
     "mileage": 86400,
     "transmission": "Автомат",
@@ -5307,7 +5473,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 40400,
     "price_currency": "USD",
     "mileage": 51200,
     "transmission": "Автомат",
@@ -5365,7 +5531,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 40400,
     "price_currency": "USD",
     "mileage": 73000,
     "transmission": "Автомат",
@@ -5427,7 +5593,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 40400,
     "price_currency": "USD",
     "mileage": 118400,
     "transmission": "Автомат",
@@ -5489,7 +5655,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 41000,
     "price_currency": "USD",
     "mileage": 48000,
     "transmission": "Автомат",
@@ -5547,7 +5713,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 41800,
     "price_currency": "USD",
     "mileage": 75200,
     "transmission": "Автомат",
@@ -5605,7 +5771,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 41800,
     "price_currency": "USD",
     "mileage": 65600,
     "transmission": "Автомат",
@@ -5663,7 +5829,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 41800,
     "price_currency": "USD",
     "mileage": 27200,
     "transmission": "Автомат",
@@ -5721,7 +5887,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 41800,
     "price_currency": "USD",
     "mileage": 65600,
     "transmission": "Автомат",
@@ -5779,7 +5945,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 41800,
     "price_currency": "USD",
     "mileage": 94400,
     "transmission": "Автомат",
@@ -5841,7 +6007,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 42300,
     "price_currency": "USD",
     "mileage": 94400,
     "transmission": "Автомат",
@@ -5903,7 +6069,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 43100,
     "price_currency": "USD",
     "mileage": 124800,
     "transmission": "Автомат",
@@ -5965,7 +6131,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 43100,
     "price_currency": "USD",
     "mileage": 97600,
     "transmission": "Автомат",
@@ -6022,120 +6188,58 @@
     "imagesCount": 11
   },
   {
-    "id": "119340916",
+    "id": "119822471",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 43100,
     "price_currency": "USD",
-    "mileage": 107200,
+    "mileage": 124800,
     "transmission": "Автомат",
     "vin": "",
-    "url": "https://myauto.ge/ru/pr/119340916/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-rustavskij-avtorynok?offerType=basic&source=search",
+    "url": "https://myauto.ge/ru/pr/119822471/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_1.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_1.jpg?v=0",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_2.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_2.jpg?v=0",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_3.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_3.jpg?v=0",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_4.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_4.jpg?v=0",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_5.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_5.jpg?v=0",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_6.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_6.jpg?v=0",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_7.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_7.jpg?v=0",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_8.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_8.jpg?v=0",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_9.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_9.jpg?v=0",
         "order": 9
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/4/3/large/119340916_15.jpg?v=0",
-        "order": 15
-      }
-    ],
-    "imagesCount": 11
-  },
-  {
-    "id": "119346475",
-    "brand": "Volkswagen",
-    "model": "Jetta",
-    "fullName": "Volkswagen Jetta",
-    "year": 2021,
-    "price": null,
-    "price_currency": "USD",
-    "mileage": 44800,
-    "transmission": "Автомат",
-    "vin": "",
-    "url": "https://myauto.ge/ru/pr/119346475/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-kavkazskij-avtorynok?offerType=basic&source=search",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/4/6/4/3/large/119346475_10.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/4/2/2/8/large/119822471_10.jpg?v=0",
         "order": 10
       }
     ],
@@ -6147,7 +6251,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 45300,
     "price_currency": "USD",
     "mileage": 112000,
     "transmission": "Автомат",
@@ -6209,7 +6313,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 45600,
     "price_currency": "USD",
     "mileage": 60800,
     "transmission": "Автомат",
@@ -6271,7 +6375,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 46900,
     "price_currency": "USD",
     "mileage": 48000,
     "transmission": "Автомат",
@@ -6333,7 +6437,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2022,
-    "price": null,
+    "price": 47200,
     "price_currency": "USD",
     "mileage": 19200,
     "transmission": "Автомат",
@@ -6391,7 +6495,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 47700,
     "price_currency": "USD",
     "mileage": 78000,
     "transmission": "Автомат",
@@ -6453,7 +6557,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 48000,
     "price_currency": "USD",
     "mileage": 171200,
     "transmission": "Автомат",
@@ -6515,7 +6619,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 49900,
     "price_currency": "USD",
     "mileage": 76800,
     "transmission": "Автомат",
@@ -6577,7 +6681,7 @@
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 49900,
     "price_currency": "USD",
     "mileage": 94400,
     "transmission": "Автомат",
@@ -6634,12 +6738,74 @@
     "imagesCount": 11
   },
   {
+    "id": "119827469",
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "fullName": "Volkswagen Jetta",
+    "year": 2021,
+    "price": 49900,
+    "price_currency": "USD",
+    "mileage": 78400,
+    "transmission": "Автомат",
+    "vin": "",
+    "url": "https://myauto.ge/ru/pr/119827469/prodaetsya-mashini-sedan-volkswagen-jetta-2021-benzinvsprysk-rustavskij-avtorynok?offerType=basic&source=search",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/4/7/2/8/large/119827469_15.jpg?v=0",
+        "order": 15
+      }
+    ],
+    "imagesCount": 11
+  },
+  {
     "id": "119791575",
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
     "year": 2021,
-    "price": null,
+    "price": 52000,
     "price_currency": "USD",
     "mileage": 55000,
     "transmission": "Автомат",
