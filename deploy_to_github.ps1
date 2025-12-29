@@ -11,7 +11,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "🚀 Начинаем загрузку сайта CarExport на GitHub..." -ForegroundColor Green
+Write-Host "🚀 Начинаем загрузку сайта EXPO MIR на GitHub..." -ForegroundColor Green
 
 # Проверяем наличие Git
 try {
@@ -38,7 +38,7 @@ git add .
 $status = git status --porcelain
 if ($status) {
     Write-Host "📝 Создание коммита..." -ForegroundColor Yellow
-    git commit -m "Update CarExport website with new features and logo"
+    git commit -m "Update EXPO MIR website with new features and logo"
 } else {
     Write-Host "ℹ️ Нет изменений для коммита" -ForegroundColor Blue
 }
@@ -90,7 +90,7 @@ try {
 }
 
 Write-Host ""
-Write-Host "📞 Контакты CarExport:" -ForegroundColor Green
+Write-Host "📞 Контакты EXPO MIR:" -ForegroundColor Green
 Write-Host "   Телефон: +7 (915) 444-12-08" -ForegroundColor Gray
 Write-Host "   Email: carexportgeo@bk.ru" -ForegroundColor Gray
 

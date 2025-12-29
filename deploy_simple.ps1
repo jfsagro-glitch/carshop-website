@@ -33,7 +33,7 @@ Write-Host "All files added." -ForegroundColor Green
 
 # Commit changes
 Write-Host "Committing changes..."
-git commit -m "Initial commit: CarExport website deployment"
+git commit -m "Initial commit: EXPO MIR website deployment"
 Write-Host "Changes committed." -ForegroundColor Green
 
 # Set remote origin

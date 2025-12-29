@@ -13,7 +13,7 @@ const state = {
 };
 
 const numberFormatter = new Intl.NumberFormat('ru-RU');
-const formatCurrency = (value) => `${numberFormatter.format(Math.round(value))} ₽`;
+const formatCurrency = (value) => `$${numberFormatter.format(Math.round(value))}`;
 
 // Функция для создания галереи с реальными фотографиями
 function createCarGallery(car) {
@@ -509,7 +509,7 @@ function initializeApp() {
 }
 
 function buildSvgPlaceholder(title) {
-    const safeTitle = (title || 'CarExport').replace(/[<>&]/g, char => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[char]));
+    const safeTitle = (title || 'EXPO MIR').replace(/[<>&]/g, char => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[char]));
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#1f2937"/></linearGradient></defs><rect width="1600" height="900" fill="url(#grad)"/><text x="50%" y="50%" fill="#374151" font-family="Inter,Arial,sans-serif" font-size="96" text-anchor="middle" dominant-baseline="middle">${safeTitle}</text></svg>`;
     try {
         if (typeof window !== 'undefined' && window.btoa) {
@@ -523,7 +523,7 @@ function buildSvgPlaceholder(title) {
 
 function attachImageFallback(imageEl, car) {
     if (!imageEl) return;
-    const fallbackTitle = (car && (car.name || `${car.brand || ''} ${car.model || ''}`.trim())) || 'CarExport';
+    const fallbackTitle = (car && (car.name || `${car.brand || ''} ${car.model || ''}`.trim())) || 'EXPO MIR';
     const fallbackUrl = buildSvgPlaceholder(fallbackTitle);
     imageEl.addEventListener('error', () => {
         if (imageEl.dataset.fallbackApplied) return;
@@ -2496,7 +2496,7 @@ function showCarDetails(carId) {
         <div style="text-align: center; padding: 2rem; background: #1f2937; border-radius: 8px; border: 1px solid #374151;">
             <h3 style="color: #f3f4f6; margin-bottom: 1rem;">${formatCurrency(car.price)}</h3>
             <p style="color: #10b981; margin-bottom: 1rem; font-weight: 500;">
-                <i class="fas fa-check-circle"></i> Цена включает растаможку и доставку по России
+                <i class="fas fa-check-circle"></i> Цена включает растаможку и доставку
             </p>
             <p style="color: #9ca3af; margin-bottom: 1.5rem;">Никаких дополнительных платежей!</p>
             ${car.sold ? `
@@ -2626,7 +2626,7 @@ function setupEventListeners() {
         // Собираем заказ
         const total = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         const items = state.cart.map(i => `${i.year} ${i.brand} ${i.model} — ${i.quantity} шт. — ${formatCurrency(i.price)}`).join('\n');
-        const message = `Новый заказ с сайта CarExport\n\nИмя: ${name}\nТелефон: ${phone}\nEmail: ${email}\n\nТовары:\n${items}\n\nИтого: ${formatCurrency(total)}`;
+        const message = `Новый заказ с сайта EXPO MIR\n\nИмя: ${name}\nТелефон: ${phone}\nEmail: ${email}\n\nТовары:\n${items}\n\nИтого: ${formatCurrency(total)}`;
 
         // Пытаемся отправить через FormSubmit (без сервера)
         try{
@@ -2771,9 +2771,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         payload.append('name', name);
         payload.append('phone', phone);
         if (email) payload.append('email', email);
-        payload.append('message', `Марка: ${brand}\nМодель: ${model}\nГод: ${yf || '-'} - ${yt || '-'}\nБюджет до: ${pt || '-'} ₽\nПримечание: ${note || '-'}`);
+        payload.append('message', `Марка: ${brand}\nМодель: ${model}\nГод: ${yf || '-'} - ${yt || '-'}\nБюджет до: ${pt || '-'} $\nПримечание: ${note || '-'}`);
         payload.append('_captcha','false');
-        payload.append('_subject','Заявка на подбор (сайт CarExport)');
+        payload.append('_subject','Заявка на подбор (сайт EXPO MIR)');
 
         const resp = await fetch('https://formsubmit.co/carexportgeo@bk.ru', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: payload});
         const s = document.getElementById('requestStatus');

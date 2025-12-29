@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Заказ автомобилей из Европы - CarExport</title>
+    <title>Заказ автомобилей из Европы - EXPO MIR</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -575,8 +575,8 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="images/logo.png" alt="CarExport" class="logo-img">
-                    <span>CarExport</span>
+                    <img src="images/logo.png" alt="EXPO MIR" class="logo-img">
+                    <span>EXPO MIR</span>
                 </div>
                 <nav class="nav">
                     <a href="index.html#catalog">Грузия</a>
@@ -1305,7 +1305,7 @@
                         <input type="number" id="reqYearTo" placeholder="2024" min="1990" max="2100">
                     </div>
                     <div class="calc-row">
-                        <label for="reqPriceTo">Стоимость (до), ₽</label>
+                        <label for="reqPriceTo">Стоимость (до), $</label>
                         <input type="number" id="reqPriceTo" placeholder="3000000" min="0" step="1000">
                     </div>
                     <div class="calc-row calc-row--full">
@@ -1484,8 +1484,8 @@
             });
             
             // Формируем текст письма
-            const subject = `Новый заказ с сайта CarExport - ${name}`;
-            const body = `Новый заказ с сайта CarExport\n\n` +
+            const subject = `Новый заказ с сайта EXPO MIR - ${name}`;
+            const body = `Новый заказ с сайта EXPO MIR\n\n` +
                 `КОНТАКТНЫЕ ДАННЫЕ:\n` +
                 `Имя: ${name}\n` +
                 `Телефон: ${phone}\n` +
@@ -1624,7 +1624,7 @@
                 return false;
             }
             
-            const telegramMessage = `🚗 *Новый заказ с сайта CarExport*\n\n` +
+            const telegramMessage = `🚗 *Новый заказ с сайта EXPO MIR*\n\n` +
                 `👤 *Контактные данные:*\n` +
                 `Имя: ${name}\n` +
                 `Телефон: ${phone}\n` +
@@ -1711,7 +1711,7 @@
                         </div>
                         <div style="text-align: right; margin-right: 1rem;">
                             <div style="color: #facc15; font-weight: 600; font-size: 1.1rem;">
-                                ${itemTotal.toLocaleString('ru-RU')} ${item.source === 'europe' ? '€' : '₽'}
+                                ${itemTotal.toLocaleString('ru-RU')} ${item.source === 'europe' ? '€' : '$'}
                             </div>
                         </div>
                         <button onclick="removeFromCartEurope('${item.id}')" style="background: #ef4444; color: white; border: none; padding: 0.5rem; border-radius: 4px; cursor: pointer;">
