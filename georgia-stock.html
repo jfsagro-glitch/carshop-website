@@ -740,7 +740,49 @@
             return [...cars].sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
         }
 
-        // Убраны функции конвертации в рубли - используем только доллары
+        // Глобальная переменная для курса USD/RUB от ЦБ РФ
+        let usdToRubRate = null;
+
+        // Загрузка курса USD/RUB от ЦБ РФ
+        async function fetchUsdToRubRate() {
+            if (usdToRubRate) return usdToRubRate; // Уже загружен
+            
+            try {
+                const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+                if (response.ok) {
+                    const data = await response.json();
+                    const usdRate = data.Valute?.USD;
+                    if (usdRate && usdRate.Value) {
+                        usdToRubRate = usdRate.Value;
+                        return usdToRubRate;
+                    }
+                }
+            } catch (error) {
+                // Fallback курс если API недоступен
+            }
+            
+            // Fallback курс если API недоступен
+            usdToRubRate = 92.0;
+            return usdToRubRate;
+        }
+
+        // Конвертация рублей в доллары
+        function convertRubToUsd(rubValue) {
+            if (!usdToRubRate) {
+                return rubValue; // Если курс еще не загружен, возвращаем как есть
+            }
+            return Math.round(rubValue / usdToRubRate);
+        }
+
+        // Определение, является ли значение ценой в рублях (обычно > 10000 и валюта не указана или RUB)
+        function isPriceInRubles(value, currency) {
+            // Если валюта явно указана как USD или EUR, не конвертируем
+            if (currency === 'USD' || currency === 'EUR') {
+                return false;
+            }
+            // Если значение > 10000 и валюта не USD/EUR, считаем что это рубли
+            return value && value > 10000;
+        }
 
         // Загрузка данных
         async function loadCarsData() {
@@ -752,18 +794,24 @@
                 
                 if (carsResult[0].status === 'fulfilled' && carsResult[0].value.ok) {
                     carsData = await carsResult[0].value.json();
-            filteredCars = [...carsData];
-            
-            // Используем оптимизированную функцию сортировки
-            filteredCars = sortCars(carsData);
-            
-            // Если курс не загрузился, попробуем еще раз
-            if (!usdToRubRate) {
-                await fetchUsdToRubRate();
-            }
-            initializePage();
+                    filteredCars = [...carsData];
+                    
+                    // Используем оптимизированную функцию сортировки
+                    filteredCars = sortCars(carsData);
+                    
+                    // Загружаем курс USD/RUB для конвертации рублей в доллары
+                    await fetchUsdToRubRate();
+                    
+                    // Обновляем отображение после загрузки курса
+                    initializePage();
+                    
+                    // Перерисовываем автомобили с правильными ценами
+                    displayCars();
                 } else {
-                    getElement('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
+                    const carsGrid = getElement('cars-grid');
+                    if (carsGrid) {
+                        carsGrid.innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
+                    }
                 }
             } catch (error) {
                 // Убрали console.error для production
@@ -1042,9 +1090,18 @@
                 const imageCount = images.length;
                 // кешируем отфильтрованные изображения для модалки
                 car._filteredImages = images;
-                // Определяем валюту (USD для Грузии, EUR для Европы)
-                const currency = car.price_currency === 'USD' ? '$' : (car.price_currency === 'EUR' ? '€' : '$');
-                const price = car.price ? `${car.price.toLocaleString('ru-RU')} ${currency}` : 'Цена по запросу';
+                // Определяем валюту и конвертируем рубли в доллары если нужно
+                let displayPrice = car.price;
+                let currency = car.price_currency || 'USD';
+                
+                // Если цена в рублях (больше 10000 и валюта не USD/EUR), конвертируем в доллары
+                if (isPriceInRubles(car.price, currency) && usdToRubRate) {
+                    displayPrice = convertRubToUsd(car.price);
+                    currency = 'USD';
+                }
+                
+                const currencySymbol = currency === 'USD' ? '$' : (currency === 'EUR' ? '€' : '$');
+                const price = displayPrice ? `${currencySymbol}${displayPrice.toLocaleString('ru-RU')}` : 'Цена по запросу';
                 
                 // Получаем год выпуска
                 const year = getCarYear(car);
@@ -1065,9 +1122,9 @@
                         <div class="car-info">
                             <div class="car-title">${car.brand} ${car.model}${yearDisplay}</div>
                             <div class="car-price">${price}</div>
-                            ${car.price ? `<div class="car-price-full">
+                            ${displayPrice ? `<div class="car-price-full">
                                 <span class="car-price-full-label">Стоимость с доставкой и растаможкой:</span>
-                                <span class="car-price-full-value" id="full-price-${index}">${car.price ? '$' + car.price.toLocaleString('ru-RU') : '—'}</span>
+                                <span class="car-price-full-value" id="full-price-${index}">${currencySymbol}${displayPrice.toLocaleString('ru-RU')}</span>
                             </div>` : ''}
                             <div class="car-specs">
                                 ${year ? `<div class="car-spec-item">📅 ${year} год</div>` : ''}
