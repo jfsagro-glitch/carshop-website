@@ -589,8 +589,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 });
 
 function initializeApp() {
-    loadCars();
-    populateBrandFilter();
+    // loadCars(); // Отключено - каталог перенесен на страницу Грузия-сток
+    // populateBrandFilter(); // Отключено вместе с каталогом
     updateCartCount();
     setupEventListeners();
     loadUsaOrdersSection();
