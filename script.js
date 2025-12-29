@@ -13,7 +13,93 @@ const state = {
 };
 
 const numberFormatter = new Intl.NumberFormat('ru-RU');
-const formatCurrency = (value) => `$${numberFormatter.format(Math.round(value))}`;
+
+// Глобальная переменная для курса USD/RUB от ЦБ РФ
+let usdToRubRate = null;
+
+// Загрузка курса USD/RUB от ЦБ РФ при загрузке страницы
+async function loadUsdToRubRate() {
+    if (usdToRubRate) return usdToRubRate; // Уже загружен
+    
+    try {
+        const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+        if (response.ok) {
+            const data = await response.json();
+            const usdRate = data.Valute?.USD;
+            if (usdRate && usdRate.Value) {
+                usdToRubRate = usdRate.Value;
+                return usdToRubRate;
+            }
+        }
+    } catch (error) {
+        console.warn('Не удалось загрузить курс ЦБ, используем fallback');
+    }
+    
+    // Fallback курс если API недоступен
+    usdToRubRate = 92.0;
+    return usdToRubRate;
+}
+
+// Конвертация рублей в доллары
+function convertRubToUsd(rubValue) {
+    if (!usdToRubRate) {
+        // Если курс еще не загружен, возвращаем значение как есть (будет обновлено после загрузки курса)
+        return rubValue;
+    }
+    return Math.round(rubValue / usdToRubRate);
+}
+
+// Определение, является ли значение ценой в рублях (обычно > 10000)
+function isPriceInRubles(value) {
+    return value && value > 10000;
+}
+
+// Форматирование валюты с автоматической конвертацией рублей в доллары
+const formatCurrency = (value) => {
+    if (!value || value <= 0) return '$0';
+    
+    // Если значение похоже на рубли (> 10000), конвертируем в доллары
+    let usdValue = value;
+    if (isPriceInRubles(value) && usdToRubRate) {
+        usdValue = convertRubToUsd(value);
+    }
+    
+    return `$${numberFormatter.format(Math.round(usdValue))}`;
+};
+
+// Функция для обновления всех отображаемых цен после загрузки курса
+function updateAllDisplayedPrices() {
+    if (!usdToRubRate) return; // Курс еще не загружен
+    
+    // Обновляем цены в карточках автомобилей
+    document.querySelectorAll('.car-price').forEach(el => {
+        const text = el.textContent.trim();
+        // Извлекаем число из текста (может быть в рублях)
+        const match = text.match(/[\d\s,]+/);
+        if (match) {
+            const numStr = match[0].replace(/[\s,]/g, '');
+            const num = parseInt(numStr);
+            if (num && isPriceInRubles(num)) {
+                const usdValue = convertRubToUsd(num);
+                el.textContent = formatCurrency(usdValue);
+            }
+        }
+    });
+    
+    // Обновляем цены в корзине
+    updateCartModal();
+    
+    // Обновляем метрики (если есть)
+    if (typeof updateUsaMetrics === 'function') {
+        updateUsaMetrics();
+    }
+    if (typeof updateChinaMetrics === 'function') {
+        updateChinaMetrics();
+    }
+    if (typeof updateKoreaMetrics === 'function') {
+        updateKoreaMetrics();
+    }
+}
 
 // Функция для создания галереи с реальными фотографиями
 function createCarGallery(car) {
@@ -490,8 +576,16 @@ const carsData = [
 state.filteredCars = [...carsData];
 
 // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїСЂРё Р·Р°РіСЂСѓР·РєРµ СЃС‚СЂР°РЅРёС†С‹
-document.addEventListener('DOMContentLoaded', function() {
+// Загружаем курс USD/RUB при загрузке страницы
+document.addEventListener('DOMContentLoaded', async function() {
+    // Загружаем курс USD/RUB в фоне
+    await loadUsdToRubRate();
+    
+    // Инициализируем приложение
     initializeApp();
+    
+    // Обновляем все отображаемые цены после загрузки курса
+    updateAllDisplayedPrices();
 });
 
 function initializeApp() {
