@@ -551,10 +551,30 @@
                 
                 const placeholderSvg = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27200%27%3E%3Crect fill=%27%23ddd%27 width=%27300%27 height=%27200%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27%3E%D0%9D%D0%B5%D1%82 %D1%84%D0%BE%D1%82%D0%BE%3C/text%3E%3C/svg%3E';
                 
+                const carId = `car-${index}`;
+                const imagesHtml = images.length > 0 ? images.map((img, imgIdx) => 
+                    `<img class="car-gallery-img ${imgIdx === 0 ? 'active' : ''}" 
+                          src="${img.url.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" 
+                          alt="${(car.brand + ' ' + car.model + yearDisplay).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" 
+                          data-index="${imgIdx}"
+                          loading="${imgIdx === 0 ? 'eager' : 'lazy'}"
+                          onerror="this.onerror=null;this.src=&quot;${placeholderSvg}&quot;">`
+                ).join('') : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>`;
+                
                 return `
                     <div class="car-card" data-index="${index}">
-                        <div class="car-image">
-                            ${firstImage ? `<img src="${firstImage.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model + yearDisplay).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src=&quot;${placeholderSvg}&quot;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
+                        <div class="car-image" data-car-id="${carId}">
+                            <div class="car-gallery-container">
+                                ${imagesHtml}
+                            </div>
+                            ${imageCount > 1 ? `
+                                <button class="gallery-arrow gallery-arrow-prev" onclick="changeCarImage('${carId}', -1)" aria-label="Предыдущее фото">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="gallery-arrow gallery-arrow-next" onclick="changeCarImage('${carId}', 1)" aria-label="Следующее фото">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            ` : ''}
                             ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
                         </div>
                         <div class="car-info">
