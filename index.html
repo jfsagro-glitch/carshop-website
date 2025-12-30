@@ -529,20 +529,30 @@
             
             const images = carImageContainer.querySelectorAll('.car-gallery-img');
             if (!images || images.length <= 1) {
+                console.warn('Not enough images:', images ? images.length : 0);
                 return false;
             }
             
             let currentIndex = -1;
             images.forEach((img, idx) => {
-                if (img.classList.contains('active') || img.style.display === 'block') {
+                const style = window.getComputedStyle(img);
+                if (img.classList.contains('active') || img.style.display === 'block' || style.display !== 'none') {
                     currentIndex = idx;
                 }
             });
             
             if (currentIndex === -1) {
+                // Если нет активного изображения, активируем первое
                 if (images[0]) {
                     images[0].classList.add('active');
                     images[0].style.display = 'block';
+                    images[0].style.opacity = '1';
+                    // Скрываем остальные
+                    for (let i = 1; i < images.length; i++) {
+                        images[i].classList.remove('active');
+                        images[i].style.display = 'none';
+                        images[i].style.opacity = '0';
+                    }
                 }
                 return false;
             }
