@@ -2675,7 +2675,27 @@ function showCarDetails(carId) {
     carModal.style.display = 'block';
 
     // Инициализация галереи после открытия модального окна
-    initializeGallery(car);
+    setTimeout(() => {
+        initializeGallery(car);
+        // Привязываем обработчики к кнопкам навигации после инициализации
+        const container = document.getElementById(`gallery-${car.id}`);
+        if (container) {
+            const prevBtn = container.querySelector('.gallery-prev');
+            const nextBtn = container.querySelector('.gallery-next');
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navigateGallery(car.id, 'prev');
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navigateGallery(car.id, 'next');
+                });
+            }
+        }
+    }, 100);
 }
 
 // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РЅР°РІРёРіР°С†РёРё РїРѕ РіР°Р»РµСЂРµРµ (СѓРїСЂРѕС‰РµРЅРЅР°СЏ РІРµСЂСЃРёСЏ)
