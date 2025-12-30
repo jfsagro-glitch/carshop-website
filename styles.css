@@ -87,12 +87,25 @@ body.premium .btn-secondary:hover { background: #0b1220; border-color: #2c3a52; 
     line-height: 1.1;
 }
 #openRequestBtn:hover { background: #b89324; border-color: #b89324; }
-body.premium .car-card { background: #0e1626; border-color: var(--border); box-shadow: 0 8px 20px rgba(0,0,0,.35); }
-body.premium .car-card:hover { border-color: #2b3b55; box-shadow: 0 12px 28px rgba(0,0,0,.45); }
-body.premium .car-title { color: var(--text); }
-body.premium .car-details { color: var(--muted); }
-body.premium .car-price { color: var(--text); }
-body.premium .catalog-filters { background: #0b1220; border-color: var(--border); }
+body.premium .car-card { 
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important; 
+    border-color: rgba(0, 0, 0, 0.1) !important; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04) !important; 
+}
+body.premium .car-card:hover { 
+    border-color: rgba(212, 175, 55, 0.4) !important; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(212, 175, 55, 0.2) !important; 
+    transform: translateY(-4px) !important;
+}
+body.premium .car-title { color: #1f2937 !important; font-weight: 700 !important; }
+body.premium .car-details { color: #4b5563 !important; }
+body.premium .car-price { color: #111827 !important; font-weight: 700 !important; }
+body.premium .car-price-full { color: #374151 !important; }
+body.premium .car-specs { color: #6b7280 !important; }
+body.premium .catalog-filters { 
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%) !important; 
+    border-color: rgba(0, 0, 0, 0.12) !important; 
+}
 body.premium .contact-item { background: #0b1220; border-color: var(--border); }
 /* Contacts: dark yellow text */
 body.premium .contact-item h4 { color: var(--accent); }
