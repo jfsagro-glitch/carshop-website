@@ -264,16 +264,24 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .currency-select:hover {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
-    border-color: rgba(0, 0, 0, 0.18) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #4b5563 0%, #6b7280 50%, #4b5563 100%) !important;
+    background-size: 200% 200% !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 20px rgba(107, 114, 128, 0.4) !important;
+    transform: translateY(-2px) scale(1.02);
+    animation-duration: 2s !important;
+}
+
+.currency-select:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 .currency-select:focus {
     outline: none;
-    border-color: #d4af37 !important;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    animation-duration: 1.5s !important;
 }
 
 .language-selector {
@@ -300,16 +308,24 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .language-select:hover {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
-    border-color: rgba(0, 0, 0, 0.18) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #4b5563 0%, #6b7280 50%, #4b5563 100%) !important;
+    background-size: 200% 200% !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 20px rgba(107, 114, 128, 0.4) !important;
+    transform: translateY(-2px) scale(1.02);
+    animation-duration: 2s !important;
+}
+
+.language-select:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 .language-select:focus {
     outline: none;
-    border-color: #d4af37 !important;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    animation-duration: 1.5s !important;
 }
 
 .cart-btn {
