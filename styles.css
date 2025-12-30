@@ -1069,19 +1069,21 @@ body.premium .footer-section a:hover { color: var(--text); }
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 100;
     transition: all 0.3s ease;
-    opacity: 0;
+    opacity: 0.7;
+    pointer-events: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .car-image:hover .gallery-arrow {
