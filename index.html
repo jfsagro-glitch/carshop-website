@@ -618,6 +618,7 @@
                           alt="${(car.brand + ' ' + car.model + yearDisplay).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" 
                           data-index="${imgIdx}"
                           loading="${imgIdx === 0 ? 'eager' : 'lazy'}"
+                          onload="this.classList.add('loaded')"
                           onerror="this.onerror=null;this.src=&quot;${placeholderSvg}&quot;">`
                 ).join('') : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>`;
                 
