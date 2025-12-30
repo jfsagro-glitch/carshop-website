@@ -63,7 +63,11 @@ const formatCurrency = (value) => {
     if (!value || value <= 0) {
         // Используем функцию из translations.js если доступна
         if (typeof formatPrice === 'function') {
-            return formatPrice(0);
+            try {
+                return formatPrice(0);
+            } catch (e) {
+                console.warn('formatPrice error:', e);
+            }
         }
         return '$0';
     }
@@ -76,7 +80,11 @@ const formatCurrency = (value) => {
     
     // Используем функцию из translations.js для форматирования с выбранной валютой
     if (typeof formatPrice === 'function') {
-        return formatPrice(usdValue);
+        try {
+            return formatPrice(usdValue);
+        } catch (e) {
+            console.warn('formatPrice error:', e);
+        }
     }
     
     // Fallback если translations.js не загружен
@@ -2002,6 +2010,16 @@ const koreaCars = [
 const koreaUnder160Cars = Array.isArray(window.koreaUnder160CarsData) ? window.koreaUnder160CarsData : [];
 
 async function loadUsaOrdersSection(){
+    // Убеждаемся, что данные загружены
+    if (typeof usaUnder160Cars === 'undefined' || !Array.isArray(usaUnder160Cars)) {
+        console.warn('usaUnder160Cars не загружены');
+        const container = document.getElementById('usaUnder160Grid');
+        if (container) {
+            container.innerHTML = '<div class="usa-empty-state">Данные загружаются...</div>';
+        }
+        return;
+    }
+    
     const metrics = document.getElementById('usaMetrics');
     if (!metrics) {
         renderPreferentialCars();
@@ -2144,6 +2162,9 @@ function loadChinaOrdersSection(){
 }
 
 function loadKoreaOrdersSection(){
+    // Сначала настраиваем секцию для автомобилей до 160 л.с.
+    setupKoreaUnder160Section();
+    
     // Проверяем наличие секции для обычных автомобилей (может отсутствовать)
     const grid = document.getElementById('koreaOrdersGrid');
     const metrics = document.getElementById('koreaMetrics');
