@@ -1091,8 +1091,60 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .request-form textarea {
-    min-height: 140px;
+    min-height: 100px;
     resize: vertical;
+}
+
+/* Стили для calc-form на index.html */
+.calc-row--full {
+    grid-column: 1 / -1;
+}
+
+.request-form__contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.request-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.request-form__field label {
+    color: #cbd5f5;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+}
+
+.request-form__field input {
+    padding: 0.65rem 0.9rem;
+    border-radius: 10px;
+    border: 1px solid #1f2937;
+    background: #0b1220;
+    color: #f3f4f6;
+    font-size: 0.95rem;
+    box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.45);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.request-form__field input:focus {
+    border-color: rgba(212, 175, 55, 0.7);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.calc-actions--full {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+}
+
+.calc-actions--full .btn-primary {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .floating-subscribe {
@@ -1453,15 +1505,17 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .modal-content {
     background-color: #1f2937;
-    margin: 8% auto;
+    margin: 5% auto;
     padding: 0;
     border-radius: 12px;
     width: 90%;
-    max-width: 600px;
-    max-height: 80vh;
+    max-width: 650px;
+    max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
     border: 1px solid #374151;
+    display: flex;
+    flex-direction: column;
 }
 
 .car-modal .modal-content {
@@ -1496,6 +1550,8 @@ body.premium .footer-section a:hover { color: var(--text); }
 .modal-body {
     padding: 1.5rem;
     color: #d1d5db;
+    overflow-y: auto;
+    flex: 1;
 }
 
 .modal-footer {
@@ -1760,6 +1816,23 @@ body.premium .footer-section a:hover { color: var(--text); }
 
     .request-form .form-row {
         grid-template-columns: 1fr;
+    }
+    
+    .request-form__contacts {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        max-height: 95vh;
+        margin: 2% auto;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+    }
+    
+    .request-form textarea {
+        min-height: 80px;
     }
 
     .floating-subscribe {
