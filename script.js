@@ -3171,6 +3171,14 @@ function getUnder160PriceValue(car){
 
 function setupChinaUnder160Section(){
     const grid = document.getElementById('chinaUnder160Grid');
+    if (!grid) return;
+
+    // Проверяем наличие данных
+    if (typeof chinaCars === 'undefined' || !Array.isArray(chinaCars) || chinaCars.length === 0) {
+        grid.innerHTML = '<div class="usa-empty-state">Нет доступных предложений</div>';
+        updateChinaUnder160Counters();
+        return;
+    }
 
     if (!state.chinaUnder160) {
         state.chinaUnder160 = {
@@ -3190,12 +3198,7 @@ function setupChinaUnder160Section(){
         state.chinaUnder160.initialized = true;
     }
 
-    if (grid) {
-        applyChinaUnder160Filters();
-    } else {
-        state.chinaUnder160.filtered = [...state.chinaUnder160.data];
-        updateChinaUnder160Counters();
-    }
+    applyChinaUnder160Filters();
 }
 
 function populateChinaUnder160Filters(){
