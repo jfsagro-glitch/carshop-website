@@ -3467,7 +3467,22 @@ function renderKoreaUnder160Cars(){
         const specs = buildUnder160CarSpecs(car);
         // Конвертируем цену из рублей в доллары если нужно
         let priceValue = getUnder160PriceValue(car);
-        const priceLabel = car.priceLabel || (priceValue ? formatCurrency(priceValue) : 'Цена по запросу');
+        
+        // Обрабатываем priceLabel: если он содержит рубли, конвертируем в доллары
+        let priceLabel = car.priceLabel;
+        if (priceLabel && priceLabel.includes('₽')) {
+            // Извлекаем число из priceLabel (убираем пробелы и ₽)
+            const priceMatch = priceLabel.match(/[\d\s]+/);
+            if (priceMatch) {
+                const priceNum = parseInt(priceMatch[0].replace(/\s/g, ''), 10);
+                if (priceNum && priceNum > 10000 && usdToRubRate) {
+                    const usdPrice = convertRubToUsd(priceNum);
+                    priceLabel = formatCurrency(usdPrice);
+                }
+            }
+        } else if (!priceLabel) {
+            priceLabel = priceValue ? formatCurrency(priceValue) : 'Цена по запросу';
+        }
         const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
         const utilBadge = '<span class="util-badge">льготный утильсбор</span>';
         const descriptionHtml = car.description ? `<p class="orders-card-desc">${utilBadge} ${car.description}</p>` : `<p class="orders-card-desc">${utilBadge}</p>`;
