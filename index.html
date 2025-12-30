@@ -532,7 +532,11 @@
                 }
             });
             
-            if (currentIndex === -1) return;
+            if (currentIndex === -1) {
+                // Если нет активного изображения, делаем первое активным
+                images[0].classList.add('active');
+                currentIndex = 0;
+            }
             
             // Убираем активный класс с текущего изображения
             images[currentIndex].classList.remove('active');
@@ -553,6 +557,24 @@
                 images[newIndex].setAttribute('loading', 'eager');
             }
         }
+        
+        // Добавляем обработчик клавиатуры для навигации стрелками
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                const focusedCard = document.querySelector('.car-card:hover, .car-card:focus-within');
+                if (focusedCard) {
+                    const carImage = focusedCard.querySelector('.car-image');
+                    if (carImage) {
+                        const carId = carImage.getAttribute('data-car-id');
+                        if (carId) {
+                            const direction = e.key === 'ArrowLeft' ? -1 : 1;
+                            changeCarImage(carId, direction);
+                            e.preventDefault();
+                        }
+                    }
+                }
+            }
+        });
         
         function displayGeorgiaCars() {
             const grid = getGeorgiaElement('carsGrid');
