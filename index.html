@@ -809,6 +809,23 @@
         // Загружаем данные при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             loadGeorgiaCarsData();
+            
+            // Добавляем обработчики для стрелок галереи после загрузки данных
+            setTimeout(() => {
+                document.querySelectorAll('.gallery-arrow').forEach(arrow => {
+                    arrow.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const carId = this.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+                        if (carId) {
+                            const direction = this.classList.contains('gallery-arrow-prev') ? -1 : 1;
+                            if (window.changeCarImage) {
+                                window.changeCarImage(carId, direction);
+                            }
+                        }
+                    });
+                });
+            }, 500);
         });
     </script>
 </body>
