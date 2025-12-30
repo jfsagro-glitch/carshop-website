@@ -1867,6 +1867,16 @@ body.premium .footer-section a:hover { color: var(--text); }
     .request-form textarea {
         min-height: 80px;
     }
+    
+    .language-select {
+        min-width: 70px;
+        font-size: 0.85rem;
+        padding: 0.4rem 1.5rem 0.4rem 0.6rem;
+    }
+    
+    .header-actions {
+        gap: 0.5rem;
+    }
 
     .floating-subscribe {
         left: 16px;
