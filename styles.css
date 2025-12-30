@@ -41,11 +41,26 @@ body.premium {
 
 body.premium .header,
 body.premium .hero,
-body.premium .catalog,
 body.premium .contact,
 body.premium .footer {
     background: var(--card-bg);
     border-color: var(--border);
+}
+
+body.premium .catalog {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%) !important;
+    background-size: 200% 200% !important;
+    animation: catalogGradient 15s ease infinite;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes catalogGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 body.premium .logo span { 
@@ -818,15 +833,26 @@ body.premium .footer-section a:hover { color: var(--text); }
 /* Catalog Section */
 .catalog {
     padding: 3rem 0;
-    background: #ffffff;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+    background-size: 200% 200%;
+    animation: catalogGradient 15s ease infinite;
+}
+
+@keyframes catalogGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .catalog h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #374151;
-    font-weight: 500;
+    color: #1f2937 !important;
+    font-weight: 700;
 }
 
 .catalog-filters {
