@@ -517,6 +517,43 @@
         }
 
         // Отображение автомобилей
+        // Функция для переключения изображений в галерее
+        function changeCarImage(carId, direction) {
+            const carImageContainer = document.querySelector(`.car-image[data-car-id="${carId}"]`);
+            if (!carImageContainer) return;
+            
+            const images = carImageContainer.querySelectorAll('.car-gallery-img');
+            if (images.length <= 1) return;
+            
+            let currentIndex = -1;
+            images.forEach((img, idx) => {
+                if (img.classList.contains('active')) {
+                    currentIndex = idx;
+                }
+            });
+            
+            if (currentIndex === -1) return;
+            
+            // Убираем активный класс с текущего изображения
+            images[currentIndex].classList.remove('active');
+            
+            // Вычисляем новый индекс
+            let newIndex = currentIndex + direction;
+            if (newIndex < 0) {
+                newIndex = images.length - 1;
+            } else if (newIndex >= images.length) {
+                newIndex = 0;
+            }
+            
+            // Добавляем активный класс к новому изображению
+            images[newIndex].classList.add('active');
+            
+            // Загружаем изображение, если оно еще не загружено
+            if (images[newIndex].getAttribute('loading') === 'lazy') {
+                images[newIndex].setAttribute('loading', 'eager');
+            }
+        }
+        
         function displayGeorgiaCars() {
             const grid = getGeorgiaElement('carsGrid');
             if (!grid) return;
