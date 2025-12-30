@@ -2010,6 +2010,10 @@ body.premium .footer-section a:hover { color: var(--text); }
         margin: 2% auto;
     }
     
+    .parts-list {
+        grid-template-columns: 1fr !important;
+    }
+    
     .modal-body {
         padding: 1rem;
     }
