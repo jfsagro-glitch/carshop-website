@@ -11,25 +11,26 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Header Enhancements */
+/* Header Enhancements - Premium White */
 .header {
-    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform, box-shadow;
 }
 
-/* Logo with White Background */
+/* Logo with White Background - Premium */
 .logo-img {
     background: #ffffff !important;
-    padding: 8px 12px !important;
-    border-radius: 12px !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+    padding: 10px 16px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.06) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     will-change: transform, box-shadow;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .logo:hover .logo-img {
@@ -46,16 +47,17 @@ html {
     transform: translateY(-2px);
 }
 
-/* Navigation Enhancements */
+/* Navigation Enhancements - High Contrast */
 .nav a {
-    color: #374151 !important;
-    font-weight: 500;
+    color: #1f2937 !important;
+    font-weight: 600;
     font-size: 0.95rem;
     position: relative;
     padding: 0.5rem 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: color, transform;
     text-shadow: none !important;
+    letter-spacing: 0.01em;
 }
 
 .nav a::after {
@@ -71,9 +73,10 @@ html {
 }
 
 .nav a:hover {
-    color: #1f2937 !important;
+    color: #111827 !important;
     transform: translateY(-2px);
     text-shadow: none !important;
+    font-weight: 700;
 }
 
 .nav a:hover::after {
@@ -81,8 +84,8 @@ html {
 }
 
 .nav a.active {
-    color: #1f2937 !important;
-    font-weight: 600;
+    color: #111827 !important;
+    font-weight: 700;
 }
 
 .nav a.active::after {
@@ -211,13 +214,14 @@ html {
     transform: translateY(-50%) scale(1.1) !important;
 }
 
-/* Catalog Filters */
+/* Catalog Filters - Premium White */
 .catalog-filters {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
-    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
     border-radius: 16px !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.5rem !important;
 }
 
 .filter-group select,
@@ -234,9 +238,9 @@ html {
     outline: none !important;
 }
 
-/* Hero Section */
+/* Hero Section - Premium Gradients */
 .hero {
-    background: linear-gradient(135deg, #0b0f17 0%, #1a1f2e 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
     position: relative;
     overflow: hidden;
 }
@@ -248,7 +252,20 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(244, 208, 63, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
     pointer-events: none;
 }
 
@@ -331,14 +348,21 @@ html {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Cart Button */
+/* Cart Button - Premium White */
 .cart-btn {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    color: #1f2937 !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     will-change: transform;
+    font-weight: 600 !important;
 }
 
 .cart-btn:hover {
-    transform: scale(1.1);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(0, 0, 0, 0.18) !important;
 }
 
 /* Image Count Badge */
