@@ -952,8 +952,8 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .car-image {
     width: 100%;
-    height: 400px;
-    min-height: 400px;
+    height: 500px;
+    min-height: 500px;
     position: relative;
     background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
     display: flex;
@@ -963,7 +963,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     font-size: 3rem;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
 }
 
 .car-gallery-container {
@@ -1135,14 +1135,72 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .car-price {
     font-size: 1.4rem;
+    font-weight: 700;
+    color: #111827 !important;
+    margin-bottom: 0.8rem;
+}
+
+.car-price-full {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151 !important;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.car-price-full-label {
+    font-size: 0.85rem;
+    color: #6b7280;
     font-weight: 500;
-    color: #374151;
-    margin-bottom: 1.2rem;
+}
+
+.car-price-full-value {
+    font-size: 1.1rem;
+    color: #111827;
+    font-weight: 700;
+}
+
+.car-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: #4b5563 !important;
+    font-size: 0.9rem;
+}
+
+.car-spec-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    color: #4b5563 !important;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.car-spec-item a {
+    color: #2563eb !important;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid #2563eb;
+    transition: color 0.2s;
+}
+
+.car-spec-item a:hover {
+    color: #1d4ed8 !important;
+    border-bottom-color: #1d4ed8;
 }
 
 .car-actions {
     display: flex;
     gap: 0.6rem;
+    margin-top: auto;
 }
 
 .btn-primary {
