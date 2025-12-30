@@ -1089,8 +1089,14 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .gallery-arrow:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: translateY(-50%) scale(1.1);
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-arrow:active {
+    transform: translateY(-50%) scale(1.05);
+    background: rgba(0, 0, 0, 1);
 }
 
 .gallery-arrow-prev {
