@@ -24,7 +24,6 @@
                 </div>
                 <nav class="nav">
                     <a href="index.html#catalog">Грузия</a>
-                    <a href="georgia-stock.html">Грузия-сток</a>
                     <a href="usa-orders.html">США</a>
                     <a href="korea-orders.html">Корея</a>
                     <a href="china-orders.html">Китай</a>
@@ -59,9 +58,9 @@
                         <span>Полное оформление</span>
                     </div>
                 </div>
-                <a class="cta-btn" href="georgia-stock.html" style="text-decoration: none; display: inline-block;">
+                <button class="cta-btn" onclick="document.getElementById('catalog').scrollIntoView()">
                     Смотреть каталог
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -154,8 +153,36 @@
     <section id="catalog" class="catalog">
         <div class="container">
             <h2>Автомобили в Грузии в наличии</h2>
-            <div style="text-align: center; padding: 3rem 0; color: #9ca3af;">
-                <p style="font-size: 1.1rem; margin-bottom: 1rem;">Каталог автомобилей доступен на странице <a href="georgia-stock.html" style="color: #60a5fa; text-decoration: underline;">Грузия-сток</a></p>
+            <div class="catalog-filters">
+                <div class="filter-group">
+                    <label>Марка:</label>
+                    <select id="brandFilter">
+                        <option value="">Все марки</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Модель:</label>
+                    <select id="modelFilter">
+                        <option value="">Все модели</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Цена от:</label>
+                    <input type="number" id="priceFrom" placeholder="Минимум">
+                </div>
+                <div class="filter-group">
+                    <label>Цена до:</label>
+                    <input type="number" id="priceTo" placeholder="Максимум">
+                </div>
+                <div class="filter-group">
+                    <label>Пробег до:</label>
+                    <input type="number" id="mileageTo" placeholder="км">
+                </div>
+                <button class="filter-btn" id="applyFilters">Применить</button>
+                <button class="filter-btn" id="resetFilters">Сбросить</button>
+            </div>
+            <div class="cars-grid" id="carsGrid">
+                <!-- Cars will be loaded here by JavaScript -->
             </div>
         </div>
     </section>
@@ -361,6 +388,280 @@
                 widget.classList.add('floating-subscribe--hidden');
             }
         })();
+    </script>
+
+    <!-- Script for loading Georgia stock cars -->
+    <script>
+        // Глобальные переменные для данных Грузии
+        let georgiaCarsData = [];
+        let georgiaFilteredCars = [];
+        let georgiaUsdToRubRate = null;
+
+        // Кэш DOM элементов
+        const georgiaDomCache = {};
+        function getGeorgiaElement(id) {
+            if (!georgiaDomCache[id]) {
+                georgiaDomCache[id] = document.getElementById(id);
+            }
+            return georgiaDomCache[id];
+        }
+
+        // Загрузка курса USD/RUB
+        async function loadGeorgiaUsdToRubRate() {
+            if (georgiaUsdToRubRate) return georgiaUsdToRubRate;
+            try {
+                const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+                if (response.ok) {
+                    const data = await response.json();
+                    const usdRate = data.Valute?.USD;
+                    if (usdRate && usdRate.Value) {
+                        georgiaUsdToRubRate = usdRate.Value;
+                        return georgiaUsdToRubRate;
+                    }
+                }
+            } catch (error) {
+                console.warn('Не удалось загрузить курс ЦБ');
+            }
+            georgiaUsdToRubRate = 92.0;
+            return georgiaUsdToRubRate;
+        }
+
+        // Конвертация рублей в доллары
+        function convertRubToUsd(rubValue) {
+            if (!georgiaUsdToRubRate) return rubValue;
+            return Math.round(rubValue / georgiaUsdToRubRate);
+        }
+
+        // Определение, является ли значение ценой в рублях
+        function isPriceInRubles(value, currency) {
+            if (currency === 'USD' || currency === 'EUR' || currency === 'GEL') {
+                return false;
+            }
+            return false; // Для Грузии цены уже в USD
+        }
+
+        // Фильтрация изображений
+        function filterGeorgiaImages(images) {
+            if (!images) return [];
+            return images.filter(img => {
+                const url = typeof img === 'string' ? img : (img.url || '');
+                if (!url) return false;
+                const u = url.toLowerCase();
+                const excludeKeywords = ['logo', 'icon', 'favicon'];
+                return !excludeKeywords.some(keyword => u.includes(keyword));
+            });
+        }
+
+        // Получение года автомобиля
+        function getGeorgiaCarYear(car) {
+            if (car.year) return car.year;
+            if (car.url) {
+                const yearMatch = car.url.match(/-(\d{4})/);
+                if (yearMatch) {
+                    const year = parseInt(yearMatch[1]);
+                    if (year >= 1990 && year <= new Date().getFullYear() + 1) {
+                        return year;
+                    }
+                }
+            }
+            return null;
+        }
+
+        // Отображение автомобилей
+        function displayGeorgiaCars() {
+            const grid = getGeorgiaElement('carsGrid');
+            if (!grid) return;
+            
+            if (georgiaFilteredCars.length === 0) {
+                grid.innerHTML = '<div class="no-results">Автомобили не найдены</div>';
+                return;
+            }
+
+            grid.innerHTML = georgiaFilteredCars.map((car, index) => {
+                const images = filterGeorgiaImages(car.images);
+                const firstImage = images.length > 0 ? images[0].url : '';
+                const imageCount = images.length;
+                
+                let displayPrice = car.price;
+                let currency = car.price_currency || 'USD';
+                
+                if (isPriceInRubles(car.price, currency) && georgiaUsdToRubRate) {
+                    displayPrice = convertRubToUsd(car.price);
+                    currency = 'USD';
+                }
+                
+                const currencySymbol = currency === 'USD' ? '$' : (currency === 'EUR' ? '€' : '$');
+                const price = displayPrice ? `${currencySymbol}${displayPrice.toLocaleString('ru-RU')}` : 'Цена по запросу';
+                
+                const year = getGeorgiaCarYear(car);
+                const yearDisplay = year ? ` ${year}` : '';
+                
+                const placeholderSvg = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27200%27%3E%3Crect fill=%27%23ddd%27 width=%27300%27 height=%27200%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27%3E%D0%9D%D0%B5%D1%82 %D1%84%D0%BE%D1%82%D0%BE%3C/text%3E%3C/svg%3E';
+                
+                return `
+                    <div class="car-card" data-index="${index}">
+                        <div class="car-image">
+                            ${firstImage ? `<img src="${firstImage.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model + yearDisplay).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src=&quot;${placeholderSvg}&quot;">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
+                            ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
+                        </div>
+                        <div class="car-info">
+                            <div class="car-title">${car.brand} ${car.model}${yearDisplay}</div>
+                            <div class="car-price">${price}</div>
+                            ${displayPrice ? `<div class="car-price-full">
+                                <span class="car-price-full-label">Стоимость с доставкой и растаможкой:</span>
+                                <span class="car-price-full-value">${currencySymbol}${displayPrice.toLocaleString('ru-RU')}</span>
+                            </div>` : ''}
+                            <div class="car-specs">
+                                ${year ? `<div class="car-spec-item">📅 ${year} год</div>` : ''}
+                                ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
+                                ${car.transmission ? `<div class="car-spec-item">⚙️ ${car.transmission}</div>` : ''}
+                                ${car.vin && car.vin.trim() ? `<div class="car-spec-item">🔑 VIN: <a href="https://www.google.com/search?q=${encodeURIComponent(car.vin.trim())}" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; text-decoration: none; border-bottom: 1px solid #60a5fa;">${car.vin.trim()}</a></div>` : ''}
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                <button class="btn-primary" onclick="addGeorgiaToCart(${index})" style="flex: 1;">
+                                    <i class="fas fa-shopping-cart"></i> Заказать
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Заполнение фильтра марок
+        function populateGeorgiaBrandFilter() {
+            const brandFilter = getGeorgiaElement('brandFilter');
+            if (!brandFilter) return;
+            
+            const brands = [...new Set(georgiaCarsData.map(car => car.brand).filter(Boolean))].sort();
+            brands.forEach(brand => {
+                const option = document.createElement('option');
+                option.value = brand;
+                option.textContent = brand;
+                brandFilter.appendChild(option);
+            });
+        }
+
+        // Применение фильтров
+        function applyGeorgiaFilters() {
+            const brand = getGeorgiaElement('brandFilter')?.value || '';
+            const priceFrom = parseFloat(getGeorgiaElement('priceFrom')?.value) || 0;
+            const priceTo = parseFloat(getGeorgiaElement('priceTo')?.value) || Infinity;
+            const mileageTo = parseFloat(getGeorgiaElement('mileageTo')?.value) || Infinity;
+
+            georgiaFilteredCars = georgiaCarsData.filter(car => {
+                if (brand && car.brand !== brand) return false;
+                if (car.price && (car.price < priceFrom || car.price > priceTo)) return false;
+                if (car.mileage && car.mileage > mileageTo) return false;
+                return true;
+            });
+
+            // Сортировка: сначала с VIN, затем с ценой
+            georgiaFilteredCars.sort((a, b) => {
+                const aHasVin = a.vin && a.vin.trim();
+                const bHasVin = b.vin && b.vin.trim();
+                const aHasPrice = a.price && a.price > 0;
+                const bHasPrice = b.price && b.price > 0;
+                
+                if (aHasVin && !bHasVin) return -1;
+                if (!aHasVin && bHasVin) return 1;
+                if (aHasPrice && !bHasPrice) return -1;
+                if (!aHasPrice && bHasPrice) return 1;
+                return 0;
+            });
+
+            displayGeorgiaCars();
+        }
+
+        // Добавление в корзину
+        window.addGeorgiaToCart = function(index) {
+            const car = georgiaFilteredCars[index];
+            if (!car) return;
+            
+            const cartItem = {
+                id: car.id || `georgia-${index}`,
+                brand: car.brand || '',
+                model: car.model || '',
+                price: car.price || 0,
+                source: 'georgia',
+                fullTitle: car.fullName || `${car.brand} ${car.model}`,
+                url: car.url || ''
+            };
+            
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existingIndex = cart.findIndex(item => item.id === cartItem.id);
+            
+            if (existingIndex >= 0) {
+                cart[existingIndex].quantity = (cart[existingIndex].quantity || 1) + 1;
+            } else {
+                cartItem.quantity = 1;
+                cart.push(cartItem);
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Обновляем счетчик корзины
+            const cartCount = document.getElementById('cartCount');
+            if (cartCount) {
+                const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+                cartCount.textContent = totalItems;
+            }
+            
+            alert('Автомобиль добавлен в корзину!');
+        };
+
+        // Загрузка данных
+        async function loadGeorgiaCarsData() {
+            try {
+                const response = await fetch('./cars_georgia_stock.json');
+                if (response.ok) {
+                    georgiaCarsData = await response.json();
+                    georgiaFilteredCars = [...georgiaCarsData];
+                    
+                    // Сортировка
+                    georgiaFilteredCars.sort((a, b) => {
+                        const aHasVin = a.vin && a.vin.trim();
+                        const bHasVin = b.vin && b.vin.trim();
+                        const aHasPrice = a.price && a.price > 0;
+                        const bHasPrice = b.price && b.price > 0;
+                        
+                        if (aHasVin && !bHasVin) return -1;
+                        if (!aHasVin && bHasVin) return 1;
+                        if (aHasPrice && !bHasPrice) return -1;
+                        if (!aHasPrice && bHasPrice) return 1;
+                        return 0;
+                    });
+                    
+                    // Загружаем курс
+                    await loadGeorgiaUsdToRubRate();
+                    
+                    // Заполняем фильтры и отображаем
+                    populateGeorgiaBrandFilter();
+                    displayGeorgiaCars();
+                    
+                    // Настраиваем обработчики фильтров
+                    const applyBtn = getGeorgiaElement('applyFilters');
+                    if (applyBtn) {
+                        applyBtn.addEventListener('click', applyGeorgiaFilters);
+                    }
+                } else {
+                    const grid = getGeorgiaElement('carsGrid');
+                    if (grid) {
+                        grid.innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
+                    }
+                }
+            } catch (error) {
+                const grid = getGeorgiaElement('carsGrid');
+                if (grid) {
+                    grid.innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
+                }
+            }
+        }
+
+        // Загружаем данные при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGeorgiaCarsData();
+        });
     </script>
 </body>
 </html>
