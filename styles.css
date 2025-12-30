@@ -245,11 +245,11 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .currency-select {
-    background: linear-gradient(135deg, #6b7280 0%, #4b5563 50%, #6b7280 100%) !important;
+    background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important;
     background-size: 200% 200% !important;
     animation: gradientShift 3s ease infinite !important;
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     padding: 0.5rem 2rem 0.5rem 0.75rem;
     border-radius: 10px;
     font-size: 0.9rem;
@@ -262,7 +262,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     background-size: 12px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     min-width: 90px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     position: relative;
     overflow: hidden;
     will-change: transform, box-shadow, background-position;
@@ -293,10 +293,10 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .currency-select:hover {
-    background: linear-gradient(135deg, #4b5563 0%, #6b7280 50%, #4b5563 100%) !important;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%) !important;
     background-size: 200% 200% !important;
-    border-color: rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 20px rgba(107, 114, 128, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 20px rgba(31, 41, 55, 0.5) !important;
     transform: translateY(-2px) scale(1.02);
     animation-duration: 2s !important;
 }
@@ -308,8 +308,8 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .currency-select:focus {
     outline: none;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35) !important;
     animation-duration: 1.5s !important;
 }
 
@@ -318,11 +318,11 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .language-select {
-    background: linear-gradient(135deg, #6b7280 0%, #4b5563 50%, #6b7280 100%) !important;
+    background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important;
     background-size: 200% 200% !important;
     animation: gradientShift 3s ease infinite !important;
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     padding: 0.5rem 2rem 0.5rem 0.75rem;
     border-radius: 10px;
     font-size: 0.9rem;
@@ -335,7 +335,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     background-size: 12px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     min-width: 90px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     position: relative;
     overflow: hidden;
     will-change: transform, box-shadow, background-position;
@@ -357,10 +357,10 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .language-select:hover {
-    background: linear-gradient(135deg, #4b5563 0%, #6b7280 50%, #4b5563 100%) !important;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%) !important;
     background-size: 200% 200% !important;
-    border-color: rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 20px rgba(107, 114, 128, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 20px rgba(31, 41, 55, 0.5) !important;
     transform: translateY(-2px) scale(1.02);
     animation-duration: 2s !important;
 }
@@ -372,8 +372,8 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .language-select:focus {
     outline: none;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35) !important;
     animation-duration: 1.5s !important;
 }
 
