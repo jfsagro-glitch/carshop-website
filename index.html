@@ -643,10 +643,10 @@
                                 ${imagesHtml}
                             </div>
                             ${imageCount > 1 ? `
-                                <button class="gallery-arrow gallery-arrow-prev" onclick="window.changeCarImage('${carId}', -1); return false;" aria-label="Предыдущее фото">
+                                <button class="gallery-arrow gallery-arrow-prev" data-car-id="${carId}" data-direction="-1" aria-label="Предыдущее фото">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="gallery-arrow gallery-arrow-next" onclick="window.changeCarImage('${carId}', 1); return false;" aria-label="Следующее фото">
+                                <button class="gallery-arrow gallery-arrow-next" data-car-id="${carId}" data-direction="1" aria-label="Следующее фото">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             ` : ''}
@@ -809,22 +809,21 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadGeorgiaCarsData();
             
-            // Добавляем обработчики для стрелок галереи после загрузки данных
-            setTimeout(() => {
-                document.querySelectorAll('.gallery-arrow').forEach(arrow => {
-                    arrow.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        const carId = this.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
-                        if (carId) {
-                            const direction = this.classList.contains('gallery-arrow-prev') ? -1 : 1;
-                            if (window.changeCarImage) {
-                                window.changeCarImage(carId, direction);
-                            }
-                        }
-                    });
-                });
-            }, 500);
+            // Используем делегирование событий для стрелок галереи
+            document.addEventListener('click', function(e) {
+                const arrow = e.target.closest('.gallery-arrow');
+                if (!arrow) return;
+                
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const carId = arrow.getAttribute('data-car-id');
+                const direction = parseInt(arrow.getAttribute('data-direction')) || 0;
+                
+                if (carId && direction && window.changeCarImage) {
+                    window.changeCarImage(carId, direction);
+                }
+            });
         });
     </script>
 </body>
