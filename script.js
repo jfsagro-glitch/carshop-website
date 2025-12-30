@@ -2132,7 +2132,15 @@ function loadKoreaOrdersSection(){
     const metrics = document.getElementById('koreaMetrics');
     if (!grid || !metrics) return;
 
-    const prices = koreaCars.map(car=>car.price).filter(Boolean).sort((a,b)=>a-b);
+    // Конвертируем цены из рублей в доллары если нужно
+    const prices = koreaCars.map(car => {
+        let price = car.price;
+        if (price && price > 10000 && usdToRubRate) {
+            price = convertRubToUsd(price);
+        }
+        return price;
+    }).filter(Boolean).sort((a,b)=>a-b);
+    
     const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
     const min = prices.length ? prices[0] : null;
 
@@ -2146,6 +2154,13 @@ function loadKoreaOrdersSection(){
         const highlightsHtml = car.highlights && car.highlights.length
             ? `<ul class="orders-highlights">${car.highlights.map(item=>`<li><i class=\"fas fa-check\"></i>${item}</li>`).join('')}</ul>`
             : '';
+        
+        // Конвертируем цену из рублей в доллары если нужно
+        let displayPrice = car.price;
+        if (displayPrice && displayPrice > 10000 && usdToRubRate) {
+            displayPrice = convertRubToUsd(displayPrice);
+        }
+        
         const card = document.createElement('article');
         card.className = 'orders-card korea-card';
         card.innerHTML = `
@@ -2159,7 +2174,7 @@ function loadKoreaOrdersSection(){
                     <li><span>Срок:</span> ${car.leadTime || '60-75 дней'}</li>
                 </ul>
                 ${highlightsHtml}
-                <div class="usa-preferential-price">от ${formatCurrency(car.price)}</div>
+                <div class="usa-preferential-price">от ${formatCurrency(displayPrice)}</div>
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
                     <button class="btn-primary" type="button">Запросить расчет</button>
                 </div>
@@ -3121,9 +3136,21 @@ function buildUnder160CarSpecs(car){
 
 function getUnder160PriceValue(car){
     if (!car) return null;
-    if (typeof car.priceFrom === 'number' && car.priceFrom > 0) return car.priceFrom;
-    if (typeof car.price === 'number' && car.price > 0) return car.price;
-    return null;
+    let price = null;
+    if (typeof car.priceFrom === 'number' && car.priceFrom > 0) {
+        price = car.priceFrom;
+    } else if (typeof car.price === 'number' && car.price > 0) {
+        price = car.price;
+    }
+    
+    if (!price) return null;
+    
+    // Если цена в рублях (больше 10000), конвертируем в доллары
+    if (price > 10000 && usdToRubRate) {
+        return convertRubToUsd(price);
+    }
+    
+    return price;
 }
 
 function setupChinaUnder160Section(){
@@ -3438,8 +3465,9 @@ function renderKoreaUnder160Cars(){
     
     list.forEach((car, index)=>{
         const specs = buildUnder160CarSpecs(car);
-        // Показываем конкретную цену автомобиля, а не "от минимальной"
-        const priceLabel = car.priceLabel || (car.priceFrom ? formatCurrency(car.priceFrom) : 'Цена по запросу');
+        // Конвертируем цену из рублей в доллары если нужно
+        let priceValue = getUnder160PriceValue(car);
+        const priceLabel = car.priceLabel || (priceValue ? formatCurrency(priceValue) : 'Цена по запросу');
         const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
         const utilBadge = '<span class="util-badge">льготный утильсбор</span>';
         const descriptionHtml = car.description ? `<p class="orders-card-desc">${utilBadge} ${car.description}</p>` : `<p class="orders-card-desc">${utilBadge}</p>`;
