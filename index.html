@@ -534,6 +534,9 @@
                 const currencySymbol = currency === 'USD' ? '$' : (currency === 'EUR' ? '€' : '$');
                 const price = displayPrice ? `${currencySymbol}${displayPrice.toLocaleString('ru-RU')}` : 'Цена по запросу';
                 
+                // Добавляем 5690 долларов к стоимости с доставкой и растаможкой
+                const fullPrice = displayPrice ? displayPrice + 5690 : null;
+                
                 const year = getGeorgiaCarYear(car);
                 const yearDisplay = year ? ` ${year}` : '';
                 
@@ -548,9 +551,9 @@
                         <div class="car-info">
                             <div class="car-title">${car.brand} ${car.model}${yearDisplay}</div>
                             <div class="car-price">${price}</div>
-                            ${displayPrice ? `<div class="car-price-full">
+                            ${fullPrice ? `<div class="car-price-full">
                                 <span class="car-price-full-label">Стоимость с доставкой и растаможкой:</span>
-                                <span class="car-price-full-value">${currencySymbol}${displayPrice.toLocaleString('ru-RU')}</span>
+                                <span class="car-price-full-value">${currencySymbol}${fullPrice.toLocaleString('ru-RU')}</span>
                             </div>` : ''}
                             <div class="car-specs">
                                 ${year ? `<div class="car-spec-item">📅 ${year} год</div>` : ''}
