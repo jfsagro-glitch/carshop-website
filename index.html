@@ -520,12 +520,17 @@
 
         // Отображение автомобилей
         // Функция для переключения изображений в галерее
-        function changeCarImage(carId, direction) {
+        window.changeCarImage = function(carId, direction) {
             const carImageContainer = document.querySelector(`.car-image[data-car-id="${carId}"]`);
-            if (!carImageContainer) return;
+            if (!carImageContainer) {
+                console.warn('Car image container not found:', carId);
+                return;
+            }
             
             const images = carImageContainer.querySelectorAll('.car-gallery-img');
-            if (images.length <= 1) return;
+            if (images.length <= 1) {
+                return;
+            }
             
             let currentIndex = -1;
             images.forEach((img, idx) => {
@@ -535,15 +540,14 @@
             });
             
             if (currentIndex === -1) {
-                // Если нет активного изображения, делаем первое активным
                 images[0].classList.add('active');
-                currentIndex = 0;
+                images[0].style.display = 'block';
+                return;
             }
             
-            // Убираем активный класс с текущего изображения
             images[currentIndex].classList.remove('active');
+            images[currentIndex].style.display = 'none';
             
-            // Вычисляем новый индекс
             let newIndex = currentIndex + direction;
             if (newIndex < 0) {
                 newIndex = images.length - 1;
@@ -551,10 +555,9 @@
                 newIndex = 0;
             }
             
-            // Добавляем активный класс к новому изображению
             images[newIndex].classList.add('active');
+            images[newIndex].style.display = 'block';
             
-            // Загружаем изображение, если оно еще не загружено
             if (images[newIndex].getAttribute('loading') === 'lazy') {
                 images[newIndex].setAttribute('loading', 'eager');
             }

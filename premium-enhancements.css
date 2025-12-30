@@ -170,9 +170,8 @@ html {
 .car-gallery-img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
     object-position: center !important;
-    padding: 12px !important;
     box-sizing: border-box !important;
 }
 
