@@ -158,12 +158,14 @@ html {
     background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%) !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    height: 500px !important;
-    min-height: 500px !important;
+    height: 480px !important;
+    min-height: 480px !important;
+    max-height: 480px !important;
     aspect-ratio: 4 / 3 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    border-radius: 8px 8px 0 0 !important;
 }
 
 .car-image img,
@@ -173,7 +175,7 @@ html {
     object-fit: contain !important;
     object-position: center !important;
     box-sizing: border-box !important;
-    padding: 10px !important;
+    padding: 8px !important;
 }
 
 .car-card {
