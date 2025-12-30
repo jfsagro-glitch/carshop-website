@@ -2157,6 +2157,16 @@ function renderPreferentialCars(){
 }
 
 function loadChinaOrdersSection(){
+    // Убеждаемся, что данные загружены
+    if (typeof chinaCars === 'undefined' || !Array.isArray(chinaCars) || chinaCars.length === 0) {
+        console.warn('chinaCars не загружены или пусты');
+        const grid = document.getElementById('chinaUnder160Grid');
+        if (grid) {
+            grid.innerHTML = '<div class="usa-empty-state">Данные загружаются...</div>';
+        }
+        return;
+    }
+    
     setupChinaUnder160Section();
     updateChinaUnder160Counters();
 }
