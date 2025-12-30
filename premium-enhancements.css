@@ -92,13 +92,14 @@ html {
     width: 100%;
 }
 
-/* Car Cards - Premium Design */
+/* Car Cards - Premium Professional Design */
 .car-card {
-    border-radius: 16px !important;
+    border-radius: 20px !important;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    border: 1px solid rgba(0, 0, 0, 0.06) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.02) !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.95) 100%) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
     will-change: transform, box-shadow;
     position: relative;
     backface-visibility: hidden;
@@ -112,21 +113,43 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(244, 208, 63, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(244, 208, 63, 0.08) 50%, rgba(212, 175, 55, 0.05) 100%);
     opacity: 0;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
-    border-radius: 16px;
+    border-radius: 20px;
     z-index: 1;
 }
 
+.car-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .car-card:hover {
-    transform: translateY(-8px) scale(1.02) !important;
-    border-color: rgba(212, 175, 55, 0.3) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 16px 48px rgba(0, 0, 0, 0.08) !important;
+    transform: translateY(-12px) scale(1.03) rotateX(2deg) !important;
+    border-color: rgba(212, 175, 55, 0.5) !important;
+    box-shadow: 
+        0 16px 48px rgba(0, 0, 0, 0.4),
+        0 8px 24px rgba(212, 175, 55, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(212, 175, 55, 0.3) !important;
 }
 
 .car-card:hover::before {
+    opacity: 1;
+}
+
+.car-card:hover::after {
     opacity: 1;
 }
 
@@ -145,28 +168,47 @@ html {
     transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* Buttons - Premium Design */
+/* Buttons - Premium Animated Design */
 .btn-primary,
 .filter-btn,
 .cta-btn {
-    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%) !important;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%) !important;
+    background-size: 200% 200% !important;
     color: #1f2937 !important;
     border: none !important;
-    padding: 0.65rem 1.5rem !important;
-    border-radius: 10px !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2) !important;
-    will-change: transform, box-shadow;
+    padding: 0.75rem 2rem !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.02em !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25), 0 2px 4px rgba(212, 175, 55, 0.15) !important;
+    will-change: transform, box-shadow, background-position;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    transform: translateY(0) scale(1);
 }
 
+/* Animated gradient background */
 .btn-primary::before,
 .filter-btn::before,
 .cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Shine effect overlay */
+.btn-primary::after,
+.filter-btn::after,
+.cta-btn::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -174,30 +216,90 @@ html {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
 }
 
+/* Hover state - gradient shift and movement */
 .btn-primary:hover,
 .filter-btn:hover,
 .cta-btn:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4) !important;
+    background-position: 100% 0% !important;
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4), 0 4px 8px rgba(212, 175, 55, 0.3) !important;
 }
 
 .btn-primary:hover::before,
 .filter-btn:hover::before,
 .cta-btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover::after,
+.filter-btn:hover::after,
+.cta-btn:hover::after {
     width: 300px;
     height: 300px;
 }
 
+/* Active state - press down effect */
 .btn-primary:active,
 .filter-btn:active,
 .cta-btn:active {
-    transform: translateY(0) !important;
-    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3) !important;
+    background-position: 0% 0% !important;
+    transform: translateY(-1px) scale(0.98) !important;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3), 0 1px 2px rgba(212, 175, 55, 0.2) !important;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Button text positioning */
+.btn-primary > *,
+.filter-btn > *,
+.cta-btn > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Secondary button style */
+.btn-secondary {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
+    border: 2px solid rgba(212, 175, 55, 0.3) !important;
+    color: #f3f4f6 !important;
+    padding: 0.75rem 2rem !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(244, 208, 63, 0.15) 100%) !important;
+    border-color: rgba(212, 175, 55, 0.6) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3) !important;
+}
+
+.btn-secondary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px) scale(0.98) !important;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Gallery Arrows - Premium */
@@ -214,14 +316,45 @@ html {
     transform: translateY(-50%) scale(1.1) !important;
 }
 
-/* Catalog Filters - Premium White */
+/* Catalog Filters - Premium Professional White */
 .catalog-filters {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 16px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 1.5rem !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%) !important;
+    background-size: 200% 200% !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 20px !important;
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.catalog-filters::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.catalog-filters:hover {
+    background-position: 100% 0% !important;
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.12),
+        0 6px 16px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(212, 175, 55, 0.2) !important;
+}
+
+.catalog-filters:hover::before {
+    left: 100%;
 }
 
 .filter-group select,
@@ -238,11 +371,25 @@ html {
     outline: none !important;
 }
 
-/* Hero Section - Premium Gradients */
+/* Hero Section - Premium Professional Gradients */
 .hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #0f172a 60%, #1a1f2e 100%) !important;
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 25%, #0f172a 50%, #1e293b 75%, #0a0e1a 100%) !important;
+    background-size: 400% 400% !important;
     position: relative;
     overflow: hidden;
+    animation: heroGradientShift 20s ease infinite;
+}
+
+@keyframes heroGradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .hero::before {
@@ -253,11 +400,12 @@ html {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(244, 208, 63, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.25) 0%, transparent 55%),
+        radial-gradient(circle at 80% 70%, rgba(244, 208, 63, 0.2) 0%, transparent 55%),
+        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 75%),
+        linear-gradient(135deg, rgba(15, 23, 42, 0.3) 0%, transparent 50%);
     pointer-events: none;
-    animation: gradientShift 15s ease infinite;
+    animation: heroGlow 12s ease-in-out infinite;
 }
 
 .hero::after {
@@ -267,16 +415,18 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.9) 50%, rgba(15, 23, 42, 0.95) 100%);
+    background: linear-gradient(180deg, rgba(10, 14, 26, 0.6) 0%, rgba(15, 23, 42, 0.85) 40%, rgba(15, 23, 42, 0.95) 100%);
     pointer-events: none;
 }
 
-@keyframes gradientShift {
+@keyframes heroGlow {
     0%, 100% {
         opacity: 1;
+        transform: scale(1);
     }
     50% {
-        opacity: 0.8;
+        opacity: 0.85;
+        transform: scale(1.05);
     }
 }
 
