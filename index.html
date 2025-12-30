@@ -524,30 +524,35 @@
             const carImageContainer = document.querySelector(`.car-image[data-car-id="${carId}"]`);
             if (!carImageContainer) {
                 console.warn('Car image container not found:', carId);
-                return;
+                return false;
             }
             
             const images = carImageContainer.querySelectorAll('.car-gallery-img');
-            if (images.length <= 1) {
-                return;
+            if (!images || images.length <= 1) {
+                return false;
             }
             
             let currentIndex = -1;
             images.forEach((img, idx) => {
-                if (img.classList.contains('active')) {
+                if (img.classList.contains('active') || img.style.display === 'block') {
                     currentIndex = idx;
                 }
             });
             
             if (currentIndex === -1) {
-                images[0].classList.add('active');
-                images[0].style.display = 'block';
-                return;
+                if (images[0]) {
+                    images[0].classList.add('active');
+                    images[0].style.display = 'block';
+                }
+                return false;
             }
             
+            // Скрываем текущее изображение
             images[currentIndex].classList.remove('active');
             images[currentIndex].style.display = 'none';
+            images[currentIndex].style.opacity = '0';
             
+            // Вычисляем новый индекс
             let newIndex = currentIndex + direction;
             if (newIndex < 0) {
                 newIndex = images.length - 1;
@@ -555,12 +560,17 @@
                 newIndex = 0;
             }
             
+            // Показываем новое изображение
             images[newIndex].classList.add('active');
             images[newIndex].style.display = 'block';
+            images[newIndex].style.opacity = '1';
             
+            // Загружаем изображение, если оно еще не загружено
             if (images[newIndex].getAttribute('loading') === 'lazy') {
                 images[newIndex].setAttribute('loading', 'eager');
             }
+            
+            return true;
         }
         
         // Добавляем обработчик клавиатуры для навигации стрелками
