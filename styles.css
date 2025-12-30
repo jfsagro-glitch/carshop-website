@@ -116,9 +116,9 @@ body.premium .footer-section a:hover { color: var(--text); }
     width: 70px;
     height: 70px;
     margin-right: 10px;
-    border-radius: 50%;
-    background-image: url('images/hero-logo.png');
-    background-size: cover;
+    border-radius: 0;
+    background-image: url('images/logo.png');
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     flex-shrink: 0;
@@ -131,7 +131,10 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .logo-img {
-    display: none; /* use background instead */
+    display: block;
+    height: 70px;
+    width: auto;
+    object-fit: contain;
 }
 
 @keyframes logoPulse {
@@ -276,10 +279,10 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .hero-tagline {
-    background-image: url('images/hero-logo.png');
+    background-image: url('images/logo.png');
     background-repeat: no-repeat;
     background-position: 0 center;
-    background-size: 200px 200px;
+    background-size: 200px auto;
     padding-left: 220px;
     min-height: 200px;
     display: flex;
