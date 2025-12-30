@@ -1825,21 +1825,17 @@ body.premium .footer-section a:hover { color: var(--text); }
     width: 100%;
     height: 100%;
     position: relative;
+    transition: transform 0.4s ease;
 }
 
 .car-gallery .gallery-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
+    min-width: 100%;
     width: 100%;
     height: 100%;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.car-gallery .gallery-slide.active {
-    display: flex;
+    flex-shrink: 0;
 }
 
 .car-gallery .gallery-slide img {
