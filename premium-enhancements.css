@@ -153,15 +153,37 @@ html {
     opacity: 1;
 }
 
-/* Car Image Enhancements */
+/* Car Image Enhancements - Square Format */
 .car-image {
     background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%) !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    height: 400px !important;
+    min-height: 400px !important;
+    aspect-ratio: 1 / 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.car-image img,
+.car-gallery-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+}
+
+.car-card {
+    aspect-ratio: 3 / 4 !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .car-card:hover .car-image {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .car-gallery-img {
