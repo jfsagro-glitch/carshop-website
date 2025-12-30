@@ -12,6 +12,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="translations.js"></script>
     <style>
         /* Тёмная тема + сетка 4 колонки */
         body {
@@ -607,18 +608,25 @@
                     <span>EXPO MIR</span>
                 </div>
                 <nav class="nav">
-                    <a href="index.html#catalog">Грузия</a>
-                    <a href="usa-orders.html">США</a>
-                    <a href="korea-orders.html">Корея</a>
-                    <a href="china-orders.html">Китай</a>
-                    <a href="europe-orders.html">Европа</a>
+                    <a href="index.html#catalog" data-i18n="nav_georgia">Грузия</a>
+                    <a href="usa-orders.html" data-i18n="nav_usa">США</a>
+                    <a href="korea-orders.html" data-i18n="nav_korea">Корея</a>
+                    <a href="china-orders.html" data-i18n="nav_china">Китай</a>
+                    <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
                 </nav>
                 <div class="header-actions">
+                    <div class="language-selector">
+                        <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)">
+                            <option value="ru">🇷🇺 RU</option>
+                            <option value="en">🇬🇧 EN</option>
+                            <option value="ky">🇰🇬 КГ</option>
+                        </select>
+                    </div>
                     <button class="cart-btn" id="cartBtn">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count" id="cartCount">0</span>
                     </button>
-                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()">Заявка на подбор</button>
+                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()" data-i18n="btn_request">Заявка на подбор</button>
                 </div>
             </div>
         </div>
