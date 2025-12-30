@@ -31,11 +31,19 @@
                     <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
                 </nav>
                 <div class="header-actions">
+                    <div class="currency-selector">
+                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="KGS">сом</option>
+                            <option value="RUB">RUB</option>
+                        </select>
+                    </div>
                     <div class="language-selector">
                         <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)">
-                            <option value="ru">🇷🇺 RU</option>
-                            <option value="en">🇬🇧 EN</option>
-                            <option value="ky">🇰🇬 КГ</option>
+                            <option value="ru">RU</option>
+                            <option value="en">EN</option>
+                            <option value="ky">КГ</option>
                         </select>
                     </div>
                     <button class="cart-btn" id="cartBtn">
@@ -52,19 +60,19 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Грузия авто в наличии</h1>
-                <p class="hero-tagline">Широкий выбор<br>качественных автомобилей<br>с пробегом.</p>
+                <h1 data-i18n="hero_title">Грузия авто в наличии</h1>
+                <p class="hero-tagline" data-i18n="hero_tagline">Широкий выбор<br>качественных автомобилей<br>с пробегом.</p>
                 <div class="hero-features">
                     <div class="feature">
                         <i class="fas fa-truck"></i>
-                        <span>Доставка</span>
+                        <span data-i18n="hero_delivery">Доставка</span>
                     </div>
                     <div class="feature">
                         <i class="fas fa-file-contract"></i>
-                        <span>Полное оформление</span>
+                        <span data-i18n="hero_registration">Полное оформление</span>
                     </div>
                 </div>
-                <button class="cta-btn" onclick="document.getElementById('catalog').scrollIntoView()">
+                <button class="cta-btn" onclick="document.getElementById('catalog').scrollIntoView()" data-i18n="hero_view_catalog">
                     Смотреть каталог
                 </button>
             </div>
@@ -76,10 +84,10 @@
         <div class="container">
             <div class="orders-cta-content">
                 <div>
-                    <h2>Заказ автомобилей из США</h2>
-                    <p>Выбираем автомобили на Copart, IAAI и Manheim, доставляем в Грузию. Отдельный каталог с лотами и подбором по VIN доступен на выделенной странице.</p>
+                    <h2 data-i18n="cta_usa_title">Заказ автомобилей из США</h2>
+                    <p data-i18n="cta_usa_text">Выбираем автомобили на Copart, IAAI и Manheim, доставляем в Грузию. Отдельный каталог с лотами и подбором по VIN доступен на выделенной странице.</p>
                 </div>
-                <a class="btn-primary" href="usa-orders.html">Перейти в каталог США</a>
+                <a class="btn-primary" href="usa-orders.html" data-i18n="cta_usa_link">Перейти в каталог США</a>
             </div>
         </div>
     </section>
@@ -89,10 +97,10 @@
         <div class="container">
             <div class="orders-cta-content">
                 <div>
-                    <h2>Заказ автомобилей из Китая</h2>
-                    <p>Официальные поставки из КНР: заводские комплектации, гарантия производителя. Узнайте актуальные цены и доступные модели.</p>
+                    <h2 data-i18n="cta_china_title">Заказ автомобилей из Китая</h2>
+                    <p data-i18n="cta_china_text">Официальные поставки из КНР: заводские комплектации, гарантия производителя. Узнайте актуальные цены и доступные модели.</p>
                 </div>
-                <a class="btn-primary" href="china-orders.html">Каталог из Китая</a>
+                <a class="btn-primary" href="china-orders.html" data-i18n="cta_china_link">Каталог из Китая</a>
             </div>
         </div>
     </section>
@@ -102,10 +110,10 @@
         <div class="container">
             <div class="orders-cta-content">
                 <div>
-                    <h2>Заказ автомобилей из Кореи</h2>
-                    <p>Свежие Hyundai, Kia и Genesis с подтвержденной сервисной историей в Корее. Доступны премиальные комплектации, пробеги до 30 тыс. км и поставка «под ключ».</p>
+                    <h2 data-i18n="cta_korea_title">Заказ автомобилей из Кореи</h2>
+                    <p data-i18n="cta_korea_text">Свежие Hyundai, Kia и Genesis с подтвержденной сервисной историей в Корее. Доступны премиальные комплектации, пробеги до 30 тыс. км и поставка «под ключ».</p>
                 </div>
-                <a class="btn-primary" href="korea-orders.html">Каталог из Кореи</a>
+                <a class="btn-primary" href="korea-orders.html" data-i18n="cta_korea_link">Каталог из Кореи</a>
             </div>
         </div>
     </section>
@@ -115,10 +123,10 @@
         <div class="container">
             <div class="orders-cta-content">
                 <div>
-                    <h2>Заказ автомобилей из Европы</h2>
-                    <p>Широкий выбор качественных автомобилей из Германии, Франции, Италии и других европейских стран. Официальные дилеры, проверенная история, доставка и растаможка.</p>
+                    <h2 data-i18n="cta_europe_title">Заказ автомобилей из Европы</h2>
+                    <p data-i18n="cta_europe_text">Широкий выбор качественных автомобилей из Германии, Франции, Италии и других европейских стран. Официальные дилеры, проверенная история, доставка и растаможка.</p>
                 </div>
-                <a class="btn-primary" href="europe-orders.html">Каталог из Европы</a>
+                <a class="btn-primary" href="europe-orders.html" data-i18n="cta_europe_link">Каталог из Европы</a>
             </div>
         </div>
     </section>
@@ -158,34 +166,34 @@
     <!-- Catalog Section -->
     <section id="catalog" class="catalog">
         <div class="container">
-            <h2>Автомобили в Грузии в наличии</h2>
+            <h2 data-i18n="catalog_title">Автомобили в Грузии в наличии</h2>
             <div class="catalog-filters">
                 <div class="filter-group">
-                    <label>Марка:</label>
+                    <label data-i18n="catalog_brand">Марка:</label>
                     <select id="brandFilter">
-                        <option value="">Все марки</option>
+                        <option value="" data-i18n="filter_all_brands">Все марки</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label>Модель:</label>
+                    <label data-i18n="catalog_model">Модель:</label>
                     <select id="modelFilter">
-                        <option value="">Все модели</option>
+                        <option value="" data-i18n="filter_all_models">Все модели</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label>Цена от:</label>
-                    <input type="number" id="priceFrom" placeholder="Минимум">
+                    <label data-i18n="catalog_price_from">Цена от:</label>
+                    <input type="number" id="priceFrom" data-i18n-placeholder="catalog_minimum" placeholder="Минимум">
                 </div>
                 <div class="filter-group">
-                    <label>Цена до:</label>
-                    <input type="number" id="priceTo" placeholder="Максимум">
+                    <label data-i18n="catalog_price_to">Цена до:</label>
+                    <input type="number" id="priceTo" data-i18n-placeholder="catalog_maximum" placeholder="Максимум">
                 </div>
                 <div class="filter-group">
-                    <label>Пробег до:</label>
-                    <input type="number" id="mileageTo" placeholder="км">
+                    <label data-i18n="catalog_mileage_to">Пробег до:</label>
+                    <input type="number" id="mileageTo" data-i18n-placeholder="catalog_km" placeholder="км">
                 </div>
-                <button class="filter-btn" id="applyFilters">Применить</button>
-                <button class="filter-btn" id="resetFilters">Сбросить</button>
+                <button class="filter-btn" id="applyFilters" data-i18n="btn_apply">Применить</button>
+                <button class="filter-btn" id="resetFilters" data-i18n="btn_reset">Сбросить</button>
             </div>
             <div class="cars-grid" id="carsGrid">
                 <!-- Cars will be loaded here by JavaScript -->
@@ -531,11 +539,12 @@
                     currency = 'USD';
                 }
                 
-                const currencySymbol = currency === 'USD' ? '$' : (currency === 'EUR' ? '€' : '$');
-                const price = displayPrice ? `${currencySymbol}${displayPrice.toLocaleString('ru-RU')}` : 'Цена по запросу';
+                // Используем formatPrice из translations.js для конвертации в выбранную валюту
+                const price = displayPrice ? (typeof formatPrice === 'function' ? formatPrice(displayPrice) : `$${displayPrice.toLocaleString('ru-RU')}`) : (typeof translations !== 'undefined' && translations[currentLanguage] ? translations[currentLanguage].price_on_request : 'Цена по запросу');
                 
                 // Добавляем 5690 долларов к стоимости с доставкой и растаможкой
                 const fullPrice = displayPrice ? displayPrice + 5690 : null;
+                const fullPriceFormatted = fullPrice ? (typeof formatPrice === 'function' ? formatPrice(fullPrice) : `$${fullPrice.toLocaleString('ru-RU')}`) : '';
                 
                 const year = getGeorgiaCarYear(car);
                 const yearDisplay = year ? ` ${year}` : '';
@@ -552,8 +561,8 @@
                             <div class="car-title">${car.brand} ${car.model}${yearDisplay}</div>
                             <div class="car-price">${price}</div>
                             ${fullPrice ? `<div class="car-price-full">
-                                <span class="car-price-full-label">Стоимость с доставкой и растаможкой:</span>
-                                <span class="car-price-full-value">${currencySymbol}${fullPrice.toLocaleString('ru-RU')}</span>
+                                <span class="car-price-full-label" data-i18n="catalog_price_with_delivery">Стоимость с доставкой и растаможкой:</span>
+                                <span class="car-price-full-value">${fullPriceFormatted}</span>
                             </div>` : ''}
                             <div class="car-specs">
                                 ${year ? `<div class="car-spec-item">📅 ${year} год</div>` : ''}

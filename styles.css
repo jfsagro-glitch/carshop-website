@@ -176,6 +176,39 @@ body.premium .footer-section a:hover { color: var(--text); }
     gap: 1rem;
 }
 
+.currency-selector {
+    position: relative;
+    margin-right: 10px;
+}
+
+.currency-select {
+    background: #0b1220;
+    color: #e5e7eb;
+    border: 1px solid #1f2937;
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23e5e7eb' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 12px;
+    transition: all 0.2s;
+    min-width: 90px;
+}
+
+.currency-select:hover {
+    background-color: #111827;
+    border-color: #2b3b55;
+}
+
+.currency-select:focus {
+    outline: none;
+    border-color: rgba(212, 175, 55, 0.7);
+}
+
 .language-selector {
     position: relative;
 }

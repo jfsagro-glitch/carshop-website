@@ -54,9 +54,15 @@ function isPriceInRubles(value) {
     return value && value > 10000;
 }
 
-// Форматирование валюты с автоматической конвертацией рублей в доллары
+// Форматирование валюты с автоматической конвертацией рублей в доллары и поддержкой выбранной валюты
 const formatCurrency = (value) => {
-    if (!value || value <= 0) return '$0';
+    if (!value || value <= 0) {
+        // Используем функцию из translations.js если доступна
+        if (typeof formatPrice === 'function') {
+            return formatPrice(0);
+        }
+        return '$0';
+    }
     
     // Если значение похоже на рубли (> 10000), конвертируем в доллары
     let usdValue = value;
@@ -64,6 +70,12 @@ const formatCurrency = (value) => {
         usdValue = convertRubToUsd(value);
     }
     
+    // Используем функцию из translations.js для форматирования с выбранной валютой
+    if (typeof formatPrice === 'function') {
+        return formatPrice(usdValue);
+    }
+    
+    // Fallback если translations.js не загружен
     return `$${numberFormatter.format(Math.round(usdValue))}`;
 };
 

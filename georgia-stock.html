@@ -615,11 +615,19 @@
                     <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
                 </nav>
                 <div class="header-actions">
+                    <div class="currency-selector">
+                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="KGS">сом</option>
+                            <option value="RUB">RUB</option>
+                        </select>
+                    </div>
                     <div class="language-selector">
                         <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)">
-                            <option value="ru">🇷🇺 RU</option>
-                            <option value="en">🇬🇧 EN</option>
-                            <option value="ky">🇰🇬 КГ</option>
+                            <option value="ru">RU</option>
+                            <option value="en">EN</option>
+                            <option value="ky">КГ</option>
                         </select>
                     </div>
                     <button class="cart-btn" id="cartBtn">
