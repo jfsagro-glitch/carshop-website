@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Заказ запчастей - EXPO MIR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="premium-enhancements.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="translations.js"></script>
+</head>
+<body class="premium">
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="EXPO MIR" class="logo-img">
+                    <span>EXPO MIR</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html#catalog" data-i18n="nav_georgia">Грузия</a>
+                    <a href="usa-orders.html" data-i18n="nav_usa">США</a>
+                    <a href="korea-orders.html" data-i18n="nav_korea">Корея</a>
+                    <a href="china-orders.html" data-i18n="nav_china">Китай</a>
+                    <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
+                    <a href="parts-orders.html" class="active">Запчасти</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="currency-selector">
+                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="KGS">сом</option>
+                            <option value="RUB">RUB</option>
+                        </select>
+                    </div>
+                    <div class="language-selector">
+                        <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)">
+                            <option value="ru">RU</option>
+                            <option value="en">EN</option>
+                            <option value="ky">КГ</option>
+                        </select>
+                    </div>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()" data-i18n="btn_request">Заявка на подбор</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="background:#0b1220;color:#f3f4f6;border-bottom:1px solid #1f2937;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Заказ запчастей для автомобилей</h1>
+                <p>Оригинальные и аналогичные запчасти для всех популярных марок автомобилей. Доставка из США, Европы, Кореи, Китая и Грузии.</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-cog"></i>
+                        <span>Оригинальные запчасти</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-search"></i>
+                        <span>Подбор аналогов</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Быстрая доставка</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parts-selection" class="catalog" style="padding: 3rem 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #f3f4f6;">Выберите марку и модель автомобиля</h2>
+            
+            <div class="catalog-filters">
+                <div class="filter-group">
+                    <label for="partsBrandFilter">Марка автомобиля</label>
+                    <select id="partsBrandFilter">
+                        <option value="">Выберите марку</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="partsModelFilter">Модель автомобиля</label>
+                    <select id="partsModelFilter" disabled>
+                        <option value="">Сначала выберите марку</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="partsYearFilter">Год выпуска</label>
+                    <select id="partsYearFilter">
+                        <option value="">Любой год</option>
+                    </select>
+                </div>
+                <button class="filter-btn" id="partsApplyFilters" type="button">Показать запчасти</button>
+            </div>
+
+            <div id="partsCatalog" style="display: none; margin-top: 3rem;">
+                <div class="parts-categories" id="partsCategories"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parts Request Modal -->
+    <div id="partsRequestModal" class="modal" style="display:none;">
+        <div class="modal-content" style="max-width:700px;">
+            <div class="modal-header">
+                <h3>Заказ запчастей</h3>
+                <span class="close" onclick="closePartsRequestModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="partsRequestForm">
+                    <div class="form-group">
+                        <label>Марка и модель</label>
+                        <input type="text" id="partsCarInfo" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Год выпуска</label>
+                        <input type="text" id="partsCarYear" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Категория запчасти</label>
+                        <input type="text" id="partsCategory" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Название запчасти</label>
+                        <input type="text" id="partsName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Артикул / OEM номер (если известен)</label>
+                        <input type="text" id="partsOEM" placeholder="Например: 123456789">
+                    </div>
+                    <div class="form-group">
+                        <label>VIN автомобиля (если известен)</label>
+                        <input type="text" id="partsVIN" placeholder="Например: WBA3A5C50EK123456">
+                    </div>
+                    <div class="form-group">
+                        <label>Количество</label>
+                        <input type="number" id="partsQuantity" min="1" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Ваше имя*</label>
+                        <input type="text" id="partsClientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон*</label>
+                        <input type="tel" id="partsClientPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="partsClientEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Комментарий</label>
+                        <textarea id="partsComment" rows="4" placeholder="Дополнительная информация о запчасти"></textarea>
+                    </div>
+                    <div id="partsRequestStatus" style="display:none;color:#facc15;margin-bottom:1rem;"></div>
+                    <button class="btn-primary" id="partsRequestSubmit" type="button">Отправить заявку</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analog Search Modal -->
+    <div id="analogSearchModal" class="modal" style="display:none;">
+        <div class="modal-content" style="max-width:700px;">
+            <div class="modal-header">
+                <h3>Подбор аналогов запчасти</h3>
+                <span class="close" onclick="closeAnalogSearchModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="analogSearchForm">
+                    <div class="form-group">
+                        <label>Оригинальный артикул / OEM номер*</label>
+                        <input type="text" id="analogOEM" placeholder="Например: 123456789" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Марка и модель автомобиля</label>
+                        <input type="text" id="analogCarInfo" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Название запчасти</label>
+                        <input type="text" id="analogPartName" placeholder="Например: Тормозной диск передний">
+                    </div>
+                    <div class="form-group">
+                        <label>Ваше имя*</label>
+                        <input type="text" id="analogClientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон*</label>
+                        <input type="tel" id="analogClientPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="analogClientEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Комментарий</label>
+                        <textarea id="analogComment" rows="4" placeholder="Дополнительная информация"></textarea>
+                    </div>
+                    <div id="analogSearchStatus" style="display:none;color:#facc15;margin-bottom:1rem;"></div>
+                    <button class="btn-primary" id="analogSearchSubmit" type="button">Найти аналоги</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p><a href="tel:+996755666805">+996 755 666 805</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/996755666805" target="_blank">+996 755 666 805</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EXPO MIR</h4>
+                    <p>Профессиональный подбор и доставка автомобилей и запчастей</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <p><a href="index.html#catalog">Автомобили из Грузии</a></p>
+                    <p><a href="usa-orders.html">Автомобили из США</a></p>
+                    <p><a href="korea-orders.html">Автомобили из Кореи</a></p>
+                    <p><a href="parts-orders.html">Запчасти</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><a href="tel:+996755666805">+996 755 666 805</a></p>
+                    <p><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="parts-orders.js"></script>
+</body>
+</html>
+
