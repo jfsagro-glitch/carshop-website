@@ -14,15 +14,30 @@ body {
 
 /* Premium theme overrides */
 body.premium {
-    --bg: #0b0f17;
+    --bg: #0a0e1a;
     --card-bg: #0f172a;
-    --text: #e5e7eb;
-    --muted: #9ca3af;
-    --border: #1f2937;
-    --accent: #d4af37; /* gold */
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: #1e293b;
+    --accent: #d4af37;
+    --accent-light: #f4d03f;
+    --accent-dark: #b89324;
+    --shadow-gold: rgba(212, 175, 55, 0.3);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
 }
 
-body.premium { color: #e5e7eb; background: #000000; }
+body.premium { 
+    color: #f1f5f9; 
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f172a 50%, #0a0e1a 100%);
+    background-size: 400% 400%;
+    animation: bodyGradient 20s ease infinite;
+}
+
+@keyframes bodyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 body.premium .header,
 body.premium .hero,
