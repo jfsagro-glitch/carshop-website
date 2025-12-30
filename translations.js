@@ -404,9 +404,30 @@ function updateCurrencySelector() {
 
 // Обновление всех цен на странице
 function updateAllPrices() {
-    // Эта функция будет вызываться из script.js после загрузки курсов
+    // Обновляем цены в карточках автомобилей
+    document.querySelectorAll('.car-price, .car-price-full-value').forEach(el => {
+        const text = el.textContent.trim();
+        // Извлекаем число из текста
+        const match = text.match(/[\d\s,]+/);
+        if (match) {
+            const numStr = match[0].replace(/[\s,]/g, '');
+            const num = parseFloat(numStr);
+            if (num && num > 0) {
+                // Предполагаем, что цена в USD (базовая валюта)
+                // Если нужно, можно добавить логику определения исходной валюты
+                el.textContent = formatPrice(num);
+            }
+        }
+    });
+    
+    // Вызываем функцию из script.js если она доступна
     if (typeof window.updateAllDisplayedPrices === 'function') {
         window.updateAllDisplayedPrices();
+    }
+    
+    // Перерисовываем карточки автомобилей на странице Грузия
+    if (typeof displayGeorgiaCars === 'function') {
+        displayGeorgiaCars();
     }
 }
 
