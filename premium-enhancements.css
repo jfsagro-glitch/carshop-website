@@ -527,35 +527,78 @@ html {
     }
 }
 
-/* Currency and Language Selectors - Dark Theme */
-.currency-select,
-.language-select {
+/* Currency and Language Selectors - Dark Theme - Maximum Specificity */
+.header .header-actions .currency-selector .currency-select,
+.header .header-actions .language-selector .language-select,
+.currency-selector .currency-select,
+.language-selector .language-select,
+#currencySelector.currency-select,
+#languageSelector.language-select,
+select.currency-select,
+select.language-select {
     background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important;
     background-size: 200% 200% !important;
     animation: gradientShift 3s ease infinite !important;
     color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 8px !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 10px !important;
+    padding: 0.5rem 2rem 0.5rem 0.75rem !important;
+    font-size: 0.9rem !important;
     font-weight: 600 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    cursor: pointer !important;
+    appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.5rem center !important;
+    background-size: 12px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    min-width: 90px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    will-change: transform, box-shadow, background-position !important;
 }
 
-.currency-select:hover,
-.language-select:hover {
+.header .header-actions .currency-selector .currency-select:hover,
+.header .header-actions .language-selector .language-select:hover,
+.currency-selector .currency-select:hover,
+.language-selector .language-select:hover,
+#currencySelector.currency-select:hover,
+#languageSelector.language-select:hover,
+select.currency-select:hover,
+select.language-select:hover {
     background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%) !important;
     background-size: 200% 200% !important;
     border-color: rgba(255, 255, 255, 0.25) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
-    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 20px rgba(31, 41, 55, 0.5) !important;
+    transform: translateY(-2px) scale(1.02) !important;
     animation-duration: 2s !important;
 }
 
-.currency-select:focus,
-.language-select:focus {
+.header .header-actions .currency-selector .currency-select:focus,
+.header .header-actions .language-selector .language-select:focus,
+.currency-selector .currency-select:focus,
+.language-selector .language-select:focus,
+#currencySelector.currency-select:focus,
+#languageSelector.language-select:focus,
+select.currency-select:focus,
+select.language-select:focus {
     outline: none !important;
     border-color: rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+    animation-duration: 1.5s !important;
+}
+
+.header .header-actions .currency-selector .currency-select:active,
+.header .header-actions .language-selector .language-select:active,
+.currency-selector .currency-select:active,
+.language-selector .language-select:active,
+#currencySelector.currency-select:active,
+#languageSelector.language-select:active,
+select.currency-select:active,
+select.language-select:active {
+    transform: translateY(0) scale(0.98) !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 @keyframes gradientShift {
