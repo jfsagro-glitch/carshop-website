@@ -668,15 +668,17 @@
                 const placeholderSvg = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27200%27%3E%3Crect fill=%27%23ddd%27 width=%27300%27 height=%27200%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27%3E%D0%9D%D0%B5%D1%82 %D1%84%D0%BE%D1%82%D0%BE%3C/text%3E%3C/svg%3E';
                 
                 const carId = `car-${index}`;
-                const imagesHtml = images.length > 0 ? images.map((img, imgIdx) => 
-                    `<img class="car-gallery-img ${imgIdx === 0 ? 'active' : ''}" 
+                const imagesHtml = images.length > 0 ? images.map((img, imgIdx) => {
+                    const isActive = imgIdx === 0;
+                    return `<img class="car-gallery-img ${isActive ? 'active' : ''}" 
                           src="${img.url.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" 
                           alt="${(car.brand + ' ' + car.model + yearDisplay).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" 
                           data-index="${imgIdx}"
-                          loading="${imgIdx === 0 ? 'eager' : 'lazy'}"
+                          style="${isActive ? 'display:block;opacity:1;' : 'display:none;opacity:0;'}"
+                          loading="${isActive ? 'eager' : 'lazy'}"
                           onload="this.classList.add('loaded')"
-                          onerror="this.onerror=null;this.src=&quot;${placeholderSvg}&quot;">`
-                ).join('') : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>`;
+                          onerror="this.onerror=null;this.src=&quot;${placeholderSvg}&quot;">`;
+                }).join('') : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>`;
                 
                 return `
                     <div class="car-card" data-index="${index}">
