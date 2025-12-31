@@ -394,54 +394,33 @@ function displayParsedPartsCatalog(parsedParts, container) {
 }
 
 function displayDefaultPartsCatalog(categoriesDiv) {
-    
     // Display all categories
     Object.keys(partsCatalog).forEach(categoryName => {
         const categoryDiv = document.createElement('div');
         categoryDiv.className = 'parts-category';
-        categoryDiv.style.cssText = 'margin-bottom: 2.5rem;';
+        categoryDiv.style.cssText = 'margin-bottom: 2.5rem; background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);';
         
         const categoryHeader = document.createElement('h3');
-        categoryHeader.style.cssText = 'color: #f3f4f6; font-size: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(212, 175, 55, 0.3);';
+        categoryHeader.style.cssText = 'color: #1f2937; font-size: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #3b82f6;';
         categoryHeader.textContent = categoryName;
         categoryDiv.appendChild(categoryHeader);
         
         const subcategories = partsCatalog[categoryName];
         Object.keys(subcategories).forEach(subcategoryName => {
             const subcategoryDiv = document.createElement('div');
-            subcategoryDiv.style.cssText = 'margin-bottom: 1.5rem;';
+            subcategoryDiv.style.cssText = 'margin-bottom: 2rem;';
             
             const subcategoryHeader = document.createElement('h4');
-            subcategoryHeader.style.cssText = 'color: #d4af37; font-size: 1.2rem; margin-bottom: 1rem;';
+            subcategoryHeader.style.cssText = 'color: #3b82f6; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;';
             subcategoryHeader.textContent = subcategoryName;
             subcategoryDiv.appendChild(subcategoryHeader);
             
             const partsList = document.createElement('div');
             partsList.className = 'parts-list';
-            partsList.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;';
+            partsList.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;';
             
             subcategories[subcategoryName].forEach(partName => {
-                const partCard = document.createElement('div');
-                partCard.className = 'part-card';
-                partCard.style.cssText = 'background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 1rem; transition: all 0.3s; cursor: pointer;';
-                
-                partCard.innerHTML = `
-                    <div style="color: #f3f4f6; font-weight: 500; margin-bottom: 0.5rem;">${partName}</div>
-                    <button class="btn-primary" onclick="openPartsRequestModal('${categoryName}', '${subcategoryName}', '${partName}')" style="width: 100%; margin-top: 0.5rem; padding: 0.5rem;">
-                        <i class="fas fa-shopping-cart"></i> Заказать
-                    </button>
-                `;
-                
-                partCard.addEventListener('mouseenter', function() {
-                    this.style.borderColor = 'rgba(212, 175, 55, 0.5)';
-                    this.style.transform = 'translateY(-2px)';
-                });
-                
-                partCard.addEventListener('mouseleave', function() {
-                    this.style.borderColor = 'rgba(212, 175, 55, 0.2)';
-                    this.style.transform = 'translateY(0)';
-                });
-                
+                const partCard = createPartCard(partName, `${categoryName} > ${subcategoryName}`);
                 partsList.appendChild(partCard);
             });
             
