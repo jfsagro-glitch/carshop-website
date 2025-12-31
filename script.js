@@ -13,10 +13,7 @@ const state = {
 };
 
 // numberFormatter объявлен в translations.js, используем глобальную переменную
-// Если translations.js еще не загружен, создаем временный форматтер
-if (typeof numberFormatter === 'undefined') {
-    var numberFormatter = new Intl.NumberFormat('ru-RU');
-}
+// Не объявляем здесь, чтобы избежать конфликта с translations.js
 
 // Глобальная переменная для курса USD/RUB от ЦБ РФ
 let usdToRubRate = null;
