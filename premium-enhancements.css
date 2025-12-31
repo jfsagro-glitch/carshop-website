@@ -527,17 +527,44 @@ html {
     }
 }
 
-/* Currency and Language Selectors */
+/* Currency and Language Selectors - Dark Theme */
 .currency-select,
 .language-select {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important;
+    background-size: 200% 200% !important;
+    animation: gradientShift 3s ease infinite !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-radius: 8px !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 .currency-select:hover,
 .language-select:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%) !important;
+    background-size: 200% 200% !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+    transform: translateY(-2px) scale(1.02);
+    animation-duration: 2s !important;
+}
+
+.currency-select:focus,
+.language-select:focus {
+    outline: none !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 /* Cart Button - Premium White */
