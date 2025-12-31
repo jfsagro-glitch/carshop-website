@@ -617,9 +617,20 @@ function initializeApp() {
     // populateBrandFilter(); // Отключено вместе с каталогом
     updateCartCount();
     setupEventListeners();
-    loadUsaOrdersSection();
-    loadChinaOrdersSection();
-    loadKoreaOrdersSection();
+    
+    // Загружаем секции только если соответствующие элементы существуют на странице
+    if (document.getElementById('usaUnder160Grid') || document.getElementById('usaMetrics')) {
+        loadUsaOrdersSection();
+    }
+    
+    if (document.getElementById('chinaUnder160Grid')) {
+        loadChinaOrdersSection();
+    }
+    
+    if (document.getElementById('koreaUnder160Grid') || document.getElementById('koreaOrdersGrid')) {
+        loadKoreaOrdersSection();
+    }
+    
     // Обработчики свайпа для всех галерей (делегирование)
     document.addEventListener('touchstart', onTouchStart, { passive: true });
     document.addEventListener('touchmove', onTouchMove, { passive: true });
@@ -2010,31 +2021,53 @@ const koreaCars = [
 const koreaUnder160Cars = Array.isArray(window.koreaUnder160CarsData) ? window.koreaUnder160CarsData : [];
 
 async function loadUsaOrdersSection(){
+    // Проверяем наличие контейнера на странице
+    const container = document.getElementById('usaUnder160Grid');
+    const metrics = document.getElementById('usaMetrics');
+    
+    if (!container && !metrics) {
+        return; // Элементы не найдены на этой странице
+    }
+    
     // Убеждаемся, что данные загружены
-    if (typeof usaUnder160Cars === 'undefined' || !Array.isArray(usaUnder160Cars)) {
-        console.warn('usaUnder160Cars не загружены');
-        const container = document.getElementById('usaUnder160Grid');
+    if (typeof usaUnder160Cars === 'undefined' || !Array.isArray(usaUnder160Cars) || usaUnder160Cars.length === 0) {
         if (container) {
-            container.innerHTML = '<div class="usa-empty-state">Данные загружаются...</div>';
+            container.innerHTML = '<div class="usa-empty-state">Нет доступных предложений</div>';
+        }
+        if (metrics) {
+            const countEl = metrics.querySelector('[data-metric="count"]');
+            if (countEl) countEl.textContent = '0';
+            const avgEl = metrics.querySelector('[data-metric="avg"]');
+            if (avgEl) avgEl.textContent = '—';
+            const minEl = metrics.querySelector('[data-metric="min"]');
+            if (minEl) minEl.textContent = '—';
         }
         return;
     }
     
-    const metrics = document.getElementById('usaMetrics');
-    if (!metrics) {
-        renderPreferentialCars();
-        return;
+    // Обновляем метрики если есть секция
+    if (metrics) {
+        try {
+            const prices = usaUnder160Cars.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
+            const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
+            const min = prices.length ? prices[0] : null;
+
+            const countEl = metrics.querySelector('[data-metric="count"]');
+            const avgEl = metrics.querySelector('[data-metric="avg"]');
+            const minEl = metrics.querySelector('[data-metric="min"]');
+            
+            if (countEl) countEl.textContent = numberFormatter.format(usaUnder160Cars.length);
+            if (avgEl) avgEl.textContent = avg ? formatCurrency(avg) : '—';
+            if (minEl) minEl.textContent = min ? formatCurrency(min) : '—';
+        } catch (error) {
+            console.error('Ошибка обновления метрик USA:', error);
+        }
     }
 
-    const prices = usaUnder160Cars.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
-    const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
-    const min = prices.length ? prices[0] : null;
-
-    metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(usaUnder160Cars.length);
-    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
-    metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
-
-    renderPreferentialCars();
+    // Рендерим автомобили
+    if (container) {
+        renderPreferentialCars();
+    }
 }
 
 function parseUsaCsv(text){
@@ -2157,91 +2190,123 @@ function renderPreferentialCars(){
 }
 
 function loadChinaOrdersSection(){
+    const grid = document.getElementById('chinaUnder160Grid');
+    
+    if (!grid) {
+        return; // Элемент не найден на этой странице
+    }
+    
     // Убеждаемся, что данные загружены
     if (typeof chinaCars === 'undefined' || !Array.isArray(chinaCars) || chinaCars.length === 0) {
-        console.warn('chinaCars не загружены или пусты');
-        const grid = document.getElementById('chinaUnder160Grid');
-        if (grid) {
-            grid.innerHTML = '<div class="usa-empty-state">Данные загружаются...</div>';
-        }
+        grid.innerHTML = '<div class="usa-empty-state">Нет доступных предложений</div>';
+        updateChinaUnder160Counters();
         return;
     }
     
-    setupChinaUnder160Section();
-    updateChinaUnder160Counters();
+    try {
+        setupChinaUnder160Section();
+        updateChinaUnder160Counters();
+    } catch (error) {
+        console.error('Ошибка загрузки секции China:', error);
+        grid.innerHTML = '<div class="usa-empty-state">Ошибка загрузки данных</div>';
+    }
 }
 
 function loadKoreaOrdersSection(){
+    const koreaUnder160Grid = document.getElementById('koreaUnder160Grid');
+    const koreaOrdersGrid = document.getElementById('koreaOrdersGrid');
+    const koreaMetrics = document.getElementById('koreaMetrics');
+    
+    // Если нет ни одного элемента на странице, выходим
+    if (!koreaUnder160Grid && !koreaOrdersGrid) {
+        return;
+    }
+    
     // Сначала настраиваем секцию для автомобилей до 160 л.с.
-    setupKoreaUnder160Section();
+    if (koreaUnder160Grid) {
+        try {
+            setupKoreaUnder160Section();
+        } catch (error) {
+            console.error('Ошибка настройки секции Korea Under 160:', error);
+            if (koreaUnder160Grid) {
+                koreaUnder160Grid.innerHTML = '<div class="usa-empty-state">Ошибка загрузки данных</div>';
+            }
+        }
+    }
     
     // Проверяем наличие секции для обычных автомобилей (может отсутствовать)
-    const grid = document.getElementById('koreaOrdersGrid');
-    const metrics = document.getElementById('koreaMetrics');
-    
-    // Если есть секция для обычных автомобилей, загружаем их
-    if (grid && metrics && typeof koreaCars !== 'undefined' && koreaCars.length > 0) {
-        // Конвертируем цены из рублей в доллары если нужно
-        const prices = koreaCars.map(car => {
-            let price = car.price;
-            if (price && price > 10000 && usdToRubRate) {
-                price = convertRubToUsd(price);
-            }
-            return price;
-        }).filter(Boolean).sort((a,b)=>a-b);
-        
-        const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
-        const min = prices.length ? prices[0] : null;
-
-        metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(koreaCars.length);
-        metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
-        metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
-
-        grid.innerHTML = '';
-
-        koreaCars.forEach(car=>{
-            const highlightsHtml = car.highlights && car.highlights.length
-                ? `<ul class="orders-highlights">${car.highlights.map(item=>`<li><i class=\"fas fa-check\"></i>${item}</li>`).join('')}</ul>`
-                : '';
+    if (koreaOrdersGrid && koreaMetrics && typeof koreaCars !== 'undefined' && Array.isArray(koreaCars) && koreaCars.length > 0) {
+        try {
+            // Конвертируем цены из рублей в доллары если нужно
+            const prices = koreaCars.map(car => {
+                let price = car.price;
+                if (price && price > 10000 && typeof usdToRubRate !== 'undefined' && usdToRubRate) {
+                    price = convertRubToUsd(price);
+                }
+                return price;
+            }).filter(Boolean).sort((a,b)=>a-b);
             
-            // Конвертируем цену из рублей в доллары если нужно
-            let displayPrice = car.price;
-            if (displayPrice && displayPrice > 10000 && usdToRubRate) {
-                displayPrice = convertRubToUsd(displayPrice);
-            }
+            const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
+            const min = prices.length ? prices[0] : null;
+
+            const countEl = koreaMetrics.querySelector('[data-metric="count"]');
+            const avgEl = koreaMetrics.querySelector('[data-metric="avg"]');
+            const minEl = koreaMetrics.querySelector('[data-metric="min"]');
             
-            const card = document.createElement('article');
-            card.className = 'orders-card korea-card';
-            card.innerHTML = `
-                <img src="${car.image}" alt="${car.name}" loading="lazy">
-                <div class="orders-card-body">
-                    <h4>${car.name}</h4>
-                    <ul class="usa-preferential-meta">
-                        <li><span>Двигатель:</span> ${car.engine}</li>
-                        <li><span>Мощность:</span> ${car.power}</li>
-                        <li><span>Привод:</span> ${car.drive}</li>
-                        <li><span>Срок:</span> ${car.leadTime || '60-75 дней'}</li>
-                    </ul>
-                    ${highlightsHtml}
-                    <div class="usa-preferential-price">от ${formatCurrency(displayPrice)}</div>
-                    <div class="usa-order-actions" style="margin-top:0.5rem;">
-                        <button class="btn-primary" type="button">Запросить расчет</button>
+            if (countEl) countEl.textContent = numberFormatter.format(koreaCars.length);
+            if (avgEl) avgEl.textContent = avg ? formatCurrency(avg) : '—';
+            if (minEl) minEl.textContent = min ? formatCurrency(min) : '—';
+
+            koreaOrdersGrid.innerHTML = '';
+
+            koreaCars.forEach(car=>{
+                const highlightsHtml = car.highlights && car.highlights.length
+                    ? `<ul class="orders-highlights">${car.highlights.map(item=>`<li><i class=\"fas fa-check\"></i>${item}</li>`).join('')}</ul>`
+                    : '';
+                
+                // Конвертируем цену из рублей в доллары если нужно
+                let displayPrice = car.price;
+                if (displayPrice && displayPrice > 10000 && typeof usdToRubRate !== 'undefined' && usdToRubRate) {
+                    displayPrice = convertRubToUsd(displayPrice);
+                }
+                
+                const card = document.createElement('article');
+                card.className = 'orders-card korea-card';
+                card.innerHTML = `
+                    <img src="${car.image || buildSvgPlaceholder(car.name)}" alt="${car.name}" loading="lazy">
+                    <div class="orders-card-body">
+                        <h4>${car.name}</h4>
+                        <ul class="usa-preferential-meta">
+                            <li><span>Двигатель:</span> ${car.engine || '—'}</li>
+                            <li><span>Мощность:</span> ${car.power || '—'}</li>
+                            <li><span>Привод:</span> ${car.drive || '—'}</li>
+                            <li><span>Срок:</span> ${car.leadTime || '60-75 дней'}</li>
+                        </ul>
+                        ${highlightsHtml}
+                        <div class="usa-preferential-price">от ${formatCurrency(displayPrice)}</div>
+                        <div class="usa-order-actions" style="margin-top:0.5rem;">
+                            <button class="btn-primary" type="button">Запросить расчет</button>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
 
-            const btn = card.querySelector('.btn-primary');
-            if (btn) {
-                btn.addEventListener('click', ()=>{
-                    openRequestModal();
-                    prefillKoreaRequest(car);
-                });
+                const btn = card.querySelector('.btn-primary');
+                if (btn) {
+                    btn.addEventListener('click', ()=>{
+                        openRequestModal();
+                        prefillKoreaRequest(car);
+                    });
+                }
+
+                attachImageFallback(card.querySelector('img'), car);
+                koreaOrdersGrid.appendChild(card);
+            });
+        } catch (error) {
+            console.error('Ошибка рендеринга автомобилей Korea:', error);
+            if (koreaOrdersGrid) {
+                koreaOrdersGrid.innerHTML = '<div class="usa-empty-state">Ошибка загрузки данных</div>';
             }
-
-            attachImageFallback(card.querySelector('img'), car);
-
-            grid.appendChild(card);
-        });
+        }
     }
     
     // Инициализация секции под 160 л.с. (всегда вызываем, если есть элемент)
