@@ -2308,12 +2308,6 @@ function loadKoreaOrdersSection(){
             }
         }
     }
-    
-    // Инициализация секции под 160 л.с. (всегда вызываем, если есть элемент)
-    const koreaUnder160Grid = document.getElementById('koreaUnder160Grid');
-    if (koreaUnder160Grid) {
-        setupKoreaUnder160Section();
-    }
 }
 
 function renderChinaUnder160Cars(){
