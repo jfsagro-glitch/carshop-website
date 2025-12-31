@@ -57,53 +57,62 @@
         </div>
     </header>
 
-    <section class="hero" style="background:#0b1220;color:#f3f4f6;border-bottom:1px solid #1f2937;">
+    <!-- Hero Section with VIN Search -->
+    <section class="hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #ffffff; padding: 4rem 0;">
         <div class="container">
-            <div class="hero-content">
-                <h1>Заказ запчастей для автомобилей</h1>
-                <p>Оригинальные и аналогичные запчасти для всех популярных марок автомобилей. Доставка из США, Европы, Кореи, Китая и Грузии.</p>
-                <div class="hero-features">
-                    <div class="feature">
-                        <i class="fas fa-cog"></i>
-                        <span>Оригинальные запчасти</span>
+            <div class="hero-content" style="text-align: center;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: #ffffff;">Поиск запчастей для автомобилей</h1>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9);">Оригинальные и аналогичные запчасти для всех популярных марок</p>
+                
+                <!-- VIN Search Box -->
+                <div style="max-width: 600px; margin: 0 auto 2rem;">
+                    <div style="display: flex; gap: 0.5rem; background: rgba(255,255,255,0.95); padding: 1rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                        <input type="text" id="vinSearchInput" placeholder="Введите VIN номер автомобиля" 
+                               style="flex: 1; padding: 0.75rem 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; outline: none;"
+                               onkeypress="if(event.key==='Enter') searchByVIN()">
+                        <button onclick="searchByVIN()" class="btn-primary" style="padding: 0.75rem 2rem; white-space: nowrap;">
+                            <i class="fas fa-search"></i> Найти по VIN
+                        </button>
                     </div>
-                    <div class="feature">
-                        <i class="fas fa-search"></i>
-                        <span>Подбор аналогов</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-shipping-fast"></i>
-                        <span>Быстрая доставка</span>
-                    </div>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                        <i class="fas fa-info-circle"></i> Или выберите марку и модель ниже
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="parts-selection" class="catalog" style="padding: 3rem 0;">
+    <!-- Parts Selection Section -->
+    <section id="parts-selection" class="catalog" style="padding: 3rem 0; background: #f8f9fa;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #f3f4f6;">Выберите марку и модель автомобиля</h2>
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #1f2937; font-size: 2rem;">Выберите марку и модель автомобиля</h2>
             
-            <div class="catalog-filters">
-                <div class="filter-group">
-                    <label for="partsBrandFilter">Марка автомобиля</label>
-                    <select id="partsBrandFilter">
-                        <option value="">Выберите марку</option>
-                    </select>
+            <div class="catalog-filters" style="background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="filter-group">
+                        <label for="partsBrandFilter" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Марка автомобиля</label>
+                        <select id="partsBrandFilter" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                            <option value="">Выберите марку</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="partsModelFilter" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Модель автомобиля</label>
+                        <select id="partsModelFilter" disabled style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                            <option value="">Сначала выберите марку</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="partsYearFilter" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Год выпуска</label>
+                        <select id="partsYearFilter" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                            <option value="">Любой год</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="filter-group">
-                    <label for="partsModelFilter">Модель автомобиля</label>
-                    <select id="partsModelFilter" disabled>
-                        <option value="">Сначала выберите марку</option>
-                    </select>
+                <div style="text-align: center;">
+                    <button class="btn-primary" id="partsApplyFilters" type="button" style="padding: 1rem 3rem; font-size: 1.1rem;">
+                        <i class="fas fa-search"></i> Показать запчасти
+                    </button>
                 </div>
-                <div class="filter-group">
-                    <label for="partsYearFilter">Год выпуска</label>
-                    <select id="partsYearFilter">
-                        <option value="">Любой год</option>
-                    </select>
-                </div>
-                <button class="filter-btn" id="partsApplyFilters" type="button">Показать запчасти</button>
             </div>
 
             <div id="partsCatalog" style="display: none; margin-top: 3rem;">

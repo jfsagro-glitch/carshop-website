@@ -1,5 +1,56 @@
 // Parts Orders System for EXPO MIR
 
+// VIN Search Function
+function searchByVIN() {
+    const vinInput = document.getElementById('vinSearchInput');
+    if (!vinInput) return;
+    
+    const vin = vinInput.value.trim().toUpperCase();
+    if (!vin || vin.length < 17) {
+        alert('Пожалуйста, введите корректный VIN номер (17 символов)');
+        return;
+    }
+    
+    // Открываем модальное окно для заказа по VIN
+    openPartsRequestModal('VIN Search', 'VIN', 'Запчасти по VIN');
+    document.getElementById('partsVIN').value = vin;
+    document.getElementById('partsCarInfo').value = `VIN: ${vin}`;
+}
+
+// Load parts catalog from parsed data
+let partsouqData = null;
+
+// Try to load parsed partsouq data
+async function loadPartsouqData() {
+    try {
+        const response = await fetch('data/json/partsouq/partsouq_catalog.json');
+        if (response.ok) {
+            partsouqData = await response.json();
+            console.log('Partsouq data loaded:', Object.keys(partsouqData).length, 'brands');
+            // Update brand filter with parsed brands
+            updateBrandsFromData();
+        }
+    } catch (error) {
+        console.log('Partsouq data not available, using default brands');
+    }
+}
+
+function updateBrandsFromData() {
+    if (!partsouqData) return;
+    
+    const brandFilter = document.getElementById('partsBrandFilter');
+    if (!brandFilter) return;
+    
+    // Add parsed brands to the filter
+    const parsedBrands = Object.keys(partsouqData).sort();
+    parsedBrands.forEach(brand => {
+        const option = document.createElement('option');
+        option.value = brand;
+        option.textContent = brand;
+        brandFilter.appendChild(option);
+    });
+}
+
 // Popular car brands and models
 const carBrandsModels = {
     'Toyota': {
@@ -172,6 +223,7 @@ let selectedYear = '';
 document.addEventListener('DOMContentLoaded', function() {
     initializePartsPage();
     setupPartsEventListeners();
+    loadPartsouqData(); // Load parsed partsouq data
     
     // Initialize language and currency
     if (typeof setLanguage === 'function') {
@@ -282,16 +334,66 @@ function displayPartsCatalog() {
     catalogDiv.style.display = 'block';
     categoriesDiv.innerHTML = '';
     
+    // Check if we have parsed data for this brand/model
+    let parsedParts = null;
+    if (partsouqData && partsouqData[selectedBrand] && partsouqData[selectedBrand].models && partsouqData[selectedBrand].models[selectedModel]) {
+        parsedParts = partsouqData[selectedBrand].models[selectedModel];
+        console.log('Using parsed partsouq data for', selectedBrand, selectedModel);
+    }
+    
     // Add car info header
     const carInfo = document.createElement('div');
-    carInfo.style.cssText = 'text-align: center; margin-bottom: 2rem; padding: 1.5rem; background: rgba(15, 23, 42, 0.8); border-radius: 12px;';
+    carInfo.style.cssText = 'text-align: center; margin-bottom: 2rem; padding: 2rem; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); border-radius: 12px; color: #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.15);';
     carInfo.innerHTML = `
-        <h3 style="color: #f3f4f6; margin-bottom: 0.5rem;">${selectedBrand} ${selectedModel}${selectedYear ? ' ' + selectedYear : ''}</h3>
-        <button class="btn-secondary" onclick="openAnalogSearchModal()" style="margin-top: 1rem;">
-            <i class="fas fa-search"></i> Подобрать аналоги по артикулу
-        </button>
+        <h3 style="color: #ffffff; margin-bottom: 0.5rem; font-size: 1.8rem;">${selectedBrand} ${selectedModel}${selectedYear ? ' ' + selectedYear : ''}</h3>
+        ${parsedParts ? '<p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;"><i class="fas fa-check-circle"></i> Каталог запчастей загружен</p>' : ''}
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button class="btn-secondary" onclick="openAnalogSearchModal()" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.5); color: #ffffff;">
+                <i class="fas fa-search"></i> Подобрать аналоги по артикулу
+            </button>
+        </div>
     `;
     categoriesDiv.appendChild(carInfo);
+    
+    // Use parsed data if available, otherwise use default catalog
+    if (parsedParts && Object.keys(parsedParts).length > 0) {
+        displayParsedPartsCatalog(parsedParts, categoriesDiv);
+    } else {
+        displayDefaultPartsCatalog(categoriesDiv);
+    }
+    
+    // Scroll to catalog
+    catalogDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function displayParsedPartsCatalog(parsedParts, container) {
+    Object.keys(parsedParts).forEach(categoryName => {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'parts-category';
+        categoryDiv.style.cssText = 'margin-bottom: 2.5rem; background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);';
+        
+        const categoryHeader = document.createElement('h3');
+        categoryHeader.style.cssText = 'color: #1f2937; font-size: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #3b82f6;';
+        categoryHeader.textContent = categoryName;
+        categoryDiv.appendChild(categoryHeader);
+        
+        const partsList = document.createElement('div');
+        partsList.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;';
+        
+        const parts = parsedParts[categoryName];
+        if (Array.isArray(parts)) {
+            parts.forEach(part => {
+                const partCard = createPartCard(part.name || part, categoryName, part.number, part.price);
+                partsList.appendChild(partCard);
+            });
+        }
+        
+        categoryDiv.appendChild(partsList);
+        container.appendChild(categoryDiv);
+    });
+}
+
+function displayDefaultPartsCatalog(categoriesDiv) {
     
     // Display all categories
     Object.keys(partsCatalog).forEach(categoryName => {
@@ -349,9 +451,35 @@ function displayPartsCatalog() {
         
         categoriesDiv.appendChild(categoryDiv);
     });
+}
+
+function createPartCard(partName, category, partNumber = '', price = '') {
+    const partCard = document.createElement('div');
+    partCard.className = 'part-card';
+    partCard.style.cssText = 'background: #ffffff; border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.05);';
     
-    // Scroll to catalog
-    catalogDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    partCard.innerHTML = `
+        <div style="color: #1f2937; font-weight: 600; margin-bottom: 0.75rem; font-size: 1.1rem;">${partName}</div>
+        ${partNumber ? `<div style="color: #6b7280; font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fas fa-barcode"></i> ${partNumber}</div>` : ''}
+        ${price ? `<div style="color: #059669; font-weight: 600; margin-bottom: 0.75rem; font-size: 1.1rem;">${price}</div>` : ''}
+        <button class="btn-primary" onclick="openPartsRequestModal('${category}', '', '${partName.replace(/'/g, "\\'")}')" style="width: 100%; margin-top: 0.5rem; padding: 0.75rem; border-radius: 8px;">
+            <i class="fas fa-shopping-cart"></i> Заказать
+        </button>
+    `;
+    
+    partCard.addEventListener('mouseenter', function() {
+        this.style.borderColor = '#3b82f6';
+        this.style.transform = 'translateY(-4px)';
+        this.style.boxShadow = '0 4px 16px rgba(59, 130, 246, 0.2)';
+    });
+    
+    partCard.addEventListener('mouseleave', function() {
+        this.style.borderColor = '#e5e7eb';
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+    });
+    
+    return partCard;
 }
 
 function openPartsRequestModal(category, subcategory, partName) {
