@@ -2169,7 +2169,7 @@ function renderPreferentialCars(){
                     <li><span>Мощность:</span> ${car.power || '—'}</li>
                     <li><span>Привод:</span> ${car.drive || '—'}</li>
                 </ul>
-                <div class="usa-preferential-price">от ${formatCurrency(car.price || 0)}</div>
+                <div class="usa-preferential-price">от ${typeof formatCurrency === 'function' ? formatCurrency(car.price || 0) : (typeof formatPrice === 'function' ? formatPrice(car.price || 0, 'USD') : `$${car.price || 0}`)}</div>
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
                     <button class="btn-primary" type="button">Запросить расчет</button>
                 </div>
