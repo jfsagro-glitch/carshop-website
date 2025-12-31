@@ -401,11 +401,13 @@ html {
 
 /* Hero Section - Premium Professional Gradients */
 .hero {
-    background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 25%, #0f172a 50%, #1e293b 75%, #0a0e1a 100%) !important;
+    background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 25%, #f3f4f6 50%, #e5e7eb 75%, #d1d5db 100%) !important;
     background-size: 400% 400% !important;
     position: relative;
     overflow: hidden;
-    animation: heroGradientShift 20s ease infinite;
+    animation: heroGradientShift 15s ease infinite;
+    color: #1f2937 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 @keyframes heroGradientShift {
