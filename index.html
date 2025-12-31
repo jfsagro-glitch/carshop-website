@@ -494,13 +494,51 @@
         // Фильтрация изображений
         function filterGeorgiaImages(images) {
             if (!images) return [];
-            return images.filter(img => {
+            const filtered = images.filter(img => {
                 const url = typeof img === 'string' ? img : (img.url || '');
                 if (!url) return false;
                 const u = url.toLowerCase();
                 const excludeKeywords = ['logo', 'icon', 'favicon'];
                 return !excludeKeywords.some(keyword => u.includes(keyword));
-            });
+            }).map(img => ({
+                url: typeof img === 'string' ? img : (img.url || ''),
+                originalIndex: typeof img === 'object' ? img.originalIndex : undefined
+            }));
+            
+            // Пытаемся найти первую фотографию (с передней частью автомобиля)
+            // Обычно это первое фото в списке, или фото с номером 1, или основное фото
+            if (filtered.length > 1) {
+                // Ищем фото с приоритетными паттернами (номер 1, front, main, и т.д.)
+                const priorityPatterns = [/_1\.|/1\.jpg|/1\.jpeg|/1\.png|front|main|cover/i];
+                
+                let frontImageIndex = -1;
+                for (let i = 0; i < filtered.length; i++) {
+                    const url = filtered[i].url.toLowerCase();
+                    if (priorityPatterns.some(pattern => {
+                        if (pattern === /_1\.|/1\.jpg|/1\.jpeg|/1\.png|front|main|cover/i) {
+                            return /[\/_]1\.(jpg|jpeg|png|webp)|front|main|cover/.test(url);
+                        }
+                        return pattern.test(url);
+                    })) {
+                        frontImageIndex = i;
+                        break;
+                    }
+                }
+                
+                // Если не нашли по паттерну, используем первую (обычно она и есть передняя часть)
+                if (frontImageIndex === -1) {
+                    frontImageIndex = 0;
+                }
+                
+                // Перемещаем найденное фото в начало
+                if (frontImageIndex > 0) {
+                    const frontImage = filtered[frontImageIndex];
+                    filtered.splice(frontImageIndex, 1);
+                    filtered.unshift(frontImage);
+                }
+            }
+            
+            return filtered;
         }
 
         // Получение года автомобиля
@@ -523,46 +561,41 @@
         window.changeCarImage = function(carId, direction) {
             const carImageContainer = document.querySelector(`.car-image[data-car-id="${carId}"]`);
             if (!carImageContainer) {
-                console.warn('Car image container not found:', carId);
                 return false;
             }
             
-            const images = carImageContainer.querySelectorAll('.car-gallery-img');
+            const images = Array.from(carImageContainer.querySelectorAll('.car-gallery-img'));
             if (!images || images.length <= 1) {
-                console.warn('Not enough images:', images ? images.length : 0);
                 return false;
             }
             
+            // Находим текущее активное изображение по классу active
             let currentIndex = -1;
             images.forEach((img, idx) => {
-                const style = window.getComputedStyle(img);
-                if (img.classList.contains('active') || img.style.display === 'block' || style.display !== 'none') {
+                if (img.classList.contains('active')) {
                     currentIndex = idx;
                 }
             });
             
+            // Если не найдено активное изображение, активируем первое
             if (currentIndex === -1) {
-                // Если нет активного изображения, активируем первое
-                if (images[0]) {
-                    images[0].classList.add('active');
-                    images[0].style.display = 'block';
-                    images[0].style.opacity = '1';
-                    // Скрываем остальные
-                    for (let i = 1; i < images.length; i++) {
-                        images[i].classList.remove('active');
-                        images[i].style.display = 'none';
-                        images[i].style.opacity = '0';
+                currentIndex = 0;
+                // Инициализируем все изображения
+                images.forEach((img, idx) => {
+                    if (idx === 0) {
+                        img.classList.add('active');
+                        img.style.display = 'block';
+                        img.style.opacity = '1';
+                    } else {
+                        img.classList.remove('active');
+                        img.style.display = 'none';
+                        img.style.opacity = '0';
                     }
-                }
-                return false;
+                });
+                return true;
             }
             
-            // Скрываем текущее изображение
-            images[currentIndex].classList.remove('active');
-            images[currentIndex].style.display = 'none';
-            images[currentIndex].style.opacity = '0';
-            
-            // Вычисляем новый индекс
+            // Вычисляем новый индекс с циклической навигацией
             let newIndex = currentIndex + direction;
             if (newIndex < 0) {
                 newIndex = images.length - 1;
@@ -570,7 +603,11 @@
                 newIndex = 0;
             }
             
-            // Показываем новое изображение
+            // Переключаем изображения с анимацией
+            images[currentIndex].classList.remove('active');
+            images[currentIndex].style.display = 'none';
+            images[currentIndex].style.opacity = '0';
+            
             images[newIndex].classList.add('active');
             images[newIndex].style.display = 'block';
             images[newIndex].style.opacity = '1';
