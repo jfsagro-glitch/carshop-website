@@ -2203,6 +2203,24 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .hero-content {
+        min-height: 160px;
+    }
+    
+    .hero-logo {
+        height: 100px;
+        max-width: 90%;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+    
+    .hero-logo-text-container {
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
     .cars-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
