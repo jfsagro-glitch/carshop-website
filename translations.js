@@ -314,15 +314,17 @@ const translations = {
     }
 };
 
-// Форматирование чисел
-let numberFormatter;
+// Форматирование чисел (глобальная переменная для использования в script.js)
+window.numberFormatter = null;
 if (typeof Intl !== 'undefined' && Intl.NumberFormat) {
-    numberFormatter = new Intl.NumberFormat('ru-RU');
+    window.numberFormatter = new Intl.NumberFormat('ru-RU');
 } else {
-    numberFormatter = {
+    window.numberFormatter = {
         format: (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
     };
 }
+// Для обратной совместимости
+const numberFormatter = window.numberFormatter;
 
 // Валюты
 const currencies = {
