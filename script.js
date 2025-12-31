@@ -2156,19 +2156,20 @@ function renderPreferentialCars(){
     container.innerHTML = '';
 
     usaUnder160Cars.forEach(car=>{
+        const imageSrc = car.image || buildSvgPlaceholder(car.name || 'Автомобиль');
         const card = document.createElement('article');
         card.className = 'orders-card usa-under-card';
         card.innerHTML = `
-            <img src="${car.image}" alt="${car.name}" loading="lazy">
+            <img src="${imageSrc}" alt="${car.name || 'Автомобиль'}" loading="lazy">
             <div class="orders-card-body">
-                <h4>${car.name}</h4>
+                <h4>${car.name || 'Автомобиль'}</h4>
                 <span class="usa-preferential-badge"><i class="fas fa-leaf"></i> льготный утильсбор</span>
                 <ul class="usa-preferential-meta">
-                    <li><span>Двигатель:</span> ${car.engine}</li>
-                    <li><span>Мощность:</span> ${car.power}</li>
-                    <li><span>Привод:</span> ${car.drive}</li>
+                    <li><span>Двигатель:</span> ${car.engine || '—'}</li>
+                    <li><span>Мощность:</span> ${car.power || '—'}</li>
+                    <li><span>Привод:</span> ${car.drive || '—'}</li>
                 </ul>
-                <div class="usa-preferential-price">от ${formatCurrency(car.price)}</div>
+                <div class="usa-preferential-price">от ${formatCurrency(car.price || 0)}</div>
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
                     <button class="btn-primary" type="button">Запросить расчет</button>
                 </div>
