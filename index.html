@@ -836,8 +836,26 @@
         }
 
         // Загружаем данные при загрузке страницы
-        document.addEventListener('DOMContentLoaded', function() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                loadGeorgiaCarsData();
+            });
+        } else {
+            // DOM уже загружен
             loadGeorgiaCarsData();
+        }
+        
+        // Также пробуем загрузить при полной загрузке страницы
+        window.addEventListener('load', function() {
+            const grid = getGeorgiaElement('carsGrid');
+            if (grid && (!georgiaCarsData || georgiaCarsData.length === 0)) {
+                console.log('Retrying to load Georgia cars data...');
+                loadGeorgiaCarsData();
+            }
+        });
+        
+        // Оригинальный обработчик для делегирования событий
+        document.addEventListener('DOMContentLoaded', function() {
             
             // Используем делегирование событий для стрелок галереи
             document.addEventListener('click', function(e) {
