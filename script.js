@@ -2148,7 +2148,7 @@ function renderPreferentialCars(){
     const container = document.getElementById('usaUnder160Grid');
     if (!container) return;
 
-    if (!usaUnder160Cars.length){
+    if (typeof usaUnder160Cars === 'undefined' || !Array.isArray(usaUnder160Cars) || !usaUnder160Cars.length){
         container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по льготному утильсбору</div>';
         return;
     }
