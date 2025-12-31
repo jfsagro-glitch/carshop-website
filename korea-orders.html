@@ -389,6 +389,16 @@
                 }
             }
         })();
+        
+        // Ensure Korea section loads on this page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for script.js to initialize
+            setTimeout(function() {
+                if (typeof loadKoreaOrdersSection === 'function') {
+                    loadKoreaOrdersSection();
+                }
+            }, 200);
+        });
     </script>
     <aside class="floating-subscribe" aria-label="Подписка на Telegram">
         <div class="floating-subscribe__inner">

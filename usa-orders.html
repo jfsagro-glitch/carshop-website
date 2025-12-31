@@ -343,6 +343,17 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Ensure USA section loads on this page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for script.js to initialize
+            setTimeout(function() {
+                if (typeof loadUsaOrdersSection === 'function') {
+                    loadUsaOrdersSection();
+                }
+            }, 100);
+        });
+    </script>
     <aside class="floating-subscribe" aria-label="Подписка на Telegram">
         <div class="floating-subscribe__inner">
             <span class="floating-subscribe__title"><i class="fab fa-telegram"></i> Подпишись на нас в Telegram</span>
