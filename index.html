@@ -509,17 +509,12 @@
             // Обычно это первое фото в списке, или фото с номером 1, или основное фото
             if (filtered.length > 1) {
                 // Ищем фото с приоритетными паттернами (номер 1, front, main, и т.д.)
-                const priorityPatterns = [/_1\.|/1\.jpg|/1\.jpeg|/1\.png|front|main|cover/i];
+                const frontPattern = /[\/_]1\.(jpg|jpeg|png|webp)|front|main|cover/i;
                 
                 let frontImageIndex = -1;
                 for (let i = 0; i < filtered.length; i++) {
                     const url = filtered[i].url.toLowerCase();
-                    if (priorityPatterns.some(pattern => {
-                        if (pattern === /_1\.|/1\.jpg|/1\.jpeg|/1\.png|front|main|cover/i) {
-                            return /[\/_]1\.(jpg|jpeg|png|webp)|front|main|cover/.test(url);
-                        }
-                        return pattern.test(url);
-                    })) {
+                    if (frontPattern.test(url)) {
                         frontImageIndex = i;
                         break;
                     }
