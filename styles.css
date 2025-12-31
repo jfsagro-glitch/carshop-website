@@ -420,19 +420,40 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 /* Hero Section */
 .hero {
-    background: #ffffff;
-    color: #374151;
+    background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 25%, #f3f4f6 50%, #e5e7eb 75%, #d1d5db 100%);
+    background-size: 400% 400%;
+    animation: heroGradientShift 15s ease infinite;
+    color: #1f2937;
     padding: 2rem 0 1rem;
     text-align: center;
-    border-bottom: 1px solid #d1d5db;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+@keyframes heroGradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h1 {
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 0.5rem;
     line-height: 1.2;
-    color: #374151;
+    color: #111827;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .hero-content p {
@@ -441,8 +462,9 @@ body.premium .footer-section a:hover { color: var(--text); }
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
-    color: #6b7280;
+    color: #374151;
     text-align: left;
+    font-weight: 500;
 }
 
 .hero-tagline {
@@ -458,6 +480,9 @@ body.premium .footer-section a:hover { color: var(--text); }
     line-height: 1.5;
     max-width: 100%;
     word-wrap: break-word;
+    color: #111827 !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
 }
 
 .hero-content p .hero-inline-logo { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; vertical-align: middle; margin-right: 8px; }
@@ -474,13 +499,14 @@ body.premium .footer-section a:hover { color: var(--text); }
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    color: #6b7280;
+    color: #374151;
     font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .feature i {
     font-size: 0.9rem;
-    color: #9ca3af;
+    color: #4b5563;
 }
 
 .orders-cta {
