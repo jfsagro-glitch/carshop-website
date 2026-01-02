@@ -1,0 +1,2699 @@
+{
+  "brands": [
+    {
+      "name": "Toyota",
+      "slug": "toyota",
+      "url": "https://partsouq.com/en/shop/catalog/toyota",
+      "logo": "images/partsouq/logos/toyota.png",
+      "models": [
+        {
+          "name": "Camry",
+          "slug": "camry",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/camry",
+          "image_url": null
+        },
+        {
+          "name": "Corolla",
+          "slug": "corolla",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/corolla",
+          "image_url": null
+        },
+        {
+          "name": "RAV4",
+          "slug": "rav4",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/rav4",
+          "image_url": null
+        },
+        {
+          "name": "Highlander",
+          "slug": "highlander",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/highlander",
+          "image_url": null
+        },
+        {
+          "name": "Prius",
+          "slug": "prius",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/prius",
+          "image_url": null
+        },
+        {
+          "name": "Land Cruiser",
+          "slug": "land-cruiser",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/land-cruiser",
+          "image_url": null
+        },
+        {
+          "name": "4Runner",
+          "slug": "4runner",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/4runner",
+          "image_url": null
+        },
+        {
+          "name": "Tacoma",
+          "slug": "tacoma",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/tacoma",
+          "image_url": null
+        },
+        {
+          "name": "Tundra",
+          "slug": "tundra",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/tundra",
+          "image_url": null
+        },
+        {
+          "name": "Sienna",
+          "slug": "sienna",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/sienna",
+          "image_url": null
+        },
+        {
+          "name": "Avalon",
+          "slug": "avalon",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/avalon",
+          "image_url": null
+        },
+        {
+          "name": "Venza",
+          "slug": "venza",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/venza",
+          "image_url": null
+        },
+        {
+          "name": "Sequoia",
+          "slug": "sequoia",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/sequoia",
+          "image_url": null
+        },
+        {
+          "name": "Yaris",
+          "slug": "yaris",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/yaris",
+          "image_url": null
+        },
+        {
+          "name": "C-HR",
+          "slug": "c-hr",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/c-hr",
+          "image_url": null
+        },
+        {
+          "name": "GR Supra",
+          "slug": "gr-supra",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/gr-supra",
+          "image_url": null
+        },
+        {
+          "name": "GR86",
+          "slug": "gr86",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/gr86",
+          "image_url": null
+        },
+        {
+          "name": "bZ4X",
+          "slug": "bz4x",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/bz4x",
+          "image_url": null
+        },
+        {
+          "name": "Mirai",
+          "slug": "mirai",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/mirai",
+          "image_url": null
+        },
+        {
+          "name": "Tundra",
+          "slug": "tundra",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/tundra",
+          "image_url": null
+        },
+        {
+          "name": "Sienna",
+          "slug": "sienna",
+          "url": "https://partsouq.com/en/shop/catalog/toyota/sienna",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Nissan",
+      "slug": "nissan",
+      "url": "https://partsouq.com/en/shop/catalog/nissan",
+      "logo": "images/partsouq/logos/nissan.png",
+      "models": [
+        {
+          "name": "Altima",
+          "slug": "altima",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/altima",
+          "image_url": null
+        },
+        {
+          "name": "Sentra",
+          "slug": "sentra",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/sentra",
+          "image_url": null
+        },
+        {
+          "name": "Rogue",
+          "slug": "rogue",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/rogue",
+          "image_url": null
+        },
+        {
+          "name": "Pathfinder",
+          "slug": "pathfinder",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/pathfinder",
+          "image_url": null
+        },
+        {
+          "name": "Murano",
+          "slug": "murano",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/murano",
+          "image_url": null
+        },
+        {
+          "name": "Maxima",
+          "slug": "maxima",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/maxima",
+          "image_url": null
+        },
+        {
+          "name": "Frontier",
+          "slug": "frontier",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/frontier",
+          "image_url": null
+        },
+        {
+          "name": "Titan",
+          "slug": "titan",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/titan",
+          "image_url": null
+        },
+        {
+          "name": "Armada",
+          "slug": "armada",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/armada",
+          "image_url": null
+        },
+        {
+          "name": "Quest",
+          "slug": "quest",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/quest",
+          "image_url": null
+        },
+        {
+          "name": "Versa",
+          "slug": "versa",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/versa",
+          "image_url": null
+        },
+        {
+          "name": "Kicks",
+          "slug": "kicks",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/kicks",
+          "image_url": null
+        },
+        {
+          "name": "Leaf",
+          "slug": "leaf",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/leaf",
+          "image_url": null
+        },
+        {
+          "name": "Ariya",
+          "slug": "ariya",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/ariya",
+          "image_url": null
+        },
+        {
+          "name": "Z",
+          "slug": "z",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/z",
+          "image_url": null
+        },
+        {
+          "name": "GT-R",
+          "slug": "gt-r",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/gt-r",
+          "image_url": null
+        },
+        {
+          "name": "370Z",
+          "slug": "370z",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/370z",
+          "image_url": null
+        },
+        {
+          "name": "Juke",
+          "slug": "juke",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/juke",
+          "image_url": null
+        },
+        {
+          "name": "Rogue Sport",
+          "slug": "rogue-sport",
+          "url": "https://partsouq.com/en/shop/catalog/nissan/rogue-sport",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Honda",
+      "slug": "honda",
+      "url": "https://partsouq.com/en/shop/catalog/honda",
+      "logo": "images/partsouq/logos/honda.png",
+      "models": [
+        {
+          "name": "Accord",
+          "slug": "accord",
+          "url": "https://partsouq.com/en/shop/catalog/honda/accord",
+          "image_url": null
+        },
+        {
+          "name": "Civic",
+          "slug": "civic",
+          "url": "https://partsouq.com/en/shop/catalog/honda/civic",
+          "image_url": null
+        },
+        {
+          "name": "CR-V",
+          "slug": "cr-v",
+          "url": "https://partsouq.com/en/shop/catalog/honda/cr-v",
+          "image_url": null
+        },
+        {
+          "name": "Pilot",
+          "slug": "pilot",
+          "url": "https://partsouq.com/en/shop/catalog/honda/pilot",
+          "image_url": null
+        },
+        {
+          "name": "Odyssey",
+          "slug": "odyssey",
+          "url": "https://partsouq.com/en/shop/catalog/honda/odyssey",
+          "image_url": null
+        },
+        {
+          "name": "Ridgeline",
+          "slug": "ridgeline",
+          "url": "https://partsouq.com/en/shop/catalog/honda/ridgeline",
+          "image_url": null
+        },
+        {
+          "name": "Passport",
+          "slug": "passport",
+          "url": "https://partsouq.com/en/shop/catalog/honda/passport",
+          "image_url": null
+        },
+        {
+          "name": "HR-V",
+          "slug": "hr-v",
+          "url": "https://partsouq.com/en/shop/catalog/honda/hr-v",
+          "image_url": null
+        },
+        {
+          "name": "Fit",
+          "slug": "fit",
+          "url": "https://partsouq.com/en/shop/catalog/honda/fit",
+          "image_url": null
+        },
+        {
+          "name": "Insight",
+          "slug": "insight",
+          "url": "https://partsouq.com/en/shop/catalog/honda/insight",
+          "image_url": null
+        },
+        {
+          "name": "Clarity",
+          "slug": "clarity",
+          "url": "https://partsouq.com/en/shop/catalog/honda/clarity",
+          "image_url": null
+        },
+        {
+          "name": "Pilot",
+          "slug": "pilot",
+          "url": "https://partsouq.com/en/shop/catalog/honda/pilot",
+          "image_url": null
+        },
+        {
+          "name": "Element",
+          "slug": "element",
+          "url": "https://partsouq.com/en/shop/catalog/honda/element",
+          "image_url": null
+        },
+        {
+          "name": "CR-Z",
+          "slug": "cr-z",
+          "url": "https://partsouq.com/en/shop/catalog/honda/cr-z",
+          "image_url": null
+        },
+        {
+          "name": "S2000",
+          "slug": "s2000",
+          "url": "https://partsouq.com/en/shop/catalog/honda/s2000",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Mazda",
+      "slug": "mazda",
+      "url": "https://partsouq.com/en/shop/catalog/mazda",
+      "logo": "images/partsouq/logos/mazda.png",
+      "models": [
+        {
+          "name": "CX-5",
+          "slug": "cx-5",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/cx-5",
+          "image_url": null
+        },
+        {
+          "name": "CX-9",
+          "slug": "cx-9",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/cx-9",
+          "image_url": null
+        },
+        {
+          "name": "Mazda3",
+          "slug": "mazda3",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/mazda3",
+          "image_url": null
+        },
+        {
+          "name": "Mazda6",
+          "slug": "mazda6",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/mazda6",
+          "image_url": null
+        },
+        {
+          "name": "CX-3",
+          "slug": "cx-3",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/cx-3",
+          "image_url": null
+        },
+        {
+          "name": "CX-30",
+          "slug": "cx-30",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/cx-30",
+          "image_url": null
+        },
+        {
+          "name": "MX-5",
+          "slug": "mx-5",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/mx-5",
+          "image_url": null
+        },
+        {
+          "name": "CX-50",
+          "slug": "cx-50",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/cx-50",
+          "image_url": null
+        },
+        {
+          "name": "CX-90",
+          "slug": "cx-90",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/cx-90",
+          "image_url": null
+        },
+        {
+          "name": "CX-60",
+          "slug": "cx-60",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/cx-60",
+          "image_url": null
+        },
+        {
+          "name": "MX-30",
+          "slug": "mx-30",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/mx-30",
+          "image_url": null
+        },
+        {
+          "name": "BT-50",
+          "slug": "bt-50",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/bt-50",
+          "image_url": null
+        },
+        {
+          "name": "CX-8",
+          "slug": "cx-8",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/cx-8",
+          "image_url": null
+        },
+        {
+          "name": "Mazda2",
+          "slug": "mazda2",
+          "url": "https://partsouq.com/en/shop/catalog/mazda/mazda2",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Mitsubishi",
+      "slug": "mitsubishi",
+      "url": "https://partsouq.com/en/shop/catalog/mitsubishi",
+      "logo": "images/partsouq/logos/mitsubishi.png",
+      "models": [
+        {
+          "name": "Outlander",
+          "slug": "outlander",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/outlander",
+          "image_url": null
+        },
+        {
+          "name": "Eclipse Cross",
+          "slug": "eclipse-cross",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/eclipse-cross",
+          "image_url": null
+        },
+        {
+          "name": "Mirage",
+          "slug": "mirage",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/mirage",
+          "image_url": null
+        },
+        {
+          "name": "Lancer",
+          "slug": "lancer",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/lancer",
+          "image_url": null
+        },
+        {
+          "name": "Pajero",
+          "slug": "pajero",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/pajero",
+          "image_url": null
+        },
+        {
+          "name": "Montero",
+          "slug": "montero",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/montero",
+          "image_url": null
+        },
+        {
+          "name": "ASX",
+          "slug": "asx",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/asx",
+          "image_url": null
+        },
+        {
+          "name": "Outlander Sport",
+          "slug": "outlander-sport",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/outlander-sport",
+          "image_url": null
+        },
+        {
+          "name": "i-MiEV",
+          "slug": "i-miev",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/i-miev",
+          "image_url": null
+        },
+        {
+          "name": "Galant",
+          "slug": "galant",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/galant",
+          "image_url": null
+        },
+        {
+          "name": "Eclipse",
+          "slug": "eclipse",
+          "url": "https://partsouq.com/en/shop/catalog/mitsubishi/eclipse",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Subaru",
+      "slug": "subaru",
+      "url": "https://partsouq.com/en/shop/catalog/subaru",
+      "logo": "images/partsouq/logos/subaru.png",
+      "models": [
+        {
+          "name": "Outback",
+          "slug": "outback",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/outback",
+          "image_url": null
+        },
+        {
+          "name": "Forester",
+          "slug": "forester",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/forester",
+          "image_url": null
+        },
+        {
+          "name": "Crosstrek",
+          "slug": "crosstrek",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/crosstrek",
+          "image_url": null
+        },
+        {
+          "name": "Ascent",
+          "slug": "ascent",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/ascent",
+          "image_url": null
+        },
+        {
+          "name": "Legacy",
+          "slug": "legacy",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/legacy",
+          "image_url": null
+        },
+        {
+          "name": "Impreza",
+          "slug": "impreza",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/impreza",
+          "image_url": null
+        },
+        {
+          "name": "WRX",
+          "slug": "wrx",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/wrx",
+          "image_url": null
+        },
+        {
+          "name": "BRZ",
+          "slug": "brz",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/brz",
+          "image_url": null
+        },
+        {
+          "name": "Solterra",
+          "slug": "solterra",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/solterra",
+          "image_url": null
+        },
+        {
+          "name": "Baja",
+          "slug": "baja",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/baja",
+          "image_url": null
+        },
+        {
+          "name": "Tribeca",
+          "slug": "tribeca",
+          "url": "https://partsouq.com/en/shop/catalog/subaru/tribeca",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Suzuki",
+      "slug": "suzuki",
+      "url": "https://partsouq.com/en/shop/catalog/suzuki",
+      "logo": "images/partsouq/logos/suzuki.png",
+      "models": [
+        {
+          "name": "Swift",
+          "slug": "swift",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/swift",
+          "image_url": null
+        },
+        {
+          "name": "Vitara",
+          "slug": "vitara",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/vitara",
+          "image_url": null
+        },
+        {
+          "name": "SX4",
+          "slug": "sx4",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/sx4",
+          "image_url": null
+        },
+        {
+          "name": "Grand Vitara",
+          "slug": "grand-vitara",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/grand-vitara",
+          "image_url": null
+        },
+        {
+          "name": "Kizashi",
+          "slug": "kizashi",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/kizashi",
+          "image_url": null
+        },
+        {
+          "name": "S-Cross",
+          "slug": "s-cross",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/s-cross",
+          "image_url": null
+        },
+        {
+          "name": "Jimny",
+          "slug": "jimny",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/jimny",
+          "image_url": null
+        },
+        {
+          "name": "XL7",
+          "slug": "xl7",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/xl7",
+          "image_url": null
+        },
+        {
+          "name": "Equator",
+          "slug": "equator",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/equator",
+          "image_url": null
+        },
+        {
+          "name": "SX4 Crossover",
+          "slug": "sx4-crossover",
+          "url": "https://partsouq.com/en/shop/catalog/suzuki/sx4-crossover",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Hyundai",
+      "slug": "hyundai",
+      "url": "https://partsouq.com/en/shop/catalog/hyundai",
+      "logo": "images/partsouq/logos/hyundai.png",
+      "models": [
+        {
+          "name": "Elantra",
+          "slug": "elantra",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/elantra",
+          "image_url": null
+        },
+        {
+          "name": "Sonata",
+          "slug": "sonata",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/sonata",
+          "image_url": null
+        },
+        {
+          "name": "Tucson",
+          "slug": "tucson",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/tucson",
+          "image_url": null
+        },
+        {
+          "name": "Santa Fe",
+          "slug": "santa-fe",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/santa-fe",
+          "image_url": null
+        },
+        {
+          "name": "Palisade",
+          "slug": "palisade",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/palisade",
+          "image_url": null
+        },
+        {
+          "name": "Kona",
+          "slug": "kona",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/kona",
+          "image_url": null
+        },
+        {
+          "name": "Venue",
+          "slug": "venue",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/venue",
+          "image_url": null
+        },
+        {
+          "name": "Accent",
+          "slug": "accent",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/accent",
+          "image_url": null
+        },
+        {
+          "name": "Veloster",
+          "slug": "veloster",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/veloster",
+          "image_url": null
+        },
+        {
+          "name": "Ioniq",
+          "slug": "ioniq",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/ioniq",
+          "image_url": null
+        },
+        {
+          "name": "Nexo",
+          "slug": "nexo",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/nexo",
+          "image_url": null
+        },
+        {
+          "name": "Genesis",
+          "slug": "genesis",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/genesis",
+          "image_url": null
+        },
+        {
+          "name": "Azera",
+          "slug": "azera",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/azera",
+          "image_url": null
+        },
+        {
+          "name": "Equus",
+          "slug": "equus",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/equus",
+          "image_url": null
+        },
+        {
+          "name": "Tucson",
+          "slug": "tucson",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/tucson",
+          "image_url": null
+        },
+        {
+          "name": "Santa Cruz",
+          "slug": "santa-cruz",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/santa-cruz",
+          "image_url": null
+        },
+        {
+          "name": "IONIQ 5",
+          "slug": "ioniq-5",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/ioniq-5",
+          "image_url": null
+        },
+        {
+          "name": "IONIQ 6",
+          "slug": "ioniq-6",
+          "url": "https://partsouq.com/en/shop/catalog/hyundai/ioniq-6",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Kia",
+      "slug": "kia",
+      "url": "https://partsouq.com/en/shop/catalog/kia",
+      "logo": "images/partsouq/logos/kia.png",
+      "models": [
+        {
+          "name": "Optima",
+          "slug": "optima",
+          "url": "https://partsouq.com/en/shop/catalog/kia/optima",
+          "image_url": null
+        },
+        {
+          "name": "Sorento",
+          "slug": "sorento",
+          "url": "https://partsouq.com/en/shop/catalog/kia/sorento",
+          "image_url": null
+        },
+        {
+          "name": "Sportage",
+          "slug": "sportage",
+          "url": "https://partsouq.com/en/shop/catalog/kia/sportage",
+          "image_url": null
+        },
+        {
+          "name": "Telluride",
+          "slug": "telluride",
+          "url": "https://partsouq.com/en/shop/catalog/kia/telluride",
+          "image_url": null
+        },
+        {
+          "name": "Soul",
+          "slug": "soul",
+          "url": "https://partsouq.com/en/shop/catalog/kia/soul",
+          "image_url": null
+        },
+        {
+          "name": "Forte",
+          "slug": "forte",
+          "url": "https://partsouq.com/en/shop/catalog/kia/forte",
+          "image_url": null
+        },
+        {
+          "name": "Rio",
+          "slug": "rio",
+          "url": "https://partsouq.com/en/shop/catalog/kia/rio",
+          "image_url": null
+        },
+        {
+          "name": "Stinger",
+          "slug": "stinger",
+          "url": "https://partsouq.com/en/shop/catalog/kia/stinger",
+          "image_url": null
+        },
+        {
+          "name": "Niro",
+          "slug": "niro",
+          "url": "https://partsouq.com/en/shop/catalog/kia/niro",
+          "image_url": null
+        },
+        {
+          "name": "EV6",
+          "slug": "ev6",
+          "url": "https://partsouq.com/en/shop/catalog/kia/ev6",
+          "image_url": null
+        },
+        {
+          "name": "K5",
+          "slug": "k5",
+          "url": "https://partsouq.com/en/shop/catalog/kia/k5",
+          "image_url": null
+        },
+        {
+          "name": "Carnival",
+          "slug": "carnival",
+          "url": "https://partsouq.com/en/shop/catalog/kia/carnival",
+          "image_url": null
+        },
+        {
+          "name": "Seltos",
+          "slug": "seltos",
+          "url": "https://partsouq.com/en/shop/catalog/kia/seltos",
+          "image_url": null
+        },
+        {
+          "name": "Sorento",
+          "slug": "sorento",
+          "url": "https://partsouq.com/en/shop/catalog/kia/sorento",
+          "image_url": null
+        },
+        {
+          "name": "EV9",
+          "slug": "ev9",
+          "url": "https://partsouq.com/en/shop/catalog/kia/ev9",
+          "image_url": null
+        },
+        {
+          "name": "Cadenza",
+          "slug": "cadenza",
+          "url": "https://partsouq.com/en/shop/catalog/kia/cadenza",
+          "image_url": null
+        },
+        {
+          "name": "K900",
+          "slug": "k900",
+          "url": "https://partsouq.com/en/shop/catalog/kia/k900",
+          "image_url": null
+        },
+        {
+          "name": "Mohave",
+          "slug": "mohave",
+          "url": "https://partsouq.com/en/shop/catalog/kia/mohave",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Lexus",
+      "slug": "lexus",
+      "url": "https://partsouq.com/en/shop/catalog/lexus",
+      "logo": "images/partsouq/logos/lexus.png",
+      "models": [
+        {
+          "name": "RX",
+          "slug": "rx",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/rx",
+          "image_url": null
+        },
+        {
+          "name": "NX",
+          "slug": "nx",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/nx",
+          "image_url": null
+        },
+        {
+          "name": "GX",
+          "slug": "gx",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/gx",
+          "image_url": null
+        },
+        {
+          "name": "LX",
+          "slug": "lx",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/lx",
+          "image_url": null
+        },
+        {
+          "name": "ES",
+          "slug": "es",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/es",
+          "image_url": null
+        },
+        {
+          "name": "IS",
+          "slug": "is",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/is",
+          "image_url": null
+        },
+        {
+          "name": "LS",
+          "slug": "ls",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/ls",
+          "image_url": null
+        },
+        {
+          "name": "UX",
+          "slug": "ux",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/ux",
+          "image_url": null
+        },
+        {
+          "name": "RC",
+          "slug": "rc",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/rc",
+          "image_url": null
+        },
+        {
+          "name": "LC",
+          "slug": "lc",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/lc",
+          "image_url": null
+        },
+        {
+          "name": "LFA",
+          "slug": "lfa",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/lfa",
+          "image_url": null
+        },
+        {
+          "name": "CT",
+          "slug": "ct",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/ct",
+          "image_url": null
+        },
+        {
+          "name": "HS",
+          "slug": "hs",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/hs",
+          "image_url": null
+        },
+        {
+          "name": "SC",
+          "slug": "sc",
+          "url": "https://partsouq.com/en/shop/catalog/lexus/sc",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Infiniti",
+      "slug": "infiniti",
+      "url": "https://partsouq.com/en/shop/catalog/infiniti",
+      "logo": "images/partsouq/logos/infiniti.png",
+      "models": [
+        {
+          "name": "Q50",
+          "slug": "q50",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/q50",
+          "image_url": null
+        },
+        {
+          "name": "Q60",
+          "slug": "q60",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/q60",
+          "image_url": null
+        },
+        {
+          "name": "QX50",
+          "slug": "qx50",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/qx50",
+          "image_url": null
+        },
+        {
+          "name": "QX60",
+          "slug": "qx60",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/qx60",
+          "image_url": null
+        },
+        {
+          "name": "QX80",
+          "slug": "qx80",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/qx80",
+          "image_url": null
+        },
+        {
+          "name": "Q70",
+          "slug": "q70",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/q70",
+          "image_url": null
+        },
+        {
+          "name": "QX30",
+          "slug": "qx30",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/qx30",
+          "image_url": null
+        },
+        {
+          "name": "QX70",
+          "slug": "qx70",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/qx70",
+          "image_url": null
+        },
+        {
+          "name": "Q40",
+          "slug": "q40",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/q40",
+          "image_url": null
+        },
+        {
+          "name": "Q70L",
+          "slug": "q70l",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/q70l",
+          "image_url": null
+        },
+        {
+          "name": "QX4",
+          "slug": "qx4",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/qx4",
+          "image_url": null
+        },
+        {
+          "name": "G",
+          "slug": "g",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/g",
+          "image_url": null
+        },
+        {
+          "name": "M",
+          "slug": "m",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/m",
+          "image_url": null
+        },
+        {
+          "name": "FX",
+          "slug": "fx",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/fx",
+          "image_url": null
+        },
+        {
+          "name": "EX",
+          "slug": "ex",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/ex",
+          "image_url": null
+        },
+        {
+          "name": "JX",
+          "slug": "jx",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/jx",
+          "image_url": null
+        },
+        {
+          "name": "I",
+          "slug": "i",
+          "url": "https://partsouq.com/en/shop/catalog/infiniti/i",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Acura",
+      "slug": "acura",
+      "url": "https://partsouq.com/en/shop/catalog/acura",
+      "logo": null,
+      "models": [
+        {
+          "name": "MDX",
+          "slug": "mdx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/mdx",
+          "image_url": null
+        },
+        {
+          "name": "RDX",
+          "slug": "rdx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/rdx",
+          "image_url": null
+        },
+        {
+          "name": "TLX",
+          "slug": "tlx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/tlx",
+          "image_url": null
+        },
+        {
+          "name": "ILX",
+          "slug": "ilx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/ilx",
+          "image_url": null
+        },
+        {
+          "name": "NSX",
+          "slug": "nsx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/nsx",
+          "image_url": null
+        },
+        {
+          "name": "RLX",
+          "slug": "rlx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/rlx",
+          "image_url": null
+        },
+        {
+          "name": "TL",
+          "slug": "tl",
+          "url": "https://partsouq.com/en/shop/catalog/acura/tl",
+          "image_url": null
+        },
+        {
+          "name": "TSX",
+          "slug": "tsx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/tsx",
+          "image_url": null
+        },
+        {
+          "name": "RL",
+          "slug": "rl",
+          "url": "https://partsouq.com/en/shop/catalog/acura/rl",
+          "image_url": null
+        },
+        {
+          "name": "CL",
+          "slug": "cl",
+          "url": "https://partsouq.com/en/shop/catalog/acura/cl",
+          "image_url": null
+        },
+        {
+          "name": "Integra",
+          "slug": "integra",
+          "url": "https://partsouq.com/en/shop/catalog/acura/integra",
+          "image_url": null
+        },
+        {
+          "name": "RSX",
+          "slug": "rsx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/rsx",
+          "image_url": null
+        },
+        {
+          "name": "ZDX",
+          "slug": "zdx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/zdx",
+          "image_url": null
+        },
+        {
+          "name": "SLX",
+          "slug": "slx",
+          "url": "https://partsouq.com/en/shop/catalog/acura/slx",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Bmw",
+      "slug": "bmw",
+      "url": "https://partsouq.com/en/shop/catalog/bmw",
+      "logo": "images/partsouq/logos/bmw.png",
+      "models": [
+        {
+          "name": "3 Series",
+          "slug": "3-series",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/3-series",
+          "image_url": null
+        },
+        {
+          "name": "5 Series",
+          "slug": "5-series",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/5-series",
+          "image_url": null
+        },
+        {
+          "name": "X3",
+          "slug": "x3",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x3",
+          "image_url": null
+        },
+        {
+          "name": "X5",
+          "slug": "x5",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x5",
+          "image_url": null
+        },
+        {
+          "name": "X1",
+          "slug": "x1",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x1",
+          "image_url": null
+        },
+        {
+          "name": "X7",
+          "slug": "x7",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x7",
+          "image_url": null
+        },
+        {
+          "name": "7 Series",
+          "slug": "7-series",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/7-series",
+          "image_url": null
+        },
+        {
+          "name": "X2",
+          "slug": "x2",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x2",
+          "image_url": null
+        },
+        {
+          "name": "X4",
+          "slug": "x4",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x4",
+          "image_url": null
+        },
+        {
+          "name": "X6",
+          "slug": "x6",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x6",
+          "image_url": null
+        },
+        {
+          "name": "2 Series",
+          "slug": "2-series",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/2-series",
+          "image_url": null
+        },
+        {
+          "name": "4 Series",
+          "slug": "4-series",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/4-series",
+          "image_url": null
+        },
+        {
+          "name": "6 Series",
+          "slug": "6-series",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/6-series",
+          "image_url": null
+        },
+        {
+          "name": "8 Series",
+          "slug": "8-series",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/8-series",
+          "image_url": null
+        },
+        {
+          "name": "Z4",
+          "slug": "z4",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/z4",
+          "image_url": null
+        },
+        {
+          "name": "i3",
+          "slug": "i3",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/i3",
+          "image_url": null
+        },
+        {
+          "name": "i4",
+          "slug": "i4",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/i4",
+          "image_url": null
+        },
+        {
+          "name": "iX",
+          "slug": "ix",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/ix",
+          "image_url": null
+        },
+        {
+          "name": "iX3",
+          "slug": "ix3",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/ix3",
+          "image_url": null
+        },
+        {
+          "name": "M3",
+          "slug": "m3",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/m3",
+          "image_url": null
+        },
+        {
+          "name": "M4",
+          "slug": "m4",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/m4",
+          "image_url": null
+        },
+        {
+          "name": "M5",
+          "slug": "m5",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/m5",
+          "image_url": null
+        },
+        {
+          "name": "X3 M",
+          "slug": "x3-m",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x3-m",
+          "image_url": null
+        },
+        {
+          "name": "X5 M",
+          "slug": "x5-m",
+          "url": "https://partsouq.com/en/shop/catalog/bmw/x5-m",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Mercedes-Benz",
+      "slug": "mercedes",
+      "url": "https://partsouq.com/en/shop/catalog/mercedes",
+      "logo": null,
+      "models": [
+        {
+          "name": "C-Class",
+          "slug": "c-class",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/c-class",
+          "image_url": null
+        },
+        {
+          "name": "E-Class",
+          "slug": "e-class",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/e-class",
+          "image_url": null
+        },
+        {
+          "name": "S-Class",
+          "slug": "s-class",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/s-class",
+          "image_url": null
+        },
+        {
+          "name": "GLC",
+          "slug": "glc",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/glc",
+          "image_url": null
+        },
+        {
+          "name": "GLE",
+          "slug": "gle",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/gle",
+          "image_url": null
+        },
+        {
+          "name": "GLS",
+          "slug": "gls",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/gls",
+          "image_url": null
+        },
+        {
+          "name": "A-Class",
+          "slug": "a-class",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/a-class",
+          "image_url": null
+        },
+        {
+          "name": "B-Class",
+          "slug": "b-class",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/b-class",
+          "image_url": null
+        },
+        {
+          "name": "CLA",
+          "slug": "cla",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/cla",
+          "image_url": null
+        },
+        {
+          "name": "CLS",
+          "slug": "cls",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/cls",
+          "image_url": null
+        },
+        {
+          "name": "G-Class",
+          "slug": "g-class",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/g-class",
+          "image_url": null
+        },
+        {
+          "name": "GLB",
+          "slug": "glb",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/glb",
+          "image_url": null
+        },
+        {
+          "name": "GLA",
+          "slug": "gla",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/gla",
+          "image_url": null
+        },
+        {
+          "name": "SL",
+          "slug": "sl",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/sl",
+          "image_url": null
+        },
+        {
+          "name": "SLK",
+          "slug": "slk",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/slk",
+          "image_url": null
+        },
+        {
+          "name": "SLR",
+          "slug": "slr",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/slr",
+          "image_url": null
+        },
+        {
+          "name": "AMG GT",
+          "slug": "amg-gt",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/amg-gt",
+          "image_url": null
+        },
+        {
+          "name": "Maybach",
+          "slug": "maybach",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/maybach",
+          "image_url": null
+        },
+        {
+          "name": "EQC",
+          "slug": "eqc",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/eqc",
+          "image_url": null
+        },
+        {
+          "name": "EQS",
+          "slug": "eqs",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/eqs",
+          "image_url": null
+        },
+        {
+          "name": "EQE",
+          "slug": "eqe",
+          "url": "https://partsouq.com/en/shop/catalog/mercedes/eqe",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Audi",
+      "slug": "audi",
+      "url": "https://partsouq.com/en/shop/catalog/audi",
+      "logo": null,
+      "models": [
+        {
+          "name": "A4",
+          "slug": "a4",
+          "url": "https://partsouq.com/en/shop/catalog/audi/a4",
+          "image_url": null
+        },
+        {
+          "name": "A6",
+          "slug": "a6",
+          "url": "https://partsouq.com/en/shop/catalog/audi/a6",
+          "image_url": null
+        },
+        {
+          "name": "Q5",
+          "slug": "q5",
+          "url": "https://partsouq.com/en/shop/catalog/audi/q5",
+          "image_url": null
+        },
+        {
+          "name": "Q7",
+          "slug": "q7",
+          "url": "https://partsouq.com/en/shop/catalog/audi/q7",
+          "image_url": null
+        },
+        {
+          "name": "A3",
+          "slug": "a3",
+          "url": "https://partsouq.com/en/shop/catalog/audi/a3",
+          "image_url": null
+        },
+        {
+          "name": "Q3",
+          "slug": "q3",
+          "url": "https://partsouq.com/en/shop/catalog/audi/q3",
+          "image_url": null
+        },
+        {
+          "name": "A8",
+          "slug": "a8",
+          "url": "https://partsouq.com/en/shop/catalog/audi/a8",
+          "image_url": null
+        },
+        {
+          "name": "A5",
+          "slug": "a5",
+          "url": "https://partsouq.com/en/shop/catalog/audi/a5",
+          "image_url": null
+        },
+        {
+          "name": "Q8",
+          "slug": "q8",
+          "url": "https://partsouq.com/en/shop/catalog/audi/q8",
+          "image_url": null
+        },
+        {
+          "name": "A7",
+          "slug": "a7",
+          "url": "https://partsouq.com/en/shop/catalog/audi/a7",
+          "image_url": null
+        },
+        {
+          "name": "TT",
+          "slug": "tt",
+          "url": "https://partsouq.com/en/shop/catalog/audi/tt",
+          "image_url": null
+        },
+        {
+          "name": "R8",
+          "slug": "r8",
+          "url": "https://partsouq.com/en/shop/catalog/audi/r8",
+          "image_url": null
+        },
+        {
+          "name": "e-tron",
+          "slug": "e-tron",
+          "url": "https://partsouq.com/en/shop/catalog/audi/e-tron",
+          "image_url": null
+        },
+        {
+          "name": "Q4 e-tron",
+          "slug": "q4-e-tron",
+          "url": "https://partsouq.com/en/shop/catalog/audi/q4-e-tron",
+          "image_url": null
+        },
+        {
+          "name": "A1",
+          "slug": "a1",
+          "url": "https://partsouq.com/en/shop/catalog/audi/a1",
+          "image_url": null
+        },
+        {
+          "name": "Q2",
+          "slug": "q2",
+          "url": "https://partsouq.com/en/shop/catalog/audi/q2",
+          "image_url": null
+        },
+        {
+          "name": "S4",
+          "slug": "s4",
+          "url": "https://partsouq.com/en/shop/catalog/audi/s4",
+          "image_url": null
+        },
+        {
+          "name": "S6",
+          "slug": "s6",
+          "url": "https://partsouq.com/en/shop/catalog/audi/s6",
+          "image_url": null
+        },
+        {
+          "name": "RS4",
+          "slug": "rs4",
+          "url": "https://partsouq.com/en/shop/catalog/audi/rs4",
+          "image_url": null
+        },
+        {
+          "name": "RS6",
+          "slug": "rs6",
+          "url": "https://partsouq.com/en/shop/catalog/audi/rs6",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Volkswagen",
+      "slug": "volkswagen",
+      "url": "https://partsouq.com/en/shop/catalog/volkswagen",
+      "logo": "images/partsouq/logos/volkswagen.png",
+      "models": [
+        {
+          "name": "Jetta",
+          "slug": "jetta",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/jetta",
+          "image_url": null
+        },
+        {
+          "name": "Passat",
+          "slug": "passat",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/passat",
+          "image_url": null
+        },
+        {
+          "name": "Tiguan",
+          "slug": "tiguan",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/tiguan",
+          "image_url": null
+        },
+        {
+          "name": "Atlas",
+          "slug": "atlas",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/atlas",
+          "image_url": null
+        },
+        {
+          "name": "Golf",
+          "slug": "golf",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/golf",
+          "image_url": null
+        },
+        {
+          "name": "Arteon",
+          "slug": "arteon",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/arteon",
+          "image_url": null
+        },
+        {
+          "name": "ID.4",
+          "slug": "id4",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/id4",
+          "image_url": null
+        },
+        {
+          "name": "ID.3",
+          "slug": "id3",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/id3",
+          "image_url": null
+        },
+        {
+          "name": "ID. Buzz",
+          "slug": "id-buzz",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/id-buzz",
+          "image_url": null
+        },
+        {
+          "name": "Beetle",
+          "slug": "beetle",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/beetle",
+          "image_url": null
+        },
+        {
+          "name": "CC",
+          "slug": "cc",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/cc",
+          "image_url": null
+        },
+        {
+          "name": "Touareg",
+          "slug": "touareg",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/touareg",
+          "image_url": null
+        },
+        {
+          "name": "Tiguan Allspace",
+          "slug": "tiguan-allspace",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/tiguan-allspace",
+          "image_url": null
+        },
+        {
+          "name": "Polo",
+          "slug": "polo",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/polo",
+          "image_url": null
+        },
+        {
+          "name": "T-Cross",
+          "slug": "t-cross",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/t-cross",
+          "image_url": null
+        },
+        {
+          "name": "Taos",
+          "slug": "taos",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/taos",
+          "image_url": null
+        },
+        {
+          "name": "Amarok",
+          "slug": "amarok",
+          "url": "https://partsouq.com/en/shop/catalog/volkswagen/amarok",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Porsche",
+      "slug": "porsche",
+      "url": "https://partsouq.com/en/shop/catalog/porsche",
+      "logo": "images/partsouq/logos/porsche.png",
+      "models": [
+        {
+          "name": "911",
+          "slug": "911",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/911",
+          "image_url": null
+        },
+        {
+          "name": "Cayenne",
+          "slug": "cayenne",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/cayenne",
+          "image_url": null
+        },
+        {
+          "name": "Macan",
+          "slug": "macan",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/macan",
+          "image_url": null
+        },
+        {
+          "name": "Panamera",
+          "slug": "panamera",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/panamera",
+          "image_url": null
+        },
+        {
+          "name": "Cayman",
+          "slug": "cayman",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/cayman",
+          "image_url": null
+        },
+        {
+          "name": "Boxster",
+          "slug": "boxster",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/boxster",
+          "image_url": null
+        },
+        {
+          "name": "Taycan",
+          "slug": "taycan",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/taycan",
+          "image_url": null
+        },
+        {
+          "name": "718",
+          "slug": "718",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/718",
+          "image_url": null
+        },
+        {
+          "name": "918 Spyder",
+          "slug": "918-spyder",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/918-spyder",
+          "image_url": null
+        },
+        {
+          "name": "Carrera",
+          "slug": "carrera",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/carrera",
+          "image_url": null
+        },
+        {
+          "name": "Turbo",
+          "slug": "turbo",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/turbo",
+          "image_url": null
+        },
+        {
+          "name": "GT3",
+          "slug": "gt3",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/gt3",
+          "image_url": null
+        },
+        {
+          "name": "GT4",
+          "slug": "gt4",
+          "url": "https://partsouq.com/en/shop/catalog/porsche/gt4",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Ford",
+      "slug": "ford",
+      "url": "https://partsouq.com/en/shop/catalog/ford",
+      "logo": null,
+      "models": [
+        {
+          "name": "F-150",
+          "slug": "f-150",
+          "url": "https://partsouq.com/en/shop/catalog/ford/f-150",
+          "image_url": null
+        },
+        {
+          "name": "Explorer",
+          "slug": "explorer",
+          "url": "https://partsouq.com/en/shop/catalog/ford/explorer",
+          "image_url": null
+        },
+        {
+          "name": "Escape",
+          "slug": "escape",
+          "url": "https://partsouq.com/en/shop/catalog/ford/escape",
+          "image_url": null
+        },
+        {
+          "name": "Mustang",
+          "slug": "mustang",
+          "url": "https://partsouq.com/en/shop/catalog/ford/mustang",
+          "image_url": null
+        },
+        {
+          "name": "Edge",
+          "slug": "edge",
+          "url": "https://partsouq.com/en/shop/catalog/ford/edge",
+          "image_url": null
+        },
+        {
+          "name": "Expedition",
+          "slug": "expedition",
+          "url": "https://partsouq.com/en/shop/catalog/ford/expedition",
+          "image_url": null
+        },
+        {
+          "name": "Ranger",
+          "slug": "ranger",
+          "url": "https://partsouq.com/en/shop/catalog/ford/ranger",
+          "image_url": null
+        },
+        {
+          "name": "Bronco",
+          "slug": "bronco",
+          "url": "https://partsouq.com/en/shop/catalog/ford/bronco",
+          "image_url": null
+        },
+        {
+          "name": "Bronco Sport",
+          "slug": "bronco-sport",
+          "url": "https://partsouq.com/en/shop/catalog/ford/bronco-sport",
+          "image_url": null
+        },
+        {
+          "name": "Fusion",
+          "slug": "fusion",
+          "url": "https://partsouq.com/en/shop/catalog/ford/fusion",
+          "image_url": null
+        },
+        {
+          "name": "Focus",
+          "slug": "focus",
+          "url": "https://partsouq.com/en/shop/catalog/ford/focus",
+          "image_url": null
+        },
+        {
+          "name": "Fiesta",
+          "slug": "fiesta",
+          "url": "https://partsouq.com/en/shop/catalog/ford/fiesta",
+          "image_url": null
+        },
+        {
+          "name": "EcoSport",
+          "slug": "ecosport",
+          "url": "https://partsouq.com/en/shop/catalog/ford/ecosport",
+          "image_url": null
+        },
+        {
+          "name": "Transit",
+          "slug": "transit",
+          "url": "https://partsouq.com/en/shop/catalog/ford/transit",
+          "image_url": null
+        },
+        {
+          "name": "E-Transit",
+          "slug": "e-transit",
+          "url": "https://partsouq.com/en/shop/catalog/ford/e-transit",
+          "image_url": null
+        },
+        {
+          "name": "Mach-E",
+          "slug": "mach-e",
+          "url": "https://partsouq.com/en/shop/catalog/ford/mach-e",
+          "image_url": null
+        },
+        {
+          "name": "F-250",
+          "slug": "f-250",
+          "url": "https://partsouq.com/en/shop/catalog/ford/f-250",
+          "image_url": null
+        },
+        {
+          "name": "F-350",
+          "slug": "f-350",
+          "url": "https://partsouq.com/en/shop/catalog/ford/f-350",
+          "image_url": null
+        },
+        {
+          "name": "Super Duty",
+          "slug": "super-duty",
+          "url": "https://partsouq.com/en/shop/catalog/ford/super-duty",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Chevrolet",
+      "slug": "chevrolet",
+      "url": "https://partsouq.com/en/shop/catalog/chevrolet",
+      "logo": "images/partsouq/logos/chevrolet.png",
+      "models": [
+        {
+          "name": "Silverado",
+          "slug": "silverado",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/silverado",
+          "image_url": null
+        },
+        {
+          "name": "Equinox",
+          "slug": "equinox",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/equinox",
+          "image_url": null
+        },
+        {
+          "name": "Tahoe",
+          "slug": "tahoe",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/tahoe",
+          "image_url": null
+        },
+        {
+          "name": "Suburban",
+          "slug": "suburban",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/suburban",
+          "image_url": null
+        },
+        {
+          "name": "Malibu",
+          "slug": "malibu",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/malibu",
+          "image_url": null
+        },
+        {
+          "name": "Traverse",
+          "slug": "traverse",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/traverse",
+          "image_url": null
+        },
+        {
+          "name": "Camaro",
+          "slug": "camaro",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/camaro",
+          "image_url": null
+        },
+        {
+          "name": "Corvette",
+          "slug": "corvette",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/corvette",
+          "image_url": null
+        },
+        {
+          "name": "Trax",
+          "slug": "trax",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/trax",
+          "image_url": null
+        },
+        {
+          "name": "Blazer",
+          "slug": "blazer",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/blazer",
+          "image_url": null
+        },
+        {
+          "name": "Bolt EV",
+          "slug": "bolt-ev",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/bolt-ev",
+          "image_url": null
+        },
+        {
+          "name": "Bolt EUV",
+          "slug": "bolt-euv",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/bolt-euv",
+          "image_url": null
+        },
+        {
+          "name": "Spark",
+          "slug": "spark",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/spark",
+          "image_url": null
+        },
+        {
+          "name": "Cruze",
+          "slug": "cruze",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/cruze",
+          "image_url": null
+        },
+        {
+          "name": "Impala",
+          "slug": "impala",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/impala",
+          "image_url": null
+        },
+        {
+          "name": "Colorado",
+          "slug": "colorado",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/colorado",
+          "image_url": null
+        },
+        {
+          "name": "Avalanche",
+          "slug": "avalanche",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/avalanche",
+          "image_url": null
+        },
+        {
+          "name": "Express",
+          "slug": "express",
+          "url": "https://partsouq.com/en/shop/catalog/chevrolet/express",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Dodge",
+      "slug": "dodge",
+      "url": "https://partsouq.com/en/shop/catalog/dodge",
+      "logo": "images/partsouq/logos/dodge.png",
+      "models": [
+        {
+          "name": "Ram",
+          "slug": "ram",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/ram",
+          "image_url": null
+        },
+        {
+          "name": "Challenger",
+          "slug": "challenger",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/challenger",
+          "image_url": null
+        },
+        {
+          "name": "Charger",
+          "slug": "charger",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/charger",
+          "image_url": null
+        },
+        {
+          "name": "Durango",
+          "slug": "durango",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/durango",
+          "image_url": null
+        },
+        {
+          "name": "Journey",
+          "slug": "journey",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/journey",
+          "image_url": null
+        },
+        {
+          "name": "Grand Caravan",
+          "slug": "grand-caravan",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/grand-caravan",
+          "image_url": null
+        },
+        {
+          "name": "Dart",
+          "slug": "dart",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/dart",
+          "image_url": null
+        },
+        {
+          "name": "Avenger",
+          "slug": "avenger",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/avenger",
+          "image_url": null
+        },
+        {
+          "name": "Caliber",
+          "slug": "caliber",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/caliber",
+          "image_url": null
+        },
+        {
+          "name": "Magnum",
+          "slug": "magnum",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/magnum",
+          "image_url": null
+        },
+        {
+          "name": "Viper",
+          "slug": "viper",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/viper",
+          "image_url": null
+        },
+        {
+          "name": "Neon",
+          "slug": "neon",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/neon",
+          "image_url": null
+        },
+        {
+          "name": "Intrepid",
+          "slug": "intrepid",
+          "url": "https://partsouq.com/en/shop/catalog/dodge/intrepid",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Jeep",
+      "slug": "jeep",
+      "url": "https://partsouq.com/en/shop/catalog/jeep",
+      "logo": "images/partsouq/logos/jeep.png",
+      "models": [
+        {
+          "name": "Wrangler",
+          "slug": "wrangler",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/wrangler",
+          "image_url": null
+        },
+        {
+          "name": "Grand Cherokee",
+          "slug": "grand-cherokee",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/grand-cherokee",
+          "image_url": null
+        },
+        {
+          "name": "Cherokee",
+          "slug": "cherokee",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/cherokee",
+          "image_url": null
+        },
+        {
+          "name": "Compass",
+          "slug": "compass",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/compass",
+          "image_url": null
+        },
+        {
+          "name": "Renegade",
+          "slug": "renegade",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/renegade",
+          "image_url": null
+        },
+        {
+          "name": "Gladiator",
+          "slug": "gladiator",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/gladiator",
+          "image_url": null
+        },
+        {
+          "name": "Wagoneer",
+          "slug": "wagoneer",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/wagoneer",
+          "image_url": null
+        },
+        {
+          "name": "Grand Wagoneer",
+          "slug": "grand-wagoneer",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/grand-wagoneer",
+          "image_url": null
+        },
+        {
+          "name": "Commander",
+          "slug": "commander",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/commander",
+          "image_url": null
+        },
+        {
+          "name": "Liberty",
+          "slug": "liberty",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/liberty",
+          "image_url": null
+        },
+        {
+          "name": "Patriot",
+          "slug": "patriot",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/patriot",
+          "image_url": null
+        },
+        {
+          "name": "Comanche",
+          "slug": "comanche",
+          "url": "https://partsouq.com/en/shop/catalog/jeep/comanche",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Chrysler",
+      "slug": "chrysler",
+      "url": "https://partsouq.com/en/shop/catalog/chrysler",
+      "logo": "images/partsouq/logos/chrysler.png",
+      "models": [
+        {
+          "name": "Pacifica",
+          "slug": "pacifica",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/pacifica",
+          "image_url": null
+        },
+        {
+          "name": "300",
+          "slug": "300",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/300",
+          "image_url": null
+        },
+        {
+          "name": "Voyager",
+          "slug": "voyager",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/voyager",
+          "image_url": null
+        },
+        {
+          "name": "200",
+          "slug": "200",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/200",
+          "image_url": null
+        },
+        {
+          "name": "Aspen",
+          "slug": "aspen",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/aspen",
+          "image_url": null
+        },
+        {
+          "name": "Sebring",
+          "slug": "sebring",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/sebring",
+          "image_url": null
+        },
+        {
+          "name": "PT Cruiser",
+          "slug": "pt-cruiser",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/pt-cruiser",
+          "image_url": null
+        },
+        {
+          "name": "Town & Country",
+          "slug": "town-&-country",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/town-&-country",
+          "image_url": null
+        },
+        {
+          "name": "Concorde",
+          "slug": "concorde",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/concorde",
+          "image_url": null
+        },
+        {
+          "name": "LHS",
+          "slug": "lhs",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/lhs",
+          "image_url": null
+        },
+        {
+          "name": "New Yorker",
+          "slug": "new-yorker",
+          "url": "https://partsouq.com/en/shop/catalog/chrysler/new-yorker",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Ram",
+      "slug": "ram",
+      "url": "https://partsouq.com/en/shop/catalog/ram",
+      "logo": "images/partsouq/logos/ram.png",
+      "models": [
+        {
+          "name": "1500",
+          "slug": "1500",
+          "url": "https://partsouq.com/en/shop/catalog/ram/1500",
+          "image_url": null
+        },
+        {
+          "name": "2500",
+          "slug": "2500",
+          "url": "https://partsouq.com/en/shop/catalog/ram/2500",
+          "image_url": null
+        },
+        {
+          "name": "3500",
+          "slug": "3500",
+          "url": "https://partsouq.com/en/shop/catalog/ram/3500",
+          "image_url": null
+        },
+        {
+          "name": "4500",
+          "slug": "4500",
+          "url": "https://partsouq.com/en/shop/catalog/ram/4500",
+          "image_url": null
+        },
+        {
+          "name": "5500",
+          "slug": "5500",
+          "url": "https://partsouq.com/en/shop/catalog/ram/5500",
+          "image_url": null
+        },
+        {
+          "name": "ProMaster",
+          "slug": "promaster",
+          "url": "https://partsouq.com/en/shop/catalog/ram/promaster",
+          "image_url": null
+        },
+        {
+          "name": "ProMaster City",
+          "slug": "promaster-city",
+          "url": "https://partsouq.com/en/shop/catalog/ram/promaster-city",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Volvo",
+      "slug": "volvo",
+      "url": "https://partsouq.com/en/shop/catalog/volvo",
+      "logo": "images/partsouq/logos/volvo.png",
+      "models": [
+        {
+          "name": "XC90",
+          "slug": "xc90",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/xc90",
+          "image_url": null
+        },
+        {
+          "name": "XC60",
+          "slug": "xc60",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/xc60",
+          "image_url": null
+        },
+        {
+          "name": "XC40",
+          "slug": "xc40",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/xc40",
+          "image_url": null
+        },
+        {
+          "name": "S90",
+          "slug": "s90",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/s90",
+          "image_url": null
+        },
+        {
+          "name": "S60",
+          "slug": "s60",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/s60",
+          "image_url": null
+        },
+        {
+          "name": "V90",
+          "slug": "v90",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/v90",
+          "image_url": null
+        },
+        {
+          "name": "V60",
+          "slug": "v60",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/v60",
+          "image_url": null
+        },
+        {
+          "name": "XC70",
+          "slug": "xc70",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/xc70",
+          "image_url": null
+        },
+        {
+          "name": "S80",
+          "slug": "s80",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/s80",
+          "image_url": null
+        },
+        {
+          "name": "C30",
+          "slug": "c30",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/c30",
+          "image_url": null
+        },
+        {
+          "name": "C70",
+          "slug": "c70",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/c70",
+          "image_url": null
+        },
+        {
+          "name": "V70",
+          "slug": "v70",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/v70",
+          "image_url": null
+        },
+        {
+          "name": "S40",
+          "slug": "s40",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/s40",
+          "image_url": null
+        },
+        {
+          "name": "V40",
+          "slug": "v40",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/v40",
+          "image_url": null
+        },
+        {
+          "name": "XC",
+          "slug": "xc",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/xc",
+          "image_url": null
+        },
+        {
+          "name": "C40 Recharge",
+          "slug": "c40-recharge",
+          "url": "https://partsouq.com/en/shop/catalog/volvo/c40-recharge",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Peugeot",
+      "slug": "peugeot",
+      "url": "https://partsouq.com/en/shop/catalog/peugeot",
+      "logo": "images/partsouq/logos/peugeot.png",
+      "models": [
+        {
+          "name": "3008",
+          "slug": "3008",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/3008",
+          "image_url": null
+        },
+        {
+          "name": "5008",
+          "slug": "5008",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/5008",
+          "image_url": null
+        },
+        {
+          "name": "208",
+          "slug": "208",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/208",
+          "image_url": null
+        },
+        {
+          "name": "308",
+          "slug": "308",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/308",
+          "image_url": null
+        },
+        {
+          "name": "508",
+          "slug": "508",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/508",
+          "image_url": null
+        },
+        {
+          "name": "2008",
+          "slug": "2008",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/2008",
+          "image_url": null
+        },
+        {
+          "name": "4008",
+          "slug": "4008",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/4008",
+          "image_url": null
+        },
+        {
+          "name": "Partner",
+          "slug": "partner",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/partner",
+          "image_url": null
+        },
+        {
+          "name": "Expert",
+          "slug": "expert",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/expert",
+          "image_url": null
+        },
+        {
+          "name": "Boxer",
+          "slug": "boxer",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/boxer",
+          "image_url": null
+        },
+        {
+          "name": "Traveller",
+          "slug": "traveller",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/traveller",
+          "image_url": null
+        },
+        {
+          "name": "Rifter",
+          "slug": "rifter",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/rifter",
+          "image_url": null
+        },
+        {
+          "name": "e-208",
+          "slug": "e-208",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/e-208",
+          "image_url": null
+        },
+        {
+          "name": "e-2008",
+          "slug": "e-2008",
+          "url": "https://partsouq.com/en/shop/catalog/peugeot/e-2008",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Renault",
+      "slug": "renault",
+      "url": "https://partsouq.com/en/shop/catalog/renault",
+      "logo": "images/partsouq/logos/renault.png",
+      "models": [
+        {
+          "name": "Duster",
+          "slug": "duster",
+          "url": "https://partsouq.com/en/shop/catalog/renault/duster",
+          "image_url": null
+        },
+        {
+          "name": "Logan",
+          "slug": "logan",
+          "url": "https://partsouq.com/en/shop/catalog/renault/logan",
+          "image_url": null
+        },
+        {
+          "name": "Sandero",
+          "slug": "sandero",
+          "url": "https://partsouq.com/en/shop/catalog/renault/sandero",
+          "image_url": null
+        },
+        {
+          "name": "Kaptur",
+          "slug": "kaptur",
+          "url": "https://partsouq.com/en/shop/catalog/renault/kaptur",
+          "image_url": null
+        },
+        {
+          "name": "Koleos",
+          "slug": "koleos",
+          "url": "https://partsouq.com/en/shop/catalog/renault/koleos",
+          "image_url": null
+        },
+        {
+          "name": "Megane",
+          "slug": "megane",
+          "url": "https://partsouq.com/en/shop/catalog/renault/megane",
+          "image_url": null
+        },
+        {
+          "name": "Clio",
+          "slug": "clio",
+          "url": "https://partsouq.com/en/shop/catalog/renault/clio",
+          "image_url": null
+        },
+        {
+          "name": "Fluence",
+          "slug": "fluence",
+          "url": "https://partsouq.com/en/shop/catalog/renault/fluence",
+          "image_url": null
+        },
+        {
+          "name": "Latitude",
+          "slug": "latitude",
+          "url": "https://partsouq.com/en/shop/catalog/renault/latitude",
+          "image_url": null
+        },
+        {
+          "name": "Scenic",
+          "slug": "scenic",
+          "url": "https://partsouq.com/en/shop/catalog/renault/scenic",
+          "image_url": null
+        },
+        {
+          "name": "Talisman",
+          "slug": "talisman",
+          "url": "https://partsouq.com/en/shop/catalog/renault/talisman",
+          "image_url": null
+        },
+        {
+          "name": "Espace",
+          "slug": "espace",
+          "url": "https://partsouq.com/en/shop/catalog/renault/espace",
+          "image_url": null
+        },
+        {
+          "name": "Kadjar",
+          "slug": "kadjar",
+          "url": "https://partsouq.com/en/shop/catalog/renault/kadjar",
+          "image_url": null
+        },
+        {
+          "name": "Arkana",
+          "slug": "arkana",
+          "url": "https://partsouq.com/en/shop/catalog/renault/arkana",
+          "image_url": null
+        },
+        {
+          "name": "Austral",
+          "slug": "austral",
+          "url": "https://partsouq.com/en/shop/catalog/renault/austral",
+          "image_url": null
+        }
+      ]
+    },
+    {
+      "name": "Land Rover",
+      "slug": "land-rover",
+      "url": "https://partsouq.com/en/shop/catalog/land-rover",
+      "logo": "images/partsouq/logos/land-rover.png",
+      "models": [
+        {
+          "name": "Range Rover",
+          "slug": "range-rover",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/range-rover",
+          "image_url": null
+        },
+        {
+          "name": "Discovery",
+          "slug": "discovery",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/discovery",
+          "image_url": null
+        },
+        {
+          "name": "Defender",
+          "slug": "defender",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/defender",
+          "image_url": null
+        },
+        {
+          "name": "Evoque",
+          "slug": "evoque",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/evoque",
+          "image_url": null
+        },
+        {
+          "name": "Velar",
+          "slug": "velar",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/velar",
+          "image_url": null
+        },
+        {
+          "name": "Discovery Sport",
+          "slug": "discovery-sport",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/discovery-sport",
+          "image_url": null
+        },
+        {
+          "name": "Range Rover Sport",
+          "slug": "range-rover-sport",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/range-rover-sport",
+          "image_url": null
+        },
+        {
+          "name": "Freelander",
+          "slug": "freelander",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/freelander",
+          "image_url": null
+        },
+        {
+          "name": "LR2",
+          "slug": "lr2",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/lr2",
+          "image_url": null
+        },
+        {
+          "name": "LR3",
+          "slug": "lr3",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/lr3",
+          "image_url": null
+        },
+        {
+          "name": "LR4",
+          "slug": "lr4",
+          "url": "https://partsouq.com/en/shop/catalog/land-rover/lr4",
+          "image_url": null
+        }
+      ]
+    }
+  ],
+  "last_updated": "2026-01-02 20:25:33"
+}

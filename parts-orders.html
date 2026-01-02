@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Заказ запчастей - EXPO MIR</title>
+    <title>Каталог запчастей - CarExport</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="premium-enhancements.css">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -13,219 +12,326 @@
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="translations.js"></script>
+    <style>
+        .parts-hero {
+            background: linear-gradient(135deg, #0b1220 0%, #1e293b 100%);
+            color: #f3f4f6;
+            padding: 4rem 0;
+            border-bottom: 1px solid #1f2937;
+        }
+        
+        .parts-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f9fafb;
+        }
+        
+        .parts-hero p {
+            font-size: 1.1rem;
+            color: #cbd5f5;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        
+        .parts-catalog {
+            background: #0b1220;
+            color: #e5e7eb;
+            padding: 4rem 0;
+            min-height: 60vh;
+        }
+        
+        .parts-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            align-items: end;
+            margin-bottom: 2.5rem;
+            padding: 1.25rem;
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(30, 41, 59, 0.85);
+            box-shadow: 0 12px 28px rgba(2, 6, 23, 0.45);
+        }
+        
+        .parts-filters .filter-group label {
+            color: #cbd5f5;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .parts-filters .filter-group select,
+        .parts-filters .filter-group input {
+            background: #0b1220;
+            border: 1px solid #1f2937;
+            color: #f3f4f6;
+            border-radius: 10px;
+            padding: 0.65rem 0.75rem;
+            width: 100%;
+            box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.45);
+        }
+        
+        .parts-filters .filter-group select:focus,
+        .parts-filters .filter-group input:focus {
+            border-color: rgba(212, 175, 55, 0.65);
+            outline: none;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .brand-card {
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.92));
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(250, 204, 21, 0.35);
+            box-shadow: 0 12px 32px rgba(2, 6, 23, 0.55);
+        }
+        
+        .brand-card.active {
+            border-color: rgba(212, 175, 55, 0.65);
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .brand-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
+            padding: 0.5rem;
+        }
+        
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f9fafb;
+            margin: 0;
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .model-card {
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.92));
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(250, 204, 21, 0.35);
+            box-shadow: 0 12px 32px rgba(2, 6, 23, 0.55);
+        }
+        
+        .model-image {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
+            padding: 0.5rem;
+        }
+        
+        .model-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f9fafb;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .model-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.18);
+            border: 1px solid rgba(212, 175, 55, 0.55);
+            color: #facc15;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .model-link:hover {
+            background: rgba(212, 175, 55, 0.28);
+            border-color: rgba(212, 175, 55, 0.85);
+        }
+        
+        .parts-empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #94a3b8;
+            padding: 3rem 1.5rem;
+            border: 1px dashed rgba(148, 163, 184, 0.3);
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.4);
+        }
+        
+        .parts-loading {
+            text-align: center;
+            color: #94a3b8;
+            padding: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .parts-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .parts-stat {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #1f2937;
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.45);
+        }
+        
+        .parts-stat-label {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        
+        .parts-stat-value {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #f3f4f6;
+        }
+        
+        @media (max-width: 768px) {
+            .parts-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .brands-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 1rem;
+            }
+            
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .parts-filters {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body class="premium">
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="images/logo.png" alt="EXPO MIR" class="logo-img">
-                    <span>EXPO MIR</span>
+                    <img src="images/logo.png" alt="CarExport" class="logo-img">
+                    <span>CarExport</span>
                 </div>
                 <nav class="nav">
-                    <a href="index.html#catalog" data-i18n="nav_georgia">Грузия</a>
-                    <a href="usa-orders.html" data-i18n="nav_usa">США</a>
-                    <a href="korea-orders.html" data-i18n="nav_korea">Корея</a>
-                    <a href="china-orders.html" data-i18n="nav_china">Китай</a>
-                    <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
+                    <a href="index.html#catalog">Грузия</a>
+                    <a href="usa-orders.html">США</a>
+                    <a href="korea-orders.html">Корея</a>
+                    <a href="china-orders.html">Китай</a>
                     <a href="parts-orders.html" class="active">Запчасти</a>
+                    <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
                 </nav>
                 <div class="header-actions">
-                    <div class="currency-selector">
-                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)" style="background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important;">
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="KGS">сом</option>
-                            <option value="RUB">RUB</option>
-                        </select>
-                    </div>
-                    <div class="language-selector">
-                        <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)" style="background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important;">
-                            <option value="ru">🇷🇺 RU</option>
-                            <option value="en">🇬🇧 EN</option>
-                            <option value="ky">🇰🇬 КГ</option>
-                        </select>
-                    </div>
                     <button class="cart-btn" id="cartBtn">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count" id="cartCount">0</span>
                     </button>
-                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()" data-i18n="btn_request">Заявка на подбор</button>
+                    <button class="btn-secondary" type="button" onclick="openRequestModal()">Заявка на подбор</button>
+                    <button class="btn-primary" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section with VIN Search -->
-    <section class="hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #ffffff; padding: 4rem 0;">
+    <section class="parts-hero">
         <div class="container">
-            <div class="hero-content" style="text-align: center;">
-                <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: #ffffff;">Поиск запчастей для автомобилей</h1>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9);">Оригинальные и аналогичные запчасти для всех популярных марок</p>
-                
-                <!-- VIN Search Box -->
-                <div style="max-width: 600px; margin: 0 auto 2rem;">
-                    <div style="display: flex; gap: 0.5rem; background: rgba(255,255,255,0.95); padding: 1rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
-                        <input type="text" id="vinSearchInput" placeholder="Введите VIN номер автомобиля" 
-                               style="flex: 1; padding: 0.75rem 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; outline: none;"
-                               onkeypress="if(event.key==='Enter') searchByVIN()">
-                        <button onclick="searchByVIN()" class="btn-primary" style="padding: 0.75rem 2rem; white-space: nowrap;">
-                            <i class="fas fa-search"></i> Найти по VIN
-                        </button>
-                    </div>
-                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
-                        <i class="fas fa-info-circle"></i> Или выберите марку и модель ниже
-                    </p>
+            <h1>Каталог автозапчастей</h1>
+            <p>Оригинальные и качественные запчасти для всех популярных марок автомобилей. Поиск по каталогу, выбор по марке и модели. Доставка по всей России.</p>
+        </div>
+    </section>
+
+    <section class="parts-catalog">
+        <div class="container">
+            <div class="parts-stats" id="partsStats" aria-live="polite">
+                <div class="parts-stat">
+                    <span class="parts-stat-label">Марок в каталоге</span>
+                    <span class="parts-stat-value" id="brandsCount">—</span>
+                </div>
+                <div class="parts-stat">
+                    <span class="parts-stat-label">Моделей в каталоге</span>
+                    <span class="parts-stat-value" id="modelsCount">—</span>
+                </div>
+                <div class="parts-stat">
+                    <span class="parts-stat-label">Последнее обновление</span>
+                    <span class="parts-stat-value" id="lastUpdate" style="font-size: 1.2rem;">—</span>
+                </div>
+            </div>
+
+            <div class="parts-filters" aria-label="Фильтры каталога">
+                <div class="filter-group">
+                    <label for="brandSearch">Поиск по марке</label>
+                    <input type="text" id="brandSearch" placeholder="Например, Toyota">
+                </div>
+                <div class="filter-group">
+                    <label for="modelSearch">Поиск по модели</label>
+                    <input type="text" id="modelSearch" placeholder="Например, Camry">
+                </div>
+                <button class="filter-btn" id="resetFilters" type="button">Сбросить</button>
+            </div>
+
+            <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #f3f4f6;">Марки автомобилей</h2>
+            <div class="brands-grid" id="brandsGrid">
+                <div class="parts-loading">Загрузка каталога...</div>
+            </div>
+
+            <div id="modelsSection" style="display: none;">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #f3f4f6; margin-top: 3rem;">
+                    Модели: <span id="selectedBrandName"></span>
+                </h2>
+                <div class="models-grid" id="modelsGrid">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Parts Selection Section -->
-    <section id="parts-selection" class="catalog" style="padding: 3rem 0; background: #f8f9fa;">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #1f2937; font-size: 2rem;">Выберите марку и модель автомобиля</h2>
-            
-            <div class="catalog-filters" style="background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
-                    <div class="filter-group">
-                        <label for="partsBrandFilter" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Марка автомобиля</label>
-                        <select id="partsBrandFilter" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
-                            <option value="">Выберите марку</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="partsModelFilter" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Модель автомобиля</label>
-                        <select id="partsModelFilter" disabled style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
-                            <option value="">Сначала выберите марку</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="partsYearFilter" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Год выпуска</label>
-                        <select id="partsYearFilter" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
-                            <option value="">Любой год</option>
-                        </select>
-                    </div>
-                </div>
-                <div style="text-align: center;">
-                    <button class="btn-primary" id="partsApplyFilters" type="button" style="padding: 1rem 3rem; font-size: 1.1rem;">
-                        <i class="fas fa-search"></i> Показать запчасти
-                    </button>
-                </div>
-            </div>
-
-            <div id="partsCatalog" style="display: none; margin-top: 3rem;">
-                <div class="parts-categories" id="partsCategories"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Parts Request Modal -->
-    <div id="partsRequestModal" class="modal" style="display:none;">
-        <div class="modal-content" style="max-width:700px;">
-            <div class="modal-header">
-                <h3>Заказ запчастей</h3>
-                <span class="close" onclick="closePartsRequestModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div id="partsRequestForm">
-                    <div class="form-group">
-                        <label>Марка и модель</label>
-                        <input type="text" id="partsCarInfo" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Год выпуска</label>
-                        <input type="text" id="partsCarYear" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Категория запчасти</label>
-                        <input type="text" id="partsCategory" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Название запчасти</label>
-                        <input type="text" id="partsName" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Артикул / OEM номер (если известен)</label>
-                        <input type="text" id="partsOEM" placeholder="Например: 123456789">
-                    </div>
-                    <div class="form-group">
-                        <label>VIN автомобиля (если известен)</label>
-                        <input type="text" id="partsVIN" placeholder="Например: WBA3A5C50EK123456">
-                    </div>
-                    <div class="form-group">
-                        <label>Количество</label>
-                        <input type="number" id="partsQuantity" min="1" value="1">
-                    </div>
-                    <div class="form-group">
-                        <label>Ваше имя*</label>
-                        <input type="text" id="partsClientName" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Телефон*</label>
-                        <input type="tel" id="partsClientPhone" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" id="partsClientEmail">
-                    </div>
-                    <div class="form-group">
-                        <label>Комментарий</label>
-                        <textarea id="partsComment" rows="4" placeholder="Дополнительная информация о запчасти"></textarea>
-                    </div>
-                    <div id="partsRequestStatus" style="display:none;color:#facc15;margin-bottom:1rem;"></div>
-                    <button class="btn-primary" id="partsRequestSubmit" type="button">Отправить заявку</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Analog Search Modal -->
-    <div id="analogSearchModal" class="modal" style="display:none;">
-        <div class="modal-content" style="max-width:700px;">
-            <div class="modal-header">
-                <h3>Подбор аналогов запчасти</h3>
-                <span class="close" onclick="closeAnalogSearchModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div id="analogSearchForm">
-                    <div class="form-group">
-                        <label>Оригинальный артикул / OEM номер*</label>
-                        <input type="text" id="analogOEM" placeholder="Например: 123456789" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Марка и модель автомобиля</label>
-                        <input type="text" id="analogCarInfo" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Название запчасти</label>
-                        <input type="text" id="analogPartName" placeholder="Например: Тормозной диск передний">
-                    </div>
-                    <div class="form-group">
-                        <label>Ваше имя*</label>
-                        <input type="text" id="analogClientName" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Телефон*</label>
-                        <input type="tel" id="analogClientPhone" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" id="analogClientEmail">
-                    </div>
-                    <div class="form-group">
-                        <label>Комментарий</label>
-                        <textarea id="analogComment" rows="4" placeholder="Дополнительная информация"></textarea>
-                    </div>
-                    <div id="analogSearchStatus" style="display:none;color:#facc15;margin-bottom:1rem;"></div>
-                    <button class="btn-primary" id="analogSearchSubmit" type="button">Найти аналоги</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Контакты</h2>
@@ -235,23 +341,41 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Телефон</h4>
-                            <p><a href="tel:+996755666805">+996 755 666 805</a></p>
+                            <p>+7 (915) 444-12-08</p>
+                            <p>+7 (918) 414-06-36</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
+                            <p>carexportgeo@bk.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <div>
+                            <h4>Telegram</h4>
+                            <p><a href="https://t.me/Aleksandr_N_444" target="_blank">@Aleksandr_N_444</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-whatsapp"></i>
                         <div>
                             <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/996755666805" target="_blank">+996 755 666 805</a></p>
+                            <p><a href="https://wa.me/79184140636" target="_blank">+7-918-414-06-36</a></p>
                         </div>
                     </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Оставить заявку</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="tel" placeholder="Телефон" required>
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Сообщение"></textarea>
+                        <button type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -261,27 +385,321 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>EXPO MIR</h4>
-                    <p>Профессиональный подбор и доставка автомобилей и запчастей</p>
+                    <h4>CarExport</h4>
+                    <p>Каталог автозапчастей с доставкой по всей России</p>
                 </div>
                 <div class="footer-section">
                     <h4>Услуги</h4>
-                    <p><a href="index.html#catalog">Автомобили из Грузии</a></p>
-                    <p><a href="usa-orders.html">Автомобили из США</a></p>
-                    <p><a href="korea-orders.html">Автомобили из Кореи</a></p>
-                    <p><a href="parts-orders.html">Запчасти</a></p>
+                    <ul>
+                        <li>Поиск запчастей по каталогу</li>
+                        <li>Подбор по марке и модели</li>
+                        <li>Доставка по России</li>
+                        <li>Консультации специалистов</li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Контакты</h4>
-                    <p><a href="tel:+996755666805">+996 755 666 805</a></p>
-                    <p><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
+                    <p>+7 (915) 444-12-08</p>
+                    <p>+7 (918) 414-06-36</p>
+                    <p>carexportgeo@bk.ru</p>
                 </div>
+                <div class="footer-section">
+                    <h4>Соцсети</h4>
+                    <p><a href="https://t.me/Aleksandr_N_444" target="_blank">Telegram</a></p>
+                    <p><a href="https://wa.me/79184140636" target="_blank">WhatsApp</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 CarExport. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script src="parts-orders.js"></script>
+    <script>
+        // Загрузка данных каталога запчастей
+        (async function() {
+            const brandsGrid = document.getElementById('brandsGrid');
+            const modelsSection = document.getElementById('modelsSection');
+            const modelsGrid = document.getElementById('modelsGrid');
+            const selectedBrandName = document.getElementById('selectedBrandName');
+            const brandsCount = document.getElementById('brandsCount');
+            const modelsCount = document.getElementById('modelsCount');
+            const lastUpdate = document.getElementById('lastUpdate');
+            const brandSearch = document.getElementById('brandSearch');
+            const modelSearch = document.getElementById('modelSearch');
+            const resetFilters = document.getElementById('resetFilters');
+            
+            let catalogData = null;
+            let selectedBrand = null;
+            
+            try {
+                const response = await fetch('images/partsouq/parts_catalog.json');
+                if (!response.ok) throw new Error('Failed to load parts catalog');
+                catalogData = await response.json();
+                
+                // Обновляем статистику
+                const totalModels = catalogData.brands.reduce((sum, b) => sum + (b.models?.length || 0), 0);
+                brandsCount.textContent = catalogData.brands.length;
+                modelsCount.textContent = totalModels;
+                if (catalogData.last_updated) {
+                    lastUpdate.textContent = new Date(catalogData.last_updated).toLocaleDateString('ru-RU');
+                }
+                
+                renderBrands(catalogData.brands);
+            } catch (error) {
+                console.error('Error loading parts catalog:', error);
+                brandsGrid.innerHTML = '<div class="parts-empty-state">Ошибка загрузки каталога. Пожалуйста, обновите страницу.</div>';
+            }
+            
+            function renderBrands(brands) {
+                if (!brands || brands.length === 0) {
+                    brandsGrid.innerHTML = '<div class="parts-empty-state">Каталог пуст. Запустите парсинг для загрузки данных.</div>';
+                    return;
+                }
+                
+                brandsGrid.innerHTML = brands.map(brand => {
+                    const logo = brand.logo ? `<img src="${brand.logo}" alt="${brand.name}" class="brand-logo" onerror="this.style.display='none'">` : 
+                        `<div class="brand-logo" style="display: flex; align-items: center; justify-content: center; color: #9ca3af;"><i class="fas fa-car" style="font-size: 2rem;"></i></div>`;
+                    
+                    return `
+                        <div class="brand-card" data-brand-slug="${brand.slug}" onclick="selectBrand('${brand.slug}')">
+                            ${logo}
+                            <h3 class="brand-name">${brand.name}</h3>
+                            ${brand.models && brand.models.length > 0 ? `<span style="color: #9ca3af; font-size: 0.9rem;">${brand.models.length} моделей</span>` : ''}
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            function renderModels(brand) {
+                if (!brand || !brand.models || brand.models.length === 0) {
+                    modelsGrid.innerHTML = '<div class="parts-empty-state">Модели не найдены</div>';
+                    return;
+                }
+                
+                selectedBrandName.textContent = brand.name;
+                modelsSection.style.display = 'block';
+                
+                modelsGrid.innerHTML = brand.models.map(model => {
+                    const image = model.image_url ? 
+                        `<img src="${model.image_url}" alt="${model.name}" class="model-image" onerror="this.style.display='none'">` :
+                        `<div class="model-image" style="display: flex; align-items: center; justify-content: center; color: #9ca3af;"><i class="fas fa-car" style="font-size: 3rem;"></i></div>`;
+                    
+                    return `
+                        <div class="model-card">
+                            ${image}
+                            <h3 class="model-name">${model.name}</h3>
+                            <a href="${model.url}" target="_blank" class="model-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Открыть каталог
+                            </a>
+                        </div>
+                    `;
+                }).join('');
+                
+                // Прокрутка к секции моделей
+                modelsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            
+            window.selectBrand = function(slug) {
+                if (!catalogData) return;
+                
+                const brand = catalogData.brands.find(b => b.slug === slug);
+                if (!brand) return;
+                
+                selectedBrand = brand;
+                
+                // Обновляем активную марку
+                document.querySelectorAll('.brand-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+                document.querySelector(`[data-brand-slug="${slug}"]`).classList.add('active');
+                
+                renderModels(brand);
+            };
+            
+            // Поиск по маркам
+            brandSearch.addEventListener('input', function() {
+                if (!catalogData) return;
+                
+                const searchTerm = this.value.toLowerCase().trim();
+                if (!searchTerm) {
+                    renderBrands(catalogData.brands);
+                    return;
+                }
+                
+                const filtered = catalogData.brands.filter(b => 
+                    b.name.toLowerCase().includes(searchTerm)
+                );
+                renderBrands(filtered);
+            });
+            
+            // Поиск по моделям
+            modelSearch.addEventListener('input', function() {
+                if (!catalogData || !selectedBrand) return;
+                
+                const searchTerm = this.value.toLowerCase().trim();
+                if (!searchTerm) {
+                    renderModels(selectedBrand);
+                    return;
+                }
+                
+                const filteredModels = selectedBrand.models.filter(m => 
+                    m.name.toLowerCase().includes(searchTerm)
+                );
+                
+                if (filteredModels.length === 0) {
+                    modelsGrid.innerHTML = '<div class="parts-empty-state">Модели не найдены</div>';
+                } else {
+                    const brandCopy = { ...selectedBrand, models: filteredModels };
+                    renderModels(brandCopy);
+                }
+            });
+            
+            // Сброс фильтров
+            resetFilters.addEventListener('click', function() {
+                brandSearch.value = '';
+                modelSearch.value = '';
+                selectedBrand = null;
+                modelsSection.style.display = 'none';
+                document.querySelectorAll('.brand-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+                if (catalogData) {
+                    renderBrands(catalogData.brands);
+                }
+            });
+        })();
+    </script>
+    
+    <!-- Модальные окна (используем из script.js) -->
+    <div id="cartModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ваш заказ</h3>
+                <span class="close" onclick="closeCart()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartBody"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-summary">
+                    <span>Итого: <strong id="cartTotal">0</strong> ₽</span>
+                </div>
+                <button class="btn-primary" onclick="checkout()">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="customsModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Таможенный калькулятор</h3>
+                <span class="close" onclick="closeCustomsModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customs-content">
+                    <form id="customsForm" class="calc-form" onsubmit="return false;">
+                        <div class="calc-row">
+                            <label for="costUsd">Стоимость (USD)</label>
+                            <input type="number" id="costUsd" placeholder="Например, 25000" min="0" step="0.01" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="engineCc">Объем, см³</label>
+                            <input type="number" id="engineCc" placeholder="Например, 1998" min="0" step="1" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="age">Возраст</label>
+                            <input id="age" value="3 - 5 лет" disabled>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
+                        </div>
+                    </form>
+                    <div class="calc-result" id="calcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="requestModal" class="modal" style="display:none;">
+        <div class="modal-content" style="max-width:600px;">
+            <div class="modal-header">
+                <h3>Заявка на подбор</h3>
+                <span class="close" onclick="closeRequestModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="request-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reqBrand">Марка*</label>
+                            <input type="text" id="reqBrand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reqModel">Модель*</label>
+                            <input type="text" id="reqModel" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reqYearFrom">Год от</label>
+                            <input type="number" id="reqYearFrom" min="1990" max="2025">
+                        </div>
+                        <div class="form-group">
+                            <label for="reqYearTo">Год до</label>
+                            <input type="number" id="reqYearTo" min="1990" max="2025">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reqPriceTo">Бюджет до, ₽</label>
+                        <input type="number" id="reqPriceTo" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="reqName">Ваше имя*</label>
+                        <input type="text" id="reqName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reqPhone">Телефон*</label>
+                        <input type="tel" id="reqPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reqEmail">Email</label>
+                        <input type="email" id="reqEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="reqNote">Комментарий</label>
+                        <textarea id="reqNote" rows="4"></textarea>
+                    </div>
+                    <div id="requestStatus" style="display:none;color:#facc15;margin-bottom:1rem;"></div>
+                    <button class="btn-primary" id="requestSubmit" type="button">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="selfCalcModal" class="modal" style="display:none;">
+        <div class="modal-content" style="max-width:600px;">
+            <div class="modal-header">
+                <h3>Самостоятельный просчет</h3>
+                <span class="close" onclick="closeSelfCalcModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="calc-form">
+                    <div class="calc-row">
+                        <label for="selfCostUsd">Стоимость авто (USD)</label>
+                        <input type="number" id="selfCostUsd" min="0" step="0.01" placeholder="Например, 22000">
+                    </div>
+                    <div class="calc-row">
+                        <label for="selfEngineCc">Объем двигателя, см³</label>
+                        <input type="number" id="selfEngineCc" min="0" step="1" placeholder="Например, 1998">
+                    </div>
+                    <button class="btn-primary" id="selfCalcBtn" type="button">Рассчитать</button>
+                    <div class="calc-result" id="selfCalcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
