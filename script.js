@@ -2323,8 +2323,26 @@ function renderChinaUnder160Cars(){
 
     list.forEach(car=>{
         const specs = buildUnder160CarSpecs(car);
-        const priceValue = getUnder160PriceValue(car);
-        const priceLabel = priceValue ? `от ${formatCurrency(priceValue)}` : 'Цена по запросу';
+        // Конвертируем цену из рублей в доллары если нужно
+        let priceValue = getUnder160PriceValue(car);
+        
+        // Обрабатываем priceLabel: если он содержит рубли, конвертируем в доллары
+        let priceLabel = car.priceLabel;
+        if (priceLabel && priceLabel.includes('₽')) {
+            // Извлекаем число из priceLabel (убираем пробелы и ₽)
+            const priceMatch = priceLabel.match(/[\d\s]+/);
+            if (priceMatch) {
+                const priceNum = parseInt(priceMatch[0].replace(/\s/g, ''), 10);
+                if (priceNum && priceNum > 10000 && usdToRubRate) {
+                    const usdPrice = convertRubToUsd(priceNum);
+                    priceLabel = `от ${formatCurrency(usdPrice)}`;
+                }
+            }
+        } else if (!priceLabel) {
+            priceLabel = priceValue ? `от ${formatCurrency(priceValue)}` : 'Цена по запросу';
+        } else if (priceLabel && !priceLabel.includes('от')) {
+            priceLabel = `от ${priceLabel}`;
+        }
         const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
         const descriptionHtml = car.description ? `<p class="orders-card-desc">${car.description}</p>` : '';
         const imageSrc = car.image || buildSvgPlaceholder(`${car.brand || ''} ${car.model || car.name || ''}`.trim() || car.name);
