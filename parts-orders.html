@@ -12,6 +12,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="translations.js"></script>
     <style>
         .parts-hero {
             background: linear-gradient(135deg, #0b1220 0%, #1e293b 100%);
@@ -258,24 +259,38 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="images/logo.png" alt="CarExport" class="logo-img">
-                    <span>CarExport</span>
+                    <img src="images/logo.png" alt="EXPO MIR" class="logo-img">
+                    <span>EXPO MIR</span>
                 </div>
                 <nav class="nav">
-                    <a href="index.html#catalog">Грузия</a>
-                    <a href="usa-orders.html">США</a>
-                    <a href="korea-orders.html">Корея</a>
-                    <a href="china-orders.html">Китай</a>
-                    <a href="parts-orders.html" class="active">Запчасти</a>
-                    <a href="#" onclick="openCustomsModal(); return false;">Таможенный калькулятор</a>
+                    <a href="index.html#catalog" data-i18n="nav_georgia">Грузия</a>
+                    <a href="usa-orders.html" data-i18n="nav_usa">США</a>
+                    <a href="korea-orders.html" data-i18n="nav_korea">Корея</a>
+                    <a href="china-orders.html" data-i18n="nav_china">Китай</a>
+                    <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
+                    <a href="parts-orders.html">Запчасти</a>
                 </nav>
                 <div class="header-actions">
+                    <div class="currency-selector">
+                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)" style="background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important;">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="KGS">сом</option>
+                            <option value="RUB">RUB</option>
+                        </select>
+                    </div>
+                    <div class="language-selector">
+                        <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)" style="background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important;">
+                            <option value="ru">🇷🇺 RU</option>
+                            <option value="en">🇬🇧 EN</option>
+                            <option value="ky">🇰🇬 КГ</option>
+                        </select>
+                    </div>
                     <button class="cart-btn" id="cartBtn">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count" id="cartCount">0</span>
                     </button>
-                    <button class="btn-secondary" type="button" onclick="openRequestModal()">Заявка на подбор</button>
-                    <button class="btn-primary" type="button" onclick="openSelfCalcModal()">Самостоятельный просчет</button>
+                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()" data-i18n="btn_request">Заявка на подбор</button>
                 </div>
             </div>
         </div>
