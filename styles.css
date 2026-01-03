@@ -254,6 +254,50 @@ body.premium .about h2 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Блок под тулбаром */
+.header-info-banner {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    color: #ffffff;
+    padding: 0.75rem 0;
+    margin-top: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-info-banner .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.header-info-banner-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #f3f4f6;
+}
+
+.header-info-banner-text strong {
+    color: #facc15;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .header-info-banner {
+        margin-top: 75px;
+        padding: 0.6rem 0;
+    }
+    
+    .header-info-banner-text {
+        font-size: 0.85rem;
+    }
+}
+
 .header-content {
     display: flex;
     justify-content: space-between;
