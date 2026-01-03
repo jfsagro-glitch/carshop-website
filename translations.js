@@ -717,13 +717,25 @@ function updateLanguageFlag() {
         const selectedOption = selector.options[selector.selectedIndex];
         const flagPath = selectedOption ? selectedOption.getAttribute('data-flag') : null;
         if (flagPath) {
-            // Устанавливаем флаг как фоновое изображение слева
-            const currentBg = window.getComputedStyle(selector).backgroundImage;
-            const arrowBg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`;
-            selector.style.backgroundImage = `${arrowBg}, url("${flagPath}")`;
-            selector.style.backgroundPosition = 'right 0.4rem center, left 0.5rem center';
-            selector.style.backgroundSize = '10px, 24px 18px';
-            selector.style.backgroundRepeat = 'no-repeat, no-repeat';
+            // Устанавливаем флаг через CSS переменную для псевдоэлемента
+            selector.style.setProperty('--flag-image', `url("${flagPath}")`);
+            
+            // Также устанавливаем через data-атрибут для совместимости
+            selector.setAttribute('data-flag-path', flagPath);
+            
+            // Обновляем псевдоэлемент через стиль
+            const style = document.createElement('style');
+            style.id = 'language-flag-style';
+            const existingStyle = document.getElementById('language-flag-style');
+            if (existingStyle) {
+                existingStyle.remove();
+            }
+            style.textContent = `
+                #languageSelector::after {
+                    background-image: url("${flagPath}") !important;
+                }
+            `;
+            document.head.appendChild(style);
         }
     }
 }

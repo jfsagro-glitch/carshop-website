@@ -463,6 +463,29 @@ body.premium .about h2 {
     animation-duration: 1.5s !important;
 }
 
+.currency-select option {
+    background: #374151 !important;
+    background-color: #374151 !important;
+    color: #ffffff !important;
+    padding: 0.5rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+}
+
+/* Дополнительные стили для всех option в селекторе валюты */
+#currencySelector option {
+    background: #374151 !important;
+    background-color: #374151 !important;
+    color: #ffffff !important;
+}
+
+/* Стили для выбранной опции */
+.currency-select option:checked {
+    background: #1f2937 !important;
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+}
+
 .language-selector {
     position: relative;
     margin-right: 8px;
@@ -482,18 +505,34 @@ body.premium .about h2 {
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat;
-    background-position: right 0.4rem center, left 0.5rem center;
-    background-size: 10px, 24px 18px;
+    background-position: right 0.4rem center;
+    background-size: 10px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     min-width: 60px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     will-change: transform, box-shadow, background-position;
     height: 36px;
     text-align: left;
     text-indent: 0;
     line-height: 1.2;
+}
+
+/* Флаг отображается через псевдоэлемент */
+.language-select::after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .language-select option {
