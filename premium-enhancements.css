@@ -25,9 +25,9 @@ html {
 /* Logo - Consistent with parts-orders.html */
 .logo-img {
     display: block;
-    height: 55px !important;
+    height: 65px !important;
     width: auto;
-    max-height: 55px !important;
+    max-height: 65px !important;
     object-fit: contain;
     margin-right: 12px;
     background: transparent !important;

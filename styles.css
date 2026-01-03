@@ -305,9 +305,9 @@ body.premium .about h2 {
 
 .logo-img {
     display: block;
-    height: 55px;
+    height: 65px;
     width: auto;
-    max-height: 55px;
+    max-height: 65px;
     object-fit: contain;
     margin-right: 12px;
     background: transparent !important;
