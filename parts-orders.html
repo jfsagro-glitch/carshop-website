@@ -134,6 +134,9 @@
             height: 80px;
             background: rgba(15, 23, 42, 0.5);
             border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .brand-name {
@@ -491,12 +494,26 @@
                 }
                 
                 brandsGrid.innerHTML = brands.map(brand => {
-                    const logoContainer = brand.logo ? 
-                        `<div class="brand-logo-container">
-                            <img src="${brand.logo}" alt="${brand.name}" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="brand-logo-fallback" style="display: none; align-items: center; justify-content: center; color: #9ca3af; width: 80px; height: 80px;"><i class="fas fa-car" style="font-size: 2rem;"></i></div>
-                        </div>` : 
-                        `<div class="brand-logo" style="display: flex; align-items: center; justify-content: center; color: #9ca3af;"><i class="fas fa-car" style="font-size: 2rem;"></i></div>`;
+                    let logoContainer = '';
+                    if (brand.logo) {
+                        // Создаем контейнер с изображением и fallback
+                        logoContainer = `
+                            <div class="brand-logo-container">
+                                <img src="${brand.logo}" alt="${brand.name}" class="brand-logo" 
+                                     onerror="this.onerror=null; this.style.display='none'; const fallback = this.nextElementSibling; if(fallback) fallback.style.display='flex';">
+                                <div class="brand-logo-fallback" style="display: none; align-items: center; justify-content: center; color: #9ca3af;">
+                                    <i class="fas fa-car" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>`;
+                    } else {
+                        // Если нет логотипа, показываем fallback сразу
+                        logoContainer = `
+                            <div class="brand-logo-container">
+                                <div class="brand-logo-fallback" style="display: flex; align-items: center; justify-content: center; color: #9ca3af;">
+                                    <i class="fas fa-car" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>`;
+                    }
                     
                     return `
                         <div class="brand-card" data-brand-slug="${brand.slug}" onclick="selectBrand('${brand.slug}')">
