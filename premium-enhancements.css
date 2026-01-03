@@ -164,7 +164,7 @@ html {
 
 /* Car Image Enhancements - Square Format */
 .car-image {
-    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%) !important;
+    background: #000000 !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
     height: 480px !important;

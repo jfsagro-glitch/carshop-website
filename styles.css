@@ -1354,7 +1354,7 @@ body.premium .about h2 {
     min-height: 480px;
     max-height: 480px;
     position: relative;
-    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+    background: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1377,7 +1377,7 @@ body.premium .about h2 {
     object-fit: contain;
     object-position: center;
     display: none;
-    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+    background: #000000;
     position: absolute;
     top: 0;
     left: 0;
@@ -1397,7 +1397,7 @@ body.premium .about h2 {
     object-fit: contain;
     object-position: center;
     display: block;
-    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+    background: #000000;
     box-sizing: border-box;
     padding: 8px;
 }
