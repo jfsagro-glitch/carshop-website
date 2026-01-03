@@ -717,25 +717,14 @@ function updateLanguageFlag() {
         const selectedOption = selector.options[selector.selectedIndex];
         const flagPath = selectedOption ? selectedOption.getAttribute('data-flag') : null;
         if (flagPath) {
-            // Устанавливаем флаг через CSS переменную для псевдоэлемента
+            // Устанавливаем флаг через CSS переменную для background-image
             selector.style.setProperty('--flag-image', `url("${flagPath}")`);
             
             // Также устанавливаем через data-атрибут для совместимости
             selector.setAttribute('data-flag-path', flagPath);
-            
-            // Обновляем псевдоэлемент через стиль
-            const style = document.createElement('style');
-            style.id = 'language-flag-style';
-            const existingStyle = document.getElementById('language-flag-style');
-            if (existingStyle) {
-                existingStyle.remove();
-            }
-            style.textContent = `
-                #languageSelector::after {
-                    background-image: url("${flagPath}") !important;
-                }
-            `;
-            document.head.appendChild(style);
+        } else {
+            // Если флаг не найден, убираем его
+            selector.style.setProperty('--flag-image', 'none');
         }
     }
 }

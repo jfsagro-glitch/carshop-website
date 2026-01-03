@@ -576,7 +576,8 @@ body.premium .about h2 {
     background-repeat: no-repeat;
     background-position: center;
     pointer-events: none;
-    z-index: 1;
+    z-index: 10;
+    display: block;
 }
 
 .language-select option {
