@@ -672,6 +672,10 @@ body.premium .about h2 {
     line-height: 1.2;
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
 }
 
 .hero-content p {
