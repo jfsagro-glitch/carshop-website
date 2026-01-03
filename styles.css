@@ -156,6 +156,16 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .logo {
+    flex-shrink: 0;
+}
+
+.nav {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.logo {
     display: flex;
     align-items: center;
     font-size: 1.25rem;
