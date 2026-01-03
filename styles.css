@@ -625,6 +625,7 @@ body.premium .about h2 {
     justify-content: flex-start;
     min-height: 100px;
     width: 100%;
+    text-align: left !important;
 }
 
 .hero-logo-text-container {
