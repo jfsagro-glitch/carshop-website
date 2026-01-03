@@ -274,7 +274,7 @@ body.premium .about h2 {
     background: linear-gradient(180deg, var(--led-yellow) 0%, var(--led-yellow-light) 15%, var(--led-orange) 30%, var(--led-orange-dark) 50%, var(--led-brown) 70%, var(--led-brown-dark) 85%, var(--led-brown-darker) 100%);
     color: #fff;
     padding: 0.75rem 0;
-    margin-top: 80px;
+    margin-top: 100px;
     border-bottom: 2px solid rgba(250, 204, 21, 0.3);
     position: relative;
     z-index: 999;
@@ -333,7 +333,7 @@ body.premium .about h2 {
 
 @media (max-width: 768px) {
     .header-info-banner {
-        margin-top: 75px;
+        margin-top: 95px;
         padding: 0.6rem 0;
     }
     
