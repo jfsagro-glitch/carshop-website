@@ -311,6 +311,214 @@ const translations = {
         footer_phone: 'Телефон',
         footer_email: 'Email',
         footer_whatsapp: 'WhatsApp'
+    },
+    de: {
+        // Navigation
+        nav_georgia: 'Georgien',
+        nav_usa: 'USA',
+        nav_korea: 'Korea',
+        nav_china: 'China',
+        nav_europe: 'Europa',
+        
+        // Buttons
+        btn_request: 'Anfrage stellen',
+        btn_cart: 'Warenkorb',
+        btn_submit: 'Absenden',
+        btn_apply: 'Anwenden',
+        btn_reset: 'Zurücksetzen',
+        btn_order: 'Bestellen',
+        btn_request_calculation: 'Berechnung anfordern',
+        
+        // Titles
+        title_georgia: 'Fahrzeuge in Georgien verfügbar',
+        title_usa: 'Fahrzeuge aus USA bestellen',
+        title_korea: 'Fahrzeuge aus Korea bestellen',
+        title_china: 'Fahrzeuge aus China bestellen',
+        title_europe: 'Fahrzeuge aus Europa bestellen',
+        
+        // Forms
+        form_brand: 'Marke',
+        form_model: 'Modell',
+        form_year_from: 'Baujahr (von)',
+        form_year_to: 'Baujahr (bis)',
+        form_price_to: 'Preis (bis), $',
+        form_name: 'Ihr Name',
+        form_phone: 'Telefon',
+        form_email: 'Email',
+        form_note: 'Hinweis',
+        form_comment: 'Kommentar',
+        
+        // General
+        price_on_request: 'Preis auf Anfrage',
+        no_results: 'Keine Fahrzeuge gefunden',
+        loading: 'Angebote werden geladen...',
+        contacts: 'Kontakte',
+        services: 'Dienstleistungen',
+        
+        // Modals
+        modal_request_title: 'Anfrage stellen',
+        modal_cart_title: 'Ihre Bestellung',
+        modal_checkout_title: 'Kontaktinformationen',
+        
+        // Filters
+        filter_all_brands: 'Alle Marken',
+        filter_all_models: 'Alle Modelle',
+        filter_price_from: 'Preis von',
+        filter_price_to: 'Preis bis',
+        filter_mileage_to: 'Kilometerstand bis',
+        
+        // Statistics
+        stat_cars_in_catalog: 'Fahrzeuge im Katalog',
+        stat_avg_price: 'Durchschnittliches Budget',
+        stat_min_price: 'Mindestpreis',
+        
+        // Hero section
+        hero_title: 'Fahrzeuge in Georgien verfügbar',
+        hero_tagline: 'Große Auswahl<br>qualitativer Fahrzeuge<br>mit Laufleistung.',
+        hero_delivery: 'Lieferung',
+        hero_registration: 'Vollständige Registrierung',
+        hero_view_catalog: 'Katalog ansehen',
+        
+        // Catalog
+        catalog_title: 'Fahrzeuge in Georgien verfügbar',
+        catalog_brand: 'Marke:',
+        catalog_model: 'Modell:',
+        catalog_price_from: 'Preis von:',
+        catalog_price_to: 'Preis bis:',
+        catalog_mileage_to: 'Kilometerstand bis:',
+        catalog_minimum: 'Minimum',
+        catalog_maximum: 'Maximum',
+        catalog_km: 'km',
+        catalog_year: 'Jahr',
+        catalog_photos: 'Fotos',
+        catalog_no_photo: 'Kein Foto',
+        catalog_price_with_delivery: 'Preis mit Lieferung und Zollabfertigung:',
+        
+        // CTA sections
+        cta_usa_title: 'Fahrzeuge aus USA bestellen',
+        cta_usa_text: 'Wir wählen Fahrzeuge von Copart, IAAI und Manheim aus, liefern nach Georgien. Ein separater Katalog mit Losen und VIN-Auswahl ist auf der speziellen Seite verfügbar.',
+        cta_usa_link: 'Zum USA-Katalog',
+        cta_china_title: 'Fahrzeuge aus China bestellen',
+        cta_china_text: 'Offizielle Lieferungen aus China: Werksausstattungen, Herstellergarantie. Erfahren Sie aktuelle Preise und verfügbare Modelle.',
+        cta_china_link: 'China-Katalog',
+        cta_korea_title: 'Fahrzeuge aus Korea bestellen',
+        cta_korea_text: 'Frische Hyundai, Kia und Genesis mit bestätigter Servicehistorie in Korea. Premium-Ausstattungen verfügbar, Laufleistung bis 30.000 km und schlüsselfertige Lieferung.',
+        cta_korea_link: 'Korea-Katalog',
+        cta_europe_title: 'Fahrzeuge aus Europa bestellen',
+        cta_europe_text: 'Große Auswahl qualitativer Fahrzeuge aus Deutschland, Frankreich, Italien und anderen europäischen Ländern. Offizielle Händler, geprüfte Historie, Lieferung und Zollabfertigung.',
+        cta_europe_link: 'Europa-Katalog',
+        
+        // Footer
+        footer_services: 'Dienstleistungen',
+        footer_delivery: 'Lieferung',
+        footer_contacts: 'Kontakte',
+        footer_phone: 'Telefon',
+        footer_email: 'Email',
+        footer_whatsapp: 'WhatsApp'
+    },
+    ka: {
+        // Навигация
+        nav_georgia: 'საქართველო',
+        nav_usa: 'აშშ',
+        nav_korea: 'კორეა',
+        nav_china: 'ჩინეთი',
+        nav_europe: 'ევროპა',
+        
+        // Кнопки
+        btn_request: 'მოთხოვნა',
+        btn_cart: 'კალათა',
+        btn_submit: 'გაგზავნა',
+        btn_apply: 'გამოყენება',
+        btn_reset: 'გადატვირთვა',
+        btn_order: 'შეკვეთა',
+        btn_request_calculation: 'გაანგარიშების მოთხოვნა',
+        
+        // Заголовки
+        title_georgia: 'ავტომობილები საქართველოში ხელმისაწვდომი',
+        title_usa: 'ავტომობილების შეკვეთა აშშ-დან',
+        title_korea: 'ავტომობილების შეკვეთა კორეიდან',
+        title_china: 'ავტომობილების შეკვეთა ჩინეთიდან',
+        title_europe: 'ავტომობილების შეკვეთა ევროპიდან',
+        
+        // Формы
+        form_brand: 'ბრენდი',
+        form_model: 'მოდელი',
+        form_year_from: 'წელი (დან)',
+        form_year_to: 'წელი (მდე)',
+        form_price_to: 'ფასი (მდე), $',
+        form_name: 'თქვენი სახელი',
+        form_phone: 'ტელეფონი',
+        form_email: 'Email',
+        form_note: 'შენიშვნა',
+        form_comment: 'კომენტარი',
+        
+        // Общие
+        price_on_request: 'ფასი მოთხოვნით',
+        no_results: 'ავტომობილები ვერ მოიძებნა',
+        loading: 'შეთავაზებები იტვირთება...',
+        contacts: 'კონტაქტები',
+        services: 'სერვისები',
+        
+        // Модальные окна
+        modal_request_title: 'მოთხოვნა',
+        modal_cart_title: 'თქვენი შეკვეთა',
+        modal_checkout_title: 'საკონტაქტო ინფორმაცია',
+        
+        // Фильтры
+        filter_all_brands: 'ყველა ბრენდი',
+        filter_all_models: 'ყველა მოდელი',
+        filter_price_from: 'ფასი დან',
+        filter_price_to: 'ფასი მდე',
+        filter_mileage_to: 'გარბენი მდე',
+        
+        // Статистика
+        stat_cars_in_catalog: 'ავტომობილები კატალოგში',
+        stat_avg_price: 'საშუალო ბიუჯეტი',
+        stat_min_price: 'მინიმალური ფასი',
+        
+        // Hero section
+        hero_title: 'ავტომობილები საქართველოში ხელმისაწვდომი',
+        hero_tagline: 'ხარისხიანი ავტომობილების<br>ფართო არჩევანი<br>გარბენით.',
+        hero_delivery: 'მიწოდება',
+        hero_registration: 'სრული რეგისტრაცია',
+        hero_view_catalog: 'კატალოგის ნახვა',
+        
+        // Catalog
+        catalog_title: 'ავტომობილები საქართველოში ხელმისაწვდომი',
+        catalog_brand: 'ბრენდი:',
+        catalog_model: 'მოდელი:',
+        catalog_price_from: 'ფასი დან:',
+        catalog_price_to: 'ფასი მდე:',
+        catalog_mileage_to: 'გარბენი მდე:',
+        catalog_minimum: 'მინიმუმი',
+        catalog_maximum: 'მაქსიმუმი',
+        catalog_km: 'კმ',
+        catalog_year: 'წელი',
+        catalog_photos: 'ფოტოები',
+        catalog_no_photo: 'ფოტო არ არის',
+        catalog_price_with_delivery: 'ფასი მიწოდებითა და განბაჟებით:',
+        
+        // CTA sections
+        cta_usa_title: 'ავტომობილების შეკვეთა აშშ-დან',
+        cta_usa_text: 'ვირჩევთ ავტომობილებს Copart, IAAI და Manheim-ზე, ვმიწოდებთ საქართველოში. ცალკე კატალოგი ლოტებითა და VIN-ით შერჩევით ხელმისაწვდომია განსაკუთრებულ გვერდზე.',
+        cta_usa_link: 'აშშ-ის კატალოგზე გადასვლა',
+        cta_china_title: 'ავტომობილების შეკვეთა ჩინეთიდან',
+        cta_china_text: 'ოფიციალური მიწოდებები ჩინეთიდან: ქარხნული კომპლექტაციები, მწარმოებლის გარანტია. გაიგეთ აქტუალური ფასები და ხელმისაწვდომი მოდელები.',
+        cta_china_link: 'ჩინეთის კატალოგი',
+        cta_korea_title: 'ავტომობილების შეკვეთა კორეიდან',
+        cta_korea_text: 'ახალი Hyundai, Kia და Genesis კორეაში დადასტურებული სერვისის ისტორიით. ხელმისაწვდომია პრემიუმ კომპლექტაციები, გარბენი 30,000 კმ-მდე და "გასაღებით" მიწოდება.',
+        cta_korea_link: 'კორეის კატალოგი',
+        cta_europe_title: 'ავტომობილების შეკვეთა ევროპიდან',
+        cta_europe_text: 'ხარისხიანი ავტომობილების ფართო არჩევანი გერმანიიდან, საფრანგეთიდან, იტალიიდან და სხვა ევროპული ქვეყნებიდან. ოფიციალური დილერები, შემოწმებული ისტორია, მიწოდება და განბაჟება.',
+        cta_europe_link: 'ევროპის კატალოგი',
+        
+        // Footer
+        footer_services: 'სერვისები',
+        footer_delivery: 'მიწოდება',
+        footer_contacts: 'კონტაქტები',
+        footer_phone: 'ტელეფონი',
+        footer_email: 'Email',
+        footer_whatsapp: 'WhatsApp'
     }
 };
 
@@ -443,6 +651,7 @@ function setLanguage(lang) {
     localStorage.setItem('language', lang);
     applyTranslations();
     updateLanguageSelector();
+    updateLanguageFlag();
 }
 
 // Применение переводов
@@ -496,6 +705,26 @@ function updateLanguageSelector() {
     const selector = document.getElementById('languageSelector');
     if (selector) {
         selector.value = currentLanguage;
+        // Обновляем флаг в селекторе
+        updateLanguageFlag();
+    }
+}
+
+// Обновление флага в селекторе языка
+function updateLanguageFlag() {
+    const selector = document.getElementById('languageSelector');
+    if (selector) {
+        const selectedOption = selector.options[selector.selectedIndex];
+        const flagPath = selectedOption ? selectedOption.getAttribute('data-flag') : null;
+        if (flagPath) {
+            // Устанавливаем флаг как фоновое изображение слева
+            const currentBg = window.getComputedStyle(selector).backgroundImage;
+            const arrowBg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`;
+            selector.style.backgroundImage = `${arrowBg}, url("${flagPath}")`;
+            selector.style.backgroundPosition = 'right 0.4rem center, left 0.5rem center';
+            selector.style.backgroundSize = '10px, 24px 18px';
+            selector.style.backgroundRepeat = 'no-repeat, no-repeat';
+        }
     }
 }
 
@@ -507,5 +736,13 @@ document.addEventListener('DOMContentLoaded', function() {
     applyTranslations();
     updateLanguageSelector();
     updateCurrencySelector();
+    
+    // Добавляем обработчик изменения селектора для обновления флага
+    const languageSelector = document.getElementById('languageSelector');
+    if (languageSelector) {
+        languageSelector.addEventListener('change', function() {
+            updateLanguageFlag();
+        });
+    }
 });
 

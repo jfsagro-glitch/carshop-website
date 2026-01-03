@@ -474,36 +474,34 @@ body.premium .about h2 {
     animation: gradientShift 3s ease infinite !important;
     color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    padding: 0.5rem 0.6rem 0.5rem 0.4rem;
+    padding: 0.5rem 2rem 0.5rem 2.5rem;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat;
-    background-position: right 0.4rem center;
-    background-size: 10px;
+    background-position: right 0.4rem center, left 0.5rem center;
+    background-size: 10px, 24px 18px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    min-width: 45px;
+    min-width: 60px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     position: relative;
     overflow: hidden;
     will-change: transform, box-shadow, background-position;
     height: 36px;
-    text-align: center;
+    text-align: left;
     text-indent: 0;
     line-height: 1.2;
 }
 
 .language-select option {
     text-align: left;
-}
-
-/* Скрываем текст после флага в селекторе языка */
-
-.language-select option {
     font-size: 0.9rem;
+    padding: 0.5rem;
+    background: #374151;
+    color: #ffffff;
 }
 
 .language-select::before {
