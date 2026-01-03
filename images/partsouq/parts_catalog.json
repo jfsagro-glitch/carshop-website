@@ -10,49 +10,113 @@
           "name": "Camry",
           "slug": "camry",
           "url": "https://partsouq.com/en/shop/catalog/toyota/camry",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Camry",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Camry",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "Corolla",
           "slug": "corolla",
           "url": "https://partsouq.com/en/shop/catalog/toyota/corolla",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Corolla",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Corolla",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "RAV4",
           "slug": "rav4",
           "url": "https://partsouq.com/en/shop/catalog/toyota/rav4",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "RAV4",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=RAV4",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "Highlander",
           "slug": "highlander",
           "url": "https://partsouq.com/en/shop/catalog/toyota/highlander",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Highlander",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Highlander",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "Prius",
           "slug": "prius",
           "url": "https://partsouq.com/en/shop/catalog/toyota/prius",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Prius",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Prius",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "Land Cruiser",
           "slug": "land-cruiser",
           "url": "https://partsouq.com/en/shop/catalog/toyota/land-cruiser",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Land Cruiser",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Land Cruiser",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "4Runner",
           "slug": "4runner",
           "url": "https://partsouq.com/en/shop/catalog/toyota/4runner",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "4Runner",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=4Runner",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "Tacoma",
           "slug": "tacoma",
           "url": "https://partsouq.com/en/shop/catalog/toyota/tacoma",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Tacoma",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Tacoma",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "Tundra",
@@ -124,15 +188,39 @@
           "name": "Tundra",
           "slug": "tundra",
           "url": "https://partsouq.com/en/shop/catalog/toyota/tundra",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Tundra",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Tundra",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         },
         {
           "name": "Sienna",
           "slug": "sienna",
           "url": "https://partsouq.com/en/shop/catalog/toyota/sienna",
-          "image_url": null
+          "image_url": null,
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Sienna",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Sienna",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
         }
-      ]
+      ],
+      "catalog": {
+        "brand": "Toyota",
+        "model": null,
+        "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota",
+        "categories": [],
+        "parts_groups": [],
+        "vehicle_models": []
+      }
     },
     {
       "name": "Nissan",
@@ -2695,5 +2783,5 @@
       ]
     }
   ],
-  "last_updated": "2026-01-02 20:25:33"
+  "last_updated": "2026-01-02 22:04:18"
 }

@@ -1,0 +1,140 @@
+{
+  "brands": [
+    {
+      "brand": "Toyota",
+      "slug": "toyota",
+      "url": "https://partsouq.com/en/shop/catalog/toyota",
+      "models": [
+        {
+          "name": "Camry",
+          "slug": "camry",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Camry",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Camry",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "Corolla",
+          "slug": "corolla",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Corolla",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Corolla",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "RAV4",
+          "slug": "rav4",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "RAV4",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=RAV4",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "Highlander",
+          "slug": "highlander",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Highlander",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Highlander",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "Prius",
+          "slug": "prius",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Prius",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Prius",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "Land Cruiser",
+          "slug": "land-cruiser",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Land Cruiser",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Land Cruiser",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "4Runner",
+          "slug": "4runner",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "4Runner",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=4Runner",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "Tacoma",
+          "slug": "tacoma",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Tacoma",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Tacoma",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "Tundra",
+          "slug": "tundra",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Tundra",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Tundra",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        },
+        {
+          "name": "Sienna",
+          "slug": "sienna",
+          "catalog": {
+            "brand": "Toyota",
+            "model": "Sienna",
+            "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota&m=Sienna",
+            "categories": [],
+            "parts_groups": [],
+            "vehicle_models": []
+          }
+        }
+      ],
+      "catalog": {
+        "brand": "Toyota",
+        "model": null,
+        "url": "https://partsouq.com/en/catalog/genuine/locate?c=Toyota",
+        "categories": [],
+        "parts_groups": [],
+        "vehicle_models": []
+      }
+    }
+  ],
+  "last_updated": "2026-01-02 22:04:18"
+}
