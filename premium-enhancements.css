@@ -22,20 +22,26 @@ html {
     will-change: transform, box-shadow;
 }
 
-/* Logo with White Background - Premium */
+/* Logo - Consistent with parts-orders.html */
 .logo-img {
-    background: #ffffff !important;
-    padding: 10px 16px !important;
-    border-radius: 14px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.06) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    will-change: transform, box-shadow;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    display: block;
+    height: 55px !important;
+    width: auto;
+    max-height: 55px !important;
+    object-fit: contain;
+    margin-right: 12px;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    flex-shrink: 0;
 }
 
 .logo:hover .logo-img {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08) !important;
 }
 
 .logo {
@@ -737,7 +743,9 @@ select.language-select:active {
     }
     
     .logo-img {
-        padding: 6px 10px !important;
+        height: 45px !important;
+        max-height: 45px !important;
+        padding: 0 !important;
     }
     
     .btn-primary,
