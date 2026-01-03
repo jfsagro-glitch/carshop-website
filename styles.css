@@ -82,16 +82,16 @@ body.premium .btn-secondary:hover { background: #0b1220; border-color: #2c3a52; 
 /* Yellow header button for Request */
 #openRequestBtn {
     background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%) !important;
-    border-color: rgba(0, 0, 0, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
     color: #ffffff !important;
-    padding: 0.45rem 0.81rem;
-    font-size: 0.65rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    border-radius: 6px;
-    line-height: 1.1;
+    border-radius: 8px;
+    line-height: 1.2;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
     white-space: nowrap;
-    height: 21px;
+    height: 36px;
 }
 #openRequestBtn:hover { 
     background: linear-gradient(135deg, #374151 0%, #4b5563 50%, #374151 100%) !important;
@@ -136,23 +136,23 @@ body.premium .footer-section a:hover { color: var(--text); }
     padding: 0 20px;
 }
 
-/* Header - Premium White */
+/* Header - Premium Gray */
 .header {
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    background: linear-gradient(180deg, #6b7280 0%, #4b5563 100%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1) !important;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 0;
+    padding: 1.2rem 0;
     gap: 0.75rem;
     flex-wrap: nowrap;
     overflow: visible;
@@ -171,14 +171,14 @@ body.premium .footer-section a:hover { color: var(--text); }
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #111827 !important;
+    color: #ffffff !important;
     margin-right: 1rem;
     position: relative;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    text-shadow: none !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
     flex-shrink: 0;
     white-space: nowrap;
 }
@@ -199,14 +199,14 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .logo-img {
     display: block;
-    height: 50px;
+    height: 65px;
     width: auto;
     object-fit: contain;
-    margin-right: 8px;
+    margin-right: 12px;
     background: #ffffff !important;
-    padding: 8px 12px !important;
+    padding: 10px 14px !important;
     border-radius: 12px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.08) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform, box-shadow;
@@ -246,11 +246,11 @@ body.premium .footer-section a:hover { color: var(--text); }
 
 .nav a {
     text-decoration: none;
-    color: #1f2937 !important;
+    color: #ffffff !important;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow: none !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
     letter-spacing: 0.01em;
     position: relative;
     white-space: nowrap;
@@ -258,14 +258,15 @@ body.premium .footer-section a:hover { color: var(--text); }
 }
 
 .nav a:hover {
-    color: #111827 !important;
+    color: #f3f4f6 !important;
     font-weight: 700;
-    text-shadow: none !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .nav a.active {
-    color: #111827 !important;
+    color: #f3f4f6 !important;
     font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .header-actions {
@@ -287,25 +288,25 @@ body.premium .footer-section a:hover { color: var(--text); }
     background-size: 200% 200% !important;
     animation: gradientShift 3s ease infinite !important;
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    padding: 0.23rem 0.98rem 0.23rem 0.33rem;
-    border-radius: 6px;
-    font-size: 0.49rem;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 0.5rem 0.6rem 0.5rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='7' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat;
-    background-position: right 0.26rem center;
-    background-size: 7px;
+    background-position: right 0.4rem center;
+    background-size: 10px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    min-width: 42px;
+    min-width: 55px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     position: relative;
     overflow: hidden;
     will-change: transform, box-shadow, background-position;
-    height: 21px;
-    line-height: 1;
+    height: 36px;
+    line-height: 1.2;
 }
 
 .currency-select::before {
@@ -363,27 +364,27 @@ body.premium .footer-section a:hover { color: var(--text); }
     background-size: 200% 200% !important;
     animation: gradientShift 3s ease infinite !important;
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    padding: 0.23rem 0.98rem 0.23rem 0.33rem;
-    border-radius: 6px;
-    font-size: 0.72rem;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 0.5rem 0.6rem 0.5rem 0.4rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='7' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat;
-    background-position: right 0.26rem center;
-    background-size: 7px;
+    background-position: right 0.4rem center;
+    background-size: 10px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    min-width: 33px;
+    min-width: 45px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
     position: relative;
     overflow: hidden;
     will-change: transform, box-shadow, background-position;
-    height: 21px;
+    height: 36px;
     text-align: center;
     text-indent: 0;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .language-select option {
@@ -437,15 +438,19 @@ body.premium .footer-section a:hover { color: var(--text); }
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
     color: #1f2937 !important;
     border: 1px solid rgba(0, 0, 0, 0.12) !important;
-    padding: 0.33rem 0.65rem;
-    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    height: 21px;
+    height: 36px;
+    width: 36px;
     line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cart-btn:hover {
@@ -479,7 +484,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     animation: heroGradientShift 15s ease infinite;
     color: #ffffff;
     padding: 6rem 0 1.5rem 0;
-    margin-top: 80px;
+    margin-top: 100px;
     text-align: left;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
