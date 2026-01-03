@@ -350,7 +350,8 @@ body.premium .about h2 {
     white-space: nowrap;
 }
 
-.nav a {
+.nav a,
+.header .nav a {
     text-decoration: none;
     color: #ffffff !important;
     font-weight: 600;
@@ -363,14 +364,16 @@ body.premium .about h2 {
     flex-shrink: 0;
 }
 
-.nav a:hover {
-    color: #f3f4f6 !important;
+.nav a:hover,
+.header .nav a:hover {
+    color: #ffffff !important;
     font-weight: 700;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
-.nav a.active {
-    color: #f3f4f6 !important;
+.nav a.active,
+.header .nav a.active {
+    color: #ffffff !important;
     font-weight: 700;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
