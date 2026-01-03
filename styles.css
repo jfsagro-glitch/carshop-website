@@ -464,8 +464,9 @@ body.premium .footer-section a:hover { color: var(--text); }
     background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 25%, #f3f4f6 50%, #e5e7eb 75%, #d1d5db 100%);
     background-size: 400% 400%;
     animation: heroGradientShift 15s ease infinite;
-    color: #1f2937;
-    padding: 2rem 0;
+    color: #ffffff;
+    padding: 8rem 0 2rem 0;
+    margin-top: 80px;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
@@ -527,8 +528,8 @@ body.premium .footer-section a:hover { color: var(--text); }
     margin: 0;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 700;
-    color: #111827;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     line-height: 1.2;
     text-align: center;
     word-wrap: break-word;
@@ -542,8 +543,8 @@ body.premium .footer-section a:hover { color: var(--text); }
     font-weight: 700;
     margin-bottom: 0.5rem;
     line-height: 1.2;
-    color: #111827;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
@@ -552,7 +553,7 @@ body.premium .footer-section a:hover { color: var(--text); }
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
-    color: #374151;
+    color: #ffffff;
     text-align: left;
     font-weight: 500;
 }
@@ -570,9 +571,9 @@ body.premium .footer-section a:hover { color: var(--text); }
     line-height: 1.5;
     max-width: 100%;
     word-wrap: break-word;
-    color: #111827 !important;
+    color: #ffffff !important;
     font-weight: 600 !important;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
 }
 
 .hero-content p .hero-inline-logo { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; vertical-align: middle; margin-right: 8px; }
@@ -589,14 +590,14 @@ body.premium .footer-section a:hover { color: var(--text); }
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    color: #374151;
+    color: #ffffff;
     font-size: 0.8rem;
     font-weight: 500;
 }
 
 .feature i {
     font-size: 0.9rem;
-    color: #4b5563;
+    color: #ffffff;
 }
 
 .orders-cta {
