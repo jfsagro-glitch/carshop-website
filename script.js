@@ -2328,20 +2328,35 @@ function renderChinaUnder160Cars(){
         
         // Обрабатываем priceLabel: если он содержит рубли, конвертируем в доллары
         let priceLabel = car.priceLabel;
-        if (priceLabel && priceLabel.includes('₽')) {
-            // Извлекаем число из priceLabel (убираем пробелы и ₽)
-            const priceMatch = priceLabel.match(/[\d\s]+/);
+        if (priceLabel && (priceLabel.includes('₽') || priceLabel.includes('руб'))) {
+            // Извлекаем число из priceLabel (убираем пробелы, ₽, руб)
+            const priceMatch = priceLabel.match(/[\d\s,]+/);
             if (priceMatch) {
-                const priceNum = parseInt(priceMatch[0].replace(/\s/g, ''), 10);
-                if (priceNum && priceNum > 10000 && usdToRubRate) {
+                const priceNum = parseInt(priceMatch[0].replace(/[\s,]/g, ''), 10);
+                // Если цена больше 1000, вероятно это рубли - конвертируем в доллары
+                if (priceNum && priceNum > 1000 && usdToRubRate) {
                     const usdPrice = convertRubToUsd(priceNum);
                     priceLabel = `от ${formatCurrency(usdPrice)}`;
                 }
             }
         } else if (!priceLabel) {
+            // Если priceValue уже в USD (после конвертации), используем его
             priceLabel = priceValue ? `от ${formatCurrency(priceValue)}` : 'Цена по запросу';
         } else if (priceLabel && !priceLabel.includes('от')) {
-            priceLabel = `от ${priceLabel}`;
+            // Проверяем, не является ли цена в рублях (число больше 1000 без символа валюты)
+            const priceMatch = priceLabel.match(/[\d\s,]+/);
+            if (priceMatch) {
+                const priceNum = parseInt(priceMatch[0].replace(/[\s,]/g, ''), 10);
+                if (priceNum && priceNum > 1000 && priceNum < 1000000 && usdToRubRate) {
+                    // Вероятно это рубли - конвертируем
+                    const usdPrice = convertRubToUsd(priceNum);
+                    priceLabel = `от ${formatCurrency(usdPrice)}`;
+                } else {
+                    priceLabel = `от ${priceLabel}`;
+                }
+            } else {
+                priceLabel = `от ${priceLabel}`;
+            }
         }
         const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
         const descriptionHtml = car.description ? `<p class="orders-card-desc">${car.description}</p>` : '';
@@ -3291,8 +3306,23 @@ function getUnder160PriceValue(car){
     
     if (!price) return null;
     
-    // Если цена в рублях (больше 10000), конвертируем в доллары
-    if (price > 10000 && usdToRubRate) {
+    // Если цена в рублях (больше 1000 и меньше 1000000, вероятно это рубли), конвертируем в доллары
+    // Цены в долларах обычно меньше 100000, а в рублях - больше 1000
+    if (price > 1000 && price < 1000000 && usdToRubRate) {
+        // Дополнительная проверка: если цена делится на курс и дает разумное значение в USD
+        const possibleUsd = price / usdToRubRate;
+        if (possibleUsd > 100 && possibleUsd < 100000) {
+            return convertRubToUsd(price);
+        }
+    }
+    
+    // Если цена меньше 1000, вероятно уже в долларах
+    if (price < 1000) {
+        return price;
+    }
+    
+    // Если цена очень большая (> 1000000), вероятно это рубли
+    if (price > 1000000 && usdToRubRate) {
         return convertRubToUsd(price);
     }
     
@@ -3442,6 +3472,15 @@ function updateChinaUnder160Counters(){
 
     metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
     metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
+}
+
+// Алиас для совместимости с updateAllDisplayedPrices
+function updateChinaMetrics() {
+    updateChinaUnder160Counters();
+    // Также перерисовываем карточки, чтобы обновить цены
+    if (document.getElementById('chinaUnder160Grid')) {
+        renderChinaUnder160Cars();
+    }
 }
 
 function setupKoreaUnder160Section(){
