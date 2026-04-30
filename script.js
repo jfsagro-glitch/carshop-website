@@ -2509,14 +2509,30 @@ function closeCheckoutModal(){
     if (modal) modal.style.display = 'none';
 }
 
+function showSkeletonCards(grid, count) {
+    grid.innerHTML = '';
+    for (var i = 0; i < count; i++) {
+        var sk = document.createElement('div');
+        sk.className = 'car-card skeleton-card';
+        sk.innerHTML = '<div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--price"></div></div>';
+        grid.appendChild(sk);
+    }
+}
+
 function loadCars() {
     const carsGrid = document.getElementById('carsGrid');
     if (!carsGrid) return;
-    carsGrid.innerHTML = '';
 
-    state.filteredCars.forEach(car => {
-        const carCard = createCarCard(car);
-        carsGrid.appendChild(carCard);
+    // Show skeleton placeholders while rendering
+    showSkeletonCards(carsGrid, Math.min(state.filteredCars.length, 8));
+
+    // Render real cards asynchronously so skeletons show first
+    requestAnimationFrame(function () {
+        carsGrid.innerHTML = '';
+        state.filteredCars.forEach(car => {
+            const carCard = createCarCard(car);
+            carsGrid.appendChild(carCard);
+        });
     });
 }
 

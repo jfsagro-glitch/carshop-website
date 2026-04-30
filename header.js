@@ -1,15 +1,16 @@
-/**
+﻿/**
  * EXPO MIR — Shared header utilities
  * Handles: active nav, scroll-to-top, WhatsApp button, cart pulse,
- *          sticky header, modal Escape/backdrop close, mobile menu
+ *          sticky header, modal Escape/backdrop close, mobile menu,
+ *          mobile bottom nav, lazy images, section animations
  */
 (function () {
   'use strict';
 
   /* ── Active navigation link ──────────────────────────────── */
   function setActiveNav() {
-    const page = location.pathname.split('/').pop() || 'index.html';
-    const map = {
+    var page = location.pathname.split('/').pop() || 'index.html';
+    var map = {
       'index.html':         'nav_georgia',
       '':                   'nav_georgia',
       'georgia-stock.html': 'nav_georgia',
@@ -19,7 +20,7 @@
       'europe-orders.html': 'nav_europe',
       'parts-orders.html':  null,
     };
-    const i18nKey = map[page];
+    var i18nKey = map[page];
     document.querySelectorAll('.nav a').forEach(function (a) {
       a.classList.remove('active');
       if (i18nKey && a.getAttribute('data-i18n') === i18nKey) {
@@ -50,7 +51,7 @@
     var btn = document.createElement('button');
     btn.id = 'scrollTopBtn';
     btn.setAttribute('aria-label', 'Вернуться наверх');
-    btn.innerHTML = '&#8679;';
+    btn.innerHTML = '<i class="fas fa-chevron-up"></i>';
     document.body.appendChild(btn);
 
     window.addEventListener('scroll', function () {
@@ -64,6 +65,7 @@
 
   /* ── WhatsApp floating button ────────────────────────────── */
   function initWhatsAppButton() {
+    if (document.getElementById('whatsappFloatBtn')) return;
     var btn = document.createElement('a');
     btn.id = 'whatsappFloatBtn';
     btn.href = 'https://wa.me/996755666805';
@@ -96,7 +98,6 @@
 
   /* ── Modal close on Escape + backdrop click ──────────────── */
   function initModalClose() {
-    // Escape key
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       document.querySelectorAll('.modal').forEach(function (m) {
@@ -106,14 +107,12 @@
           else m.style.display = 'none';
         }
       });
-      // Cart modal (uses class visibility)
       var cartModal = document.getElementById('cartModal');
       if (cartModal && cartModal.classList.contains('active')) {
         if (typeof closeCart === 'function') closeCart();
       }
     });
 
-    // Backdrop click
     document.querySelectorAll('.modal').forEach(function (m) {
       m.addEventListener('click', function (e) {
         if (e.target === m) {
@@ -156,6 +155,37 @@
     });
   }
 
+  /* ── Mobile bottom navigation bar ───────────────────────── */
+  function initMobileBottomNav() {
+    if (document.getElementById('mobileBottomNav')) return;
+    var nav = document.createElement('nav');
+    nav.id = 'mobileBottomNav';
+    nav.setAttribute('aria-label', 'Мобильная навигация');
+    nav.innerHTML = [
+      '<a href="index.html#catalog" class="mbn-item" data-page="index.html">',
+      '  <i class="fas fa-car"></i><span>Каталог</span>',
+      '</a>',
+      '<a href="https://wa.me/996755666805" target="_blank" rel="noopener" class="mbn-item mbn-item--wa">',
+      '  <i class="fab fa-whatsapp"></i><span>WhatsApp</span>',
+      '</a>',
+      '<a href="javascript:void(0)" class="mbn-item mbn-item--cta" onclick="typeof openRequestModal!==\'undefined\'&&openRequestModal()">',
+      '  <i class="fas fa-search"></i><span>Заявка</span>',
+      '</a>',
+      '<a href="https://t.me/expo_mir" target="_blank" rel="noopener" class="mbn-item">',
+      '  <i class="fab fa-telegram"></i><span>Telegram</span>',
+      '</a>',
+      '<a href="tel:+996755666805" class="mbn-item">',
+      '  <i class="fas fa-phone"></i><span>Звонок</span>',
+      '</a>',
+    ].join('');
+    document.body.appendChild(nav);
+
+    var page = location.pathname.split('/').pop() || 'index.html';
+    nav.querySelectorAll('[data-page]').forEach(function (a) {
+      if (a.dataset.page === page) a.classList.add('mbn-active');
+    });
+  }
+
   /* ── Lazy-load images via IntersectionObserver ───────────── */
   function initLazyImages() {
     if (!('IntersectionObserver' in window)) return;
@@ -173,29 +203,43 @@
     imgs.forEach(function (img) { io.observe(img); });
   }
 
-  /* ── Animate counters (hero stats) ──────────────────────── */
-  function initCounters() {
-    var els = document.querySelectorAll('.hero-stat__num[data-count]');
+  /* ── Section scroll-reveal animations ───────────────────── */
+  function initScrollReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('.why-card, .testimonial-card, .contact-item');
     if (!els.length) return;
+    els.forEach(function (el, i) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.5s ease ' + (i % 3 * 0.1) + 's, transform 0.5s ease ' + (i % 3 * 0.1) + 's';
+    });
     var io = new IntersectionObserver(function (entries, obs) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        var el = entry.target;
-        var target = parseInt(el.dataset.count, 10);
-        var suffix = el.dataset.suffix || '';
-        var duration = 1200;
-        var start = performance.now();
-        function step(now) {
-          var t = Math.min((now - start) / duration, 1);
-          var val = Math.round(t * target);
-          el.textContent = val + suffix;
-          if (t < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-        obs.unobserve(el);
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        obs.unobserve(entry.target);
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.12 });
     els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ── Testimonials touch-swipe on mobile ──────────────────── */
+  function initTestimonialsCarousel() {
+    var grid = document.querySelector('.testimonials-grid');
+    if (!grid) return;
+    var startX = null;
+    grid.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    grid.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        grid.scrollBy({ left: diff > 0 ? 280 : -280, behavior: 'smooth' });
+      }
+      startX = null;
+    }, { passive: true });
   }
 
   /* ── Init all ────────────────────────────────────────────── */
@@ -207,129 +251,9 @@
     initCartBadgePulse();
     initModalClose();
     initMobileMenu();
+    initMobileBottomNav();
     initLazyImages();
-    initCounters();
-  });
-})();
-
-
-  /* ── Active navigation link ──────────────────────────────── */
-  function setActiveNav() {
-    const page = location.pathname.split('/').pop() || 'index.html';
-    const map = {
-      'index.html':         'nav_georgia',
-      '':                   'nav_georgia',
-      'georgia-stock.html': 'nav_georgia',
-      'usa-orders.html':    'nav_usa',
-      'korea-orders.html':  'nav_korea',
-      'china-orders.html':  'nav_china',
-      'europe-orders.html': 'nav_europe',
-      'parts-orders.html':  null, // no i18n key for parts
-    };
-    const i18nKey = map[page];
-    document.querySelectorAll('.nav a').forEach(function (a) {
-      a.classList.remove('active');
-      if (i18nKey && a.getAttribute('data-i18n') === i18nKey) {
-        a.classList.add('active');
-      }
-      // Parts page special case (no data-i18n)
-      if (!i18nKey && page === 'parts-orders.html' && a.href.includes('parts-orders.html')) {
-        a.classList.add('active');
-      }
-    });
-  }
-
-  /* ── Sticky header shadow on scroll ─────────────────────── */
-  function initStickyHeader() {
-    var header = document.querySelector('.header');
-    if (!header) return;
-    var scrolled = false;
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 10) {
-        if (!scrolled) { header.classList.add('header--scrolled'); scrolled = true; }
-      } else {
-        if (scrolled) { header.classList.remove('header--scrolled'); scrolled = false; }
-      }
-    }, { passive: true });
-  }
-
-  /* ── Scroll-to-top button ────────────────────────────────── */
-  function initScrollToTop() {
-    var btn = document.createElement('button');
-    btn.id = 'scrollTopBtn';
-    btn.setAttribute('aria-label', 'Вернуться наверх');
-    btn.innerHTML = '&#8679;';
-    document.body.appendChild(btn);
-
-    window.addEventListener('scroll', function () {
-      btn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-
-    btn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  /* ── Cart badge pulse on add ─────────────────────────────── */
-  function initCartBadgePulse() {
-    // Observe cart count changes
-    var countEl = document.getElementById('cartCount');
-    if (!countEl) return;
-    var lastVal = countEl.textContent;
-    var observer = new MutationObserver(function () {
-      var newVal = countEl.textContent;
-      if (newVal !== lastVal && parseInt(newVal, 10) > parseInt(lastVal, 10)) {
-        var btn = document.getElementById('cartBtn');
-        if (btn) {
-          btn.classList.remove('cart-pulse');
-          // force reflow
-          void btn.offsetWidth;
-          btn.classList.add('cart-pulse');
-        }
-      }
-      lastVal = newVal;
-    });
-    observer.observe(countEl, { childList: true, characterData: true, subtree: true });
-  }
-
-  /* ── Mobile menu hamburger ───────────────────────────────── */
-  function initMobileMenu() {
-    var header = document.querySelector('.header .container');
-    if (!header) return;
-    if (document.getElementById('mobileMenuToggle')) return; // already added
-
-    var toggle = document.createElement('button');
-    toggle.id = 'mobileMenuToggle';
-    toggle.setAttribute('aria-label', 'Меню');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = '<span></span><span></span><span></span>';
-    header.appendChild(toggle);
-
-    var nav = document.querySelector('.nav');
-    if (!nav) return;
-
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('nav--open');
-      toggle.classList.toggle('active', open);
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-
-    // Close on outside click
-    document.addEventListener('click', function (e) {
-      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
-        nav.classList.remove('nav--open');
-        toggle.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  /* ── Init all ────────────────────────────────────────────── */
-  document.addEventListener('DOMContentLoaded', function () {
-    setActiveNav();
-    initStickyHeader();
-    initScrollToTop();
-    initCartBadgePulse();
-    initMobileMenu();
+    initScrollReveal();
+    initTestimonialsCarousel();
   });
 })();
