@@ -136,7 +136,7 @@
                 </div>
                 <div class="site-hero__stats">
                     <div class="hero-stat">
-                        <span class="hero-stat__num">500+</span>
+                        <span class="hero-stat__num" data-count="500" data-suffix="+">500+</span>
                         <span class="hero-stat__label">Авто продано</span>
                     </div>
                     <div class="hero-stat">
@@ -144,7 +144,7 @@
                         <span class="hero-stat__label">Дней доставки</span>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat__num">5</span>
+                        <span class="hero-stat__num" data-count="5" data-suffix="">5</span>
                         <span class="hero-stat__label">Стран поставки</span>
                     </div>
                     <div class="hero-stat">
@@ -232,6 +232,14 @@
         <div class="container">
             <h2 data-i18n="catalog_title">Автомобили в Грузии в наличии</h2>
             <div class="catalog-filters">
+                <!-- Search -->
+                <div class="filter-group filter-group--search">
+                    <label>Поиск:</label>
+                    <div class="search-input-wrap">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="search" id="carSearch" placeholder="Марка, модель, VIN…" autocomplete="off">
+                    </div>
+                </div>
                 <div class="filter-group">
                     <label data-i18n="catalog_brand">Марка:</label>
                     <select id="brandFilter">
@@ -242,6 +250,12 @@
                     <label data-i18n="catalog_model">Модель:</label>
                     <select id="modelFilter">
                         <option value="" data-i18n="filter_all_models">Все модели</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Год от:</label>
+                    <select id="yearFilter">
+                        <option value="">Любой</option>
                     </select>
                 </div>
                 <div class="filter-group">
@@ -257,7 +271,25 @@
                     <input type="number" id="mileageTo" data-i18n-placeholder="catalog_km" placeholder="км">
                 </div>
                 <button class="filter-btn" id="applyFilters" data-i18n="btn_apply">Применить</button>
-                <button class="filter-btn" id="resetFilters" data-i18n="btn_reset">Сбросить</button>
+                <button class="filter-btn filter-btn--reset" id="resetFilters" data-i18n="btn_reset">Сбросить</button>
+            </div>
+            <!-- Toolbar: results count + sort + view toggle -->
+            <div class="catalog-toolbar">
+                <span class="catalog-count" id="catalogCount"></span>
+                <div class="catalog-toolbar__right">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="default">Порядок: по умолчанию</option>
+                        <option value="price-asc">Цена ↑ (дешевле)</option>
+                        <option value="price-desc">Цена ↓ (дороже)</option>
+                        <option value="year-desc">Год ↓ (новее)</option>
+                        <option value="mileage-asc">Пробег ↑ (меньше)</option>
+                        <option value="fav">Избранное ❤</option>
+                    </select>
+                    <div class="view-toggle" id="viewToggle" role="group" aria-label="Вид отображения">
+                        <button class="view-btn active" data-view="grid" title="Сетка"><i class="fas fa-th"></i></button>
+                        <button class="view-btn" data-view="list" title="Список"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
             </div>
             <div class="cars-grid" id="carsGrid">
                 <!-- Cars will be loaded here by JavaScript -->

@@ -9,7 +9,9 @@ const state = {
         galleryId: null
     },
     chinaUnder160: null,
-    koreaUnder160: null
+    koreaUnder160: null,
+    favorites: JSON.parse(localStorage.getItem('expomirFavorites') || '[]'),
+    viewMode: localStorage.getItem('expomirViewMode') || 'grid',
 };
 
 // numberFormatter объявлен в translations.js, используем глобальную переменную
@@ -611,8 +613,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 function initializeApp() {
     // loadCars(); // Отключено - каталог перенесен на страницу Грузия-сток
-    // populateBrandFilter(); // Отключено вместе с каталогом
+    populateBrandFilter(); // нужен для фильтров даже без полного каталога
     updateCartCount();
+    updateFavoritesCount();
     setupEventListeners();
     
     // Загружаем секции только если соответствующие элементы существуют на странице
@@ -2509,6 +2512,85 @@ function closeCheckoutModal(){
     if (modal) modal.style.display = 'none';
 }
 
+// ── Favorites ────────────────────────────────────────────
+function toggleFavorite(carId) {
+    const idx = state.favorites.indexOf(carId);
+    if (idx === -1) {
+        state.favorites.push(carId);
+        showNotification('Добавлено в избранное ❤️');
+    } else {
+        state.favorites.splice(idx, 1);
+        showNotification('Удалено из избранного');
+    }
+    try { localStorage.setItem('expomirFavorites', JSON.stringify(state.favorites)); } catch(e) {}
+    updateFavoritesCount();
+    // flip icon on visible card
+    const btn = document.querySelector(`.fav-btn[data-car-id="${carId}"]`);
+    if (btn) btn.classList.toggle('fav-btn--active', state.favorites.includes(carId));
+}
+
+function updateFavoritesCount() {
+    const count = state.favorites.length;
+    document.querySelectorAll('.fav-badge').forEach(el => {
+        el.textContent = count || '';
+        el.style.display = count ? 'flex' : 'none';
+    });
+}
+
+// ── Sort ─────────────────────────────────────────────────
+function applySort(cars) {
+    const sortEl = document.getElementById('sortSelect');
+    const sortBy = sortEl ? sortEl.value : 'default';
+    const sorted = [...cars];
+    switch (sortBy) {
+        case 'price-asc':  return sorted.sort((a, b) => a.price - b.price);
+        case 'price-desc': return sorted.sort((a, b) => b.price - a.price);
+        case 'year-desc':  return sorted.sort((a, b) => b.year - a.year);
+        case 'mileage-asc': return sorted.sort((a, b) => a.mileage - b.mileage);
+        case 'fav':        return sorted.sort((a, b) => {
+            const af = state.favorites.includes(a.id) ? -1 : 1;
+            const bf = state.favorites.includes(b.id) ? -1 : 1;
+            return af - bf;
+        });
+        default: return sorted;
+    }
+}
+
+// ── View mode ────────────────────────────────────────────
+function setViewMode(mode) {
+    state.viewMode = mode;
+    try { localStorage.setItem('expomirViewMode', mode); } catch(e) {}
+    const grid = document.getElementById('carsGrid');
+    if (grid) grid.classList.toggle('cars-grid--list', mode === 'list');
+    document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-view') === mode);
+    });
+}
+
+// ── VIN clipboard copy ────────────────────────────────────
+function copyVin(vin) {
+    if (!vin) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(vin).then(() => showNotification('VIN скопирован: ' + vin)).catch(() => {});
+    } else {
+        const ta = document.createElement('textarea');
+        ta.value = vin;
+        ta.style.cssText = 'position:fixed;opacity:0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); showNotification('VIN скопирован: ' + vin); } catch(e) {}
+        document.body.removeChild(ta);
+    }
+}
+
+// ── Update catalog count label ────────────────────────────
+function updateCatalogCount(total) {
+    const el = document.getElementById('catalogCount');
+    if (!el) return;
+    const avail = state.filteredCars.filter(c => !c.sold).length;
+    el.textContent = `${total} авто найдено (${avail} в наличии)`;
+}
+
 function showSkeletonCards(grid, count) {
     grid.innerHTML = '';
     for (var i = 0; i < count; i++) {
@@ -2523,15 +2605,26 @@ function loadCars() {
     const carsGrid = document.getElementById('carsGrid');
     if (!carsGrid) return;
 
+    const sorted = applySort(state.filteredCars);
+    updateCatalogCount(sorted.length);
+
+    // Apply list/grid class immediately
+    carsGrid.classList.toggle('cars-grid--list', state.viewMode === 'list');
+
     // Show skeleton placeholders while rendering
-    showSkeletonCards(carsGrid, Math.min(state.filteredCars.length, 8));
+    showSkeletonCards(carsGrid, Math.min(sorted.length, 8));
 
     // Render real cards asynchronously so skeletons show first
     requestAnimationFrame(function () {
         carsGrid.innerHTML = '';
-        state.filteredCars.forEach(car => {
+        sorted.forEach(car => {
             const carCard = createCarCard(car);
             carsGrid.appendChild(carCard);
+        });
+        // After render, update all fav buttons
+        state.favorites.forEach(id => {
+            const btn = carsGrid.querySelector(`.fav-btn[data-car-id="${id}"]`);
+            if (btn) btn.classList.add('fav-btn--active');
         });
     });
 }
@@ -2539,6 +2632,7 @@ function loadCars() {
 function createCarCard(car) {
     const card = document.createElement('div');
     card.className = 'car-card';
+    const isFav = state.favorites.includes(car.id);
     
     card.innerHTML = `
         <div class="car-image">
@@ -2554,13 +2648,20 @@ function createCarCard(car) {
                 </div>
                 ` : ''}
             </div>
+            <button class="fav-btn${isFav ? ' fav-btn--active' : ''}" data-car-id="${car.id}" aria-label="В избранное" title="В избранное">
+                <i class="fas fa-heart"></i>
+            </button>
         </div>
         <div class="car-info">
             <h3 class="car-title">${car.year} ${car.brand} ${car.model}</h3>
             <div class="car-details">
                 <div><strong>Двигатель:</strong> ${car.engine}L</div>
                 <div><strong>Пробег:</strong> ${numberFormatter.format(car.mileage)} км</div>
-                <div><strong>VIN:</strong> <a href="https://www.google.com/search?q=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></div>
+                <div class="vin-row">
+                    <strong>VIN:</strong>
+                    <a href="https://www.google.com/search?q=${car.vin}" target="_blank" rel="noopener" class="vin-link">${car.vin}</a>
+                    <button class="vin-copy-btn" data-vin="${car.vin}" title="Скопировать VIN"><i class="fas fa-copy"></i></button>
+                </div>
                 <div><strong>Дата выпуска:</strong> ${car.date}</div>
             </div>
             <div class="car-price">${formatCurrency(car.price)}</div>
@@ -2593,6 +2694,24 @@ function createCarCard(car) {
         }, { once: true });
     }
 
+    // Fav button
+    const favBtn = card.querySelector('.fav-btn');
+    if (favBtn) {
+        favBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFavorite(car.id);
+        });
+    }
+
+    // VIN copy button
+    const copyBtn = card.querySelector('.vin-copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            copyVin(car.vin);
+        });
+    }
+
     const actionButtons = card.querySelectorAll('[data-action]');
     actionButtons.forEach(button => {
         const action = button.getAttribute('data-action');
@@ -2622,6 +2741,18 @@ function populateBrandFilter() {
         option.textContent = brand;
         brandFilter.appendChild(option);
     });
+
+    // Populate year filter
+    const yearFilter = document.getElementById('yearFilter');
+    if (yearFilter) {
+        const years = [...new Set(carsData.map(car => car.year))].sort((a, b) => b - a);
+        years.forEach(year => {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            yearFilter.appendChild(option);
+        });
+    }
 }
 
 function applyFilters() {
@@ -2629,20 +2760,25 @@ function applyFilters() {
     const priceFromEl = document.getElementById('priceFrom');
     const priceToEl = document.getElementById('priceTo');
     const mileageToEl = document.getElementById('mileageTo');
+    const yearFilterEl = document.getElementById('yearFilter');
+    const searchEl = document.getElementById('carSearch');
 
-    if (!brandFilterEl || !priceFromEl || !priceToEl || !mileageToEl) return;
-
-    const brandFilter = brandFilterEl.value;
-    const priceFrom = parseInt(priceFromEl.value) || 0;
-    const priceTo = parseInt(priceToEl.value) || Infinity;
-    const mileageTo = parseInt(mileageToEl.value) || Infinity;
+    const brandFilter = brandFilterEl ? brandFilterEl.value : '';
+    const priceFrom = parseInt(priceFromEl?.value) || 0;
+    const priceTo = parseInt(priceToEl?.value) || Infinity;
+    const mileageTo = parseInt(mileageToEl?.value) || Infinity;
+    const yearFilter = yearFilterEl ? parseInt(yearFilterEl.value) || 0 : 0;
+    const searchQuery = (searchEl ? searchEl.value.trim().toLowerCase() : '');
 
     state.filteredCars = carsData.filter(car => {
         const brandMatch = !brandFilter || car.brand === brandFilter;
         const priceMatch = car.price >= priceFrom && car.price <= priceTo;
         const mileageMatch = car.mileage <= mileageTo;
-        
-        return brandMatch && priceMatch && mileageMatch;
+        const yearMatch = !yearFilter || car.year >= yearFilter;
+        const searchMatch = !searchQuery ||
+            `${car.brand} ${car.model} ${car.year} ${car.vin || ''}`.toLowerCase().includes(searchQuery);
+
+        return brandMatch && priceMatch && mileageMatch && yearMatch && searchMatch;
     });
 
     loadCars();
@@ -2857,6 +2993,47 @@ function showNotification(message, type = 'success') {
 }
 
 function setupEventListeners() {
+    // Catalog filters
+    const applyBtn = document.getElementById('applyFilters');
+    const resetBtn = document.getElementById('resetFilters');
+    if (applyBtn) applyBtn.addEventListener('click', applyFilters);
+    if (resetBtn) resetBtn.addEventListener('click', () => {
+        ['brandFilter', 'modelFilter', 'yearFilter', 'priceFrom', 'priceTo', 'mileageTo'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = '';
+        });
+        const searchEl = document.getElementById('carSearch');
+        if (searchEl) searchEl.value = '';
+        state.filteredCars = [...carsData];
+        loadCars();
+    });
+
+    // Live search (debounced 300ms)
+    const searchEl = document.getElementById('carSearch');
+    if (searchEl) {
+        let searchTimer;
+        searchEl.addEventListener('input', () => {
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(applyFilters, 300);
+        });
+    }
+
+    // Sort
+    const sortEl = document.getElementById('sortSelect');
+    if (sortEl) sortEl.addEventListener('change', loadCars);
+
+    // View toggle
+    const viewToggle = document.getElementById('viewToggle');
+    if (viewToggle) {
+        viewToggle.addEventListener('click', (e) => {
+            const btn = e.target.closest('.view-btn');
+            if (!btn) return;
+            setViewMode(btn.getAttribute('data-view'));
+        });
+        // Set initial active state
+        setViewMode(state.viewMode);
+    }
+
     // Корзина
     const cartBtn = document.getElementById('cartBtn');
     if (cartBtn) cartBtn.addEventListener('click', showCart);

@@ -242,6 +242,38 @@
     }, { passive: true });
   }
 
+  /* ── Animated counter for [data-count] elements ──────────── */
+  function initCounterAnimation() {
+    if (!('IntersectionObserver' in window)) return;
+    var counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1400;
+        var startTime = null;
+        function tick(now) {
+          if (!startTime) startTime = now;
+          var progress = Math.min((now - startTime) / duration, 1);
+          // Ease-out cubic
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = target + suffix;
+          }
+        }
+        requestAnimationFrame(tick);
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { io.observe(el); });
+  }
+
   /* ── Init all ────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
@@ -255,5 +287,6 @@
     initLazyImages();
     initScrollReveal();
     initTestimonialsCarousel();
+    initCounterAnimation();
   });
 })();
