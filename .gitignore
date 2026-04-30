@@ -1,0 +1,93 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.pyc
+
+# Environment & secrets
+.env
+.env.*
+config.py
+*.db
+*.sqlite
+*.sqlite3
+
+# Bot files
+bot.py
+simple_bot.py
+simple_working_bot.py
+enhanced_bot.py
+final_photos_bot.py
+fix_photos_bot.py
+run_bot.py
+run_enhanced_bot.py
+start.bat
+start.sh
+database_schema.py
+requirements.txt
+api_examples.py
+setup_admin.py
+test_bot.py
+test_enhanced_bot.py
+test_telegram_connection.py
+test_python.py
+add_telegram_photos.py
+check_photos_in_db.py
+update_car_photos.py
+update_real_car_photos.py
+import_cars_from_csv.py
+import_cars_with_photos.py
+import_data.py
+import_real_cars.py
+simple_import.py
+csv_importer.py
+
+# Data & import scripts
+cars_data.csv
+cars_extended.csv
+cars_europe_new.json
+cars_europe.json
+cars_georgia_stock.json
+
+# Misc Python scripts
+update_prices.ps1
+fix_all_prices.ps1
+fix_encoding*.ps1
+download_*.ps1
+create_*.ps1
+generate_manifests.ps1
+deploy_*.ps1
+simple_download.ps1
+
+# Workspace files
+*.code-workspace
+carshop-bot-new.code-workspace
+
+# Docs about bot
+BOT_READY.md
+BOT_STATUS_FIXED.md
+BOT_WORKING_FINAL.md
+FINAL_PHOTOS_SUCCESS.md
+FINAL_SUCCESS_REPORT.md
+PHOTOS_*.md
+REAL_PHOTOS_UPDATED.md
+QUICK_START_ENHANCED.md
+BOT_*.md
+IMPLEMENTATION_REPORT.md
+PHOTO_DOWNLOAD_GUIDE.md
+CSV_IMPORT_GUIDE.md
+DEPLOYMENT_INSTRUCTIONS.md
+DEPLOYMENT.md
+GITHUB_DEPLOYMENT_GUIDE.md
+INSTALL_GIT_AND_DEPLOY.md
+MANUAL_UPLOAD_GUIDE.md
+EMAIL_OPTIONS.md
+SECURITY.md
+QUICK_START.md
+CREATE_REPOSITORY_FIRST.md
+
+# Logs
+*.log
+logs/
