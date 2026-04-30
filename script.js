@@ -2875,67 +2875,92 @@ function showCarDetails(carId) {
     const carModalBody = document.getElementById('carModalBody');
 
     carModalTitle.textContent = `${car.year} ${car.brand} ${car.model}`;
-    
+
+    // WhatsApp / Telegram deep links
+    const waText = encodeURIComponent(
+        `Здравствуйте! Интересует ${car.year} ${car.brand} ${car.model}, VIN: ${car.vin}, цена ${formatCurrency(car.price)}. Хотел бы узнать подробности.`
+    );
+    const waHref   = `https://wa.me/996755666805?text=${waText}`;
+    const tgHref   = `https://t.me/expo_mir`;
+
     carModalBody.innerHTML = `
-        <div style="margin-bottom: 2rem;">
-            <div style="margin-bottom: 2rem;">
-                <h4>Основные характеристики</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li><strong>Марка:</strong> ${car.brand}</li>
-                    <li><strong>Модель:</strong> ${car.model}</li>
-                    <li><strong>Год:</strong> ${car.year}</li>
-                    <li><strong>Двигатель:</strong> ${car.engine}L</li>
-                    <li><strong>Пробег:</strong> ${numberFormatter.format(car.mileage)} км</li>
-                    <li><strong>VIN:</strong> <a href="https://www.google.com/search?q=${car.vin}" target="_blank" rel="noopener">${car.vin}</a></li>
-                    <li><strong>Дата выпуска:</strong> ${car.date}</li>
-                </ul>
-            </div>
-            <div>
-                <h4>Фотографии автомобиля</h4>
+        <div class="car-detail">
+            <div class="car-detail__gallery">
                 ${createCarGallery(car)}
             </div>
-        </div>
-        <div style="text-align: center; padding: 2rem; background: #1f2937; border-radius: 8px; border: 1px solid #374151;">
-            <h3 style="color: #f3f4f6; margin-bottom: 1rem;">${formatCurrency(car.price)}</h3>
-            <p style="color: #10b981; margin-bottom: 1rem; font-weight: 500;">
-                <i class="fas fa-check-circle"></i> Цена включает растаможку и доставку
-            </p>
-            <p style="color: #9ca3af; margin-bottom: 1.5rem;">Никаких дополнительных платежей!</p>
-            ${car.sold ? `
-            <button class="btn-primary" onclick="openSimilarRequest(${car.id})" style="margin-right: 1rem;">Подобрать аналогичный</button>
-            ` : `
-            <button class="btn-primary" onclick="addToCart(${car.id}); closeCarModal();" style="margin-right: 1rem;">
-                <i class="fas fa-shopping-cart"></i> Сделать заказ
-            </button>
-            `}
-            <button class="btn-secondary" onclick="closeCarModal();">
-                Закрыть
-            </button>
+            <div class="car-detail__body">
+                <div class="car-detail__spec-grid">
+                    <div class="car-detail__spec">
+                        <span class="car-detail__spec-label"><i class="fas fa-calendar-alt"></i> Год</span>
+                        <span class="car-detail__spec-value">${car.year}</span>
+                    </div>
+                    <div class="car-detail__spec">
+                        <span class="car-detail__spec-label"><i class="fas fa-cog"></i> Двигатель</span>
+                        <span class="car-detail__spec-value">${car.engine}L</span>
+                    </div>
+                    <div class="car-detail__spec">
+                        <span class="car-detail__spec-label"><i class="fas fa-tachometer-alt"></i> Пробег</span>
+                        <span class="car-detail__spec-value">${numberFormatter.format(car.mileage)} км</span>
+                    </div>
+                    <div class="car-detail__spec">
+                        <span class="car-detail__spec-label"><i class="fas fa-clock"></i> Выпуск</span>
+                        <span class="car-detail__spec-value">${car.date}</span>
+                    </div>
+                </div>
+                <div class="car-detail__vin">
+                    <span class="car-detail__spec-label"><i class="fas fa-id-card"></i> VIN</span>
+                    <a href="https://www.google.com/search?q=${car.vin}" target="_blank" rel="noopener" class="vin-link">${car.vin}</a>
+                    <button class="vin-copy-btn" data-vin="${car.vin}" title="Скопировать VIN"><i class="fas fa-copy"></i></button>
+                </div>
+                <div class="car-detail__price-box">
+                    ${car.sold ? `<div class="car-detail__sold-badge">ПРОДАНО</div>` : ''}
+                    <div class="car-detail__price">${formatCurrency(car.price)}</div>
+                    <div class="car-detail__price-note">
+                        <i class="fas fa-check-circle"></i> Включает растаможку и доставку
+                    </div>
+                </div>
+                <div class="car-detail__actions">
+                    ${car.sold ? `
+                    <button class="btn-primary" onclick="openSimilarRequest(${car.id}); closeCarModal();">
+                        <i class="fas fa-search"></i> Найти аналогичный
+                    </button>
+                    ` : `
+                    <button class="btn-primary" onclick="addToCart(${car.id}); closeCarModal();">
+                        <i class="fas fa-shopping-cart"></i> Заказать
+                    </button>
+                    `}
+                    <a href="${waHref}" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="${tgHref}" target="_blank" rel="noopener" class="btn-telegram">
+                        <i class="fab fa-telegram-plane"></i> Telegram
+                    </a>
+                </div>
+                <button class="car-detail__calc-btn" onclick="openSelfCalcPreFill(${car.price}, '${car.engine}')">
+                    <i class="fas fa-calculator"></i> Рассчитать стоимость под ключ
+                </button>
+            </div>
         </div>
     `;
 
     carModal.style.display = 'block';
 
-    // Инициализация галереи после открытия модального окна
     setTimeout(() => {
         initializeGallery(car);
-        // Привязываем обработчики к кнопкам навигации после инициализации
         const container = document.getElementById(`gallery-${car.id}`);
         if (container) {
             const prevBtn = container.querySelector('.gallery-prev');
             const nextBtn = container.querySelector('.gallery-next');
-            if (prevBtn) {
-                prevBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    navigateGallery(car.id, 'prev');
-                });
-            }
-            if (nextBtn) {
-                nextBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    navigateGallery(car.id, 'next');
-                });
-            }
+            if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(car.id, 'prev'); });
+            if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(car.id, 'next'); });
+        }
+        // VIN copy button inside modal
+        const vinCopyBtn = carModalBody.querySelector('.vin-copy-btn');
+        if (vinCopyBtn) {
+            vinCopyBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                copyVin(vinCopyBtn.dataset.vin);
+            });
         }
     }, 100);
 }
@@ -2963,33 +2988,29 @@ function checkout() {
 }
 
 function showNotification(message, type = 'success') {
-    const notification = document.createElement('div');
-    let backgroundColor = '#10b981';
-    if (type === 'error') backgroundColor = '#ef4444';
-    if (type === 'info') backgroundColor = '#6b7280';
-    
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: ${backgroundColor};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 3000;
-        animation: slideIn 0.3s ease-out;
-    `;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-    
+    // Remove previous toast if still visible
+    document.querySelectorAll('.notification').forEach(n => {
+        n.classList.add('hiding');
+        setTimeout(() => n.remove(), 350);
+    });
+
+    const iconMap = {
+        success: 'fa-check-circle',
+        error:   'fa-times-circle',
+        info:    'fa-info-circle',
+        warning: 'fa-exclamation-triangle',
+    };
+    const icon = iconMap[type] || iconMap.success;
+
+    const el = document.createElement('div');
+    el.className = `notification notification--${type}`;
+    el.innerHTML = `<i class="fas ${icon}"></i> ${message}`;
+    document.body.appendChild(el);
+
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-in';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
-    }, 3000);
+        el.classList.add('hiding');
+        setTimeout(() => el.remove(), 380);
+    }, 3200);
 }
 
 function setupEventListeners() {
@@ -3320,6 +3341,27 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const selfBtn = document.getElementById('selfCalcBtn');
     if (selfBtn) selfBtn.addEventListener('click', handleSelfCalc);
 });
+
+// Открыть калькулятор стоимости под ключ с предзаполнением данных авто
+window.openSelfCalcPreFill = function(priceKgs, engineStr) {
+    const m = document.getElementById('selfCalcModal');
+    if (!m) return;
+    m.style.display = 'block';
+    // Конвертируем цену из KGS в USD (используем текущий курс или fallback)
+    const rate = usdToRubRate || 88.0;
+    const KGS_TO_RUB = 1.17; // примерный курс KGS/RUB
+    const priceUsd = Math.round(priceKgs * KGS_TO_RUB / rate);
+    const costEl = document.getElementById('selfCostUsd');
+    if (costEl) costEl.value = priceUsd;
+    // Конвертируем объём двигателя в куб. см (1.6 -> 1600)
+    const engEl = document.getElementById('selfEngineCC');
+    if (engEl) {
+        const engNum = parseFloat(String(engineStr).replace(',', '.'));
+        if (!isNaN(engNum)) {
+            engEl.value = engNum < 100 ? Math.round(engNum * 1000) : Math.round(engNum);
+        }
+    }
+};
 
 // Хелпер для заявки на аналогичный автомобиль
 window.openSimilarRequest = function(carId){

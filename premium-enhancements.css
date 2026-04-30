@@ -2160,3 +2160,208 @@ input[type=number] { -moz-appearance: textfield; }
 
 /* ── Better car-info padding in list view ────────────────── */
 .cars-grid--list .car-info { min-height: 0 !important; }
+
+/* ═══════════════════════════════════════════════════════════
+   EXPO MIR — Wave 6: Premium car-detail modal, WhatsApp/
+                       Telegram buttons, notification types
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Car detail modal layout ─────────────────────────────── */
+.car-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.car-detail__gallery { border-radius: 12px; overflow: hidden; }
+
+.car-detail__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Specs 2×2 grid */
+.car-detail__spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+.car-detail__spec {
+    background: rgba(30,41,59,0.8);
+    border: 1px solid rgba(148,163,184,0.1);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.car-detail__spec-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.car-detail__spec-label i { margin-right: 0.3rem; }
+.car-detail__spec-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+/* VIN row */
+.car-detail__vin {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+    background: rgba(15,23,42,0.8);
+    border: 1px solid rgba(148,163,184,0.1);
+    border-radius: 10px;
+    font-size: 0.875rem;
+    flex-wrap: wrap;
+}
+.car-detail__vin .car-detail__spec-label { flex-shrink: 0; }
+
+/* Price box */
+.car-detail__price-box {
+    background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(22,33,56,0.95));
+    border: 1px solid rgba(148,163,184,0.12);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+}
+.car-detail__sold-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(239,68,68,0.15);
+    border: 1px solid rgba(239,68,68,0.35);
+    border-radius: 6px;
+    color: #f87171;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+}
+.car-detail__price {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #d4af37;
+    line-height: 1;
+}
+.car-detail__price-note {
+    font-size: 0.82rem;
+    color: #10b981;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Action buttons row */
+.car-detail__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+.car-detail__actions .btn-primary,
+.car-detail__actions .btn-secondary {
+    font-size: 0.88rem !important;
+}
+
+/* WhatsApp button */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    background: #25d366;
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn-whatsapp:hover {
+    background: #1ebe5e;
+    transform: translateY(-1px);
+    color: #fff !important;
+}
+.btn-whatsapp .fab { font-size: 1rem; }
+
+/* Telegram button */
+.btn-telegram {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    background: #0088cc;
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn-telegram:hover {
+    background: #0077b3;
+    transform: translateY(-1px);
+    color: #fff !important;
+}
+
+/* "Calculate cost" link button */
+.car-detail__calc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px dashed rgba(212,175,55,0.35);
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.25rem;
+}
+.car-detail__calc-btn:hover {
+    border-color: rgba(212,175,55,0.6);
+    color: #d4af37;
+}
+.car-detail__calc-btn i { color: #d4af37; }
+
+/* Large screen: side-by-side gallery + body */
+@media (min-width: 768px) {
+    .car-detail {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .car-detail__gallery { flex: 0 0 52%; }
+    .car-detail__body    { flex: 1; }
+}
+
+/* ── Notification type modifiers ─────────────────────────── */
+.notification--success { border-left: 3px solid #10b981; }
+.notification--error   { border-left: 3px solid #ef4444; }
+.notification--info    { border-left: 3px solid #3b82f6; }
+.notification--warning { border-left: 3px solid #f59e0b; }
+
+.notification--success i { color: #10b981; }
+.notification--error   i { color: #ef4444; }
+.notification--info    i { color: #3b82f6; }
+.notification--warning i { color: #f59e0b; }
+
+/* Wider car modal for the new layout */
+.car-modal {
+    max-width: 900px !important;
+    width: 95vw !important;
+}
