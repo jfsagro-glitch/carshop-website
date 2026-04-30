@@ -77,7 +77,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="images/logo.png" alt="EXPO MIR" class="logo-img">
+                    <img src="images/logo.png" alt="EXPO MIR" class="logo-img" fetchpriority="high">
                     <span>EXPO MIR</span>
                 </div>
                 <nav class="nav">
@@ -395,14 +395,14 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fab fa-whatsapp" style="color:#25d366"></i>
+                        <i class="fab fa-whatsapp icon-wa"></i>
                         <div>
                             <h4>WhatsApp</h4>
                             <p><a href="https://wa.me/996755666805" target="_blank" rel="noopener">Написать в WhatsApp</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fab fa-telegram" style="color:#2AABEE"></i>
+                        <i class="fab fa-telegram icon-tg"></i>
                         <div>
                             <h4>Telegram</h4>
                             <p><a href="https://t.me/expo_mir" target="_blank" rel="noopener">@expo_mir</a></p>
@@ -427,7 +427,7 @@
                     <div class="contact-cta-card__icon"><i class="fas fa-car"></i></div>
                     <h3>Нужен конкретный автомобиль?</h3>
                     <p>Оставьте заявку на подбор — найдём лучший вариант по вашему бюджету из любой страны</p>
-                    <button class="btn-hero-primary" onclick="openRequestModal()" style="margin-top:1rem; border:none; cursor:pointer; font-family:inherit;">
+                    <button class="btn-hero-primary btn-contact-cta" onclick="openRequestModal()">
                         <i class="fas fa-search"></i> Оставить заявку
                     </button>
                 </div>
@@ -541,11 +541,14 @@
     <div id="selfCalcModal" class="modal" style="display:none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Вы можете самостоятельно выбрать автомобиль на сайтах в Грузии, мы его проверим, привезем к вам и растаможим.</h3>
+                <h3>Самостоятельный подбор авто</h3>
                 <span class="close" onclick="closeSelfCalcModal()">&times;</span>
             </div>
             <div class="modal-body">
                 <div class="customs-content">
+                    <p class="selfcalc-subtitle">
+                        Выберите авто на грузинских сайтах — мы проверим, привезём и растаможим. Рассчитайте полную стоимость ниже.
+                    </p>
                     <p style="margin-bottom:1rem; color:#9ca3af;">
                         Сайты: <a href="https://ap.ge/ru/usd" target="_blank">ap.ge</a>, 
                         <a href="https://myauto.ge/ru" target="_blank">myauto.ge</a>
@@ -630,7 +633,7 @@
                         <button class="btn-primary" id="requestSubmit" type="button">Отправить на подбор</button>
                     </div>
                 </form>
-                <div id="requestStatus" class="calc-result" style="display:none;"></div>
+                <div id="requestStatus" class="calc-result"></div>
             </div>
         </div>
     </div>

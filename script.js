@@ -3064,10 +3064,37 @@ function setupScrollReveal() {
         el.classList.add('reveal');
         observer.observe(el);
     });
+
+    // Animate hero stat counters when they enter viewport
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const numEl = entry.target.querySelector('[data-count]');
+            if (!numEl || numEl.dataset.animated) return;
+            numEl.dataset.animated = '1';
+            const target = parseInt(numEl.dataset.count, 10);
+            const suffix = numEl.dataset.suffix || '';
+            if (!Number.isFinite(target)) return;
+            const duration = 1400;
+            const start = performance.now();
+            function tick(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // ease-out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                numEl.textContent = Math.round(eased * target) + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+            counterObserver.unobserve(entry.target);
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.hero-stat').forEach(el => counterObserver.observe(el));
 }
 
 function setupEventListeners() {
-    // Scroll progress bar + back-to-top
+    // Scroll progress bar + back-to-top + header shrink
+    const _header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -3076,6 +3103,7 @@ function setupEventListeners() {
         if (bar) bar.style.transform = `scaleX(${progress})`;
         const btn = document.getElementById('backToTop');
         if (btn) btn.classList.toggle('back-to-top--visible', scrollTop > 450);
+        if (_header) _header.classList.toggle('header--scrolled', scrollTop > 60);
     }, { passive: true });
 
     const backToTopBtn = document.getElementById('backToTop');
@@ -3184,10 +3212,27 @@ function setupEventListeners() {
     // Форма обратной связи
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            showNotification('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-            this.reset();
+            const btn = this.querySelector('[type=submit]') || this.querySelector('button');
+            const origText = btn ? btn.textContent : '';
+            if (btn) { btn.disabled = true; btn.textContent = 'Отправляем…'; }
+            const payload = new URLSearchParams(new FormData(this));
+            payload.append('_captcha', 'false');
+            payload.append('_subject', 'Сообщение с сайта EXPO MIR');
+            try {
+                const resp = await fetch('https://formsubmit.co/carexportgeo@bk.ru', { method: 'POST', body: payload });
+                if (resp.ok) {
+                    showNotification('Сообщение отправлено! Свяжемся с вами в ближайшее время.', 'success');
+                    this.reset();
+                } else {
+                    showNotification('Ошибка отправки. Напишите нам напрямую в WhatsApp.', 'error');
+                }
+            } catch (err) {
+                showNotification('Нет соединения. Попробуйте позже или напишите в WhatsApp.', 'error');
+            } finally {
+                if (btn) { btn.disabled = false; btn.textContent = origText; }
+            }
         });
     }
 
@@ -3413,7 +3458,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         if(!name || !phone || !brand || !model){
             const s = document.getElementById('requestStatus');
-            s.style.display='block'; s.textContent='Пожалуйста, заполните обязательные поля: имя, телефон, марка, модель.'; return;
+            s.style.removeProperty('display');
+            s.className = 'request-status request-status--error';
+            s.innerHTML = '<i class="fas fa-exclamation-circle"></i> Заполните обязательные поля: имя, телефон, марка, модель.';
+            return;
         }
 
         // отправка через formsubmit.co (без сервера)
@@ -3427,13 +3475,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         const resp = await fetch('https://formsubmit.co/carexportgeo@bk.ru', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: payload});
         const s = document.getElementById('requestStatus');
+        s.style.removeProperty('display');
         if (resp.ok) {
             s.className = 'request-status request-status--success';
-            s.innerHTML = '<i class="fas fa-check-circle"></i> Заявка отправлена! Мы свяжемся с вами.';
+            s.innerHTML = '<i class="fas fa-check-circle"></i> Заявка отправлена! Мы свяжемся с вами в ближайшие 15 минут.';
             document.getElementById('requestForm')?.reset();
         } else {
             s.className = 'request-status request-status--error';
-            s.innerHTML = '<i class="fas fa-times-circle"></i> Не удалось отправить. Попробуйте позже.';
+            s.innerHTML = '<i class="fas fa-times-circle"></i> Не удалось отправить. Попробуйте позже или напишите в WhatsApp.';
         }
     });
 
