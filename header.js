@@ -34,6 +34,8 @@
 
   /* ── Sticky header shadow on scroll ─────────────────────── */
   function initStickyHeader() {
+    // Skip: script.js setupEventListeners() already handles .header--scrolled
+    if (typeof setupEventListeners === 'function') return;
     var header = document.querySelector('.header');
     if (!header) return;
     var scrolled = false;
@@ -48,6 +50,8 @@
 
   /* ── Scroll-to-top button ────────────────────────────────── */
   function initScrollToTop() {
+    // Skip: index.html already has #backToTop handled by script.js
+    if (document.getElementById('backToTop')) return;
     var btn = document.createElement('button');
     btn.id = 'scrollTopBtn';
     btn.setAttribute('aria-label', 'Вернуться наверх');
@@ -65,6 +69,8 @@
 
   /* ── WhatsApp floating button ────────────────────────────── */
   function initWhatsAppButton() {
+    // Skip: index.html already has #floatingWhatsApp
+    if (document.getElementById('floatingWhatsApp')) return;
     if (document.getElementById('whatsappFloatBtn')) return;
     var btn = document.createElement('a');
     btn.id = 'whatsappFloatBtn';
@@ -126,7 +132,7 @@
 
   /* ── Mobile menu hamburger ───────────────────────────────── */
   function initMobileMenu() {
-    var headerContainer = document.querySelector('.header .container');
+    var headerContainer = document.querySelector('.header-content');
     if (!headerContainer) return;
     if (document.getElementById('mobileMenuToggle')) return;
 
@@ -205,6 +211,8 @@
 
   /* ── Section scroll-reveal animations ───────────────────── */
   function initScrollReveal() {
+    // Skip: script.js setupScrollReveal() handles this with CSS classes
+    if (typeof setupScrollReveal === 'function') return;
     if (!('IntersectionObserver' in window)) return;
     var els = document.querySelectorAll('.why-card, .testimonial-card, .contact-item');
     if (!els.length) return;
@@ -244,6 +252,8 @@
 
   /* ── Animated counter for [data-count] elements ──────────── */
   function initCounterAnimation() {
+    // Skip: script.js animateCounters() handles this
+    if (typeof animateCounters === 'function') return;
     if (!('IntersectionObserver' in window)) return;
     var counters = document.querySelectorAll('[data-count]');
     if (!counters.length) return;

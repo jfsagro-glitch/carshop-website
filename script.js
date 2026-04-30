@@ -2556,7 +2556,7 @@ function updateFavoritesCount() {
     const count = state.favorites.length;
     document.querySelectorAll('.fav-badge').forEach(el => {
         el.textContent = count || '';
-        el.style.display = count ? 'flex' : 'none';
+        el.classList.toggle('fav-badge--visible', count > 0);
     });
 }
 
