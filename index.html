@@ -13,6 +13,9 @@
     <meta property="og:url" content="https://jfsagro-glitch.github.io/carshop-website/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jfsagro-glitch.github.io/carshop-website/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="premium-enhancements.css">
     <link rel="icon" type="image/png" href="images/logo.png">
@@ -77,6 +80,79 @@
             </div>
         </div>
     </div>
+
+    <!-- Hero Section -->
+    <section class="site-hero">
+        <div class="container">
+            <div class="site-hero__content">
+                <div class="site-hero__text">
+                    <h1 class="site-hero__title">Автомобили из-за рубежа<br><span class="site-hero__accent">без предоплаты</span></h1>
+                    <p class="site-hero__subtitle">Грузия, США, Корея, Китай, Европа — выкупаем за свои деньги, доставляем и растаможиваем за 3–5 дней</p>
+                    <div class="site-hero__actions">
+                        <a href="#catalog" class="btn-hero-primary">Смотреть каталог</a>
+                        <a href="https://wa.me/996755666805" target="_blank" rel="noopener" class="btn-hero-whatsapp"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
+                    </div>
+                </div>
+                <div class="site-hero__stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat__num">500+</span>
+                        <span class="hero-stat__label">Авто продано</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat__num">3–5</span>
+                        <span class="hero-stat__label">Дней доставки</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat__num">5</span>
+                        <span class="hero-stat__label">Стран поставки</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat__num">0₽</span>
+                        <span class="hero-stat__label">Предоплата</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="why-us__title">Почему выбирают EXPO MIR</h2>
+            <div class="why-us__grid">
+                <div class="why-card">
+                    <div class="why-card__icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Без предоплаты</h3>
+                    <p>Выкупаем автомобиль за свои деньги — вы платите только после получения и проверки</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card__icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Доставка 3–5 дней</h3>
+                    <p>Собственная логистика из Грузии. Растаможка и оформление включены в стоимость</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card__icon"><i class="fas fa-search"></i></div>
+                    <h3>Проверка по VIN</h3>
+                    <p>Каждый автомобиль проходит проверку истории, юридической чистоты и техсостояния</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card__icon"><i class="fas fa-globe"></i></div>
+                    <h3>5 стран поставки</h3>
+                    <p>Грузия, США, Корея, Китай, Европа — подберём авто из любой точки мира</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card__icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Прозрачные цены</h3>
+                    <p>Цена включает доставку и растаможку. Таможенный калькулятор прямо на сайте</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card__icon"><i class="fas fa-headset"></i></div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Менеджер на связи в WhatsApp и Telegram. Отвечаем быстро, помогаем с выбором</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Customs Calculator Modal -->
     <div id="customsModal" class="modal" style="display:none;">
@@ -186,26 +262,47 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>EXPO MIR</h4>
-                    <p>Надежный партнер в покупке автомобилей из Грузии</p>
+                    <p>Надёжный партнёр в покупке автомобилей из-за рубежа. Работаем без предоплаты с 2020 года.</p>
+                    <div class="footer-social">
+                        <a href="https://t.me/expo_mir" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/996755666805" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:carexportgeo@bk.ru" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Каталоги</h4>
+                    <ul>
+                        <li><a href="index.html#catalog">Грузия — в наличии</a></li>
+                        <li><a href="georgia-stock.html">Грузия-сток</a></li>
+                        <li><a href="usa-orders.html">США</a></li>
+                        <li><a href="korea-orders.html">Корея</a></li>
+                        <li><a href="china-orders.html">Китай</a></li>
+                        <li><a href="europe-orders.html">Европа</a></li>
+                        <li><a href="parts-orders.html">Запчасти</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Услуги</h4>
                     <ul>
                         <li>Продажа автомобилей</li>
-                        <li>Растаможка</li>
-                        <li>Доставка</li>
+                        <li>Растаможка под ключ</li>
+                        <li>Доставка 3–5 дней</li>
+                        <li>Проверка по VIN</li>
                         <li>Оформление документов</li>
+                        <li>Подбор по заявке</li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Контакты</h4>
-                    <p><a href="tel:+996755666805">+996 755 666 805</a></p>
-                    <p><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
-                    <p><a href="https://wa.me/996755666805" target="_blank">WhatsApp: +996 755 666 805</a></p>
+                    <p><i class="fas fa-phone footer-icon"></i><a href="tel:+996755666805">+996 755 666 805</a></p>
+                    <p><i class="fas fa-envelope footer-icon"></i><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
+                    <p><i class="fab fa-whatsapp footer-icon"></i><a href="https://wa.me/996755666805" target="_blank" rel="noopener">WhatsApp</a></p>
+                    <p><i class="fab fa-telegram footer-icon"></i><a href="https://t.me/expo_mir" target="_blank" rel="noopener">Telegram-канал</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 EXPO MIR. Все права защищены.</p>
+                <p class="footer-bottom__note">Цены указаны с учётом растаможки и доставки</p>
             </div>
         </div>
     </footer>
