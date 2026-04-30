@@ -565,7 +565,7 @@ async function loadExchangeRates() {
             exchangeRates.USD = 1;
             exchangeRates.EUR = eurRate / usdRate; // EUR к USD
             exchangeRates.RUB = usdRate; // RUB к USD (обратный курс)
-            exchangeRates.KGS = usdRate * 0.011; // Примерный курс KGS (1 USD ≈ 89 KGS)
+            exchangeRates.KGS = 89.0; // 1 USD ≈ 89 KGS (Kyrgyzstan som)
         }
     } catch (error) {
         console.warn('Не удалось загрузить курсы валют, используем fallback');

@@ -2584,7 +2584,7 @@ input[type=number] { -moz-appearance: textfield; }
 /* Floating subscribe position fix for mobile (above back-to-top) */
 @media (max-width: 500px) {
     .floating-subscribe { bottom: 5.5rem; left: 0.75rem; max-width: calc(100vw - 4rem); }
-    .back-to-top { bottom: 1rem; }
+    .back-to-top { bottom: 5rem; }
 }
 
 /* ── Why-us card entrance animation ─────────────────────── */
@@ -2604,3 +2604,89 @@ input[type=number] { -moz-appearance: textfield; }
     transform: translateY(-3px);
     box-shadow: 0 10px 32px rgba(0,0,0,0.3);
 }
+
+/* ── Floating WhatsApp CTA button ───────────────────────── */
+.floating-wa {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.35rem;
+    z-index: 9998;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #25d366;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 0.65rem 1.1rem 0.65rem 0.85rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.2s ease;
+    animation: waPulse 3.5s ease-in-out infinite;
+}
+.floating-wa .fab { font-size: 1.25rem; line-height: 1; }
+.floating-wa:hover,
+.floating-wa:focus-visible {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 10px 32px rgba(37, 211, 102, 0.58);
+    color: #fff !important;
+    outline: none;
+}
+@keyframes waPulse {
+    0%, 100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42); }
+    50%       { box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7); }
+}
+@media (max-width: 500px) {
+    .floating-wa { padding: 0.72rem; border-radius: 50%; bottom: 1.25rem; right: 1rem; }
+    .floating-wa__label { display: none; }
+    .back-to-top { bottom: 5.25rem; right: 1rem; }
+}
+
+/* ── Scroll-reveal animation ────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .back-to-top,
+    .floating-subscribe,
+    .floating-wa {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* ── Request status messages ────────────────────────────── */
+.request-status {
+    display: block;
+    margin-top: 0.75rem;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.request-status--success {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #6ee7b7;
+}
+.request-status--error {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fca5a5;
+}
+.request-status i { margin-right: 0.4rem; }

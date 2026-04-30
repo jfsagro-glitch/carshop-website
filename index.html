@@ -13,9 +13,11 @@
     <meta property="og:url" content="https://jfsagro-glitch.github.io/carshop-website/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b1220">
     <link rel="canonical" href="https://jfsagro-glitch.github.io/carshop-website/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="premium-enhancements.css">
     <link rel="icon" type="image/png" href="images/logo.png">
@@ -280,7 +282,7 @@
             </div>
             <!-- Toolbar: results count + sort + view toggle -->
             <div class="catalog-toolbar">
-                <span class="catalog-count" id="catalogCount"></span>
+                <span class="catalog-count" id="catalogCount" aria-live="polite"></span>
                 <div class="catalog-toolbar__right">
                     <select id="sortSelect" class="sort-select">
                         <option value="default">Порядок: по умолчанию</option>
@@ -662,6 +664,15 @@
     <button id="backToTop" class="back-to-top" aria-label="Прокрутить наверх" title="Наверх">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Floating WhatsApp CTA -->
+    <a id="floatingWhatsApp" class="floating-wa"
+       href="https://wa.me/996755666805?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%81%D1%8C+%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%BE%D0%B9+%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F."
+       target="_blank" rel="noopener"
+       aria-label="Написать в WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="floating-wa__label">Написать</span>
+    </a>
 
     <aside class="floating-subscribe" aria-label="Подписка на Telegram">
         <div class="floating-subscribe__inner">

@@ -19,8 +19,10 @@ const state = {
 
 // Глобальная переменная для курса USD/RUB от ЦБ РФ
 let usdToRubRate = null;
+// Кеш курса EUR/RUB (заполняется при первом fetch, избегая дублирующих запросов)
+let cachedEurRateRub = null;
 
-// Загрузка курса USD/RUB от ЦБ РФ при загрузке страницы
+// Загрузка курсов USD/RUB и EUR/RUB от ЦБ РФ при загрузке страницы
 async function loadUsdToRubRate() {
     if (usdToRubRate) return usdToRubRate; // Уже загружен
     
@@ -28,11 +30,11 @@ async function loadUsdToRubRate() {
         const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
         if (response.ok) {
             const data = await response.json();
-            const usdRate = data.Valute?.USD;
-            if (usdRate && usdRate.Value) {
-                usdToRubRate = usdRate.Value;
-                return usdToRubRate;
-            }
+            const usd = data.Valute?.USD;
+            const eur = data.Valute?.EUR;
+            if (usd?.Value) { usdToRubRate = usd.Value; }
+            if (eur?.Value) { cachedEurRateRub = eur.Value; }
+            if (usdToRubRate) return usdToRubRate;
         }
     } catch (error) {
         console.warn('Не удалось загрузить курс ЦБ, используем fallback');
@@ -617,6 +619,7 @@ function initializeApp() {
     updateCartCount();
     updateFavoritesCount();
     setupEventListeners();
+    setupScrollReveal();
     
     // Загружаем секции только если соответствующие элементы существуют на странице
     if (document.getElementById('usaUnder160Grid') || document.getElementById('usaMetrics')) {
@@ -2608,7 +2611,7 @@ function updateCatalogCount(total) {
     const el = document.getElementById('catalogCount');
     if (!el) return;
     const avail = state.filteredCars.filter(c => !c.sold).length;
-    el.textContent = `${total} авто найдено (${avail} в наличии)`;
+    el.innerHTML = `Найдено: <strong>${total}</strong> авто, <strong>${avail}</strong> в наличии`;
 }
 
 function showSkeletonCards(grid, count) {
@@ -2636,11 +2639,10 @@ function loadCars() {
 
     // Render real cards asynchronously so skeletons show first
     requestAnimationFrame(function () {
+        const fragment = document.createDocumentFragment();
+        sorted.forEach(car => fragment.appendChild(createCarCard(car)));
         carsGrid.innerHTML = '';
-        sorted.forEach(car => {
-            const carCard = createCarCard(car);
-            carsGrid.appendChild(carCard);
-        });
+        carsGrid.appendChild(fragment);
         // After render, update all fav buttons
         state.favorites.forEach(id => {
             const btn = carsGrid.querySelector(`.fav-btn[data-car-id="${id}"]`);
@@ -2675,7 +2677,7 @@ function createCarCard(car) {
         <div class="car-info">
             <h3 class="car-title">${car.year} ${car.brand} ${car.model}</h3>
             <div class="car-details">
-                <div><strong>Двигатель:</strong> ${car.engine}L</div>
+                <div><strong>Двигатель:</strong> ${formatEngine(car.engine)}</div>
                 <div><strong>Пробег:</strong> ${numberFormatter.format(car.mileage)} км</div>
                 <div class="vin-row">
                     <strong>VIN:</strong>
@@ -2706,12 +2708,8 @@ function createCarCard(car) {
     `;
 
     const imageEl = card.querySelector('.car-photo');
-    const fallbackEl = card.querySelector('.car-image-fallback');
-    if (imageEl && fallbackEl) {
-        imageEl.addEventListener('error', () => {
-            imageEl.classList.add('is-hidden');
-            fallbackEl.style.display = 'flex';
-        }, { once: true });
+    if (imageEl) {
+        attachImageFallback(imageEl, car);
     }
 
     // Fav button
@@ -2915,7 +2913,7 @@ function showCarDetails(carId) {
                     </div>
                     <div class="car-detail__spec">
                         <span class="car-detail__spec-label"><i class="fas fa-cog"></i> Двигатель</span>
-                        <span class="car-detail__spec-value">${car.engine}L</span>
+                        <span class="car-detail__spec-value">${formatEngine(car.engine)}</span>
                     </div>
                     <div class="car-detail__spec">
                         <span class="car-detail__spec-label"><i class="fas fa-tachometer-alt"></i> Пробег</span>
@@ -2981,6 +2979,24 @@ function showCarDetails(carId) {
                 copyVin(vinCopyBtn.dataset.vin);
             });
         }
+
+        // Keyboard navigation for gallery (← →)
+        const _keyHandler = (e) => {
+            if (e.key === 'ArrowLeft')  navigateGallery(car.id, 'prev');
+            if (e.key === 'ArrowRight') navigateGallery(car.id, 'next');
+            if (e.key === 'Escape') {
+                closeCarModal();
+                document.removeEventListener('keydown', _keyHandler);
+            }
+        };
+        document.addEventListener('keydown', _keyHandler);
+        // Clean up on close
+        carModal.addEventListener('click', function _closeListener(ev) {
+            if (ev.target === carModal) {
+                document.removeEventListener('keydown', _keyHandler);
+                carModal.removeEventListener('click', _closeListener);
+            }
+        });
     }, 100);
 }
 
@@ -3030,6 +3046,24 @@ function showNotification(message, type = 'success') {
         el.classList.add('hiding');
         setTimeout(() => el.remove(), 380);
     }, 3200);
+}
+
+// Scroll-reveal: fade-up cards and sections when they enter the viewport
+function setupScrollReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.why-card, .testimonial-card, .hero-stat, .contact-item').forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+    });
 }
 
 function setupEventListeners() {
@@ -3225,11 +3259,16 @@ function setupEventListeners() {
 
 // === Таможенный калькулятор ===
 async function fetchEurRateRub() {
+    // Use cached value from initial page load — avoids extra network request
+    if (cachedEurRateRub) return cachedEurRateRub;
     try {
         const resp = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
         const data = await resp.json();
         const eur = data?.Valute?.EUR?.Value;
-        if (typeof eur === 'number' && eur > 0) return eur;
+        const usd = data?.Valute?.USD?.Value;
+        if (typeof eur === 'number' && eur > 0) { cachedEurRateRub = eur; }
+        if (typeof usd === 'number' && usd > 0 && !usdToRubRate) { usdToRubRate = usd; }
+        if (cachedEurRateRub) return cachedEurRateRub;
     } catch (e) { /* ignore */ }
     return 100;
 }
@@ -3388,9 +3427,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         const resp = await fetch('https://formsubmit.co/carexportgeo@bk.ru', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: payload});
         const s = document.getElementById('requestStatus');
-        s.style.display='block';
-        if (resp.ok){ s.textContent='Заявка отправлена! Мы свяжемся с вами.'; }
-        else { s.textContent='Не удалось отправить заявку. Попробуйте позже.'; }
+        if (resp.ok) {
+            s.className = 'request-status request-status--success';
+            s.innerHTML = '<i class="fas fa-check-circle"></i> Заявка отправлена! Мы свяжемся с вами.';
+            document.getElementById('requestForm')?.reset();
+        } else {
+            s.className = 'request-status request-status--error';
+            s.innerHTML = '<i class="fas fa-times-circle"></i> Не удалось отправить. Попробуйте позже.';
+        }
     });
 
     // Самостоятельный просчет
@@ -3417,13 +3461,11 @@ window.openSelfCalcPreFill = function(priceKgs, engineStr) {
     const priceUsd = Math.round(priceKgs * KGS_TO_RUB / rate);
     const costEl = document.getElementById('selfCostUsd');
     if (costEl) costEl.value = priceUsd;
-    // Конвертируем объём двигателя в куб. см (1.6 -> 1600)
+    // Конвертируем объём двигателя в куб. см
     const engEl = document.getElementById('selfEngineCc');
     if (engEl) {
-        const engNum = parseFloat(String(engineStr).replace(',', '.'));
-        if (!isNaN(engNum)) {
-            engEl.value = engNum < 100 ? Math.round(engNum * 1000) : Math.round(engNum);
-        }
+        const cc = engineToCc(String(engineStr));
+        if (cc) engEl.value = cc;
     }
 };
 
@@ -3508,11 +3550,16 @@ async function handleSelfCalc() {
 }
 
 async function fetchUsdRateRub(){
+    // Use cached value from initial page load — avoids extra network request
+    if (usdToRubRate) return usdToRubRate;
     try{
         const resp = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
         const data = await resp.json();
         const usd = data?.Valute?.USD?.Value;
-        if (typeof usd === 'number' && usd > 0) return usd;
+        const eur = data?.Valute?.EUR?.Value;
+        if (typeof usd === 'number' && usd > 0) { usdToRubRate = usd; }
+        if (typeof eur === 'number' && eur > 0 && !cachedEurRateRub) { cachedEurRateRub = eur; }
+        if (usdToRubRate) return usdToRubRate;
     }catch(e){}
     return 90; // фолбэк
 }
@@ -3677,6 +3724,35 @@ function onTouchEnd(e){
     }
     state.touch.startX = null;
     state.touch.galleryId = null;
+}
+
+/**
+ * Smart engine display: handles "200" (2.0L), "1,6" (1.6L), "1998" (2.0L), "2,0" (2.0L)
+ */
+function formatEngine(engine) {
+    if (engine == null || engine === '') return '—';
+    const s = String(engine).replace(',', '.').trim();
+    const n = parseFloat(s);
+    if (isNaN(n)) return engine;
+    // 100–999 integer: model-variant notation, e.g. "200" = 2.0L
+    if (n >= 100 && n < 1000 && Number.isInteger(n)) return (n / 100).toFixed(1) + 'L';
+    // ≥1000: cubic centimetres
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'L';
+    // Otherwise already in litres
+    return n.toFixed(1) + 'L';
+}
+
+/**
+ * Convert engine string to cubic centimetres for customs calculator
+ */
+function engineToCc(engineStr) {
+    if (engineStr == null) return null;
+    const s = String(engineStr).replace(',', '.').trim();
+    const n = parseFloat(s);
+    if (isNaN(n)) return null;
+    if (n >= 100 && n < 1000 && Number.isInteger(n)) return Math.round(n * 10); // "200" → 2000cc
+    if (n >= 1000) return Math.round(n);  // already cc
+    return Math.round(n * 1000);          // litres → cc
 }
 
 function buildUnder160CarSpecs(car){
