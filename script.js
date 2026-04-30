@@ -37,7 +37,7 @@ async function loadUsdToRubRate() {
     }
     
     // Fallback курс если API недоступен
-    usdToRubRate = 92.0;
+    usdToRubRate = 88.0;
     return usdToRubRate;
 }
 

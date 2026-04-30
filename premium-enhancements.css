@@ -682,6 +682,7 @@ select.language-select:active {
     border-radius: 16px !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+
 }
 
 .contact-item:hover {
@@ -761,4 +762,172 @@ select.language-select:active {
         transform: translateY(-2px) scale(1.01) !important;
     }
 }
+
+
+/* ─────────────────────────────────────────────────────────
+   EXPO MIR — UX Enhancements (header.js companion styles)
+   ───────────────────────────────────────────────────────── */
+
+/* Active nav link */
+.nav a.active {
+    color: #ffffff !important;
+    font-weight: 700;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 2px;
+}
+
+/* Header scrolled shadow upgrade */
+.header--scrolled {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ── Scroll-to-top button ─────────────────────────────── */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, #1f2937 0%, #0f172a 100%);
+    color: #d4af37;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+#scrollTopBtn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+#scrollTopBtn:hover {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.8);
+}
+
+/* ── Cart badge pulse ─────────────────────────────────── */
+@keyframes cartPulse {
+    0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0.7); }
+    40%  { transform: scale(1.18); box-shadow: 0 0 0 8px rgba(212,175,55,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+}
+.cart-pulse {
+    animation: cartPulse 0.5s ease-out forwards;
+}
+
+/* ── Mobile hamburger menu ───────────────────────────── */
+#mobileMenuToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    padding: 6px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+}
+#mobileMenuToggle span {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+#mobileMenuToggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#mobileMenuToggle.active span:nth-child(2) { opacity: 0; }
+#mobileMenuToggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+    #mobileMenuToggle { display: flex; }
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, #374151 0%, #1f2937 100%);
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 0.25rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        z-index: 999;
+    }
+    .nav.nav--open {
+        display: flex;
+    }
+    .nav a {
+        padding: 0.6rem 0;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav a:last-child { border-bottom: none; }
+    .header-content { flex-wrap: wrap; position: relative; }
+    .header-actions { gap: 0.4rem; }
+    #openRequestBtn { display: none; }
+}
+
+/* ── Notification toast improvements ────────────────── */
+.notification {
+    border-left: 3px solid #d4af37;
+}
+.notification.success { border-left-color: #22c55e; }
+.notification.error   { border-left-color: #ef4444; }
+
+/* ── Form focus ring improvement ─────────────────────── */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+    border-color: rgba(212, 175, 55, 0.6) !important;
+}
+
+/* ── Card hover shine effect ─────────────────────────── */
+@keyframes cardShine {
+    0%   { left: -120%; }
+    100% { left: 120%; }
+}
+body.premium .car-card {
+    overflow: hidden;
+    position: relative;
+}
+body.premium .car-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.04) 50%, transparent 60%);
+    pointer-events: none;
+    transition: none;
+}
+body.premium .car-card:hover::after {
+    animation: cardShine 0.6s ease forwards;
+}
+
+/* ── Smooth page load fade-in ─────────────────────────── */
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+main, .catalog, .hero, section {
+    animation: fadeInPage 0.4s ease both;
+}
+
 
