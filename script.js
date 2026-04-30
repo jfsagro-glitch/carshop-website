@@ -3141,48 +3141,111 @@ function setupEventListeners() {
 // === Таможенный калькулятор ===
 async function fetchEurRateRub() {
     try {
-        // Курсы ЦБ РФ JSON: https://www.cbr-xml-daily.ru/daily_json.js
         const resp = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
         const data = await resp.json();
         const eur = data?.Valute?.EUR?.Value;
         if (typeof eur === 'number' && eur > 0) return eur;
     } catch (e) { /* ignore */ }
-    // Фолбэк курс EUR→RUB, если сеть недоступна
-    return 100; // приблизительное значение; пользователь увидит ориентировочную сумму
+    return 100;
 }
 
-function customsRatePerCc(cc){
-    if (cc <= 999) return 1.5;
-    if (cc <= 1499) return 1.7;
-    if (cc <= 1999) return 2.7;
-    if (cc <= 2999) return 3.0;
-    return 3.6;
+// Шкала евро/см³ по возрасту (официальные ставки ЕАЭС/КР)
+const CUSTOMS_RATES_TABLE = {
+    '3-5': [
+        { max: 1000, rate: 1.5 },
+        { max: 1500, rate: 1.7 },
+        { max: 1800, rate: 2.5 },
+        { max: 2300, rate: 2.7 },
+        { max: 3000, rate: 3.0 },
+        { max: Infinity, rate: 3.6 }
+    ],
+    '5-7': [
+        { max: 1000, rate: 3.0 },
+        { max: 1500, rate: 3.2 },
+        { max: 1800, rate: 3.5 },
+        { max: 2300, rate: 4.8 },
+        { max: 3000, rate: 5.0 },
+        { max: Infinity, rate: 5.7 }
+    ],
+    '7+': [
+        { max: 1000, rate: 3.6 },
+        { max: 1500, rate: 4.0 },
+        { max: 1800, rate: 4.8 },
+        { max: 2300, rate: 5.8 },
+        { max: 3000, rate: 6.0 },
+        { max: Infinity, rate: 6.6 }
+    ]
+};
+
+function customsRatePerCc(cc, ageGroup = '3-5') {
+    const table = CUSTOMS_RATES_TABLE[ageGroup] || CUSTOMS_RATES_TABLE['3-5'];
+    const row = table.find(r => cc <= r.max);
+    return row ? row.rate : table[table.length - 1].rate;
 }
 
-function customsClearanceFee(costUsd){
+function customsClearanceFee(costUsd) {
     if (costUsd <= 14999) return 4269;
     if (costUsd <= 40000) return 11746;
     return 16524;
 }
 
-async function handleCalc(){
+// Калькулятор растаможки (для карточек каталога)
+async function handleCalc() {
     const costUsd = parseFloat(document.getElementById('costUsd').value);
-    const cc = parseInt(document.getElementById('engineCc').value, 10);
-    const age = document.getElementById('age').value; // зарезервировано для будущей логики
+    const cc      = parseInt(document.getElementById('engineCc').value, 10);
+    const ageGroup = (document.getElementById('carAge') || {}).value || '3-5';
+    const resultEl = document.getElementById('calcResult');
 
-    if (!isFinite(costUsd) || costUsd <= 0 || !isFinite(cc) || cc <= 0){
-        document.getElementById('calcResult').textContent = 'Введите корректные значения стоимости и объема двигателя.';
+    if (!isFinite(costUsd) || costUsd <= 0 || !isFinite(cc) || cc <= 0) {
+        resultEl.innerHTML = '<span class="calc-error"><i class="fas fa-exclamation-circle"></i> Введите корректные значения стоимости и объёма.</span>';
         return;
     }
 
-    const eurPerCc = customsRatePerCc(cc); // евро на см³
-    const eurAmount = eurPerCc * cc;       // сумма в евро
-    const eurRub = await fetchEurRateRub();// курс EUR→RUB
-    const rubByCc = eurAmount * eurRub;    // рубли по объему
-    const fee = customsClearanceFee(costUsd); // пошлина оформления
-    const totalRub = Math.round(rubByCc + fee);
+    resultEl.innerHTML = '<div class="calc-loading"><i class="fas fa-spinner fa-spin"></i> Загрузка курсов...</div>';
 
-    document.getElementById('calcResult').textContent = `${numberFormatter.format(totalRub)} ₽`;
+    const eurPerCc  = customsRatePerCc(cc, ageGroup);
+    const eurAmount = eurPerCc * cc;
+    const [eurRub, usdRub] = await Promise.all([fetchEurRateRub(), fetchUsdRateRub()]);
+
+    const dutyRub   = Math.round(eurAmount * eurRub);
+    const dutyUsd   = Math.round(dutyRub / usdRub);
+    const feeRub    = customsClearanceFee(costUsd);
+    const feeUsd    = Math.round(feeRub / usdRub);
+    const totalRub  = dutyRub + feeRub;
+    const totalUsd  = dutyUsd + feeUsd;
+    const grandUsd  = costUsd + totalUsd;
+    const grandRub  = Math.round(grandUsd * usdRub);
+
+    const fmt = n => numberFormatter.format(Math.round(n));
+    resultEl.innerHTML = `
+        <div class="calc-breakdown">
+            <div class="calc-breakdown__title">Расчёт растаможки для Кыргызстана</div>
+            <div class="calc-breakdown__row">
+                <span>Стоимость автомобиля</span>
+                <span><strong>$${fmt(costUsd)}</strong></span>
+            </div>
+            <div class="calc-breakdown__row calc-breakdown__row--sub">
+                <span>Там. пошлина (${eurPerCc} €/см³ × ${fmt(cc)} см³)</span>
+                <span>${fmt(Math.round(eurAmount))} € &asymp; $${fmt(dutyUsd)}</span>
+            </div>
+            <div class="calc-breakdown__row calc-breakdown__row--sub">
+                <span>Таможенный сбор</span>
+                <span>${fmt(feeRub)} ₽ &asymp; $${fmt(feeUsd)}</span>
+            </div>
+            <div class="calc-breakdown__row">
+                <span><em>Итого растаможка</em></span>
+                <span>${fmt(totalRub)} ₽ ≈ $${fmt(totalUsd)}</span>
+            </div>
+            <div class="calc-breakdown__total">
+                <span>Полная стоимость (авто + растаможка)</span>
+                <span><strong>$${fmt(grandUsd)}</strong> ≈ ${fmt(grandRub)} ₽</span>
+            </div>
+            <div class="calc-breakdown__note">
+                <i class="fas fa-info-circle"></i>
+                Цены автомобилей в каталоге уже включают доставку и растаможку.
+                Курсы: 1 $ = ${fmt(usdRub)} ₽, 1 € = ${fmt(eurRub)} ₽.
+            </div>
+        </div>`;
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -3273,28 +3336,69 @@ window.openSimilarRequest = function(carId){
         note.value = `Ищу аналогичный автомобилю: ${car.year} ${car.brand} ${car.model}. VIN: ${car.vin}.`;
     }catch(_){}}
 
-async function handleSelfCalc(){
-    const costUsd = parseFloat(document.getElementById('selfCostUsd').value);
-    const cc = parseInt(document.getElementById('selfEngineCc').value, 10);
-    if (!isFinite(costUsd) || costUsd <= 0 || !isFinite(cc) || cc <= 0){
-        document.getElementById('selfCalcResult').textContent = 'Введите корректные значения стоимости и объема.';
+async function handleSelfCalc() {
+    const costUsd  = parseFloat(document.getElementById('selfCostUsd').value);
+    const cc       = parseInt(document.getElementById('selfEngineCc').value, 10);
+    const ageGroup = (document.getElementById('selfCarAge') || {}).value || '3-5';
+    const resultEl = document.getElementById('selfCalcResult');
+
+    if (!isFinite(costUsd) || costUsd <= 0 || !isFinite(cc) || cc <= 0) {
+        resultEl.innerHTML = '<span class="calc-error"><i class="fas fa-exclamation-circle"></i> Введите корректные значения стоимости и объёма.</span>';
         return;
     }
-    // 1) Растаможка по тому же алгоритму, что и калькулятор: евро/см3
-    const eurPerCc = customsRatePerCc(cc);
-    const eurAmount = eurPerCc * cc; // евро
-    const eurRub = await fetchEurRateRub();
-    const customsRub = eurAmount * eurRub;
 
-    // 2) Стоимость автомобиля в рублях: USD * курс ЦБ USD * 1.5%
-    const usdRub = await fetchUsdRateRub();
-    const carRub = costUsd * usdRub * 1.015; // +1.5%
+    resultEl.innerHTML = '<div class="calc-loading"><i class="fas fa-spinner fa-spin"></i> Загрузка курсов...</div>';
 
-    // 3) Плюс 2400 USD по курсу ЦБ РФ
-    const serviceRub = 2400 * usdRub;
+    const DELIVERY_USD    = 400;   // доставка Грузия → Кыргызстан
+    const SERVICE_FEE_USD = 2400;  // комиссия EXPO MIR
 
-    const total = Math.round(customsRub + carRub + serviceRub);
-    document.getElementById('selfCalcResult').textContent = `${numberFormatter.format(total)} ₽`;
+    const eurPerCc  = customsRatePerCc(cc, ageGroup);
+    const eurAmount = eurPerCc * cc;
+    const [eurRub, usdRub] = await Promise.all([fetchEurRateRub(), fetchUsdRateRub()]);
+
+    const dutyRub  = Math.round(eurAmount * eurRub);
+    const dutyUsd  = Math.round(dutyRub / usdRub);
+    const feeRub   = customsClearanceFee(costUsd + DELIVERY_USD);
+    const feeUsd   = Math.round(feeRub / usdRub);
+
+    const totalCustomsUsd = dutyUsd + feeUsd;
+    const grandUsd  = costUsd + DELIVERY_USD + totalCustomsUsd + SERVICE_FEE_USD;
+    const grandRub  = Math.round(grandUsd * usdRub);
+
+    const fmt = n => numberFormatter.format(Math.round(n));
+    resultEl.innerHTML = `
+        <div class="calc-breakdown">
+            <div class="calc-breakdown__title">Полная стоимость под ключ — Кыргызстан</div>
+            <div class="calc-breakdown__row">
+                <span>Стоимость авто на сайте</span>
+                <span><strong>$${fmt(costUsd)}</strong></span>
+            </div>
+            <div class="calc-breakdown__row">
+                <span>Доставка Грузия → Кыргызстан</span>
+                <span>~$${fmt(DELIVERY_USD)}</span>
+            </div>
+            <div class="calc-breakdown__row calc-breakdown__row--sub">
+                <span>Там. пошлина (${eurPerCc} €/см³ × ${fmt(cc)} см³)</span>
+                <span>${fmt(Math.round(eurAmount))} € ≈ $${fmt(dutyUsd)}</span>
+            </div>
+            <div class="calc-breakdown__row calc-breakdown__row--sub">
+                <span>Там. сбор оформления</span>
+                <span>${fmt(feeRub)} ₽ ≈ $${fmt(feeUsd)}</span>
+            </div>
+            <div class="calc-breakdown__row">
+                <span>Услуги EXPO MIR (проверка, оформление)</span>
+                <span>$${fmt(SERVICE_FEE_USD)}</span>
+            </div>
+            <div class="calc-breakdown__total">
+                <span>ИТОГО к оплате</span>
+                <span><strong>$${fmt(grandUsd)}</strong> ≈ ${fmt(grandRub)} ₽</span>
+            </div>
+            <div class="calc-breakdown__note">
+                <i class="fas fa-info-circle"></i>
+                Расчёт ориентировочный. Точная стоимость уточняется у менеджера.
+                Курсы: 1 $ = ${fmt(usdRub)} ₽, 1 € = ${fmt(eurRub)} ₽.
+            </div>
+        </div>`;
 }
 
 async function fetchUsdRateRub(){

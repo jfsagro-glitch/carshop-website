@@ -206,19 +206,23 @@
                 <div class="customs-content">
                     <form id="customsForm" class="calc-form" onsubmit="return false;">
                         <div class="calc-row">
-                            <label for="costUsd">Стоимость (USD)</label>
-                            <input type="number" id="costUsd" placeholder="Например, 25000" min="0" step="0.01" required>
+                            <label for="costUsd">Стоимость авто (USD)</label>
+                            <input type="number" id="costUsd" placeholder="Например, 15000" min="0" step="1" required>
                         </div>
                         <div class="calc-row">
-                            <label for="engineCc">Объем, см³</label>
+                            <label for="engineCc">Объём двигателя, см³</label>
                             <input type="number" id="engineCc" placeholder="Например, 1998" min="0" step="1" required>
                         </div>
                         <div class="calc-row">
-                            <label for="age">Возраст</label>
-                            <input id="age" value="3 - 5 лет" disabled>
+                            <label for="carAge">Возраст автомобиля</label>
+                            <select id="carAge" class="calc-select">
+                                <option value="3-5" selected>3–5 лет (самый частый)</option>
+                                <option value="5-7">5–7 лет</option>
+                                <option value="7+">7 лет и старше</option>
+                            </select>
                         </div>
                         <div class="calc-actions">
-                            <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
+                            <button class="btn-primary" id="calcBtn" type="button"><i class="fas fa-calculator"></i> Рассчитать</button>
                         </div>
                     </form>
                     <div class="calc-result" id="calcResult" aria-live="polite"></div>
@@ -529,15 +533,23 @@
                     </p>
                     <form id="selfCalcForm" class="calc-form" onsubmit="return false;">
                         <div class="calc-row">
-                            <label for="selfCostUsd">Стоимость авто в Грузии (USD)</label>
-                            <input type="number" id="selfCostUsd" placeholder="Например, 12000" min="0" step="0.01" required>
+                            <label for="selfCostUsd">Цена авто на сайте (USD)</label>
+                            <input type="number" id="selfCostUsd" placeholder="Например, 12000" min="0" step="1" required>
                         </div>
                         <div class="calc-row">
-                            <label for="selfEngineCc">Объем двигателя, см³</label>
+                            <label for="selfEngineCc">Объём двигателя, см³</label>
                             <input type="number" id="selfEngineCc" placeholder="Например, 1998" min="0" step="1" required>
                         </div>
+                        <div class="calc-row">
+                            <label for="selfCarAge">Возраст автомобиля</label>
+                            <select id="selfCarAge" class="calc-select">
+                                <option value="3-5" selected>3–5 лет</option>
+                                <option value="5-7">5–7 лет</option>
+                                <option value="7+">7 лет и старше</option>
+                            </select>
+                        </div>
                         <div class="calc-actions">
-                            <button class="btn-primary" id="selfCalcBtn" type="button">Рассчитать</button>
+                            <button class="btn-primary" id="selfCalcBtn" type="button"><i class="fas fa-calculator"></i> Рассчитать итог</button>
                         </div>
                     </form>
                     <div class="calc-result" id="selfCalcResult" aria-live="polite"></div>

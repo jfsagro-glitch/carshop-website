@@ -1,0 +1,51 @@
+name: Auto-sync Georgia car stock
+
+on:
+  schedule:
+    # Ежедневно в 06:00 UTC (09:00 Бишкек / 10:00 Тбилиси)
+    - cron: '0 6 * * *'
+  workflow_dispatch:       # ручной запуск из GitHub Actions UI
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write      # нужно для git push
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Sync from myauto.ge
+        run: |
+          python car_parser.py \
+            --source myauto \
+            --max 200 \
+            --delay 1.5 \
+            --sync-stock \
+            --stock-file cars_georgia_stock.json \
+            --quiet
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet cars_georgia_stock.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cars_georgia_stock.json
+          git commit -m "auto: sync Georgia car stock from myauto.ge [$(date +'%Y-%m-%d')]"
+          git push

@@ -1886,3 +1886,277 @@ input[type=number] { -moz-appearance: textfield; }
         border-radius: 12px 12px 0 0 !important;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   EXPO MIR — Wave 5: Calculator breakdown, calc-select,
+                       modal polish, general UX refinements
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Calc select (age/origin dropdowns inside modals) ────── */
+.calc-select {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    background: rgba(15,23,42,0.95) !important;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(148,163,184,0.2) !important;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%2394a3b8' d='M5 7L1 3h8z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.65rem center !important;
+    transition: border-color 0.2s ease;
+}
+.calc-select:focus {
+    border-color: rgba(212,175,55,0.5) !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
+}
+
+/* ── Calculator result breakdown table ──────────────────── */
+.calc-breakdown {
+    margin-top: 1.25rem;
+    background: linear-gradient(160deg, rgba(15,23,42,0.98), rgba(22,33,56,0.95));
+    border: 1px solid rgba(148,163,184,0.12);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeInUp 0.3s ease;
+}
+.calc-breakdown__title {
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.08));
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.calc-breakdown__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid rgba(148,163,184,0.06);
+    font-size: 0.875rem;
+    color: #94a3b8;
+}
+.calc-breakdown__row:last-of-type { border-bottom: none; }
+.calc-breakdown__row--sub {
+    padding-left: 1.75rem;
+    font-size: 0.82rem;
+    color: #64748b;
+}
+.calc-breakdown__row--sub::before {
+    content: '↳';
+    margin-left: -1rem;
+    margin-right: 0.4rem;
+    color: #475569;
+}
+.calc-breakdown__row span:last-child {
+    text-align: right;
+    flex-shrink: 0;
+    color: #cbd5e1;
+    font-variant-numeric: tabular-nums;
+}
+.calc-breakdown__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));
+    border-top: 1px solid rgba(212,175,55,0.25);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+.calc-breakdown__total span:last-child {
+    color: #d4af37;
+    font-size: 1rem;
+}
+.calc-breakdown__note {
+    padding: 0.6rem 1rem;
+    font-size: 0.78rem;
+    color: #475569;
+    border-top: 1px solid rgba(148,163,184,0.06);
+    line-height: 1.5;
+}
+.calc-breakdown__note i {
+    color: #64748b;
+    margin-right: 0.35rem;
+}
+
+/* ── Calc loading / error states ─────────────────────────── */
+.calc-loading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: #64748b;
+    font-size: 0.875rem;
+}
+.calc-error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #f87171;
+    font-size: 0.875rem;
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 8px;
+    margin-top: 0.75rem;
+}
+
+/* ── Modal polish (larger content area, smoother) ────────── */
+.modal-content {
+    max-height: 92vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #374151 transparent;
+}
+.modal-content::-webkit-scrollbar { width: 4px; }
+.modal-content::-webkit-scrollbar-thumb { background: #374151; border-radius: 2px; }
+
+/* ── Calc form row improvements ──────────────────────────── */
+.calc-form .calc-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
+}
+.calc-form .calc-row label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.calc-form input[type="number"],
+.calc-form input[type="text"] {
+    padding: 0.55rem 0.75rem;
+    background: rgba(15,23,42,0.9) !important;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(148,163,184,0.2) !important;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+.calc-form input:focus {
+    border-color: rgba(212,175,55,0.5) !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.08) !important;
+}
+.calc-actions {
+    margin-top: 0.5rem;
+}
+.calc-actions .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem !important;
+}
+
+/* ── Self-calc modal header ───────────────────────────────── */
+#selfCalcModal .modal-header h3 {
+    font-size: 1rem;
+    line-height: 1.45;
+    color: #f1f5f9;
+}
+#selfCalcModal .modal-body p a {
+    color: #d4af37 !important;
+    text-decoration: none;
+    font-weight: 500;
+}
+#selfCalcModal .modal-body p a:hover {
+    text-decoration: underline;
+}
+
+/* ── Request modal form improvements ────────────────────── */
+.request-form__contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+}
+.request-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.request-form__field label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.calc-row--full { grid-column: 1 / -1; }
+.calc-actions--full { justify-content: flex-start; }
+
+/* ── Improved notification toast ─────────────────────────── */
+.notification {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 1.25rem;
+    z-index: 99999;
+    max-width: 320px;
+    background: linear-gradient(135deg, rgba(15,23,42,0.97), rgba(22,33,56,0.95));
+    border: 1px solid rgba(148,163,184,0.15);
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    color: #f1f5f9;
+    font-size: 0.875rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    animation: slideInRight 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    backdrop-filter: blur(12px);
+}
+.notification.hiding {
+    animation: slideOutRight 0.3s ease forwards;
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideOutRight {
+    from { opacity: 1; transform: translateX(0); }
+    to   { opacity: 0; transform: translateX(100%); }
+}
+
+/* ── Header banner improvements ──────────────────────────── */
+.header-info-banner {
+    background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(180,147,36,0.1));
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+    padding: 0.5rem 0;
+    text-align: center;
+}
+.header-info-banner-text {
+    font-size: 0.82rem;
+    color: #cbd5e1;
+    letter-spacing: 0.01em;
+}
+.header-info-banner-text strong {
+    color: #d4af37;
+    font-weight: 700;
+}
+
+/* ── Car card — fuel/transmission badges ─────────────────── */
+.car-badge--fuel { background: linear-gradient(135deg, #0ea5e9, #0284c7); color: #fff; }
+.car-badge--trans { background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: #fff; }
+
+/* ── Price display in catalog count ──────────────────────── */
+#catalogCount strong { color: #d4af37; }
+
+/* ── Spinner for loading states ──────────────────────────── */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+.fa-spin { animation: spin 1s linear infinite; }
+
+/* ── Better car-info padding in list view ────────────────── */
+.cars-grid--list .car-info { min-height: 0 !important; }
