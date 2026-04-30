@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>EXPO MIR — Автомобили из Грузии, США, Кореи, Китая, Европы</title>
     <meta name="description" content="Покупка автомобилей из Грузии, США, Кореи, Китая и Европы. Доставка 3-5 дней, растаможка включена. Большой выбор авто в наличии.">
-    <meta name="keywords" content="автоиз грузии, купить авто, авто киргизия, автомобили из грузии, авто сша, авто корея, авто китай, expo mir, растаможка">
+    <meta name="keywords" content="авто из грузии, купить авто, авто киргизия, автомобили из грузии, авто сша, авто корея, авто китай, авто из китая, expo mir, растаможка кыргызстан, авто без предоплаты, таможенный калькулятор">
     <meta property="og:title" content="EXPO MIR — Автомобили из-за рубежа">
     <meta property="og:description" content="Покупка автомобилей из Грузии, США, Кореи, Китая и Европы. Доставка 3–5 дней, растаможка включена.">
     <meta property="og:type" content="website">
@@ -69,6 +69,7 @@
     </script>
 </head>
 <body class="premium">
+    <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -87,7 +88,7 @@
                 </nav>
                 <div class="header-actions">
                     <div class="currency-selector">
-                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)" style="background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important;">
+                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)" aria-label="Выбор валюты">
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                             <option value="KGS">сом</option>
@@ -95,7 +96,7 @@
                         </select>
                     </div>
                     <div class="language-selector">
-                        <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)" style="background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #374151 100%) !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15) !important;">
+                        <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)" aria-label="Выбор языка">
                             <option value="ru" data-flag="images/Lang/rus.png">RU</option>
                             <option value="en" data-flag="images/Lang/usa.png">US</option>
                             <option value="ky" data-flag="images/Lang/KG.png">KG</option>
@@ -495,7 +496,7 @@
             </div>
             <div class="modal-footer">
                 <div class="cart-total">
-                    <strong>Итого: <span id="cartTotal">0</span> $</strong>
+                    <strong>Итого: <span id="cartTotal">$0</span></strong>
                 </div>
                 <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
             </div>
@@ -504,17 +505,33 @@
 
     <!-- Checkout Contact Modal -->
     <div id="checkoutModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeCheckoutModal()">&times;</span>
-            <h3 style="margin-top:0;">Контактные данные для оформления</h3>
-            <form id="checkoutContactForm" style="display:flex; flex-direction:column; gap:12px;">
-                <input type="text" id="contactName" placeholder="Ваше имя" required>
-                <input type="tel" id="contactPhone" placeholder="Телефон" required>
-                <input type="email" id="contactEmail" placeholder="Email" required>
-                <button type="submit" class="btn-primary">Отправить заказ</button>
-                <button type="button" class="btn-secondary" onclick="closeCheckoutModal()">Отмена</button>
-            </form>
-            <p style="color:#9ca3af; font-size:0.9rem;">Мы свяжемся с вами для подтверждения заказа.</p>
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h3>Оформление заказа</h3>
+                <span class="close" onclick="closeCheckoutModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-summary" id="checkoutSummary"></div>
+                <form id="checkoutContactForm" class="calc-form checkout-form">
+                    <div class="calc-row">
+                        <label for="contactName">Ваше имя</label>
+                        <input type="text" id="contactName" placeholder="Иван Иванов" required autocomplete="name">
+                    </div>
+                    <div class="calc-row">
+                        <label for="contactPhone">Телефон / WhatsApp</label>
+                        <input type="tel" id="contactPhone" placeholder="+996 700 000 000" required autocomplete="tel">
+                    </div>
+                    <div class="calc-row">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" placeholder="you@example.com" required autocomplete="email">
+                    </div>
+                    <div class="calc-actions">
+                        <button type="submit" class="btn-primary checkout-submit-btn"><i class="fas fa-paper-plane"></i> Подтвердить заказ</button>
+                        <button type="button" class="btn-secondary" onclick="closeCheckoutModal()">Отмена</button>
+                    </div>
+                </form>
+                <p class="checkout-note"><i class="fas fa-shield-alt"></i> Мы свяжемся с вами в течение 15 минут для подтверждения заказа.</p>
+            </div>
         </div>
     </div>
 
@@ -642,6 +659,9 @@
 
     <script src="script.js"></script>
     <script src="header.js"></script>
+    <button id="backToTop" class="back-to-top" aria-label="Прокрутить наверх" title="Наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <aside class="floating-subscribe" aria-label="Подписка на Telegram">
         <div class="floating-subscribe__inner">

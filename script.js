@@ -2505,7 +2505,27 @@ function extractBrandModel(name){
 
 function openCheckoutModal(){
     const modal = document.getElementById('checkoutModal');
-    if (modal) modal.style.display = 'block';
+    if (!modal) return;
+    // Populate checkout summary with cart items
+    const summaryEl = document.getElementById('checkoutSummary');
+    if (summaryEl && state.cart.length > 0) {
+        const rows = state.cart.map(item =>
+            `<div class="checkout-summary__row">
+                <span>${item.year} ${item.brand} ${item.model}</span>
+                <span>${formatCurrency(item.price)}</span>
+            </div>`
+        ).join('');
+        const total = state.cart.reduce((s, i) => s + i.price, 0);
+        summaryEl.innerHTML = `
+            <div class="checkout-summary__inner">
+                ${rows}
+                <div class="checkout-summary__total">
+                    <span>Итого</span>
+                    <span>${formatCurrency(total)}</span>
+                </div>
+            </div>`;
+    }
+    modal.style.display = 'block';
 }
 function closeCheckoutModal(){
     const modal = document.getElementById('checkoutModal');
@@ -2834,8 +2854,8 @@ function updateCartModal() {
     if (!cartBody || !cartTotal) return;
     
     if (state.cart.length === 0) {
-        cartBody.innerHTML = '<p style="text-align: center; color: #64748b;">Ваш заказ пуст</p>';
-        cartTotal.textContent = '0';
+        cartBody.innerHTML = '<p class="cart-empty">Ваш заказ пуст</p>';
+        if (cartTotal) cartTotal.textContent = '$0';
         return;
     }
 
@@ -2849,9 +2869,8 @@ function updateCartModal() {
         cartItem.innerHTML = `
             <div class="cart-item-info">
                 <h4>${item.year} ${item.brand} ${item.model}</h4>
-                <p>Пробег: ${numberFormatter.format(item.mileage)} км</p>
-                <p>Количество: ${item.quantity}</p>
-                <p style="color: #10b981; font-size: 0.8rem;"><i class="fas fa-check-circle"></i> Включает растаможку и доставку</p>
+                <p class="cart-item-meta">Пробег: ${numberFormatter.format(item.mileage)} км</p>
+                <p class="cart-include-note"><i class="fas fa-check-circle"></i> Включает растаможку и доставку</p>
             </div>
             <div class="cart-item-price">
                 ${formatCurrency(item.price * item.quantity)}
@@ -2863,7 +2882,7 @@ function updateCartModal() {
         cartBody.appendChild(cartItem);
     });
 
-    cartTotal.textContent = numberFormatter.format(total);
+    cartTotal.textContent = formatCurrency(total);
 }
 
 function showCarDetails(carId) {
@@ -3014,6 +3033,51 @@ function showNotification(message, type = 'success') {
 }
 
 function setupEventListeners() {
+    // Scroll progress bar + back-to-top
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+        const bar = document.getElementById('scrollProgress');
+        if (bar) bar.style.transform = `scaleX(${progress})`;
+        const btn = document.getElementById('backToTop');
+        if (btn) btn.classList.toggle('back-to-top--visible', scrollTop > 450);
+    }, { passive: true });
+
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // Escape key closes any open modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        ['carModal', 'cartModal', 'checkoutModal', 'requestModal', 'selfCalcModal', 'customsModal'].forEach(id => {
+            const m = document.getElementById(id);
+            if (m && m.style.display === 'block') m.style.display = 'none';
+        });
+    });
+
+    // Brand filter → auto-populate model filter
+    const brandFilterEl = document.getElementById('brandFilter');
+    const modelFilterEl = document.getElementById('modelFilter');
+    if (brandFilterEl && modelFilterEl) {
+        brandFilterEl.addEventListener('change', () => {
+            const brand = brandFilterEl.value;
+            const models = brand
+                ? [...new Set(carsData.filter(c => c.brand === brand).map(c => c.model))].sort()
+                : [];
+            // Keep "all models" option
+            modelFilterEl.innerHTML = '<option value="">Все модели</option>';
+            models.forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m;
+                opt.textContent = m;
+                modelFilterEl.appendChild(opt);
+            });
+        });
+    }
+
     // Catalog filters
     const applyBtn = document.getElementById('applyFilters');
     const resetBtn = document.getElementById('resetFilters');
@@ -3354,7 +3418,7 @@ window.openSelfCalcPreFill = function(priceKgs, engineStr) {
     const costEl = document.getElementById('selfCostUsd');
     if (costEl) costEl.value = priceUsd;
     // Конвертируем объём двигателя в куб. см (1.6 -> 1600)
-    const engEl = document.getElementById('selfEngineCC');
+    const engEl = document.getElementById('selfEngineCc');
     if (engEl) {
         const engNum = parseFloat(String(engineStr).replace(',', '.'));
         if (!isNaN(engNum)) {
