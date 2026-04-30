@@ -117,6 +117,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <!-- Info Banner under header -->
     <div class="header-info-banner">
         <div class="container">
@@ -399,14 +400,14 @@
                         <i class="fab fa-whatsapp icon-wa"></i>
                         <div>
                             <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/996755666805" target="_blank" rel="noopener">Написать в WhatsApp</a></p>
+                            <p><a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-telegram icon-tg"></i>
                         <div>
                             <h4>Telegram</h4>
-                            <p><a href="https://t.me/expo_mir" target="_blank" rel="noopener">@expo_mir</a></p>
+                            <p><a href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer">@expo_mir</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -436,6 +437,8 @@
         </div>
     </section>
 
+    </main><!-- /#main-content -->
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -444,8 +447,8 @@
                     <h4>EXPO MIR</h4>
                     <p>Надёжный партнёр в покупке автомобилей из-за рубежа. Работаем без предоплаты с 2020 года.</p>
                     <div class="footer-social">
-                        <a href="https://t.me/expo_mir" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-                        <a href="https://wa.me/996755666805" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="mailto:carexportgeo@bk.ru" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
@@ -476,12 +479,12 @@
                     <h4>Контакты</h4>
                     <p><i class="fas fa-phone footer-icon"></i><a href="tel:+996755666805">+996 755 666 805</a></p>
                     <p><i class="fas fa-envelope footer-icon"></i><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
-                    <p><i class="fab fa-whatsapp footer-icon"></i><a href="https://wa.me/996755666805" target="_blank" rel="noopener">WhatsApp</a></p>
-                    <p><i class="fab fa-telegram footer-icon"></i><a href="https://t.me/expo_mir" target="_blank" rel="noopener">Telegram-канал</a></p>
+                    <p><i class="fab fa-whatsapp footer-icon"></i><a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+                    <p><i class="fab fa-telegram footer-icon"></i><a href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer">Telegram-канал</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 EXPO MIR. Все права защищены.</p>
+                <p>&copy; <span id="copyrightYear">2026</span> EXPO MIR. Все права защищены.</p>
                 <p class="footer-bottom__note">Цены указаны с учётом растаможки и доставки</p>
             </div>
         </div>
@@ -551,8 +554,8 @@
                         Выберите авто на грузинских сайтах — мы проверим, привезём и растаможим. Рассчитайте полную стоимость ниже.
                     </p>
                     <p style="margin-bottom:1rem; color:#9ca3af;">
-                        Сайты: <a href="https://ap.ge/ru/usd" target="_blank">ap.ge</a>, 
-                        <a href="https://myauto.ge/ru" target="_blank">myauto.ge</a>
+                        Сайты: <a href="https://ap.ge/ru/usd" target="_blank" rel="noopener noreferrer">ap.ge</a>, 
+                        <a href="https://myauto.ge/ru" target="_blank" rel="noopener noreferrer">myauto.ge</a>
                     </p>
                     <form id="selfCalcForm" class="calc-form" onsubmit="return false;">
                         <div class="calc-row">
@@ -634,7 +637,7 @@
                         <button class="btn-primary" id="requestSubmit" type="button">Отправить на подбор</button>
                     </div>
                 </form>
-                <div id="requestStatus" class="calc-result"></div>
+                <div id="requestStatus" class="calc-result" aria-live="polite" role="status"></div>
             </div>
         </div>
     </div>
@@ -688,6 +691,10 @@
 
     <script>
         (function(){
+            // Dynamic copyright year
+            const yearEl = document.getElementById('copyrightYear');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
             const widget = document.querySelector('.floating-subscribe');
             if (!widget) return;
             const closeBtn = widget.querySelector('.floating-subscribe__close');

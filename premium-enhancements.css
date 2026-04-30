@@ -881,14 +881,14 @@ select.language-select:active {
     .header-content { flex-wrap: wrap; position: relative; }
     .header-actions { gap: 0.4rem; }
     #openRequestBtn { display: none; }
+    /* Prevent background scroll when mobile nav is open */
+    body.nav-open { overflow: hidden; }
 }
 
-/* ── Notification toast improvements ────────────────── */
+/* ── Notification toast base (type colors via --success/--error modifiers below) */
 .notification {
     border-left: 3px solid #d4af37;
 }
-.notification.success { border-left-color: #22c55e; }
-.notification.error   { border-left-color: #ef4444; }
 
 /* ── Form focus ring improvement ─────────────────────── */
 input:focus, select:focus, textarea:focus {
@@ -1617,9 +1617,13 @@ input[type=number] { -moz-appearance: textfield; }
 /* ── Print styles ────────────────────────────────────────── */
 @media print {
     .header, .floating-subscribe, #whatsappFloatBtn,
-    #scrollTopBtn, #mobileBottomNav, .footer-social { display: none !important; }
+    #scrollTopBtn, #mobileBottomNav, .footer-social,
+    .floating-wa, #backToTop, .scroll-progress,
+    #mobileMenuToggle, .cart-btn, .header-actions { display: none !important; }
     body { background: #fff !important; color: #000 !important; }
-    .car-card { border: 1px solid #ccc !important; }
+    .car-card { border: 1px solid #ccc !important; break-inside: avoid; }
+    a[href]::after { content: ' (' attr(href) ')'; font-size: 0.8em; color: #555; }
+    a[href^='tel:']::after, a[href^='javascript:']::after { content: '' !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════

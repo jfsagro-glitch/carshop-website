@@ -146,17 +146,28 @@
     var nav = document.querySelector('.nav');
     if (!nav) return;
 
+    function closeNav() {
+      nav.classList.remove('nav--open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
+
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('nav--open');
       toggle.classList.toggle('active', open);
       toggle.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('nav-open', open);
+    });
+
+    // Close when any nav link is clicked (e.g. after navigating to anchor)
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeNav);
     });
 
     document.addEventListener('click', function (e) {
       if (!toggle.contains(e.target) && !nav.contains(e.target)) {
-        nav.classList.remove('nav--open');
-        toggle.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
+        closeNav();
       }
     });
   }
@@ -171,13 +182,13 @@
       '<a href="index.html#catalog" class="mbn-item" data-page="index.html">',
       '  <i class="fas fa-car"></i><span>Каталог</span>',
       '</a>',
-      '<a href="https://wa.me/996755666805" target="_blank" rel="noopener" class="mbn-item mbn-item--wa">',
+      '<a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" class="mbn-item mbn-item--wa">',
       '  <i class="fab fa-whatsapp"></i><span>WhatsApp</span>',
       '</a>',
       '<a href="javascript:void(0)" class="mbn-item mbn-item--cta" onclick="typeof openRequestModal!==\'undefined\'&&openRequestModal()">',
       '  <i class="fas fa-search"></i><span>Заявка</span>',
       '</a>',
-      '<a href="https://t.me/expo_mir" target="_blank" rel="noopener" class="mbn-item">',
+      '<a href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer" class="mbn-item">',
       '  <i class="fab fa-telegram"></i><span>Telegram</span>',
       '</a>',
       '<a href="tel:+996755666805" class="mbn-item">',

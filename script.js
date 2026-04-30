@@ -3446,6 +3446,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     const requestBtn = document.getElementById('requestSubmit');
     if (requestBtn) requestBtn.addEventListener('click', async ()=>{
+        if (requestBtn.disabled) return;
         const name = document.getElementById('reqName').value.trim();
         const phone = document.getElementById('reqPhone').value.trim();
         const email = document.getElementById('reqEmail').value.trim();
@@ -3464,6 +3465,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return;
         }
 
+        const origInner = requestBtn.innerHTML;
+        requestBtn.disabled = true;
+        requestBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправляем…';
+
         // отправка через formsubmit.co (без сервера)
         const payload = new URLSearchParams();
         payload.append('name', name);
@@ -3473,16 +3478,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
         payload.append('_captcha','false');
         payload.append('_subject','Заявка на подбор (сайт EXPO MIR)');
 
-        const resp = await fetch('https://formsubmit.co/carexportgeo@bk.ru', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: payload});
-        const s = document.getElementById('requestStatus');
-        s.style.removeProperty('display');
-        if (resp.ok) {
-            s.className = 'request-status request-status--success';
-            s.innerHTML = '<i class="fas fa-check-circle"></i> Заявка отправлена! Мы свяжемся с вами в ближайшие 15 минут.';
-            document.getElementById('requestForm')?.reset();
-        } else {
-            s.className = 'request-status request-status--error';
-            s.innerHTML = '<i class="fas fa-times-circle"></i> Не удалось отправить. Попробуйте позже или напишите в WhatsApp.';
+        try {
+            const resp = await fetch('https://formsubmit.co/carexportgeo@bk.ru', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: payload});
+            const s = document.getElementById('requestStatus');
+            s.style.removeProperty('display');
+            if (resp.ok) {
+                s.className = 'request-status request-status--success';
+                s.innerHTML = '<i class="fas fa-check-circle"></i> Заявка отправлена! Мы свяжемся с вами в ближайшие 15 минут.';
+                document.getElementById('requestForm')?.reset();
+            } else {
+                s.className = 'request-status request-status--error';
+                s.innerHTML = '<i class="fas fa-times-circle"></i> Не удалось отправить. Попробуйте позже или напишите в WhatsApp.';
+            }
+        } catch (_) {
+            const s = document.getElementById('requestStatus');
+            if (s) {
+                s.style.removeProperty('display');
+                s.className = 'request-status request-status--error';
+                s.innerHTML = '<i class="fas fa-times-circle"></i> Нет соединения. Напишите нам напрямую в WhatsApp.';
+            }
+        } finally {
+            requestBtn.disabled = false;
+            requestBtn.innerHTML = origInner;
         }
     });
 
