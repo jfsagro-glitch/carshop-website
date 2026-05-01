@@ -651,6 +651,7 @@ function setLanguage(lang) {
     if (!translations[lang]) return;
     currentLanguage = lang;
     localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
     applyTranslations();
     updateLanguageSelector();
     updateLanguageFlag();

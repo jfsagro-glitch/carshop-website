@@ -9,11 +9,23 @@
     <meta property="og:title" content="Авто из Китая — EXPO MIR">
     <meta property="og:description" content="Льготный утильсбор, двигатели до 160 л.с. Доставка под ключ.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://jfsagro-glitch.github.io/carshop-website/images/logo.png">
+    <meta property="og:image" content="https://cmsauto.store/images/logo.png">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://jfsagro-glitch.github.io/carshop-website/china-orders.html">
+    <meta property="og:url" content="https://cmsauto.store/china-orders.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://cmsauto.store/images/logo.png">
+    <meta name="author" content="EXPO MIR">
+    <meta name="theme-color" content="#0b1220">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="EXPO MIR">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://cmsauto.store/china-orders.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="premium-enhancements.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="premium-enhancements.css">
     <link rel="icon" type="image/png" href="images/logo.png">
@@ -22,10 +34,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="translations.js"></script>
 </head>
 <body class="premium">
+    <a href="#main-content" class="skip-link">Перейти к содержимому</a>
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -59,9 +72,9 @@
                             <option value="ka" data-flag="images/Lang/GE.png">GE</option>
                         </select>
                     </div>
-                    <button class="cart-btn" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
+                    <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="cart-count" id="cartCount" aria-live="polite">0</span>
                     </button>
                     <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()" data-i18n="btn_request">Заявка на подбор</button>
                 </div>
@@ -69,6 +82,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <section class="hero" style="background:#0b1220;color:#f3f4f6;border-bottom:1px solid #1f2937;padding:4rem 0 1rem 0;margin-top:100px;text-align:left;">
         <div class="container">
             <div class="hero-content" style="justify-content:flex-start;">
@@ -192,6 +206,7 @@
         </div>
     </section>
 
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">

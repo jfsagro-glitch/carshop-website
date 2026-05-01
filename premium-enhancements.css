@@ -3019,3 +3019,54 @@ textarea {
     font-size: max(1rem, 16px);
 }
 
+/* ── Text selection — premium gold highlight ─────────────────────── */
+::selection {
+    background: #d4af37;
+    color: #0b1220;
+}
+::-moz-selection {
+    background: #d4af37;
+    color: #0b1220;
+}
+
+/* ── Print styles ────────────────────────────────────────────────── */
+@media print {
+    .header,
+    footer,
+    .floating-wa,
+    #whatsappFloatBtn,
+    #backToTop,
+    #scrollTopBtn,
+    #mobileBottomNav,
+    .floating-subscribe,
+    .cart-btn,
+    .filter-btn,
+    .view-toggle,
+    .sort-select,
+    #mobileMenuToggle {
+        display: none !important;
+    }
+    body,
+    body.premium {
+        background: #fff !important;
+        color: #111 !important;
+    }
+    a {
+        color: #111 !important;
+        text-decoration: underline !important;
+    }
+    .car-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    .car-image {
+        height: 200px !important;
+        min-height: 200px !important;
+    }
+    .modal {
+        display: none !important;
+    }
+}
+
