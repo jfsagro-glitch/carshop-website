@@ -1,9 +1,11 @@
-name: Auto-sync Georgia car stock
+name: Auto-sync car catalogs
 
 on:
   schedule:
     # Ежедневно в 06:00 UTC (09:00 Бишкек / 10:00 Тбилиси)
     - cron: '0 6 * * *'
+    # Дополнительное дневное обновление в 15:00 UTC
+    - cron: '0 15 * * *'
   workflow_dispatch:       # ручной запуск из GitHub Actions UI
 
 jobs:
@@ -24,7 +26,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install -r requirements.txt
 
       - name: Sync from myauto.ge
         run: |
@@ -36,16 +38,25 @@ jobs:
             --stock-file cars_georgia_stock.json \
             --quiet
 
+      - name: Sync from mobile.de
+        run: |
+          python car_parser.py \
+            --source mobilede \
+            --max 120 \
+            --delay 2 \
+            --out cars_europe_new.json \
+            --quiet
+
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet cars_georgia_stock.json || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet cars_georgia_stock.json cars_europe_new.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cars_georgia_stock.json
-          git commit -m "auto: sync Georgia car stock from myauto.ge [$(date +'%Y-%m-%d')]"
+          git add cars_georgia_stock.json cars_europe_new.json
+          git commit -m "auto: sync car catalogs [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push

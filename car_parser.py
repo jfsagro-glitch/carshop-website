@@ -6,6 +6,7 @@ EXPO MIR — Универсальный парсер данных об авто�
   • Локальные CSV / JSON файлы
   • myauto.ge — официальный JSON API (лучший источник для Грузии)
   • ap.ge    — HTML-парсинг / API (аукционы Грузии)
+  • mobile.de — HTML/JSON разбор европейских объявлений
   • drom.ru  — публичный JSON-feed
   • Произвольные сайты (BeautifulSoup HTML-парсер)
 
@@ -19,6 +20,7 @@ EXPO MIR — Универсальный парсер данных об авто�
   python car_parser.py --help
   python car_parser.py --source myauto --max 50 --out cars_georgia.json
   python car_parser.py --source apge   --max 50 --out cars_apge.json
+  python car_parser.py --source mobilede --max 100 --out cars_europe_new.json
   python car_parser.py --source csv    --input cars_data.csv --out cars_export.json
   python car_parser.py --source json   --input cars_europe.json --out cars_export.json
   python car_parser.py --source html   --url "https://example.com/cars" --out cars_export.json
@@ -38,7 +40,7 @@ import random
 from dataclasses import dataclass, field, asdict
 from typing import Optional, List, Dict, Any
 from pathlib import Path
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin, urlencode
 
 # ── Зависимости (устанавливаются через pip install requests beautifulsoup4) ──
 try:
@@ -1120,6 +1122,260 @@ class ApGeParser:
         return cars[:self.max_cars]
 
 
+# ── Парсер mobile.de (Европа) ────────────────────────────────────────────────
+
+class MobileDeParser:
+    """
+    Парсит европейские объявления с mobile.de.
+    Основной путь — JSON-состояние страницы, запасной — разбор карточек HTML.
+    """
+
+    SEARCH_URL = "https://suchen.mobile.de/fahrzeuge/search.html"
+
+    UA_LIST = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Safari/605.1.15",
+    ]
+
+    def __init__(self, max_cars: int = 100, delay: float = 2.0,
+                 url: str = "", proxy: Optional[str] = None):
+        if not REQUESTS_AVAILABLE:
+            raise RuntimeError("Установите requests: pip install requests")
+        if not BS4_AVAILABLE:
+            raise RuntimeError("Установите beautifulsoup4: pip install beautifulsoup4")
+        self.max_cars = max_cars
+        self.delay = delay
+        self.url = url or self._build_default_url()
+        self.proxy = proxy
+        self._session = requests.Session()
+        self._session.headers.update({
+            "User-Agent": random.choice(self.UA_LIST),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "de-DE,de;q=0.9,en;q=0.8",
+            "Referer": "https://suchen.mobile.de/",
+        })
+
+    def _build_default_url(self) -> str:
+        params = {
+            "s": "Car",
+            "vc": "Car",
+            "isSearchRequest": "true",
+            "dam": "false",
+            "fr": "2021:",
+            "ml": ":65000",
+            "od": "up",
+            "sb": "rel",
+        }
+        return f"{self.SEARCH_URL}?{urlencode(params)}"
+
+    def _get(self, url: str) -> Optional[str]:
+        proxies = {"http": self.proxy, "https": self.proxy} if self.proxy else None
+        try:
+            resp = self._session.get(url, proxies=proxies, timeout=20)
+            resp.raise_for_status()
+            return resp.text
+        except Exception as e:
+            log.warning(f"mobile.de: ошибка запроса {url}: {e}")
+            return None
+
+    def _extract_json_objects(self, html: str) -> List[dict]:
+        objects: List[dict] = []
+        for marker in ("__NEXT_DATA__", "__INITIAL_STATE__", "initialState"):
+            if marker not in html:
+                continue
+            for m in re.finditer(r"<script[^>]*>(.*?)</script>", html, re.DOTALL | re.I):
+                script = m.group(1)
+                if marker not in script:
+                    continue
+                json_text = script.strip()
+                if marker != "__NEXT_DATA__":
+                    brace = json_text.find("{")
+                    json_text = json_text[brace:] if brace >= 0 else json_text
+                    json_text = re.sub(r";\s*$", "", json_text)
+                try:
+                    objects.append(json.loads(json_text))
+                except Exception:
+                    continue
+        return objects
+
+    def _walk_dicts(self, value: Any):
+        if isinstance(value, dict):
+            yield value
+            for child in value.values():
+                yield from self._walk_dicts(child)
+        elif isinstance(value, list):
+            for child in value:
+                yield from self._walk_dicts(child)
+
+    def _looks_like_listing(self, item: dict) -> bool:
+        keys = {str(k).lower() for k in item.keys()}
+        return (
+            ("id" in keys or "adid" in keys or "ad_id" in keys)
+            and any(k in keys for k in ("make", "brand", "manufacturer", "model", "modeldescription", "title"))
+            and any(k in keys for k in ("price", "consumerpricegross", "mileage", "images", "galleryimages"))
+        )
+
+    def _pick(self, item: dict, *keys: str, default: Any = "") -> Any:
+        lowered = {str(k).lower(): v for k, v in item.items()}
+        for key in keys:
+            if key in item and item[key] not in (None, ""):
+                return item[key]
+            value = lowered.get(key.lower())
+            if value not in (None, ""):
+                return value
+        return default
+
+    def _price_to_number(self, value: Any) -> float:
+        if isinstance(value, dict):
+            value = self._pick(value, "amount", "gross", "value", "consumerPriceGross", default=0)
+        return float(parse_int(value))
+
+    def _images_to_list(self, value: Any) -> List[dict]:
+        images: List[dict] = []
+        if isinstance(value, dict):
+            value = value.get("images") or value.get("gallery") or value.get("items") or []
+        if not isinstance(value, list):
+            return images
+        for index, image in enumerate(value, start=1):
+            url = ""
+            if isinstance(image, str):
+                url = image
+            elif isinstance(image, dict):
+                url = str(self._pick(image, "url", "src", "uri", "thumbnailUrl", "baseUrl", default=""))
+            if url:
+                images.append({"url": url, "order": index})
+        return images
+
+    def _item_to_europe_dict(self, item: dict) -> Optional[dict]:
+        ad_id = str(self._pick(item, "id", "adId", "ad_id", "mobileAdId", default="")).strip()
+        brand = normalize_brand(str(self._pick(item, "brand", "make", "manufacturer", "makeName", default="")))
+        model = str(self._pick(item, "model", "modelDescription", "modelName", default="")).strip()
+        title = str(self._pick(item, "title", "headline", "fullTitle", default="")).strip()
+
+        if not brand and title:
+            parts = title.split(maxsplit=1)
+            brand = normalize_brand(parts[0])
+            model = model or (parts[1] if len(parts) > 1 else "")
+        if not brand:
+            return None
+
+        price = self._price_to_number(self._pick(item, "price", "consumerPriceGross", "priceGross", default=0))
+        mileage = parse_int(self._pick(item, "mileage", "mileageValue", "odometer", default=0))
+        power_kw = parse_int(self._pick(item, "power", "powerKw", "kw", default=0))
+        power_hp = parse_int(self._pick(item, "powerHp", "hp", "ps", default=0))
+        if power_kw and not power_hp:
+            power_hp = round(power_kw * 1.35962)
+
+        registration = str(self._pick(item, "firstRegistration", "firstRegistrationDate", "first_registration", default=""))
+        reg_year = parse_int(self._pick(item, "firstRegistrationYear", "year", "constructionYear", default=0))
+        if not reg_year and registration:
+            year_m = re.search(r"\b(19|20)\d{2}\b", registration)
+            reg_year = int(year_m.group()) if year_m else 0
+
+        url = str(self._pick(item, "url", "detailPageUrl", "vipUrl", default=""))
+        if ad_id and not url:
+            url = f"https://suchen.mobile.de/fahrzeuge/details.html?id={ad_id}"
+        elif url.startswith("/"):
+            url = urljoin("https://suchen.mobile.de", url)
+
+        images = self._images_to_list(self._pick(item, "images", "galleryImages", "pictures", "photos", default=[]))
+
+        return {
+            "id": ad_id or f"mobilede-{abs(hash(title + brand + model))}",
+            "brand": brand,
+            "model": model,
+            "full_title": title or f"{brand} {model}",
+            "price": price,
+            "price_type": "fixed",
+            "mileage": mileage,
+            "power_kw": power_kw,
+            "power_hp": power_hp,
+            "first_registration": registration,
+            "first_registration_year": reg_year,
+            "transmission": str(self._pick(item, "transmission", "gearbox", default="")),
+            "fuel_type": str(self._pick(item, "fuel", "fuelType", default="")),
+            "owners_count": self._pick(item, "owners", "ownersCount", default=None),
+            "url": url,
+            "images": images,
+            "equipment": [],
+            "source": "mobile.de",
+        }
+
+    def _extract_from_json_state(self, html: str) -> List[dict]:
+        seen: set[str] = set()
+        cars: List[dict] = []
+        for state in self._extract_json_objects(html):
+            for item in self._walk_dicts(state):
+                if not self._looks_like_listing(item):
+                    continue
+                car = self._item_to_europe_dict(item)
+                if not car or car["id"] in seen:
+                    continue
+                seen.add(car["id"])
+                cars.append(car)
+                if len(cars) >= self.max_cars:
+                    return cars
+        return cars
+
+    def _extract_from_cards(self, html: str) -> List[dict]:
+        soup = BeautifulSoup(html, "html.parser")
+        cards = soup.select("[data-testid*='result-listing'], article, [class*='listing'], [class*='vehicle']")
+        cars: List[dict] = []
+        seen: set[str] = set()
+        for card in cards:
+            link = card.select_one("a[href*='details.html'], a[href*='/fahrzeuge/details']")
+            title_el = card.select_one("h2, h3, [class*='title'], [class*='headline']")
+            title = title_el.get_text(" ", strip=True) if title_el else ""
+            href = urljoin("https://suchen.mobile.de", link.get("href", "")) if link else ""
+            id_m = re.search(r"[?&]id=(\d+)", href)
+            ad_id = id_m.group(1) if id_m else ""
+            if not title or (ad_id and ad_id in seen):
+                continue
+            seen.add(ad_id or title)
+            parts = title.split(maxsplit=1)
+            brand = normalize_brand(parts[0])
+            model = parts[1] if len(parts) > 1 else ""
+            text = card.get_text(" ", strip=True)
+            img = card.select_one("img")
+            car = {
+                "id": ad_id or f"mobilede-{len(cars) + 1}",
+                "brand": brand,
+                "model": model,
+                "full_title": title,
+                "price": float(parse_int(text.split("€", 1)[0])) if "€" in text else 0.0,
+                "price_type": "fixed",
+                "mileage": parse_int(re.search(r"([\d\.\s]+)\s*km", text, re.I).group(1)) if re.search(r"([\d\.\s]+)\s*km", text, re.I) else 0,
+                "power_kw": 0,
+                "power_hp": 0,
+                "first_registration": "",
+                "first_registration_year": 0,
+                "transmission": "",
+                "fuel_type": "",
+                "owners_count": None,
+                "url": href,
+                "images": [{"url": img.get("src") or img.get("data-src"), "order": 1}] if img and (img.get("src") or img.get("data-src")) else [],
+                "equipment": [],
+                "source": "mobile.de",
+            }
+            if brand:
+                cars.append(car)
+            if len(cars) >= self.max_cars:
+                break
+        return cars
+
+    def parse(self) -> List[dict]:
+        log.info("mobile.de: начало загрузки европейских объявлений...")
+        html = self._get(self.url)
+        if not html:
+            return []
+        cars = self._extract_from_json_state(html)
+        if not cars:
+            log.info("mobile.de: JSON-состояние не найдено, пробуем HTML-карточки")
+            cars = self._extract_from_cards(html)
+        log.info(f"mobile.de: итого {len(cars)} автомобилей")
+        return cars[:self.max_cars]
+
+
 # ── Авто-синхронизация стока ──────────────────────────────────────────────────
 
 def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
@@ -1142,7 +1398,17 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
         except Exception as e:
             log.warning(f"Не удалось загрузить {stock_file}: {e}")
 
-    existing_vins = {str(c.get("vin", "")).upper() for c in existing if c.get("vin")}
+    def stock_key(item: dict) -> str:
+        vin = str(item.get("vin", "")).upper().strip()
+        if vin:
+            return f"vin:{vin}"
+        url = str(item.get("url") or item.get("description") or "").strip()
+        if url:
+            return f"url:{url}"
+        return "car:" + "|".join(str(item.get(k, "")).strip().lower()
+                                 for k in ("brand", "model", "year", "mileage", "price"))
+
+    existing_keys = {stock_key(c) for c in existing}
 
     # Парсим новые данные
     if source == "myauto":
@@ -1155,18 +1421,42 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
 
     new_cars = parser.parse()
     new_cars = dedup_by_vin(new_cars)
+    if not new_cars:
+        log.warning("Источник не вернул автомобили; существующий stock-файл оставлен без изменений")
+        return 0
 
-    # Добавляем только новые (не в стоке по VIN)
+    # Добавляем только новые записи, сохраняя формат, который читает georgia-stock.html.
     added = 0
     for car in new_cars:
-        vin_key = car.vin.upper() if car.vin else ""
-        if vin_key and vin_key in existing_vins:
-            continue  # уже есть
-        d = asdict(car)
-        d.pop("extra", None)
-        d.pop("source", None)
+        url = car.description
+        if url and not url.startswith("http"):
+            url = "https://" + url
+        d = {
+            "id": car.id,
+            "brand": car.brand,
+            "model": car.model,
+            "fullName": f"{car.brand} {car.model}".strip(),
+            "year": car.year,
+            "price": car.price,
+            "price_currency": "USD",
+            "mileage": car.mileage,
+            "engine": car.engine,
+            "fuel_type": car.fuel_type,
+            "transmission": car.transmission,
+            "color": car.color,
+            "drive": car.drive,
+            "vin": car.vin,
+            "url": url,
+            "region": "georgia",
+            "regionCode": "georgia",
+            "images": [{"url": car.photos, "order": 1}] if car.photos else [],
+            "source": car.source or source,
+        }
+        key = stock_key(d)
+        if key in existing_keys:
+            continue
         existing.append(d)
-        existing_vins.add(vin_key)
+        existing_keys.add(key)
         added += 1
 
     # Перенумеруем и сохраняем
@@ -1189,6 +1479,12 @@ def export_json(cars: List[Car], filepath: str) -> None:
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     log.info(f"JSON экспорт: {filepath} ({len(cars)} записей)")
+
+
+def export_json_records(records: List[dict], filepath: str) -> None:
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(records, f, ensure_ascii=False, indent=2)
+    log.info(f"JSON экспорт: {filepath} ({len(records)} записей)")
 
 
 def export_csv(cars: List[Car], filepath: str) -> None:
@@ -1275,7 +1571,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
-    p.add_argument("--source", choices=["csv", "json", "drom", "html", "myauto", "apge", "auto"],
+    p.add_argument("--source", choices=["csv", "json", "drom", "html", "myauto", "apge", "mobilede", "europe", "auto"],
                    default="auto", help="Источник данных (default: auto-detect)")
     p.add_argument("--input", "-i", help="Путь к CSV/JSON файлу")
     p.add_argument("--url", "-u", help="URL для парсинга (html/drom)")
@@ -1305,6 +1601,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
 def auto_detect_source(args: argparse.Namespace) -> str:
     if args.url:
+        if "mobile.de" in (args.url or ""):
+            return "mobilede"
         if "drom.ru" in (args.url or ""):
             return "drom"
         if "myauto.ge" in (args.url or ""):
@@ -1344,6 +1642,7 @@ def run(args: argparse.Namespace) -> None:
         return
 
     cars: List[Car] = []
+    europe_records: List[dict] = []
 
     if source == "csv":
         if not args.input:
@@ -1371,6 +1670,14 @@ def run(args: argparse.Namespace) -> None:
             proxy=args.proxy,
         ).parse()
 
+    elif source in ("mobilede", "europe"):
+        europe_records = MobileDeParser(
+            max_cars=args.max_cars,
+            delay=args.delay,
+            url=args.url or "",
+            proxy=args.proxy,
+        ).parse()
+
     elif source == "drom":
         cars = DromParser(region=args.region, max_cars=args.max_cars,
                           delay=args.delay, proxy=args.proxy).parse()
@@ -1380,6 +1687,19 @@ def run(args: argparse.Namespace) -> None:
             log.error("Укажите --url <адрес сайта>")
             sys.exit(1)
         cars = HtmlParser(url=args.url, delay=args.delay, proxy=args.proxy).parse()
+
+    if europe_records:
+        if args.out:
+            out = args.out if args.out.endswith(".json") else args.out + ".json"
+            export_json_records(europe_records, out)
+        else:
+            print(json.dumps(europe_records, ensure_ascii=False, indent=2))
+        print(f"\n{'='*50}")
+        print(f"  Итого автомобилей : {len(europe_records)}")
+        print(f"  Источник           : mobile.de")
+        print(f"  Файл               : {args.out or 'stdout'}")
+        print(f"{'='*50}\n")
+        return
 
     if not cars:
         log.warning("Не найдено ни одного автомобиля.")
