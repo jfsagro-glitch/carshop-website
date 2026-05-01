@@ -354,6 +354,18 @@
     });
   }
 
+  /* ── PWA service worker ─────────────────────────────────── */
+  function initServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost') return;
+
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').catch(function () {
+        // PWA is optional; the website must keep working if registration fails.
+      });
+    });
+  }
+
   /* ── Init all ────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
@@ -369,5 +381,6 @@
     initTestimonialsCarousel();
     initCounterAnimation();
     initModalFocusManagement();
+    initServiceWorker();
   });
 })();
