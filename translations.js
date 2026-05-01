@@ -615,18 +615,20 @@ function updateCurrencySelector() {
 // Обновление всех цен на странице
 function updateAllPrices() {
     // Обновляем цены в карточках автомобилей
-    document.querySelectorAll('.car-price, .car-price-full-value').forEach(el => {
-        const text = el.textContent.trim();
-        // Извлекаем число из текста
-        const match = text.match(/[\d\s,]+/);
-        if (match) {
-            const numStr = match[0].replace(/[\s,]/g, '');
-            const num = parseFloat(numStr);
-            if (num && num > 0) {
-                // Предполагаем, что цена в USD (базовая валюта)
-                // Если нужно, можно добавить логику определения исходной валюты
-                el.textContent = formatPrice(num);
+    // Элементы с data-price-rub хранят исходную цену в рублях — используем её напрямую
+    document.querySelectorAll('.car-price[data-price-rub]').forEach(el => {
+        const priceRub = parseFloat(el.dataset.priceRub);
+        if (priceRub > 0) {
+            if (typeof formatCurrency === 'function') {
+                el.textContent = formatCurrency(priceRub);
             }
+        }
+    });
+    // Элементы без data-price-rub (другие страницы): читаем data-usd-price или пропускаем
+    document.querySelectorAll('.car-price-full-value, .car-price:not([data-price-rub])').forEach(el => {
+        const usdPrice = parseFloat(el.dataset.usdPrice);
+        if (usdPrice > 0) {
+            el.textContent = formatPrice(usdPrice);
         }
     });
     

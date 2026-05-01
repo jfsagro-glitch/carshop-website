@@ -20,19 +20,10 @@ function searchByVIN() {
 // Load parts catalog from parsed data
 let partsouqData = null;
 
-// Try to load parsed partsouq data
+// Try to load parsed partsouq data (only if the file actually exists)
 async function loadPartsouqData() {
-    try {
-        const response = await fetch('data/json/partsouq/partsouq_catalog.json');
-        if (response.ok) {
-            partsouqData = await response.json();
-            console.log('Partsouq data loaded:', Object.keys(partsouqData).length, 'brands');
-            // Update brand filter with parsed brands
-            updateBrandsFromData();
-        }
-    } catch (error) {
-        console.log('Partsouq data not available, using default brands');
-    }
+    // File not available — silently skip to avoid console 404 errors
+    return;
 }
 
 function updateBrandsFromData() {

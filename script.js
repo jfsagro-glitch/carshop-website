@@ -97,17 +97,10 @@ function updateAllDisplayedPrices() {
     if (!usdToRubRate) return; // Курс еще не загружен
     
     // Обновляем цены в карточках автомобилей
-    document.querySelectorAll('.car-price').forEach(el => {
-        const text = el.textContent.trim();
-        // Извлекаем число из текста (может быть в рублях)
-        const match = text.match(/[\d\s,]+/);
-        if (match) {
-            const numStr = match[0].replace(/[\s,]/g, '');
-            const num = parseInt(numStr);
-            if (num && isPriceInRubles(num)) {
-                const usdValue = convertRubToUsd(num);
-                el.textContent = formatCurrency(usdValue);
-            }
+    document.querySelectorAll('.car-price[data-price-rub]').forEach(el => {
+        const priceRub = parseFloat(el.dataset.priceRub);
+        if (priceRub > 0) {
+            el.textContent = formatCurrency(priceRub);
         }
     });
     
@@ -2712,7 +2705,7 @@ function createCarCard(car) {
                 </div>
                 <div><strong>Дата выпуска:</strong> ${car.date}</div>
             </div>
-            <div class="car-price">${formatCurrency(car.price)}</div>
+            <div class="car-price" data-price-rub="${car.price}">${formatCurrency(car.price)}</div>
             <div class="price-note">
                 <i class="fas fa-check-circle"></i> Включает растаможку и доставку
             </div>
