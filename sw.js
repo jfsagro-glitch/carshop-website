@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'expo-mir-pwa-v2';
+const CACHE_VERSION = 'expo-mir-pwa-v3';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -67,13 +67,14 @@ self.addEventListener('fetch', event => {
 
   if (url.pathname.endsWith('.json')) {
     event.respondWith(
-      fetch(request)
+      fetch(request, { cache: 'no-store' })
         .then(response => {
+          const cacheKey = new Request(url.pathname);
           const copy = response.clone();
-          caches.open(CACHE_VERSION).then(cache => cache.put(request, copy));
+          caches.open(CACHE_VERSION).then(cache => cache.put(cacheKey, copy));
           return response;
         })
-        .catch(() => caches.match(request))
+        .catch(() => caches.match(new Request(url.pathname)))
     );
     return;
   }

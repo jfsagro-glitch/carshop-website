@@ -845,7 +845,7 @@
         // Загрузка данных
         async function loadCarsData() {
             try {
-                const response = await fetch('./cars_europe_new.json');
+                const response = await fetch('./cars_europe_new.json?v=' + Date.now(), { cache: 'no-store' });
                 if (response.ok) {
                     carsData = await response.json();
                     filteredCars = [...carsData];

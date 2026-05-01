@@ -876,7 +876,7 @@
             try {
                 // Загружаем данные
                 const carsResult = await Promise.allSettled([
-                    fetch('./cars_georgia_stock.json')
+                    fetch('./cars_georgia_stock.json?v=' + Date.now(), { cache: 'no-store' })
                 ]);
                 
                 if (carsResult[0].status === 'fulfilled' && carsResult[0].value.ok) {

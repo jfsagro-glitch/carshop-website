@@ -650,7 +650,7 @@
     (function() {
         // Live stock counts from auto-synced JSONs
         function updateStockCount(url, elId, suffix) {
-            fetch(url).then(function(r) { return r.ok ? r.json() : null; }).then(function(d) {
+            fetch(url + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r) { return r.ok ? r.json() : null; }).then(function(d) {
                 if (!d || !d.length) return;
                 var el = document.getElementById(elId);
                 if (el) el.textContent = d.length + suffix;
@@ -1065,7 +1065,7 @@
         // Загрузка данных
         async function loadGeorgiaCarsData() {
             try {
-                const response = await fetch('./cars_georgia_stock.json');
+                const response = await fetch('./cars_georgia_stock.json?v=' + Date.now(), { cache: 'no-store' });
                 if (response.ok) {
                     georgiaCarsData = await response.json();
                     georgiaFilteredCars = [...georgiaCarsData];
