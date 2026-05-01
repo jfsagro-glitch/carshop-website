@@ -260,19 +260,40 @@
             border: 1px solid rgba(255,255,255,0.15);
         }
 
+        .car-year-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(212,175,55,0.85);
+            color: #0b1220;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
         .car-specs {
-            display: flex;
-            flex-direction: column;
-            gap: 0.375rem;
-            font-size: 0.875rem;
-            color: #6b7280;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem 0.5rem;
+            font-size: 0.8rem;
+            color: #9ca3af;
             margin-bottom: 1rem;
         }
 
         .car-spec-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .car-spec-item i {
+            color: #d4af37;
+            width: 14px;
+            flex-shrink: 0;
         }
 
         .btn-view-images {
@@ -1049,25 +1070,40 @@
                 
                 // Создаем безопасный placeholder для ошибки
                 const placeholderSvg = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27200%27%3E%3Crect fill=%27%23ddd%27 width=%27300%27 height=%27200%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27%3E%D0%9D%D0%B5%D1%82 %D1%84%D0%BE%D1%82%D0%BE%3C/text%3E%3C/svg%3E';
-                
+
+                const fuelIcon = {
+                    'Бензин': 'fa-gas-pump', 'Дизель': 'fa-oil-can',
+                    'Электро': 'fa-bolt', 'Гибрид': 'fa-leaf',
+                    'Плагин-гибрид': 'fa-plug', 'Газ/Бензин': 'fa-fire',
+                    'Водород': 'fa-atom'
+                };
+                const transIcon = {
+                    'Автомат': 'fa-robot', 'Механика': 'fa-sliders-h',
+                    'Робот': 'fa-cog', 'Вариатор': 'fa-circle-notch'
+                };
+
                 return `
                     <div class="car-card" data-index="${index}">
                         <div class="car-image">
                             ${finalImageUrl ? `<img src="${finalImageUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" alt="${(car.brand + ' ' + car.model).replace(/"/g, '&quot;').replace(/'/g, '&#39;')}" loading="lazy" onerror="this.onerror=null;this.src='${placeholderSvg}'">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;">Нет фото</div>'}
                             ${imageCount > 0 ? `<div class="image-count">${imageCount} фото</div>` : ''}
+                            ${car.first_registration_year ? `<div class="car-year-badge">${car.first_registration_year}</div>` : ''}
                         </div>
                         <div class="car-info">
                             <div class="car-title">${car.brand} ${car.model}</div>
                             <div class="car-price">${price}</div>
                             <div class="car-specs">
-                                ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
-                                ${car.power_kw ? `<div class="car-spec-item">⚡ ${car.power_kw} kW (${car.power_hp || ''} PS)</div>` : ''}
-                                ${car.first_registration ? `<div class="car-spec-item">📅 ${car.first_registration}</div>` : ''}
+                                ${car.mileage ? `<div class="car-spec-item"><i class="fas fa-road"></i> ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
+                                ${car.power_kw ? `<div class="car-spec-item"><i class="fas fa-tachometer-alt"></i> ${car.power_kw} kW${car.power_hp ? ' / ' + car.power_hp + ' л.с.' : ''}</div>` : ''}
+                                ${car.fuel_type ? `<div class="car-spec-item"><i class="fas ${fuelIcon[car.fuel_type] || 'fa-gas-pump'}"></i> ${car.fuel_type}</div>` : ''}
+                                ${car.transmission ? `<div class="car-spec-item"><i class="fas ${transIcon[car.transmission] || 'fa-cog'}"></i> ${car.transmission}</div>` : ''}
+                                ${car.first_registration ? `<div class="car-spec-item"><i class="fas fa-calendar-alt"></i> ${car.first_registration}</div>` : ''}
                             </div>
                             <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
                                 ${imageCount > 0 ? `<button class="btn-secondary" onclick="openImageModal(${index})" style="flex: 1;">
                                     <i class="fas fa-images"></i> Фото
                                 </button>` : ''}
+                                ${car.url ? `<a class="btn-secondary" href="${car.url.replace(/"/g, '&quot;')}" target="_blank" rel="noopener" style="flex:1;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.4rem;"><i class="fas fa-external-link-alt"></i> mobile.de</a>` : ''}
                                 <button class="btn-primary" onclick="addToCartEurope(${index})" style="flex: 1;">
                                     <i class="fas fa-shopping-cart"></i> Заказать
                                 </button>

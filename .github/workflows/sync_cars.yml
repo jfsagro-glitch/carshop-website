@@ -28,27 +28,29 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
-      - name: Sync from myauto.ge
+      - name: Sync Georgia stock from myauto.ge
+        continue-on-error: true
         run: |
           python car_parser.py \
             --source myauto \
             --max 200 \
             --min-age 3 \
-            --max-age 5 \
-            --max-power-hp 160 \
+            --max-age 6 \
+            --max-power-hp 165 \
             --delay 1.5 \
             --sync-stock \
             --stock-file cars_georgia_stock.json \
             --quiet
 
-      - name: Sync from mobile.de
+      - name: Sync Europe catalog from mobile.de
+        continue-on-error: true
         run: |
           python car_parser.py \
             --source mobilede \
-            --max 120 \
+            --max 150 \
             --min-age 3 \
-            --max-age 5 \
-            --max-power-hp 160 \
+            --max-age 6 \
+            --max-power-hp 165 \
             --min-records 10 \
             --delay 2 \
             --out cars_europe_new.json \

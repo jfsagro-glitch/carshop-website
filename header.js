@@ -11,14 +11,15 @@
   function setActiveNav() {
     var page = location.pathname.split('/').pop() || 'index.html';
     var map = {
-      'index.html':         'nav_georgia',
-      '':                   'nav_georgia',
-      'georgia-stock.html': 'nav_georgia',
-      'usa-orders.html':    'nav_usa',
-      'korea-orders.html':  'nav_korea',
-      'china-orders.html':  'nav_china',
-      'europe-orders.html': 'nav_europe',
-      'parts-orders.html':  null,
+      'index.html':           'nav_georgia',
+      '':                     'nav_georgia',
+      'georgia-catalog.html': 'nav_georgia',
+      'georgia-stock.html':   'nav_georgia',
+      'usa-orders.html':      'nav_usa',
+      'korea-orders.html':    'nav_korea',
+      'china-orders.html':    'nav_china',
+      'europe-orders.html':   'nav_europe',
+      'parts-orders.html':    null,
     };
     var i18nKey = map[page];
     document.querySelectorAll('.nav a').forEach(function (a) {

@@ -138,35 +138,50 @@ FUEL_ALIASES: Dict[str, str] = {
     "petrol": "Бензин",
     "gasoline": "Бензин",
     "gas": "Бензин",
+    "benzin": "Бензин",
+    "бензин вспрыск": "Бензин",
+    "бензин/впрыск": "Бензин",
     "дизель": "Дизель",
     "diesel": "Дизель",
     "электро": "Электро",
     "electric": "Электро",
+    "elektro": "Электро",
     "ev": "Электро",
     "гибрид": "Гибрид",
     "hybrid": "Гибрид",
     "hev": "Гибрид",
+    "mild hybrid": "Гибрид",
+    "mild-hybrid": "Гибрид",
     "phev": "Плагин-гибрид",
+    "plug-in": "Плагин-гибрид",
     "плагин": "Плагин-гибрид",
     "газ": "Газ/Бензин",
     "lpg": "Газ/Бензин",
+    "erdgas": "Газ/Бензин",
+    "cng": "Газ/Бензин",
+    "wasserstoff": "Водород",
+    "hydrogen": "Водород",
 }
 
 TRANS_ALIASES: Dict[str, str] = {
     "автомат": "Автомат",
     "акпп": "Автомат",
     "automatic": "Автомат",
+    "automatik": "Автомат",
     "at": "Автомат",
     "механика": "Механика",
     "мкпп": "Механика",
     "manual": "Механика",
+    "schaltgetriebe": "Механика",
     "mt": "Механика",
     "робот": "Робот",
     "amt": "Робот",
     "dct": "Робот",
     "dsg": "Робот",
+    "doppelkupplungsgetriebe": "Робот",
     "вариатор": "Вариатор",
     "cvt": "Вариатор",
+    "stufenloses": "Вариатор",
 }
 
 # ── Dataclass автомобиля ─────────────────────────────────────────────────────
@@ -1258,14 +1273,16 @@ class MobileDeParser:
             "vc": "Car",
             "isSearchRequest": "true",
             "dam": "false",
-            "fr": "2021:",
-            "ml": ":65000",
+            "fr": f"{self.min_year or 2019}:",
+            "ml": ":80000",
             "od": "up",
             "sb": "rel",
         }
         if self.min_year or self.max_year:
-            params["fr"] = f"{self.min_year or ''}:{self.max_year or ''}"
+            yr_from = self.min_year or (datetime.now().year - 7)
+            params["fr"] = f"{yr_from}:{self.max_year or ''}"
         if self.max_power_hp:
+            # mobile.de uses kW
             params["pw"] = f":{round(self.max_power_hp / 1.35962)}"
         return f"{self.SEARCH_URL}?{urlencode(params)}"
 
@@ -1347,6 +1364,33 @@ class MobileDeParser:
                 images.append({"url": url, "order": index})
         return images
 
+    @staticmethod
+    def _extract_from_equipment(equipment: list) -> dict:
+        """Извлекает fuel_type/transmission из немецких текстов equipment[]"""
+        result = {"fuel_type": "", "transmission": ""}
+        full_text = " ".join(str(e) for e in equipment).lower()
+        # Топливо
+        fuel_map = [
+            ("benzin", "Бензин"), ("diesel", "Дизель"),
+            ("elektro", "Электро"), ("hybrid", "Гибрид"),
+            ("plug-in", "Плагин-гибрид"), ("erdgas", "Газ/Бензин"),
+            ("wasserstoff", "Водород"),
+        ]
+        for key, val in fuel_map:
+            if key in full_text:
+                result["fuel_type"] = val
+                break
+        # Трансмиссия
+        trans_map = [
+            ("schaltgetriebe", "Механика"), ("automatik", "Автомат"),
+            ("doppelkupplungs", "Робот"), ("stufenlos", "Вариатор"),
+        ]
+        for key, val in trans_map:
+            if key in full_text:
+                result["transmission"] = val
+                break
+        return result
+
     def _item_to_europe_dict(self, item: dict) -> Optional[dict]:
         ad_id = str(self._pick(item, "id", "adId", "ad_id", "mobileAdId", default="")).strip()
         brand = normalize_brand(str(self._pick(item, "brand", "make", "manufacturer", "makeName", default="")))
@@ -1381,6 +1425,17 @@ class MobileDeParser:
 
         images = self._images_to_list(self._pick(item, "images", "galleryImages", "pictures", "photos", default=[]))
 
+        # Extract fuel/transmission from equipment if not directly available
+        equipment_raw = self._pick(item, "equipment", "features", "ausstattung", default=[])
+        if isinstance(equipment_raw, str):
+            equipment_raw = [equipment_raw]
+        equipment_list = equipment_raw if isinstance(equipment_raw, list) else []
+        eq_info = self._extract_from_equipment(equipment_list)
+        raw_trans = str(self._pick(item, "transmission", "gearbox", default=""))
+        raw_fuel = str(self._pick(item, "fuel", "fuelType", default=""))
+        resolved_trans = normalize_transmission(raw_trans) if raw_trans else eq_info["transmission"]
+        resolved_fuel = normalize_fuel(raw_fuel) if raw_fuel else eq_info["fuel_type"]
+
         return {
             "id": ad_id or f"mobilede-{abs(hash(title + brand + model))}",
             "brand": brand,
@@ -1393,12 +1448,12 @@ class MobileDeParser:
             "power_hp": power_hp,
             "first_registration": registration,
             "first_registration_year": reg_year,
-            "transmission": str(self._pick(item, "transmission", "gearbox", default="")),
-            "fuel_type": str(self._pick(item, "fuel", "fuelType", default="")),
+            "transmission": resolved_trans,
+            "fuel_type": resolved_fuel,
             "owners_count": self._pick(item, "owners", "ownersCount", default=None),
             "url": url,
             "images": images,
-            "equipment": [],
+            "equipment": equipment_list[:20],
             "source": "mobile.de",
         }
 

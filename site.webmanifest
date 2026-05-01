@@ -1,13 +1,42 @@
 {
   "name": "EXPO MIR",
   "short_name": "EXPO MIR",
+  "description": "Каталог автомобилей EXPO MIR: Грузия, Европа, США, Корея, Китай и запчасти.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["business", "shopping", "auto"],
+  "lang": "ru",
+  "dir": "ltr",
   "icons": [
-    { "src": "images/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "images/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "images/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "images/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ],
   "theme_color": "#0b0f17",
   "background_color": "#0b0f17",
-  "display": "standalone"
+  "shortcuts": [
+    {
+      "name": "Грузия",
+      "short_name": "Грузия",
+      "url": "/georgia-stock.html",
+      "icons": [{ "src": "images/android-chrome-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Европа",
+      "short_name": "Европа",
+      "url": "/europe-orders.html",
+      "icons": [{ "src": "images/android-chrome-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Запчасти",
+      "short_name": "Запчасти",
+      "url": "/parts-orders.html",
+      "icons": [{ "src": "images/android-chrome-192x192.png", "sizes": "192x192" }]
+    }
+  ]
 }
 
 
