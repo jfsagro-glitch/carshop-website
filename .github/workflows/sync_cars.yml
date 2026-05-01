@@ -55,7 +55,6 @@ jobs:
             --min-records 10 \
             --delay 2 \
             --out cars_europe_new.json \
-            --no-fallback-existing \
             --fail-empty \
             --quiet
 

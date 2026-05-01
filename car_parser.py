@@ -1810,8 +1810,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
                    help="Авто-обновить cars_georgia_stock.json из выбранного источника")
     p.add_argument("--validate-catalogs", action="store_true",
                    help="Проверить публичные JSON-каталоги сайта и выйти")
-    p.add_argument("--no-fallback-existing", action="store_true",
-                   help="Не использовать текущий --out JSON как fallback при недоступном web-источнике")
+    p.add_argument("--fallback-existing", action="store_true",
+                   help="Использовать текущий --out JSON как fallback при недоступном web-источнике")
     p.add_argument("--fail-empty", action="store_true",
                    help="Завершаться с ошибкой, если источник не вернул автомобилей")
     p.add_argument("--stock-file", default="cars_georgia_stock.json",
@@ -1966,7 +1966,7 @@ def run(args: argparse.Namespace) -> None:
         print(f"{'='*50}\n")
         return
 
-    if source in ("mobilede", "europe") and args.out and not args.no_fallback_existing:
+    if source in ("mobilede", "europe") and args.out and args.fallback_existing:
         fallback_records = load_filtered_records(args.out, min_year, max_year, args.max_power_hp)
         if fallback_records:
             if len(fallback_records) < args.min_records:
