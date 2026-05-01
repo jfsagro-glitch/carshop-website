@@ -33,6 +33,9 @@ jobs:
           python car_parser.py \
             --source myauto \
             --max 200 \
+            --min-age 3 \
+            --max-age 5 \
+            --max-power-hp 160 \
             --delay 1.5 \
             --sync-stock \
             --stock-file cars_georgia_stock.json \
@@ -43,7 +46,10 @@ jobs:
           python car_parser.py \
             --source mobilede \
             --max 120 \
-            --min-records 50 \
+            --min-age 3 \
+            --max-age 5 \
+            --max-power-hp 160 \
+            --min-records 10 \
             --delay 2 \
             --out cars_europe_new.json \
             --quiet

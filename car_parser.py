@@ -38,6 +38,7 @@ import re
 import sys
 import time
 import random
+from datetime import datetime
 from dataclasses import dataclass, field, asdict
 from typing import Optional, List, Dict, Any
 from pathlib import Path
@@ -261,6 +262,71 @@ def parse_float(value: Any, default: float = 0.0) -> float:
         return float(cleaned)
     except ValueError:
         return default
+
+
+def parse_power_hp(value: Any) -> int:
+    """Достаёт мощность в л.с. из числа или строки вида '147 л.с.' / '100 kW'."""
+    if value in (None, ""):
+        return 0
+    text = str(value).lower()
+    num = parse_float(text)
+    if not num:
+        return 0
+    if "kw" in text or "квт" in text:
+        return round(num * 1.35962)
+    return round(num)
+
+
+def year_range_from_age(min_age: int = 0, max_age: int = 0, current_year: Optional[int] = None) -> tuple[int, int]:
+    if not min_age and not max_age:
+        return 0, 0
+    year = current_year or datetime.now().year
+    newest = year - min_age if min_age else year + 1
+    oldest = year - max_age if max_age else 0
+    return oldest, newest
+
+
+def record_year(record: dict) -> int:
+    return parse_int(record.get("year") or record.get("first_registration_year") or record.get("prod_year") or 0)
+
+
+def record_power_hp(record: dict) -> int:
+    hp = parse_int(record.get("power_hp") or record.get("hp") or record.get("ps") or 0)
+    if hp:
+        return hp
+    kw = parse_int(record.get("power_kw") or record.get("kw") or 0)
+    if kw:
+        return round(kw * 1.35962)
+    return parse_power_hp(record.get("power") or record.get("мощность"))
+
+
+def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0) -> List[dict]:
+    result = []
+    for record in records:
+        year = record_year(record)
+        if min_year and year and year < min_year:
+            continue
+        if max_year and year and year > max_year:
+            continue
+        hp = record_power_hp(record)
+        if max_power_hp and hp and hp > max_power_hp:
+            continue
+        result.append(record)
+    return result
+
+
+def filter_cars(cars: List["Car"], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0) -> List["Car"]:
+    result = []
+    for car in cars:
+        if min_year and car.year and car.year < min_year:
+            continue
+        if max_year and car.year and car.year > max_year:
+            continue
+        hp = parse_power_hp(car.power)
+        if max_power_hp and hp and hp > max_power_hp:
+            continue
+        result.append(car)
+    return result
 
 
 def validate_vin(vin: str) -> bool:
@@ -794,6 +860,7 @@ class MyAutoGeParser:
 
     def __init__(self, max_cars: int = 100, delay: float = 1.5,
                  brand: str = "", min_year: int = 0, max_price_usd: int = 0,
+                 max_year: int = 0, max_power_hp: int = 0,
                  proxy: Optional[str] = None):
         if not REQUESTS_AVAILABLE:
             raise RuntimeError("Установите requests: pip install requests")
@@ -801,6 +868,8 @@ class MyAutoGeParser:
         self.delay     = delay
         self.brand     = brand        # фильтр по марке (например "Toyota")
         self.min_year  = min_year     # фильтр по году
+        self.max_year  = max_year
+        self.max_power_hp = max_power_hp
         self.max_price = max_price_usd
         self.proxy     = proxy
 
@@ -849,6 +918,7 @@ class MyAutoGeParser:
             car.transmission = self.TRANS_MAP.get(item.get("gear_type_id", 2), "Автомат")
             car.drive        = self.DRIVE_MAP.get(item.get("drive_type_id", 0), "")
             car.color        = str(item.get("color", ""))
+            car.power        = str(item.get("power") or item.get("engine_power") or item.get("horse_power") or "")
 
             # VIN (не всегда доступен в списке)
             car.vin = str(item.get("vin") or "").upper()
@@ -885,6 +955,8 @@ class MyAutoGeParser:
             }
             if self.min_year:
                 params["YearFrom"] = self.min_year
+            if self.max_year:
+                params["YearTo"] = self.max_year
             if self.max_price:
                 params["PriceTo"] = self.max_price
 
@@ -903,6 +975,11 @@ class MyAutoGeParser:
                 if car and car.brand:
                     # Фильтр по марке
                     if self.brand and self.brand.lower() not in car.brand.lower():
+                        continue
+                    if self.max_year and car.year and car.year > self.max_year:
+                        continue
+                    hp = parse_power_hp(car.power)
+                    if self.max_power_hp and hp and hp > self.max_power_hp:
                         continue
                     cars.append(car)
                 if len(cars) >= self.max_cars:
@@ -1139,13 +1216,17 @@ class MobileDeParser:
     ]
 
     def __init__(self, max_cars: int = 100, delay: float = 2.0,
-                 url: str = "", proxy: Optional[str] = None):
+                 url: str = "", min_year: int = 0, max_year: int = 0,
+                 max_power_hp: int = 0, proxy: Optional[str] = None):
         if not REQUESTS_AVAILABLE:
             raise RuntimeError("Установите requests: pip install requests")
         if not BS4_AVAILABLE:
             raise RuntimeError("Установите beautifulsoup4: pip install beautifulsoup4")
         self.max_cars = max_cars
         self.delay = delay
+        self.min_year = min_year
+        self.max_year = max_year
+        self.max_power_hp = max_power_hp
         self.url = url or self._build_default_url()
         self.proxy = proxy
         self._session = requests.Session()
@@ -1167,6 +1248,10 @@ class MobileDeParser:
             "od": "up",
             "sb": "rel",
         }
+        if self.min_year or self.max_year:
+            params["fr"] = f"{self.min_year or ''}:{self.max_year or ''}"
+        if self.max_power_hp:
+            params["pw"] = f":{round(self.max_power_hp / 1.35962)}"
         return f"{self.SEARCH_URL}?{urlencode(params)}"
 
     def _get(self, url: str) -> Optional[str]:
@@ -1373,6 +1458,7 @@ class MobileDeParser:
         if not cars:
             log.info("mobile.de: JSON-состояние не найдено, пробуем HTML-карточки")
             cars = self._extract_from_cards(html)
+        cars = filter_records(cars, self.min_year, self.max_year, self.max_power_hp)
         log.info(f"mobile.de: итого {len(cars)} автомобилей")
         return cars[:self.max_cars]
 
@@ -1381,7 +1467,8 @@ class MobileDeParser:
 
 def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
                        stock_file: str = "cars_georgia_stock.json",
-                       delay: float = 1.5, proxy: Optional[str] = None) -> int:
+                       delay: float = 1.5, proxy: Optional[str] = None,
+                       min_year: int = 0, max_year: int = 0, max_power_hp: int = 0) -> int:
     """
     Загружает актуальные объявления из myauto.ge или ap.ge,
     объединяет с текущим стоком и сохраняет в stock_file.
@@ -1413,7 +1500,8 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
 
     # Парсим новые данные
     if source == "myauto":
-        parser = MyAutoGeParser(max_cars=max_cars, delay=delay, proxy=proxy)
+        parser = MyAutoGeParser(max_cars=max_cars, delay=delay, min_year=min_year,
+                                max_year=max_year, max_power_hp=max_power_hp, proxy=proxy)
     elif source in ("apge", "ap.ge"):
         parser = ApGeParser(max_cars=max_cars, delay=delay, proxy=proxy)
     else:
@@ -1422,6 +1510,7 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
 
     new_cars = parser.parse()
     new_cars = dedup_by_vin(new_cars)
+    new_cars = filter_cars(new_cars, min_year, max_year, max_power_hp)
     if not new_cars:
         log.warning("Источник не вернул автомобили; существующий stock-файл оставлен без изменений")
         return 0
@@ -1518,7 +1607,7 @@ def validate_catalog_file(filepath: str, required: List[str], min_records: int =
 
 
 def validate_public_catalogs() -> None:
-    validate_catalog_file("cars_europe_new.json", ["id", "brand", "model", "price", "images"], min_records=50)
+    validate_catalog_file("cars_europe_new.json", ["id", "brand", "model", "price", "images"], min_records=10)
     validate_catalog_file("cars_georgia_stock.json", ["id", "brand", "model", "price", "url"], min_records=20)
 
 
@@ -1616,6 +1705,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
                    help="Максимум авто (для web-парсеров)")
     p.add_argument("--min-records", type=int, default=1,
                    help="Минимум записей для сохранения нового JSON (защита от битого парсинга)")
+    p.add_argument("--min-year", type=int, default=0, help="Минимальный год выпуска/регистрации")
+    p.add_argument("--max-year", type=int, default=0, help="Максимальный год выпуска/регистрации")
+    p.add_argument("--min-age", type=int, default=0, help="Минимальный возраст авто в годах")
+    p.add_argument("--max-age", type=int, default=0, help="Максимальный возраст авто в годах")
+    p.add_argument("--max-power-hp", type=int, default=0, help="Максимальная мощность в л.с.")
     p.add_argument("--delay", type=float, default=2.5,
                    help="Задержка между запросами в секундах")
     p.add_argument("--proxy", help="HTTP/SOCKS прокси (http://user:pass@host:port)")
@@ -1671,6 +1765,10 @@ def run(args: argparse.Namespace) -> None:
         source = auto_detect_source(args)
         log.info(f"Авто-определение источника: {source}")
 
+    age_min_year, age_max_year = year_range_from_age(args.min_age, args.max_age)
+    min_year = args.min_year or age_min_year
+    max_year = args.max_year or age_max_year
+
     # Синхронизация стока (быстрый путь)
     if getattr(args, "sync_stock", False):
         sync_src = source if source in ("myauto", "apge") else "myauto"
@@ -1680,6 +1778,9 @@ def run(args: argparse.Namespace) -> None:
             stock_file=args.stock_file,
             delay=args.delay,
             proxy=args.proxy,
+            min_year=min_year,
+            max_year=max_year,
+            max_power_hp=args.max_power_hp,
         )
         log.info(f"Синхронизация завершена: +{added} новых авто")
         return
@@ -1703,6 +1804,9 @@ def run(args: argparse.Namespace) -> None:
         cars = MyAutoGeParser(
             max_cars=args.max_cars,
             delay=args.delay,
+            min_year=min_year,
+            max_year=max_year,
+            max_power_hp=args.max_power_hp,
             proxy=args.proxy,
         ).parse()
 
@@ -1718,6 +1822,9 @@ def run(args: argparse.Namespace) -> None:
             max_cars=args.max_cars,
             delay=args.delay,
             url=args.url or "",
+            min_year=min_year,
+            max_year=max_year,
+            max_power_hp=args.max_power_hp,
             proxy=args.proxy,
         ).parse()
 
@@ -1730,6 +1837,9 @@ def run(args: argparse.Namespace) -> None:
             log.error("Укажите --url <адрес сайта>")
             sys.exit(1)
         cars = HtmlParser(url=args.url, delay=args.delay, proxy=args.proxy).parse()
+
+    if cars:
+        cars = filter_cars(cars, min_year, max_year, args.max_power_hp)
 
     if europe_records:
         if len(europe_records) < args.min_records:
