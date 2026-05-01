@@ -2759,6 +2759,131 @@ body.premium .header--scrolled {
 ::selection { background: rgba(212,175,55,0.35); color: #fff; }
 ::-moz-selection { background: rgba(212,175,55,0.35); color: #fff; }
 
+/* ═══════════════════════════════════════════════════════════
+   EXPO MIR — Wave 12: Accessibility, UX, Performance
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Skip-to-content link ────────────────────────────────── */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 10000;
+    background: #d4af37;
+    color: #0a0e1a;
+    padding: 0.55rem 1.4rem;
+    border-radius: 0 0 10px 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: top 0.18s cubic-bezier(0.4,0,0.2,1);
+}
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid #0a0e1a;
+    outline-offset: 2px;
+}
+
+/* ── Focus-visible keyboard navigation rings ─────────────── */
+:focus-visible {
+    outline: 2px solid #d4af37 !important;
+    outline-offset: 3px !important;
+    border-radius: 3px;
+}
+/* Hide default focus ring for mouse users */
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ── Scroll margin for anchored sections (sticky header) ─── */
+#catalog,
+#contact,
+section[id] {
+    scroll-margin-top: 92px;
+}
+
+/* ── Catalog empty state ─────────────────────────────────── */
+.catalog-empty-state {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem;
+    color: var(--text, #f1f5f9);
+    animation: fadeInUp 0.4s ease both;
+}
+.catalog-empty-state__icon {
+    font-size: 3.5rem;
+    color: var(--accent, #d4af37);
+    margin-bottom: 1.25rem;
+    opacity: 0.65;
+}
+.catalog-empty-state__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+.catalog-empty-state__text {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    max-width: 44ch;
+    line-height: 1.6;
+}
+.catalog-empty-state__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.catalog-empty-state__btn {
+    min-width: 180px;
+}
+
+/* ── Modal ARIA: subtle focus indicator inside modals ────── */
+.modal:focus-within .modal-content {
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 0 2px rgba(212,175,55,0.18);
+}
+
+/* ── Improved modal backdrop (darker) ───────────────────── */
+.modal {
+    background: rgba(0,0,0,0.72) !important;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+}
+
+/* ── Fade-in animation (reusable) ───────────────────────── */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── cart-empty better styling ───────────────────────────── */
+.cart-empty {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: #94a3b8;
+    font-size: 1rem;
+}
+.cart-empty::before {
+    content: '\f07a';
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.4;
+    color: #d4af37;
+}
+
 /* Car card hover lift (enhance) */
 .car-card {
     transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);

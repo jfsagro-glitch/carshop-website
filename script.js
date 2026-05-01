@@ -1586,14 +1586,14 @@ const chinaCars = [
         "priceFrom": null,
         "specs": [
             "Тип двигателя: Бензин",
-            "Мощность, л.с.: 1 10",
+            "Мощность, л.с.: 110",
             "Макс. скорость, км/ч: 182",
             "Привод: Передний",
             "Объем двигателя: 1498",
             "Трансмиссия: Автомат"
         ],
         "engineType": "Бензин",
-        "power": "1 10 л.с.",
+        "power": "110 л.с.",
         "maxSpeed": "182 км/ч",
         "drive": "Передний",
         "engineVolume": "1498",
@@ -2633,6 +2633,32 @@ function loadCars() {
 
     // Apply list/grid class immediately
     carsGrid.classList.toggle('cars-grid--list', state.viewMode === 'list');
+
+    // Empty state when no results match filters
+    if (sorted.length === 0) {
+        carsGrid.innerHTML = `
+            <div class="catalog-empty-state">
+                <div class="catalog-empty-state__icon"><i class="fas fa-car-side"></i></div>
+                <h3 class="catalog-empty-state__title">Автомобилей не найдено</h3>
+                <p class="catalog-empty-state__text">По вашему запросу ничего не нашли. Измените параметры поиска или сбросьте фильтры — мы подберём любой автомобиль по заявке.</p>
+                <div class="catalog-empty-state__actions">
+                    <button class="btn-primary catalog-empty-state__btn" id="emptyStateReset">
+                        <i class="fas fa-redo"></i> Сбросить фильтры
+                    </button>
+                    <button class="btn-secondary catalog-empty-state__btn" onclick="openRequestModal()">
+                        <i class="fas fa-search"></i> Оставить заявку
+                    </button>
+                </div>
+            </div>`;
+        const resetBtn = carsGrid.querySelector('#emptyStateReset');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+                const resetFiltersBtn = document.getElementById('resetFilters');
+                if (resetFiltersBtn) resetFiltersBtn.click();
+            });
+        }
+        return;
+    }
 
     // Show skeleton placeholders while rendering
     showSkeletonCards(carsGrid, Math.min(sorted.length, 8));

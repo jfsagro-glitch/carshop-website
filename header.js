@@ -295,6 +295,64 @@
     counters.forEach(function (el) { io.observe(el); });
   }
 
+  /* ── Modal focus management ──────────────────────────────── */
+  function initModalFocusManagement() {
+    if (!('MutationObserver' in window)) return;
+    var FOCUSABLE = 'input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
+
+    document.querySelectorAll('.modal').forEach(function (modal) {
+      var prevFocused = null;
+      var trapHandler = null;
+
+      new MutationObserver(function () {
+        var visible = modal.style.display === 'block';
+
+        if (visible && !modal._focusMgr) {
+          modal._focusMgr = true;
+          prevFocused = document.activeElement;
+
+          setTimeout(function () {
+            var focusables = Array.prototype.slice.call(modal.querySelectorAll(FOCUSABLE));
+            if (!focusables.length) return;
+
+            var first = focusables[0];
+            var last  = focusables[focusables.length - 1];
+
+            // Set initial focus on first field (skip close button if possible)
+            var preferredFirst = modal.querySelector('input:not([disabled]):not([type="hidden"]), select:not([disabled])') || first;
+            preferredFirst.focus();
+
+            // Tab / Shift+Tab trap
+            trapHandler = function (e) {
+              if (e.key !== 'Tab') return;
+              // Refresh focusables in case DOM changed (e.g. skeleton replaced)
+              var els = Array.prototype.slice.call(modal.querySelectorAll(FOCUSABLE));
+              if (!els.length) return;
+              var f = els[0], l = els[els.length - 1];
+              if (e.shiftKey) {
+                if (document.activeElement === f) { e.preventDefault(); l.focus(); }
+              } else {
+                if (document.activeElement === l) { e.preventDefault(); f.focus(); }
+              }
+            };
+            modal.addEventListener('keydown', trapHandler);
+          }, 60);
+
+        } else if (!visible && modal._focusMgr) {
+          modal._focusMgr = false;
+          if (trapHandler) {
+            modal.removeEventListener('keydown', trapHandler);
+            trapHandler = null;
+          }
+          // Return focus to the element that opened the modal
+          if (prevFocused && typeof prevFocused.focus === 'function') {
+            try { prevFocused.focus(); } catch (_) {}
+          }
+        }
+      }).observe(modal, { attributes: true, attributeFilter: ['style'] });
+    });
+  }
+
   /* ── Init all ────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
@@ -309,5 +367,6 @@
     initScrollReveal();
     initTestimonialsCarousel();
     initCounterAnimation();
+    initModalFocusManagement();
   });
 })();

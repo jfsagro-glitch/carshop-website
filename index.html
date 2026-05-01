@@ -13,6 +13,9 @@
     <meta property="og:url" content="https://jfsagro-glitch.github.io/carshop-website/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="index, follow">
+    <meta name="author" content="EXPO MIR">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="EXPO MIR">
     <meta name="theme-color" content="#0b1220">
     <link rel="canonical" href="https://jfsagro-glitch.github.io/carshop-website/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +75,7 @@
     </script>
 </head>
 <body class="premium">
+    <a href="#main-content" class="skip-link">Перейти к содержимому</a>
     <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
     <!-- Header -->
     <header class="header">
@@ -201,10 +205,10 @@
     </section>
 
     <!-- Customs Calculator Modal -->
-    <div id="customsModal" class="modal" style="display:none;">
+    <div id="customsModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="customsModalTitle">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Таможенный калькулятор</h3>
+                <h3 id="customsModalTitle">Таможенный калькулятор</h3>
                 <span class="close" onclick="closeCustomsModal()">&times;</span>
             </div>
             <div class="modal-body">
@@ -491,10 +495,10 @@
     </footer>
 
     <!-- Cart Modal -->
-    <div id="cartModal" class="modal">
+    <div id="cartModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Ваш заказ</h3>
+                <h3 id="cartModalTitle">Ваш заказ</h3>
                 <span class="close" onclick="closeCart()">&times;</span>
             </div>
             <div class="modal-body" id="cartBody">
@@ -510,10 +514,10 @@
     </div>
 
     <!-- Checkout Contact Modal -->
-    <div id="checkoutModal" class="modal" style="display:none;">
+    <div id="checkoutModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
         <div class="modal-content checkout-modal">
             <div class="modal-header">
-                <h3>Оформление заказа</h3>
+                <h3 id="checkoutModalTitle">Оформление заказа</h3>
                 <span class="close" onclick="closeCheckoutModal()">&times;</span>
             </div>
             <div class="modal-body">
@@ -542,10 +546,10 @@
     </div>
 
     <!-- Self Service Modal -->
-    <div id="selfCalcModal" class="modal" style="display:none;">
+    <div id="selfCalcModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="selfCalcModalTitle">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Самостоятельный подбор авто</h3>
+                <h3 id="selfCalcModalTitle">Самостоятельный подбор авто</h3>
                 <span class="close" onclick="closeSelfCalcModal()">&times;</span>
             </div>
             <div class="modal-body">
@@ -585,21 +589,21 @@
     </div>
 
     <!-- Request Modal -->
-    <div id="requestModal" class="modal" style="display:none;">
+    <div id="requestModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Заявка на подбор</h3>
+                <h3 id="requestModalTitle">Заявка на подбор</h3>
                 <span class="close" onclick="closeRequestModal()">&times;</span>
             </div>
             <div class="modal-body">
                 <form id="requestForm" class="calc-form request-form" onsubmit="return false;">
                     <div class="calc-row">
                         <label for="reqBrand">Марка</label>
-                        <input id="reqBrand" placeholder="Например, Toyota" required>
+                        <input id="reqBrand" placeholder="Например, Toyota" required maxlength="100" autocomplete="off">
                     </div>
                     <div class="calc-row">
                         <label for="reqModel">Модель</label>
-                        <input id="reqModel" placeholder="Например, Camry" required>
+                        <input id="reqModel" placeholder="Например, Camry" required maxlength="100" autocomplete="off">
                     </div>
                     <div class="calc-row">
                         <label for="reqYearFrom">Год выпуска (от)</label>
@@ -615,21 +619,21 @@
                     </div>
                     <div class="calc-row calc-row--full">
                         <label for="reqNote">Примечание</label>
-                        <textarea id="reqNote" rows="4" placeholder="Пожелания по комплектации, цвету и т.д."></textarea>
+                        <textarea id="reqNote" rows="4" placeholder="Пожелания по комплектации, цвету и т.д." maxlength="2000"></textarea>
                     </div>
                     <div class="calc-row calc-row--full">
                         <div class="request-form__contacts">
                             <div class="request-form__field">
                             <label for="reqName">Ваше имя</label>
-                            <input id="reqName" placeholder="Иван" required>
+                            <input id="reqName" placeholder="Иван" required maxlength="100" autocomplete="name">
                         </div>
                             <div class="request-form__field">
                             <label for="reqPhone">Телефон</label>
-                            <input id="reqPhone" placeholder="+7..." required>
+                            <input id="reqPhone" placeholder="+7..." required maxlength="30" autocomplete="tel" type="tel">
                         </div>
                             <div class="request-form__field">
                             <label for="reqEmail">Email</label>
-                            <input type="email" id="reqEmail" placeholder="you@example.com">
+                            <input type="email" id="reqEmail" placeholder="you@example.com" maxlength="200" autocomplete="email">
                             </div>
                         </div>
                     </div>
@@ -654,7 +658,7 @@
     </form>
 
     <!-- Car Details Modal -->
-    <div id="carModal" class="modal">
+    <div id="carModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="carModalTitle">
         <div class="modal-content car-modal">
             <div class="modal-header">
                 <h3 id="carModalTitle"></h3>
