@@ -1633,12 +1633,17 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
         existing_keys.add(key)
         added += 1
 
+    # Каждый запуск поддерживает публичный каталог в текущих фильтрах сайта.
+    before_filter = len(existing)
+    existing = filter_records(existing, min_year, max_year, max_power_hp)
+    if len(existing) < before_filter:
+        log.info(f"Фильтр каталога: убрано {before_filter - len(existing)} записей вне условий")
+
     # Перенумеруем и сохраняем
     for i, item in enumerate(existing, start=1):
         item["id"] = i
 
-    with open(stock_file, "w", encoding="utf-8") as f:
-        json.dump(existing, f, ensure_ascii=False, indent=2)
+    _atomic_write_json(existing, stock_file)
 
     log.info(f"Сток обновлён: +{added} новых, итого {len(existing)} записей → {stock_file}")
     return added

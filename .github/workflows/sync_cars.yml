@@ -2,10 +2,8 @@ name: Auto-sync car catalogs
 
 on:
   schedule:
-    # Ежедневно в 06:00 UTC (09:00 Бишкек / 10:00 Тбилиси)
-    - cron: '0 6 * * *'
-    # Дополнительное дневное обновление в 15:00 UTC
-    - cron: '0 15 * * *'
+    # 4 раза в день: 08:00, 12:00, 16:00, 20:00 Бишкек
+    - cron: '0 2,6,10,14 * * *'
   workflow_dispatch:       # ручной запуск из GitHub Actions UI
 
 jobs:
@@ -29,28 +27,26 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Sync Georgia stock from myauto.ge
-        continue-on-error: true
         run: |
           python car_parser.py \
             --source myauto \
-            --max 200 \
+            --max 300 \
             --min-age 3 \
-            --max-age 6 \
-            --max-power-hp 165 \
+            --max-age 5 \
+            --max-power-hp 160 \
             --delay 1.5 \
             --sync-stock \
             --stock-file cars_georgia_stock.json \
             --quiet
 
       - name: Sync Europe catalog from mobile.de
-        continue-on-error: true
         run: |
           python car_parser.py \
             --source mobilede \
             --max 150 \
             --min-age 3 \
-            --max-age 6 \
-            --max-power-hp 165 \
+            --max-age 5 \
+            --max-power-hp 160 \
             --min-records 10 \
             --delay 2 \
             --out cars_europe_new.json \

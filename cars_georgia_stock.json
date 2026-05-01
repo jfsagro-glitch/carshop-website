@@ -11536,5 +11536,75 @@
       }
     ],
     "source": "myauto_ge"
+  },
+  {
+    "id": 194,
+    "brand": "Subaru",
+    "model": "Crosstrek",
+    "fullName": "Subaru Crosstrek",
+    "year": 2021,
+    "price": 11500,
+    "price_currency": "USD",
+    "mileage": 87000,
+    "engine": "2,5",
+    "fuel_type": "Дизель",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121766839",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/8/6/6/7/large/121766839_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
   }
 ]
