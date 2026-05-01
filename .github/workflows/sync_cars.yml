@@ -43,9 +43,13 @@ jobs:
           python car_parser.py \
             --source mobilede \
             --max 120 \
+            --min-records 50 \
             --delay 2 \
             --out cars_europe_new.json \
             --quiet
+
+      - name: Validate public catalogs
+        run: python car_parser.py --validate-catalogs
 
       - name: Check for changes
         id: check_changes
