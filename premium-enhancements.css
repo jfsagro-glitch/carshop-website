@@ -2900,3 +2900,122 @@ section[id] {
     transition: color 0.2s;
 }
 
+/* ═══════════════════════════════════════════════════════════
+   EXPO MIR — Wave 13: prefers-reduced-motion, hover guards,
+                        touch-action, performance polish
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── prefers-reduced-motion: kill all infinite / entrance animations ── */
+@media (prefers-reduced-motion: reduce) {
+    /* Hero gradient & glow */
+    .hero,
+    .hero::before { animation: none !important; }
+
+    /* Section background gradients */
+    .contact,
+    .orders-cta { animation: none !important; }
+
+    /* Currency / language selector gradient */
+    .currency-select,
+    .language-select,
+    select.currency-select,
+    select.language-select { animation: none !important; }
+
+    /* Page & section entrance */
+    main, .catalog, .hero, section { animation: none !important; }
+
+    /* Car card entrance stagger */
+    .car-card { animation: none !important; opacity: 1 !important; }
+    .car-card:nth-child(n) { animation-delay: 0s !important; }
+
+    /* Card shine sweep */
+    body.premium .car-card:hover::after { animation: none !important; }
+
+    /* Skeleton shimmer */
+    .skeleton-img,
+    .skeleton-line {
+        animation: none !important;
+        background: rgba(30,41,59,0.5) !important;
+    }
+
+    /* Modal slide-in */
+    .modal-content { animation: none !important; }
+
+    /* Catalog empty-state entrance */
+    .catalog-empty-state { animation: none !important; }
+
+    /* Calculator breakdown entrance */
+    .calc-breakdown { animation: none !important; }
+
+    /* Floating subscribe slide-in */
+    .floating-subscribe__inner { animation: none !important; }
+
+    /* WhatsApp pulse rings */
+    #whatsappFloatBtn,
+    .floating-wa { animation: none !important; }
+
+    /* Cart badge pulse */
+    .cart-pulse { animation: none !important; }
+
+    /* Scroll-reveal – ensure elements stay visible */
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ── hover: none — disable lift/scale transforms on touch screens ── */
+@media (hover: none) {
+    /* Car cards: skip 3D tilt on touch */
+    .car-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2) !important;
+    }
+
+    /* Primary / filter / CTA buttons */
+    .btn-primary:hover,
+    .filter-btn:hover,
+    .cta-btn:hover {
+        transform: none !important;
+    }
+
+    /* Secondary button */
+    .btn-secondary:hover { transform: none !important; }
+
+    /* Contact items */
+    .contact-item:hover { transform: none !important; }
+
+    /* Why-us & testimonial cards */
+    .why-card:hover,
+    .testimonial-card:hover { transform: none !important; }
+
+    /* Currency / language selectors */
+    select.currency-select:hover,
+    select.language-select:hover { transform: none !important; }
+}
+
+/* ── touch-action: prevent 300 ms tap delay on interactive controls ── */
+button,
+a,
+.btn-primary,
+.btn-secondary,
+.filter-btn,
+.cta-btn,
+.fav-btn,
+.view-btn,
+.mbn-item,
+.gallery-arrow,
+.vin-copy-btn,
+.cart-btn,
+.floating-subscribe__close,
+.floating-subscribe__link,
+.floating-wa,
+#backToTop,
+#scrollTopBtn {
+    touch-action: manipulation;
+}
+
+/* ── font-size safety: never go below readable size on form inputs ── */
+input,
+select,
+textarea {
+    font-size: max(1rem, 16px);
+}
+

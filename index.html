@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EXPO MIR — Автомобили из Грузии, США, Кореи, Китая, Европы</title>
     <meta name="description" content="Покупка автомобилей из Грузии, США, Кореи, Китая и Европы. Доставка 3-5 дней, растаможка включена. Большой выбор авто в наличии.">
     <meta name="keywords" content="авто из грузии, купить авто, авто киргизия, автомобили из грузии, авто сша, авто корея, авто китай, авто из китая, expo mir, растаможка кыргызстан, авто без предоплаты, таможенный калькулятор">
@@ -22,6 +22,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//formsubmit.co">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="premium-enhancements.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="premium-enhancements.css">
     <link rel="icon" type="image/png" href="images/logo.png">
@@ -111,9 +113,9 @@
                             <option value="ka" data-flag="images/Lang/GE.png">GE</option>
                         </select>
                     </div>
-                    <button class="cart-btn" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
+                    <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="cart-count" id="cartCount" aria-live="polite">0</span>
                     </button>
                     <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()" data-i18n="btn_request">Заявка на подбор</button>
                 </div>
