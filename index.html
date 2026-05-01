@@ -90,7 +90,7 @@
                     <span>EXPO MIR</span>
                 </div>
                 <nav class="nav">
-                    <a href="index.html#catalog" data-i18n="nav_georgia">Грузия</a>
+                    <a href="georgia-catalog.html" data-i18n="nav_georgia">Грузия</a>
                     <a href="usa-orders.html" data-i18n="nav_usa">США</a>
                     <a href="korea-orders.html" data-i18n="nav_korea">Корея</a>
                     <a href="china-orders.html" data-i18n="nav_china">Китай</a>
@@ -130,7 +130,7 @@
     <div class="header-info-banner">
         <div class="container">
             <div class="header-info-banner-text">
-                <strong>АВТОМОБИЛИ В ГРУЗИИ</strong> в наличии, выкупаем автомобили и привозим за свои деньги без предоплаты. Срок доставки и растаможки 3-5 дней
+                <strong>EXPO MIR</strong> — авто из Грузии, США, Кореи, Китая, Европы. Доставка и растаможка 3–5 дней. Без предоплаты!
             </div>
         </div>
     </div>
@@ -143,7 +143,7 @@
                     <h1 class="site-hero__title">Автомобили из-за рубежа<br><span class="site-hero__accent">без предоплаты</span></h1>
                     <p class="site-hero__subtitle">Грузия, США, Корея, Китай, Европа — выкупаем за свои деньги, доставляем и растаможиваем за 3–5 дней</p>
                     <div class="site-hero__actions">
-                        <a href="#catalog" class="btn-hero-primary">Смотреть каталог</a>
+                        <a href="georgia-catalog.html" class="btn-hero-primary">Смотреть каталог Грузия</a>
                         <a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" class="btn-hero-whatsapp"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
                     </div>
                 </div>
@@ -244,72 +244,42 @@
         </div>
     </div>
 
-    <!-- Catalog Section -->
-    <section id="catalog" class="catalog">
+    <!-- Country Catalogs Showcase -->
+    <section class="countries-section" id="catalogs">
         <div class="container">
-            <h2 data-i18n="catalog_title">Автомобили в Грузии в наличии</h2>
-            <div class="catalog-filters">
-                <!-- Search -->
-                <div class="filter-group filter-group--search">
-                    <label>Поиск:</label>
-                    <div class="search-input-wrap">
-                        <i class="fas fa-search search-icon"></i>
-                        <input type="search" id="carSearch" placeholder="Марка, модель, VIN…" autocomplete="off">
-                    </div>
-                </div>
-                <div class="filter-group">
-                    <label data-i18n="catalog_brand">Марка:</label>
-                    <select id="brandFilter">
-                        <option value="" data-i18n="filter_all_brands">Все марки</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label data-i18n="catalog_model">Модель:</label>
-                    <select id="modelFilter">
-                        <option value="" data-i18n="filter_all_models">Все модели</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Год от:</label>
-                    <select id="yearFilter">
-                        <option value="">Любой</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label data-i18n="catalog_price_from">Цена от:</label>
-                    <input type="number" id="priceFrom" data-i18n-placeholder="catalog_minimum" placeholder="Минимум">
-                </div>
-                <div class="filter-group">
-                    <label data-i18n="catalog_price_to">Цена до:</label>
-                    <input type="number" id="priceTo" data-i18n-placeholder="catalog_maximum" placeholder="Максимум">
-                </div>
-                <div class="filter-group">
-                    <label data-i18n="catalog_mileage_to">Пробег до:</label>
-                    <input type="number" id="mileageTo" data-i18n-placeholder="catalog_km" placeholder="км">
-                </div>
-                <button class="filter-btn" id="applyFilters" data-i18n="btn_apply">Применить</button>
-                <button class="filter-btn filter-btn--reset" id="resetFilters" data-i18n="btn_reset">Сбросить</button>
-            </div>
-            <!-- Toolbar: results count + sort + view toggle -->
-            <div class="catalog-toolbar">
-                <span class="catalog-count" id="catalogCount" aria-live="polite"></span>
-                <div class="catalog-toolbar__right">
-                    <select id="sortSelect" class="sort-select">
-                        <option value="default">Порядок: по умолчанию</option>
-                        <option value="price-asc">Цена ↑ (дешевле)</option>
-                        <option value="price-desc">Цена ↓ (дороже)</option>
-                        <option value="year-desc">Год ↓ (новее)</option>
-                        <option value="mileage-asc">Пробег ↑ (меньше)</option>
-                        <option value="fav">Избранное ❤</option>
-                    </select>
-                    <div class="view-toggle" id="viewToggle" role="group" aria-label="Вид отображения">
-                        <button class="view-btn active" data-view="grid" title="Сетка"><i class="fas fa-th"></i></button>
-                        <button class="view-btn" data-view="list" title="Список"><i class="fas fa-list"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="cars-grid" id="carsGrid">
-                <!-- Cars will be loaded here by JavaScript -->
+            <h2 class="section-title">Выберите страну</h2>
+            <p class="section-subtitle">Авто в наличии и под заказ — из 5 стран с доставкой и растаможкой</p>
+            <div class="countries-grid">
+                <a href="georgia-catalog.html" class="country-card">
+                    <div class="country-card__icon">🇬🇪</div>
+                    <p class="country-card__name">Грузия</p>
+                    <p class="country-card__desc">В наличии, доставка 3–5 дней</p>
+                    <span class="country-card__count">34+ авто</span>
+                </a>
+                <a href="usa-orders.html" class="country-card">
+                    <div class="country-card__icon">🇺🇸</div>
+                    <p class="country-card__name">США</p>
+                    <p class="country-card__desc">Льготный утильсбор до 160 л.с.</p>
+                    <span class="country-card__count">Под заказ</span>
+                </a>
+                <a href="korea-orders.html" class="country-card">
+                    <div class="country-card__icon">🇰🇷</div>
+                    <p class="country-card__name">Корея</p>
+                    <p class="country-card__desc">Новые и с пробегом, аукционы</p>
+                    <span class="country-card__count">Большой выбор</span>
+                </a>
+                <a href="china-orders.html" class="country-card">
+                    <div class="country-card__icon">🇨🇳</div>
+                    <p class="country-card__name">Китай</p>
+                    <p class="country-card__desc">Электро и гибриды, новые авто</p>
+                    <span class="country-card__count">EV / Hybrid</span>
+                </a>
+                <a href="europe-orders.html" class="country-card">
+                    <div class="country-card__icon">🇪🇺</div>
+                    <p class="country-card__name">Европа</p>
+                    <p class="country-card__desc">Немецкие, французские, японские</p>
+                    <span class="country-card__count">Под заказ</span>
+                </a>
             </div>
         </div>
     </section>
@@ -463,7 +433,7 @@
                 <div class="footer-section">
                     <h4>Каталоги</h4>
                     <ul>
-                        <li><a href="index.html#catalog">Грузия — в наличии</a></li>
+                        <li><a href="georgia-catalog.html">Грузия — в наличии</a></li>
                         <li><a href="georgia-stock.html">Грузия-сток</a></li>
                         <li><a href="usa-orders.html">США</a></li>
                         <li><a href="korea-orders.html">Корея</a></li>

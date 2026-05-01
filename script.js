@@ -4228,30 +4228,90 @@ function renderKoreaUnder160Cars(){
     const preloadImages = [];
     
     list.forEach((car, index)=>{
-        const specs = buildUnder160CarSpecs(car);
-        // Конвертируем цену из рублей в доллары если нужно
-        let priceValue = getUnder160PriceValue(car);
-        
-        // Обрабатываем priceLabel: если он содержит рубли, конвертируем в доллары
+        const rawSpecs = buildUnder160CarSpecs(car);
+        // Разбираем specs: разделяем обычные характеристики и "Дополнительная цена"
+        let extraPriceSpec = null;
+        const mainSpecs = rawSpecs.filter(s => {
+            if (s.startsWith('Дополнительная цена:')) { extraPriceSpec = s; return false; }
+            return true;
+        });
+
+        // Иконки для характеристик
+        const specIconMap = {
+            'Мощность': 'fa-tachometer-alt',
+            'Топливо': 'fa-gas-pump',
+            'Объем двигателя': 'fa-cogs',
+            'Пробег': 'fa-road',
+            'Дата выпуска': 'fa-calendar-alt',
+            'Логистика': 'fa-ship',
+            'Привод': 'fa-car',
+            'Трансмиссия': 'fa-exchange-alt',
+            'Расход': 'fa-leaf',
+        };
+        const specItemsHtml = mainSpecs.map(s => {
+            const colonIdx = s.indexOf(':');
+            if (colonIdx === -1) return `<li class="kspec-item"><span class="kspec-val">${s}</span></li>`;
+            const key = s.slice(0, colonIdx).trim();
+            const val = s.slice(colonIdx + 1).trim();
+            let icon = 'fa-info-circle';
+            for (const [k, ico] of Object.entries(specIconMap)) {
+                if (key.startsWith(k)) { icon = ico; break; }
+            }
+            return `<li class="kspec-item"><i class="fas ${icon} kspec-icon"></i><span class="kspec-key">${key}:</span><span class="kspec-val">${val}</span></li>`;
+        }).join('');
+
+        // Вычисляем USD цену (без двойной конвертации)
+        let usdPrice = 0;
         let priceLabel = car.priceLabel;
         if (priceLabel && priceLabel.includes('₽')) {
-            // Извлекаем число из priceLabel (убираем пробелы и ₽)
             const priceMatch = priceLabel.match(/[\d\s]+/);
             if (priceMatch) {
-                const priceNum = parseInt(priceMatch[0].replace(/\s/g, ''), 10);
-                if (priceNum && priceNum > 10000 && usdToRubRate) {
-                    const usdPrice = convertRubToUsd(priceNum);
-                    priceLabel = formatCurrency(usdPrice);
+                const priceRub = parseInt(priceMatch[0].replace(/\s/g, ''), 10);
+                if (priceRub > 10000) {
+                    const rate = usdToRubRate || 88;
+                    usdPrice = Math.round(priceRub / rate);
+                    // Используем formatPrice напрямую (не formatCurrency — избегаем двойной конвертации)
+                    priceLabel = typeof formatPrice === 'function' ? formatPrice(usdPrice) : `$${usdPrice.toLocaleString()}`;
                 }
             }
         } else if (!priceLabel) {
-            priceLabel = priceValue ? formatCurrency(priceValue) : 'Цена по запросу';
+            const pv = getUnder160PriceValue(car);
+            if (pv) {
+                usdPrice = pv;
+                priceLabel = typeof formatPrice === 'function' ? formatPrice(pv) : `$${pv.toLocaleString()}`;
+            } else {
+                priceLabel = 'Цена по запросу';
+            }
         }
-        const brandBadge = car.brand ? `<span class="orders-card-brand">${car.brand}</span>` : '';
-        const utilBadge = '<span class="util-badge">льготный утильсбор</span>';
-        const descriptionHtml = car.description ? `<p class="orders-card-desc">${utilBadge} ${car.description}</p>` : `<p class="orders-card-desc">${utilBadge}</p>`;
 
-        // Нормализуем путь к изображению (исправляем регистр)
+        // "Дополнительная цена" — отображаем со специальным форматированием
+        let extraPriceHtml = '';
+        if (extraPriceSpec) {
+            // Конвертируем рублёвую цену
+            const epMatch = extraPriceSpec.match(/([\d\s]+)\s*₽(.+)/);
+            let extraDisplay = extraPriceSpec.replace('Дополнительная цена:', '').trim();
+            if (epMatch) {
+                const epRub = parseInt(epMatch[1].replace(/\s/g, ''), 10);
+                if (epRub > 10000 && usdToRubRate) {
+                    const epUsd = Math.round(epRub / usdToRubRate);
+                    const epFormatted = typeof formatPrice === 'function' ? formatPrice(epUsd) : `$${epUsd.toLocaleString()}`;
+                    extraDisplay = `${epFormatted}${epMatch[2]}`;
+                }
+            }
+            extraPriceHtml = `<div class="korea-extra-price"><i class="fas fa-clock"></i> Доп. цена: ${extraDisplay}</div>`;
+        }
+
+        // Статус/описание
+        const statusBadges = [];
+        if (car.description) {
+            if (car.description.includes('Добавлен сегодня')) statusBadges.push('<span class="kbadge kbadge--new">Новинка</span>');
+            if (car.description.includes('Проходной')) statusBadges.push('<span class="kbadge kbadge--ok">Проходной</span>');
+            if (car.description.includes('Без изменений')) statusBadges.push('<span class="kbadge kbadge--util">Льготный утильсбор</span>');
+        } else {
+            statusBadges.push('<span class="kbadge kbadge--util">Льготный утильсбор</span>');
+        }
+
+        // Нормализуем путь к изображению
         let imageSrc = car.image || '';
         if (imageSrc && imageSrc.includes('images/korea/')) {
             imageSrc = imageSrc.replace('images/korea/', 'images/Korea/');
@@ -4261,17 +4321,23 @@ function renderKoreaUnder160Cars(){
         const card = document.createElement('article');
         card.className = 'orders-card korea-card';
         card.innerHTML = `
-            <img src="${imageSrc}" alt="${car.name}" loading="lazy" decoding="async">
+            <div class="korea-card__img-wrap">
+                <img src="${imageSrc}" alt="${car.name}" loading="lazy" decoding="async">
+                ${car.brand ? `<span class="korea-card__brand-badge">${car.brand}</span>` : ''}
+            </div>
             <div class="orders-card-body">
-                ${brandBadge}
-                <h4>${car.name}</h4>
-                ${descriptionHtml}
-                <ul class="usa-preferential-meta">
-                    ${specs.map(item => `<li>${item}</li>`).join('')}
+                <div class="korea-card__badges">${statusBadges.join('')}</div>
+                <h4 class="korea-card__title">${car.name}</h4>
+                <ul class="kspec-list">
+                    ${specItemsHtml}
                 </ul>
-                <div class="usa-preferential-price">${priceLabel}</div>
+                ${extraPriceHtml}
+                <div class="korea-card__price-row">
+                    <div class="usa-preferential-price car-price" ${usdPrice ? `data-usd-price="${usdPrice}"` : ''}>${priceLabel}</div>
+                    ${car.link ? `<a class="korea-card__src-link" href="${car.link}" target="_blank" rel="noopener noreferrer" title="Открыть источник"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                </div>
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
-                    <button class="btn-primary" type="button">Запросить расчет</button>
+                    <button class="btn-primary" type="button"><i class="fas fa-paper-plane"></i> Запросить расчет</button>
                 </div>
             </div>
         `;

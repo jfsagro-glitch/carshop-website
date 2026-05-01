@@ -1,4 +1,4 @@
-﻿/**
+/**
  * EXPO MIR — Shared header utilities
  * Handles: active nav, scroll-to-top, WhatsApp button, cart pulse,
  *          sticky header, modal Escape/backdrop close, mobile menu,
@@ -179,7 +179,7 @@
     nav.id = 'mobileBottomNav';
     nav.setAttribute('aria-label', 'Мобильная навигация');
     nav.innerHTML = [
-      '<a href="index.html#catalog" class="mbn-item" data-page="index.html">',
+      '<a href="georgia-catalog.html" class="mbn-item" data-page="georgia-catalog.html">',
       '  <i class="fas fa-car"></i><span>Каталог</span>',
       '</a>',
       '<a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" class="mbn-item mbn-item--wa">',

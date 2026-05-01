@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автомобили из Грузии в наличии — EXPO MIR</title>
+    <meta name="description" content="Каталог автомобилей из Грузии в наличии. Большой выбор авто, проверка по VIN, доставка 3-5 дней, растаможка включена. Без предоплаты.">
+    <meta name="keywords" content="авто из грузии, купить авто, авто в наличии, каталог автомобилей, expo mir, растаможка кыргызстан">
+    <meta property="og:title" content="Автомобили из Грузии в наличии — EXPO MIR">
+    <meta property="og:description" content="Каталог автомобилей из Грузии. Доставка 3–5 дней, растаможка включена. Без предоплаты.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cmsauto.store/images/logo.png">
+    <meta property="og:url" content="https://cmsauto.store/georgia-catalog.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="EXPO MIR">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://cmsauto.store/georgia-catalog.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//formsubmit.co">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="premium-enhancements.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="premium-enhancements.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="translations.js"></script>
+</head>
+<body class="premium">
+    <a href="#main-content" class="skip-link">Перейти к содержимому</a>
+    <noscript><div style="background:#d4af37;color:#0b1220;text-align:center;padding:0.9rem 1rem;font-weight:600;font-size:0.95rem;position:fixed;top:0;left:0;right:0;z-index:9999;">Для полноценной работы сайта необходим JavaScript. Пожалуйста, включите его в браузере.</div></noscript>
+    <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="EXPO MIR" class="logo-img" fetchpriority="high">
+                    <span>EXPO MIR</span>
+                </div>
+                <nav class="nav">
+                    <a href="georgia-catalog.html" data-i18n="nav_georgia" class="active">Грузия</a>
+                    <a href="usa-orders.html" data-i18n="nav_usa">США</a>
+                    <a href="korea-orders.html" data-i18n="nav_korea">Корея</a>
+                    <a href="china-orders.html" data-i18n="nav_china">Китай</a>
+                    <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
+                    <a href="parts-orders.html">Запчасти</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="currency-selector">
+                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)" aria-label="Выбор валюты">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="KGS">сом</option>
+                            <option value="RUB">RUB</option>
+                        </select>
+                    </div>
+                    <div class="language-selector">
+                        <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)" aria-label="Выбор языка">
+                            <option value="ru" data-flag="images/Lang/rus.png">RU</option>
+                            <option value="en" data-flag="images/Lang/usa.png">US</option>
+                            <option value="ky" data-flag="images/Lang/KG.png">KG</option>
+                            <option value="de" data-flag="images/Lang/DE.png">DE</option>
+                            <option value="ka" data-flag="images/Lang/GE.png">GE</option>
+                        </select>
+                    </div>
+                    <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+                    </button>
+                    <button class="btn-secondary" id="openRequestBtn" type="button" onclick="openRequestModal()" data-i18n="btn_request">Заявка на подбор</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+    <!-- Page Hero -->
+    <section class="catalog-page-hero">
+        <div class="container">
+            <div class="catalog-page-hero__text">
+                <h1><i class="fas fa-map-marker-alt" style="color:#d4af37;margin-right:10px;"></i>Автомобили из Грузии — в наличии</h1>
+                <p>Выкупаем за свои деньги &bull; Доставка и растаможка 3–5 дней &bull; Без предоплаты</p>
+            </div>
+            <div class="catalog-page-hero__actions">
+                <button class="btn-primary" type="button" onclick="openRequestModal()">
+                    <i class="fas fa-search"></i> Заявка на подбор
+                </button>
+                <a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" class="btn-hero-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customs Calculator Modal trigger strip -->
+    <div class="header-info-banner">
+        <div class="container">
+            <div class="header-info-banner-text">
+                <strong>АВТО В ГРУЗИИ В НАЛИЧИИ</strong> — привозим за свои деньги, без предоплаты.
+                <button class="banner-calc-btn" type="button" onclick="openCustomsModal()">
+                    <i class="fas fa-calculator"></i> Таможенный калькулятор
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2 data-i18n="catalog_title">Автомобили в Грузии в наличии</h2>
+            <div class="catalog-filters">
+                <div class="filter-group filter-group--search">
+                    <label>Поиск:</label>
+                    <div class="search-input-wrap">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="search" id="carSearch" placeholder="Марка, модель, VIN…" autocomplete="off">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label data-i18n="catalog_brand">Марка:</label>
+                    <select id="brandFilter">
+                        <option value="" data-i18n="filter_all_brands">Все марки</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label data-i18n="catalog_model">Модель:</label>
+                    <select id="modelFilter">
+                        <option value="" data-i18n="filter_all_models">Все модели</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Год от:</label>
+                    <select id="yearFilter">
+                        <option value="">Любой</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label data-i18n="catalog_price_from">Цена от:</label>
+                    <input type="number" id="priceFrom" data-i18n-placeholder="catalog_minimum" placeholder="Минимум">
+                </div>
+                <div class="filter-group">
+                    <label data-i18n="catalog_price_to">Цена до:</label>
+                    <input type="number" id="priceTo" data-i18n-placeholder="catalog_maximum" placeholder="Максимум">
+                </div>
+                <div class="filter-group">
+                    <label data-i18n="catalog_mileage_to">Пробег до:</label>
+                    <input type="number" id="mileageTo" data-i18n-placeholder="catalog_km" placeholder="км">
+                </div>
+                <button class="filter-btn" id="applyFilters" data-i18n="btn_apply">Применить</button>
+                <button class="filter-btn filter-btn--reset" id="resetFilters" data-i18n="btn_reset">Сбросить</button>
+            </div>
+            <div class="catalog-toolbar">
+                <span class="catalog-count" id="catalogCount" aria-live="polite"></span>
+                <div class="catalog-toolbar__right">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="default">Порядок: по умолчанию</option>
+                        <option value="price-asc">Цена ↑ (дешевле)</option>
+                        <option value="price-desc">Цена ↓ (дороже)</option>
+                        <option value="year-desc">Год ↓ (новее)</option>
+                        <option value="mileage-asc">Пробег ↑ (меньше)</option>
+                        <option value="fav">Избранное ❤</option>
+                    </select>
+                    <div class="view-toggle" id="viewToggle" role="group" aria-label="Вид отображения">
+                        <button class="view-btn active" data-view="grid" title="Сетка"><i class="fas fa-th"></i></button>
+                        <button class="view-btn" data-view="list" title="Список"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cars-grid" id="carsGrid">
+                <!-- Cars loaded by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="contact" style="padding:48px 0;">
+        <div class="container">
+            <div class="contact-content" style="justify-content:center;">
+                <div class="contact-cta-card">
+                    <div class="contact-cta-card__icon"><i class="fas fa-search"></i></div>
+                    <h3>Не нашли нужный автомобиль?</h3>
+                    <p>Оставьте заявку на подбор — найдём лучший вариант по вашему бюджету из любой страны</p>
+                    <button class="btn-hero-primary btn-contact-cta" onclick="openRequestModal()">
+                        <i class="fas fa-paper-plane"></i> Оставить заявку
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EXPO MIR</h4>
+                    <p>Надёжный партнёр в покупке автомобилей из-за рубежа. Работаем без предоплаты с 2020 года.</p>
+                    <div class="footer-social">
+                        <a href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:carexportgeo@bk.ru" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Каталоги</h4>
+                    <ul>
+                        <li><a href="georgia-catalog.html">Грузия — в наличии</a></li>
+                        <li><a href="georgia-stock.html">Грузия-сток</a></li>
+                        <li><a href="usa-orders.html">США</a></li>
+                        <li><a href="korea-orders.html">Корея</a></li>
+                        <li><a href="china-orders.html">Китай</a></li>
+                        <li><a href="europe-orders.html">Европа</a></li>
+                        <li><a href="parts-orders.html">Запчасти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li>Продажа автомобилей</li>
+                        <li>Растаможка под ключ</li>
+                        <li>Доставка 3–5 дней</li>
+                        <li>Проверка по VIN</li>
+                        <li>Оформление документов</li>
+                        <li>Подбор по заявке</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone footer-icon"></i><a href="tel:+996755666805">+996 755 666 805</a></p>
+                    <p><i class="fas fa-envelope footer-icon"></i><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
+                    <p><i class="fab fa-whatsapp footer-icon"></i><a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+                    <p><i class="fab fa-telegram footer-icon"></i><a href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer">Telegram-канал</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyrightYear">2026</span> EXPO MIR. Все права защищены.</p>
+                <p class="footer-bottom__note">Цены указаны с учётом растаможки и доставки</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="cartModalTitle">Ваш заказ</h3>
+                <span class="close" onclick="closeCart()">&times;</span>
+            </div>
+            <div class="modal-body" id="cartBody"></div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Итого: <span id="cartTotal">$0</span></strong>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h3 id="checkoutModalTitle">Оформление заказа</h3>
+                <span class="close" onclick="closeCheckoutModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-summary" id="checkoutSummary"></div>
+                <form id="checkoutContactForm" class="calc-form checkout-form">
+                    <div class="calc-row">
+                        <label for="contactName">Ваше имя</label>
+                        <input type="text" id="contactName" placeholder="Иван Иванов" required autocomplete="name">
+                    </div>
+                    <div class="calc-row">
+                        <label for="contactPhone">Телефон / WhatsApp</label>
+                        <input type="tel" id="contactPhone" placeholder="+996 700 000 000" required autocomplete="tel">
+                    </div>
+                    <div class="calc-row">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" placeholder="you@example.com" required autocomplete="email">
+                    </div>
+                    <div class="calc-actions">
+                        <button type="submit" class="btn-primary checkout-submit-btn"><i class="fas fa-paper-plane"></i> Подтвердить заказ</button>
+                        <button type="button" class="btn-secondary" onclick="closeCheckoutModal()">Отмена</button>
+                    </div>
+                </form>
+                <p class="checkout-note"><i class="fas fa-shield-alt"></i> Мы свяжемся с вами в течение 15 минут для подтверждения заказа.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customs Modal -->
+    <div id="customsModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="customsModalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="customsModalTitle">Таможенный калькулятор</h3>
+                <span class="close" onclick="closeCustomsModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customs-content">
+                    <form id="customsForm" class="calc-form" onsubmit="return false;">
+                        <div class="calc-row">
+                            <label for="costUsd">Стоимость авто (USD)</label>
+                            <input type="number" id="costUsd" placeholder="Например, 15000" min="0" step="1" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="engineCc">Объём двигателя, см³</label>
+                            <input type="number" id="engineCc" placeholder="Например, 1998" min="0" step="1" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="carAge">Возраст автомобиля</label>
+                            <select id="carAge" class="calc-select">
+                                <option value="3-5" selected>3–5 лет (самый частый)</option>
+                                <option value="5-7">5–7 лет</option>
+                                <option value="7+">7 лет и старше</option>
+                            </select>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-primary" id="calcBtn" type="button"><i class="fas fa-calculator"></i> Рассчитать</button>
+                        </div>
+                    </form>
+                    <div class="calc-result" id="calcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Self Calc Modal -->
+    <div id="selfCalcModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="selfCalcModalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="selfCalcModalTitle">Самостоятельный подбор авто</h3>
+                <span class="close" onclick="closeSelfCalcModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customs-content">
+                    <p class="selfcalc-subtitle">Выберите авто на грузинских сайтах — мы проверим, привезём и растаможим. Рассчитайте полную стоимость ниже.</p>
+                    <p style="margin-bottom:1rem; color:#9ca3af;">
+                        Сайты: <a href="https://ap.ge/ru/usd" target="_blank" rel="noopener noreferrer">ap.ge</a>,
+                        <a href="https://myauto.ge/ru" target="_blank" rel="noopener noreferrer">myauto.ge</a>
+                    </p>
+                    <form id="selfCalcForm" class="calc-form" onsubmit="return false;">
+                        <div class="calc-row">
+                            <label for="selfCostUsd">Цена авто на сайте (USD)</label>
+                            <input type="number" id="selfCostUsd" placeholder="Например, 12000" min="0" step="1" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="selfEngineCc">Объём двигателя, см³</label>
+                            <input type="number" id="selfEngineCc" placeholder="Например, 1998" min="0" step="1" required>
+                        </div>
+                        <div class="calc-row">
+                            <label for="selfCarAge">Возраст автомобиля</label>
+                            <select id="selfCarAge" class="calc-select">
+                                <option value="3-5" selected>3–5 лет</option>
+                                <option value="5-7">5–7 лет</option>
+                                <option value="7+">7 лет и старше</option>
+                            </select>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-primary" id="selfCalcBtn" type="button"><i class="fas fa-calculator"></i> Рассчитать итог</button>
+                        </div>
+                    </form>
+                    <div class="calc-result" id="selfCalcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Modal -->
+    <div id="requestModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="requestModalTitle">Заявка на подбор</h3>
+                <span class="close" onclick="closeRequestModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="requestForm" class="calc-form request-form" onsubmit="return false;">
+                    <div class="calc-row">
+                        <label for="reqBrand">Марка</label>
+                        <input id="reqBrand" placeholder="Например, Toyota" required maxlength="100" autocomplete="off">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqModel">Модель</label>
+                        <input id="reqModel" placeholder="Например, Camry" required maxlength="100" autocomplete="off">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqYearFrom">Год выпуска (от)</label>
+                        <input type="number" id="reqYearFrom" placeholder="2018" min="1990" max="2100">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqYearTo">Год выпуска (до)</label>
+                        <input type="number" id="reqYearTo" placeholder="2024" min="1990" max="2100">
+                    </div>
+                    <div class="calc-row">
+                        <label for="reqPriceTo">Стоимость (до), $</label>
+                        <input type="number" id="reqPriceTo" placeholder="3000000" min="0" step="1000">
+                    </div>
+                    <div class="calc-row calc-row--full">
+                        <label for="reqNote">Примечание</label>
+                        <textarea id="reqNote" rows="4" placeholder="Пожелания по комплектации, цвету и т.д." maxlength="2000"></textarea>
+                    </div>
+                    <div class="calc-row calc-row--full">
+                        <div class="request-form__contacts">
+                            <div class="request-form__field">
+                                <label for="reqName">Ваше имя</label>
+                                <input id="reqName" placeholder="Иван" required maxlength="100" autocomplete="name">
+                            </div>
+                            <div class="request-form__field">
+                                <label for="reqPhone">Телефон</label>
+                                <input id="reqPhone" placeholder="+7..." required maxlength="30" autocomplete="tel" type="tel">
+                            </div>
+                            <div class="request-form__field">
+                                <label for="reqEmail">Email</label>
+                                <input type="email" id="reqEmail" placeholder="you@example.com" maxlength="200" autocomplete="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-actions calc-actions--full">
+                        <button class="btn-primary" id="requestSubmit" type="button">Отправить на подбор</button>
+                    </div>
+                </form>
+                <div id="requestStatus" class="calc-result" aria-live="polite" role="status"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden email form -->
+    <form id="emailFallbackForm" action="https://formsubmit.co/carexportgeo@bk.ru" method="POST" style="display:none;">
+        <input type="hidden" name="name" id="fs_name">
+        <input type="hidden" name="phone" id="fs_phone">
+        <input type="hidden" name="email" id="fs_email">
+        <input type="hidden" name="message" id="fs_message">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Новый заказ с сайта EXPO MIR">
+    </form>
+
+    <!-- Car Details Modal -->
+    <div id="carModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="carModalTitle">
+        <div class="modal-content car-modal">
+            <div class="modal-header">
+                <h3 id="carModalTitle"></h3>
+                <span class="close" onclick="closeCarModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="carModalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+    <button id="backToTop" class="back-to-top" aria-label="Прокрутить наверх" title="Наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <a id="floatingWhatsApp" class="floating-wa"
+       href="https://wa.me/996755666805?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%81%D1%8C+%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%BE%D0%B9+%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F."
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Написать в WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="floating-wa__label">Написать</span>
+    </a>
+
+    <aside class="floating-subscribe" aria-label="Подписка на Telegram">
+        <div class="floating-subscribe__inner">
+            <span class="floating-subscribe__title"><i class="fab fa-telegram"></i> Подпишись на нас в Telegram</span>
+            <a class="floating-subscribe__link" href="https://t.me/expo_mir" target="_blank" rel="noopener">Перейти в канал</a>
+            <button class="floating-subscribe__close" type="button" aria-label="Закрыть уведомление">&times;</button>
+        </div>
+    </aside>
+
+    <script>
+        (function(){
+            const yearEl = document.getElementById('copyrightYear');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+            const widget = document.querySelector('.floating-subscribe');
+            if (!widget) return;
+            const closeBtn = widget.querySelector('.floating-subscribe__close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function(){
+                    widget.classList.add('floating-subscribe--hidden');
+                    localStorage.setItem('ce_subscribe_closed', '1');
+                });
+            }
+            if (localStorage.getItem('ce_subscribe_closed') === '1') {
+                widget.classList.add('floating-subscribe--hidden');
+            }
+        })();
+    </script>
+</body>
+</html>
