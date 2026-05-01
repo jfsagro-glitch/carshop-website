@@ -1812,6 +1812,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
                    help="Проверить публичные JSON-каталоги сайта и выйти")
     p.add_argument("--no-fallback-existing", action="store_true",
                    help="Не использовать текущий --out JSON как fallback при недоступном web-источнике")
+    p.add_argument("--fail-empty", action="store_true",
+                   help="Завершаться с ошибкой, если источник не вернул автомобилей")
     p.add_argument("--stock-file", default="cars_georgia_stock.json",
                    help="Путь к файлу стока для --sync-stock")
     p.add_argument("--no-dedup", action="store_true", help="Не удалять дубликаты по VIN")
@@ -1843,6 +1845,21 @@ def auto_detect_source(args: argparse.Namespace) -> str:
     return "csv"
 
 
+def proxy_from_env(source: str) -> Optional[str]:
+    specific = {
+        "myauto": "MYAUTO_PROXY",
+        "apge": "APGE_PROXY",
+        "ap.ge": "APGE_PROXY",
+        "mobilede": "MOBILEDE_PROXY",
+        "europe": "MOBILEDE_PROXY",
+        "drom": "DROM_PROXY",
+        "html": "PARSER_PROXY",
+    }.get(source)
+    if specific and os.getenv(specific):
+        return os.getenv(specific)
+    return os.getenv("PARSER_PROXY") or None
+
+
 def run(args: argparse.Namespace) -> None:
     if args.quiet:
         logging.getLogger().setLevel(logging.WARNING)
@@ -1856,6 +1873,7 @@ def run(args: argparse.Namespace) -> None:
         source = auto_detect_source(args)
         log.info(f"Авто-определение источника: {source}")
 
+    proxy = args.proxy or proxy_from_env(source)
     age_min_year, age_max_year = year_range_from_age(args.min_age, args.max_age)
     min_year = args.min_year or age_min_year
     max_year = args.max_year or age_max_year
@@ -1868,7 +1886,7 @@ def run(args: argparse.Namespace) -> None:
             max_cars=args.max_cars,
             stock_file=args.stock_file,
             delay=args.delay,
-            proxy=args.proxy,
+            proxy=proxy,
             min_year=min_year,
             max_year=max_year,
             max_power_hp=args.max_power_hp,
@@ -1898,14 +1916,14 @@ def run(args: argparse.Namespace) -> None:
             min_year=min_year,
             max_year=max_year,
             max_power_hp=args.max_power_hp,
-            proxy=args.proxy,
+            proxy=proxy,
         ).parse()
 
     elif source in ("apge", "ap.ge"):
         cars = ApGeParser(
             max_cars=args.max_cars,
             delay=args.delay,
-            proxy=args.proxy,
+            proxy=proxy,
         ).parse()
 
     elif source in ("mobilede", "europe"):
@@ -1916,18 +1934,18 @@ def run(args: argparse.Namespace) -> None:
             min_year=min_year,
             max_year=max_year,
             max_power_hp=args.max_power_hp,
-            proxy=args.proxy,
+            proxy=proxy,
         ).parse()
 
     elif source == "drom":
         cars = DromParser(region=args.region, max_cars=args.max_cars,
-                          delay=args.delay, proxy=args.proxy).parse()
+                          delay=args.delay, proxy=proxy).parse()
 
     elif source == "html":
         if not args.url:
             log.error("Укажите --url <адрес сайта>")
             sys.exit(1)
-        cars = HtmlParser(url=args.url, delay=args.delay, proxy=args.proxy).parse()
+        cars = HtmlParser(url=args.url, delay=args.delay, proxy=proxy).parse()
 
     if cars:
         cars = filter_cars(cars, min_year, max_year, args.max_power_hp)
@@ -1964,6 +1982,8 @@ def run(args: argparse.Namespace) -> None:
 
     if not cars:
         log.warning("Не найдено ни одного автомобиля.")
+        if args.fail_empty:
+            sys.exit(2)
         sys.exit(0)
 
     # Нормализация / дедупликация

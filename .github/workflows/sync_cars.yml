@@ -9,6 +9,10 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      MYAUTO_PROXY: ${{ secrets.MYAUTO_PROXY }}
+      MOBILEDE_PROXY: ${{ secrets.MOBILEDE_PROXY }}
+      PARSER_PROXY: ${{ secrets.PARSER_PROXY }}
     permissions:
       contents: write      # нужно для git push
 
@@ -40,6 +44,7 @@ jobs:
             --quiet
 
       - name: Sync Europe catalog from mobile.de
+        continue-on-error: true
         run: |
           python car_parser.py \
             --source mobilede \
@@ -50,6 +55,8 @@ jobs:
             --min-records 10 \
             --delay 2 \
             --out cars_europe_new.json \
+            --no-fallback-existing \
+            --fail-empty \
             --quiet
 
       - name: Validate public catalogs

@@ -11606,5 +11606,1317 @@
       }
     ],
     "source": "myauto_ge"
+  },
+  {
+    "id": 195,
+    "brand": "Nissan",
+    "model": "Rogue",
+    "fullName": "Nissan Rogue",
+    "year": 2022,
+    "price": 14200,
+    "price_currency": "USD",
+    "mileage": 22000,
+    "engine": "1,5",
+    "fuel_type": "Дизель",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121766917",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/6/6/7/large/121766917_11.jpg",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 196,
+    "brand": "Jeep",
+    "model": "Compass",
+    "fullName": "Jeep Compass",
+    "year": 2021,
+    "price": 14900,
+    "price_currency": "USD",
+    "mileage": 22000,
+    "engine": "2,4",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "3C4NJD***********",
+    "url": "https://myauto.ge/en/detail/121473294",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/2/3/7/4/large/121473294_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 197,
+    "brand": "Mercedes-Benz",
+    "model": "GLE 350",
+    "fullName": "Mercedes-Benz GLE 350",
+    "year": 2022,
+    "price": 36000,
+    "price_currency": "USD",
+    "mileage": 84258,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "4JGFB4***********",
+    "url": "https://myauto.ge/en/detail/121478079",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/8/7/4/large/121478079_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 198,
+    "brand": "Porsche",
+    "model": "Macan",
+    "fullName": "Porsche Macan",
+    "year": 2023,
+    "price": 47500,
+    "price_currency": "USD",
+    "mileage": 25000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121550930",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/9/0/5/5/large/121550930_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 199,
+    "brand": "Mercedes-Benz",
+    "model": "GLE 350",
+    "fullName": "Mercedes-Benz GLE 350",
+    "year": 2022,
+    "price": 44900,
+    "price_currency": "USD",
+    "mileage": 36000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121499208",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/9/9/4/large/121499208_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 200,
+    "brand": "Lexus",
+    "model": "LX 500",
+    "fullName": "Lexus LX 500",
+    "year": 2023,
+    "price": 121000,
+    "price_currency": "USD",
+    "mileage": 25000,
+    "engine": "3,4",
+    "fuel_type": "Гибрид",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121757888",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/7/5/7/large/121757888_10.jpg",
+        "order": 10
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 201,
+    "brand": "Hyundai",
+    "model": "Tucson",
+    "fullName": "Hyundai Tucson",
+    "year": 2022,
+    "price": 19200,
+    "price_currency": "USD",
+    "mileage": 55000,
+    "engine": "2,5",
+    "fuel_type": "Дизель",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121645577",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/5/5/4/6/large/121645577_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 202,
+    "brand": "Genesis",
+    "model": "GV70",
+    "fullName": "Genesis GV70",
+    "year": 2023,
+    "price": 25500,
+    "price_currency": "USD",
+    "mileage": 42000,
+    "engine": "2,5",
+    "fuel_type": "Дизель",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KMUMAD***********",
+    "url": "https://myauto.ge/en/detail/121757417",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/7/5/7/large/121757417_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 203,
+    "brand": "Audi",
+    "model": "Q3",
+    "fullName": "Audi Q3",
+    "year": 2021,
+    "price": 16300,
+    "price_currency": "USD",
+    "mileage": 127000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "WA1AUCF33M1099449",
+    "url": "https://myauto.ge/en/detail/121119333",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/9/1/1/large/121119333_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 204,
+    "brand": "Toyota",
+    "model": "RAV 4",
+    "fullName": "Toyota RAV 4",
+    "year": 2021,
+    "price": 23500,
+    "price_currency": "USD",
+    "mileage": 65600,
+    "engine": "2,5",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "4T3RWR***********",
+    "url": "https://myauto.ge/en/detail/121753283",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/2/3/5/7/large/121753283_10.jpg",
+        "order": 10
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 205,
+    "brand": "BMW",
+    "model": "I7 ",
+    "fullName": "BMW I7",
+    "year": 2023,
+    "price": 105000,
+    "price_currency": "USD",
+    "mileage": 9000,
+    "engine": "",
+    "fuel_type": "Водород",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121755134",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/1/5/5/7/large/121755134_10.jpg",
+        "order": 10
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 206,
+    "brand": "Mercedes-Benz",
+    "model": "GLE Coupe",
+    "fullName": "Mercedes-Benz GLE Coupe",
+    "year": 2023,
+    "price": 81500,
+    "price_currency": "USD",
+    "mileage": 12470,
+    "engine": "3,0",
+    "fuel_type": "Дизель",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/120790077",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/0/0/9/7/large/120790077_9.jpg",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 207,
+    "brand": "Tesla",
+    "model": "Model Y",
+    "fullName": "Tesla Model Y",
+    "year": 2022,
+    "price": 19999,
+    "price_currency": "USD",
+    "mileage": 56000,
+    "engine": "",
+    "fuel_type": "Водород",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121514916",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/1/5/large/121514916_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 208,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2022,
+    "price": 13300,
+    "price_currency": "USD",
+    "mileage": 44000,
+    "engine": "1,6",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121747013",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/7/4/7/large/121747013_11.jpg",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 209,
+    "brand": "Mercedes-Benz",
+    "model": "GLE 350",
+    "fullName": "Mercedes-Benz GLE 350",
+    "year": 2021,
+    "price": 33000,
+    "price_currency": "USD",
+    "mileage": 123000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "RWD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121664339",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/4/6/6/large/121664339_11.jpg",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 210,
+    "brand": "Mercedes-Benz",
+    "model": "GLB 250",
+    "fullName": "Mercedes-Benz GLB 250",
+    "year": 2021,
+    "price": 26000,
+    "price_currency": "USD",
+    "mileage": 107200,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121272816",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/2/7/2/large/121272816_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 211,
+    "brand": "Toyota",
+    "model": "Venza",
+    "fullName": "Toyota Venza",
+    "year": 2022,
+    "price": 19000,
+    "price_currency": "USD",
+    "mileage": 80000,
+    "engine": "2,5",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121750430",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/4/0/5/7/large/121750430_9.jpg",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 212,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "fullName": "Toyota Corolla",
+    "year": 2023,
+    "price": 15500,
+    "price_currency": "USD",
+    "mileage": 77000,
+    "engine": "1,8",
+    "fuel_type": "Плагин-гибрид",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121712042",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/0/2/1/7/large/121712042_9.jpg",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 213,
+    "brand": "Ford",
+    "model": "Bronco Sport",
+    "fullName": "Ford Bronco Sport",
+    "year": 2022,
+    "price": 18850,
+    "price_currency": "USD",
+    "mileage": 80000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "3FMCR9***********",
+    "url": "https://myauto.ge/en/detail/121750337",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/0/5/7/large/121750337_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/0/5/7/large/121750337_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/0/5/7/large/121750337_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/0/5/7/large/121750337_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/0/5/7/large/121750337_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/0/5/7/large/121750337_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/0/5/7/large/121750337_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/3/0/5/7/large/121750337_8.jpg",
+        "order": 8
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 214,
+    "brand": "Volkswagen",
+    "model": "Tiguan",
+    "fullName": "Volkswagen Tiguan",
+    "year": 2022,
+    "price": 15500,
+    "price_currency": "USD",
+    "mileage": 27000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/120903222",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/2/3/0/9/large/120903222_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
   }
 ]
