@@ -1645,7 +1645,7 @@
                 `Дата заказа: ${new Date().toLocaleString('ru-RU')}\n` +
                 `Источник: Европа (europe-orders.html)`;
             
-            // Отправляем заказ (email + Telegram)
+            // Отправляем заказ через веб-форму
             await sendOrderAutomatically(name, phone, email, orderItems, total, subject, body);
         }
         
@@ -1659,21 +1659,10 @@
             }
             
             try {
-                // Отправляем email и Telegram уведомление параллельно
-                const [emailResult, telegramResult] = await Promise.allSettled([
-                    sendOrderEmail(name, phone, email, orderItems, total, subject, body),
-                    sendTelegramNotification(name, phone, email, orderItems, total)
-                ]);
-                
-                const emailSuccess = emailResult.status === 'fulfilled';
-                const telegramSuccess = telegramResult.status === 'fulfilled';
-                
-                if (emailSuccess || telegramSuccess) {
-                    const messages = [];
-                    if (emailSuccess) messages.push('Email отправлен');
-                    if (telegramSuccess) messages.push('Telegram уведомление отправлено');
-                    
-                    showNotification(`Заказ успешно отправлен! ${messages.join(', ')}. Мы свяжемся с вами в ближайшее время.`, 'success');
+                const emailSent = await sendOrderEmail(name, phone, email, orderItems, total, subject, body);
+
+                if (emailSent) {
+                    showNotification('Заказ успешно отправлен! Мы свяжемся с вами в ближайшее время.', 'success');
                     
                     // Очищаем корзину
                     localStorage.setItem('cart', JSON.stringify([]));
@@ -1757,57 +1746,6 @@
             return false;
         }
         
-        // Отправка уведомления в Telegram
-        async function sendTelegramNotification(name, phone, email, orderItems, total) {
-            // Настройки Telegram Bot
-            // ВАЖНО: Замените на ваши реальные значения
-            // 1. Создайте бота через @BotFather в Telegram
-            // 2. Получите Bot Token
-            // 3. Узнайте Chat ID пользователя @Aleksandr_N_444
-            const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN'; // Замените на ваш Bot Token
-            const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID'; // Замените на Chat ID пользователя
-            
-            // Если токен не настроен, пропускаем отправку
-            if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN' || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID') {
-                return false;
-            }
-            
-            const telegramMessage = `🚗 *Новый заказ с сайта EXPO MIR*\n\n` +
-                `👤 *Контактные данные:*\n` +
-                `Имя: ${name}\n` +
-                `Телефон: ${phone}\n` +
-                `Email: ${email}\n\n` +
-                `📦 *Детали заказа:*\n${orderItems}\n\n` +
-                `💰 *Итого: ${total.toLocaleString('ru-RU')} €*\n\n` +
-                `📅 Дата: ${new Date().toLocaleString('ru-RU')}\n` +
-                `🌍 Источник: Европа`;
-            
-            try {
-                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: telegramMessage,
-                        parse_mode: 'Markdown'
-                    })
-                });
-                
-                if (response.ok) {
-                    return true;
-                } else {
-                    const errorData = await response.json();
-                    console.error('Telegram API error:', errorData);
-                    return false;
-                }
-            } catch (error) {
-                console.error('Telegram error:', error);
-                return false;
-            }
-        }
-
         // Close modals when clicking outside
         window.onclick = function(event) {
             const modals = ['customsModal', 'requestModal', 'selfCalcModal', 'cartModal', 'checkoutModal'];
