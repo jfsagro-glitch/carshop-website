@@ -1189,7 +1189,7 @@ body.premium .about h2 {
 }
 
 .orders-card-desc {
-    font-size: 0.3325rem; /* Уменьшено на 30% (0.475 * 0.7) */
+    font-size: 0.875rem;
     color: #9ca3af;
     margin: 0;
     line-height: 1.4;
@@ -1199,7 +1199,7 @@ body.premium .about h2 {
     display: inline-block;
     background-color: #22c55e;
     color: #ffffff;
-    font-size: 0.576rem; /* увеличение на 44% */
+    font-size: 0.75rem;
     font-weight: 600;
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
@@ -1229,7 +1229,7 @@ body.premium .about h2 {
     flex-direction: column;
     gap: 0.35rem;
     color: #cbd5f5;
-    font-size: 0.684rem; /* увеличение на 44% */
+    font-size: 0.875rem;
 }
 
 .usa-preferential-meta li {

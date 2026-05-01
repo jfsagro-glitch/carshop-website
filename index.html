@@ -1138,7 +1138,6 @@
         window.addEventListener('load', function() {
             const grid = getGeorgiaElement('carsGrid');
             if (grid && (!georgiaCarsData || georgiaCarsData.length === 0)) {
-                console.log('Retrying to load Georgia cars data...');
                 loadGeorgiaCarsData();
             }
         });

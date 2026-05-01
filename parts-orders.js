@@ -329,7 +329,6 @@ function displayPartsCatalog() {
     let parsedParts = null;
     if (partsouqData && partsouqData[selectedBrand] && partsouqData[selectedBrand].models && partsouqData[selectedBrand].models[selectedModel]) {
         parsedParts = partsouqData[selectedBrand].models[selectedModel];
-        console.log('Using parsed partsouq data for', selectedBrand, selectedModel);
     }
     
     // Add car info header
