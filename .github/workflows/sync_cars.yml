@@ -4,7 +4,28 @@ on:
   schedule:
     # 4 раза в день: 08:00, 12:00, 16:00, 20:00 Бишкек
     - cron: '0 2,6,10,14 * * *'
-  workflow_dispatch:       # ручной запуск из GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      min_age:
+        description: 'Минимальный возраст авто в годах'
+        required: true
+        default: '3'
+      max_age:
+        description: 'Максимальный возраст авто в годах'
+        required: true
+        default: '5'
+      max_power_hp:
+        description: 'Максимальная мощность, л.с.'
+        required: true
+        default: '160'
+      georgia_max:
+        description: 'Сколько объявлений myauto.ge проверить'
+        required: true
+        default: '300'
+      europe_max:
+        description: 'Сколько объявлений mobile.de проверить'
+        required: true
+        default: '150'
 
 jobs:
   sync:
@@ -13,6 +34,11 @@ jobs:
       MYAUTO_PROXY: ${{ secrets.MYAUTO_PROXY }}
       MOBILEDE_PROXY: ${{ secrets.MOBILEDE_PROXY }}
       PARSER_PROXY: ${{ secrets.PARSER_PROXY }}
+      MIN_AGE: ${{ github.event.inputs.min_age || '3' }}
+      MAX_AGE: ${{ github.event.inputs.max_age || '5' }}
+      MAX_POWER_HP: ${{ github.event.inputs.max_power_hp || '160' }}
+      GEORGIA_MAX: ${{ github.event.inputs.georgia_max || '300' }}
+      EUROPE_MAX: ${{ github.event.inputs.europe_max || '150' }}
     permissions:
       contents: write      # нужно для git push
 
@@ -30,14 +56,21 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
+      - name: Show parser settings
+        run: |
+          echo "Parser filters: age ${MIN_AGE}-${MAX_AGE}, max power ${MAX_POWER_HP} hp"
+          echo "Georgia max: ${GEORGIA_MAX}"
+          echo "Europe max: ${EUROPE_MAX}"
+          echo "MOBILEDE_PROXY configured: $([[ -n "$MOBILEDE_PROXY" ]] && echo yes || echo no)"
+
       - name: Sync Georgia stock from myauto.ge
         run: |
           python car_parser.py \
             --source myauto \
-            --max 300 \
-            --min-age 3 \
-            --max-age 5 \
-            --max-power-hp 160 \
+            --max "$GEORGIA_MAX" \
+            --min-age "$MIN_AGE" \
+            --max-age "$MAX_AGE" \
+            --max-power-hp "$MAX_POWER_HP" \
             --delay 1.5 \
             --sync-stock \
             --stock-file cars_georgia_stock.json \
@@ -48,10 +81,10 @@ jobs:
         run: |
           python car_parser.py \
             --source mobilede \
-            --max 150 \
-            --min-age 3 \
-            --max-age 5 \
-            --max-power-hp 160 \
+            --max "$EUROPE_MAX" \
+            --min-age "$MIN_AGE" \
+            --max-age "$MAX_AGE" \
+            --max-power-hp "$MAX_POWER_HP" \
             --min-records 10 \
             --delay 2 \
             --out cars_europe_new.json \

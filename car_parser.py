@@ -330,21 +330,6 @@ def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, ma
     return result
 
 
-def load_filtered_records(filepath: str, min_year: int = 0, max_year: int = 0, max_power_hp: int = 0) -> List[dict]:
-    if not filepath or not os.path.exists(filepath):
-        return []
-    try:
-        with open(filepath, encoding="utf-8") as f:
-            data = json.load(f)
-    except Exception as e:
-        log.warning(f"Не удалось загрузить fallback-каталог {filepath}: {e}")
-        return []
-    if not isinstance(data, list):
-        log.warning(f"Fallback-каталог {filepath} не является JSON-массивом")
-        return []
-    return filter_records([item for item in data if isinstance(item, dict)], min_year, max_year, max_power_hp)
-
-
 def filter_cars(cars: List["Car"], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0) -> List["Car"]:
     result = []
     for car in cars:
@@ -1810,8 +1795,6 @@ def build_arg_parser() -> argparse.ArgumentParser:
                    help="Авто-обновить cars_georgia_stock.json из выбранного источника")
     p.add_argument("--validate-catalogs", action="store_true",
                    help="Проверить публичные JSON-каталоги сайта и выйти")
-    p.add_argument("--fallback-existing", action="store_true",
-                   help="Использовать текущий --out JSON как fallback при недоступном web-источнике")
     p.add_argument("--fail-empty", action="store_true",
                    help="Завершаться с ошибкой, если источник не вернул автомобилей")
     p.add_argument("--stock-file", default="cars_georgia_stock.json",
@@ -1965,20 +1948,6 @@ def run(args: argparse.Namespace) -> None:
         print(f"  Файл               : {args.out or 'stdout'}")
         print(f"{'='*50}\n")
         return
-
-    if source in ("mobilede", "europe") and args.out and args.fallback_existing:
-        fallback_records = load_filtered_records(args.out, min_year, max_year, args.max_power_hp)
-        if fallback_records:
-            if len(fallback_records) < args.min_records:
-                log.error(f"Fallback-каталог слишком мал: {len(fallback_records)} < {args.min_records}. Сохранение отменено.")
-                sys.exit(2)
-            export_json_records(fallback_records, args.out)
-            log.warning(f"Внешний источник недоступен, использован текущий каталог {args.out}: {len(fallback_records)} записей")
-            print(f"\n{'='*50}")
-            print(f"  Итого автомобилей : {len(fallback_records)}")
-            print(f"  Источник           : fallback {args.out}")
-            print(f"{'='*50}\n")
-            return
 
     if not cars:
         log.warning("Не найдено ни одного автомобиля.")
