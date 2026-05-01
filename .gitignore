@@ -47,9 +47,7 @@ csv_importer.py
 # Data & import scripts
 cars_data.csv
 cars_extended.csv
-cars_europe_new.json
 cars_europe.json
-cars_georgia_stock.json
 
 # Misc Python scripts
 update_prices.ps1
