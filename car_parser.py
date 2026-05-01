@@ -875,7 +875,7 @@ class MyAutoGeParser:
     """
 
     BASE_API = "https://api2.myauto.ge/en/products"
-    PHOTO_BASE = "https://static.myauto.ge/uploaded/carImages/"
+    PHOTO_BASE = "https://static.my.ge/myauto/photos/"
 
     # Маппинги типов из API
     FUEL_MAP = {1: "Бензин", 2: "Дизель", 3: "Гибрид", 4: "Электро",
@@ -948,18 +948,31 @@ class MyAutoGeParser:
             car.transmission = self.TRANS_MAP.get(item.get("gear_type_id", 2), "Автомат")
             car.drive        = self.DRIVE_MAP.get(item.get("drive_type_id", 0), "")
             car.color        = str(item.get("color", ""))
-            car.power        = str(item.get("power") or item.get("engine_power") or item.get("horse_power") or "")
+            # hp недоступен в списке — используем engine_volume как запасной индикатор
+            car.power        = str(item.get("hp") or "")
 
             # VIN (не всегда доступен в списке)
-            car.vin = str(item.get("vin") or "").upper()
+            vin_raw = str(item.get("vin") or "").upper().strip()
+            # Иногда VIN бывает в тексте описания
+            if not vin_raw:
+                desc = str(item.get("car_desc", ""))
+                vin_m = re.search(r'(?:vin\s*:?\s*)([A-HJ-NPR-Z0-9]{17})', desc, re.I)
+                if vin_m:
+                    vin_raw = vin_m.group(1).upper()
+            car.vin = vin_raw
 
-            # Фото
-            car_id  = item.get("car_id", "")
-            photos  = item.get("photos", [])
-            if photos and isinstance(photos, list):
-                # myauto.ge: фото хранятся как имена файлов
-                first = photos[0] if isinstance(photos[0], str) else photos[0].get("photo_name", "")
-                car.photos = f"{self.PHOTO_BASE}{car_id}/{first}" if first else ""
+            # Фото — формат: {PHOTO_BASE}{photo}/large/{car_id}_{n}.jpg?v=0
+            car_id   = item.get("car_id", "")
+            photo_p  = item.get("photo", "")  # напр.: "3/4/9/6/6"
+            pic_num  = int(item.get("pic_number") or 1)
+            if photo_p and car_id:
+                # Первое фото
+                car.photos = f"{self.PHOTO_BASE}{photo_p}/large/{car_id}_1.jpg"
+                # Все фото — сохраняем в extra для sync_georgia_stock
+                car.extra["images"] = [
+                    {"url": f"{self.PHOTO_BASE}{photo_p}/large/{car_id}_{n}.jpg", "order": n}
+                    for n in range(1, min(pic_num, 12) + 1)
+                ]
             else:
                 car.photos = ""
 
@@ -980,8 +993,9 @@ class MyAutoGeParser:
             params: dict = {
                 "TypeID": 0,
                 "ForRent": 0,
-                "Mans": 0,
-                "page": page,
+                "SortOrder": 1,
+                "Curr": 3,   # USD
+                "Page": page,
             }
             if self.min_year:
                 params["YearFrom"] = self.min_year
@@ -994,7 +1008,7 @@ class MyAutoGeParser:
             if not data:
                 break
 
-            # Структура ответа может быть data.items или data.data.items
+            # Структура ответа: data.data.items + data.data.meta
             items = (data.get("data", {}) or {}).get("items") or data.get("items", [])
             if not items:
                 log.info("myauto.ge: страницы закончились")
@@ -1008,7 +1022,7 @@ class MyAutoGeParser:
                         continue
                     if self.max_year and car.year and car.year > self.max_year:
                         continue
-                    hp = parse_power_hp(car.power)
+                    hp = parse_power_hp(car.power) or item.get("hp", 0)
                     if self.max_power_hp and hp and hp > self.max_power_hp:
                         continue
                     cars.append(car)
@@ -1609,7 +1623,7 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
             "url": url,
             "region": "georgia",
             "regionCode": "georgia",
-            "images": [{"url": car.photos, "order": 1}] if car.photos else [],
+            "images": car.extra.get("images") or ([{"url": car.photos, "order": 1}] if car.photos else []),
             "source": car.source or source,
         }
         key = stock_key(d)
