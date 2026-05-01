@@ -6863,72 +6863,6 @@
   },
   {
     "id": 120,
-    "brand": "KIA",
-    "model": "Sportage",
-    "fullName": "KIA Sportage",
-    "year": 2020,
-    "price": 11500,
-    "price_currency": "USD",
-    "mileage": 65000,
-    "engine": "2,4",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121644548",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_8.jpg",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_9.jpg",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_10.jpg",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/5/4/4/6/large/121644548_11.jpg",
-        "order": 11
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 121,
     "brand": "BMW",
     "model": "330",
     "fullName": "BMW 330",
@@ -6998,7 +6932,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 122,
+    "id": 121,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -7068,7 +7002,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 123,
+    "id": 122,
     "brand": "Jeep",
     "model": "Wrangler",
     "fullName": "Jeep Wrangler",
@@ -7138,7 +7072,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 124,
+    "id": 123,
     "brand": "Mercedes-Benz",
     "model": "A 220",
     "fullName": "Mercedes-Benz A 220",
@@ -7208,7 +7142,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 125,
+    "id": 124,
     "brand": "Tesla",
     "model": "Model 3",
     "fullName": "Tesla Model 3",
@@ -7270,7 +7204,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 126,
+    "id": 125,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -7340,7 +7274,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 127,
+    "id": 126,
     "brand": "BMW",
     "model": "430",
     "fullName": "BMW 430",
@@ -7402,7 +7336,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 128,
+    "id": 127,
     "brand": "Mercedes-Benz",
     "model": "GLE 53",
     "fullName": "Mercedes-Benz GLE 53",
@@ -7472,7 +7406,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 129,
+    "id": 128,
     "brand": "BMW",
     "model": "530",
     "fullName": "BMW 530",
@@ -7542,7 +7476,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 130,
+    "id": 129,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -7612,77 +7546,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 131,
-    "brand": "BMW",
-    "model": "X7",
-    "fullName": "BMW X7",
-    "year": 2020,
-    "price": 29000,
-    "price_currency": "USD",
-    "mileage": 134400,
-    "engine": "3,0",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121189278",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_8.jpg",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_9.jpg",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_10.jpg",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_11.jpg",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/2/9/8/1/large/121189278_12.jpg",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 132,
+    "id": 130,
     "brand": "Mercedes-Benz",
     "model": "GLE Coupe",
     "fullName": "Mercedes-Benz GLE Coupe",
@@ -7752,7 +7616,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 133,
+    "id": 131,
     "brand": "Mazda",
     "model": "Mazda 3",
     "fullName": "Mazda Mazda 3",
@@ -7798,7 +7662,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 134,
+    "id": 132,
     "brand": "Porsche",
     "model": "Cayenne",
     "fullName": "Porsche Cayenne",
@@ -7848,7 +7712,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 135,
+    "id": 133,
     "brand": "Mercedes-Benz",
     "model": "CLA 250",
     "fullName": "Mercedes-Benz CLA 250",
@@ -7910,7 +7774,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 136,
+    "id": 134,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -7980,7 +7844,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 137,
+    "id": 135,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -8050,7 +7914,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 138,
+    "id": 136,
     "brand": "Land Rover",
     "model": "Range Rover  Velar",
     "fullName": "Land Rover Range Rover  Velar",
@@ -8092,7 +7956,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 139,
+    "id": 137,
     "brand": "Mazda",
     "model": "CX-5",
     "fullName": "Mazda CX-5",
@@ -8162,7 +8026,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 140,
+    "id": 138,
     "brand": "Nissan",
     "model": "Ariya",
     "fullName": "Nissan Ariya",
@@ -8232,7 +8096,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 141,
+    "id": 139,
     "brand": "Porsche",
     "model": "Macan",
     "fullName": "Porsche Macan",
@@ -8290,169 +8154,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 142,
-    "brand": "Skoda",
-    "model": "Superb",
-    "fullName": "Skoda Superb",
-    "year": 2020,
-    "price": 0,
-    "price_currency": "USD",
-    "mileage": 115000,
-    "engine": "2,0",
-    "fuel_type": "Дизель",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121684337",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/4/8/6/large/121684337_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/4/8/6/large/121684337_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/4/8/6/large/121684337_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/4/8/6/large/121684337_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/4/8/6/large/121684337_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/4/8/6/large/121684337_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/4/8/6/large/121684337_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/3/4/8/6/large/121684337_8.jpg",
-        "order": 8
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 143,
-    "brand": "Jeep",
-    "model": "Cherokee",
-    "fullName": "Jeep Cherokee",
-    "year": 2020,
-    "price": 6900,
-    "price_currency": "USD",
-    "mileage": 78467,
-    "engine": "3,2",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121634954",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/5/9/4/3/6/large/121634954_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/9/4/3/6/large/121634954_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/9/4/3/6/large/121634954_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/9/4/3/6/large/121634954_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/9/4/3/6/large/121634954_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/9/4/3/6/large/121634954_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/9/4/3/6/large/121634954_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/9/4/3/6/large/121634954_8.jpg",
-        "order": 8
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 144,
-    "brand": "Nissan",
-    "model": "Kicks",
-    "fullName": "Nissan Kicks",
-    "year": 2020,
-    "price": 4500,
-    "price_currency": "USD",
-    "mileage": 48524,
-    "engine": "1,6",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121630733",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/3/7/0/3/6/large/121630733_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/7/0/3/6/large/121630733_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/7/0/3/6/large/121630733_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/7/0/3/6/large/121630733_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/7/0/3/6/large/121630733_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/7/0/3/6/large/121630733_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/7/0/3/6/large/121630733_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/7/0/3/6/large/121630733_8.jpg",
-        "order": 8
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 145,
+    "id": 140,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -8506,7 +8208,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 146,
+    "id": 141,
     "brand": "Hyundai",
     "model": "Sonata",
     "fullName": "Hyundai Sonata",
@@ -8560,7 +8262,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 147,
+    "id": 142,
     "brand": "Chevrolet",
     "model": "Trax",
     "fullName": "Chevrolet Trax",
@@ -8614,7 +8316,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 148,
+    "id": 143,
     "brand": "Jeep",
     "model": "Wrangler",
     "fullName": "Jeep Wrangler",
@@ -8684,77 +8386,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 149,
-    "brand": "BMW",
-    "model": "X5",
-    "fullName": "BMW X5",
-    "year": 2020,
-    "price": 40200,
-    "price_currency": "USD",
-    "mileage": 155200,
-    "engine": "4,4",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "5UXJU2***********",
-    "url": "https://myauto.ge/en/detail/121729667",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_8.jpg",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_9.jpg",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_10.jpg",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_11.jpg",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/6/9/2/7/large/121729667_12.jpg",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 150,
+    "id": 144,
     "brand": "Tesla",
     "model": "Model X",
     "fullName": "Tesla Model X",
@@ -8824,7 +8456,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 151,
+    "id": 145,
     "brand": "Jetour",
     "model": "X70 Plus",
     "fullName": "Jetour X70 Plus",
@@ -8894,7 +8526,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 152,
+    "id": 146,
     "brand": "Toyota",
     "model": "4 Runner",
     "fullName": "Toyota 4 Runner",
@@ -8964,7 +8596,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 153,
+    "id": 147,
     "brand": "BMW",
     "model": "X5",
     "fullName": "BMW X5",
@@ -9034,7 +8666,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 154,
+    "id": 148,
     "brand": "Jeep",
     "model": "Wrangler",
     "fullName": "Jeep Wrangler",
@@ -9104,69 +8736,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 155,
-    "brand": "BMW",
-    "model": "228",
-    "fullName": "BMW 228",
-    "year": 2020,
-    "price": 14500,
-    "price_currency": "USD",
-    "mileage": 72113,
-    "engine": "2,0",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121442190",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_8.jpg",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_9.jpg",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/1/2/4/4/large/121442190_10.jpg",
-        "order": 10
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 156,
+    "id": 149,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -9228,7 +8798,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 157,
+    "id": 150,
     "brand": "BMW",
     "model": "M240",
     "fullName": "BMW M240",
@@ -9298,7 +8868,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 158,
+    "id": 151,
     "brand": "Mercedes-Benz",
     "model": "GLC 300",
     "fullName": "Mercedes-Benz GLC 300",
@@ -9368,7 +8938,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 159,
+    "id": 152,
     "brand": "Tesla",
     "model": "Model Y",
     "fullName": "Tesla Model Y",
@@ -9414,7 +8984,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 160,
+    "id": 153,
     "brand": "Opel",
     "model": "Astra",
     "fullName": "Opel Astra",
@@ -9484,7 +9054,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 161,
+    "id": 154,
     "brand": "Dodge",
     "model": "Challenger",
     "fullName": "Dodge Challenger",
@@ -9550,7 +9120,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 162,
+    "id": 155,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -9620,7 +9190,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 163,
+    "id": 156,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -9670,7 +9240,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 164,
+    "id": 157,
     "brand": "Ford",
     "model": "EcoSport",
     "fullName": "Ford EcoSport",
@@ -9728,77 +9298,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 165,
-    "brand": "KIA",
-    "model": "K5",
-    "fullName": "KIA K5",
-    "year": 2020,
-    "price": 11500,
-    "price_currency": "USD",
-    "mileage": 71000,
-    "engine": "1,6",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/119818263",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_8.jpg",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_9.jpg",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_10.jpg",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_11.jpg",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/2/8/1/8/large/119818263_12.jpg",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 166,
+    "id": 158,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -9868,7 +9368,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 167,
+    "id": 159,
     "brand": "Hyundai",
     "model": "Santa FE",
     "fullName": "Hyundai Santa FE",
@@ -9914,7 +9414,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 168,
+    "id": 160,
     "brand": "Mercedes-Benz",
     "model": "GLE 53",
     "fullName": "Mercedes-Benz GLE 53",
@@ -9984,7 +9484,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 169,
+    "id": 161,
     "brand": "BMW",
     "model": "M4",
     "fullName": "BMW M4",
@@ -10030,57 +9530,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 170,
-    "brand": "Toyota",
-    "model": "4 Runner",
-    "fullName": "Toyota 4 Runner",
-    "year": 2020,
-    "price": 30000,
-    "price_currency": "USD",
-    "mileage": 103000,
-    "engine": "4,0",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "JTEBU5***********",
-    "url": "https://myauto.ge/en/detail/121580165",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/0/8/5/large/121580165_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/0/8/5/large/121580165_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/0/8/5/large/121580165_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/0/8/5/large/121580165_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/0/8/5/large/121580165_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/0/8/5/large/121580165_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/1/0/8/5/large/121580165_7.jpg",
-        "order": 7
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 171,
+    "id": 162,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -10146,7 +9596,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 172,
+    "id": 163,
     "brand": "Lexus",
     "model": "ES 300",
     "fullName": "Lexus ES 300",
@@ -10216,7 +9666,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 173,
+    "id": 164,
     "brand": "Audi",
     "model": "A4",
     "fullName": "Audi A4",
@@ -10278,7 +9728,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 174,
+    "id": 165,
     "brand": "Ford",
     "model": "Bronco Sport",
     "fullName": "Ford Bronco Sport",
@@ -10348,7 +9798,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 175,
+    "id": 166,
     "brand": "Toyota",
     "model": "Camry",
     "fullName": "Toyota Camry",
@@ -10418,7 +9868,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 176,
+    "id": 167,
     "brand": "Porsche",
     "model": "Cayenne",
     "fullName": "Porsche Cayenne",
@@ -10472,7 +9922,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 177,
+    "id": 168,
     "brand": "Toyota",
     "model": "Camry",
     "fullName": "Toyota Camry",
@@ -10542,7 +9992,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 178,
+    "id": 169,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -10600,57 +10050,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 179,
-    "brand": "Land Rover",
-    "model": "Defender 110",
-    "fullName": "Land Rover Defender 110",
-    "year": 2020,
-    "price": 40000,
-    "price_currency": "USD",
-    "mileage": 86350,
-    "engine": "3,0",
-    "fuel_type": "Дизель",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/120576377",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/6/7/5/large/120576377_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/6/7/5/large/120576377_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/6/7/5/large/120576377_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/6/7/5/large/120576377_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/6/7/5/large/120576377_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/6/7/5/large/120576377_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/6/7/5/large/120576377_7.jpg",
-        "order": 7
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 180,
+    "id": 170,
     "brand": "Subaru",
     "model": "Forester",
     "fullName": "Subaru Forester",
@@ -10720,7 +10120,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 181,
+    "id": 171,
     "brand": "KIA",
     "model": "K5",
     "fullName": "KIA K5",
@@ -10790,7 +10190,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 182,
+    "id": 172,
     "brand": "Tesla",
     "model": "Model Y",
     "fullName": "Tesla Model Y",
@@ -10860,7 +10260,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 183,
+    "id": 173,
     "brand": "Land Rover",
     "model": "Range Rover Sport",
     "fullName": "Land Rover Range Rover Sport",
@@ -10898,7 +10298,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 184,
+    "id": 174,
     "brand": "Chevrolet",
     "model": "Camaro",
     "fullName": "Chevrolet Camaro",
@@ -10968,7 +10368,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 185,
+    "id": 175,
     "brand": "Ford",
     "model": "F450",
     "fullName": "Ford F450",
@@ -11010,127 +10410,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 186,
-    "brand": "Maserati",
-    "model": "Levante",
-    "fullName": "Maserati Levante",
-    "year": 2020,
-    "price": 0,
-    "price_currency": "USD",
-    "mileage": 44000,
-    "engine": "3,0",
-    "fuel_type": "Дизель",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121760573",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_8.jpg",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_9.jpg",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_10.jpg",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_11.jpg",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/5/0/6/7/large/121760573_12.jpg",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 187,
-    "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
-    "year": 2020,
-    "price": 9000,
-    "price_currency": "USD",
-    "mileage": 84800,
-    "engine": "2,0",
-    "fuel_type": "Дизель",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "5NPD84***********",
-    "url": "https://myauto.ge/en/detail/121760372",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/0/6/7/large/121760372_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/0/6/7/large/121760372_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/0/6/7/large/121760372_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/0/6/7/large/121760372_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/0/6/7/large/121760372_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/0/6/7/large/121760372_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/3/0/6/7/large/121760372_7.jpg",
-        "order": 7
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 188,
+    "id": 176,
     "brand": "BMW",
     "model": "M5",
     "fullName": "BMW M5",
@@ -11180,7 +10460,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 189,
+    "id": 177,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -11246,7 +10526,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 190,
+    "id": 178,
     "brand": "Mercedes-Benz",
     "model": "GLE 53",
     "fullName": "Mercedes-Benz GLE 53",
@@ -11316,61 +10596,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 191,
-    "brand": "Toyota",
-    "model": "RAV 4",
-    "fullName": "Toyota RAV 4",
-    "year": 2020,
-    "price": 18000,
-    "price_currency": "USD",
-    "mileage": 73000,
-    "engine": "2,0",
-    "fuel_type": "Дизель",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "FWD",
-    "vin": "JTMZ43***********",
-    "url": "https://myauto.ge/en/detail/120841842",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/1/4/8/large/120841842_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/1/4/8/large/120841842_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/1/4/8/large/120841842_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/1/4/8/large/120841842_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/1/4/8/large/120841842_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/1/4/8/large/120841842_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/1/4/8/large/120841842_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/1/4/8/large/120841842_8.jpg",
-        "order": 8
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 192,
+    "id": 179,
     "brand": "Toyota",
     "model": "RAV 4",
     "fullName": "Toyota RAV 4",
@@ -11432,7 +10658,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 193,
+    "id": 180,
     "brand": "Ford",
     "model": "F150",
     "fullName": "Ford F150",
@@ -11502,147 +10728,7 @@
     "source": "myauto_ge"
   },
   {
-    "id": 194,
-    "brand": "Tesla",
-    "model": "Model 3",
-    "fullName": "Tesla Model 3",
-    "year": 2020,
-    "price": 13500,
-    "price_currency": "USD",
-    "mileage": 90000,
-    "engine": "",
-    "fuel_type": "Водород",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121759679",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_8.jpg",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_9.jpg",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_10.jpg",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_11.jpg",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/6/9/5/7/large/121759679_12.jpg",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 195,
-    "brand": "Mercedes-Benz",
-    "model": "E 350",
-    "fullName": "Mercedes-Benz E 350",
-    "year": 2020,
-    "price": 25500,
-    "price_currency": "USD",
-    "mileage": 81000,
-    "engine": "2,0",
-    "fuel_type": "Дизель",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "url": "https://myauto.ge/en/detail/121571876",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_1.jpg",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_2.jpg",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_3.jpg",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_4.jpg",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_5.jpg",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_6.jpg",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_7.jpg",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_8.jpg",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_9.jpg",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_10.jpg",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_11.jpg",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/7/8/1/7/5/large/121571876_12.jpg",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge"
-  },
-  {
-    "id": 196,
+    "id": 181,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -11707,6 +10793,676 @@
       {
         "url": "https://static.my.ge/myauto/photos/3/3/4/1/2/large/121214334_12.jpg",
         "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 182,
+    "brand": "Toyota",
+    "model": "RAV 4",
+    "fullName": "Toyota RAV 4",
+    "year": 2021,
+    "price": 17800,
+    "price_currency": "USD",
+    "mileage": 105000,
+    "engine": "2,5",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121620482",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/4/0/2/6/large/121620482_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/4/0/2/6/large/121620482_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/4/0/2/6/large/121620482_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/4/0/2/6/large/121620482_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/4/0/2/6/large/121620482_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/4/0/2/6/large/121620482_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/4/0/2/6/large/121620482_7.jpg",
+        "order": 7
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 183,
+    "brand": "Mercedes-Benz",
+    "model": "GLE 350",
+    "fullName": "Mercedes-Benz GLE 350",
+    "year": 2021,
+    "price": 33000,
+    "price_currency": "USD",
+    "mileage": 86363,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121766623",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/6/6/7/large/121766623_10.jpg",
+        "order": 10
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 184,
+    "brand": "BMW",
+    "model": "X2",
+    "fullName": "BMW X2",
+    "year": 2022,
+    "price": 20500,
+    "price_currency": "USD",
+    "mileage": 48000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121673564",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/5/3/7/6/large/121673564_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 185,
+    "brand": "Tesla",
+    "model": "Model 3",
+    "fullName": "Tesla Model 3",
+    "year": 2022,
+    "price": 13000,
+    "price_currency": "USD",
+    "mileage": 26243,
+    "engine": "",
+    "fuel_type": "Водород",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121766479",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/4/6/6/7/large/121766479_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/4/6/6/7/large/121766479_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/4/6/6/7/large/121766479_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/4/6/6/7/large/121766479_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/4/6/6/7/large/121766479_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/4/6/6/7/large/121766479_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/4/6/6/7/large/121766479_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/4/6/6/7/large/121766479_8.jpg",
+        "order": 8
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 186,
+    "brand": "Toyota",
+    "model": "RAV 4",
+    "fullName": "Toyota RAV 4",
+    "year": 2021,
+    "price": 0,
+    "price_currency": "USD",
+    "mileage": 177175,
+    "engine": "2,5",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "2T3RWR***********",
+    "url": "https://myauto.ge/en/detail/121479879",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/7/8/9/7/4/large/121479879_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 187,
+    "brand": "Mercedes-Benz",
+    "model": "CLA 250",
+    "fullName": "Mercedes-Benz CLA 250",
+    "year": 2022,
+    "price": 26800,
+    "price_currency": "USD",
+    "mileage": 37000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/120946449",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/6/4/9/large/120946449_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/6/4/9/large/120946449_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/6/4/9/large/120946449_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/6/4/9/large/120946449_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/6/4/9/large/120946449_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/6/4/9/large/120946449_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/6/4/9/large/120946449_7.jpg",
+        "order": 7
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 188,
+    "brand": "Toyota",
+    "model": "Camry",
+    "fullName": "Toyota Camry",
+    "year": 2022,
+    "price": 19700,
+    "price_currency": "USD",
+    "mileage": 89007,
+    "engine": "2,5",
+    "fuel_type": "Плагин-гибрид",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "4T1F31***********",
+    "url": "https://myauto.ge/en/detail/120458990",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/8/5/4/large/120458990_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 189,
+    "brand": "KIA",
+    "model": "Niro",
+    "fullName": "KIA Niro",
+    "year": 2022,
+    "price": 16400,
+    "price_currency": "USD",
+    "mileage": 73000,
+    "engine": "1,6",
+    "fuel_type": "Плагин-гибрид",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121533122",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/3/3/5/large/121533122_9.jpg",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 190,
+    "brand": "Tesla",
+    "model": "Model Y",
+    "fullName": "Tesla Model Y",
+    "year": 2021,
+    "price": 18500,
+    "price_currency": "USD",
+    "mileage": 117000,
+    "engine": "",
+    "fuel_type": "Водород",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121508637",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/6/8/0/5/large/121508637_9.jpg",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 191,
+    "brand": "Chevrolet",
+    "model": "Trax",
+    "fullName": "Chevrolet Trax",
+    "year": 2021,
+    "price": 3500,
+    "price_currency": "USD",
+    "mileage": 150000,
+    "engine": "1,4",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KL7CJL***********",
+    "url": "https://myauto.ge/en/detail/121761152",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/1/1/6/7/large/121761152_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
+  },
+  {
+    "id": 192,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2021,
+    "price": 9500,
+    "price_currency": "USD",
+    "mileage": 78000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "url": "https://myauto.ge/en/detail/121765783",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/7/5/6/7/large/121765783_9.jpg",
+        "order": 9
       }
     ],
     "source": "myauto_ge"
