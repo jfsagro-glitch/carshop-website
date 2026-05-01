@@ -11466,5 +11466,75 @@
       }
     ],
     "source": "myauto_ge"
+  },
+  {
+    "id": 193,
+    "brand": "BMW",
+    "model": "430",
+    "fullName": "BMW 430",
+    "year": 2023,
+    "price": 34800,
+    "price_currency": "USD",
+    "mileage": 47000,
+    "engine": "2,0",
+    "fuel_type": "Дизель",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "RWD",
+    "vin": "WBA63AV01PFP57025",
+    "url": "https://myauto.ge/en/detail/119572592",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_1.jpg",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_2.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_3.jpg",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_4.jpg",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_5.jpg",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_6.jpg",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_7.jpg",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_8.jpg",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_9.jpg",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_10.jpg",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_11.jpg",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/5/2/7/5/large/119572592_12.jpg",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge"
   }
 ]
