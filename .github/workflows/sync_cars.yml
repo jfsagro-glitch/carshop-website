@@ -23,9 +23,9 @@ on:
         required: true
         default: '300'
       europe_max:
-        description: 'Сколько объявлений mobile.de проверить'
+        description: 'Сколько объявлений AutoScout24 проверить'
         required: true
-        default: '150'
+        default: '220'
 
 jobs:
   sync:
@@ -33,12 +33,13 @@ jobs:
     env:
       MYAUTO_PROXY: ${{ secrets.MYAUTO_PROXY }}
       MOBILEDE_PROXY: ${{ secrets.MOBILEDE_PROXY }}
+      AUTOSCOUT24_PROXY: ${{ secrets.AUTOSCOUT24_PROXY }}
       PARSER_PROXY: ${{ secrets.PARSER_PROXY }}
       MIN_AGE: ${{ github.event.inputs.min_age || '3' }}
       MAX_AGE: ${{ github.event.inputs.max_age || '5' }}
       MAX_POWER_HP: ${{ github.event.inputs.max_power_hp || '160' }}
       GEORGIA_MAX: ${{ github.event.inputs.georgia_max || '300' }}
-      EUROPE_MAX: ${{ github.event.inputs.europe_max || '150' }}
+      EUROPE_MAX: ${{ github.event.inputs.europe_max || '220' }}
     permissions:
       contents: write      # нужно для git push
 
@@ -61,7 +62,7 @@ jobs:
           echo "Parser filters: age ${MIN_AGE}-${MAX_AGE}, max power ${MAX_POWER_HP} hp"
           echo "Georgia max: ${GEORGIA_MAX}"
           echo "Europe max: ${EUROPE_MAX}"
-          echo "MOBILEDE_PROXY configured: $([[ -n "$MOBILEDE_PROXY" ]] && echo yes || echo no)"
+          echo "AUTOSCOUT24_PROXY configured: $([[ -n "$AUTOSCOUT24_PROXY" ]] && echo yes || echo no)"
 
       - name: Sync Georgia stock from myauto.ge
         run: |
@@ -76,17 +77,18 @@ jobs:
             --stock-file cars_georgia_stock.json \
             --quiet
 
-      - name: Sync Europe catalog from mobile.de
-        continue-on-error: true
+      - name: Sync Europe catalog from AutoScout24
         run: |
           python car_parser.py \
-            --source mobilede \
+            --source autoscout24 \
             --max "$EUROPE_MAX" \
+            --unique-models 200 \
+            --max-pages 100 \
             --min-age "$MIN_AGE" \
             --max-age "$MAX_AGE" \
             --max-power-hp "$MAX_POWER_HP" \
-            --min-records 10 \
-            --delay 2 \
+            --min-records 200 \
+            --delay 1 \
             --out cars_europe_new.json \
             --fail-empty \
             --quiet
