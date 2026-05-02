@@ -949,23 +949,24 @@ class MyAutoGeParser:
                     vin_raw = vin_m.group(1).upper()
             car.vin = vin_raw
 
-            # Фото — формат: {PHOTO_BASE}{photo}/large/{car_id}_{n}.jpg?v=0
+            # Фото — формат: {PHOTO_BASE}{photo}/large/{car_id}_{n}.jpg?v={photo_ver}
             car_id   = item.get("car_id", "")
             photo_p  = item.get("photo", "")  # напр.: "3/4/9/6/6"
             pic_num  = int(item.get("pic_number") or 1)
+            photo_ver = parse_int(item.get("photo_ver") or 0)
             if photo_p and car_id:
                 # Первое фото
-                car.photos = f"{self.PHOTO_BASE}{photo_p}/large/{car_id}_1.jpg"
+                car.photos = f"{self.PHOTO_BASE}{photo_p}/large/{car_id}_1.jpg?v={photo_ver}"
                 # Все фото — сохраняем в extra для sync_georgia_stock
                 car.extra["images"] = [
-                    {"url": f"{self.PHOTO_BASE}{photo_p}/large/{car_id}_{n}.jpg", "order": n}
+                    {"url": f"{self.PHOTO_BASE}{photo_p}/large/{car_id}_{n}.jpg?v={photo_ver}", "order": n}
                     for n in range(1, min(pic_num, 12) + 1)
                 ]
             else:
                 car.photos = ""
 
             # Ссылка на объявление
-            car.description = f"myauto.ge/en/detail/{car_id}"
+            car.description = f"myauto.ge/ru/pr/{car_id}"
             car.source = "myauto_ge"
             return car
         except Exception as e:
@@ -1764,8 +1765,10 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
         log.warning("Источник не вернул автомобили; существующий stock-файл оставлен без изменений")
         return 0
 
-    # Добавляем только новые записи, сохраняя формат, который читает georgia-stock.html.
-    added = 0
+    # Собираем свежую выдачу первой, чтобы на сайте не висели старые объявления
+    # с уже удаленными фотографиями.
+    fresh_records: List[dict] = []
+    fresh_keys = set()
     for car in new_cars:
         url = car.description
         if url and not url.startswith("http"):
@@ -1792,11 +1795,14 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
             "source": car.source or source,
         }
         key = stock_key(d)
-        if key in existing_keys:
+        if key in fresh_keys:
             continue
-        existing.append(d)
-        existing_keys.add(key)
-        added += 1
+        fresh_records.append(d)
+        fresh_keys.add(key)
+
+    added = len(fresh_keys - existing_keys)
+    archived = [item for item in existing if stock_key(item) not in fresh_keys]
+    existing = fresh_records + archived
 
     # Каждый запуск поддерживает публичный каталог в текущих фильтрах сайта.
     before_filter = len(existing)
