@@ -223,6 +223,7 @@
             justify-content: center;
             color: #4b5563;
             overflow: hidden;
+            cursor: pointer;
         }
 
         @keyframes img-shimmer {
@@ -335,20 +336,20 @@
         }
 
         .car-btns {
-            display: flex;
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
             gap: 0.45rem;
-            margin-top: 0.75rem;
-            flex-wrap: wrap;
+            margin-top: 0.65rem;
         }
 
         .car-btns .btn-primary,
         .car-btns .btn-secondary {
-            flex: 1;
-            min-width: 80px;
-            padding: 0.55rem 0.75rem;
+            width: 100%;
+            min-width: 0;
+            padding: 0.48rem 0.65rem !important;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: 0.78rem !important;
             font-weight: 600;
             transition: all 0.18s;
             display: flex;
@@ -356,6 +357,7 @@
             justify-content: center;
             gap: 0.35rem;
             white-space: nowrap;
+            min-height: 40px;
         }
             border-color: #374151;
         }
@@ -1097,7 +1099,7 @@
 
                 return `
                     <div class="car-card" data-index="${index}">
-                        <div class="car-image">
+                        <div class="car-image" role="button" tabindex="0" aria-label="Открыть все фото ${car.brand} ${car.model}" onclick="${imageCount > 0 ? `openImageModal(${index})` : ''}" onkeydown="${imageCount > 0 ? `if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(${index});}` : ''}">
                             ${finalImageUrl
                                 ? `<img src="${finalImageUrl}" alt="${car.brand} ${car.model}" loading="lazy" decoding="async" onload="this.classList.add('loaded');this.parentElement.classList.remove('loading')" onerror="this.parentElement.classList.add('img-error');this.remove()">`
                                 : ''}
@@ -1116,9 +1118,6 @@
                                 ${car.first_registration ? `<div class="car-spec-item"><i class="fas fa-calendar-alt"></i> ${car.first_registration}</div>` : ''}
                             </div>
                             <div class="car-btns">
-                                ${imageCount > 0 ? `<button class="btn-secondary" onclick="openImageModal(${index})">
-                                    <i class="fas fa-images"></i> Фото
-                                </button>` : ''}
                                 ${car.url ? `<a class="btn-secondary" href="${car.url}" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.4rem;"><i class="fas fa-external-link-alt"></i> ${sourceLabel}</a>` : ''}
                                 <button class="btn-primary" onclick="addToCartEurope(${index})">
                                     <i class="fas fa-shopping-cart"></i> Заказать
