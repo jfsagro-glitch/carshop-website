@@ -276,6 +276,142 @@
             font-weight: 600;
             color: #f3f4f6;
         }
+
+        .parts-picker-panel,
+        .parts-results-panel {
+            margin-top: 2rem;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            border-radius: 14px;
+            padding: 1.25rem;
+            box-shadow: 0 12px 32px rgba(2, 6, 23, 0.45);
+        }
+
+        .parts-picker-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.85rem;
+            align-items: end;
+        }
+
+        .parts-picker-controls label,
+        .parts-results-toolbar label {
+            display: block;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .parts-picker-controls select,
+        .parts-results-toolbar input,
+        .parts-results-toolbar select,
+        .parts-order-modal input,
+        .parts-order-modal textarea {
+            width: 100%;
+            background: #0b1220;
+            border: 1px solid #243044;
+            color: #f8fafc;
+            border-radius: 8px;
+            padding: 0.6rem 0.7rem;
+        }
+
+        .parts-results-toolbar {
+            display: grid;
+            grid-template-columns: minmax(220px, 1.4fr) minmax(180px, 0.8fr);
+            gap: 0.85rem;
+            margin: 1rem 0;
+        }
+
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .parts-item-card {
+            background: #111827;
+            border: 1px solid #223047;
+            border-radius: 10px;
+            padding: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .parts-item-title {
+            color: #f8fafc;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .parts-item-meta {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            display: grid;
+            gap: 0.25rem;
+        }
+
+        .parts-number {
+            color: #facc15;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .parts-card-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .parts-card-actions button {
+            width: 100%;
+            min-height: 38px;
+            border-radius: 7px;
+            font-size: 0.85rem;
+        }
+
+        .parts-order-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.78);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .parts-order-modal.is-open {
+            display: flex;
+        }
+
+        .parts-order-modal__content {
+            width: min(680px, 100%);
+            max-height: 90vh;
+            overflow: auto;
+            background: #111827;
+            border: 1px solid rgba(250, 204, 21, 0.25);
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+
+        .parts-order-modal__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .parts-order-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .parts-order-grid .full {
+            grid-column: 1 / -1;
+        }
         
         @media (max-width: 768px) {
             .parts-hero h1 {
@@ -292,6 +428,11 @@
             }
             
             .parts-filters {
+                grid-template-columns: 1fr;
+            }
+
+            .parts-results-toolbar,
+            .parts-order-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -390,6 +531,41 @@
                 </h2>
                 <div class="models-grid" id="modelsGrid">
                 </div>
+            </div>
+
+            <div class="parts-picker-panel" id="partsPickerPanel">
+                <h2 style="font-size:1.45rem;margin:0 0 1rem;color:#f3f4f6;">Быстрый подбор запчастей</h2>
+                <div class="parts-picker-controls">
+                    <div>
+                        <label for="partsBrandSelect">Марка</label>
+                        <select id="partsBrandSelect"><option value="">Выберите марку</option></select>
+                    </div>
+                    <div>
+                        <label for="partsModelSelect">Модель</label>
+                        <select id="partsModelSelect" disabled><option value="">Выберите модель</option></select>
+                    </div>
+                    <div>
+                        <label for="partsYearSelect">Год</label>
+                        <select id="partsYearSelect" disabled><option value="">Любой год</option></select>
+                    </div>
+                    <button class="filter-btn" id="partsShowBtn" type="button">Показать запчасти</button>
+                </div>
+            </div>
+
+            <div class="parts-results-panel" id="partsResultsPanel" style="display:none;">
+                <h2 style="font-size:1.45rem;margin:0;color:#f3f4f6;" id="partsVehicleTitle"></h2>
+                <p style="color:#94a3b8;margin:0.4rem 0 0;">Номера в витрине помогают оформить заявку. Финальную применимость подтверждаем по VIN перед заказом.</p>
+                <div class="parts-results-toolbar">
+                    <div>
+                        <label for="partsSearchInput">Поиск запчасти или номера</label>
+                        <input id="partsSearchInput" type="text" placeholder="Например, фильтр, колодки, TY-CAMR-OF-001">
+                    </div>
+                    <div>
+                        <label for="partsCategorySelect">Категория</label>
+                        <select id="partsCategorySelect"><option value="">Все категории</option></select>
+                    </div>
+                </div>
+                <div class="parts-grid" id="partsGrid"></div>
             </div>
         </div>
     </section>
@@ -594,10 +770,10 @@
                         <div class="model-card">
                             ${image}
                             <h3 class="model-name">${model.name}</h3>
-                            <a href="${model.url}" target="_blank" class="model-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Открыть каталог
-                            </a>
+                            <button type="button" class="model-link" onclick="window.selectPartsModel && window.selectPartsModel('${brand.name.replace(/'/g, "\\'")}', '${model.name.replace(/'/g, "\\'")}')" style="border:0;cursor:pointer;font-family:inherit;">
+                                <i class="fas fa-list-check"></i>
+                                Выбрать запчасти
+                            </button>
                         </div>
                     `;
                 }).join('');
@@ -800,6 +976,53 @@
                     </div>
                     <button class="btn-primary" id="selfCalcBtn" type="button">Рассчитать</button>
                     <div class="calc-result" id="selfCalcResult" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="partsOrderModal" class="parts-order-modal" aria-hidden="true">
+        <div class="parts-order-modal__content">
+            <div class="parts-order-modal__header">
+                <h3 style="margin:0;color:#f8fafc;">Заказ запчасти</h3>
+                <button type="button" class="btn-secondary" id="partsOrderClose" style="padding:0.4rem 0.65rem;">×</button>
+            </div>
+            <div class="parts-order-grid">
+                <div>
+                    <label for="partsOrderVehicle">Автомобиль</label>
+                    <input id="partsOrderVehicle" readonly>
+                </div>
+                <div>
+                    <label for="partsOrderNumber">Каталожный номер</label>
+                    <input id="partsOrderNumber" readonly>
+                </div>
+                <div class="full">
+                    <label for="partsOrderName">Запчасть</label>
+                    <input id="partsOrderName" readonly>
+                </div>
+                <div>
+                    <label for="partsOrderVin">VIN для точной проверки</label>
+                    <input id="partsOrderVin" maxlength="17" placeholder="17 символов">
+                </div>
+                <div>
+                    <label for="partsOrderQty">Количество</label>
+                    <input id="partsOrderQty" type="number" min="1" value="1">
+                </div>
+                <div>
+                    <label for="partsOrderClient">Ваше имя</label>
+                    <input id="partsOrderClient" placeholder="Имя">
+                </div>
+                <div>
+                    <label for="partsOrderPhone">Телефон</label>
+                    <input id="partsOrderPhone" placeholder="+996 ...">
+                </div>
+                <div class="full">
+                    <label for="partsOrderComment">Комментарий</label>
+                    <textarea id="partsOrderComment" rows="3" placeholder="Сторона, комплектация, срочность, нужен оригинал или аналог"></textarea>
+                </div>
+                <div class="full" id="partsOrderStatus" style="display:none;color:#facc15;"></div>
+                <div class="full">
+                    <button class="btn-primary" id="partsOrderSubmit" type="button" style="width:100%;">Отправить заявку</button>
                 </div>
             </div>
         </div>

@@ -612,3 +612,252 @@ window.addEventListener('click', function(event) {
     }
 });
 
+// New local parts catalog UI
+(() => {
+    const state = {
+        catalog: null,
+        brand: null,
+        model: null,
+        year: '',
+        parts: [],
+        selectedPart: null,
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    function esc(value) {
+        return String(value ?? '').replace(/[&<>"']/g, ch => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[ch]));
+    }
+
+    async function initLocalPartsCatalog() {
+        const brandSelect = $('partsBrandSelect');
+        const modelSelect = $('partsModelSelect');
+        const showBtn = $('partsShowBtn');
+        if (!brandSelect || !modelSelect || !showBtn) return;
+
+        try {
+            const response = await fetch('data/parts_catalog.json?v=' + Date.now(), { cache: 'no-store' });
+            if (!response.ok) throw new Error('parts catalog unavailable');
+            state.catalog = await response.json();
+            fillBrandSelect();
+            updateStatsFromLocalCatalog();
+        } catch (error) {
+            const grid = $('partsGrid');
+            if (grid) grid.innerHTML = '<div class="parts-empty-state">Каталог запчастей временно недоступен</div>';
+            return;
+        }
+
+        brandSelect.addEventListener('change', () => {
+            state.brand = state.catalog.brands.find(brand => brand.slug === brandSelect.value) || null;
+            state.model = null;
+            fillModelSelect();
+        });
+
+        modelSelect.addEventListener('change', () => {
+            state.model = state.brand?.models.find(model => model.slug === modelSelect.value) || null;
+            fillYearSelect();
+        });
+
+        $('partsYearSelect')?.addEventListener('change', event => {
+            state.year = event.target.value;
+        });
+
+        showBtn.addEventListener('click', () => {
+            if (!state.brand || !state.model) {
+                alert('Выберите марку и модель');
+                return;
+            }
+            showPartsForSelection();
+        });
+
+        $('partsSearchInput')?.addEventListener('input', renderParts);
+        $('partsCategorySelect')?.addEventListener('change', renderParts);
+        $('partsOrderClose')?.addEventListener('click', closePartsOrderModal);
+        $('partsOrderSubmit')?.addEventListener('click', submitLocalPartsOrder);
+        $('partsOrderModal')?.addEventListener('click', event => {
+            if (event.target === $('partsOrderModal')) closePartsOrderModal();
+        });
+    }
+
+    function fillBrandSelect() {
+        const brandSelect = $('partsBrandSelect');
+        if (!brandSelect || !state.catalog) return;
+        brandSelect.innerHTML = '<option value="">Выберите марку</option>' + state.catalog.brands
+            .map(brand => `<option value="${esc(brand.slug)}">${esc(brand.name)}</option>`)
+            .join('');
+    }
+
+    function fillModelSelect() {
+        const modelSelect = $('partsModelSelect');
+        const yearSelect = $('partsYearSelect');
+        if (!modelSelect) return;
+        modelSelect.disabled = !state.brand;
+        modelSelect.innerHTML = '<option value="">Выберите модель</option>';
+        if (yearSelect) {
+            yearSelect.disabled = true;
+            yearSelect.innerHTML = '<option value="">Любой год</option>';
+        }
+        if (!state.brand) return;
+        modelSelect.innerHTML += state.brand.models
+            .map(model => `<option value="${esc(model.slug)}">${esc(model.name)}</option>`)
+            .join('');
+    }
+
+    function fillYearSelect() {
+        const yearSelect = $('partsYearSelect');
+        if (!yearSelect) return;
+        yearSelect.disabled = !state.model;
+        yearSelect.innerHTML = '<option value="">Любой год</option>';
+        if (!state.model) return;
+        yearSelect.innerHTML += state.model.years
+            .map(year => `<option value="${year}">${year}</option>`)
+            .join('');
+    }
+
+    function updateStatsFromLocalCatalog() {
+        if (!state.catalog) return;
+        const brandsCount = $('brandsCount');
+        const modelsCount = $('modelsCount');
+        const lastUpdate = $('lastUpdate');
+        const totalModels = state.catalog.brands.reduce((sum, brand) => sum + brand.models.length, 0);
+        if (brandsCount) brandsCount.textContent = state.catalog.brands.length;
+        if (modelsCount) modelsCount.textContent = totalModels;
+        if (lastUpdate && state.catalog.last_updated) {
+            lastUpdate.textContent = new Date(state.catalog.last_updated).toLocaleDateString('ru-RU');
+        }
+    }
+
+    function showPartsForSelection() {
+        state.parts = state.model.parts || [];
+        const panel = $('partsResultsPanel');
+        const title = $('partsVehicleTitle');
+        if (panel) panel.style.display = 'block';
+        if (title) {
+            title.textContent = `${state.brand.name} ${state.model.name}${state.year ? ' ' + state.year : ''}: доступные запчасти`;
+        }
+        fillCategorySelect();
+        renderParts();
+        panel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function fillCategorySelect() {
+        const select = $('partsCategorySelect');
+        if (!select) return;
+        const categories = [...new Set(state.parts.map(part => part.category))].sort((a, b) => a.localeCompare(b, 'ru'));
+        select.innerHTML = '<option value="">Все категории</option>' + categories
+            .map(category => `<option value="${esc(category)}">${esc(category)}</option>`)
+            .join('');
+    }
+
+    function renderParts() {
+        const grid = $('partsGrid');
+        if (!grid) return;
+        const query = ($('partsSearchInput')?.value || '').trim().toLowerCase();
+        const category = $('partsCategorySelect')?.value || '';
+        let list = state.parts;
+        if (category) list = list.filter(part => part.category === category);
+        if (query) {
+            list = list.filter(part => [
+                part.name, part.number, part.category, part.group, ...(part.analog_numbers || [])
+            ].join(' ').toLowerCase().includes(query));
+        }
+        if (!list.length) {
+            grid.innerHTML = '<div class="parts-empty-state">По выбранным условиям запчасти не найдены</div>';
+            return;
+        }
+        grid.innerHTML = list.map((part, index) => `
+            <article class="parts-item-card">
+                <div class="parts-item-title">${esc(part.name)}</div>
+                <div class="parts-item-meta">
+                    <span>${esc(part.category)} / ${esc(part.group)}</span>
+                    <span>Каталожный номер: <span class="parts-number">${esc(part.number)}</span></span>
+                    <span>Аналоги: ${esc((part.analog_numbers || []).join(', '))}</span>
+                    <span>Обычно требуется: ${esc(part.quantity)} шт.</span>
+                </div>
+                <div class="parts-card-actions">
+                    <button class="btn-primary" type="button" data-part-index="${index}"><i class="fas fa-shopping-cart"></i> Заказать</button>
+                </div>
+            </article>
+        `).join('');
+        grid.querySelectorAll('[data-part-index]').forEach((button, index) => {
+            button.addEventListener('click', () => openLocalPartsOrder(list[index]));
+        });
+    }
+
+    function openLocalPartsOrder(part) {
+        state.selectedPart = part;
+        const vehicle = `${state.brand?.name || ''} ${state.model?.name || ''}${state.year ? ' ' + state.year : ''}`.trim();
+        $('partsOrderVehicle').value = vehicle;
+        $('partsOrderNumber').value = part.number || '';
+        $('partsOrderName').value = part.name || '';
+        $('partsOrderQty').value = part.quantity || 1;
+        $('partsOrderVin').value = '';
+        $('partsOrderClient').value = '';
+        $('partsOrderPhone').value = '';
+        $('partsOrderComment').value = '';
+        const status = $('partsOrderStatus');
+        if (status) status.style.display = 'none';
+        const modal = $('partsOrderModal');
+        if (modal) {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function closePartsOrderModal() {
+        const modal = $('partsOrderModal');
+        if (modal) {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    function submitLocalPartsOrder() {
+        const status = $('partsOrderStatus');
+        const client = $('partsOrderClient').value.trim();
+        const phone = $('partsOrderPhone').value.trim();
+        if (!client || !phone) {
+            if (status) {
+                status.textContent = 'Укажите имя и телефон';
+                status.style.display = 'block';
+            }
+            return;
+        }
+        const body = [
+            'Заказ запчасти EXPO MIR',
+            `Автомобиль: ${$('partsOrderVehicle').value}`,
+            `Запчасть: ${$('partsOrderName').value}`,
+            `Каталожный номер: ${$('partsOrderNumber').value}`,
+            `VIN: ${$('partsOrderVin').value.trim() || 'не указан'}`,
+            `Количество: ${$('partsOrderQty').value}`,
+            `Клиент: ${client}`,
+            `Телефон: ${phone}`,
+            `Комментарий: ${$('partsOrderComment').value.trim() || 'нет'}`
+        ].join('\n');
+        window.location.href = `mailto:carexportgeo@bk.ru?subject=${encodeURIComponent('Заказ запчасти ' + $('partsOrderNumber').value)}&body=${encodeURIComponent(body)}`;
+        if (status) {
+            status.textContent = 'Заявка подготовлена. Если почтовое окно не открылось, напишите нам в WhatsApp.';
+            status.style.display = 'block';
+            status.style.color = '#10b981';
+        }
+    }
+
+    window.selectPartsModel = function(brandName, modelName) {
+        if (!state.catalog) return;
+        state.brand = state.catalog.brands.find(brand => brand.name === brandName) || null;
+        state.model = state.brand?.models.find(model => model.name === modelName) || null;
+        if (!state.brand || !state.model) return;
+        const brandSelect = $('partsBrandSelect');
+        const modelSelect = $('partsModelSelect');
+        if (brandSelect) brandSelect.value = state.brand.slug;
+        fillModelSelect();
+        if (modelSelect) modelSelect.value = state.model.slug;
+        fillYearSelect();
+        showPartsForSelection();
+    };
+
+    document.addEventListener('DOMContentLoaded', initLocalPartsCatalog);
+})();
+
