@@ -25,7 +25,7 @@ on:
       europe_max:
         description: 'Сколько объявлений AutoScout24 проверить'
         required: true
-        default: '220'
+        default: '240'
 
 jobs:
   sync:
@@ -39,7 +39,7 @@ jobs:
       MAX_AGE: ${{ github.event.inputs.max_age || '5' }}
       MAX_POWER_HP: ${{ github.event.inputs.max_power_hp || '160' }}
       GEORGIA_MAX: ${{ github.event.inputs.georgia_max || '300' }}
-      EUROPE_MAX: ${{ github.event.inputs.europe_max || '220' }}
+      EUROPE_MAX: ${{ github.event.inputs.europe_max || '240' }}
     permissions:
       contents: write      # нужно для git push
 
@@ -59,7 +59,7 @@ jobs:
 
       - name: Show parser settings
         run: |
-          echo "Parser filters: age ${MIN_AGE}-${MAX_AGE}, max power ${MAX_POWER_HP} hp"
+          echo "Parser filters: age ${MIN_AGE}-${MAX_AGE} by current month, max power ${MAX_POWER_HP} hp / 115 kW"
           echo "Georgia max: ${GEORGIA_MAX}"
           echo "Europe max: ${EUROPE_MAX}"
           echo "AUTOSCOUT24_PROXY configured: $([[ -n "$AUTOSCOUT24_PROXY" ]] && echo yes || echo no)"
@@ -83,11 +83,11 @@ jobs:
             --source autoscout24 \
             --max "$EUROPE_MAX" \
             --unique-models 200 \
-            --max-pages 100 \
+            --max-pages 140 \
             --min-age "$MIN_AGE" \
             --max-age "$MAX_AGE" \
             --max-power-hp "$MAX_POWER_HP" \
-            --min-records 200 \
+            --min-records 150 \
             --delay 1 \
             --out cars_europe_new.json \
             --fail-empty \

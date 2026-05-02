@@ -303,9 +303,40 @@ def year_range_from_age(min_age: int = 0, max_age: int = 0, current_year: Option
     oldest = year - max_age if max_age else 0
     return oldest, newest
 
+def month_range_from_age(min_age: int = 0, max_age: int = 0, now: Optional[datetime] = None) -> tuple[int, int]:
+    if not min_age and not max_age:
+        return 0, 0
+    current = now or datetime.now()
+    newest = (current.year - min_age) * 100 + current.month if min_age else 999912
+    oldest = (current.year - max_age) * 100 + current.month if max_age else 0
+    return oldest, newest
+
+
+def parse_year_month(value: Any) -> tuple[int, int]:
+    if value in (None, ""):
+        return 0, 0
+    text = str(value).strip()
+    month_year = re.search(r"\b(0?[1-9]|1[0-2])[./-]((?:19|20)\d{2})\b", text)
+    if month_year:
+        return int(month_year.group(2)), int(month_year.group(1))
+    year_month = re.search(r"\b((?:19|20)\d{2})[./-](0?[1-9]|1[0-2])\b", text)
+    if year_month:
+        return int(year_month.group(1)), int(year_month.group(2))
+    year = re.search(r"\b(19|20)\d{2}\b", text)
+    return (int(year.group()), 0) if year else (0, 0)
+
 
 def record_year(record: dict) -> int:
     return parse_int(record.get("year") or record.get("first_registration_year") or record.get("prod_year") or 0)
+
+def record_year_month(record: dict) -> tuple[int, int]:
+    for key in ("first_registration", "registration", "date", "production_date"):
+        year, month = parse_year_month(record.get(key))
+        if year:
+            return year, month
+    year = record_year(record)
+    month = parse_int(record.get("month") or record.get("prod_month") or record.get("first_registration_month") or 0)
+    return year, month if 1 <= month <= 12 else 0
 
 
 def record_power_hp(record: dict) -> int:
@@ -317,31 +348,69 @@ def record_power_hp(record: dict) -> int:
         return round(kw * 1.35962)
     return parse_power_hp(record.get("power") or record.get("мощность"))
 
+def record_power_kw(record: dict) -> int:
+    kw = parse_int(record.get("power_kw") or record.get("kw") or 0)
+    if kw:
+        return kw
+    hp = parse_int(record.get("power_hp") or record.get("hp") or record.get("ps") or 0)
+    if hp:
+        return round(hp / 1.35962)
+    power = parse_power_hp(record.get("power") or record.get("мощность"))
+    return round(power / 1.35962) if power else 0
 
-def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0) -> List[dict]:
+def max_kw_for_hp_limit(max_power_hp: int) -> int:
+    if not max_power_hp:
+        return 0
+    return min(115, round(max_power_hp / 1.35962))
+
+
+def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0,
+                   min_year_month: int = 0, max_year_month: int = 0) -> List[dict]:
     result = []
+    max_power_kw = max_kw_for_hp_limit(max_power_hp)
     for record in records:
-        year = record_year(record)
+        year, month = record_year_month(record)
         if min_year and year and year < min_year:
             continue
         if max_year and year and year > max_year:
             continue
+        year_month = year * 100 + (month or 1)
+        if min_year_month and year and year_month < min_year_month:
+            continue
+        year_month_for_max = year * 100 + (month or 12)
+        if max_year_month and year and year_month_for_max > max_year_month:
+            continue
         hp = record_power_hp(record)
         if max_power_hp and hp and hp > max_power_hp:
+            continue
+        kw = record_power_kw(record)
+        if max_power_kw and kw and kw > max_power_kw:
             continue
         result.append(record)
     return result
 
 
-def filter_cars(cars: List["Car"], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0) -> List["Car"]:
+def filter_cars(cars: List["Car"], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0,
+                min_year_month: int = 0, max_year_month: int = 0) -> List["Car"]:
     result = []
+    max_power_kw = max_kw_for_hp_limit(max_power_hp)
     for car in cars:
         if min_year and car.year and car.year < min_year:
             continue
         if max_year and car.year and car.year > max_year:
             continue
+        month = parse_int(car.extra.get("month") or car.extra.get("prod_month") or 0)
+        year_month = car.year * 100 + (month or 1)
+        if min_year_month and car.year and year_month < min_year_month:
+            continue
+        year_month_for_max = car.year * 100 + (month or 12)
+        if max_year_month and car.year and year_month_for_max > max_year_month:
+            continue
         hp = parse_power_hp(car.power)
         if max_power_hp and hp and hp > max_power_hp:
+            continue
+        kw = parse_int(car.extra.get("power_kw") or 0)
+        if max_power_kw and kw and kw > max_power_kw:
             continue
         result.append(car)
     return result
@@ -914,6 +983,7 @@ class MyAutoGeParser:
             car.brand = normalize_brand(str(item.get("man_name", "")))
             car.model = str(item.get("model_name", ""))
             car.year  = parse_int(item.get("prod_year", 0))
+            car.extra["prod_month"] = parse_int(item.get("prod_month") or 0)
 
             # Цена — предпочитаем USD
             price_usd = item.get("price_usd") or item.get("price_value", 0)
@@ -1531,7 +1601,9 @@ class MobileDeParser:
         if not cars:
             log.info("mobile.de: JSON-состояние не найдено, пробуем HTML-карточки")
             cars = self._extract_from_cards(html)
-        cars = filter_records(cars, self.min_year, self.max_year, self.max_power_hp)
+        min_ym = self.min_year * 100 + datetime.now().month if self.min_year else 0
+        max_ym = self.max_year * 100 + datetime.now().month if self.max_year else 0
+        cars = filter_records(cars, self.min_year, self.max_year, self.max_power_hp, min_ym, max_ym)
         log.info(f"mobile.de: итого {len(cars)} автомобилей")
         return cars[:self.max_cars]
 
@@ -1688,7 +1760,9 @@ class AutoScout24Parser:
             html = self._get(self._build_url(page))
             if not html:
                 break
-            page_records = filter_records(self._extract_page(html), self.min_year, self.max_year, self.max_power_hp)
+            min_ym = self.min_year * 100 + datetime.now().month if self.min_year else 0
+            max_ym = self.max_year * 100 + datetime.now().month if self.max_year else 0
+            page_records = filter_records(self._extract_page(html), self.min_year, self.max_year, self.max_power_hp, min_ym, max_ym)
             if not page_records:
                 log.info(f"AutoScout24: страница {page}, данных нет")
                 break
@@ -1718,7 +1792,8 @@ class AutoScout24Parser:
 def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
                        stock_file: str = "cars_georgia_stock.json",
                        delay: float = 1.5, proxy: Optional[str] = None,
-                       min_year: int = 0, max_year: int = 0, max_power_hp: int = 0) -> int:
+                       min_year: int = 0, max_year: int = 0, max_power_hp: int = 0,
+                       min_year_month: int = 0, max_year_month: int = 0) -> int:
     """
     Загружает актуальные объявления из myauto.ge или ap.ge,
     объединяет с текущим стоком и сохраняет в stock_file.
@@ -1760,7 +1835,7 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
 
     new_cars = parser.parse()
     new_cars = dedup_by_vin(new_cars)
-    new_cars = filter_cars(new_cars, min_year, max_year, max_power_hp)
+    new_cars = filter_cars(new_cars, min_year, max_year, max_power_hp, min_year_month, max_year_month)
     if not new_cars:
         log.warning("Источник не вернул автомобили; существующий stock-файл оставлен без изменений")
         return 0
@@ -1779,6 +1854,7 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
             "model": car.model,
             "fullName": f"{car.brand} {car.model}".strip(),
             "year": car.year,
+            "month": car.extra.get("prod_month") or 0,
             "price": car.price,
             "price_currency": "USD",
             "mileage": car.mileage,
@@ -1806,7 +1882,7 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
 
     # Каждый запуск поддерживает публичный каталог в текущих фильтрах сайта.
     before_filter = len(existing)
-    existing = filter_records(existing, min_year, max_year, max_power_hp)
+    existing = filter_records(existing, min_year, max_year, max_power_hp, min_year_month, max_year_month)
     if len(existing) < before_filter:
         log.info(f"Фильтр каталога: убрано {before_filter - len(existing)} записей вне условий")
 
@@ -1866,9 +1942,32 @@ def validate_catalog_file(filepath: str, required: List[str], min_records: int =
     return len(data)
 
 
+def validate_catalog_constraints(filepath: str, min_year_month: int, max_year_month: int,
+                                 max_power_hp: int, max_power_kw: int) -> None:
+    with open(filepath, encoding="utf-8") as f:
+        data = json.load(f)
+    bad = []
+    for item in data:
+        year, month = record_year_month(item)
+        year_month = year * 100 + (month or 1)
+        hp = record_power_hp(item)
+        kw = record_power_kw(item)
+        if not year or year_month < min_year_month or year_month > max_year_month:
+            bad.append(f"{item.get('brand')} {item.get('model')}: {year_month}")
+        elif hp and hp > max_power_hp:
+            bad.append(f"{item.get('brand')} {item.get('model')}: {hp} hp")
+        elif kw and kw > max_power_kw:
+            bad.append(f"{item.get('brand')} {item.get('model')}: {kw} kW")
+    if bad:
+        raise RuntimeError(f"{filepath}: записи вне условий 05.2021-05.2023, <=160 hp, <=115 kW: {'; '.join(bad[:5])}")
+
+
 def validate_public_catalogs() -> None:
     validate_catalog_file("cars_europe_new.json", ["id", "brand", "model", "price", "images"], min_records=10)
     validate_catalog_file("cars_georgia_stock.json", ["id", "brand", "model", "price", "url"], min_records=20)
+    min_ym, max_ym = month_range_from_age(3, 5)
+    validate_catalog_constraints("cars_europe_new.json", min_ym, max_ym, 160, 115)
+    validate_catalog_constraints("cars_georgia_stock.json", min_ym, max_ym, 160, 115)
 
 
 def export_csv(cars: List[Car], filepath: str) -> None:
@@ -2051,8 +2150,11 @@ def run(args: argparse.Namespace) -> None:
 
     proxy = args.proxy or proxy_from_env(source)
     age_min_year, age_max_year = year_range_from_age(args.min_age, args.max_age)
+    age_min_ym, age_max_ym = month_range_from_age(args.min_age, args.max_age)
     min_year = args.min_year or age_min_year
     max_year = args.max_year or age_max_year
+    min_year_month = 0 if args.min_year else age_min_ym
+    max_year_month = 0 if args.max_year else age_max_ym
 
     # Синхронизация стока (быстрый путь)
     if getattr(args, "sync_stock", False):
@@ -2066,6 +2168,8 @@ def run(args: argparse.Namespace) -> None:
             min_year=min_year,
             max_year=max_year,
             max_power_hp=args.max_power_hp,
+            min_year_month=min_year_month,
+            max_year_month=max_year_month,
         )
         log.info(f"Синхронизация завершена: +{added} новых авто")
         return
@@ -2136,7 +2240,7 @@ def run(args: argparse.Namespace) -> None:
         cars = HtmlParser(url=args.url, delay=args.delay, proxy=proxy).parse()
 
     if cars:
-        cars = filter_cars(cars, min_year, max_year, args.max_power_hp)
+        cars = filter_cars(cars, min_year, max_year, args.max_power_hp, min_year_month, max_year_month)
 
     if europe_records:
         if len(europe_records) < args.min_records:

@@ -2044,7 +2044,8 @@ async function loadUsaOrdersSection(){
     // Обновляем метрики если есть секция
     if (metrics) {
         try {
-            const prices = usaUnder160Cars.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
+            const visibleUsaCars = usaUnder160Cars.filter(matchesImportCatalogRule);
+            const prices = visibleUsaCars.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
             const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
             const min = prices.length ? prices[0] : null;
 
@@ -2052,7 +2053,7 @@ async function loadUsaOrdersSection(){
             const avgEl = metrics.querySelector('[data-metric="avg"]');
             const minEl = metrics.querySelector('[data-metric="min"]');
             
-            if (countEl) countEl.textContent = numberFormatter.format(usaUnder160Cars.length);
+            if (countEl) countEl.textContent = numberFormatter.format(visibleUsaCars.length);
             if (avgEl) avgEl.textContent = avg ? formatCurrency(avg) : '—';
             if (minEl) minEl.textContent = min ? formatCurrency(min) : '—';
         } catch (error) {
@@ -2149,9 +2150,15 @@ function renderPreferentialCars(){
         return;
     }
 
+    const visibleCars = usaUnder160Cars.filter(matchesImportCatalogRule);
+    if (!visibleCars.length) {
+        container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по условиям 05.2021-05.2023 и до 160 л.с. / 115 кВт</div>';
+        return;
+    }
+
     container.innerHTML = '';
 
-    usaUnder160Cars.forEach(car=>{
+    visibleCars.forEach(car=>{
         const imageSrc = car.image || buildSvgPlaceholder(car.name || 'Автомобиль');
         const card = document.createElement('article');
         card.className = 'orders-card usa-under-card';
@@ -3896,6 +3903,52 @@ function getUnder160PriceValue(car){
     return price;
 }
 
+function getImportAgeWindow(){
+    const now = new Date();
+    const month = now.getMonth() + 1;
+    return {
+        min: (now.getFullYear() - 5) * 100 + month,
+        max: (now.getFullYear() - 3) * 100 + month
+    };
+}
+
+function getCatalogYearMonth(car){
+    if (!car) return 0;
+    const source = String(car.productionDate || car.date || car.first_registration || car.years || car.year || car.name || '').trim();
+    const monthYear = source.match(/\b(0?[1-9]|1[0-2])[./-]((?:19|20)\d{2})\b/);
+    if (monthYear) return parseInt(monthYear[2], 10) * 100 + parseInt(monthYear[1], 10);
+    const yearMonth = source.match(/\b((?:19|20)\d{2})[./-](0?[1-9]|1[0-2])\b/);
+    if (yearMonth) return parseInt(yearMonth[1], 10) * 100 + parseInt(yearMonth[2], 10);
+    const years = [...source.matchAll(/\b((?:19|20)\d{2})\b/g)].map(match => parseInt(match[1], 10));
+    if (!years.length) return 0;
+    return Math.max(...years) * 100 + 1;
+}
+
+function getCatalogPower(car){
+    const text = String(car?.power || car?.specs?.join(' ') || '');
+    const values = [...text.matchAll(/(\d+(?:[.,]\d+)?)\s*(кВт|kw|л\.?\s*с\.?|лс|hp|ps)?/gi)]
+        .map(match => ({ value: parseFloat(match[1].replace(',', '.')), unit: (match[2] || '').toLowerCase() }))
+        .filter(item => Number.isFinite(item.value));
+    if (!values.length) return { hp: 0, kw: 0 };
+    const kwValues = values.filter(item => item.unit.includes('kw') || item.unit.includes('квт')).map(item => item.value);
+    const hpValues = values.filter(item => !item.unit.includes('kw') && !item.unit.includes('квт')).map(item => item.value);
+    const kw = kwValues.length ? Math.max(...kwValues) : 0;
+    const hp = hpValues.length ? Math.max(...hpValues) : (kw ? Math.round(kw * 1.35962) : 0);
+    return { hp, kw: kw || (hp ? Math.round(hp / 1.35962) : 0) };
+}
+
+function matchesImportCatalogRule(car){
+    const yearMonth = getCatalogYearMonth(car);
+    if (yearMonth) {
+        const window = getImportAgeWindow();
+        if (yearMonth < window.min || yearMonth > window.max) return false;
+    }
+    const power = getCatalogPower(car);
+    if (power.hp && power.hp > 160) return false;
+    if (power.kw && power.kw > 115) return false;
+    return true;
+}
+
 function setupChinaUnder160Section(){
     const grid = document.getElementById('chinaUnder160Grid');
     if (!grid) return;
@@ -3909,7 +3962,7 @@ function setupChinaUnder160Section(){
 
     if (!state.chinaUnder160) {
         state.chinaUnder160 = {
-            data: chinaCars.map((car, index) => ({
+            data: chinaCars.filter(matchesImportCatalogRule).map((car, index) => ({
                 ...car,
                 price: getUnder160PriceValue(car),
                 _order: index
@@ -4069,7 +4122,7 @@ function setupKoreaUnder160Section(){
 
     if (!state.koreaUnder160 || state.koreaUnder160.data.length !== dataSource.length) {
         state.koreaUnder160 = {
-            data: dataSource.map((car, index) => ({
+            data: dataSource.filter(matchesImportCatalogRule).map((car, index) => ({
                 ...car,
                 price: getUnder160PriceValue(car),
                 _order: index
