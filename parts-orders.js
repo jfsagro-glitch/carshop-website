@@ -631,6 +631,29 @@ window.addEventListener('click', function(event) {
         }[ch]));
     }
 
+    function modelCode(modelName) {
+        return String(modelName || '').toUpperCase().replace(/[^A-Z0-9А-Я]/g, '').slice(0, 4).padEnd(4, 'X');
+    }
+
+    function makePartNumber(part, index) {
+        const prefix = state.brand?.prefix || String(state.brand?.name || 'EX').slice(0, 2).toUpperCase();
+        return `${prefix}-${modelCode(state.model?.name)}-${part.code}-${String(index + 1).padStart(3, '0')}`;
+    }
+
+    function buildPartsForCurrentModel() {
+        if (Array.isArray(state.model?.parts) && state.model.parts.length) return state.model.parts;
+        const template = state.catalog?.parts_template || [];
+        return template.map((part, index) => {
+            const number = makePartNumber(part, index);
+            return {
+                ...part,
+                number,
+                analog_numbers: [`${number}-A`, `${number}-B`, `${number}-X`],
+                note: 'Применимость и точный OEM подтверждаем по VIN перед заказом.'
+            };
+        });
+    }
+
     async function initLocalPartsCatalog() {
         const brandSelect = $('partsBrandSelect');
         const modelSelect = $('partsModelSelect');
@@ -730,7 +753,7 @@ window.addEventListener('click', function(event) {
     }
 
     function showPartsForSelection() {
-        state.parts = state.model.parts || [];
+        state.parts = buildPartsForCurrentModel();
         const panel = $('partsResultsPanel');
         const title = $('partsVehicleTitle');
         if (panel) panel.style.display = 'block';

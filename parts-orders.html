@@ -696,7 +696,7 @@
             let selectedBrand = null;
             
             try {
-                const response = await fetch('images/partsouq/parts_catalog.json');
+                const response = await fetch('data/parts_catalog.json?v=' + Date.now(), { cache: 'no-store' });
                 if (!response.ok) throw new Error('Failed to load parts catalog');
                 catalogData = await response.json();
                 
