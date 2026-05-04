@@ -633,9 +633,27 @@ window.addEventListener('click', function(event) {
         brand: null,
         model: null,
         year: '',
+        engine: null,
         parts: [],
         selectedPart: null,
     };
+
+    // Parts that are diesel-incompatible (require spark plugs / HV ignition)
+    const DIESEL_INCOMPATIBLE_PARTS = new Set([
+        'Свечи зажигания', 'Катушки зажигания',
+        'Высоковольтные провода', 'Модуль зажигания',
+        'Распределитель зажигания'
+    ]);
+    // Parts only for diesel engines
+    const DIESEL_ONLY_PARTS = new Set(['Свечи накаливания']);
+    // Parts that don't apply to pure electric vehicles
+    const NOT_FOR_ELECTRIC = new Set([
+        'Свечи зажигания', 'Катушки зажигания', 'Высоковольтные провода',
+        'Топливный насос', 'Топливный фильтр', 'Топливная форсунка',
+        'Масляный насос', 'Масляный фильтр', 'Масляный радиатор',
+        'Свечи накаливания', 'Выхлопная труба', 'Глушитель',
+        'Каталитический нейтрализатор', 'Ремень ГРМ', 'Цепь ГРМ'
+    ]);
 
     const $ = (id) => document.getElementById(id);
 
@@ -657,15 +675,25 @@ window.addEventListener('click', function(event) {
     function buildPartsForCurrentModel() {
         if (Array.isArray(state.model?.parts) && state.model.parts.length) return state.model.parts;
         const template = state.catalog?.parts_template || [];
-        return template.map((part, index) => {
-            const number = makePartNumber(part, index);
-            return {
-                ...part,
-                number,
-                analog_numbers: [`${number}-A`, `${number}-B`, `${number}-X`],
-                note: 'Применимость и точный OEM подтверждаем по VIN перед заказом.'
-            };
-        });
+        const fuel = state.engine?.fuel || null;
+        return template
+            .filter(part => {
+                if (!fuel) return true;
+                if (fuel === 'Электро') return !NOT_FOR_ELECTRIC.has(part.name);
+                if (fuel === 'Дизель') return !DIESEL_INCOMPATIBLE_PARTS.has(part.name);
+                // Бензин / Гибрид — hide diesel-only parts
+                return !DIESEL_ONLY_PARTS.has(part.name);
+            })
+            .map((part, index) => {
+                const engCode = state.engine?.code ? `-${state.engine.code.replace(/[^A-Z0-9]/gi, '').slice(0, 6).toUpperCase()}` : '';
+                const number = makePartNumber(part, index) + engCode;
+                return {
+                    ...part,
+                    number,
+                    analog_numbers: [`${number}-A`, `${number}-B`, `${number}-X`],
+                    note: 'Применимость и точный OEM подтверждаем по VIN перед заказом.'
+                };
+            });
     }
 
     async function initLocalPartsCatalog() {
@@ -694,11 +722,17 @@ window.addEventListener('click', function(event) {
 
         modelSelect.addEventListener('change', () => {
             state.model = state.brand?.models.find(model => model.slug === modelSelect.value) || null;
+            state.engine = null;
             fillYearSelect();
         });
 
         $('partsYearSelect')?.addEventListener('change', event => {
             state.year = event.target.value;
+        });
+
+        $('partsEngineSelect')?.addEventListener('change', event => {
+            const slug = event.target.value;
+            state.engine = state.model?.engines?.find(e => e.slug === slug) || null;
         });
 
         showBtn.addEventListener('click', () => {
@@ -729,12 +763,17 @@ window.addEventListener('click', function(event) {
     function fillModelSelect() {
         const modelSelect = $('partsModelSelect');
         const yearSelect = $('partsYearSelect');
+        const engineSelect = $('partsEngineSelect');
         if (!modelSelect) return;
         modelSelect.disabled = !state.brand;
         modelSelect.innerHTML = '<option value="">Выберите модель</option>';
         if (yearSelect) {
             yearSelect.disabled = true;
             yearSelect.innerHTML = '<option value="">Любой год</option>';
+        }
+        if (engineSelect) {
+            engineSelect.disabled = true;
+            engineSelect.innerHTML = '<option value="">Любой двигатель</option>';
         }
         if (!state.brand) return;
         modelSelect.innerHTML += state.brand.models
@@ -751,6 +790,28 @@ window.addEventListener('click', function(event) {
         yearSelect.innerHTML += state.model.years
             .map(year => `<option value="${year}">${year}</option>`)
             .join('');
+        fillEngineSelect();
+    }
+
+    function fillEngineSelect() {
+        const engineSelect = $('partsEngineSelect');
+        if (!engineSelect) return;
+        const engines = state.model?.engines;
+        engineSelect.innerHTML = '<option value="">Любой двигатель</option>';
+        if (!engines?.length) {
+            engineSelect.disabled = true;
+            return;
+        }
+        engineSelect.disabled = false;
+        engineSelect.innerHTML += engines
+            .map(e => `<option value="${esc(e.slug)}">${esc(e.label)}</option>`)
+            .join('');
+        // Restore previously selected engine if it still applies
+        if (state.engine?.slug) {
+            const still = engines.find(e => e.slug === state.engine.slug);
+            if (still) engineSelect.value = still.slug;
+            else state.engine = null;
+        }
     }
 
     function updateStatsFromLocalCatalog() {
@@ -772,7 +833,8 @@ window.addEventListener('click', function(event) {
         const title = $('partsVehicleTitle');
         if (panel) panel.style.display = 'block';
         if (title) {
-            title.textContent = `${state.brand.name} ${state.model.name}${state.year ? ' ' + state.year : ''}: доступные запчасти`;
+            const engineLabel = state.engine ? ` · ${state.engine.label}` : '';
+            title.textContent = `${state.brand.name} ${state.model.name}${state.year ? ' ' + state.year : ''}${engineLabel}: доступные запчасти`;
         }
         fillCategorySelect();
         renderParts();
@@ -825,7 +887,8 @@ window.addEventListener('click', function(event) {
 
     function openLocalPartsOrder(part) {
         state.selectedPart = part;
-        const vehicle = `${state.brand?.name || ''} ${state.model?.name || ''}${state.year ? ' ' + state.year : ''}`.trim();
+        const engineStr = state.engine ? ` ${state.engine.label}` : '';
+        const vehicle = `${state.brand?.name || ''} ${state.model?.name || ''}${state.year ? ' ' + state.year : ''}${engineStr}`.trim();
         $('partsOrderVehicle').value = vehicle;
         $('partsOrderNumber').value = part.number || '';
         $('partsOrderName').value = part.name || '';
@@ -904,6 +967,7 @@ window.addEventListener('click', function(event) {
         if (!state.catalog) return;
         state.brand = state.catalog.brands.find(brand => brand.name === brandName) || null;
         state.model = state.brand?.models.find(model => model.name === modelName) || null;
+        state.engine = null;
         if (!state.brand || !state.model) return;
         const brandSelect = $('partsBrandSelect');
         const modelSelect = $('partsModelSelect');
