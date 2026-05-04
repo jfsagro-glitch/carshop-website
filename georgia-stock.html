@@ -222,15 +222,19 @@
             min-height: 230px !important;
             max-height: 230px !important;
             position: relative;
-            background: linear-gradient(90deg, #141f35 25%, #1a2b4a 50%, #141f35 75%);
-            background-size: 200% 100%;
-            animation: img-shimmer 1.5s infinite;
+            background: #141f35;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #4b5563;
             overflow: hidden;
             cursor: pointer;
+        }
+
+        .car-image.loading {
+            background: linear-gradient(90deg, #141f35 25%, #1a2b4a 50%, #141f35 75%);
+            background-size: 200% 100%;
+            animation: img-shimmer 1.5s infinite;
         }
 
         @keyframes img-shimmer {
@@ -252,8 +256,7 @@
         }
 
         .car-image.img-error {
-            animation: none;
-            background: #141f35;
+            background: #0f172a;
         }
 
         .car-img-placeholder {
@@ -375,6 +378,27 @@
             justify-content: center;
             gap: 0.35rem;
             white-space: nowrap;
+        }
+
+        .car-btns .btn-primary {
+            background: #d4af37;
+            color: #0b1220;
+            border: none;
+        }
+
+        .car-btns .btn-primary:hover {
+            background: #f4d03f;
+        }
+
+        .car-btns .btn-secondary {
+            background: transparent;
+            color: #e5e7eb;
+            border: 1px solid #374151;
+        }
+
+        .car-btns .btn-secondary:hover {
+            background: #1f2937;
+            border-color: #4b5563;
         }
 
         .btn-view-images {
