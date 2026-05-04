@@ -738,10 +738,13 @@
             <div id="cars-grid" class="cars-grid">
                 <div class="loading">Загружаем предложения...</div>
             </div>
+            <div style="text-align:center;margin-top:2rem;">
+                <button id="load-more-btn" class="btn-primary" style="display:none;padding:.75rem 2.5rem;font-size:1rem;" onclick="loadMoreCars()">
+                    Загрузить ещё <span id="load-more-count"></span>
+                </button>
+            </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Свяжитесь с нами</h2>
@@ -868,6 +871,8 @@
     <script>
         let carsData = [];
         let filteredCars = [];
+        let displayedCount = 24;
+        const PAGE_SIZE = 24;
         let currentCarIndex = -1;
         let currentImageIndex = 0;
 
@@ -1083,14 +1088,34 @@
         }
 
         // Отображение автомобилей
+        function loadMoreCars() {
+            displayedCount += PAGE_SIZE;
+            displayCars();
+        }
+
+        function updateLoadMoreBtn() {
+            const btn = document.getElementById('load-more-btn');
+            const cnt = document.getElementById('load-more-count');
+            if (!btn) return;
+            const remaining = filteredCars.length - displayedCount;
+            if (remaining > 0) {
+                btn.style.display = 'inline-block';
+                cnt.textContent = `(ещё ${Math.min(remaining, PAGE_SIZE)} из ${remaining})`;
+            } else {
+                btn.style.display = 'none';
+            }
+        }
+
         function displayCars() {
             const grid = document.getElementById('cars-grid');
             if (filteredCars.length === 0) {
                 grid.innerHTML = '<div class="no-results">Автомобили не найдены</div>';
+                updateLoadMoreBtn();
                 return;
             }
 
-            grid.innerHTML = filteredCars.map((car, index) => {
+            const carsToShow = filteredCars.slice(0, displayedCount);
+            grid.innerHTML = carsToShow.map((car, index) => {
                 const images = filterImages(car.images);
                 const firstImage = images.length > 0 ? images[0].url : '';
                 const imageCount = images.length;
@@ -1141,6 +1166,7 @@
                     </div>
                 `;
             }).join('');
+            updateLoadMoreBtn();
         }
 
         // Настройка фильтров
@@ -1165,8 +1191,10 @@
                 return true;
             });
 
+            displayedCount = PAGE_SIZE;
             updateStats();
             displayCars();
+            sbLogSearch('europe-orders', {brand, model, priceFrom: priceFrom || undefined, priceTo: isFinite(priceTo) ? priceTo : undefined, mileageTo: isFinite(mileageTo) ? mileageTo : undefined}, filteredCars.length);
         }
 
         // Сброс фильтров
@@ -1178,6 +1206,7 @@
             document.getElementById('mileage-to').value = '';
             populateModelFilter(); // Обновляем список моделей
             filteredCars = [...carsData];
+            displayedCount = PAGE_SIZE;
             updateStats();
             displayCars();
         }

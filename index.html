@@ -1091,6 +1091,13 @@
                     if (el && cnt > 0) el.textContent = cnt + '+ авто';
                 } catch(_) {}
 
+                // Обновляем счётчик Europe через Supabase
+                try {
+                    const cntEu = await sbCountCars('europe');
+                    const elEu = document.getElementById('europeStockCount');
+                    if (elEu && cntEu > 0) elEu.textContent = cntEu + '+ авто';
+                } catch(_) {}
+
                 // Загружаем курс
                 await loadGeorgiaUsdToRubRate();
 

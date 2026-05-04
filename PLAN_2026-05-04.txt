@@ -1,0 +1,250 @@
+================================================================================
+  EXPO MIR — ПЛАН РАБОТ ПО ПРОЕКТУ
+  Дата: 04 мая 2026
+  Тема: Интеграция Supabase + улучшение сайта
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ВЫПОЛНЕНО СЕГОДНЯ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ЭТАП 0] Инфраструктура Supabase
+─────────────────────────────────
+✅ database/schema.sql — создана полная схема PostgreSQL:
+     • Таблица cars (external_id UNIQUE, brand, model, year, price, images, specs...)
+     • Таблица parts (oem_number, category, stock_qty, price_usd, price_kgs...)
+     • Таблица leads (type, name, phone, email, car_id FK, car_info, source_page...)
+     • Таблица search_events (page, filters, results_cnt — аналитика поиска)
+     • RLS (Row Level Security): публичный SELECT на cars/parts, INSERT на leads
+     • Индексы: по brand, region, is_active, year, price
+     • Триггеры: auto-update поля updated_at
+   Применена в Supabase Dashboard через Management API (скрипт Python)
+
+✅ supabase-client.js — клиент для фронтенда (Vanilla JS, без зависимостей):
+     • sbQueryCars(opts) — фильтры: region, brand, model, price, mileage, year, fuel...
+     • sbGetBrands(region), sbGetModels(brand, region) — для фильтров
+     • sbCountCars(region) — счётчик авто для главной страницы
+     • sbSubmitLead(opts) — отправка заявок (замена FormSubmit.co)
+     • sbQueryParts(opts) — каталог запчастей
+     • sbLogSearch(page, filters, cnt) — аналитика (fire-and-forget)
+     • sbLoadCarsWithFallback(region, jsonFile) — Supabase → JSON fallback
+     • _normalizeSbCar(row) — алиасы полей для совместимости с HTML-страницами
+
+✅ GitHub Secrets добавлены автоматически через GitHub API:
+     • SUPABASE_URL = https://jolyujjfxzhkswflqodz.supabase.co
+     • SUPABASE_SERVICE_KEY = (service_role ключ)
+
+[ЭТАП 1] Парсер → синхронизация с Supabase
+────────────────────────────────────────────
+✅ car_parser.py переписан под прямые REST-вызовы (без SDK):
+     • Убран supabase Python SDK (требовал C++ Build Tools через pyiceberg)
+     • _supabase_client() → возвращает {url, key} для requests
+     • _sb_upsert(cfg, table, rows, conflict_col) — POST с on_conflict=external_id
+     • _sb_deactivate_source(cfg, source) — PATCH is_active=false перед upsert
+     • sync_to_supabase(records, region, source) — дедупликация + batch=50
+     • _georgia_to_row(rec) — конвертация myauto.ge записи в строку БД
+     • _europe_to_row(rec) — конвертация autoscout24/mobile.de в строку БД
+     • Вызывается автоматически после каждого парсинга
+
+✅ GitHub Actions (.github/workflows/sync_cars.yml):
+     • pip install только: requests beautifulsoup4 (убран supabase SDK)
+     • Env vars: SUPABASE_URL, SUPABASE_SERVICE_KEY из секретов
+     • Расписание: 02:00, 06:00, 10:00, 14:00 UTC (4 раза в день)
+
+✅ Первичная загрузка данных в Supabase:
+     • Georgia (myauto_ge): 163 активных авто
+     • Europe (autoscout24): 200 активных авто
+     • Итого в таблице cars: 363 записи
+
+[ЭТАП 2] Фронтенд читает из Supabase
+──────────────────────────────────────
+✅ georgia-stock.html:
+     • Подключён supabase-client.js
+     • loadCarsData() → sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json')
+     • При ошибке Supabase — автоматический fallback на JSON
+
+✅ europe-orders.html:
+     • Подключён supabase-client.js
+     • loadCarsData() → sbLoadCarsWithFallback('europe', './cars_europe_new.json')
+
+✅ index.html (главная):
+     • Подключён supabase-client.js
+     • loadGeorgiaCarsData() → sbLoadCarsWithFallback('georgia', ...)
+     • Счётчик авто обновляется через sbCountCars('georgia')
+
+[ЭТАП 3] Каталог запчастей
+───────────────────────────
+✅ parts-orders.html — подключён supabase-client.js
+✅ parts-orders.js:
+     • loadPartsouqData() теперь читает из Supabase таблицы parts
+     • Graceful fallback если таблица пуста (статический UI остаётся)
+     • Группировка по маркам для совместимости с UI фильтрами
+
+[ЭТАП 4] CRM — заявки в Supabase
+──────────────────────────────────
+✅ georgia-stock.html — sendOrderEmail():
+     • Сначала sbSubmitLead() → сохранение в Supabase leads
+     • Потом FormSubmit.co email как backup
+     • Тип заявки: 'car_order', source_page: 'georgia-stock'
+
+✅ europe-orders.html — sendOrderEmail():
+     • Аналогично Georgia — Supabase + FormSubmit.co
+
+✅ parts-orders.js — submitLocalPartsOrder():
+     • sbSubmitLead() с type: 'parts_order', включает vehicle/part/oem/vin
+     • Fallback — mailto как раньше
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  КОММИТЫ СЕГОДНЯ (git log)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [pending]  feat: phase2 — RLS fix, Telegram alerts, pagination, sbLogSearch
+  d1a5fed  feat: leads saved to Supabase (stage 4) + parts catalog (stage 3)
+  f509075  feat: frontend reads from Supabase with JSON fallback (stage 2)
+  2e906f3  fix: deduplicate rows, add on_conflict param, reduce batch to 50
+  115d499  fix: use requests REST API for Supabase (no SDK, no pyiceberg/C++)
+  4b64f72  fix: rename supabase/ → database/ (Python import conflict)
+  7baf3ae  feat: Supabase integration - schema, JS client, parser, workflow
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ЧТО ЕЩЁНУЖНО СДЕЛАТЬ (в порядке приоритета)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ПРИОРИТЕТ 1 — КРИТИЧНО (блокирует полноценную работу)
+──────────────────────────────────────────────────────
+
+✅ Supabase RLS: исправлен через Management API (setup_phase2.py)
+    • Удалены все SELECT политики для anon на leads и search_events
+    • Только INSERT разрешён для анонимных пользователей
+    • notified_at столбец добавлен для отслеживания уведомлений
+
+✅ Telegram-уведомления о новых заявках
+    • notify_leads.py — скрипт уведомлений через Bot API
+    • GitHub Actions .github/workflows/notify_leads.yml — каждые 15 минут
+    • Секреты TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID добавлены автоматически
+    • Отмечает notified_at после отправки — нет дублей
+
+✅ Проверить фронтенд на живом сайте (cmsauto.store)
+    - Открыть georgia-stock.html → DevTools → Network
+    - Убедиться что запросы идут к supabase.co, не только к JSON
+    - Проверить что счётчик на главной обновляется
+
+
+ПРИОРИТЕТ 2 — ВАЖНО (улучшение функционала)
+─────────────────────────────────────────────
+
+✅ Клиентская пагинация georgia-stock.html + europe-orders.html
+    • Первые 24 авто, кнопка "Загрузить ещё (+N из M)"
+    • При смене фильтров — сброс счётчика к 24
+    • loadMoreCars() + updateLoadMoreBtn() добавлены
+
+✅ sbLogSearch() в applyFilters()
+    • georgia-stock.html → sbLogSearch('georgia-stock', filters, count)
+    • europe-orders.html → sbLogSearch('europe-orders', filters, count)
+    • Аналитика поиска автоматически пишется в Supabase search_events
+
+✅ Счётчик europe авто на главной
+    • sbCountCars('europe') добавлен после sbCountCars('georgia')
+    • Обновляет #europeStockCount на index.html
+
+□ parts-orders: заполнение каталога запчастей
+    Сейчас: таблица parts пуста (0 записей)
+    Надо: создать parts_parser.py или вручную заполнить популярные позиции
+    Минимум: добавить 50-100 популярных запчастей для Toyota/BMW/Mercedes
+
+
+ПРИОРИТЕТ 3 — УЛУЧШЕНИЯ (по желанию)
+──────────────────────────────────────
+
+□ Admin панель для просмотра заявок
+    Вариант A: Supabase Dashboard → Table Editor (уже работает)
+    Вариант B: Простая HTML страница с паролем + sbQueryLeads()
+    Вариант C: Retool / Appsmith (no-code admin на базе Supabase)
+
+□ Дублирование уведомлений на email через Supabase
+    Supabase → Edge Function → Resend.com → email при новой заявке
+    Альтернатива: оставить FormSubmit.co как основной email-канал
+
+□ Полнотекстовый поиск по каталогу
+    В схеме уже есть поддержка: sbQueryCars({search: 'Toyota Camry'})
+    Нужно добавить строку поиска в фильтры georgia-stock.html
+
+□ SEO — sitemap.xml с динамическими URL авто
+    GitHub Action генерирует sitemap из cars JSON
+    Добавляет ссылки на каждое авто (id/external_id)
+
+□ Авто-удаление старых неактивных записей из cars
+    После N дней is_active=false → удалять через Supabase Scheduled Function
+    Или добавить в GitHub Actions скрипт очистки
+
+□ Аналитика search_events
+    Таблица search_events уже логирует поисковые запросы
+    Добавить sbLogSearch() вызов в applyFilters() в georgia-stock.html и europe-orders.html
+    Польза: понять что ищут пользователи
+
+□ A/B тест: Supabase vs JSON fallback
+    Добавить метку в timestamp: "(Supabase)" или "(кэш)"
+    Уже частично есть: result._source === 'json' проверка
+
+
+ПРИОРИТЕТ 4 — ДОЛГОСРОЧНО
+───────────────────────────
+
+□ Korea/USA/China orders — подключить к Supabase
+    Файлы: korea-orders.html, usa-orders.html, china-orders.html
+    Сейчас: используют emailFallbackForm → formsubmit.co
+    Надо: добавить supabase-client.js + sbSubmitLead()
+
+□ Парсер Корея (encar.com / kbchachacha.com)
+    Добавить новый источник в car_parser.py
+    Таблица: cars (region='korea')
+    Страница: korea-orders.html читает из Supabase region='korea'
+
+□ Парсер запчастей (partsouq.com / autodoc.ru)
+    Создать parts_parser.py
+    Upsert в Supabase таблицу parts
+    Каталог автоматически обновляется через GitHub Actions
+
+□ Личный кабинет клиента (PWA)
+    История заявок по номеру телефона
+    Статус доставки
+    Требует: Supabase Auth (телефон/OTP)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ТЕКУЩЕЕ СОСТОЯНИЕ СИСТЕМЫ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Сайт:         https://cmsauto.store (GitHub Pages, ветка main)
+  Репозиторий:  https://github.com/jfsagro-glitch/carshop-website
+  Supabase:     https://jolyujjfxzhkswflqodz.supabase.co
+
+  Таблица cars:
+    georgia (myauto_ge)   — 163 активных авто
+    europe (autoscout24)  — 200 активных авто
+    Итого:                — 363 записи
+
+  Таблица parts:          — 0 записей (таблица готова, данных нет)
+  Таблица leads:          — 0 записей (работает, ждёт реальных заявок)
+  Таблица search_events:  — 0 записей (логирование не подключено к UI)
+
+  GitHub Actions:
+    Расписание: 4 раза в день (02:00, 06:00, 10:00, 14:00 UTC)
+    Последний авто-синк: 2026-05-03 14:49 UTC
+    Статус секретов: SUPABASE_URL ✅  SUPABASE_SERVICE_KEY ✅
+
+  Зависимости Python (car_parser.py):
+    requests==2.31.0       ✅ (используется для парсинга И для Supabase REST)
+    beautifulsoup4==4.12.3 ✅
+    pg8000                 ✅ (установлен локально, не нужен в production)
+    supabase SDK           ✗ УДАЛЁН (несовместим с Python 3.14 без C++ tools)
+
+  Ключевые файлы:
+    car_parser.py          — парсер + Supabase sync (requests-based)
+    supabase-client.js     — фронтенд REST клиент (Vanilla JS)
+    database/schema.sql    — SQL схема (применена в Supabase)
+    .github/workflows/sync_cars.yml — GitHub Actions
+
+================================================================================

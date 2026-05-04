@@ -2,7 +2,7 @@ name: Auto-sync car catalogs
 
 on:
   schedule:
-    # 4 раза в день: 08:00, 12:00, 16:00, 20:00 Бишкек
+    # 4 раза в день: 08:00, 12:00, 16:00, 20:00 Бишкек (UTC+6)
     - cron: '0 2,6,10,14 * * *'
   workflow_dispatch:
     inputs:
@@ -37,6 +37,8 @@ jobs:
       PARSER_PROXY: ${{ secrets.PARSER_PROXY }}
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       MIN_AGE: ${{ github.event.inputs.min_age || '3' }}
       MAX_AGE: ${{ github.event.inputs.max_age || '5' }}
       MAX_POWER_HP: ${{ github.event.inputs.max_power_hp || '160' }}
@@ -111,3 +113,6 @@ jobs:
           git add cars_georgia_stock.json cars_europe_new.json
           git commit -m "auto: sync car catalogs [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push
+
+      - name: Notify new leads to Telegram
+        run: python notify_leads.py
