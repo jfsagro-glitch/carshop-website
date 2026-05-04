@@ -58,6 +58,12 @@ try:
 except ImportError:
     BS4_AVAILABLE = False
 
+try:
+    from supabase import create_client as _sb_create_client
+    SUPABASE_AVAILABLE = True
+except ImportError:
+    SUPABASE_AVAILABLE = False
+
 # ── Logging ──────────────────────────────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
@@ -1893,7 +1899,137 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
     _atomic_write_json(existing, stock_file)
 
     log.info(f"Сток обновлён: +{added} новых, итого {len(existing)} записей → {stock_file}")
+
+    # Синхронизация в Supabase (если заданы переменные окружения)
+    sync_to_supabase(existing, region="georgia", source="myauto_ge")
+
     return added
+
+
+# ── Supabase синхронизация ───────────────────────────────────────────────────
+
+def _supabase_client():
+    """Создаёт клиент Supabase через service_role key из окружения."""
+    url = os.environ.get("SUPABASE_URL", "")
+    key = os.environ.get("SUPABASE_SERVICE_KEY", "")
+    if not url or not key:
+        return None
+    if not SUPABASE_AVAILABLE:
+        log.warning("Supabase SDK не установлен: pip install 'supabase>=2.3.0'")
+        return None
+    try:
+        return _sb_create_client(url, key)
+    except Exception as e:
+        log.error(f"Supabase: ошибка создания клиента: {e}")
+        return None
+
+
+def _georgia_to_row(rec: dict) -> dict:
+    """Конвертирует запись из cars_georgia_stock.json в строку таблицы cars."""
+    raw_engine = str(rec.get("engine") or "").replace(",", ".")
+    try:
+        engine_val: Optional[float] = float(raw_engine) if raw_engine else None
+    except ValueError:
+        engine_val = None
+    url = rec.get("url") or ""
+    return {
+        "external_id": url or f"myauto_ge:{rec.get('id','')}",
+        "source": rec.get("source") or "myauto_ge",
+        "region": "georgia",
+        "brand": rec.get("brand"),
+        "model": rec.get("model"),
+        "year": rec.get("year"),
+        "price": rec.get("price"),
+        "currency": "USD",
+        "mileage": rec.get("mileage"),
+        "engine": engine_val,
+        "fuel_type": rec.get("fuel_type"),
+        "transmission": rec.get("transmission"),
+        "color": rec.get("color"),
+        "drive": rec.get("drive"),
+        "vin": rec.get("vin") or None,
+        "url": url,
+        "images": rec.get("images") or [],
+        "specs": {},
+        "is_active": True,
+        "last_seen": datetime.utcnow().isoformat() + "Z",
+    }
+
+
+def _europe_to_row(rec: dict) -> dict:
+    """Конвертирует запись из cars_europe_new.json в строку таблицы cars."""
+    url = rec.get("url") or ""
+    base_keys = {
+        "brand", "model", "price", "mileage", "fuel_type", "transmission",
+        "power_kw", "power_hp", "vin", "url", "images", "source",
+        "year", "first_registration_year", "currency"
+    }
+    specs = {k: v for k, v in rec.items() if k not in base_keys and v is not None}
+    return {
+        "external_id": url or f"autoscout24:{rec.get('id','')}",
+        "source": rec.get("source") or "autoscout24",
+        "region": "europe",
+        "brand": rec.get("brand"),
+        "model": rec.get("model"),
+        "year": rec.get("first_registration_year") or rec.get("year"),
+        "price": rec.get("price"),
+        "currency": "EUR",
+        "mileage": rec.get("mileage"),
+        "fuel_type": rec.get("fuel_type"),
+        "transmission": rec.get("transmission"),
+        "power_kw": rec.get("power_kw"),
+        "power_hp": rec.get("power_hp"),
+        "vin": rec.get("vin") or None,
+        "url": url,
+        "images": rec.get("images") or [],
+        "specs": specs,
+        "is_active": True,
+        "last_seen": datetime.utcnow().isoformat() + "Z",
+    }
+
+
+def sync_to_supabase(records: list, region: str, source: str) -> None:
+    """
+    Upsert записей в таблицу cars Supabase.
+    Сначала помечает все записи источника неактивными,
+    затем делает upsert новых/обновлённых через external_id.
+    Ничего не делает если SUPABASE_URL/SERVICE_KEY не заданы.
+    """
+    sb = _supabase_client()
+    if sb is None:
+        log.info("Supabase: переменные окружения не заданы — пропуск синхронизации в БД")
+        return
+
+    if not records:
+        log.warning(f"Supabase sync: нет записей для region={region}")
+        return
+
+    try:
+        # Помечаем старые записи этого источника неактивными
+        sb.table("cars").update({"is_active": False}).eq("source", source).execute()
+        log.info(f"Supabase: source={source} помечен неактивным")
+
+        # Конвертируем в строки таблицы
+        if region == "georgia":
+            rows = [_georgia_to_row(r) for r in records]
+        else:
+            rows = [_europe_to_row(r) for r in records]
+
+        # Пропускаем записи без external_id
+        rows = [r for r in rows if r.get("external_id")]
+
+        # Upsert батчами по 100 (Supabase лимит)
+        BATCH = 100
+        total = 0
+        for i in range(0, len(rows), BATCH):
+            batch = rows[i: i + BATCH]
+            sb.table("cars").upsert(batch, on_conflict="external_id").execute()
+            total += len(batch)
+
+        log.info(f"Supabase: upsert {total} записей → region={region}, source={source}")
+
+    except Exception as e:
+        log.error(f"Supabase sync ошибка (region={region}): {e}")
 
 def _atomic_write_json(data: Any, filepath: str) -> None:
     path = Path(filepath)
@@ -2251,6 +2387,10 @@ def run(args: argparse.Namespace) -> None:
             export_json_records(europe_records, out)
         else:
             print(json.dumps(europe_records, ensure_ascii=False, indent=2))
+
+        # Синхронизация в Supabase
+        sync_to_supabase(europe_records, region="europe", source=source)
+
         print(f"\n{'='*50}")
         print(f"  Итого автомобилей : {len(europe_records)}")
         print(f"  Источник           : {source}")

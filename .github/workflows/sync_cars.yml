@@ -35,6 +35,8 @@ jobs:
       MOBILEDE_PROXY: ${{ secrets.MOBILEDE_PROXY }}
       AUTOSCOUT24_PROXY: ${{ secrets.AUTOSCOUT24_PROXY }}
       PARSER_PROXY: ${{ secrets.PARSER_PROXY }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
       MIN_AGE: ${{ github.event.inputs.min_age || '3' }}
       MAX_AGE: ${{ github.event.inputs.max_age || '5' }}
       MAX_POWER_HP: ${{ github.event.inputs.max_power_hp || '160' }}
@@ -55,7 +57,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4 'supabase>=2.3.0'
 
       - name: Show parser settings
         run: |
