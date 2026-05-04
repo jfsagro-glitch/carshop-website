@@ -417,24 +417,55 @@
     <script src="script.js"></script>
     <script src="header.js"></script>
     <script>
-        // Асинхронная загрузка данных Кореи
+        // Нормализация записи из Supabase/JSON формата Korea для рендеринга
+        function _normalizeKoreaCar(car) {
+            const brand = car.brand || '';
+            const model = car.model || '';
+            const year  = car.year  || '';
+            // Название карточки
+            if (!car.name) car.name = [brand, model, year].filter(Boolean).join(' ');
+            // Цена в USD
+            if (!car.price && car.price_usd) car.price = car.price_usd;
+            // Изображение
+            if (!car.image) {
+                const imgs = car.images;
+                if (Array.isArray(imgs) && imgs.length) car.image = imgs[0];
+            }
+            // Ссылка на источник
+            if (!car.link && car.url) car.link = car.url;
+            // Specs array для buildUnder160CarSpecs
+            if (!car.specs || (typeof car.specs === 'object' && !Array.isArray(car.specs))) {
+                const s = [];
+                const fuel = car.fuel_type;
+                const trans = car.transmission;
+                const eng   = car.engine;
+                const mil   = car.mileage;
+                const drv   = car.drive || (car.specs && car.specs.drive);
+                if (fuel)  s.push('Топливо: ' + fuel);
+                if (eng)   s.push('Объем двигателя: ' + eng + ' л');
+                if (trans) s.push('Трансмиссия: ' + trans);
+                if (mil)   s.push('Пробег: ' + Number(mil).toLocaleString('ru') + ' км');
+                if (drv)   s.push('Привод: ' + drv);
+                if (year)  s.push('Год: ' + year);
+                car.specs = s.length ? s : ['Характеристики уточняйте у менеджера'];
+            }
+            return car;
+        }
+
+        // Асинхронная загрузка данных Кореи через Supabase / JSON fallback
         (async function() {
             const loadingIndicator = document.getElementById('koreaLoadingIndicator');
-            
             try {
-                const response = await fetch('images/Korea/korea_processed.json');
-                if (!response.ok) throw new Error('Failed to load Korea data');
-                const data = await response.json();
-                window.koreaUnder160CarsData = data;
-                
-                // Инициализация после загрузки данных
+                if (typeof sbLoadCarsWithFallback !== 'function') throw new Error('supabase-client.js не загружен');
+                const result = await sbLoadCarsWithFallback('korea', './cars_korea_stock.json');
+                const data = (result && result.data) ? result.data : [];
+                window.koreaUnder160CarsData = data.map(_normalizeKoreaCar);
+
                 function initKoreaSection() {
                     if (typeof setupKoreaUnder160Section === 'function') {
                         setupKoreaUnder160Section();
-                        // Индикатор загрузки скроется автоматически при рендеринге
                     }
                 }
-                
                 if (document.readyState === 'loading') {
                     document.addEventListener('DOMContentLoaded', initKoreaSection);
                 } else {
@@ -444,20 +475,10 @@
                 console.error('Error loading Korea catalog:', error);
                 window.koreaUnder160CarsData = [];
                 if (loadingIndicator) {
-                    loadingIndicator.textContent = 'Ошибка загрузки каталога. Пожалуйста, обновите страницу.';
+                    loadingIndicator.textContent = 'Каталог обновляется. Пожалуйста, зайдите позже или оставьте заявку.';
                 }
             }
         })();
-        
-        // Ensure Korea section loads on this page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait a bit for script.js to initialize
-            setTimeout(function() {
-                if (typeof loadKoreaOrdersSection === 'function') {
-                    loadKoreaOrdersSection();
-                }
-            }, 200);
-        });
     </script>
     <aside class="floating-subscribe" aria-label="Подписка на Telegram">
         <div class="floating-subscribe__inner">

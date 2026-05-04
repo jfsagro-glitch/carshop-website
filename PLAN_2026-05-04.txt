@@ -177,7 +177,12 @@
      • Совместим с существующими фильтрами
 
 □ Дублирование уведомлений на email через Supabase
-     Альтернатива: оставить FormSubmit.co как основной email-канал
+     Альтернатива: оставить FormSubmit.co как основной email-канал (ПРОПУСКАЕМ)
+
+✅ Корея (korea-orders.html) — каталог из encar.com
+     sbLoadCarsWithFallback('korea', './cars_korea_stock.json') вместо локального JSON
+     Нормализация _normalizeKoreaCar() — name, image, link, specs array
+     Graceful fallback: если данных нет — "Каталог обновляется..."
 
 ✅ SEO — sitemap.xml с динамическими URL авто
      generate_sitemap.py — генерирует sitemap.xml
@@ -201,11 +206,16 @@
      CLI: python car_parser.py --source encar --max 150 --out cars_korea_stock.json
      GitHub Action: Sync Korea stock from encar.com (cars_korea_stock.json)
 
-□ Парсер запчастей (partsouq.com / autodoc.ru)
-     Создать parts_parser.py, автоматический upsert через GitHub Actions
+✅ Парсер запчастей (partsouq.com / autodoc.ru)
+     parts_parser.py — импорт из CSV / JSON файла в Supabase parts таблицу
+     CsvPartsImporter + JsonPartsImporter + _normalize_part()
+     _sb_upsert_parts(cfg, batch) — POST /rest/v1/parts?on_conflict=oem_number
+     CLI: python parts_parser.py --input parts_catalog.csv [--dry-run] [--quiet]
+     parts_catalog.csv — каталог 20 позиций (фильтры, тормоза, подвеска, двигатель)
+     GitHub Action: Import parts catalog to Supabase (каждые 4 часа)
 
 □ Личный кабинет клиента (PWA)
-     Требует: Supabase Auth (телефон/OTP)
+     Требует: Supabase Auth (телефон/OTP) (ПРОПУСКАЕМ — слишком сложно)
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -222,7 +232,7 @@
     korea (encar)         — синхронизируется через GitHub Actions
     Итого:                — 363+ записи
 
-  Таблица parts:          — 50 записей (Toyota/BMW/Mercedes/VW/Hyundai)
+  Таблица parts:          — 50+ записей (Toyota/BMW/Mercedes/VW/Hyundai + новые из parts_catalog.csv)
   Таблица leads:          — 0 записей (работает, ждёт реальных заявок)
   Таблица search_events:  — логирование подключено к UI
 
@@ -239,8 +249,21 @@
 
   Ключевые файлы:
     car_parser.py          — парсер + Supabase sync (requests-based)
+    parts_parser.py        — импорт запчастей из CSV/JSON в Supabase (НОВЫЙ)
+    parts_catalog.csv      — каталог 20 позиций (НОВЫЙ)
     supabase-client.js     — фронтенд REST клиент (Vanilla JS)
     database/schema.sql    — SQL схема (применена в Supabase)
     .github/workflows/sync_cars.yml — GitHub Actions
+
+================================================================================
+  ФАЗЫ РЕАЛИЗАЦИИ (сводка)
+================================================================================
+
+  Фаза 0: Инфраструктура Supabase (schema.sql, supabase-client.js)  ✅
+  Фаза 1: Парсер → REST sync (car_parser.py, sync_cars.yml)          ✅
+  Фаза 2: Фронтенд читает Supabase (georgia, europe, index)          ✅
+  Фаза 3: Каталог запчастей (parts-orders.html/js, seed_parts.py)   ✅
+  Фаза 4: CRM leads + admin panel + notify + Korea parser            ✅
+  Фаза 5: parts_parser.py + korea-orders dynamic + workflow          ✅
 
 ================================================================================

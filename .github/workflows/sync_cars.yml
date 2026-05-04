@@ -137,5 +137,8 @@ jobs:
           git diff --cached --quiet || git commit -m "auto: korea stock + sitemap [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push || true
 
+      - name: Import parts catalog to Supabase
+        run: python parts_parser.py --input parts_catalog.csv --quiet || true
+
       - name: Notify new leads to Telegram
         run: python notify_leads.py
