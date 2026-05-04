@@ -58,11 +58,8 @@ try:
 except ImportError:
     BS4_AVAILABLE = False
 
-try:
-    from supabase import create_client as _sb_create_client
-    SUPABASE_AVAILABLE = True
-except ImportError:
-    SUPABASE_AVAILABLE = False
+# Supabase SDK убран — используем requests напрямую (нет зависимостей от pyiceberg/C++)
+SUPABASE_AVAILABLE = REQUESTS_AVAILABLE  # если requests есть — Supabase тоже работает
 
 # ── Logging ──────────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -1909,19 +1906,46 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
 # ── Supabase синхронизация ───────────────────────────────────────────────────
 
 def _supabase_client():
-    """Создаёт клиент Supabase через service_role key из окружения."""
-    url = os.environ.get("SUPABASE_URL", "")
+    """Возвращает словарь с настройками Supabase (URL + service key)."""
+    url = os.environ.get("SUPABASE_URL", "").rstrip("/")
     key = os.environ.get("SUPABASE_SERVICE_KEY", "")
     if not url or not key:
         return None
-    if not SUPABASE_AVAILABLE:
-        log.warning("Supabase SDK не установлен: pip install 'supabase>=2.3.0'")
+    if not REQUESTS_AVAILABLE:
+        log.warning("requests не установлен — Supabase недоступен")
         return None
-    try:
-        return _sb_create_client(url, key)
-    except Exception as e:
-        log.error(f"Supabase: ошибка создания клиента: {e}")
-        return None
+    return {"url": url, "key": key}
+
+
+def _sb_upsert(cfg: dict, table: str, rows: list) -> None:
+    """POST /rest/v1/{table} с Prefer: resolution=merge-duplicates."""
+    endpoint = f"{cfg['url']}/rest/v1/{table}"
+    headers = {
+        "apikey": cfg["key"],
+        "Authorization": f"Bearer {cfg['key']}",
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates,return=minimal",
+    }
+    resp = requests.post(endpoint, json=rows, headers=headers, timeout=30)
+    resp.raise_for_status()
+
+
+def _sb_deactivate_source(cfg: dict, source: str) -> None:
+    """PATCH /rest/v1/cars?source=eq.{source} → is_active=false."""
+    endpoint = f"{cfg['url']}/rest/v1/cars"
+    headers = {
+        "apikey": cfg["key"],
+        "Authorization": f"Bearer {cfg['key']}",
+        "Content-Type": "application/json",
+    }
+    resp = requests.patch(
+        endpoint,
+        params={"source": f"eq.{source}"},
+        json={"is_active": False},
+        headers=headers,
+        timeout=30,
+    )
+    resp.raise_for_status()
 
 
 def _georgia_to_row(rec: dict) -> dict:
@@ -1990,13 +2014,13 @@ def _europe_to_row(rec: dict) -> dict:
 
 def sync_to_supabase(records: list, region: str, source: str) -> None:
     """
-    Upsert записей в таблицу cars Supabase.
+    Upsert записей в таблицу cars Supabase через REST API (без SDK).
     Сначала помечает все записи источника неактивными,
-    затем делает upsert новых/обновлённых через external_id.
+    затем делает upsert по external_id.
     Ничего не делает если SUPABASE_URL/SERVICE_KEY не заданы.
     """
-    sb = _supabase_client()
-    if sb is None:
+    cfg = _supabase_client()
+    if cfg is None:
         log.info("Supabase: переменные окружения не заданы — пропуск синхронизации в БД")
         return
 
@@ -2005,8 +2029,8 @@ def sync_to_supabase(records: list, region: str, source: str) -> None:
         return
 
     try:
-        # Помечаем старые записи этого источника неактивными
-        sb.table("cars").update({"is_active": False}).eq("source", source).execute()
+        # Помечаем старые записи источника неактивными
+        _sb_deactivate_source(cfg, source)
         log.info(f"Supabase: source={source} помечен неактивным")
 
         # Конвертируем в строки таблицы
@@ -2015,16 +2039,15 @@ def sync_to_supabase(records: list, region: str, source: str) -> None:
         else:
             rows = [_europe_to_row(r) for r in records]
 
-        # Пропускаем записи без external_id
+        # Пропускаем строки без external_id
         rows = [r for r in rows if r.get("external_id")]
 
-        # Upsert батчами по 100 (Supabase лимит)
+        # Upsert батчами по 100
         BATCH = 100
         total = 0
         for i in range(0, len(rows), BATCH):
-            batch = rows[i: i + BATCH]
-            sb.table("cars").upsert(batch, on_conflict="external_id").execute()
-            total += len(batch)
+            _sb_upsert(cfg, "cars", rows[i: i + BATCH])
+            total += len(rows[i: i + BATCH])
 
         log.info(f"Supabase: upsert {total} записей → region={region}, source={source}")
 

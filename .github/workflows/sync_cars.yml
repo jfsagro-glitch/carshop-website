@@ -57,7 +57,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 'supabase>=2.3.0'
+        run: pip install requests beautifulsoup4
 
       - name: Show parser settings
         run: |
