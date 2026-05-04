@@ -1917,9 +1917,9 @@ def _supabase_client():
     return {"url": url, "key": key}
 
 
-def _sb_upsert(cfg: dict, table: str, rows: list) -> None:
-    """POST /rest/v1/{table} с Prefer: resolution=merge-duplicates."""
-    endpoint = f"{cfg['url']}/rest/v1/{table}"
+def _sb_upsert(cfg: dict, table: str, rows: list, conflict_col: str = "external_id") -> None:
+    """POST /rest/v1/{table}?on_conflict={col} с Prefer: resolution=merge-duplicates."""
+    endpoint = f"{cfg['url']}/rest/v1/{table}?on_conflict={conflict_col}"
     headers = {
         "apikey": cfg["key"],
         "Authorization": f"Bearer {cfg['key']}",
@@ -2039,11 +2039,12 @@ def sync_to_supabase(records: list, region: str, source: str) -> None:
         else:
             rows = [_europe_to_row(r) for r in records]
 
-        # Пропускаем строки без external_id
-        rows = [r for r in rows if r.get("external_id")]
+        # Пропускаем строки без external_id и дедуплицируем
+        rows = {r["external_id"]: r for r in rows if r.get("external_id")}.values()
+        rows = list(rows)
 
-        # Upsert батчами по 100
-        BATCH = 100
+        # Upsert батчами по 50
+        BATCH = 50
         total = 0
         for i in range(0, len(rows), BATCH):
             _sb_upsert(cfg, "cars", rows[i: i + BATCH])
@@ -2053,6 +2054,9 @@ def sync_to_supabase(records: list, region: str, source: str) -> None:
 
     except Exception as e:
         log.error(f"Supabase sync ошибка (region={region}): {e}")
+        # Логируем тело ответа если это HTTP ошибка
+        if hasattr(e, "response") and e.response is not None:
+            log.error(f"  Response body: {e.response.text[:300]}")
 
 def _atomic_write_json(data: Any, filepath: str) -> None:
     path = Path(filepath)
