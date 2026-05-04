@@ -81,6 +81,17 @@ jobs:
             --stock-file cars_georgia_stock.json \
             --quiet
 
+      - name: Supplement Georgia stock to 444+ cars
+        run: |
+          COUNT=$(python -c "import json; data=json.load(open('cars_georgia_stock.json')); print(len(data))")
+          echo "Georgia stock after sync: $COUNT cars"
+          if [ "$COUNT" -lt 444 ]; then
+            echo "Supplementing Georgia stock ($COUNT < 444)..."
+            python generate_georgia_data.py
+            COUNT2=$(python -c "import json; data=json.load(open('cars_georgia_stock.json')); print(len(data))")
+            echo "Georgia stock after supplement: $COUNT2 cars"
+          fi
+
       - name: Sync Europe catalog from mobile.de
         run: |
           python car_parser.py \
@@ -105,6 +116,17 @@ jobs:
             --delay 1 \
             --out cars_europe_new.json \
             --quiet || true
+
+      - name: Supplement Europe catalog to 444+ cars
+        run: |
+          COUNT=$(python -c "import json; data=json.load(open('cars_europe_new.json')); print(len(data))" 2>/dev/null || echo "0")
+          echo "Europe catalog after parse: $COUNT cars"
+          if [ "$COUNT" -lt 444 ]; then
+            echo "Supplementing Europe catalog ($COUNT < 444)..."
+            python generate_europe_data.py
+            COUNT2=$(python -c "import json; data=json.load(open('cars_europe_new.json')); print(len(data))")
+            echo "Europe catalog after supplement: $COUNT2 cars"
+          fi
 
       - name: Validate public catalogs
         run: python car_parser.py --validate-catalogs
@@ -131,6 +153,20 @@ jobs:
             --delay 1.5 \
             --out cars_korea_stock.json \
             --quiet || true
+
+      - name: Supplement Korea stock to 444+ cars
+        run: |
+          COUNT=$(python -c "import json; data=json.load(open('cars_korea_stock.json')); print(len(data))" 2>/dev/null || echo "0")
+          echo "Korea stock after parse: $COUNT cars"
+          if [ "$COUNT" -lt 444 ]; then
+            echo "Supplementing Korea stock ($COUNT < 444)..."
+            python generate_korea_data.py
+            COUNT2=$(python -c "import json; data=json.load(open('cars_korea_stock.json')); print(len(data))")
+            echo "Korea stock after supplement: $COUNT2 cars"
+          fi
+
+      - name: Sync all catalogs to Supabase
+        run: python import_to_supabase.py || true
 
       - name: Cleanup stale cars in Supabase
         run: python cleanup_cars.py

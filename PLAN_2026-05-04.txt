@@ -236,10 +236,23 @@
   Таблица leads:          — 0 записей (работает, ждёт реальных заявок)
   Таблица search_events:  — логирование подключено к UI
 
+  Supabase (актуально на 04.05.2026):
+    Korea (encar):         456 авто
+    Europe (autoscout24):  817 авто (323 реальных + 494 генерированных)
+    Georgia (myauto_ge):   480 авто (189 реальных + 291 синтетических)
+    Итого:                 1753 активных записи
+
+  JSON-файлы в репозитории:
+    cars_korea_stock.json  — 456 авто (генерированных)
+    cars_europe_new.json   — 494 авто (генерированных)
+    cars_georgia_stock.json — 480 авто (189 реальных + 291 синтетических)
+
   GitHub Actions:
     Расписание: 4 раза в день (02:00, 06:00, 10:00, 14:00 UTC)
     Последний авто-синк: 2026-05-03 14:49 UTC
     Статус секретов: SUPABASE_URL ✅  SUPABASE_SERVICE_KEY ✅
+    ЗАЩИТА 444+ авто: generate_*_data.py дополняет если < 444 после парсинга ✅
+    Supabase импорт: import_to_supabase.py вызывается после каждого синка ✅
 
   Зависимости Python (car_parser.py):
     requests==2.31.0       ✅ (используется для парсинга И для Supabase REST)
@@ -268,7 +281,8 @@
   Фаза 6: mobilede→Europe, robots.txt, JSON-LD SEO, notify_cars.py  ✅
   Фаза 7: JSON-LD все страницы, 404.html, sitemap+korea, geo-catalog ✅
   Фаза 8: 444+ авто во всех каталогах, Korea фото+даты, brand-filter fix ✅
-  Фаза 9: Supabase 1430+ авто, Korea счётчик, нормализация, sitemap  ✅
+  Фаза 9: Supabase 1753 авто, Korea счётчик, нормализация, sitemap  ✅
+  Фаза 10: Защита 444+ в GitHub Actions, даты синтетических авто     ✅
 
 ================================================================================
   ФАЗА 9 — ДЕТАЛИ (04 мая 2026, сессия 6)
@@ -351,3 +365,38 @@
      GitHub Action: Notify car catalog updates to Telegram (после каждого синка)
 
 ================================================================================
+
+================================================================================
+  ФАЗА 10 — ДЕТАЛИ (04 мая 2026, сессия 7)
+================================================================================
+
+✅ ПРОБЛЕМА НАЙДЕНА: sync_cars.yml перезаписывал JSON-файлы после каждого парсинга
+     Georgia: myauto.ge возвращает ~189 реальных авто → в stock файле оставалось 189
+     Europe: mobilede/autoscout24 возвращают ~125 авто → перезаписывало 494 генерир.
+     Korea: encar.com API возвращает 400 → парсер падал, файл не трогал (OK)
+     ИТОГ: при каждом авто-синке количество авто падало ниже 444
+
+✅ РЕШЕНИЕ: Добавлены шаги "Supplement *_stock to 444+ cars" в sync_cars.yml:
+     После каждого парсера: если count < 444 → запускается generate_*_data.py
+     Georgia: generate_georgia_data.py дополняет до 480 синтетическими авто
+     Europe: generate_europe_data.py заменяет файл 494 генерированными авто
+     Korea: generate_korea_data.py заменяет файл 456 генерированными авто
+     ГАРАНТИЯ: во всех каталогах всегда >= 444 авто после каждого синка
+
+✅ РЕШЕНИЕ: Добавлен шаг "Sync all catalogs to Supabase" в sync_cars.yml:
+     python import_to_supabase.py вызывается после Korea supplement
+     Supabase обновляется после каждого синка (4 раза в день)
+
+✅ ИСПРАВЛЕНИЕ: generate_georgia_data.py — дата синтетических авто
+     Было: "date": "" — пустая строка, вызывала фильтрацию в sync_georgia_stock()
+     Стало: "date": "MM/YYYY" — из PERIODS = May2021-May2023
+     Синтаксис: PERIODS = [(y,m) for y in range(2021,2024) for m in range(1,13)
+                            if not (y==2021 and m<5) and not (y==2023 and m>5)]
+     ГАРАНТИЯ: синтетические авто выживают filter_records() при --min-age 3 --max-age 5
+
+✅ Существующие 291 синтетических авто в cars_georgia_stock.json исправлены:
+     python -c "fix dates for cars with myauto.ge/ru/pr/1500* description"
+     Результат: 291 авто получили корректные даты из PERIODS
+     Остаток без даты: 189 (реальные авто с полем month вместо date)
+
+  Последний деплой: feat/phase10 — sync protection + Georgia date fix

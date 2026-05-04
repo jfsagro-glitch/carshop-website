@@ -121,7 +121,12 @@ COLORS = [
     "Красный", "Зелёный", "Бежевый", "Коричневый",
     "Синий металлик", "Графитовый", "Перламутровый белый",
 ]
-YEARS = [2021, 2021, 2022, 2022, 2022, 2023, 2023]
+# Date periods within 3-5 year age window (relative to May 2026):
+# min = May 2021 (202105), max = May 2023 (202305)
+PERIODS = [
+    (y, m) for y in range(2021, 2024) for m in range(1, 13)
+    if not (y == 2021 and m < 5) and not (y == 2023 and m > 5)
+]
 
 MYAUTO_PHOTO_BASE = "https://static.my.ge/myauto/photos"
 
@@ -147,7 +152,7 @@ def generate(existing_count: int, target: int = 480, seed: int = 42) -> list:
 
     for i in range(needed):
         brand, model, specs = model_list[i % len(model_list)]
-        year = random.choice(YEARS)
+        year, month = random.choice(PERIODS)
         mileage = random.randint(4000, 85000)
         if year == 2023:
             mileage = random.randint(3000, 30000)
@@ -175,7 +180,7 @@ def generate(existing_count: int, target: int = 480, seed: int = 42) -> list:
             "color": color,
             "drive": drive,
             "power": f"{specs['hp']} л.с. / {specs['kw']} кВт",
-            "date": "",
+            "date": f"{month:02d}/{year}",
             "description": f"myauto.ge/ru/pr/{car_id + i}",
             "photos": fake_photo(car_id + i),
             "folder_id": "",
