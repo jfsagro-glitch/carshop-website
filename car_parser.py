@@ -1790,6 +1790,187 @@ class AutoScout24Parser:
         return records[:self.max_cars]
 
 
+# ── Парсер encar.com (Корея) ─────────────────────────────────────────────────
+
+class EncarParser:
+    """
+    Парсит корейские объявления с encar.com через публичный JSON API.
+    API не требует авторизации.
+    Документация: https://api.encar.com/search/car/list/general
+    """
+
+    API_URL = "https://api.encar.com/search/car/list/general"
+    PHOTO_BASE = "https://ci.encar.com"
+
+    FUEL_MAP = {
+        "가솔린": "Бензин",
+        "디젤":   "Дизель",
+        "LPG":    "Газ/Бензин",
+        "하이브리드": "Гибрид",
+        "전기":   "Электро",
+        "플러그인하이브리드": "Плагин-гибрид",
+    }
+    TRANS_MAP = {
+        "자동": "Автомат",
+        "수동": "Механика",
+        "CVT":  "Вариатор",
+        "세미자동": "Робот",
+    }
+
+    UA_LIST = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Safari/605.1.15",
+    ]
+
+    def __init__(self, max_cars: int = 150, delay: float = 1.5,
+                 proxy: Optional[str] = None):
+        if not REQUESTS_AVAILABLE:
+            raise RuntimeError("Установите requests: pip install requests")
+        self.max_cars = max_cars
+        self.delay = delay
+        self.proxy = proxy
+        self._session = requests.Session()
+        self._session.headers.update({
+            "User-Agent": random.choice(self.UA_LIST),
+            "Accept": "application/json",
+            "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+            "Referer": "https://www.encar.com/",
+        })
+
+    def _get_json(self, offset: int) -> Optional[dict]:
+        proxies = {"http": self.proxy, "https": self.proxy} if self.proxy else None
+        params = {
+            "count": "true",
+            "q": "(CarType:A)",
+            "sr": f"|ModifiedDate|{offset}|20",
+        }
+        try:
+            resp = self._session.get(self.API_URL, params=params,
+                                     proxies=proxies, timeout=20)
+            resp.raise_for_status()
+            return resp.json()
+        except Exception as e:
+            log.warning(f"encar.com: ошибка запроса offset={offset}: {e}")
+            return None
+
+    def _item_to_record(self, item: dict) -> Optional[dict]:
+        try:
+            car_id = str(item.get("Id", ""))
+            manufacturer = str(item.get("Manufacturer") or "").strip()
+            model = str(item.get("Model") or "").strip()
+            badge = str(item.get("Badge") or "").strip()
+            year_raw = item.get("Year") or 0
+            # Year может быть "202301" (YYYYMM) или просто год
+            year_str = str(year_raw)
+            if len(year_str) == 6:
+                year = int(year_str[:4])
+                month = int(year_str[4:6])
+            elif len(year_str) == 4:
+                year = int(year_str)
+                month = 0
+            else:
+                year = parse_int(year_str)
+                month = 0
+
+            mileage = parse_int(item.get("Mileage") or 0)
+            # Цена в 만원 (10 000 KRW) → переводим в USD по приблизительному курсу
+            # Сохраняем оригинал в specs, price в USD
+            price_10k_krw = parse_int(item.get("Price") or 0)
+            # 1 USD ≈ 1350 KRW → price_10k_krw * 10000 / 1350
+            price_usd = round(price_10k_krw * 10000 / 1350) if price_10k_krw else 0
+
+            spec = item.get("Spec") or {}
+            fuel_raw = str(spec.get("FuelName") or "").strip()
+            trans_raw = str(spec.get("TransmissionName") or "").strip()
+            fuel_type = self.FUEL_MAP.get(fuel_raw, normalize_fuel(fuel_raw) if fuel_raw else "Бензин")
+            transmission = self.TRANS_MAP.get(trans_raw, normalize_transmission(trans_raw) if trans_raw else "Автомат")
+            displacement = parse_int(spec.get("Displacement") or 0)  # cc
+            engine = str(round(displacement / 1000, 1)).replace(".", ",") if displacement else ""
+            color = str(spec.get("ColorName") or "").strip()
+            drive_raw = str(spec.get("DriveName") or "").strip()
+
+            # Фото
+            photos_data = item.get("Photo") or {}
+            photo_path = str(photos_data.get("RealPhotoFolderPath") or photos_data.get("FolderPath") or "").strip()
+            thumb = str(photos_data.get("ThumbnailUrl") or "").strip()
+            if photo_path:
+                first_photo = f"{self.PHOTO_BASE}{photo_path}001.jpg"
+            elif thumb:
+                first_photo = thumb if thumb.startswith("http") else f"https:{thumb}"
+            else:
+                first_photo = ""
+
+            images = []
+            if first_photo:
+                images = [{"url": first_photo, "order": 1}]
+
+            full_title = " ".join(filter(None, [manufacturer, model, badge])).strip()
+            url = f"https://www.encar.com/dc/dc_cardetailview.do?carid={car_id}"
+
+            return {
+                "id": car_id,
+                "brand": normalize_brand(manufacturer) if manufacturer else "",
+                "model": f"{model} {badge}".strip() if badge else model,
+                "full_title": full_title,
+                "year": year,
+                "month": month,
+                "price": float(price_usd),
+                "price_krw": price_10k_krw * 10000,
+                "price_type": "fixed",
+                "mileage": mileage,
+                "engine": engine,
+                "fuel_type": fuel_type,
+                "transmission": transmission,
+                "color": color,
+                "drive": drive_raw,
+                "url": url,
+                "images": images,
+                "region": "korea",
+                "source": "encar",
+            }
+        except Exception as e:
+            log.debug(f"encar.com: ошибка разбора записи: {e}")
+            return None
+
+    def parse(self) -> List[dict]:
+        log.info("encar.com: начало загрузки корейских объявлений...")
+        records: List[dict] = []
+        seen_ids: set = set()
+        offset = 0
+        page_size = 20
+
+        while len(records) < self.max_cars:
+            data = self._get_json(offset)
+            if not data:
+                break
+            items = data.get("SearchResults") or []
+            if not items:
+                log.info("encar.com: данных больше нет")
+                break
+            total = parse_int(data.get("Count") or data.get("Total") or 0)
+            for item in items:
+                if not isinstance(item, dict):
+                    continue
+                rec = self._item_to_record(item)
+                if not rec or not rec.get("brand"):
+                    continue
+                car_id = rec["id"]
+                if car_id in seen_ids:
+                    continue
+                seen_ids.add(car_id)
+                records.append(rec)
+                if len(records) >= self.max_cars:
+                    break
+            log.info(f"encar.com: offset={offset}, собрано {len(records)}/{self.max_cars} (всего в базе: {total})")
+            if len(items) < page_size or offset + page_size >= total:
+                break
+            offset += page_size
+            time.sleep(self.delay + random.uniform(0, 0.5))
+
+        log.info(f"encar.com: итого {len(records)} автомобилей")
+        return records[:self.max_cars]
+
+
 # ── Авто-синхронизация стока ──────────────────────────────────────────────────
 
 def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
@@ -2012,6 +2193,45 @@ def _europe_to_row(rec: dict) -> dict:
     }
 
 
+def _korea_to_row(rec: dict) -> dict:
+    """Конвертирует запись из cars_korea_stock.json в строку таблицы cars."""
+    url = rec.get("url") or ""
+    raw_engine = str(rec.get("engine") or "").replace(",", ".")
+    try:
+        engine_val: Optional[float] = float(raw_engine) if raw_engine else None
+    except ValueError:
+        engine_val = None
+    specs: dict = {}
+    if rec.get("price_krw"):
+        specs["price_krw"] = rec["price_krw"]
+    if rec.get("month"):
+        specs["month"] = rec["month"]
+    if rec.get("drive"):
+        specs["drive"] = rec["drive"]
+    return {
+        "external_id": url or f"encar:{rec.get('id', '')}",
+        "source": rec.get("source") or "encar",
+        "region": "korea",
+        "brand": rec.get("brand"),
+        "model": rec.get("model"),
+        "year": rec.get("year"),
+        "price": rec.get("price"),
+        "currency": "USD",
+        "mileage": rec.get("mileage"),
+        "engine": engine_val,
+        "fuel_type": rec.get("fuel_type"),
+        "transmission": rec.get("transmission"),
+        "color": rec.get("color"),
+        "drive": rec.get("drive"),
+        "vin": None,
+        "url": url,
+        "images": rec.get("images") or [],
+        "specs": specs,
+        "is_active": True,
+        "last_seen": datetime.utcnow().isoformat() + "Z",
+    }
+
+
 def sync_to_supabase(records: list, region: str, source: str) -> None:
     """
     Upsert записей в таблицу cars Supabase через REST API (без SDK).
@@ -2036,6 +2256,8 @@ def sync_to_supabase(records: list, region: str, source: str) -> None:
         # Конвертируем в строки таблицы
         if region == "georgia":
             rows = [_georgia_to_row(r) for r in records]
+        elif region == "korea":
+            rows = [_korea_to_row(r) for r in records]
         else:
             rows = [_europe_to_row(r) for r in records]
 
@@ -2217,7 +2439,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
-    p.add_argument("--source", choices=["csv", "json", "drom", "html", "myauto", "apge", "mobilede", "autoscout24", "europe", "auto"],
+    p.add_argument("--source", choices=["csv", "json", "drom", "html", "myauto", "apge", "mobilede", "autoscout24", "europe", "encar", "auto"],
                    default="auto", help="Источник данных (default: auto-detect)")
     p.add_argument("--input", "-i", help="Путь к CSV/JSON файлу")
     p.add_argument("--url", "-u", help="URL для парсинга (html/drom)")
@@ -2391,6 +2613,32 @@ def run(args: argparse.Namespace) -> None:
             max_pages=args.max_pages,
             proxy=proxy,
         ).parse()
+
+    elif source == "encar":
+        europe_records = EncarParser(
+            max_cars=args.max_cars,
+            delay=args.delay,
+            proxy=proxy,
+        ).parse()
+        # Сохраняем и синхронизируем как Korea
+        if europe_records:
+            if len(europe_records) < args.min_records:
+                log.error(f"Новый каталог слишком мал: {len(europe_records)} < {args.min_records}. Сохранение отменено.")
+                sys.exit(2)
+            if args.out:
+                out = args.out if args.out.endswith(".json") else args.out + ".json"
+                export_json_records(europe_records, out)
+            sync_to_supabase(europe_records, region="korea", source="encar")
+            print(f"\n{'='*50}")
+            print(f"  Итого автомобилей : {len(europe_records)}")
+            print(f"  Источник           : encar.com (Корея)")
+            print(f"  Файл               : {args.out or 'не сохранён'}")
+            print(f"{'='*50}\n")
+        else:
+            log.warning("encar.com: не найдено ни одного автомобиля.")
+            if args.fail_empty:
+                sys.exit(2)
+        return
 
     elif source == "drom":
         cars = DromParser(region=args.region, max_cars=args.max_cars,

@@ -179,19 +179,27 @@
 □ Дублирование уведомлений на email через Supabase
      Альтернатива: оставить FormSubmit.co как основной email-канал
 
-□ SEO — sitemap.xml с динамическими URL авто
-     GitHub Action генерирует sitemap из cars JSON
-     Добавляет ссылки на каждое авто (id/external_id)
+✅ SEO — sitemap.xml с динамическими URL авто
+     generate_sitemap.py — генерирует sitemap.xml
+     Статические страницы + уникальные бренды из Georgia/Europe каталогов
+     GitHub Action вызывает generate_sitemap.py после каждого синка
 
-□ Авто-удаление старых неактивных записей из cars
-     После N дней is_active=false → удалять через GitHub Actions скрипт очистки
+✅ Авто-удаление старых неактивных записей из cars
+     cleanup_cars.py — Step 1: is_active=false если last_seen > 30 дней
+     Step 2: DELETE если is_active=false И updated_at > 60 дней
+     GitHub Action вызывает cleanup_cars.py каждые 4 часа
 
 
 ПРИОРИТЕТ 4 — ДОЛГОСРОЧНО
 ───────────────────────────
 
-□ Парсер Корея (encar.com / kbchachacha.com)
-     Добавить новый источник в car_parser.py, region='korea'
+✅ Парсер Корея (encar.com)
+     EncarParser добавлен в car_parser.py — class EncarParser
+     Использует публичный API: https://api.encar.com/search/car/list/general
+     _korea_to_row() — конвертация в строку таблицы cars, region='korea'
+     sync_to_supabase(records, region='korea', source='encar')
+     CLI: python car_parser.py --source encar --max 150 --out cars_korea_stock.json
+     GitHub Action: Sync Korea stock from encar.com (cars_korea_stock.json)
 
 □ Парсер запчастей (partsouq.com / autodoc.ru)
      Создать parts_parser.py, автоматический upsert через GitHub Actions
@@ -211,11 +219,12 @@
   Таблица cars:
     georgia (myauto_ge)   — 163 активных авто
     europe (autoscout24)  — 200 активных авто
-    Итого:                — 363 записи
+    korea (encar)         — синхронизируется через GitHub Actions
+    Итого:                — 363+ записи
 
-  Таблица parts:          — 0 записей (таблица готова, данных нет)
+  Таблица parts:          — 50 записей (Toyota/BMW/Mercedes/VW/Hyundai)
   Таблица leads:          — 0 записей (работает, ждёт реальных заявок)
-  Таблица search_events:  — 0 записей (логирование не подключено к UI)
+  Таблица search_events:  — логирование подключено к UI
 
   GitHub Actions:
     Расписание: 4 раза в день (02:00, 06:00, 10:00, 14:00 UTC)
