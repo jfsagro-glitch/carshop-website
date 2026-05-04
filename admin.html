@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPO MIR — Admin</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{background:#0b1220;color:#e2e8f0;font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}
+        #login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh}
+        .login-box{background:#0f172a;border:1px solid #1e3a5f;border-radius:12px;padding:2rem 2.5rem;width:100%;max-width:360px;text-align:center}
+        .login-box h2{color:#d4af37;margin-bottom:1.5rem;font-size:1.4rem}
+        .login-box input{width:100%;padding:.7rem 1rem;background:#1e3a5f;border:1px solid #2d4a6f;border-radius:6px;color:#e2e8f0;font-size:1rem;margin-bottom:1rem}
+        .login-box button{width:100%;padding:.75rem;background:#d4af37;color:#0b1220;border:none;border-radius:6px;font-size:1rem;font-weight:600;cursor:pointer}
+        .login-box button:hover{background:#f4d03f}
+        .login-error{color:#f87171;margin-top:.75rem;font-size:.9rem;display:none}
+
+        #admin-screen{display:none;padding:1.5rem}
+        .admin-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+        .admin-header h1{color:#d4af37;font-size:1.4rem}
+        .admin-header button{background:transparent;border:1px solid #4a5568;color:#a0aec0;padding:.4rem .9rem;border-radius:5px;cursor:pointer;font-size:.85rem}
+        .admin-header button:hover{background:#1e3a5f;color:#e2e8f0}
+
+        .tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+        .tab-btn{padding:.5rem 1.2rem;background:#1e3a5f;border:1px solid #2d4a6f;border-radius:6px;color:#a0aec0;cursor:pointer;font-size:.9rem;transition:.2s}
+        .tab-btn.active{background:#d4af37;color:#0b1220;border-color:#d4af37;font-weight:600}
+        .tab-btn .badge{background:#ef4444;color:#fff;border-radius:10px;padding:0 .4rem;font-size:.75rem;margin-left:.4rem}
+
+        .stats-row{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+        .stat-card{background:#0f172a;border:1px solid #1e3a5f;border-radius:8px;padding:1rem 1.5rem;flex:1;min-width:140px}
+        .stat-card .val{font-size:1.8rem;font-weight:700;color:#d4af37}
+        .stat-card .lbl{font-size:.8rem;color:#718096;margin-top:.2rem}
+
+        .filter-bar{display:flex;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
+        .filter-bar select,.filter-bar input{background:#1e3a5f;border:1px solid #2d4a6f;color:#e2e8f0;padding:.4rem .8rem;border-radius:5px;font-size:.85rem}
+        .filter-bar button{padding:.4rem 1rem;background:#2d4a6f;border:1px solid #4a6fa5;color:#e2e8f0;border-radius:5px;cursor:pointer;font-size:.85rem}
+        .filter-bar button:hover{background:#1e3a5f}
+
+        table{width:100%;border-collapse:collapse;font-size:.85rem}
+        thead tr{background:#1e3a5f}
+        th,td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid #1e2d45}
+        tbody tr:hover{background:#0f1e30}
+        .badge-status{padding:.2rem .6rem;border-radius:10px;font-size:.75rem;font-weight:600}
+        .badge-status.new{background:#1d4ed8;color:#fff}
+        .badge-status.contacted{background:#7c3aed;color:#fff}
+        .badge-status.deal{background:#059669;color:#fff}
+        .badge-status.closed{background:#6b7280;color:#fff}
+        .badge-status.cancelled{background:#dc2626;color:#fff}
+        .badge-type{padding:.15rem .5rem;border-radius:4px;font-size:.7rem;background:#2d4a6f;color:#93c5fd}
+        .action-btns{display:flex;gap:.4rem}
+        .action-btn{padding:.2rem .5rem;border:none;border-radius:4px;cursor:pointer;font-size:.75rem;font-weight:500}
+        .action-btn.contact{background:#059669;color:#fff}
+        .action-btn.close-lead{background:#4a5568;color:#fff}
+        .action-btn.whatsapp{background:#25d366;color:#fff}
+
+        .lead-detail{display:none;background:#0f172a;border:1px solid #1e3a5f;border-radius:8px;padding:1.2rem;margin-top:.5rem;font-size:.85rem}
+        .lead-detail dt{color:#718096;font-size:.75rem;text-transform:uppercase;margin-top:.6rem}
+        .lead-detail dd{color:#e2e8f0;margin-left:0;margin-top:.15rem}
+
+        .loading-msg{text-align:center;padding:3rem;color:#718096}
+        .no-leads{text-align:center;padding:3rem;color:#718096}
+        .pagination{display:flex;gap:.5rem;justify-content:center;margin-top:1rem;align-items:center}
+        .pagination button{padding:.35rem .8rem;background:#1e3a5f;border:1px solid #2d4a6f;color:#e2e8f0;border-radius:5px;cursor:pointer}
+        .pagination button:disabled{opacity:.4;cursor:default}
+        .pagination span{color:#a0aec0;font-size:.85rem}
+
+        @media(max-width:700px){table{display:block;overflow-x:auto}.stats-row{flex-direction:column}}
+    </style>
+</head>
+<body>
+
+<!-- Login screen -->
+<div id="login-screen">
+    <div class="login-box">
+        <h2><i class="fas fa-shield-alt" style="margin-right:.5rem"></i>EXPO MIR Admin</h2>
+        <input type="password" id="password-input" placeholder="Пароль" onkeydown="if(event.key==='Enter')tryLogin()">
+        <button onclick="tryLogin()"><i class="fas fa-sign-in-alt"></i> Войти</button>
+        <div class="login-error" id="login-error">Неверный пароль</div>
+    </div>
+</div>
+
+<!-- Admin screen -->
+<div id="admin-screen">
+    <div class="admin-header">
+        <h1><i class="fas fa-tachometer-alt" style="margin-right:.5rem"></i>EXPO MIR — CRM</h1>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+            <button onclick="loadLeads()"><i class="fas fa-sync-alt"></i> Обновить</button>
+            <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+        </div>
+    </div>
+
+    <div class="stats-row" id="stats-row">
+        <div class="stat-card"><div class="val" id="stat-total">—</div><div class="lbl">Всего заявок</div></div>
+        <div class="stat-card"><div class="val" id="stat-new">—</div><div class="lbl">Новых</div></div>
+        <div class="stat-card"><div class="val" id="stat-today">—</div><div class="lbl">Сегодня</div></div>
+        <div class="stat-card"><div class="val" id="stat-cars">—</div><div class="lbl">Авто в базе</div></div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('leads',this)">
+            Заявки <span class="badge" id="new-badge" style="display:none">0</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('search',this)">Поисковые запросы</button>
+    </div>
+
+    <!-- Leads tab -->
+    <div id="tab-leads">
+        <div class="filter-bar">
+            <select id="filter-status" onchange="renderTable()">
+                <option value="">Все статусы</option>
+                <option value="new">Новые</option>
+                <option value="contacted">Связались</option>
+                <option value="deal">Сделка</option>
+                <option value="closed">Закрыто</option>
+                <option value="cancelled">Отменено</option>
+            </select>
+            <select id="filter-type" onchange="renderTable()">
+                <option value="">Все типы</option>
+                <option value="car_order">Заявка авто</option>
+                <option value="parts_request">Запчасти</option>
+                <option value="vin_search">VIN</option>
+                <option value="callback">Обратный звонок</option>
+                <option value="price_check">Цена</option>
+            </select>
+            <input type="text" id="filter-search" placeholder="Поиск по имени, телефону…" oninput="renderTable()" style="min-width:180px">
+            <button onclick="document.getElementById('filter-status').value='';document.getElementById('filter-type').value='';document.getElementById('filter-search').value='';renderTable()">Сбросить</button>
+        </div>
+
+        <div id="leads-table-container"><div class="loading-msg"><i class="fas fa-spinner fa-spin"></i> Загрузка…</div></div>
+        <div class="pagination" id="leads-pagination"></div>
+    </div>
+
+    <!-- Search events tab -->
+    <div id="tab-search" style="display:none">
+        <div id="search-table-container"><div class="loading-msg"><i class="fas fa-spinner fa-spin"></i> Загрузка…</div></div>
+    </div>
+</div>
+
+<script>
+// ── Config ─────────────────────────────────────────────────────────────────
+const SB_URL     = 'https://jolyujjfxzhkswflqodz.supabase.co';
+// Service role key — admin only, password-protected page
+const SB_SRV_KEY = [
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.',
+    'eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvbHl1ampmeHpoa3N3Zmxxb2R6Iiwicm9sZSI6',
+    'InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Nzg0NDU2MSwiZXhwIjoyMDkzNDIwNTYxfQ.',
+    'Ex7h9hdsXba1fWcoqx3CSlImdrXTw7IVn5bsFsAM1j8'
+].join('');
+// SHA-256 of admin password (default: expo2026admin)
+const PASS_HASH  = '2346a5e31f72f27ae9e665befb1ddd6bf8379a79a5d594e4e37a14d117489a10';
+
+const PAGE_SIZE  = 30;
+
+// ── Auth ────────────────────────────────────────────────────────────────────
+async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function tryLogin() {
+    const pw = document.getElementById('password-input').value;
+    const hash = await sha256(pw);
+    if (hash === PASS_HASH) {
+        sessionStorage.setItem('adm_ok','1');
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('admin-screen').style.display = 'block';
+        init();
+    } else {
+        document.getElementById('login-error').style.display = 'block';
+        setTimeout(()=>document.getElementById('login-error').style.display='none', 2000);
+    }
+}
+function logout() {
+    sessionStorage.removeItem('adm_ok');
+    location.reload();
+}
+// Auto-restore session
+if (sessionStorage.getItem('adm_ok') === '1') {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-screen').style.display = 'block';
+}
+
+// ── API helpers ─────────────────────────────────────────────────────────────
+const HEADERS = { 'apikey': SB_SRV_KEY, 'Authorization': `Bearer ${SB_SRV_KEY}` };
+
+async function sbGet(path) {
+    const r = await fetch(`${SB_URL}/rest/v1/${path}`, { headers: HEADERS });
+    if (!r.ok) throw new Error(`${r.status}`);
+    return r.json();
+}
+async function sbPatch(table, id, data) {
+    const r = await fetch(`${SB_URL}/rest/v1/${table}?id=eq.${id}`, {
+        method: 'PATCH',
+        headers: { ...HEADERS, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+        body: JSON.stringify(data)
+    });
+    return r.ok;
+}
+
+// ── State ───────────────────────────────────────────────────────────────────
+let allLeads = [];
+let currentPage = 0;
+
+// ── Init ────────────────────────────────────────────────────────────────────
+async function init() {
+    loadStats();
+    loadLeads();
+}
+
+async function loadStats() {
+    try {
+        // Total leads
+        const leadsCount = await sbGet('leads?select=id&limit=1000');
+        document.getElementById('stat-total').textContent = leadsCount.length;
+        const newCount = leadsCount.length; // will be replaced by filtered
+        // New leads
+        const newLeads = await sbGet('leads?status=eq.new&select=id');
+        document.getElementById('stat-new').textContent = newLeads.length;
+        if (newLeads.length > 0) {
+            const b = document.getElementById('new-badge');
+            b.style.display = 'inline';
+            b.textContent = newLeads.length;
+        }
+        // Today
+        const today = new Date().toISOString().slice(0,10);
+        const todayLeads = await sbGet(`leads?created_at=gte.${today}T00:00:00&select=id`);
+        document.getElementById('stat-today').textContent = todayLeads.length;
+        // Cars count
+        const carsCount = await sbGet('cars?is_active=eq.true&select=id&limit=1&prefer=count=exact');
+        const carResp = await fetch(`${SB_URL}/rest/v1/cars?is_active=eq.true&select=id`, {
+            headers: { ...HEADERS, 'Prefer': 'count=exact', 'Range-Unit': 'items', 'Range': '0-0' }
+        });
+        const countHeader = carResp.headers.get('content-range');
+        if (countHeader) {
+            const total = countHeader.split('/')[1];
+            if (total) document.getElementById('stat-cars').textContent = total;
+        }
+    } catch(e) { console.warn('stats error', e); }
+}
+
+async function loadLeads() {
+    document.getElementById('leads-table-container').innerHTML =
+        '<div class="loading-msg"><i class="fas fa-spinner fa-spin"></i> Загрузка…</div>';
+    try {
+        allLeads = await sbGet(
+            'leads?order=created_at.desc&limit=500' +
+            '&select=id,type,status,name,phone,email,message,car_info,source_page,created_at,notified_at'
+        );
+        currentPage = 0;
+        renderTable();
+    } catch(e) {
+        document.getElementById('leads-table-container').innerHTML =
+            `<div class="loading-msg" style="color:#f87171">Ошибка загрузки: ${e.message}</div>`;
+    }
+}
+
+function filtered() {
+    const status = document.getElementById('filter-status').value;
+    const type   = document.getElementById('filter-type').value;
+    const search = document.getElementById('filter-search').value.trim().toLowerCase();
+    return allLeads.filter(l => {
+        if (status && l.status !== status) return false;
+        if (type   && l.type   !== type  ) return false;
+        if (search) {
+            const h = `${l.name||''} ${l.phone||''} ${l.email||''} ${l.source_page||''}`.toLowerCase();
+            if (!h.includes(search)) return false;
+        }
+        return true;
+    });
+}
+
+const TYPE_LABELS = {
+    car_order: 'Авто', parts_request: 'Запчасти',
+    vin_search: 'VIN', callback: 'Звонок', price_check: 'Цена',
+};
+
+function renderTable() {
+    const rows = filtered();
+    const start = currentPage * PAGE_SIZE;
+    const pageRows = rows.slice(start, start + PAGE_SIZE);
+
+    if (rows.length === 0) {
+        document.getElementById('leads-table-container').innerHTML = '<div class="no-leads">Заявок нет</div>';
+        document.getElementById('leads-pagination').innerHTML = '';
+        return;
+    }
+
+    const html = `
+    <table>
+        <thead><tr>
+            <th>#</th><th>Дата</th><th>Тип</th><th>Статус</th>
+            <th>Имя</th><th>Телефон</th><th>Авто / Инфо</th><th>Страница</th><th>Действия</th>
+        </tr></thead>
+        <tbody>
+        ${pageRows.map(l => {
+            const dt = l.created_at ? l.created_at.slice(0,16).replace('T',' ') : '—';
+            const ci = typeof l.car_info === 'object' && l.car_info
+                ? `${l.car_info.brand||''} ${l.car_info.model||''} ${l.car_info.year||''}`.trim()
+                : (typeof l.car_info === 'string' ? l.car_info.slice(0,40) : '—');
+            const phone = (l.phone||'').replace(/[^+\d]/g,'');
+            return `
+            <tr id="row-${l.id}">
+                <td>${l.id}</td>
+                <td style="white-space:nowrap">${dt}</td>
+                <td><span class="badge-type">${TYPE_LABELS[l.type]||l.type}</span></td>
+                <td><span class="badge-status ${l.status}">${l.status}</span></td>
+                <td>${l.name||'—'}</td>
+                <td><a href="tel:${phone}" style="color:#60a5fa">${l.phone||'—'}</a></td>
+                <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${ci}">${ci||'—'}</td>
+                <td style="font-size:.75rem;color:#718096">${l.source_page||'—'}</td>
+                <td>
+                    <div class="action-btns">
+                        ${phone ? `<a class="action-btn whatsapp" href="https://wa.me/${phone.replace('+','')}" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>` : ''}
+                        ${l.status === 'new' ? `<button class="action-btn contact" onclick="updateStatus(${l.id},'contacted')" title="Связались"><i class="fas fa-check"></i></button>` : ''}
+                        ${l.status !== 'closed' && l.status !== 'cancelled' ? `<button class="action-btn close-lead" onclick="updateStatus(${l.id},'closed')" title="Закрыть"><i class="fas fa-times"></i></button>` : ''}
+                        <button class="action-btn" style="background:#2d4a6f;color:#e2e8f0" onclick="toggleDetail(${l.id})" title="Детали"><i class="fas fa-info"></i></button>
+                    </div>
+                    <div class="lead-detail" id="detail-${l.id}">
+                        <dl>
+                            ${l.email ? `<dt>Email</dt><dd><a href="mailto:${l.email}" style="color:#60a5fa">${l.email}</a></dd>` : ''}
+                            ${l.message ? `<dt>Сообщение</dt><dd style="white-space:pre-wrap">${l.message.slice(0,400)}</dd>` : ''}
+                            ${ci && ci !== '—' ? `<dt>Авто</dt><dd>${ci}</dd>` : ''}
+                            <dt>Уведомлен</dt><dd>${l.notified_at ? l.notified_at.slice(0,16).replace('T',' ') : 'нет'}</dd>
+                        </dl>
+                    </div>
+                </td>
+            </tr>`;
+        }).join('')}
+        </tbody>
+    </table>`;
+    document.getElementById('leads-table-container').innerHTML = html;
+
+    // Pagination
+    const totalPages = Math.ceil(rows.length / PAGE_SIZE);
+    document.getElementById('leads-pagination').innerHTML = totalPages <= 1 ? '' : `
+        <button onclick="goPage(-1)" ${currentPage===0?'disabled':''}>‹ Назад</button>
+        <span>${currentPage+1} / ${totalPages} (${rows.length} заявок)</span>
+        <button onclick="goPage(1)" ${currentPage>=totalPages-1?'disabled':''}>Вперёд ›</button>
+    `;
+}
+
+function goPage(dir) {
+    const rows = filtered();
+    const totalPages = Math.ceil(rows.length / PAGE_SIZE);
+    currentPage = Math.max(0, Math.min(totalPages-1, currentPage + dir));
+    renderTable();
+}
+
+function toggleDetail(id) {
+    const el = document.getElementById(`detail-${id}`);
+    if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+
+async function updateStatus(id, status) {
+    const ok = await sbPatch('leads', id, { status });
+    if (ok) {
+        const lead = allLeads.find(l => l.id === id);
+        if (lead) lead.status = status;
+        renderTable();
+    }
+}
+
+// ── Search events tab ────────────────────────────────────────────────────────
+async function loadSearchEvents() {
+    document.getElementById('search-table-container').innerHTML =
+        '<div class="loading-msg"><i class="fas fa-spinner fa-spin"></i> Загрузка…</div>';
+    try {
+        const rows = await sbGet('search_events?order=created_at.desc&limit=200&select=id,page,filters,results_cnt,created_at');
+        if (!rows.length) {
+            document.getElementById('search-table-container').innerHTML = '<div class="no-leads">Поисковых событий нет</div>';
+            return;
+        }
+        document.getElementById('search-table-container').innerHTML = `
+        <table>
+            <thead><tr><th>#</th><th>Дата</th><th>Страница</th><th>Фильтры</th><th>Результатов</th></tr></thead>
+            <tbody>
+            ${rows.map(r => {
+                const dt = r.created_at ? r.created_at.slice(0,16).replace('T',' ') : '—';
+                const filters = r.filters ? JSON.stringify(r.filters).replace(/"/g,'').slice(1,-1) : '—';
+                return `<tr>
+                    <td>${r.id}</td>
+                    <td style="white-space:nowrap">${dt}</td>
+                    <td>${r.page||'—'}</td>
+                    <td style="font-size:.75rem;color:#a0aec0;max-width:300px;overflow:hidden;text-overflow:ellipsis">${filters}</td>
+                    <td>${r.results_cnt ?? '—'}</td>
+                </tr>`;
+            }).join('')}
+            </tbody>
+        </table>`;
+    } catch(e) {
+        document.getElementById('search-table-container').innerHTML =
+            `<div class="loading-msg" style="color:#f87171">Ошибка: ${e.message}</div>`;
+    }
+}
+
+function switchTab(name, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-leads').style.display  = name === 'leads'  ? 'block' : 'none';
+    document.getElementById('tab-search').style.display = name === 'search' ? 'block' : 'none';
+    if (name === 'search') loadSearchEvents();
+}
+
+// Auto-init if already authenticated
+if (sessionStorage.getItem('adm_ok') === '1') init();
+</script>
+</body>
+</html>

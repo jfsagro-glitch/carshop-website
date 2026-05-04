@@ -136,81 +136,68 @@
 ─────────────────────────────────────────────
 
 ✅ Клиентская пагинация georgia-stock.html + europe-orders.html
-    • Первые 24 авто, кнопка "Загрузить ещё (+N из M)"
-    • При смене фильтров — сброс счётчика к 24
-    • loadMoreCars() + updateLoadMoreBtn() добавлены
+     • Первые 24 авто, кнопка "Загрузить ещё (+N из M)"
+     • При смене фильтров — сброс счётчика к 24
+     • loadMoreCars() + updateLoadMoreBtn() добавлены
 
 ✅ sbLogSearch() в applyFilters()
-    • georgia-stock.html → sbLogSearch('georgia-stock', filters, count)
-    • europe-orders.html → sbLogSearch('europe-orders', filters, count)
-    • Аналитика поиска автоматически пишется в Supabase search_events
+     • georgia-stock.html → sbLogSearch('georgia-stock', filters, count)
+     • europe-orders.html → sbLogSearch('europe-orders', filters, count)
+     • Аналитика поиска автоматически пишется в Supabase search_events
 
 ✅ Счётчик europe авто на главной
-    • sbCountCars('europe') добавлен после sbCountCars('georgia')
-    • Обновляет #europeStockCount на index.html
+     • sbCountCars('europe') добавлен после sbCountCars('georgia')
+     • Обновляет #europeStockCount на index.html
 
-□ parts-orders: заполнение каталога запчастей
-    Сейчас: таблица parts пуста (0 записей)
-    Надо: создать parts_parser.py или вручную заполнить популярные позиции
-    Минимум: добавить 50-100 популярных запчастей для Toyota/BMW/Mercedes
+✅ parts-orders: каталог запчастей
+     • seed_parts.py — 50 позиций (Toyota/BMW/Mercedes/VW/Hyundai)
+     • Данные загружены в Supabase parts (50 записей)
+     • Каталог отображается на parts-orders.html через sbQueryParts()
 
 
 ПРИОРИТЕТ 3 — УЛУЧШЕНИЯ (по желанию)
 ──────────────────────────────────────
 
-□ Admin панель для просмотра заявок
-    Вариант A: Supabase Dashboard → Table Editor (уже работает)
-    Вариант B: Простая HTML страница с паролем + sbQueryLeads()
-    Вариант C: Retool / Appsmith (no-code admin на базе Supabase)
+✅ Admin панель для просмотра заявок
+     • admin.html — защищена паролем (SHA-256, дефолт: expo2026admin)
+     • Таблица заявок с фильтрами по статусу/типу/поиску
+     • Изменение статуса (новая → связались → закрыто)
+     • Кнопка WhatsApp для каждой заявки
+     • Вкладка поисковых событий (аналитика)
+     • Счётчики: всего / новых / сегодня / авто в базе
+
+✅ Korea/USA/China orders — подключены к Supabase
+     • supabase-client.js добавлен в korea/usa/china HTML
+     • script.js: checkout form → sbSubmitLead (car_order, source_page)
+     • script.js: requestModal → sbSubmitLead (car_order, fire-and-forget)
+
+✅ Полнотекстовый поиск по каталогу
+     • Поле поиска добавлено в фильтры georgia-stock.html и europe-orders.html
+     • Живой поиск (debounce 200–250 мс) по brand/model/vin/fuel/year
+     • Совместим с существующими фильтрами
 
 □ Дублирование уведомлений на email через Supabase
-    Supabase → Edge Function → Resend.com → email при новой заявке
-    Альтернатива: оставить FormSubmit.co как основной email-канал
-
-□ Полнотекстовый поиск по каталогу
-    В схеме уже есть поддержка: sbQueryCars({search: 'Toyota Camry'})
-    Нужно добавить строку поиска в фильтры georgia-stock.html
+     Альтернатива: оставить FormSubmit.co как основной email-канал
 
 □ SEO — sitemap.xml с динамическими URL авто
-    GitHub Action генерирует sitemap из cars JSON
-    Добавляет ссылки на каждое авто (id/external_id)
+     GitHub Action генерирует sitemap из cars JSON
+     Добавляет ссылки на каждое авто (id/external_id)
 
 □ Авто-удаление старых неактивных записей из cars
-    После N дней is_active=false → удалять через Supabase Scheduled Function
-    Или добавить в GitHub Actions скрипт очистки
-
-□ Аналитика search_events
-    Таблица search_events уже логирует поисковые запросы
-    Добавить sbLogSearch() вызов в applyFilters() в georgia-stock.html и europe-orders.html
-    Польза: понять что ищут пользователи
-
-□ A/B тест: Supabase vs JSON fallback
-    Добавить метку в timestamp: "(Supabase)" или "(кэш)"
-    Уже частично есть: result._source === 'json' проверка
+     После N дней is_active=false → удалять через GitHub Actions скрипт очистки
 
 
 ПРИОРИТЕТ 4 — ДОЛГОСРОЧНО
 ───────────────────────────
 
-□ Korea/USA/China orders — подключить к Supabase
-    Файлы: korea-orders.html, usa-orders.html, china-orders.html
-    Сейчас: используют emailFallbackForm → formsubmit.co
-    Надо: добавить supabase-client.js + sbSubmitLead()
-
 □ Парсер Корея (encar.com / kbchachacha.com)
-    Добавить новый источник в car_parser.py
-    Таблица: cars (region='korea')
-    Страница: korea-orders.html читает из Supabase region='korea'
+     Добавить новый источник в car_parser.py, region='korea'
 
 □ Парсер запчастей (partsouq.com / autodoc.ru)
-    Создать parts_parser.py
-    Upsert в Supabase таблицу parts
-    Каталог автоматически обновляется через GitHub Actions
+     Создать parts_parser.py, автоматический upsert через GitHub Actions
 
 □ Личный кабинет клиента (PWA)
-    История заявок по номеру телефона
-    Статус доставки
-    Требует: Supabase Auth (телефон/OTP)
+     Требует: Supabase Auth (телефон/OTP)
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

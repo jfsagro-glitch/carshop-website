@@ -3281,6 +3281,19 @@ function setupEventListeners() {
         const items = state.cart.map(i => `${i.year} ${i.brand} ${i.model} — ${i.quantity} шт. — ${formatCurrency(i.price)}`).join('\n');
         const message = `Новый заказ с сайта EXPO MIR\n\nИмя: ${name}\nТелефон: ${phone}\nEmail: ${email}\n\nТовары:\n${items}\n\nИтого: ${formatCurrency(total)}`;
 
+        // Сохраняем в Supabase CRM
+        const sourcePage = window.location.pathname.split('/').pop().replace('.html','') || 'unknown';
+        try {
+            if (typeof sbSubmitLead === 'function') {
+                await sbSubmitLead({
+                    type: 'car_order',
+                    name, phone, email, message,
+                    carInfo: state.cart.map(i => ({brand: i.brand, model: i.model, year: i.year, price: i.price})),
+                    sourcePage,
+                });
+            }
+        } catch (_) {}
+
         // Пытаемся отправить через FormSubmit (без сервера)
         try{
             document.getElementById('fs_name').value = name;
@@ -3509,6 +3522,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const s = document.getElementById('requestStatus');
             s.style.removeProperty('display');
             if (resp.ok) {
+                // Сохраняем в Supabase CRM (fire-and-forget)
+                if (typeof sbSubmitLead === 'function') {
+                    const sp = window.location.pathname.split('/').pop().replace('.html','') || 'unknown';
+                    sbSubmitLead({
+                        type: 'car_order',
+                        name, phone, email: email || undefined,
+                        message: `Марка: ${brand}\nМодель: ${model}\nГод: ${yf||'-'} - ${yt||'-'}\nБюджет до: ${pt||'-'} $\nПримечание: ${note||'-'}`,
+                        carInfo: {brand, model, yearFrom: yf||null, yearTo: yt||null, priceTo: pt||null},
+                        sourcePage: sp,
+                    }).catch(()=>{});
+                }
                 s.className = 'request-status request-status--success';
                 s.innerHTML = '<i class="fas fa-check-circle"></i> Заявка отправлена! Мы свяжемся с вами в ближайшие 15 минут.';
                 document.getElementById('requestForm')?.reset();

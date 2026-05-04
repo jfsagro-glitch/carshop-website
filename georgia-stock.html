@@ -787,9 +787,10 @@
             </div>
 
             <div class="catalog-filters">
-                <div class="filter-group">
-                    <label>Марка:</label>
-                    <select id="brand-filter">
+                <div class="filter-group" style="flex:1 1 100%;">
+                    <label>Поиск:</label>
+                    <input type="text" id="search-input" placeholder="Toyota Camry, VIN, ключевое слово…" style="width:100%;">
+                </div>
                         <option value="">Все марки</option>
                     </select>
                 </div>
@@ -1310,6 +1311,9 @@
         function setupFilters() {
             getElement('apply-filters').addEventListener('click', applyFilters);
             getElement('reset-filters').addEventListener('click', resetFilters);
+            // Живой поиск по тексту
+            const si = getElement('search-input');
+            if (si) si.addEventListener('input', applyFiltersDebounced);
         }
 
         // Применение фильтров (с debounce для оптимизации)
@@ -1320,12 +1324,17 @@
             const priceFrom = parseFloat(getElement('price-from').value) || 0;
             const priceTo = parseFloat(getElement('price-to').value) || Infinity;
             const mileageTo = parseFloat(getElement('mileage-to').value) || Infinity;
+            const search = (getElement('search-input')?.value || '').trim().toLowerCase();
 
             filteredCars = carsData.filter(car => {
                 if (brand && car.brand !== brand) return false;
                 if (model && car.model !== model) return false;
                 if (car.price && (car.price < priceFrom || car.price > priceTo)) return false;
                 if (car.mileage && car.mileage > mileageTo) return false;
+                if (search) {
+                    const haystack = `${car.brand||''} ${car.model||''} ${car.vin||''} ${car.fuel_type||''} ${car.transmission||''} ${car.year||''}`.toLowerCase();
+                    if (!haystack.includes(search)) return false;
+                }
                 return true;
             });
 
@@ -1345,6 +1354,7 @@
             getElement('price-from').value = '';
             getElement('price-to').value = '';
             getElement('mileage-to').value = '';
+            if (getElement('search-input')) getElement('search-input').value = '';
             populateModelFilter(); // Обновляем список моделей
             filteredCars = sortCars(carsData);
             displayedCount = PAGE_SIZE;
