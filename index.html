@@ -35,6 +35,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="translations.js"></script>
+    <script src="supabase-client.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1065,42 +1066,42 @@
         // Загрузка данных
         async function loadGeorgiaCarsData() {
             try {
-                const response = await fetch('./cars_georgia_stock.json?v=' + Date.now(), { cache: 'no-store' });
-                if (response.ok) {
-                    georgiaCarsData = await response.json();
-                    georgiaFilteredCars = [...georgiaCarsData];
-                    
-                    // Сортировка
-                    georgiaFilteredCars.sort((a, b) => {
-                        const aHasVin = a.vin && a.vin.trim();
-                        const bHasVin = b.vin && b.vin.trim();
-                        const aHasPrice = a.price && a.price > 0;
-                        const bHasPrice = b.price && b.price > 0;
-                        
-                        if (aHasVin && !bHasVin) return -1;
-                        if (!aHasVin && bHasVin) return 1;
-                        if (aHasPrice && !bHasPrice) return -1;
-                        if (!aHasPrice && bHasPrice) return 1;
-                        return 0;
-                    });
-                    
-                    // Загружаем курс
-                    await loadGeorgiaUsdToRubRate();
-                    
-                    // Заполняем фильтры и отображаем
-                    populateGeorgiaBrandFilter();
-                    displayGeorgiaCars();
-                    
-                    // Настраиваем обработчики фильтров
-                    const applyBtn = getGeorgiaElement('applyFilters');
-                    if (applyBtn) {
-                        applyBtn.addEventListener('click', applyGeorgiaFilters);
-                    }
-                } else {
-                    const grid = getGeorgiaElement('carsGrid');
-                    if (grid) {
-                        grid.innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
-                    }
+                const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
+                georgiaCarsData = result.data;
+                georgiaFilteredCars = [...georgiaCarsData];
+
+                // Сортировка
+                georgiaFilteredCars.sort((a, b) => {
+                    const aHasVin = a.vin && a.vin.trim();
+                    const bHasVin = b.vin && b.vin.trim();
+                    const aHasPrice = a.price && a.price > 0;
+                    const bHasPrice = b.price && b.price > 0;
+
+                    if (aHasVin && !bHasVin) return -1;
+                    if (!aHasVin && bHasVin) return 1;
+                    if (aHasPrice && !bHasPrice) return -1;
+                    if (!aHasPrice && bHasPrice) return 1;
+                    return 0;
+                });
+
+                // Обновляем счётчик в hero через Supabase count
+                try {
+                    const cnt = await sbCountCars('georgia');
+                    const el = document.getElementById('georgiaStockCount');
+                    if (el && cnt > 0) el.textContent = cnt + '+ авто';
+                } catch(_) {}
+
+                // Загружаем курс
+                await loadGeorgiaUsdToRubRate();
+
+                // Заполняем фильтры и отображаем
+                populateGeorgiaBrandFilter();
+                displayGeorgiaCars();
+
+                // Настраиваем обработчики фильтров
+                const applyBtn = getGeorgiaElement('applyFilters');
+                if (applyBtn) {
+                    applyBtn.addEventListener('click', applyGeorgiaFilters);
                 }
             } catch (error) {
                 const grid = getGeorgiaElement('carsGrid');

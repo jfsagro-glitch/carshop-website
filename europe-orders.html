@@ -36,6 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="translations.js"></script>
+    <script src="supabase-client.js"></script>
     <style>
         /* Тёмная тема + сетка 4 колонки */
         body {
@@ -873,24 +874,19 @@
         // Загрузка данных
         async function loadCarsData() {
             try {
-                const response = await fetch('./cars_europe_new.json?v=' + Date.now(), { cache: 'no-store' });
-                if (response.ok) {
-                    carsData = await response.json();
-                    filteredCars = [...carsData];
+                const result = await sbLoadCarsWithFallback('europe', './cars_europe_new.json');
+                carsData = result.data;
+                filteredCars = [...carsData];
 
-                    // Показываем timestamp обновления
-                    const tsEl = document.getElementById('syncTimestamp');
-                    if (tsEl) {
-                        const now = new Date().toLocaleDateString('ru-RU', {day:'2-digit',month:'2-digit',year:'numeric'});
-                        tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} авто доступно`;
-                    }
-
-                    initializePage();
-                } else {
-                    document.getElementById('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
+                // Показываем timestamp обновления
+                const tsEl = document.getElementById('syncTimestamp');
+                if (tsEl) {
+                    const now = new Date().toLocaleDateString('ru-RU', {day:'2-digit',month:'2-digit',year:'numeric'});
+                    tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} авто доступно`;
                 }
+
+                initializePage();
             } catch (error) {
-                console.error('Ошибка загрузки данных:', error);
                 document.getElementById('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
             }
         }

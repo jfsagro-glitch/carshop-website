@@ -36,6 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="translations.js"></script>
+    <script src="supabase-client.js"></script>
     <style>
         /* Тёмная тема + сетка 4 колонки */
         body {
@@ -932,41 +933,22 @@
         // Загрузка данных
         async function loadCarsData() {
             try {
-                // Загружаем данные
-                const carsResult = await Promise.allSettled([
-                    fetch('./cars_georgia_stock.json?v=' + Date.now(), { cache: 'no-store' })
-                ]);
-                
-                if (carsResult[0].status === 'fulfilled' && carsResult[0].value.ok) {
-                    carsData = await carsResult[0].value.json();
-                    filteredCars = [...carsData];
+                const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
+                carsData = result.data;
+                filteredCars = sortCars(carsData);
 
-                    // Показываем timestamp обновления
-                    const tsEl = document.getElementById('syncTimestamp');
-                    if (tsEl) {
-                        const now = new Date().toLocaleDateString('ru-RU', {day:'2-digit',month:'2-digit',year:'numeric'});
-                        tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} авто в наличии`;
-                    }
-                    
-                    // Используем оптимизированную функцию сортировки
-                    filteredCars = sortCars(carsData);
-                    
-                    // Загружаем курс USD/RUB для конвертации рублей в доллары
-                    await fetchUsdToRubRate();
-                    
-                    // Обновляем отображение после загрузки курса
-                    initializePage();
-                    
-                    // Перерисовываем автомобили с правильными ценами
-                    displayCars();
-                } else {
-                    const carsGrid = getElement('cars-grid');
-                    if (carsGrid) {
-                        carsGrid.innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
-                    }
+                // Показываем timestamp обновления
+                const tsEl = document.getElementById('syncTimestamp');
+                if (tsEl) {
+                    const src = result._source === 'json' ? 'JSON' : 'Supabase';
+                    const now = new Date().toLocaleDateString('ru-RU', {day:'2-digit',month:'2-digit',year:'numeric'});
+                    tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} авто в наличии`;
                 }
+
+                await fetchUsdToRubRate();
+                initializePage();
+                displayCars();
             } catch (error) {
-                // Убрали console.error для production
                 getElement('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
             }
         }

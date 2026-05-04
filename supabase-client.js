@@ -228,6 +228,31 @@ function sbLogSearch(page, filters, resultsCnt) {
 // ── FALLBACK: загрузка из JSON если Supabase недоступен ───────────────────────
 
 /**
+ * Нормализует строку из таблицы cars (Supabase) к формату,
+ * который ожидают HTML страницы (georgia-stock.html, europe-orders.html).
+ * Добавляет алиасы полей для совместимости с JSON-форматом.
+ * @param {object} row — строка из Supabase
+ * @returns {object}
+ */
+function _normalizeSbCar(row) {
+    const r = { ...row };
+    // Алиас currency → price_currency (для georgia-stock.html)
+    if (r.currency && !r.price_currency) r.price_currency = r.currency;
+    // Распаковываем specs jsonb обратно в поля (для europe-orders.html)
+    if (r.specs && typeof r.specs === 'object') {
+        if (!r.first_registration && r.specs.first_registration)
+            r.first_registration = r.specs.first_registration;
+        if (!r.first_registration_year && r.specs.first_registration_year)
+            r.first_registration_year = r.specs.first_registration_year;
+        else if (!r.first_registration_year && r.year)
+            r.first_registration_year = r.year;
+    } else if (r.year && !r.first_registration_year) {
+        r.first_registration_year = r.year;
+    }
+    return r;
+}
+
+/**
  * Загрузка авто с автоматическим фолбеком на локальный JSON.
  * Пробует Supabase, при ошибке — читает JSON файл.
  *
@@ -237,15 +262,15 @@ function sbLogSearch(page, filters, resultsCnt) {
  */
 async function sbLoadCarsWithFallback(region, jsonFile, filters = {}) {
     try {
-        const result = await sbQueryCars({ region, ...filters });
+        const result = await sbQueryCars({ region, limit: 500, ...filters });
         if (result.data && result.data.length > 0) {
-            return result;
+            return { ...result, data: result.data.map(_normalizeSbCar) };
         }
         // Если Supabase вернул 0 записей — возможно ещё не заполнен, пробуем JSON
         throw new Error('Supabase вернул 0 записей');
     } catch (err) {
         console.warn(`[Supabase] fallback → ${jsonFile}:`, err.message);
-        const res = await fetch(jsonFile);
+        const res = await fetch(jsonFile + '?v=' + Date.now(), { cache: 'no-store' });
         if (!res.ok) throw new Error(`JSON fallback тоже недоступен: ${jsonFile}`);
         const data = await res.json();
         return { data, total: data.length, page: 0, limit: data.length, _source: 'json' };
