@@ -266,6 +266,29 @@
   Фаза 4: CRM leads + admin panel + notify + Korea parser            ✅
   Фаза 5: parts_parser.py + korea-orders dynamic + workflow          ✅
   Фаза 6: mobilede→Europe, robots.txt, JSON-LD SEO, notify_cars.py  ✅
+  Фаза 7: JSON-LD все страницы, 404.html, sitemap+korea, geo-catalog ✅
+
+================================================================================
+  ФАЗА 7 — ДЕТАЛИ
+================================================================================
+
+✅ JSON-LD добавлен на все оставшиеся страницы:
+     usa-orders.html      → schema.org/CollectionPage + AutoDealer
+     china-orders.html    → schema.org/CollectionPage + AutoDealer
+     georgia-catalog.html → schema.org/CollectionPage + AutoDealer
+     (Итого: все 8 публичных страниц теперь имеют structured data)
+
+✅ georgia-catalog.html — добавлен supabase-client.js (был пропущен ранее)
+
+✅ generate_sitemap.py — расширен:
+     + georgia-catalog.html (priority 0.85, hourly)
+     + Уникальные бренды Кореи → korea-orders.html?brand=X (priority 0.5)
+     korea источник: cars_korea_stock.json
+
+✅ 404.html — создан для GitHub Pages:
+     Стильная страница 404 в тёмном стиле #0b1220 + gold #d4af37
+     Ссылки на главную, каталоги Georgia/Europe/Korea/Parts
+     meta robots: noindex, follow
 
 ================================================================================
   ФАЗА 6 — ДЕТАЛИ

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена — EXPO MIR</title>
+    <meta name="description" content="Страница не найдена. Вернитесь на главную страницу EXPO MIR — автомобили из Грузии, Европы, Кореи, США, Китая.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://cmsauto.store/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="premium-enhancements.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #0b1220 0%, #0f172a 100%);
+            color: #f3f4f6;
+        }
+        .error-code {
+            font-size: clamp(5rem, 20vw, 10rem);
+            font-weight: 700;
+            color: #d4af37;
+            line-height: 1;
+            margin: 0 0 0.5rem;
+            letter-spacing: -0.04em;
+        }
+        .error-title {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-weight: 600;
+            margin: 0 0 0.75rem;
+            color: #f3f4f6;
+        }
+        .error-desc {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin: 0 0 2.5rem;
+            max-width: 480px;
+        }
+        .error-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+        .error-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .error-links a.primary {
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            color: #0b1220;
+        }
+        .error-links a.primary:hover { background: #f4d03f; }
+        .error-links a.secondary {
+            background: rgba(255,255,255,0.06);
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .error-links a.secondary:hover { background: rgba(255,255,255,0.1); }
+        .error-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #d4af37;
+            letter-spacing: 0.05em;
+            margin-bottom: 3rem;
+        }
+        .error-logo img {
+            height: 36px;
+            vertical-align: middle;
+            margin-right: 0.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-logo">
+            <img src="images/logo.png" alt="EXPO MIR">EXPO MIR
+        </div>
+        <div class="error-code">404</div>
+        <h1 class="error-title">Страница не найдена</h1>
+        <p class="error-desc">Возможно, страница была перемещена или удалена. Воспользуйтесь каталогами ниже, чтобы найти нужный автомобиль.</p>
+        <div class="error-links">
+            <a href="index.html" class="primary"><i class="fas fa-home"></i> На главную</a>
+            <a href="georgia-catalog.html" class="secondary"><i class="fas fa-car"></i> Грузия</a>
+            <a href="europe-orders.html" class="secondary"><i class="fas fa-car"></i> Европа</a>
+            <a href="korea-orders.html" class="secondary"><i class="fas fa-car"></i> Корея</a>
+            <a href="parts-orders.html" class="secondary"><i class="fas fa-wrench"></i> Запчасти</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -23,13 +23,14 @@ from pathlib import Path
 BASE_URL = "https://cmsauto.store"
 
 STATIC_PAGES = [
-    ("index.html",         0.9, "daily"),
-    ("georgia-stock.html", 0.8, "hourly"),
-    ("europe-orders.html", 0.8, "hourly"),
-    ("korea-orders.html",  0.7, "weekly"),
-    ("usa-orders.html",    0.7, "weekly"),
-    ("china-orders.html",  0.7, "weekly"),
-    ("parts-orders.html",  0.7, "daily"),
+    ("index.html",           0.9, "daily"),
+    ("georgia-catalog.html", 0.85, "hourly"),
+    ("georgia-stock.html",   0.8, "hourly"),
+    ("europe-orders.html",   0.8, "hourly"),
+    ("korea-orders.html",    0.7, "daily"),
+    ("usa-orders.html",      0.7, "weekly"),
+    ("china-orders.html",    0.7, "weekly"),
+    ("parts-orders.html",    0.7, "daily"),
 ]
 
 
@@ -74,6 +75,7 @@ def generate_sitemap(base_url: str, repo_root: str, output: str) -> int:
     # Данные из каталогов авто — уникальные марки/модели как дополнительные записи
     georgia = load_json_safe(os.path.join(repo_root, "cars_georgia_stock.json"))
     europe  = load_json_safe(os.path.join(repo_root, "cars_europe_new.json"))
+    korea   = load_json_safe(os.path.join(repo_root, "cars_korea_stock.json"))
 
     # Уникальные бренды Грузии → добавляем URL фильтра ?brand=X на georgia-stock.html
     seen_brands_georgia: set = set()
@@ -103,6 +105,21 @@ def generate_sitemap(base_url: str, repo_root: str, output: str) -> int:
             lines.append(f"    <lastmod>{today}</lastmod>")
             lines.append(f"    <changefreq>daily</changefreq>")
             lines.append(f"    <priority>0.6</priority>")
+            lines.append(f"  </url>")
+
+    # Уникальные бренды Кореи
+    seen_brands_korea: set = set()
+    for rec in korea:
+        brand = str(rec.get("brand") or "").strip()
+        if brand and brand not in seen_brands_korea:
+            seen_brands_korea.add(brand)
+            safe_brand = brand.replace(" ", "%20")
+            url = f"{base_url.rstrip('/')}/korea-orders.html?brand={safe_brand}"
+            lines.append(f"  <url>")
+            lines.append(f"    <loc>{url}</loc>")
+            lines.append(f"    <lastmod>{today}</lastmod>")
+            lines.append(f"    <changefreq>daily</changefreq>")
+            lines.append(f"    <priority>0.5</priority>")
             lines.append(f"  </url>")
 
     lines.append("</urlset>")
