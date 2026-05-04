@@ -17,13 +17,27 @@ function searchByVIN() {
     document.getElementById('partsCarInfo').value = `VIN: ${vin}`;
 }
 
-// Load parts catalog from parsed data
+// Load parts catalog from Supabase (with graceful fallback if table empty)
 let partsouqData = null;
 
-// Try to load parsed partsouq data (only if the file actually exists)
 async function loadPartsouqData() {
-    // File not available — silently skip to avoid console 404 errors
-    return;
+    try {
+        if (typeof sbQueryParts === 'undefined') return; // supabase-client.js не загружен
+        const { data } = await sbQueryParts({ limit: 200 });
+        if (!data || data.length === 0) return; // таблица пуста — используем статический UI
+        // Группируем по марке для совместимости с updateBrandsFromData
+        partsouqData = {};
+        data.forEach(part => {
+            const brands = Array.isArray(part.models) ? part.models : [part.brand || 'Other'];
+            brands.forEach(b => {
+                if (!partsouqData[b]) partsouqData[b] = [];
+                partsouqData[b].push(part);
+            });
+        });
+        updateBrandsFromData();
+    } catch (_) {
+        // молча пропускаем — статический UI остаётся рабочим
+    }
 }
 
 function updateBrandsFromData() {
@@ -859,6 +873,25 @@ window.addEventListener('click', function(event) {
             `Телефон: ${phone}`,
             `Комментарий: ${$('partsOrderComment').value.trim() || 'нет'}`
         ].join('\n');
+
+        // Сохраняем в Supabase leads
+        if (typeof sbSubmitLead !== 'undefined') {
+            sbSubmitLead({
+                type: 'parts_order',
+                name: client,
+                phone: phone,
+                message: body,
+                carInfo: {
+                    vehicle: $('partsOrderVehicle').value,
+                    part: $('partsOrderName').value,
+                    oem: $('partsOrderNumber').value,
+                    vin: $('partsOrderVin').value.trim() || null,
+                    qty: $('partsOrderQty').value
+                },
+                sourcePage: 'parts-orders'
+            }).catch(() => {});
+        }
+
         window.location.href = `mailto:carexportgeo@bk.ru?subject=${encodeURIComponent('Заказ запчасти ' + $('partsOrderNumber').value)}&body=${encodeURIComponent(body)}`;
         if (status) {
             status.textContent = 'Заявка подготовлена. Если почтовое окно не открылось, напишите нам в WhatsApp.';

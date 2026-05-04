@@ -1750,8 +1750,23 @@
             }
         }
         
-        // ВАРИАНТ 1: FormSubmit.co (САМЫЙ ПРОСТОЙ - работает сразу без настройки)
+        // ВАРИАНТ 1: Supabase leads + FormSubmit.co fallback
         async function sendOrderEmail(name, phone, email, orderItems, total, subject, body) {
+            // Сначала сохраняем заявку в Supabase
+            try {
+                if (typeof sbSubmitLead !== 'undefined') {
+                    const carItem = cart.length > 0 ? cart[0] : null;
+                    await sbSubmitLead({
+                        type: 'car_order',
+                        name, phone, email,
+                        message: body,
+                        carInfo: carItem ? { brand: carItem.brand, model: carItem.model, price: carItem.price, url: carItem.url } : null,
+                        sourcePage: 'europe-orders'
+                    });
+                }
+            } catch (_) { /* не блокируем если Supabase недоступен */ }
+
+            // Отправляем email через FormSubmit.co
             const payload = new URLSearchParams();
             payload.append('name', name);
             payload.append('phone', phone);
@@ -1764,20 +1779,12 @@
             try {
                 const response = await fetch('https://formsubmit.co/carexportgeo@bk.ru', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: payload
                 });
-                
-                if (response.ok) {
-                    return true;
-                } else {
-                    throw new Error('FormSubmit error');
-                }
+                if (response.ok) return true;
+                throw new Error('FormSubmit error');
             } catch (error) {
-                console.error('FormSubmit error:', error);
-                // Fallback на альтернативный метод
                 return sendOrderEmailAlternative(name, phone, email, orderItems, total, subject, body);
             }
         }
