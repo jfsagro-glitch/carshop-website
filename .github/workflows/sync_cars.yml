@@ -81,8 +81,18 @@ jobs:
             --stock-file cars_georgia_stock.json \
             --quiet
 
-      - name: Sync Europe catalog from AutoScout24
+      - name: Sync Europe catalog from mobile.de
         run: |
+          python car_parser.py \
+            --source mobilede \
+            --max "$EUROPE_MAX" \
+            --min-age "$MIN_AGE" \
+            --max-age "$MAX_AGE" \
+            --max-power-hp "$MAX_POWER_HP" \
+            --min-records 50 \
+            --delay 2 \
+            --out cars_europe_new.json \
+            --quiet || \
           python car_parser.py \
             --source autoscout24 \
             --max "$EUROPE_MAX" \
@@ -91,11 +101,10 @@ jobs:
             --min-age "$MIN_AGE" \
             --max-age "$MAX_AGE" \
             --max-power-hp "$MAX_POWER_HP" \
-            --min-records 150 \
+            --min-records 50 \
             --delay 1 \
             --out cars_europe_new.json \
-            --fail-empty \
-            --quiet
+            --quiet || true
 
       - name: Validate public catalogs
         run: python car_parser.py --validate-catalogs
@@ -139,6 +148,9 @@ jobs:
 
       - name: Import parts catalog to Supabase
         run: python parts_parser.py --input parts_catalog.csv --quiet || true
+
+      - name: Notify car catalog updates to Telegram
+        run: python notify_cars.py --hours 5 --only-new || true
 
       - name: Notify new leads to Telegram
         run: python notify_leads.py

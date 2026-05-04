@@ -265,5 +265,31 @@
   Фаза 3: Каталог запчастей (parts-orders.html/js, seed_parts.py)   ✅
   Фаза 4: CRM leads + admin panel + notify + Korea parser            ✅
   Фаза 5: parts_parser.py + korea-orders dynamic + workflow          ✅
+  Фаза 6: mobilede→Europe, robots.txt, JSON-LD SEO, notify_cars.py  ✅
+
+================================================================================
+  ФАЗА 6 — ДЕТАЛИ
+================================================================================
+
+✅ sync_cars.yml: Европа → mobilede (primary) + autoscout24 (fallback)
+     Ранее только autoscout24 (требует proxy), теперь mobilede первичный.
+     Оба источника пишут в cars_europe_new.json + Supabase region='europe'.
+
+✅ robots.txt — создан с Disallow для admin/config/py/csv/json
+     Sitemap: https://cmsauto.store/sitemap.xml
+
+✅ JSON-LD structured data на всех catalog страницах:
+     georgia-stock.html  → schema.org/CollectionPage + AutoDealer
+     europe-orders.html  → schema.org/CollectionPage + AutoDealer
+     korea-orders.html   → schema.org/CollectionPage + AutoDealer
+     parts-orders.html   → schema.org/ItemList + AutoPartsStore
+     index.html          → schema.org/AutoDealer (уже был)
+
+✅ notify_cars.py — Telegram-уведомление о новых авто после синка:
+     fetch_new_cars(since, region) — авто с created_at за последние 5 ч
+     fetch_total_cars(region) — общий счётчик активных авто
+     build_message() — дайджест: кол-во новых, список первых 5, ссылка
+     CLI: python notify_cars.py [--hours 5] [--regions ...] [--dry-run] [--only-new]
+     GitHub Action: Notify car catalog updates to Telegram (после каждого синка)
 
 ================================================================================
