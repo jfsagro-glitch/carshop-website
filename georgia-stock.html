@@ -957,11 +957,28 @@
             return false; // Для Грузии цены уже в USD, не конвертируем
         }
 
+        // Нормализация записи из JSON (photos→images, fuel→fuel_type и т.д.)
+        function normalizeGeorgiaCar(car) {
+            if (!car) return car;
+            // photos (string) → images (array) для совместимости с filterImages
+            if (!car.images && car.photos) {
+                car.images = typeof car.photos === 'string' ? [car.photos] : car.photos;
+            } else if (!car.images) {
+                car.images = [];
+            }
+            // fuel_type алиасы
+            if (!car.fuel_type && car.fuel) car.fuel_type = car.fuel;
+            // price_currency
+            if (!car.price_currency) car.price_currency = car.currency || 'USD';
+            return car;
+        }
+
         // Загрузка данных
         async function loadCarsData() {
             try {
                 const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
-                carsData = result.data;
+                // Нормализуем данные из JSON fallback
+                carsData = result.data.map(normalizeGeorgiaCar);
                 filteredCars = sortCars(carsData);
 
                 // Показываем timestamp обновления

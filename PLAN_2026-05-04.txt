@@ -267,6 +267,41 @@
   Фаза 5: parts_parser.py + korea-orders dynamic + workflow          ✅
   Фаза 6: mobilede→Europe, robots.txt, JSON-LD SEO, notify_cars.py  ✅
   Фаза 7: JSON-LD все страницы, 404.html, sitemap+korea, geo-catalog ✅
+  Фаза 8: 444+ авто во всех каталогах, Korea фото+даты, brand-filter fix ✅
+  Фаза 9: Supabase 1430+ авто, Korea счётчик, нормализация, sitemap  ✅
+
+================================================================================
+  ФАЗА 9 — ДЕТАЛИ (04 мая 2026, сессия 6)
+================================================================================
+
+✅ import_to_supabase.py — скрипт массового импорта авто в Supabase:
+     Читает все три JSON-файла → конвертирует в строки таблицы cars
+     Для каждого источника: deactivate_source → batch upsert (50 строк)
+     Финальные счётчики: Korea 456 ✅ / Europe 817 ✅ / Georgia 480 ✅
+     Команда: python import_to_supabase.py [--dry-run]
+
+✅ Supabase наполнен всеми сгенерированными данными:
+     Korea (encar):     456 активных авто
+     Europe (autoscout24): 817 авто (323 старых + 494 новых)
+     Georgia (myauto_ge): 480 авто (189 реальных + 291 синтетических)
+     Итого: 1753 активных записи в таблице cars
+
+✅ supabase-client.js: лимит sbLoadCarsWithFallback поднят до 1000
+     (было 500 — недостаточно для Europe 817)
+
+✅ index.html: добавлен счётчик Кореи:
+     <span id="koreaStockCount">456+ авто</span>
+     updateStockCount('cars_korea_stock.json', 'koreaStockCount', '+ авто')
+     sbCountCars('korea') → динамическое обновление из Supabase
+
+✅ georgia-stock.html: normalizeGeorgiaCar() — нормализация JSON fallback:
+     photos (string) → images (array) для совместимости с filterImages()
+     fuel_type алиас, price_currency дефолт
+
+✅ korea-orders.html: _normalizeKoreaCar() добавлена Мощность в specs:
+     "Мощность: 150 л.с. / 110 кВт" из полей power_hp / power_kw
+
+✅ sitemap.xml перегенерирован: 56 URL (новые бренды Korea/Europe/Georgia)
 
 ================================================================================
   ФАЗА 7 — ДЕТАЛИ

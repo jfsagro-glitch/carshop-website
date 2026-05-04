@@ -262,7 +262,7 @@ function _normalizeSbCar(row) {
  */
 async function sbLoadCarsWithFallback(region, jsonFile, filters = {}) {
     try {
-        const result = await sbQueryCars({ region, limit: 500, ...filters });
+        const result = await sbQueryCars({ region, limit: 1000, ...filters });
         if (result.data && result.data.length > 0) {
             return { ...result, data: result.data.map(_normalizeSbCar) };
         }

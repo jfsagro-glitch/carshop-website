@@ -457,6 +457,9 @@
                 const eng   = car.engine;
                 const mil   = car.mileage;
                 const drv   = car.drive || (car.specs && car.specs.drive);
+                const php   = car.power_hp;
+                const pkw   = car.power_kw;
+                if (php || pkw) s.push('Мощность: ' + [php ? php + ' л.с.' : '', pkw ? pkw + ' кВт' : ''].filter(Boolean).join(' / '));
                 if (fuel)  s.push('Топливо: ' + fuel);
                 if (eng)   s.push('Объем двигателя: ' + eng + ' л');
                 if (trans) s.push('Трансмиссия: ' + trans);

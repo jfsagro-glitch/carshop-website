@@ -267,7 +267,7 @@
                     <div class="country-card__icon">🇰🇷</div>
                     <p class="country-card__name">Корея</p>
                     <p class="country-card__desc">Новые и с пробегом, аукционы</p>
-                    <span class="country-card__count">Большой выбор</span>
+                    <span class="country-card__count" id="koreaStockCount">456+ авто</span>
                 </a>
                 <a href="china-orders.html" class="country-card">
                     <div class="country-card__icon">🇨🇳</div>
@@ -659,6 +659,7 @@
         }
         updateStockCount('cars_georgia_stock.json', 'georgiaStockCount', '+ авто');
         updateStockCount('cars_europe_new.json', 'europeStockCount', '+ авто');
+        updateStockCount('cars_korea_stock.json', 'koreaStockCount', '+ авто');
     })();
     </script>
     <button id="backToTop" class="back-to-top" aria-label="Прокрутить наверх" title="Наверх">
@@ -1096,6 +1097,13 @@
                     const cntEu = await sbCountCars('europe');
                     const elEu = document.getElementById('europeStockCount');
                     if (elEu && cntEu > 0) elEu.textContent = cntEu + '+ авто';
+                } catch(_) {}
+
+                // Обновляем счётчик Korea через Supabase
+                try {
+                    const cntKr = await sbCountCars('korea');
+                    const elKr = document.getElementById('koreaStockCount');
+                    if (elKr && cntKr > 0) elKr.textContent = cntKr + '+ авто';
                 } catch(_) {}
 
                 // Загружаем курс
