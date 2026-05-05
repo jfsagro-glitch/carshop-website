@@ -729,14 +729,22 @@ window.addEventListener('click', function(event) {
         if (!brandSelect || !modelSelect || !showBtn) return;
 
         try {
-            const response = await fetch('data/parts_catalog.json?v=' + Date.now(), { cache: 'no-store' });
-            if (!response.ok) throw new Error('parts catalog unavailable');
-            state.catalog = await response.json();
+            // Reuse the catalog promise started by the inline script to avoid a second 437KB download
+            state.catalog = window._partsCatalogPromise
+                ? await window._partsCatalogPromise
+                : await fetch('data/parts_catalog.json', { cache: 'default' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
             fillBrandSelect();
             updateStatsFromLocalCatalog();
         } catch (error) {
-            const grid = $('partsGrid');
-            if (grid) grid.innerHTML = '<div class="parts-empty-state">Каталог запчастей временно недоступен</div>';
+            console.error('Parts catalog load error:', error);
+            // Show error in the visible picker panel, not the hidden results grid
+            const picker = $('partsPickerPanel');
+            if (picker) {
+                const msg = document.createElement('p');
+                msg.style.cssText = 'color:#f87171;text-align:center;margin-top:0.75rem;';
+                msg.textContent = 'Ошибка загрузки каталога запчастей. Пожалуйста, обновите страницу.';
+                picker.appendChild(msg);
+            }
             return;
         }
 
@@ -1007,6 +1015,10 @@ window.addEventListener('click', function(event) {
     // Expose state for global helpers outside this IIFE
     window._partsState = state;
 
-    document.addEventListener('DOMContentLoaded', initLocalPartsCatalog);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLocalPartsCatalog);
+    } else {
+        initLocalPartsCatalog();
+    }
 })();
 

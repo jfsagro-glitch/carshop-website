@@ -701,6 +701,10 @@
     <script src="script.js"></script>
     <script>
         // Загрузка данных каталога запчастей
+        // Expose promise globally so parts-orders.js can reuse the same fetch
+        window._partsCatalogPromise = fetch('data/parts_catalog.json', { cache: 'default' })
+            .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+
         (async function() {
             const brandsGrid = document.getElementById('brandsGrid');
             const modelsSection = document.getElementById('modelsSection');
@@ -717,9 +721,7 @@
             let selectedBrand = null;
             
             try {
-                const response = await fetch('data/parts_catalog.json?v=' + Date.now(), { cache: 'no-store' });
-                if (!response.ok) throw new Error('Failed to load parts catalog');
-                catalogData = await response.json();
+                catalogData = await window._partsCatalogPromise;
                 
                 // Обновляем статистику
                 const totalModels = catalogData.brands.reduce((sum, b) => sum + (b.models?.length || 0), 0);
