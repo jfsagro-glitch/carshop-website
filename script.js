@@ -3949,13 +3949,33 @@ function getCatalogYearMonth(car){
 }
 
 function getCatalogPower(car){
+    const hpFromField = Number(car?.power_hp);
+    const kwFromField = Number(car?.power_kw);
+
+    // Прямые числовые поля приоритетнее: они безопаснее текстового парсинга
+    if (Number.isFinite(hpFromField) && hpFromField > 0) {
+        const kw = Number.isFinite(kwFromField) && kwFromField > 0
+            ? kwFromField
+            : Math.round(hpFromField / 1.35962);
+        return { hp: hpFromField, kw };
+    }
+
+    if (Number.isFinite(kwFromField) && kwFromField > 0) {
+        return { hp: Math.round(kwFromField * 1.35962), kw: kwFromField };
+    }
+
     const text = String(car?.power || car?.specs?.join(' ') || '');
-    const values = [...text.matchAll(/(\d+(?:[.,]\d+)?)\s*(кВт|kw|л\.?\s*с\.?|лс|hp|ps)?/gi)]
+    // Учитываем только числа с единицами мощности, чтобы не принять пробег за л.с.
+    const values = [...text.matchAll(/(\d+(?:[.,]\d+)?)\s*(кВт|kw|л\.?\s*с\.?|лс|hp|ps)/gi)]
         .map(match => ({ value: parseFloat(match[1].replace(',', '.')), unit: (match[2] || '').toLowerCase() }))
         .filter(item => Number.isFinite(item.value));
     if (!values.length) return { hp: 0, kw: 0 };
-    const kwValues = values.filter(item => item.unit.includes('kw') || item.unit.includes('квт')).map(item => item.value);
-    const hpValues = values.filter(item => !item.unit.includes('kw') && !item.unit.includes('квт')).map(item => item.value);
+    const kwValues = values
+        .filter(item => item.unit.includes('kw') || item.unit.includes('квт'))
+        .map(item => item.value);
+    const hpValues = values
+        .filter(item => !item.unit.includes('kw') && !item.unit.includes('квт'))
+        .map(item => item.value);
     const kw = kwValues.length ? Math.max(...kwValues) : 0;
     const hp = hpValues.length ? Math.max(...hpValues) : (kw ? Math.round(kw * 1.35962) : 0);
     return { hp, kw: kw || (hp ? Math.round(hp / 1.35962) : 0) };
