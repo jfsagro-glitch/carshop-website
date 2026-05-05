@@ -3,6 +3,9 @@
 -- MVP schema for normalized parts catalog
 -- ============================================================
 
+CREATE SCHEMA IF NOT EXISTS parts_mvp;
+SET search_path TO parts_mvp, public;
+
 -- 1) Vehicles hierarchy
 CREATE TABLE IF NOT EXISTS vehicle_brands (
   id           bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -114,7 +117,7 @@ CREATE TABLE IF NOT EXISTS oe_numbers (
   source_system      text, -- parts-catalogs, tecdoc, internal
   is_primary         boolean NOT NULL DEFAULT false,
   created_at         timestamptz NOT NULL DEFAULT now(),
-  UNIQUE (oem_number, COALESCE(brand_id, 0))
+  UNIQUE (oem_number, brand_id)
 );
 
 CREATE INDEX IF NOT EXISTS idx_oe_part ON oe_numbers(part_id);
@@ -281,3 +284,5 @@ VALUES
 ('Chevrolet', 'chevrolet'),
 ('Buick', 'buick')
 ON CONFLICT (name) DO NOTHING;
+
+RESET search_path;
