@@ -735,6 +735,7 @@ window.addEventListener('click', function(event) {
                 : await fetch('data/parts_catalog.json?v=20260505', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
             fillBrandSelect();
             updateStatsFromLocalCatalog();
+            autoShowFirstAvailableModel();
         } catch (error) {
             console.error('Parts catalog load error:', error);
             // Show error in the visible picker panel, not the hidden results grid
@@ -784,6 +785,28 @@ window.addEventListener('click', function(event) {
         $('partsOrderModal')?.addEventListener('click', event => {
             if (event.target === $('partsOrderModal')) closePartsOrderModal();
         });
+    }
+
+    function autoShowFirstAvailableModel() {
+        if (!state.catalog?.brands?.length) return;
+        const firstBrand = state.catalog.brands.find(brand => Array.isArray(brand.models) && brand.models.length) || null;
+        if (!firstBrand) return;
+
+        state.brand = firstBrand;
+        state.model = firstBrand.models[0] || null;
+        state.engine = null;
+        state.year = '';
+
+        const brandSelect = $('partsBrandSelect');
+        if (brandSelect) brandSelect.value = firstBrand.slug;
+
+        fillModelSelect();
+
+        const modelSelect = $('partsModelSelect');
+        if (modelSelect && state.model) modelSelect.value = state.model.slug;
+
+        fillYearSelect();
+        showPartsForSelection();
     }
 
     function fillBrandSelect() {
