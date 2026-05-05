@@ -468,9 +468,14 @@ function createPartCard(partName, category, partNumber = '', price = '') {
 function openPartsRequestModal(category, subcategory, partName) {
     const modal = document.getElementById('partsRequestModal');
     if (!modal) return;
-    
-    document.getElementById('partsCarInfo').value = `${selectedBrand} ${selectedModel}`;
-    document.getElementById('partsCarYear').value = selectedYear || '';
+    const ps = window._partsState;
+    const brandName  = ps?.brand?.name  || selectedBrand  || '';
+    const modelName  = ps?.model?.name  || selectedModel  || '';
+    const yearVal    = ps?.year         || selectedYear   || '';
+    const engineLabel = ps?.engine?.label || '';
+    const carInfoParts = [brandName, modelName, engineLabel].filter(Boolean);
+    document.getElementById('partsCarInfo').value = carInfoParts.join(' ');
+    document.getElementById('partsCarYear').value = yearVal;
     document.getElementById('partsCategory').value = `${category} > ${subcategory}`;
     document.getElementById('partsName').value = partName;
     document.getElementById('partsOEM').value = '';
@@ -493,9 +498,14 @@ function closePartsRequestModal() {
 function openAnalogSearchModal() {
     const modal = document.getElementById('analogSearchModal');
     if (!modal) return;
-    
+    const ps = window._partsState;
+    const brandName  = ps?.brand?.name  || selectedBrand  || '';
+    const modelName  = ps?.model?.name  || selectedModel  || '';
+    const year       = ps?.year         || selectedYear   || '';
+    const engineLabel = ps?.engine?.label || '';
+    const carInfo = [brandName, modelName, year, engineLabel].filter(Boolean).join(' ');
     document.getElementById('analogOEM').value = '';
-    document.getElementById('analogCarInfo').value = `${selectedBrand} ${selectedModel}${selectedYear ? ' ' + selectedYear : ''}`;
+    document.getElementById('analogCarInfo').value = carInfo;
     document.getElementById('analogPartName').value = '';
     document.getElementById('analogClientName').value = '';
     document.getElementById('analogClientPhone').value = '';
@@ -602,6 +612,22 @@ Email: ${requestData.clientEmail || 'Не указан'}
     
     const mailtoLink = `mailto:carexportgeo@bk.ru?subject=Подбор аналогов: ${requestData.oem}&body=${encodeURIComponent(emailBody)}`;
     window.location.href = mailtoLink;
+
+    // Save to Supabase leads
+    if (typeof sbSubmitLead !== 'undefined') {
+        sbSubmitLead({
+            type: 'analog_search',
+            name: requestData.clientName,
+            phone: requestData.clientPhone,
+            message: emailBody,
+            carInfo: {
+                vehicle: requestData.carInfo,
+                oem: requestData.oem,
+                part: requestData.partName || null,
+            },
+            sourcePage: 'parts-orders'
+        }).catch(() => {});
+    }
     
     statusDiv.textContent = 'Заявка отправлена! Мы найдем аналоги и свяжемся с вами.';
     statusDiv.style.display = 'block';
@@ -977,6 +1003,9 @@ window.addEventListener('click', function(event) {
         fillYearSelect();
         showPartsForSelection();
     };
+
+    // Expose state for global helpers outside this IIFE
+    window._partsState = state;
 
     document.addEventListener('DOMContentLoaded', initLocalPartsCatalog);
 })();
