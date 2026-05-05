@@ -517,5 +517,222 @@
             }
         })();
     </script>
+
+    <script>
+    // ── Georgia Catalog — load cars from Supabase / JSON fallback ──
+    (function() {
+        const PAGE_SIZE = 24;
+        let allCars = [], filtered = [], shown = 0;
+
+        function $(id) { return document.getElementById(id); }
+
+        function normalize(car) {
+            if (!car.images && car.photos)
+                car.images = typeof car.photos === 'string' ? [car.photos] : car.photos;
+            else if (!car.images) car.images = [];
+            if (!car.fuel_type && car.fuel) car.fuel_type = car.fuel;
+            if (!car.price_currency) car.price_currency = car.currency || 'USD';
+            return car;
+        }
+
+        function firstImage(car) {
+            const imgs = car.images || [];
+            for (const img of imgs) {
+                const url = typeof img === 'string' ? img : img.url;
+                if (url && (url.includes('static.my.ge') || url.includes('myauto.ge') || url.includes('classistatic.de')))
+                    return url;
+            }
+            return imgs.length ? (typeof imgs[0] === 'string' ? imgs[0] : imgs[0].url) : '';
+        }
+
+        function fmt(n) {
+            if (!n) return 'Цена по запросу';
+            const sym = '$';
+            return sym + Number(n).toLocaleString('ru-RU');
+        }
+
+        function esc(s) {
+            return String(s || '').replace(/[&<>"']/g, c =>
+                ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+        }
+
+        function sort(cars) {
+            const v = ($('sortSelect') || {}).value || 'default';
+            const a = [...cars];
+            if (v === 'price-asc')    return a.sort((x,y) => (x.price||0) - (y.price||0));
+            if (v === 'price-desc')   return a.sort((x,y) => (y.price||0) - (x.price||0));
+            if (v === 'year-desc')    return a.sort((x,y) => (y.year||0)  - (x.year||0));
+            if (v === 'mileage-asc')  return a.sort((x,y) => (x.mileage||0) - (y.mileage||0));
+            return a;
+        }
+
+        function render() {
+            const grid = $('carsGrid');
+            if (!grid) return;
+            const slice = sort(filtered).slice(0, shown);
+
+            if (!slice.length) {
+                grid.innerHTML = '<div class="catalog-empty-state"><div class="catalog-empty-state__icon"><i class="fas fa-car-side"></i></div><h3 class="catalog-empty-state__title">Автомобилей не найдено</h3><p class="catalog-empty-state__text">Измените параметры поиска или <a href="#" onclick="resetFilters();return false">сбросьте фильтры</a></p></div>';
+                updateLoadMore();
+                return;
+            }
+
+            grid.innerHTML = slice.map((car, i) => {
+                const img = firstImage(car);
+                const year = car.year || '';
+                const price = fmt(car.price);
+                const mileage = car.mileage ? car.mileage.toLocaleString('ru-RU') + ' км' : '';
+                return `<div class="car-card">
+                    <div class="car-image${img ? '' : ' img-error'}">
+                        ${img ? `<img src="${esc(img)}" alt="${esc(car.brand)} ${esc(car.model)}" loading="lazy" onerror="this.parentElement.classList.add('img-error');this.remove()">` : '<div class="car-img-placeholder"><i class="fas fa-car"></i></div>'}
+                        ${year ? `<div class="car-year-badge">${year}</div>` : ''}
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-title">${esc(car.brand)} ${esc(car.model)}${year ? ' ' + year : ''}</h3>
+                        <div class="car-price">${price}</div>
+                        <div class="car-specs">
+                            ${mileage ? `<div class="car-spec-item"><i class="fas fa-road" style="color:#d4af37"></i> ${mileage}</div>` : ''}
+                            ${car.fuel_type ? `<div class="car-spec-item"><i class="fas fa-gas-pump" style="color:#d4af37"></i> ${esc(car.fuel_type)}</div>` : ''}
+                            ${car.transmission ? `<div class="car-spec-item"><i class="fas fa-cog" style="color:#d4af37"></i> ${esc(car.transmission)}</div>` : ''}
+                            ${car.engine ? `<div class="car-spec-item"><i class="fas fa-car" style="color:#d4af37"></i> ${esc(String(car.engine))} л</div>` : ''}
+                        </div>
+                        <div class="car-btns">
+                            ${car.url ? `<a class="btn-secondary" href="${esc(car.url)}" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;"><i class="fas fa-external-link-alt"></i> myauto.ge</a>` : ''}
+                            <button class="btn-primary" onclick="window.openRequestModal && openRequestModal()">
+                                <i class="fas fa-shopping-cart"></i> Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+
+            updateLoadMore();
+        }
+
+        function updateLoadMore() {
+            let btn = $('gcLoadMore');
+            const remaining = filtered.length - shown;
+            if (!btn) {
+                btn = document.createElement('div');
+                btn.id = 'gcLoadMore';
+                btn.style.cssText = 'text-align:center;margin:2rem 0;';
+                const grid = $('carsGrid');
+                if (grid && grid.parentNode) grid.parentNode.insertBefore(btn, grid.nextSibling);
+            }
+            if (remaining > 0) {
+                btn.innerHTML = `<button class="btn-secondary" onclick="window._gcLoadMore()" style="padding:0.75rem 2rem;font-size:1rem;">Загрузить ещё (${Math.min(remaining, PAGE_SIZE)} из ${remaining})</button>`;
+            } else {
+                btn.innerHTML = '';
+            }
+        }
+
+        window._gcLoadMore = function() { shown += PAGE_SIZE; render(); };
+
+        function updateCount() {
+            const el = $('catalogCount');
+            if (el) el.innerHTML = `Найдено: <strong>${filtered.length}</strong> авто`;
+        }
+
+        function applyFiltersLocal() {
+            const brand = ($('brandFilter') || {}).value || '';
+            const model = ($('modelFilter') || {}).value || '';
+            const year  = parseInt(($('yearFilter')  || {}).value)  || 0;
+            const from  = parseFloat(($('priceFrom') || {}).value)  || 0;
+            const to    = parseFloat(($('priceTo')   || {}).value)  || Infinity;
+            const mxkm  = parseFloat(($('mileageTo') || {}).value)  || Infinity;
+            const q     = (($('carSearch') || {}).value || '').trim().toLowerCase();
+
+            filtered = allCars.filter(car => {
+                if (brand && car.brand !== brand) return false;
+                if (model && car.model !== model) return false;
+                if (year  && (car.year || 0) < year) return false;
+                if (car.price && (car.price < from || car.price > to)) return false;
+                if (car.mileage && car.mileage > mxkm) return false;
+                if (q) {
+                    const hay = `${car.brand||''} ${car.model||''} ${car.vin||''} ${car.year||''}`.toLowerCase();
+                    if (!hay.includes(q)) return false;
+                }
+                return true;
+            });
+            shown = PAGE_SIZE;
+            updateCount();
+            render();
+        }
+
+        function resetFilters() {
+            ['brandFilter','modelFilter','yearFilter','priceFrom','priceTo','mileageTo','carSearch']
+                .forEach(id => { const el = $(id); if (el) el.value = ''; });
+            filtered = allCars.slice();
+            shown = PAGE_SIZE;
+            updateCount();
+            render();
+        }
+
+        function populateFilters() {
+            const brands = [...new Set(allCars.map(c => c.brand).filter(Boolean))].sort();
+            const bf = $('brandFilter');
+            if (bf) brands.forEach(b => { const o = document.createElement('option'); o.value = o.textContent = b; bf.appendChild(o); });
+
+            const years = [...new Set(allCars.map(c => c.year).filter(Boolean))].sort((a,b) => b - a);
+            const yf = $('yearFilter');
+            if (yf) years.forEach(y => { const o = document.createElement('option'); o.value = o.textContent = y; yf.appendChild(o); });
+
+            // Model filter: cascade from brand
+            const mf = $('modelFilter');
+            const bf2 = $('brandFilter');
+            function refillModels() {
+                if (!mf) return;
+                const sel = bf2 ? bf2.value : '';
+                const models = [...new Set(allCars.filter(c => !sel || c.brand === sel).map(c => c.model).filter(Boolean))].sort();
+                mf.innerHTML = '<option value="">Все модели</option>';
+                models.forEach(m => { const o = document.createElement('option'); o.value = o.textContent = m; mf.appendChild(o); });
+            }
+            if (bf2) bf2.addEventListener('change', refillModels);
+            refillModels();
+        }
+
+        async function init() {
+            const grid = $('carsGrid');
+            if (grid) grid.innerHTML = '<div class="parts-loading">Загрузка автомобилей…</div>';
+
+            try {
+                const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
+                allCars = (result.data || []).map(normalize);
+            } catch(e) {
+                if (grid) grid.innerHTML = '<div class="catalog-empty-state"><p>Ошибка загрузки. Обновите страницу.</p></div>';
+                return;
+            }
+
+            filtered = allCars.slice();
+            shown = PAGE_SIZE;
+            populateFilters();
+            updateCount();
+            render();
+
+            $('applyFilters')?.addEventListener('click', applyFiltersLocal);
+            $('resetFilters')?.addEventListener('click', resetFilters);
+            $('sortSelect')?.addEventListener('change', () => render());
+            let t; $('carSearch')?.addEventListener('input', () => { clearTimeout(t); t = setTimeout(applyFiltersLocal, 220); });
+
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const mode = this.getAttribute('data-view');
+                    const g = $('carsGrid');
+                    if (g) g.classList.toggle('cars-grid--list', mode === 'list');
+                });
+            });
+
+            if (typeof sbLogSearch === 'function')
+                sbLogSearch('georgia-catalog', {}, allCars.length);
+        }
+
+        if (document.readyState === 'loading')
+            document.addEventListener('DOMContentLoaded', init);
+        else
+            init();
+    })();
+    </script>
 </body>
 </html>
