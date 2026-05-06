@@ -662,6 +662,7 @@ window.addEventListener('click', function(event) {
         engine: null,
         parts: [],
         selectedPart: null,
+        pendingSelection: null,
     };
 
     // Parts that are diesel-incompatible (require spark plugs / HV ignition)
@@ -735,6 +736,11 @@ window.addEventListener('click', function(event) {
                 : await fetch('data/parts_catalog.json?v=20260505', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
             fillBrandSelect();
             updateStatsFromLocalCatalog();
+            if (state.pendingSelection) {
+                applyPartsModelSelection(state.pendingSelection.brandName, state.pendingSelection.modelName);
+                state.pendingSelection = null;
+                return;
+            }
             autoShowFirstAvailableModel();
         } catch (error) {
             console.error('Parts catalog load error:', error);
@@ -1020,8 +1026,7 @@ window.addEventListener('click', function(event) {
         }
     }
 
-    window.selectPartsModel = function(brandName, modelName) {
-        if (!state.catalog) return;
+    function applyPartsModelSelection(brandName, modelName) {
         state.brand = state.catalog.brands.find(brand => brand.name === brandName) || null;
         state.model = state.brand?.models.find(model => model.name === modelName) || null;
         state.engine = null;
@@ -1033,6 +1038,14 @@ window.addEventListener('click', function(event) {
         if (modelSelect) modelSelect.value = state.model.slug;
         fillYearSelect();
         showPartsForSelection();
+    }
+
+    window.selectPartsModel = function(brandName, modelName) {
+        if (!state.catalog) {
+            state.pendingSelection = { brandName, modelName };
+            return;
+        }
+        applyPartsModelSelection(brandName, modelName);
     };
 
     // Expose state for global helpers outside this IIFE

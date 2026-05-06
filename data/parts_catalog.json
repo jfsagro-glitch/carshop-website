@@ -1,6 +1,6 @@
 {
   "source_note": "Локальная витрина подбора EXPO MIR. Номера являются каталожными позициями для заявки; финальный OEM/аналог подтверждается по VIN.",
-  "last_updated": "2026-05-04T17:07:15Z",
+  "last_updated": "2026-05-06T17:06:42Z",
   "parts_template": [
     {
       "category": "ТО",
@@ -1090,6 +1090,549 @@
       "group": "Выхлоп",
       "name": "Гофра выхлопной системы",
       "code": "FLX",
+      "quantity": 1
+    },
+    {
+      "category": "Двигатель",
+      "group": "Зажигание",
+      "name": "Свеча накаливания",
+      "code": "GLP",
+      "quantity": 4
+    },
+    {
+      "category": "Двигатель",
+      "group": "Зажигание",
+      "name": "Модуль зажигания",
+      "code": "IGN",
+      "quantity": 1,
+      "fuel_filter": [
+        "Бензин",
+        "Гибрид"
+      ]
+    },
+    {
+      "category": "Двигатель",
+      "group": "Зажигание",
+      "name": "Высоковольтные провода",
+      "code": "SPW",
+      "quantity": 1,
+      "fuel_filter": [
+        "Бензин",
+        "Гибрид"
+      ]
+    },
+    {
+      "category": "Двигатель",
+      "group": "Впуск/выхлоп",
+      "name": "Клапан EGR",
+      "code": "EGR",
+      "quantity": 1
+    },
+    {
+      "category": "Двигатель",
+      "group": "ГРМ",
+      "name": "Клапан VVT",
+      "code": "VVT",
+      "quantity": 1
+    },
+    {
+      "category": "Двигатель",
+      "group": "ГРМ",
+      "name": "Гидрокомпенсатор",
+      "code": "HLA",
+      "quantity": 8
+    },
+    {
+      "category": "Двигатель",
+      "group": "Датчики",
+      "name": "Датчик детонации",
+      "code": "KNS",
+      "quantity": 1
+    },
+    {
+      "category": "Двигатель",
+      "group": "Датчики",
+      "name": "Датчик температуры ОЖ",
+      "code": "CTS",
+      "quantity": 1
+    },
+    {
+      "category": "Двигатель",
+      "group": "Датчики",
+      "name": "Датчик температуры воздуха",
+      "code": "IAT",
+      "quantity": 1
+    },
+    {
+      "category": "Двигатель",
+      "group": "Топливо",
+      "name": "Клапан адсорбера",
+      "code": "EVP",
+      "quantity": 1
+    },
+    {
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Масляный радиатор",
+      "code": "OCL",
+      "quantity": 1,
+      "not_for": [
+        "Электро"
+      ]
+    },
+    {
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Датчик включения вентилятора",
+      "code": "FSS",
+      "quantity": 1
+    },
+    {
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Муфта вентилятора",
+      "code": "FCL",
+      "quantity": 1
+    },
+    {
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Насос дополнительного охлаждения",
+      "code": "AUX",
+      "quantity": 1
+    },
+    {
+      "category": "Топливная система",
+      "group": "Топливо",
+      "name": "Топливная рампа",
+      "code": "FRL",
+      "quantity": 1
+    },
+    {
+      "category": "Топливная система",
+      "group": "Топливо",
+      "name": "Адсорбер",
+      "code": "CNF",
+      "quantity": 1
+    },
+    {
+      "category": "Турбонаддув",
+      "group": "Турбо",
+      "name": "Актуатор турбины",
+      "code": "TAC",
+      "quantity": 1
+    },
+    {
+      "category": "Турбонаддув",
+      "group": "Турбо",
+      "name": "Датчик давления наддува",
+      "code": "BPS",
+      "quantity": 1
+    },
+    {
+      "category": "Турбонаддув",
+      "group": "Турбо",
+      "name": "Прокладка турбины",
+      "code": "TGS",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Сцепление",
+      "name": "Маховик",
+      "code": "FWH",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Сцепление",
+      "name": "Двухмассовый маховик",
+      "code": "DMF",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Сцепление",
+      "name": "Корзина сцепления",
+      "code": "CPP",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Сцепление",
+      "name": "Диск сцепления",
+      "code": "CLD",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Привод",
+      "name": "Приводной вал передний левый",
+      "code": "AFL",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Привод",
+      "name": "Приводной вал передний правый",
+      "code": "AFR",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Привод",
+      "name": "Карданный вал",
+      "code": "DRS",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Сальники",
+      "name": "Сальник привода",
+      "code": "AXS",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Дифференциал",
+      "name": "Дифференциал",
+      "code": "DIF",
+      "quantity": 1
+    },
+    {
+      "category": "Трансмиссия",
+      "group": "Раздатка",
+      "name": "Раздаточная коробка",
+      "code": "TFC",
+      "quantity": 1
+    },
+    {
+      "category": "Тормоза",
+      "group": "Гидравлика",
+      "name": "Тормозная жидкость",
+      "code": "BRF",
+      "quantity": 1
+    },
+    {
+      "category": "Тормоза",
+      "group": "Тормозная система",
+      "name": "Датчик износа колодок",
+      "code": "BWS",
+      "quantity": 1
+    },
+    {
+      "category": "Тормоза",
+      "group": "Стояночный тормоз",
+      "name": "Трос ручного тормоза левый",
+      "code": "HBL",
+      "quantity": 1
+    },
+    {
+      "category": "Тормоза",
+      "group": "Стояночный тормоз",
+      "name": "Трос ручного тормоза правый",
+      "code": "HBR",
+      "quantity": 1
+    },
+    {
+      "category": "Тормоза",
+      "group": "Стояночный тормоз",
+      "name": "Мотор электронного ручника",
+      "code": "EPB",
+      "quantity": 1
+    },
+    {
+      "category": "Подвеска",
+      "group": "Подрамник",
+      "name": "Подрамник передний",
+      "code": "SBFM",
+      "quantity": 1
+    },
+    {
+      "category": "Подвеска",
+      "group": "Подрамник",
+      "name": "Подрамник задний",
+      "code": "SBRM",
+      "quantity": 1
+    },
+    {
+      "category": "Подвеска",
+      "group": "Передняя подвеска",
+      "name": "Кулак поворотный левый",
+      "code": "KNL",
+      "quantity": 1
+    },
+    {
+      "category": "Подвеска",
+      "group": "Передняя подвеска",
+      "name": "Кулак поворотный правый",
+      "code": "KNR",
+      "quantity": 1
+    },
+    {
+      "category": "Подвеска",
+      "group": "Задняя подвеска",
+      "name": "Рычаг задний левый",
+      "code": "RAL",
+      "quantity": 1
+    },
+    {
+      "category": "Подвеска",
+      "group": "Задняя подвеска",
+      "name": "Рычаг задний правый",
+      "code": "RAR",
+      "quantity": 1
+    },
+    {
+      "category": "Рулевое",
+      "group": "Рулевое управление",
+      "name": "Кардан рулевого вала",
+      "code": "SCS",
+      "quantity": 1
+    },
+    {
+      "category": "Рулевое",
+      "group": "Рулевое управление",
+      "name": "Рулевая колонка",
+      "code": "STC",
+      "quantity": 1
+    },
+    {
+      "category": "Рулевое",
+      "group": "Датчики",
+      "name": "Датчик угла поворота руля",
+      "code": "SAS",
+      "quantity": 1
+    },
+    {
+      "category": "Электрика",
+      "group": "Блоки управления",
+      "name": "Блок управления кузовом",
+      "code": "BCM",
+      "quantity": 1
+    },
+    {
+      "category": "Электрика",
+      "group": "Блоки управления",
+      "name": "Блок управления АКПП",
+      "code": "TCM",
+      "quantity": 1
+    },
+    {
+      "category": "Электрика",
+      "group": "Блоки управления",
+      "name": "Блок SRS Airbag",
+      "code": "SRS",
+      "quantity": 1
+    },
+    {
+      "category": "Электрика",
+      "group": "Датчики",
+      "name": "Датчик скорости колеса",
+      "code": "WSS",
+      "quantity": 1
+    },
+    {
+      "category": "Электрика",
+      "group": "Датчики",
+      "name": "Датчик дождя",
+      "code": "RNS",
+      "quantity": 1
+    },
+    {
+      "category": "Электрика",
+      "group": "Датчики",
+      "name": "Датчик света",
+      "code": "LTS",
+      "quantity": 1
+    },
+    {
+      "category": "Электрика",
+      "group": "Проводка",
+      "name": "Проводка двигателя",
+      "code": "EWH",
+      "quantity": 1
+    },
+    {
+      "category": "Электрика",
+      "group": "Проводка",
+      "name": "Проводка двери",
+      "code": "DWH",
+      "quantity": 1
+    },
+    {
+      "category": "Климат",
+      "group": "Кондиционер",
+      "name": "Клапан расширительный кондиционера",
+      "code": "EXV",
+      "quantity": 1
+    },
+    {
+      "category": "Климат",
+      "group": "Кондиционер",
+      "name": "Датчик давления кондиционера",
+      "code": "APS",
+      "quantity": 1
+    },
+    {
+      "category": "Климат",
+      "group": "Кондиционер",
+      "name": "Блок управления климатом",
+      "code": "CCM",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Кузов",
+      "name": "Петля капота левая",
+      "code": "HHL",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Кузов",
+      "name": "Петля капота правая",
+      "code": "HHR",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Кузов",
+      "name": "Амортизатор капота",
+      "code": "HGS",
+      "quantity": 2
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Кузов",
+      "name": "Амортизатор багажника",
+      "code": "TGSB",
+      "quantity": 2
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Кузов",
+      "name": "Крышка багажника",
+      "code": "TRK",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Кузов",
+      "name": "Панель передняя телевизор",
+      "code": "RADP",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Кузов",
+      "name": "Усилитель бампера передний",
+      "code": "FBR",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Кузов",
+      "name": "Усилитель бампера задний",
+      "code": "RBR",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Оптика",
+      "name": "Дневной ходовой огонь левый",
+      "code": "DRL",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Оптика",
+      "name": "Дневной ходовой огонь правый",
+      "code": "DRR",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Оптика",
+      "name": "Блок розжига ксенона",
+      "code": "XBL",
+      "quantity": 1
+    },
+    {
+      "category": "Кузов/свет",
+      "group": "Оптика",
+      "name": "Корректор фары",
+      "code": "HLA2",
+      "quantity": 1
+    },
+    {
+      "category": "Салон",
+      "group": "Салон",
+      "name": "Блок кнопок стеклоподъемника",
+      "code": "WLS",
+      "quantity": 1
+    },
+    {
+      "category": "Салон",
+      "group": "Салон",
+      "name": "Механизм ремня безопасности",
+      "code": "SBT",
+      "quantity": 1
+    },
+    {
+      "category": "Салон",
+      "group": "Салон",
+      "name": "Замок ремня безопасности",
+      "code": "SBB",
+      "quantity": 1
+    },
+    {
+      "category": "Салон",
+      "group": "Салон",
+      "name": "Подушка безопасности водителя",
+      "code": "ABD",
+      "quantity": 1
+    },
+    {
+      "category": "Салон",
+      "group": "Салон",
+      "name": "Подушка безопасности пассажира",
+      "code": "ABP",
+      "quantity": 1
+    },
+    {
+      "category": "Салон",
+      "group": "Салон",
+      "name": "Радиатор мультимедиа/усилитель",
+      "code": "AMP",
+      "quantity": 1
+    },
+    {
+      "category": "Выхлоп",
+      "group": "Выхлоп",
+      "name": "Труба приемная",
+      "code": "DFP",
+      "quantity": 1
+    },
+    {
+      "category": "Выхлоп",
+      "group": "Выхлоп",
+      "name": "Сажевый фильтр",
+      "code": "DPF",
+      "quantity": 1
+    },
+    {
+      "category": "Выхлоп",
+      "group": "Выхлоп",
+      "name": "Датчик температуры выхлопа",
+      "code": "EGT",
+      "quantity": 1
+    },
+    {
+      "category": "Выхлоп",
+      "group": "Выхлоп",
+      "name": "Датчик давления DPF",
+      "code": "DPS",
       "quantity": 1
     }
   ],
