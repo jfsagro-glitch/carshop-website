@@ -812,7 +812,7 @@ window.addEventListener('click', function(event) {
         if (modelSelect && state.model) modelSelect.value = state.model.slug;
 
         fillYearSelect();
-        showPartsForSelection();
+        showPartsForSelection({ scroll: false });
     }
 
     function fillBrandSelect() {
@@ -890,7 +890,8 @@ window.addEventListener('click', function(event) {
         }
     }
 
-    function showPartsForSelection() {
+    function showPartsForSelection(options = {}) {
+        const shouldScroll = options.scroll !== false;
         state.parts = buildPartsForCurrentModel();
         const panel = $('partsResultsPanel');
         const title = $('partsVehicleTitle');
@@ -901,7 +902,7 @@ window.addEventListener('click', function(event) {
         }
         fillCategorySelect();
         renderParts();
-        panel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (shouldScroll) panel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function fillCategorySelect() {
@@ -926,18 +927,25 @@ window.addEventListener('click', function(event) {
             ].join(' ').toLowerCase().includes(query));
         }
         if (!list.length) {
+            const count = $('partsResultsCount');
+            if (count) count.textContent = '0 позиций';
             grid.innerHTML = '<div class="parts-empty-state">По выбранным условиям запчасти не найдены</div>';
             return;
         }
+        const count = $('partsResultsCount');
+        if (count) count.textContent = `${list.length} ${pluralRu(list.length, 'позиция', 'позиции', 'позиций')}`;
         grid.innerHTML = list.map((part, index) => `
             <article class="parts-item-card">
+                <div class="parts-card-topline">
+                    <span class="parts-number">${esc(part.number)}</span>
+                    <span class="parts-chip parts-chip--muted">${esc(part.quantity)} шт.</span>
+                </div>
                 <div class="parts-item-title">${esc(part.name)}</div>
                 <div class="parts-item-meta">
-                    <span>${esc(part.category)} / ${esc(part.group)}</span>
-                    <span>Каталожный номер: <span class="parts-number">${esc(part.number)}</span></span>
-                    <span>Аналоги: ${esc((part.analog_numbers || []).join(', '))}</span>
-                    <span>Обычно требуется: ${esc(part.quantity)} шт.</span>
+                    <span class="parts-chip">${esc(part.category)}</span>
+                    <span class="parts-chip parts-chip--muted">${esc(part.group)}</span>
                 </div>
+                <span class="parts-analog" title="${esc((part.analog_numbers || []).join(', '))}">Аналоги: ${esc((part.analog_numbers || []).slice(0, 2).join(', '))}</span>
                 <div class="parts-card-actions">
                     <button class="btn-primary" type="button" data-part-index="${index}"><i class="fas fa-shopping-cart"></i> Заказать</button>
                 </div>
@@ -946,6 +954,14 @@ window.addEventListener('click', function(event) {
         grid.querySelectorAll('[data-part-index]').forEach((button, index) => {
             button.addEventListener('click', () => openLocalPartsOrder(list[index]));
         });
+    }
+
+    function pluralRu(value, one, few, many) {
+        const mod10 = value % 10;
+        const mod100 = value % 100;
+        if (mod10 === 1 && mod100 !== 11) return one;
+        if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return few;
+        return many;
     }
 
     function openLocalPartsOrder(part) {

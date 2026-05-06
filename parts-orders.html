@@ -296,18 +296,19 @@
 
         .parts-picker-panel,
         .parts-results-panel {
-            margin-top: 2rem;
+            margin-top: 1.25rem;
+            scroll-margin-top: 86px;
             background: rgba(15, 23, 42, 0.9);
             border: 1px solid rgba(148, 163, 184, 0.16);
-            border-radius: 14px;
-            padding: 1.25rem;
+            border-radius: 10px;
+            padding: 0.95rem;
             box-shadow: 0 12px 32px rgba(2, 6, 23, 0.45);
         }
 
         .parts-picker-controls {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.85rem;
+            grid-template-columns: repeat(4, minmax(150px, 1fr)) auto;
+            gap: 0.65rem;
             align-items: end;
         }
 
@@ -315,8 +316,8 @@
         .parts-results-toolbar label {
             display: block;
             color: #cbd5e1;
-            font-size: 0.85rem;
-            margin-bottom: 0.35rem;
+            font-size: 0.78rem;
+            margin-bottom: 0.25rem;
         }
 
         .parts-picker-controls select,
@@ -328,50 +329,104 @@
             background: #0b1220;
             border: 1px solid #243044;
             color: #f8fafc;
-            border-radius: 8px;
-            padding: 0.6rem 0.7rem;
+            border-radius: 7px;
+            padding: 0.48rem 0.58rem;
+            font-size: 0.9rem;
         }
 
         .parts-results-toolbar {
             display: grid;
             grid-template-columns: minmax(220px, 1.4fr) minmax(180px, 0.8fr);
-            gap: 0.85rem;
-            margin: 1rem 0;
+            gap: 0.65rem;
+            margin: 0.65rem 0 0.75rem;
+            position: sticky;
+            top: 64px;
+            z-index: 8;
+            background: rgba(15, 23, 42, 0.96);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+            padding-bottom: 0.6rem;
         }
 
         .parts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 0.75rem;
+            grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+            gap: 0.5rem;
         }
 
         .parts-item-card {
-            background: #111827;
-            border: 1px solid #223047;
-            border-radius: 10px;
-            padding: 0.9rem;
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.98), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(55, 65, 81, 0.78);
+            border-radius: 8px;
+            padding: 0.62rem;
             display: flex;
             flex-direction: column;
-            gap: 0.55rem;
+            gap: 0.42rem;
+            min-height: 158px;
+            transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+        }
+
+        .parts-item-card:hover {
+            border-color: rgba(250, 204, 21, 0.45);
+            background: #111c2f;
+            transform: translateY(-1px);
         }
 
         .parts-item-title {
             color: #f8fafc;
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.22;
+            font-size: 0.95rem;
+            min-height: 2.35em;
         }
 
         .parts-item-meta {
             color: #9ca3af;
-            font-size: 0.85rem;
-            display: grid;
-            gap: 0.25rem;
+            font-size: 0.76rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.28rem;
+        }
+
+        .parts-chip {
+            display: inline-flex;
+            align-items: center;
+            min-height: 22px;
+            max-width: 100%;
+            border: 1px solid rgba(148, 163, 184, 0.14);
+            border-radius: 999px;
+            background: rgba(2, 6, 23, 0.32);
+            padding: 0.16rem 0.42rem;
+            white-space: nowrap;
+        }
+
+        .parts-chip--muted {
+            color: #94a3b8;
+        }
+
+        .parts-analog {
+            display: block;
+            color: #64748b;
+            font-size: 0.73rem;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .parts-card-topline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
         }
 
         .parts-number {
             color: #facc15;
             font-weight: 700;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.01em;
+            font-size: 0.84rem;
+            line-height: 1.25;
+            overflow-wrap: anywhere;
         }
 
         .parts-card-actions {
@@ -382,9 +437,30 @@
 
         .parts-card-actions button {
             width: 100%;
-            min-height: 38px;
+            min-height: 32px;
             border-radius: 7px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            padding: 0.38rem 0.55rem;
+        }
+
+        .parts-results-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .parts-results-count {
+            flex: 0 0 auto;
+            color: #facc15;
+            border: 1px solid rgba(250, 204, 21, 0.28);
+            background: rgba(250, 204, 21, 0.08);
+            border-radius: 999px;
+            padding: 0.25rem 0.55rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
         .parts-order-modal {
@@ -449,8 +525,21 @@
             }
 
             .parts-results-toolbar,
-            .parts-order-grid {
+            .parts-order-grid,
+            .parts-picker-controls {
                 grid-template-columns: 1fr;
+            }
+
+            .parts-results-toolbar {
+                position: static;
+            }
+
+            .parts-grid {
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            }
+
+            .parts-item-card {
+                min-height: 150px;
             }
         }
     </style>
@@ -574,8 +663,13 @@
             </div>
 
             <div class="parts-results-panel" id="partsResultsPanel" style="display:none;">
-                <h2 style="font-size:1.45rem;margin:0;color:#f3f4f6;" id="partsVehicleTitle"></h2>
-                <p style="color:#94a3b8;margin:0.4rem 0 0;">Номера в витрине помогают оформить заявку. Финальную применимость подтверждаем по VIN перед заказом.</p>
+                <div class="parts-results-head">
+                    <div>
+                        <h2 style="font-size:1.18rem;margin:0;color:#f3f4f6;line-height:1.25;" id="partsVehicleTitle"></h2>
+                        <p style="color:#94a3b8;margin:0.25rem 0 0;font-size:0.86rem;">Финальную применимость подтверждаем по VIN перед заказом.</p>
+                    </div>
+                    <span class="parts-results-count" id="partsResultsCount">0 позиций</span>
+                </div>
                 <div class="parts-results-toolbar">
                     <div>
                         <label for="partsSearchInput">Поиск запчасти или номера</label>
