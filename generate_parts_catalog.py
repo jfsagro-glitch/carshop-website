@@ -3653,19 +3653,15 @@ OEM_LOOKUP: dict[tuple[str, str], list[str]] = {
 }
 
 
-def make_oem(prefix: str, model_slug: str, part_code: str, year: int) -> str:
-    """Return a real OEM catalog number when available, else generate a plausible one."""
+def make_oem(prefix: str, model_slug: str, part_code: str, year: int) -> str | None:
+    """Return a real OEM catalog number when available."""
     key = (prefix, part_code)
     if key in OEM_LOOKUP:
         options = OEM_LOOKUP[key]
         # Deterministic pick based on model slug so the same model always gets the same number
         idx = int(hashlib.md5(model_slug.encode()).hexdigest(), 16) % len(options)
         return options[idx]
-    # Fallback for brands/parts not yet in the lookup table
-    raw = f"{prefix}-{model_slug[:4].upper()}-{part_code}-{year}"
-    h = hashlib.md5(raw.encode()).hexdigest()[:4].upper()
-    digits = "".join(filter(str.isdigit, h + raw)) or "0000"
-    return f"{prefix}-{digits[:4]}-{part_code[:2]}-{h}"
+    return None
 
 def price_for(category: str, brand: str) -> tuple[float, float]:
     grp = category if category in PRICE_RANGES else "ТО"
@@ -3720,6 +3716,8 @@ def generate_records(catalog: dict, limit: int | None = None) -> list[dict]:
                 # Use first recent year for OEM seed
                 seed_year = recent_years[0] if recent_years else 2020
                 oem = make_oem(prefix, mslug, part["code"], seed_year)
+                if not oem:
+                    continue
 
                 # Deduplicate
                 if oem in seen_oem:

@@ -445,8 +445,8 @@ function createPartCard(partName, category, partNumber = '', price = '') {
         <div style="color: #1f2937; font-weight: 600; margin-bottom: 0.75rem; font-size: 1.1rem;">${partName}</div>
         ${partNumber ? `<div style="color: #6b7280; font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fas fa-barcode"></i> ${partNumber}</div>` : ''}
         ${price ? `<div style="color: #059669; font-weight: 600; margin-bottom: 0.75rem; font-size: 1.1rem;">${price}</div>` : ''}
-        <button class="btn-primary" onclick="openPartsRequestModal('${category}', '', '${partName.replace(/'/g, "\\'")}')" style="width: 100%; margin-top: 0.5rem; padding: 0.75rem; border-radius: 8px;">
-            <i class="fas fa-shopping-cart"></i> Заказать
+        <button class="btn-primary" onclick="openPartsRequestModal('${category}', '', '${partName.replace(/'/g, "\\'")}')" style="width: 44px; min-width: 44px; margin-top: 0.5rem; margin-left: auto; padding: 0.75rem; border-radius: 8px;" title="Заказать" aria-label="Заказать ${partName.replace(/"/g, '&quot;')}">
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
         </button>
     `;
     
@@ -690,13 +690,16 @@ window.addEventListener('click', function(event) {
         }[ch]));
     }
 
-    function modelCode(modelName) {
-        return String(modelName || '').toUpperCase().replace(/[^A-Z0-9А-Я]/g, '').slice(0, 4).padEnd(4, 'X');
-    }
-
-    function makePartNumber(part, index) {
+    function pickOriginalOem(part) {
         const prefix = state.brand?.prefix || String(state.brand?.name || 'EX').slice(0, 2).toUpperCase();
-        return `${prefix}-${modelCode(state.model?.name)}-${part.code}-${String(index + 1).padStart(3, '0')}`;
+        const options = state.catalog?.oem_lookup?.[prefix]?.[part.code] || [];
+        if (!options.length) return null;
+        const seed = String(state.model?.slug || state.model?.name || part.code);
+        let hash = 0;
+        for (let i = 0; i < seed.length; i += 1) {
+            hash = ((hash << 5) - hash + seed.charCodeAt(i)) | 0;
+        }
+        return options[Math.abs(hash) % options.length];
     }
 
     function buildPartsForCurrentModel() {
@@ -711,13 +714,12 @@ window.addEventListener('click', function(event) {
                 // Бензин / Гибрид — hide diesel-only parts
                 return !DIESEL_ONLY_PARTS.has(part.name);
             })
-            .map((part, index) => {
-                const engCode = state.engine?.code ? `-${state.engine.code.replace(/[^A-Z0-9]/gi, '').slice(0, 6).toUpperCase()}` : '';
-                const number = makePartNumber(part, index) + engCode;
+            .map(part => {
+                const number = pickOriginalOem(part);
                 return {
                     ...part,
-                    number,
-                    analog_numbers: [`${number}-A`, `${number}-B`, `${number}-X`],
+                    number: number || 'OEM по VIN',
+                    analog_numbers: number ? [] : ['Точный оригинальный номер подтвердим по VIN'],
                     note: 'Применимость и точный OEM подтверждаем по VIN перед заказом.'
                 };
             });
@@ -733,7 +735,7 @@ window.addEventListener('click', function(event) {
             // Reuse the catalog promise started by the inline script to avoid a second 437KB download
             state.catalog = window._partsCatalogPromise
                 ? await window._partsCatalogPromise
-                : await fetch('data/parts_catalog.json?v=20260505', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+                : await fetch('data/parts_catalog.json?v=20260506-oem', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
             fillBrandSelect();
             updateStatsFromLocalCatalog();
             if (state.pendingSelection) {
@@ -947,7 +949,7 @@ window.addEventListener('click', function(event) {
                 </div>
                 <span class="parts-analog" title="${esc((part.analog_numbers || []).join(', '))}">Аналоги: ${esc((part.analog_numbers || []).slice(0, 2).join(', '))}</span>
                 <div class="parts-card-actions">
-                    <button class="btn-primary" type="button" data-part-index="${index}"><i class="fas fa-shopping-cart"></i> Заказать</button>
+                    <button class="btn-primary parts-cart-only" type="button" data-part-index="${index}" title="Заказать" aria-label="Заказать ${esc(part.name)}"><i class="fas fa-shopping-cart" aria-hidden="true"></i></button>
                 </div>
             </article>
         `).join('');
@@ -1008,7 +1010,7 @@ window.addEventListener('click', function(event) {
             'Заказ запчасти EXPO MIR',
             `Автомобиль: ${$('partsOrderVehicle').value}`,
             `Запчасть: ${$('partsOrderName').value}`,
-            `Каталожный номер: ${$('partsOrderNumber').value}`,
+            `OEM номер: ${$('partsOrderNumber').value}`,
             `VIN: ${$('partsOrderVin').value.trim() || 'не указан'}`,
             `Количество: ${$('partsOrderQty').value}`,
             `Клиент: ${client}`,

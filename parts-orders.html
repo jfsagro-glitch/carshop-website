@@ -436,11 +436,21 @@
         }
 
         .parts-card-actions button {
-            width: 100%;
+            width: 44px;
             min-height: 32px;
             border-radius: 7px;
             font-size: 0.8rem;
             padding: 0.38rem 0.55rem;
+            margin-left: auto;
+        }
+
+        .parts-card-actions .parts-cart-only {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            max-width: 44px;
+            font-size: 0.95rem;
         }
 
         .parts-results-head {
@@ -673,7 +683,7 @@
                 <div class="parts-results-toolbar">
                     <div>
                         <label for="partsSearchInput">Поиск запчасти или номера</label>
-                        <input id="partsSearchInput" type="text" placeholder="Например, фильтр, колодки, TY-CAMR-OF-001">
+                        <input id="partsSearchInput" type="text" placeholder="Например, фильтр, колодки, 04152-YZZA6">
                     </div>
                     <div>
                         <label for="partsCategorySelect">Категория</label>
@@ -796,7 +806,7 @@
     <script>
         // Загрузка данных каталога запчастей
         // Expose promise globally so parts-orders.js can reuse the same fetch
-        window._partsCatalogPromise = fetch('data/parts_catalog.json?v=20260505', { cache: 'no-store' })
+        window._partsCatalogPromise = fetch('data/parts_catalog.json?v=20260506-oem', { cache: 'no-store' })
             .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
 
         (async function() {
@@ -1110,7 +1120,7 @@
                     <input id="partsOrderVehicle" readonly>
                 </div>
                 <div>
-                    <label for="partsOrderNumber">Каталожный номер</label>
+                    <label for="partsOrderNumber">OEM номер</label>
                     <input id="partsOrderNumber" readonly>
                 </div>
                 <div class="full">

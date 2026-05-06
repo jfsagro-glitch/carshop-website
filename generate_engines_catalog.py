@@ -6,6 +6,7 @@ Run: python generate_engines_catalog.py
 """
 import json, re
 from datetime import timezone, datetime
+from generate_parts_catalog import OEM_LOOKUP
 
 
 def E(vol, cc, fuel, hp, code=""):
@@ -1501,6 +1502,10 @@ def main():
             part.pop("fuel_filter", None)
             part.pop("not_for", None)
 
+    oem_lookup = {}
+    for (prefix, code), numbers in OEM_LOOKUP.items():
+        oem_lookup.setdefault(prefix, {})[code] = numbers
+    cat["oem_lookup"] = oem_lookup
     cat["last_updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     with open("data/parts_catalog.json", "w", encoding="utf-8") as f:
