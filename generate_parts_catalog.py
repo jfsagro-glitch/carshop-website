@@ -13,6 +13,7 @@ import os
 import argparse
 import hashlib
 import requests
+from pathlib import Path
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
@@ -3652,12 +3653,49 @@ OEM_LOOKUP: dict[tuple[str, str], list[str]] = {
     ("TS", "FFR"): ["1495110-00-B", "1495110-00-C"],
 }
 
+OEM_OVERRIDES_PATH = Path("data/oem_lookup_overrides.json")
 
-def make_oem(prefix: str, model_slug: str, part_code: str, year: int) -> str | None:
+
+def load_oem_lookup_overrides(path: Path = OEM_OVERRIDES_PATH) -> dict[tuple[str, str], list[str]]:
+    """Load real OEM numbers added from supplier/API exports."""
+    if not path.exists():
+        return {}
+    raw = json.load(open(path, encoding="utf-8"))
+    lookup = raw.get("lookup", raw)
+    merged: dict[tuple[str, str], list[str]] = {}
+    for prefix, codes in lookup.items():
+        if not isinstance(codes, dict):
+            continue
+        for code, numbers in codes.items():
+            if isinstance(numbers, str):
+                numbers = [numbers]
+            clean = []
+            for number in numbers or []:
+                value = str(number).strip()
+                if value and value not in clean:
+                    clean.append(value)
+            if clean:
+                merged[(str(prefix).upper(), str(code).upper())] = clean
+    return merged
+
+
+def get_merged_oem_lookup() -> dict[tuple[str, str], list[str]]:
+    """Base OEM map plus verified local overrides."""
+    merged = {key: list(values) for key, values in OEM_LOOKUP.items()}
+    for key, values in load_oem_lookup_overrides().items():
+        bucket = merged.setdefault(key, [])
+        for value in values:
+            if value not in bucket:
+                bucket.append(value)
+    return merged
+
+
+def make_oem(prefix: str, model_slug: str, part_code: str, year: int, lookup: dict[tuple[str, str], list[str]] | None = None) -> str | None:
     """Return a real OEM catalog number when available."""
     key = (prefix, part_code)
-    if key in OEM_LOOKUP:
-        options = OEM_LOOKUP[key]
+    lookup = lookup or get_merged_oem_lookup()
+    if key in lookup:
+        options = lookup[key]
         # Deterministic pick based on model slug so the same model always gets the same number
         idx = int(hashlib.md5(model_slug.encode()).hexdigest(), 16) % len(options)
         return options[idx]
@@ -3683,7 +3721,7 @@ def compatible_cars_str(brand: str, model: dict) -> str:
 
 def generate_records(catalog: dict, limit: int | None = None) -> list[dict]:
     records: list[dict] = []
-    seen_oem: set[str] = set()
+    oem_lookup = get_merged_oem_lookup()
 
     for brand_data in catalog["brands"]:
         bname = brand_data["name"]
@@ -3715,14 +3753,9 @@ def generate_records(catalog: dict, limit: int | None = None) -> list[dict]:
 
                 # Use first recent year for OEM seed
                 seed_year = recent_years[0] if recent_years else 2020
-                oem = make_oem(prefix, mslug, part["code"], seed_year)
+                oem = make_oem(prefix, mslug, part["code"], seed_year, oem_lookup)
                 if not oem:
                     continue
-
-                # Deduplicate
-                if oem in seen_oem:
-                    oem += f"-{mslug[:3].upper()}"
-                seen_oem.add(oem)
 
                 price_usd, price_kgs = price_for(category, bname)
 

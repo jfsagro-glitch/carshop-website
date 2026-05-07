@@ -6,7 +6,7 @@ Run: python generate_engines_catalog.py
 """
 import json, re
 from datetime import timezone, datetime
-from generate_parts_catalog import OEM_LOOKUP
+from generate_parts_catalog import get_merged_oem_lookup
 
 
 def E(vol, cc, fuel, hp, code=""):
@@ -1503,7 +1503,7 @@ def main():
             part.pop("not_for", None)
 
     oem_lookup = {}
-    for (prefix, code), numbers in OEM_LOOKUP.items():
+    for (prefix, code), numbers in get_merged_oem_lookup().items():
         oem_lookup.setdefault(prefix, {})[code] = numbers
     cat["oem_lookup"] = oem_lookup
     cat["last_updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
