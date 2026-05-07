@@ -17,9 +17,9 @@ python tools\probe_oem_sources.py --workers 6
 - Всего проверено источников: 79.
 - Предпочтительно API/экспорт: 9.
 - Нужен аккаунт и проверка условий: 3.
-- Доступен ручной lookup, массовый импорт не подтверждён: 35.
+- Доступен ручной lookup, массовый импорт не подтверждён: 34.
 - Блокировка/авторизация: 5.
-- Недоступно или нужна ручная проверка: 26.
+- Недоступно или нужна ручная проверка: 27.
 - robots.txt запрещает массовый обход корня: 1.
 
 ## Лучшие кандидаты для API/экспорта
@@ -48,12 +48,26 @@ python tools\probe_oem_sources.py --workers 6
 
 - `autodoc.ru`, `japancats.ru`, `elcats.ru`, `jedip.ru`, `parts66.ru`,
   `parts77.ru`, `auto2.ru`.
-- `fordparts.com`, `realoem.com`, `bmwcats.com`, `new.lrcat.com`,
-  `partsale.eu`, `trshop.audi.de`.
-- `toyotacarmine.ru`, `kia.a-inside.ru`, `hyundai.a-inside.ru`,
-  `hondaworld.ru`, `acurapartswarehouse.com`, `mitsubishi-autoparts.com.ua`.
-- `findpart.org`, `rockauto.com`, `infodozer.com`, `avtobukvar.ru`,
-  `motorzona.ru`, `podshipnik.in.ua`, `woodauto.com`.
+- `fordparts.com`, `realoem.com`, `bmwcats.com`, `partsale.eu`,
+  `trshop.audi.de`.
+- `toyotacarmine.ru`, `hondaworld.ru`, `acurapartswarehouse.com`,
+  `mitsubishi-autoparts.com.ua`.
+- `findpart.org`, `rockauto.com`, `avtobukvar.ru`, `motorzona.ru`,
+  `podshipnik.in.ua`, `woodauto.com`.
+- `autodubok.ru`, `avtoall.ru`, `baza.drom.ru`, `eurospares.co.uk`,
+  `fe-best.de`, `hinoshop.sumotori.ru`, `irito-parts.ru`,
+  `jeepchryslerparts.eu`, `metgum.com.ua`, `pries.de`, `relines.ru`,
+  `truck-filter.ru`.
+
+Во второй проверке все 34 источника выше открыли главную/целевую страницу и
+robots.txt не запретил корневой путь и стандартные проверочные пути
+`/catalog`, `/cat`, `/parts`, `/search`, `/vin` для нашего audit-agent. Это
+только технический сигнал "ручная проверка возможна"; массовый парсинг всё
+равно требует условий сайта или письменного/API-доступа.
+
+`infodozer.com` исключён из ручных каталогов: текущий ответ уводит на парковку
+домена `hugedomains.com`, поэтому источник перенесён в "недоступно/проверить
+вручную".
 
 ## Нельзя использовать для автоматического bulk сейчас
 
