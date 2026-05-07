@@ -663,6 +663,7 @@ window.addEventListener('click', function(event) {
         parts: [],
         selectedPart: null,
         pendingSelection: null,
+        vinDecoded: null,
     };
 
     // Parts that are diesel-incompatible (require spark plugs / HV ignition)
@@ -683,6 +684,41 @@ window.addEventListener('click', function(event) {
     ]);
 
     const $ = (id) => document.getElementById(id);
+    const BRAND_ALIASES = {
+        'MERCEDES': 'Mercedes-Benz',
+        'MERCEDES-BENZ': 'Mercedes-Benz',
+        'MERCEDES BENZ': 'Mercedes-Benz',
+        'VW': 'Volkswagen',
+        'VOLKSWAGEN': 'Volkswagen',
+        'CHEVY': 'Chevrolet',
+        'CHEVROLET': 'Chevrolet',
+        'LANDROVER': 'Land Rover',
+        'LAND ROVER': 'Land Rover',
+        'MINI': 'Mini',
+        'BMW': 'BMW',
+        'LEXUS': 'Lexus',
+        'TOYOTA': 'Toyota',
+        'AUDI': 'Audi',
+        'HYUNDAI': 'Hyundai',
+        'KIA': 'Kia',
+        'NISSAN': 'Nissan',
+        'HONDA': 'Honda',
+        'FORD': 'Ford',
+        'MAZDA': 'Mazda',
+        'SUBARU': 'Subaru',
+        'MITSUBISHI': 'Mitsubishi',
+        'PEUGEOT': 'Peugeot',
+        'RENAULT': 'Renault',
+        'OPEL': 'Opel',
+        'SKODA': 'Skoda',
+        'VOLVO': 'Volvo',
+        'TESLA': 'Tesla',
+        'BYD': 'BYD',
+        'GEELY': 'Geely',
+        'CHERY': 'Chery',
+        'HAVAL': 'Haval',
+        'CHANGAN': 'Changan'
+    };
 
     function esc(value) {
         return String(value ?? '').replace(/[&<>"']/g, ch => ({
@@ -700,6 +736,134 @@ window.addEventListener('click', function(event) {
             hash = ((hash << 5) - hash + seed.charCodeAt(i)) | 0;
         }
         return options[Math.abs(hash) % options.length];
+    }
+
+    function normalizeVin(value) {
+        return String(value || '').toUpperCase().replace(/[^A-HJ-NPR-Z0-9]/g, '').slice(0, 17);
+    }
+
+    function setVinStatus(message, type = '') {
+        const status = $('partsVinDecodeStatus');
+        if (!status) return;
+        status.className = `vin-decode-status${type ? ' is-' + type : ''}`;
+        status.textContent = message || '';
+    }
+
+    async function decodeVin(vin) {
+        const cleanVin = normalizeVin(vin);
+        if (cleanVin.length !== 17) {
+            throw new Error('VIN должен содержать 17 символов без I, O и Q');
+        }
+        const url = `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/${encodeURIComponent(cleanVin)}?format=json`;
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error('Сервис VIN временно недоступен');
+        const data = await response.json();
+        const row = data?.Results?.[0] || {};
+        const errorCode = String(row.ErrorCode || '').trim();
+        if (errorCode && errorCode !== '0') {
+            const message = row.ErrorText || 'VIN не удалось расшифровать';
+            throw new Error(message);
+        }
+        return {
+            vin: cleanVin,
+            make: row.Make || '',
+            model: row.Model || '',
+            year: row.ModelYear || '',
+            body: row.BodyClass || '',
+            engine: row.EngineModel || row.EngineConfiguration || '',
+            displacement: row.DisplacementL || '',
+            fuel: row.FuelTypePrimary || '',
+            plantCountry: row.PlantCountry || '',
+            raw: row
+        };
+    }
+
+    function findBrandByVinMake(make) {
+        const key = String(make || '').toUpperCase().replace(/[^A-Z0-9]/g, ' ').trim().replace(/\s+/g, ' ');
+        const alias = BRAND_ALIASES[key] || BRAND_ALIASES[key.replace(/\s/g, '')] || make;
+        return state.catalog?.brands?.find(brand => brand.name.toLowerCase() === String(alias).toLowerCase()) || null;
+    }
+
+    function findModelByVinModel(brand, modelName) {
+        if (!brand) return null;
+        const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9а-я]/g, '');
+        const target = normalize(modelName);
+        return brand.models.find(model => {
+            const local = normalize(model.name);
+            return local === target || target.includes(local) || local.includes(target);
+        }) || null;
+    }
+
+    function applyDecodedVin(decoded, { showStatus = true, scroll = true } = {}) {
+        state.vinDecoded = decoded;
+        const brand = findBrandByVinMake(decoded.make);
+        const model = findModelByVinModel(brand, decoded.model);
+        const summary = [
+            decoded.year,
+            decoded.make,
+            decoded.model,
+            decoded.displacement ? `${decoded.displacement} л` : '',
+            decoded.fuel,
+            decoded.body
+        ].filter(Boolean).join(' · ');
+
+        if ($('partsVinInput')) $('partsVinInput').value = decoded.vin;
+        if ($('partsOrderVin')) $('partsOrderVin').value = decoded.vin;
+
+        if (!brand || !model) {
+            if (showStatus) setVinStatus(`VIN распознан: ${summary}. Модель не найдена в локальном каталоге, заявку можно отправить по VIN.`, 'ok');
+            return false;
+        }
+
+        state.brand = brand;
+        state.model = model;
+        state.year = decoded.year || '';
+        state.engine = null;
+
+        const brandSelect = $('partsBrandSelect');
+        const modelSelect = $('partsModelSelect');
+        const yearSelect = $('partsYearSelect');
+        if (brandSelect) brandSelect.value = brand.slug;
+        fillModelSelect();
+        if (modelSelect) modelSelect.value = model.slug;
+        fillYearSelect();
+        if (yearSelect && decoded.year) yearSelect.value = decoded.year;
+
+        showPartsForSelection({ scroll });
+        if (showStatus) setVinStatus(`VIN распознан: ${summary}. Подбор переключён на ${brand.name} ${model.name}.`, 'ok');
+        return true;
+    }
+
+    async function handleVinDecode(source = 'picker') {
+        const input = source === 'order' ? $('partsOrderVin') : $('partsVinInput');
+        const button = source === 'order' ? $('partsOrderDecodeVin') : $('partsVinDecodeBtn');
+        const status = source === 'order' ? $('partsOrderStatus') : null;
+        const vin = normalizeVin(input?.value || '');
+        if (input) input.value = vin;
+        if (source === 'picker') setVinStatus('Расшифровываем VIN...');
+        if (status && source === 'order') {
+            status.style.display = 'block';
+            status.style.color = '#facc15';
+            status.textContent = 'Расшифровываем VIN...';
+        }
+        if (button) button.disabled = true;
+        try {
+            const decoded = await decodeVin(vin);
+            applyDecodedVin(decoded, { showStatus: source === 'picker', scroll: source === 'picker' });
+            const summary = [decoded.year, decoded.make, decoded.model, decoded.displacement ? `${decoded.displacement} л` : '', decoded.fuel].filter(Boolean).join(' · ');
+            if (status && source === 'order') {
+                status.textContent = `VIN распознан: ${summary}`;
+                status.style.color = '#10b981';
+            }
+        } catch (error) {
+            if (source === 'picker') setVinStatus(error.message, 'error');
+            if (status && source === 'order') {
+                status.textContent = error.message;
+                status.style.color = '#f87171';
+            }
+        } finally {
+            if (button) button.disabled = false;
+        }
     }
 
     function buildPartsForCurrentModel() {
@@ -788,6 +952,14 @@ window.addEventListener('click', function(event) {
 
         $('partsSearchInput')?.addEventListener('input', renderParts);
         $('partsCategorySelect')?.addEventListener('change', renderParts);
+        $('partsVinInput')?.addEventListener('input', event => {
+            event.target.value = normalizeVin(event.target.value);
+        });
+        $('partsVinDecodeBtn')?.addEventListener('click', () => handleVinDecode('picker'));
+        $('partsOrderVin')?.addEventListener('input', event => {
+            event.target.value = normalizeVin(event.target.value);
+        });
+        $('partsOrderDecodeVin')?.addEventListener('click', () => handleVinDecode('order'));
         $('partsOrderClose')?.addEventListener('click', closePartsOrderModal);
         $('partsOrderSubmit')?.addEventListener('click', submitLocalPartsOrder);
         $('partsOrderModal')?.addEventListener('click', event => {
@@ -975,6 +1147,7 @@ window.addEventListener('click', function(event) {
         $('partsOrderName').value = part.name || '';
         $('partsOrderQty').value = part.quantity || 1;
         $('partsOrderVin').value = '';
+        if (state.vinDecoded?.vin) $('partsOrderVin').value = state.vinDecoded.vin;
         $('partsOrderClient').value = '';
         $('partsOrderPhone').value = '';
         $('partsOrderComment').value = '';
@@ -1012,6 +1185,14 @@ window.addEventListener('click', function(event) {
             `Запчасть: ${$('partsOrderName').value}`,
             `OEM номер: ${$('partsOrderNumber').value}`,
             `VIN: ${$('partsOrderVin').value.trim() || 'не указан'}`,
+            state.vinDecoded ? `VIN расшифровка: ${[
+                state.vinDecoded.year,
+                state.vinDecoded.make,
+                state.vinDecoded.model,
+                state.vinDecoded.displacement ? state.vinDecoded.displacement + ' л' : '',
+                state.vinDecoded.fuel,
+                state.vinDecoded.body
+            ].filter(Boolean).join(' · ')}` : '',
             `Количество: ${$('partsOrderQty').value}`,
             `Клиент: ${client}`,
             `Телефон: ${phone}`,
@@ -1030,6 +1211,7 @@ window.addEventListener('click', function(event) {
                     part: $('partsOrderName').value,
                     oem: $('partsOrderNumber').value,
                     vin: $('partsOrderVin').value.trim() || null,
+                    vinDecoded: state.vinDecoded || null,
                     qty: $('partsOrderQty').value
                 },
                 sourcePage: 'parts-orders'

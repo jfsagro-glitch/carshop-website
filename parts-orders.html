@@ -312,7 +312,34 @@
             align-items: end;
         }
 
+        .vin-decode-panel {
+            display: grid;
+            grid-template-columns: minmax(220px, 1fr) auto;
+            gap: 0.65rem;
+            align-items: end;
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+        }
+
+        .vin-decode-status {
+            grid-column: 1 / -1;
+            min-height: 20px;
+            color: #94a3b8;
+            font-size: 0.84rem;
+            line-height: 1.35;
+        }
+
+        .vin-decode-status.is-ok {
+            color: #86efac;
+        }
+
+        .vin-decode-status.is-error {
+            color: #fca5a5;
+        }
+
         .parts-picker-controls label,
+        .vin-decode-panel label,
         .parts-results-toolbar label {
             display: block;
             color: #cbd5e1;
@@ -321,6 +348,7 @@
         }
 
         .parts-picker-controls select,
+        .vin-decode-panel input,
         .parts-results-toolbar input,
         .parts-results-toolbar select,
         .parts-order-modal input,
@@ -536,7 +564,8 @@
 
             .parts-results-toolbar,
             .parts-order-grid,
-            .parts-picker-controls {
+            .parts-picker-controls,
+            .vin-decode-panel {
                 grid-template-columns: 1fr;
             }
 
@@ -651,6 +680,14 @@
 
             <div class="parts-picker-panel" id="partsPickerPanel">
                 <h2 style="font-size:1.45rem;margin:0 0 1rem;color:#f3f4f6;">Быстрый подбор запчастей</h2>
+                <div class="vin-decode-panel" aria-label="Расшифровка VIN">
+                    <div>
+                        <label for="partsVinInput">VIN автомобиля</label>
+                        <input id="partsVinInput" maxlength="17" autocomplete="off" placeholder="Например, JTDBR32E720012345">
+                    </div>
+                    <button class="filter-btn" id="partsVinDecodeBtn" type="button">Расшифровать VIN</button>
+                    <div class="vin-decode-status" id="partsVinDecodeStatus" aria-live="polite"></div>
+                </div>
                 <div class="parts-picker-controls">
                     <div>
                         <label for="partsBrandSelect">Марка</label>
@@ -1149,12 +1186,15 @@
                 </div>
                 <div class="full" id="partsOrderStatus" style="display:none;color:#facc15;"></div>
                 <div class="full">
+                    <button class="btn-secondary" id="partsOrderDecodeVin" type="button" style="width:100%;">Расшифровать VIN</button>
+                </div>
+                <div class="full">
                     <button class="btn-primary" id="partsOrderSubmit" type="button" style="width:100%;">Отправить заявку</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="parts-orders.js?v=20260505"></script>
+    <script src="parts-orders.js?v=20260507-vin"></script>
     <script src="header.js?v=20260505"></script>
 </body>
 </html>
