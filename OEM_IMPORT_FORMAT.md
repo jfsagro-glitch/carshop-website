@@ -66,6 +66,9 @@ python tools\oem_coverage_report.py --json data\oem_coverage.json
 - MOTOR Parts Data as a Service: структурированные данные по запчастям.
 - Официальные EPC/дилерские выгрузки производителей.
 
+Аудит пользовательского списка онлайн-каталогов ведётся в `OEM_SOURCE_AUDIT.md`,
+машинный результат проверки доступности — `data/oem_source_probe.json`.
+
 ## PartsTech Punchout
 
 Ключи PartsTech не хранятся в репозитории. Для проверки доступа и создания
