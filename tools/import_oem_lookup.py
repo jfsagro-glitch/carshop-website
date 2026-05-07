@@ -18,9 +18,12 @@ import argparse
 import csv
 import json
 import re
+import tempfile
+from urllib.parse import urlparse
 from datetime import datetime, timezone
 from pathlib import Path
 import sys
+import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -91,12 +94,25 @@ def iter_json(path: Path):
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Import verified OEM lookup rows")
-    parser.add_argument("--input", "-i", required=True, help="CSV/JSON with OEM rows")
+    parser.add_argument("--input", "-i", required=True, help="CSV/JSON with OEM rows, local path or https:// URL")
     parser.add_argument("--source", default="", help="Human-readable source name/URL")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    path = Path(args.input)
+    input_arg = args.input
+    temp_path = None
+    if input_arg.startswith(("http://", "https://")):
+        parsed = urlparse(input_arg)
+        suffix = Path(parsed.path).suffix or ".csv"
+        resp = requests.get(input_arg, timeout=60)
+        resp.raise_for_status()
+        tmp = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
+        tmp.write(resp.content)
+        tmp.close()
+        temp_path = Path(tmp.name)
+        path = temp_path
+    else:
+        path = Path(input_arg)
     if not path.exists():
         raise SystemExit(f"Файл не найден: {path}")
 
@@ -117,7 +133,7 @@ def main() -> None:
         data.setdefault("sources", []).append({
             "source": args.source,
             "imported_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "file": str(path),
+            "file": input_arg,
             "added": added,
             "skipped": skipped,
         })
@@ -128,6 +144,8 @@ def main() -> None:
             json.dump(data, f, ensure_ascii=False, indent=2)
 
     print(f"added={added} skipped={skipped} target={TARGET}")
+    if temp_path:
+        temp_path.unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

@@ -20,6 +20,7 @@ Volkswagen,VW,BPF,5Q0-698-151-F,VAG catalog export
 
 ```powershell
 python tools\import_oem_lookup.py --input supplier_oem.csv --source "Supplier / API name"
+python tools\import_oem_lookup.py --input https://supplier.example/export/oem.csv --source "Supplier API export"
 python generate_engines_catalog.py
 python generate_parts_catalog.py --output generated_parts_catalog.csv
 ```
@@ -40,6 +41,7 @@ python generate_parts_catalog.py --output generated_parts_catalog.csv
 
 ```powershell
 python tools\oem_coverage_report.py
+python tools\audit_supabase_parts.py
 ```
 
 Отчёт показывает покрытие по каждой марке и список полностью непокрытых типов
