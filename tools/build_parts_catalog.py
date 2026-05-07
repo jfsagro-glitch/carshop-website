@@ -102,6 +102,51 @@ BRAND_PREFIX.update({
     "Haval": "HV", "Changan": "CG",
 })
 
+BRAND_LOGOS = {
+    "Toyota": "https://logo.clearbit.com/toyota.com",
+    "Volkswagen": "https://logo.clearbit.com/volkswagen.com",
+    "BMW": "https://logo.clearbit.com/bmw.com",
+    "Mercedes-Benz": "https://logo.clearbit.com/mercedes-benz.com",
+    "Audi": "https://logo.clearbit.com/audi.com",
+    "Hyundai": "https://logo.clearbit.com/hyundai.com",
+    "Kia": "https://logo.clearbit.com/kia.com",
+    "Nissan": "https://logo.clearbit.com/nissan-global.com",
+    "Honda": "https://logo.clearbit.com/honda.com",
+    "Ford": "https://logo.clearbit.com/ford.com",
+    "Chevrolet": "https://logo.clearbit.com/chevrolet.com",
+    "Mazda": "https://logo.clearbit.com/mazda.com",
+    "Lexus": "https://logo.clearbit.com/lexus.com",
+    "Subaru": "https://logo.clearbit.com/subaru.com",
+    "Mitsubishi": "https://logo.clearbit.com/mitsubishi-motors.com",
+    "Peugeot": "https://logo.clearbit.com/peugeot.com",
+    "Renault": "https://logo.clearbit.com/renault.com",
+    "Opel": "https://logo.clearbit.com/opel.com",
+    "Skoda": "https://logo.clearbit.com/skoda-auto.com",
+    "Volvo": "https://logo.clearbit.com/volvocars.com",
+    "Suzuki": "https://logo.clearbit.com/suzuki.com",
+    "Infiniti": "https://logo.clearbit.com/infiniti.com",
+    "Acura": "https://logo.clearbit.com/acura.com",
+    "Jeep": "https://logo.clearbit.com/jeep.com",
+    "Land Rover": "https://logo.clearbit.com/landrover.com",
+    "Porsche": "https://logo.clearbit.com/porsche.com",
+    "Dodge": "https://logo.clearbit.com/dodge.com",
+    "Chrysler": "https://logo.clearbit.com/chrysler.com",
+    "GMC": "https://logo.clearbit.com/gmc.com",
+    "Cadillac": "https://logo.clearbit.com/cadillac.com",
+    "Buick": "https://logo.clearbit.com/buick.com",
+    "Mini": "https://logo.clearbit.com/mini.com",
+    "Fiat": "https://logo.clearbit.com/fiat.com",
+    "Citroen": "https://logo.clearbit.com/citroen.com",
+    "Seat": "https://logo.clearbit.com/seat.com",
+    "Genesis": "https://logo.clearbit.com/genesis.com",
+    "Tesla": "https://logo.clearbit.com/tesla.com",
+    "BYD": "https://logo.clearbit.com/byd.com",
+    "Geely": "https://logo.clearbit.com/geely.com",
+    "Chery": "https://logo.clearbit.com/cheryinternational.com",
+    "Haval": "https://logo.clearbit.com/haval-global.com",
+    "Changan": "https://logo.clearbit.com/changan.com.cn",
+}
+
 PARTS.extend([
     ("ТО", "Пробка сливная масляного поддона", "ODP", "Фильтры и жидкости", 1),
     ("ТО", "Шайба сливной пробки", "ODW", "Фильтры и жидкости", 1),
@@ -317,7 +362,13 @@ def build_number(brand: str, model: str, code: str, idx: int) -> str:
 def main() -> None:
     brands = []
     for brand, models in BRANDS.items():
-        brand_entry = {"name": brand, "slug": slug(brand), "prefix": BRAND_PREFIX.get(brand, brand[:2].upper()), "models": []}
+        brand_entry = {
+            "name": brand,
+            "slug": slug(brand),
+            "prefix": BRAND_PREFIX.get(brand, brand[:2].upper()),
+            "logo": BRAND_LOGOS.get(brand, ""),
+            "models": [],
+        }
         for model in models:
             brand_entry["models"].append({
                 "name": model,

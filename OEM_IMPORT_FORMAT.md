@@ -45,3 +45,21 @@ python tools\oem_coverage_report.py
 Отчёт показывает покрытие по каждой марке и список полностью непокрытых типов
 запчастей. Если для позиции нет реального OEM, сайт показывает `OEM по VIN`
 вместо выдуманного номера.
+
+## Источники для усиления базы
+
+Для полного покрытия нужны легальные выгрузки/API. На практике подходят:
+
+- TecDoc / TecAlliance Web Service: кроссы, OE/OEM и применяемость.
+- PartsTech / поставщик с API: прайсы и OEM/aftermarket кроссы.
+- MOTOR Parts Data as a Service: структурированные данные по запчастям.
+- Официальные EPC/дилерские выгрузки производителей.
+
+Нормализованную JSON-выгрузку провайдера можно конвертировать:
+
+```powershell
+python tools\tecdoc_oem_import_stub.py --input provider_export.json --output supplier_oem_import.csv
+python tools\import_oem_lookup.py --input supplier_oem_import.csv --source "Licensed provider export"
+python generate_engines_catalog.py
+python generate_parts_catalog.py --output generated_parts_catalog.csv
+```

@@ -46,6 +46,18 @@ def main() -> None:
     print(f"\nTotal pair coverage: {covered_pairs}/{total_pairs} ({covered_pairs / total_pairs * 100:.1f}%)")
     print(f"OEM lookup pairs: {sum(len(v) for v in lookup.values())}")
 
+    priority_groups = {"ТО", "Тормоза", "Подвеска", "Двигатель", "Охлаждение", "Трансмиссия"}
+    gaps = []
+    for part in parts:
+        code = part["code"]
+        missing = [brand["name"] for brand in cat.get("brands", []) if (brand.get("prefix"), code) not in lookup]
+        if missing and (part.get("category") in priority_groups or part.get("group") in priority_groups):
+            gaps.append((len(missing), part["category"], part["group"], part["name"], code, missing[:8]))
+
+    print("\nPriority OEM gaps for supplier/API import:")
+    for missing_count, category, group, name, code, examples in sorted(gaps, reverse=True)[:40]:
+        print(f"{code:5} missing {missing_count:2} brands | {category}/{group} | {name} | e.g. {', '.join(examples)}")
+
 
 if __name__ == "__main__":
     main()

@@ -982,7 +982,7 @@ window.addEventListener('click', function(event) {
             // Reuse the catalog promise started by the inline script to avoid a second 437KB download
             state.catalog = window._partsCatalogPromise
                 ? await window._partsCatalogPromise
-                : await fetch('data/parts_catalog.json?v=20260506-oem', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+                : await fetch('data/parts_catalog.json?v=20260507-vin-logos', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
             fillBrandSelect();
             updateStatsFromLocalCatalog();
             if (state.pendingSelection) {

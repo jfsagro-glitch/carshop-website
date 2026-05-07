@@ -1,6 +1,6 @@
 {
   "source_note": "Локальная витрина подбора EXPO MIR. Номера являются каталожными позициями для заявки; финальный OEM/аналог подтверждается по VIN.",
-  "last_updated": "2026-05-07T09:45:10Z",
+  "last_updated": "2026-05-07T11:24:06Z",
   "parts_template": [
     {
       "category": "ТО",
@@ -1641,6 +1641,7 @@
       "name": "Toyota",
       "slug": "toyota",
       "prefix": "TY",
+      "logo": "https://logo.clearbit.com/toyota.com",
       "models": [
         {
           "name": "Camry",
@@ -2168,6 +2169,7 @@
       "name": "Volkswagen",
       "slug": "volkswagen",
       "prefix": "VW",
+      "logo": "https://logo.clearbit.com/volkswagen.com",
       "models": [
         {
           "name": "Jetta",
@@ -2775,6 +2777,7 @@
       "name": "BMW",
       "slug": "bmw",
       "prefix": "BM",
+      "logo": "https://logo.clearbit.com/bmw.com",
       "models": [
         {
           "name": "3 Series",
@@ -3242,6 +3245,7 @@
       "name": "Mercedes-Benz",
       "slug": "mercedes-benz",
       "prefix": "MB",
+      "logo": "https://logo.clearbit.com/mercedes-benz.com",
       "models": [
         {
           "name": "A-Class",
@@ -3754,6 +3758,7 @@
       "name": "Audi",
       "slug": "audi",
       "prefix": "AU",
+      "logo": "https://logo.clearbit.com/audi.com",
       "models": [
         {
           "name": "A3",
@@ -4201,6 +4206,7 @@
       "name": "Hyundai",
       "slug": "hyundai",
       "prefix": "HY",
+      "logo": "https://logo.clearbit.com/hyundai.com",
       "models": [
         {
           "name": "Elantra",
@@ -4588,6 +4594,7 @@
       "name": "Kia",
       "slug": "kia",
       "prefix": "KI",
+      "logo": "https://logo.clearbit.com/kia.com",
       "models": [
         {
           "name": "Rio",
@@ -5010,6 +5017,7 @@
       "name": "Nissan",
       "slug": "nissan",
       "prefix": "NI",
+      "logo": "https://logo.clearbit.com/nissan-global.com",
       "models": [
         {
           "name": "Sentra",
@@ -5402,6 +5410,7 @@
       "name": "Honda",
       "slug": "honda",
       "prefix": "HO",
+      "logo": "https://logo.clearbit.com/honda.com",
       "models": [
         {
           "name": "Civic",
@@ -5699,6 +5708,7 @@
       "name": "Ford",
       "slug": "ford",
       "prefix": "FO",
+      "logo": "https://logo.clearbit.com/ford.com",
       "models": [
         {
           "name": "Focus",
@@ -6076,6 +6086,7 @@
       "name": "Chevrolet",
       "slug": "chevrolet",
       "prefix": "CH",
+      "logo": "https://logo.clearbit.com/chevrolet.com",
       "models": [
         {
           "name": "Cruze",
@@ -6373,6 +6384,7 @@
       "name": "Mazda",
       "slug": "mazda",
       "prefix": "MA",
+      "logo": "https://logo.clearbit.com/mazda.com",
       "models": [
         {
           "name": "Mazda 3",
@@ -6760,6 +6772,7 @@
       "name": "Lexus",
       "slug": "lexus",
       "prefix": "LX",
+      "logo": "https://logo.clearbit.com/lexus.com",
       "models": [
         {
           "name": "ES",
@@ -7162,6 +7175,7 @@
       "name": "Subaru",
       "slug": "subaru",
       "prefix": "SU",
+      "logo": "https://logo.clearbit.com/subaru.com",
       "models": [
         {
           "name": "Impreza",
@@ -7519,6 +7533,7 @@
       "name": "Mitsubishi",
       "slug": "mitsubishi",
       "prefix": "MI",
+      "logo": "https://logo.clearbit.com/mitsubishi-motors.com",
       "models": [
         {
           "name": "Lancer",
@@ -7876,6 +7891,7 @@
       "name": "Peugeot",
       "slug": "peugeot",
       "prefix": "PE",
+      "logo": "https://logo.clearbit.com/peugeot.com",
       "models": [
         {
           "name": "2008",
@@ -8283,6 +8299,7 @@
       "name": "Renault",
       "slug": "renault",
       "prefix": "RE",
+      "logo": "https://logo.clearbit.com/renault.com",
       "models": [
         {
           "name": "Logan",
@@ -8670,6 +8687,7 @@
       "name": "Opel",
       "slug": "opel",
       "prefix": "OP",
+      "logo": "https://logo.clearbit.com/opel.com",
       "models": [
         {
           "name": "Astra",
@@ -9087,6 +9105,7 @@
       "name": "Skoda",
       "slug": "skoda",
       "prefix": "SK",
+      "logo": "https://logo.clearbit.com/skoda-auto.com",
       "models": [
         {
           "name": "Octavia",
@@ -9534,6 +9553,7 @@
       "name": "Volvo",
       "slug": "volvo",
       "prefix": "VO",
+      "logo": "https://logo.clearbit.com/volvocars.com",
       "models": [
         {
           "name": "XC40",
@@ -9941,6 +9961,7 @@
       "name": "Suzuki",
       "slug": "suzuki",
       "prefix": "SZ",
+      "logo": "https://logo.clearbit.com/suzuki.com",
       "models": [
         {
           "name": "Swift",
@@ -10343,6 +10364,7 @@
       "name": "Infiniti",
       "slug": "infiniti",
       "prefix": "IN",
+      "logo": "https://logo.clearbit.com/infiniti.com",
       "models": [
         {
           "name": "Q50",
@@ -10730,6 +10752,7 @@
       "name": "Acura",
       "slug": "acura",
       "prefix": "AC",
+      "logo": "https://logo.clearbit.com/acura.com",
       "models": [
         {
           "name": "ILX",
@@ -11007,6 +11030,7 @@
       "name": "Jeep",
       "slug": "jeep",
       "prefix": "JP",
+      "logo": "https://logo.clearbit.com/jeep.com",
       "models": [
         {
           "name": "Renegade",
@@ -11354,6 +11378,7 @@
       "name": "Land Rover",
       "slug": "land-rover",
       "prefix": "LR",
+      "logo": "https://logo.clearbit.com/landrover.com",
       "models": [
         {
           "name": "Discovery Sport",
@@ -11791,6 +11816,7 @@
       "name": "Porsche",
       "slug": "porsche",
       "prefix": "PO",
+      "logo": "https://logo.clearbit.com/porsche.com",
       "models": [
         {
           "name": "Macan",
@@ -12158,6 +12184,7 @@
       "name": "Dodge",
       "slug": "dodge",
       "prefix": "DG",
+      "logo": "https://logo.clearbit.com/dodge.com",
       "models": [
         {
           "name": "Dart",
@@ -12455,6 +12482,7 @@
       "name": "Chrysler",
       "slug": "chrysler",
       "prefix": "CR",
+      "logo": "https://logo.clearbit.com/chrysler.com",
       "models": [
         {
           "name": "200",
@@ -12632,6 +12660,7 @@
       "name": "GMC",
       "slug": "gmc",
       "prefix": "GM",
+      "logo": "https://logo.clearbit.com/gmc.com",
       "models": [
         {
           "name": "Terrain",
@@ -12904,6 +12933,7 @@
       "name": "Cadillac",
       "slug": "cadillac",
       "prefix": "CA",
+      "logo": "https://logo.clearbit.com/cadillac.com",
       "models": [
         {
           "name": "ATS",
@@ -13281,6 +13311,7 @@
       "name": "Buick",
       "slug": "buick",
       "prefix": "BU",
+      "logo": "https://logo.clearbit.com/buick.com",
       "models": [
         {
           "name": "Encore",
@@ -13538,6 +13569,7 @@
       "name": "Mini",
       "slug": "mini",
       "prefix": "MN",
+      "logo": "https://logo.clearbit.com/mini.com",
       "models": [
         {
           "name": "Cooper",
@@ -13795,6 +13827,7 @@
       "name": "Fiat",
       "slug": "fiat",
       "prefix": "FI",
+      "logo": "https://logo.clearbit.com/fiat.com",
       "models": [
         {
           "name": "500",
@@ -14087,6 +14120,7 @@
       "name": "Citroen",
       "slug": "citroen",
       "prefix": "CI",
+      "logo": "https://logo.clearbit.com/citroen.com",
       "models": [
         {
           "name": "C3",
@@ -14419,6 +14453,7 @@
       "name": "Seat",
       "slug": "seat",
       "prefix": "SE",
+      "logo": "https://logo.clearbit.com/seat.com",
       "models": [
         {
           "name": "Ibiza",
@@ -14826,6 +14861,7 @@
       "name": "Genesis",
       "slug": "genesis",
       "prefix": "GE",
+      "logo": "https://logo.clearbit.com/genesis.com",
       "models": [
         {
           "name": "G70",
@@ -15133,6 +15169,7 @@
       "name": "Tesla",
       "slug": "tesla",
       "prefix": "TS",
+      "logo": "https://logo.clearbit.com/tesla.com",
       "models": [
         {
           "name": "Model 3",
@@ -15340,6 +15377,7 @@
       "name": "BYD",
       "slug": "byd",
       "prefix": "BY",
+      "logo": "https://logo.clearbit.com/byd.com",
       "models": [
         {
           "name": "Dolphin",
@@ -15607,6 +15645,7 @@
       "name": "Geely",
       "slug": "geely",
       "prefix": "GL",
+      "logo": "https://logo.clearbit.com/geely.com",
       "models": [
         {
           "name": "Coolray",
@@ -15834,6 +15873,7 @@
       "name": "Chery",
       "slug": "chery",
       "prefix": "CY",
+      "logo": "https://logo.clearbit.com/cheryinternational.com",
       "models": [
         {
           "name": "Tiggo 4",
@@ -16066,6 +16106,7 @@
       "name": "Haval",
       "slug": "haval",
       "prefix": "HV",
+      "logo": "https://logo.clearbit.com/haval-global.com",
       "models": [
         {
           "name": "Jolion",
@@ -16298,6 +16339,7 @@
       "name": "Changan",
       "slug": "changan",
       "prefix": "CG",
+      "logo": "https://logo.clearbit.com/changan.com.cn",
       "models": [
         {
           "name": "CS35 Plus",

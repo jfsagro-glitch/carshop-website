@@ -81,6 +81,38 @@
             padding: 4rem 0;
             min-height: 60vh;
         }
+
+        .parts-vin-entry {
+            margin-bottom: 1.25rem;
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.98), rgba(17, 24, 39, 0.94));
+            border: 1px solid rgba(250, 204, 21, 0.22);
+            border-radius: 12px;
+            padding: 1rem;
+            padding-right: 4.5rem;
+            box-shadow: 0 16px 34px rgba(2, 6, 23, 0.45);
+        }
+
+        .parts-vin-entry__head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .parts-vin-entry__title {
+            margin: 0;
+            color: #f8fafc;
+            font-size: 1.2rem;
+            line-height: 1.25;
+        }
+
+        .parts-vin-entry__hint {
+            margin: 0.2rem 0 0;
+            color: #94a3b8;
+            font-size: 0.88rem;
+            line-height: 1.4;
+        }
         
         .parts-filters {
             display: grid;
@@ -121,23 +153,23 @@
         
         .brands-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 0.75rem;
             margin-bottom: 3rem;
         }
         
         .brand-card {
             background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.92));
             border: 1px solid rgba(148, 163, 184, 0.12);
-            border-radius: 16px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 0.85rem;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            gap: 0.6rem;
         }
         
         .brand-card:hover {
@@ -153,34 +185,34 @@
         
         .brand-logo-container {
             position: relative;
-            width: 80px;
-            height: 80px;
+            width: 58px;
+            height: 58px;
         }
         
         .brand-logo {
-            width: 80px;
-            height: 80px;
+            width: 58px;
+            height: 58px;
             object-fit: contain;
-            background: rgba(15, 23, 42, 0.5);
-            border-radius: 12px;
-            padding: 0.5rem;
+            background: rgba(248, 250, 252, 0.96);
+            border-radius: 10px;
+            padding: 0.38rem;
         }
         
         .brand-logo-fallback {
             position: absolute;
             top: 0;
             left: 0;
-            width: 80px;
-            height: 80px;
+            width: 58px;
+            height: 58px;
             background: rgba(15, 23, 42, 0.5);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .brand-name {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #f9fafb;
             margin: 0;
@@ -545,6 +577,10 @@
         }
         
         @media (max-width: 768px) {
+            .parts-vin-entry {
+                padding-right: 1rem;
+            }
+
             .parts-hero h1 {
                 font-size: 2rem;
             }
@@ -563,6 +599,7 @@
             }
 
             .parts-results-toolbar,
+            .parts-vin-entry__head,
             .parts-order-grid,
             .parts-picker-controls,
             .vin-decode-panel {
@@ -638,6 +675,22 @@
 
     <section class="parts-catalog">
         <div class="container">
+            <div class="parts-vin-entry" id="partsVinTop">
+                <div class="parts-vin-entry__head">
+                    <div>
+                        <h2 class="parts-vin-entry__title">Подбор запчастей по VIN</h2>
+                        <p class="parts-vin-entry__hint">Введите VIN: сайт определит автомобиль и сразу переключит каталог на подходящую марку и модель.</p>
+                    </div>
+                </div>
+                <div class="vin-decode-panel" aria-label="Расшифровка VIN">
+                    <div>
+                        <label for="partsVinInput">VIN автомобиля</label>
+                        <input id="partsVinInput" maxlength="17" autocomplete="off" placeholder="Например, 1HGCM82633A004352">
+                    </div>
+                    <button class="filter-btn" id="partsVinDecodeBtn" type="button">Расшифровать VIN</button>
+                    <div class="vin-decode-status" id="partsVinDecodeStatus" aria-live="polite"></div>
+                </div>
+            </div>
             <div class="parts-stats" id="partsStats" aria-live="polite">
                 <div class="parts-stat">
                     <span class="parts-stat-label">Марок в каталоге</span>
@@ -680,14 +733,6 @@
 
             <div class="parts-picker-panel" id="partsPickerPanel">
                 <h2 style="font-size:1.45rem;margin:0 0 1rem;color:#f3f4f6;">Быстрый подбор запчастей</h2>
-                <div class="vin-decode-panel" aria-label="Расшифровка VIN">
-                    <div>
-                        <label for="partsVinInput">VIN автомобиля</label>
-                        <input id="partsVinInput" maxlength="17" autocomplete="off" placeholder="Например, JTDBR32E720012345">
-                    </div>
-                    <button class="filter-btn" id="partsVinDecodeBtn" type="button">Расшифровать VIN</button>
-                    <div class="vin-decode-status" id="partsVinDecodeStatus" aria-live="polite"></div>
-                </div>
                 <div class="parts-picker-controls">
                     <div>
                         <label for="partsBrandSelect">Марка</label>
@@ -843,7 +888,7 @@
     <script>
         // Загрузка данных каталога запчастей
         // Expose promise globally so parts-orders.js can reuse the same fetch
-        window._partsCatalogPromise = fetch('data/parts_catalog.json?v=20260506-oem', { cache: 'no-store' })
+        window._partsCatalogPromise = fetch('data/parts_catalog.json?v=20260507-vin-logos', { cache: 'no-store' })
             .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
 
         (async function() {
@@ -1194,7 +1239,7 @@
             </div>
         </div>
     </div>
-    <script src="parts-orders.js?v=20260507-vin"></script>
+    <script src="parts-orders.js?v=20260507-vin-logos"></script>
     <script src="header.js?v=20260505"></script>
 </body>
 </html>
