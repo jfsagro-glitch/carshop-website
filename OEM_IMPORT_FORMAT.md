@@ -57,6 +57,29 @@ python tools\audit_supabase_parts.py
 - MOTOR Parts Data as a Service: структурированные данные по запчастям.
 - Официальные EPC/дилерские выгрузки производителей.
 
+## PartsTech Punchout
+
+Ключи PartsTech не хранятся в репозитории. Для проверки доступа и создания
+сессии подбора нужны все четыре значения из личного кабинета/API-договора:
+
+```powershell
+$env:PARTSTECH_PARTNER_ID="..."
+$env:PARTSTECH_PARTNER_API_KEY="..."
+$env:PARTSTECH_USER_ID="user@example.com"
+$env:PARTSTECH_USER_API_KEY="..."
+python tools\partstech_client.py --auth-test
+```
+
+Создание VIN-сессии подбора:
+
+```powershell
+python tools\partstech_client.py --vin "WVWZZZ..." --keyword "brake pad" --output data\partstech_session.json
+```
+
+Если поставщик отдаёт CSV/JSON-экспорт OEM-кроссов, его нужно импортировать
+через `tools\import_oem_lookup.py`. Punchout-сессия сама по себе открывает
+поиск/корзину поставщика, а не является полным скачиваемым EPC-справочником.
+
 Нормализованную JSON-выгрузку провайдера можно конвертировать:
 
 ```powershell

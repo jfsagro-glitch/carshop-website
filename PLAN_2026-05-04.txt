@@ -568,4 +568,22 @@
      • Публичный поиск полных бесплатных OEM-справочников не дал надёжной
        полной базы; докачка должна идти через проверенный CSV/API поставщика
 
+✅ PartsTech подключение (07 мая 2026, продолжение):
+     • Добавлен tools/partstech_client.py для PartsTech Punchout API
+     • Ключи читаются только из переменных окружения:
+       PARTSTECH_PARTNER_ID, PARTSTECH_PARTNER_API_KEY,
+       PARTSTECH_USER_ID, PARTSTECH_USER_API_KEY
+     • Формат авторизации приведён к Punchout-документации:
+       accessType=user + credentials.partner/user
+     • Добавлена команда проверки доступа:
+       python tools\partstech_client.py --auth-test
+     • Добавлена команда создания VIN/keyword/part-number quote-сессии:
+       python tools\partstech_client.py --vin "..." --keyword "..." --output data\partstech_session.json
+     • .gitignore дополнен, чтобы локальные PartsTech-сессии, выгрузки
+       поставщика и временные OEM CSV не попадали в git
+     • Важно по факту: предоставлен User ID/User API Key, но для реальной
+       загрузки через Punchout API ещё нужны Partner ID и Partner API Key.
+       Без них PartsTech не выдаёт access token. Ключи в репозиторий не
+       записывались и в вывод не печатались.
+
 ================================================================================

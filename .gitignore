@@ -48,6 +48,10 @@ csv_importer.py
 cars_data.csv
 cars_extended.csv
 cars_europe.json
+data/partstech_session.json
+data/partstech_*.json
+supplier_oem_import.csv
+supplier_oem*.csv
 
 # Misc Python scripts
 update_prices.ps1
