@@ -54,6 +54,13 @@
         .action-btn.contact{background:#059669;color:#fff}
         .action-btn.close-lead{background:#4a5568;color:#fff}
         .action-btn.whatsapp{background:#25d366;color:#fff}
+        .health-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1rem}
+        .health-card{background:#0f172a;border:1px solid #1e3a5f;border-radius:8px;padding:1rem}
+        .health-card .val{font-size:1.5rem;font-weight:700;color:#d4af37}
+        .health-card .lbl{font-size:.78rem;color:#94a3b8;margin-top:.2rem}
+        .coverage-bar{height:8px;background:#1e293b;border-radius:999px;overflow:hidden;margin-top:.35rem}
+        .coverage-bar span{display:block;height:100%;background:#d4af37}
+        .compact-table td,.compact-table th{padding:.45rem .55rem;font-size:.8rem}
 
         .lead-detail{display:none;background:#0f172a;border:1px solid #1e3a5f;border-radius:8px;padding:1.2rem;margin-top:.5rem;font-size:.85rem}
         .lead-detail dt{color:#718096;font-size:.75rem;text-transform:uppercase;margin-top:.6rem}
@@ -103,6 +110,7 @@
             Заявки <span class="badge" id="new-badge" style="display:none">0</span>
         </button>
         <button class="tab-btn" onclick="switchTab('search',this)">Поисковые запросы</button>
+        <button class="tab-btn" onclick="switchTab('oem',this)">OEM база</button>
     </div>
 
     <!-- Leads tab -->
@@ -135,6 +143,11 @@
     <!-- Search events tab -->
     <div id="tab-search" style="display:none">
         <div id="search-table-container"><div class="loading-msg"><i class="fas fa-spinner fa-spin"></i> Загрузка…</div></div>
+    </div>
+
+    <!-- OEM health tab -->
+    <div id="tab-oem" style="display:none">
+        <div id="oem-health-container"><div class="loading-msg"><i class="fas fa-spinner fa-spin"></i> Загрузка…</div></div>
     </div>
 </div>
 
@@ -394,12 +407,50 @@ async function loadSearchEvents() {
     }
 }
 
+async function loadOemHealth() {
+    const container = document.getElementById('oem-health-container');
+    container.innerHTML = '<div class="loading-msg"><i class="fas fa-spinner fa-spin"></i> Загрузка…</div>';
+    try {
+        const r = await fetch(`data/oem_coverage.json?v=${Date.now()}`);
+        if (!r.ok) throw new Error(`${r.status}`);
+        const report = await r.json();
+        const worstBrands = (report.brand_coverage || []).slice(0, 12);
+        const gaps = (report.priority_gaps || []).slice(0, 18);
+        const uncovered = (report.fully_uncovered || []).slice(0, 18);
+        container.innerHTML = `
+            <div class="health-grid">
+                <div class="health-card"><div class="val">${report.coverage}%</div><div class="lbl">Покрытие бренд × код</div><div class="coverage-bar"><span style="width:${Math.min(100, report.coverage || 0)}%"></span></div></div>
+                <div class="health-card"><div class="val">${report.covered_pairs || 0}</div><div class="lbl">Закрыто пар из ${report.total_pairs || 0}</div></div>
+                <div class="health-card"><div class="val">${report.oem_lookup_pairs || 0}</div><div class="lbl">OEM-номеров в lookup</div></div>
+                <div class="health-card"><div class="val">${report.generated_at ? report.generated_at.slice(0,16).replace('T',' ') : '—'}</div><div class="lbl">Отчёт обновлён UTC</div></div>
+            </div>
+            <h3 style="font-size:1rem;color:#d4af37;margin:1rem 0 .6rem">Марки с минимальным покрытием</h3>
+            <table class="compact-table">
+                <thead><tr><th>Марка</th><th>Префикс</th><th>Покрыто</th><th>%</th></tr></thead>
+                <tbody>${worstBrands.map(b => `<tr><td>${b.brand}</td><td>${b.prefix}</td><td>${b.covered}/${b.total}</td><td>${b.coverage}%</td></tr>`).join('')}</tbody>
+            </table>
+            <h3 style="font-size:1rem;color:#d4af37;margin:1rem 0 .6rem">Приоритетные пробелы для импорта</h3>
+            <table class="compact-table">
+                <thead><tr><th>Код</th><th>Запчасть</th><th>Группа</th><th>Не хватает марок</th><th>Примеры</th></tr></thead>
+                <tbody>${gaps.map(g => `<tr><td>${g.code}</td><td>${g.name}</td><td>${g.category} / ${g.group}</td><td>${g.missing_count}</td><td>${(g.examples||[]).join(', ')}</td></tr>`).join('')}</tbody>
+            </table>
+            ${uncovered.length ? `<h3 style="font-size:1rem;color:#d4af37;margin:1rem 0 .6rem">Полностью непокрытые типы</h3>
+            <table class="compact-table"><thead><tr><th>Код</th><th>Категория</th><th>Запчасть</th></tr></thead>
+            <tbody>${uncovered.map(p => `<tr><td>${p.code}</td><td>${p.category}</td><td>${p.name}</td></tr>`).join('')}</tbody></table>` : ''}
+        `;
+    } catch(e) {
+        container.innerHTML = `<div class="loading-msg" style="color:#f87171">Ошибка OEM-отчёта: ${e.message}</div>`;
+    }
+}
+
 function switchTab(name, btn) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('tab-leads').style.display  = name === 'leads'  ? 'block' : 'none';
     document.getElementById('tab-search').style.display = name === 'search' ? 'block' : 'none';
+    document.getElementById('tab-oem').style.display    = name === 'oem'    ? 'block' : 'none';
     if (name === 'search') loadSearchEvents();
+    if (name === 'oem') loadOemHealth();
 }
 
 // Auto-init if already authenticated

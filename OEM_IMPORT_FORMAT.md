@@ -48,6 +48,15 @@ python tools\audit_supabase_parts.py
 запчастей. Если для позиции нет реального OEM, сайт показывает `OEM по VIN`
 вместо выдуманного номера.
 
+Для админки используется JSON-отчёт:
+
+```powershell
+python tools\oem_coverage_report.py --json data\oem_coverage.json
+```
+
+`tools\import_oem_lookup.py` пересобирает этот отчёт автоматически после
+успешного импорта, если не передан `--skip-report`.
+
 ## Источники для усиления базы
 
 Для полного покрытия нужны легальные выгрузки/API. На практике подходят:

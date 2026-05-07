@@ -18,6 +18,7 @@ import argparse
 import csv
 import json
 import re
+import subprocess
 import tempfile
 from urllib.parse import urlparse
 from datetime import datetime, timezone
@@ -97,6 +98,7 @@ def main() -> None:
     parser.add_argument("--input", "-i", required=True, help="CSV/JSON with OEM rows, local path or https:// URL")
     parser.add_argument("--source", default="", help="Human-readable source name/URL")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--skip-report", action="store_true", help="Do not rebuild data/oem_coverage.json")
     args = parser.parse_args()
 
     input_arg = args.input
@@ -142,6 +144,11 @@ def main() -> None:
         TARGET.parent.mkdir(exist_ok=True)
         with open(TARGET, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
+        if not args.skip_report:
+            subprocess.run(
+                [sys.executable, str(ROOT / "tools" / "oem_coverage_report.py"), "--json", str(ROOT / "data" / "oem_coverage.json")],
+                check=True,
+            )
 
     print(f"added={added} skipped={skipped} target={TARGET}")
     if temp_path:
