@@ -719,6 +719,35 @@ window.addEventListener('click', function(event) {
         'HAVAL': 'Haval',
         'CHANGAN': 'Changan'
     };
+    const WMI_BRAND_FALLBACK = [
+        [/^(JT|4T|5T)/, 'Toyota'],
+        [/^(JH|1H|2H|3H|5F|7F)/, 'Honda'],
+        [/^(JN|1N|3N|5N)/, 'Nissan'],
+        [/^(KM|5N|5X)/, 'Hyundai'],
+        [/^(KN|5X)/, 'Kia'],
+        [/^(WVW|WV1|WV2|3VW)/, 'Volkswagen'],
+        [/^(WAU|TRU)/, 'Audi'],
+        [/^(WBA|WBS|WBX|WBY|4US|5UX)/, 'BMW'],
+        [/^(WDD|WDB|WDC|4JG|55S)/, 'Mercedes-Benz'],
+        [/^(VF3|VR3)/, 'Peugeot'],
+        [/^(VF1|VF6|VF8)/, 'Renault'],
+        [/^(W0L|WOL)/, 'Opel'],
+        [/^(TMB)/, 'Skoda'],
+        [/^(YV1|YV4)/, 'Volvo'],
+        [/^(JM1|JM3)/, 'Mazda'],
+        [/^(JF1|JF2)/, 'Subaru'],
+        [/^(JA|4A)/, 'Mitsubishi'],
+        [/^(1F|2F|3F)/, 'Ford'],
+        [/^(1G|2G|3G|KL)/, 'Chevrolet'],
+        [/^(SAL|SAD)/, 'Land Rover'],
+        [/^(WP0|WP1)/, 'Porsche'],
+        [/^(5YJ|7SA|LRW)/, 'Tesla'],
+        [/^(LGB|LC0|LGX)/, 'Geely'],
+        [/^(LVT|LVV)/, 'Chery'],
+        [/^(LGW)/, 'Haval'],
+        [/^(LS5)/, 'Changan'],
+        [/^(LGX|LC0)/, 'BYD']
+    ];
 
     function esc(value) {
         return String(value ?? '').replace(/[&<>"']/g, ch => ({
@@ -749,22 +778,71 @@ window.addEventListener('click', function(event) {
         status.textContent = message || '';
     }
 
+    function cachedVinKey(vin) {
+        return `expo_mir_vin_${vin}`;
+    }
+
+    function readCachedVin(vin) {
+        try {
+            const raw = localStorage.getItem(cachedVinKey(vin));
+            if (!raw) return null;
+            const cached = JSON.parse(raw);
+            if (!cached?.decoded || Date.now() - cached.savedAt > 7 * 24 * 60 * 60 * 1000) return null;
+            return cached.decoded;
+        } catch (_) {
+            return null;
+        }
+    }
+
+    function writeCachedVin(decoded) {
+        try {
+            localStorage.setItem(cachedVinKey(decoded.vin), JSON.stringify({ savedAt: Date.now(), decoded }));
+        } catch (_) {}
+    }
+
+    function fallbackVinDecode(vin) {
+        const match = WMI_BRAND_FALLBACK.find(([pattern]) => pattern.test(vin));
+        if (!match) return null;
+        return {
+            vin,
+            make: match[1],
+            model: '',
+            year: '',
+            body: '',
+            engine: '',
+            displacement: '',
+            fuel: '',
+            plantCountry: '',
+            source: 'WMI fallback',
+            raw: {}
+        };
+    }
+
     async function decodeVin(vin) {
         const cleanVin = normalizeVin(vin);
         if (cleanVin.length !== 17) {
             throw new Error('VIN должен содержать 17 символов без I, O и Q');
         }
+        const cached = readCachedVin(cleanVin);
+        if (cached) return cached;
         const url = `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/${encodeURIComponent(cleanVin)}?format=json`;
         const response = await fetch(url, { cache: 'no-store' });
-        if (!response.ok) throw new Error('Сервис VIN временно недоступен');
+        if (!response.ok) {
+            const fallback = fallbackVinDecode(cleanVin);
+            if (fallback) return fallback;
+            throw new Error('Сервис VIN временно недоступен');
+        }
         const data = await response.json();
         const row = data?.Results?.[0] || {};
         const errorCode = String(row.ErrorCode || '').trim();
-        if (errorCode && errorCode !== '0') {
+        const hasUsefulData = Boolean(row.Make || row.Model || row.ModelYear);
+        if (errorCode && errorCode !== '0' && !hasUsefulData) {
+            const fallback = fallbackVinDecode(cleanVin);
+            if (fallback) return fallback;
             const message = row.ErrorText || 'VIN не удалось расшифровать';
             throw new Error(message);
         }
-        return {
+        const decoded = {
             vin: cleanVin,
             make: row.Make || '',
             model: row.Model || '',
@@ -774,8 +852,12 @@ window.addEventListener('click', function(event) {
             displacement: row.DisplacementL || '',
             fuel: row.FuelTypePrimary || '',
             plantCountry: row.PlantCountry || '',
+            source: errorCode === '0' ? 'NHTSA vPIC' : 'NHTSA vPIC partial',
+            warning: errorCode && errorCode !== '0' ? row.ErrorText || '' : '',
             raw: row
         };
+        writeCachedVin(decoded);
+        return decoded;
     }
 
     function findBrandByVinMake(make) {
@@ -811,7 +893,8 @@ window.addEventListener('click', function(event) {
         if ($('partsOrderVin')) $('partsOrderVin').value = decoded.vin;
 
         if (!brand || !model) {
-            if (showStatus) setVinStatus(`VIN распознан: ${summary}. Модель не найдена в локальном каталоге, заявку можно отправить по VIN.`, 'ok');
+            const suffix = decoded.warning ? ` Предупреждение: ${decoded.warning}` : '';
+            if (showStatus) setVinStatus(`VIN распознан: ${summary || decoded.make || decoded.vin}. Модель не найдена в локальном каталоге, заявку можно отправить по VIN.${suffix}`, 'ok');
             return false;
         }
 
@@ -830,7 +913,7 @@ window.addEventListener('click', function(event) {
         if (yearSelect && decoded.year) yearSelect.value = decoded.year;
 
         showPartsForSelection({ scroll });
-        if (showStatus) setVinStatus(`VIN распознан: ${summary}. Подбор переключён на ${brand.name} ${model.name}.`, 'ok');
+        if (showStatus) setVinStatus(`VIN распознан: ${summary}. Подбор переключён на ${brand.name} ${model.name}.${decoded.warning ? ' Есть предупреждение vPIC, VIN проверим вручную.' : ''}`, 'ok');
         return true;
     }
 
