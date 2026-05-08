@@ -353,6 +353,27 @@ def slug(value: str) -> str:
     return "".join(ch.lower() if ch.isalnum() else "-" for ch in value).strip("-").replace("--", "-")
 
 
+def generation_ranges(years: list[int]) -> list[dict]:
+    """Coarse generation/restyling buckets until licensed applicability is loaded."""
+    sorted_years = sorted(years, reverse=True)
+    buckets = [(2026, 2021), (2020, 2016), (2015, 2010)]
+    generations = []
+    for start, end in buckets:
+        bucket_years = [year for year in sorted_years if end <= year <= start]
+        if not bucket_years:
+            continue
+        generations.append({
+            "slug": f"{max(bucket_years)}-{min(bucket_years)}",
+            "label": f"{min(bucket_years)}-{max(bucket_years)}",
+            "years_from": min(bucket_years),
+            "years_to": max(bucket_years),
+            "years": bucket_years,
+            "precision": "coarse_generation",
+            "note": "Условный диапазон поколения/рестайлинга до загрузки лицензированной применяемости по VIN.",
+        })
+    return generations
+
+
 def build_number(brand: str, model: str, code: str, idx: int) -> str:
     prefix = BRAND_PREFIX.get(brand, brand[:2].upper())
     model_code = "".join(ch for ch in model.upper() if ch.isalnum())[:4].ljust(4, "X")
@@ -370,15 +391,17 @@ def main() -> None:
             "models": [],
         }
         for model in models:
+            years = list(range(2026, 2009, -1))
             brand_entry["models"].append({
                 "name": model,
                 "slug": slug(model),
-                "years": list(range(2026, 2009, -1)),
+                "years": years,
+                "generations": generation_ranges(years),
             })
         brands.append(brand_entry)
 
     data = {
-        "source_note": "Локальная витрина подбора EXPO MIR. Номера являются каталожными позициями для заявки; финальный OEM/аналог подтверждается по VIN.",
+        "source_note": "Локальная витрина подбора EXPO MIR. Точные OEM зависят от VIN, года, рестайлинга, двигателя и рынка. Широкие справочные номера показываются только как кандидаты до проверки по VIN.",
         "last_updated": "2026-05-02",
         "parts_template": [
             {"category": category, "group": group, "name": name, "code": code, "quantity": qty}

@@ -14,6 +14,7 @@ import import_to_supabase as cfg  # noqa: E402
 
 
 INTERNAL_RE = re.compile(r"^[A-Z]{2}-[A-Z0-9]{4}-[A-Z0-9]+-")
+GENERATED_FILTER = "?or=(description.like.%D0%97%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D1%8C*,description.like.OEM-%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82*)"
 
 
 def supabase_headers(extra=None):
@@ -39,11 +40,10 @@ def count_parts(query=""):
 def fetch_generated_sample(limit=5000):
     params = {
         "select": "oem_number,brand,category,description",
-        "description": "like.Запчасть*",
         "limit": str(limit),
     }
     resp = requests.get(
-        f"{cfg.SUPABASE_URL}/rest/v1/parts",
+        f"{cfg.SUPABASE_URL}/rest/v1/parts{GENERATED_FILTER}",
         headers=supabase_headers(),
         params=params,
         timeout=60,
@@ -75,7 +75,7 @@ def audit_csv(path=ROOT / "generated_parts_catalog.csv"):
 def main():
     print("Supabase parts audit")
     print(f"total_parts={count_parts()}")
-    print(f"generated_parts={count_parts('?description=like.%D0%97%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D1%8C*')}")
+    print(f"generated_parts={count_parts(GENERATED_FILTER)}")
     sample = fetch_generated_sample()
     bad = [row for row in sample if INTERNAL_RE.match(row.get("oem_number") or "")]
     empty = [row for row in sample if not (row.get("oem_number") or "").strip()]

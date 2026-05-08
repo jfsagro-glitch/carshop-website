@@ -888,7 +888,7 @@
     <script>
         // Загрузка данных каталога запчастей
         // Expose promise globally so parts-orders.js can reuse the same fetch
-        window._partsCatalogPromise = fetch('data/parts_catalog.json?v=20260507-vin-logos', { cache: 'no-store' })
+        window._partsCatalogPromise = fetch('data/parts_catalog.json?v=20260507-applicability', { cache: 'no-store' })
             .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
 
         (async function() {
@@ -1239,7 +1239,7 @@
             </div>
         </div>
     </div>
-    <script src="parts-orders.js?v=20260507-vin-logos"></script>
+    <script src="parts-orders.js?v=20260507-applicability"></script>
     <script src="header.js?v=20260505"></script>
 </body>
 </html>

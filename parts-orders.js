@@ -659,6 +659,7 @@ window.addEventListener('click', function(event) {
         brand: null,
         model: null,
         year: '',
+        generation: null,
         engine: null,
         parts: [],
         selectedPart: null,
@@ -755,16 +756,44 @@ window.addEventListener('click', function(event) {
         }[ch]));
     }
 
+    function currentGeneration() {
+        const year = Number(state.year || 0);
+        const generations = state.model?.generations || [];
+        if (!year || !generations.length) return null;
+        return generations.find(gen => year >= Number(gen.years_from) && year <= Number(gen.years_to)) || null;
+    }
+
     function pickOriginalOem(part) {
         const prefix = state.brand?.prefix || String(state.brand?.name || 'EX').slice(0, 2).toUpperCase();
         const options = state.catalog?.oem_lookup?.[prefix]?.[part.code] || [];
-        if (!options.length) return null;
-        const seed = String(state.model?.slug || state.model?.name || part.code);
+        if (!options.length) {
+            return {
+                exact: null,
+                candidates: [],
+                precision: 'missing',
+                message: 'Нет проверенного OEM в базе. Подтвердим по VIN.'
+            };
+        }
+        const generation = currentGeneration();
+        const seed = [
+            state.model?.slug || state.model?.name || '',
+            generation?.slug || '',
+            state.year || '',
+            state.engine?.slug || '',
+            part.code
+        ].join('|');
         let hash = 0;
         for (let i = 0; i < seed.length; i += 1) {
             hash = ((hash << 5) - hash + seed.charCodeAt(i)) | 0;
         }
-        return options[Math.abs(hash) % options.length];
+        const first = Math.abs(hash) % options.length;
+        const candidates = [...options.slice(first), ...options.slice(0, first)].slice(0, 4);
+        return {
+            exact: null,
+            candidates,
+            precision: 'brand_code_only',
+            message: 'Возможные OEM из справочника марки. Точный номер зависит от года, рестайлинга, двигателя и VIN.'
+        };
     }
 
     function normalizeVin(value) {
@@ -902,6 +931,7 @@ window.addEventListener('click', function(event) {
         state.model = model;
         state.year = decoded.year || '';
         state.engine = null;
+        state.generation = null;
 
         const brandSelect = $('partsBrandSelect');
         const modelSelect = $('partsModelSelect');
@@ -911,6 +941,7 @@ window.addEventListener('click', function(event) {
         if (modelSelect) modelSelect.value = model.slug;
         fillYearSelect();
         if (yearSelect && decoded.year) yearSelect.value = decoded.year;
+        updateGenerationFromYear();
 
         showPartsForSelection({ scroll });
         if (showStatus) setVinStatus(`VIN распознан: ${summary}. Подбор переключён на ${brand.name} ${model.name}.${decoded.warning ? ' Есть предупреждение vPIC, VIN проверим вручную.' : ''}`, 'ok');
@@ -953,6 +984,7 @@ window.addEventListener('click', function(event) {
         if (Array.isArray(state.model?.parts) && state.model.parts.length) return state.model.parts;
         const template = state.catalog?.parts_template || [];
         const fuel = state.engine?.fuel || null;
+        const generation = currentGeneration();
         return template
             .filter(part => {
                 if (!fuel) return true;
@@ -962,12 +994,16 @@ window.addEventListener('click', function(event) {
                 return !DIESEL_ONLY_PARTS.has(part.name);
             })
             .map(part => {
-                const number = pickOriginalOem(part);
+                const oem = pickOriginalOem(part);
+                const candidateText = oem.candidates.length ? oem.candidates.join(', ') : 'Нет кандидатов в базе';
                 return {
                     ...part,
-                    number: number || 'OEM по VIN',
-                    analog_numbers: number ? [] : ['Точный оригинальный номер подтвердим по VIN'],
-                    note: 'Применимость и точный OEM подтверждаем по VIN перед заказом.'
+                    number: 'OEM по VIN',
+                    oem_candidates: oem.candidates,
+                    analog_numbers: [candidateText],
+                    applicability_precision: oem.precision,
+                    generation_label: generation?.label || '',
+                    note: oem.message
                 };
             });
     }
@@ -982,7 +1018,7 @@ window.addEventListener('click', function(event) {
             // Reuse the catalog promise started by the inline script to avoid a second 437KB download
             state.catalog = window._partsCatalogPromise
                 ? await window._partsCatalogPromise
-                : await fetch('data/parts_catalog.json?v=20260507-vin-logos', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+                : await fetch('data/parts_catalog.json?v=20260507-applicability', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
             fillBrandSelect();
             updateStatsFromLocalCatalog();
             if (state.pendingSelection) {
@@ -1013,16 +1049,20 @@ window.addEventListener('click', function(event) {
         modelSelect.addEventListener('change', () => {
             state.model = state.brand?.models.find(model => model.slug === modelSelect.value) || null;
             state.engine = null;
+            state.generation = null;
             fillYearSelect();
         });
 
         $('partsYearSelect')?.addEventListener('change', event => {
             state.year = event.target.value;
+            updateGenerationFromYear();
+            if (state.parts?.length) showPartsForSelection({ scroll: false });
         });
 
         $('partsEngineSelect')?.addEventListener('change', event => {
             const slug = event.target.value;
             state.engine = state.model?.engines?.find(e => e.slug === slug) || null;
+            if (state.parts?.length) showPartsForSelection({ scroll: false });
         });
 
         showBtn.addEventListener('click', () => {
@@ -1059,6 +1099,7 @@ window.addEventListener('click', function(event) {
         state.model = firstBrand.models[0] || null;
         state.engine = null;
         state.year = '';
+        state.generation = null;
 
         const brandSelect = $('partsBrandSelect');
         if (brandSelect) brandSelect.value = firstBrand.slug;
@@ -1110,7 +1151,20 @@ window.addEventListener('click', function(event) {
         yearSelect.innerHTML += state.model.years
             .map(year => `<option value="${year}">${year}</option>`)
             .join('');
+        updateGenerationFromYear();
         fillEngineSelect();
+    }
+
+    function updateGenerationFromYear() {
+        state.generation = currentGeneration();
+        const yearSelect = $('partsYearSelect');
+        if (!yearSelect || !state.model) return;
+        [...yearSelect.options].forEach(option => {
+            if (!option.value) return;
+            const year = Number(option.value);
+            const gen = (state.model.generations || []).find(item => year >= Number(item.years_from) && year <= Number(item.years_to));
+            option.textContent = gen ? `${year} · ${gen.label}` : String(year);
+        });
     }
 
     function fillEngineSelect() {
@@ -1155,7 +1209,8 @@ window.addEventListener('click', function(event) {
         if (panel) panel.style.display = 'block';
         if (title) {
             const engineLabel = state.engine ? ` · ${state.engine.label}` : '';
-            title.textContent = `${state.brand.name} ${state.model.name}${state.year ? ' ' + state.year : ''}${engineLabel}: доступные запчасти`;
+            const generationLabel = currentGeneration()?.label ? ` · поколение/рестайлинг ${currentGeneration().label}` : '';
+            title.textContent = `${state.brand.name} ${state.model.name}${state.year ? ' ' + state.year : ''}${generationLabel}${engineLabel}: доступные запчасти`;
         }
         fillCategorySelect();
         renderParts();
@@ -1201,8 +1256,10 @@ window.addEventListener('click', function(event) {
                 <div class="parts-item-meta">
                     <span class="parts-chip">${esc(part.category)}</span>
                     <span class="parts-chip parts-chip--muted">${esc(part.group)}</span>
+                    ${part.generation_label ? `<span class="parts-chip parts-chip--muted">${esc(part.generation_label)}</span>` : ''}
                 </div>
-                <span class="parts-analog" title="${esc((part.analog_numbers || []).join(', '))}">Аналоги: ${esc((part.analog_numbers || []).slice(0, 2).join(', '))}</span>
+                <span class="parts-analog" title="${esc(part.note || '')}">${esc(part.note || 'Точный OEM подтверждаем по VIN')}</span>
+                <span class="parts-analog" title="${esc((part.oem_candidates || []).join(', '))}">Кандидаты: ${esc((part.oem_candidates || []).slice(0, 3).join(', ') || 'по VIN')}</span>
                 <div class="parts-card-actions">
                     <button class="btn-primary parts-cart-only" type="button" data-part-index="${index}" title="Заказать" aria-label="Заказать ${esc(part.name)}"><i class="fas fa-shopping-cart" aria-hidden="true"></i></button>
                 </div>
@@ -1233,7 +1290,9 @@ window.addEventListener('click', function(event) {
         if (state.vinDecoded?.vin) $('partsOrderVin').value = state.vinDecoded.vin;
         $('partsOrderClient').value = '';
         $('partsOrderPhone').value = '';
-        $('partsOrderComment').value = '';
+        $('partsOrderComment').value = part.oem_candidates?.length
+            ? `Возможные OEM-кандидаты: ${part.oem_candidates.join(', ')}. Нужна проверка по VIN.`
+            : '';
         const status = $('partsOrderStatus');
         if (status) status.style.display = 'none';
         const modal = $('partsOrderModal');
@@ -1293,6 +1352,8 @@ window.addEventListener('click', function(event) {
                     vehicle: $('partsOrderVehicle').value,
                     part: $('partsOrderName').value,
                     oem: $('partsOrderNumber').value,
+                    oemCandidates: state.selectedPart?.oem_candidates || [],
+                    applicabilityPrecision: state.selectedPart?.applicability_precision || null,
                     vin: $('partsOrderVin').value.trim() || null,
                     vinDecoded: state.vinDecoded || null,
                     qty: $('partsOrderQty').value

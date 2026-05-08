@@ -1488,6 +1488,22 @@ def main():
             if mname in brand_engines:
                 model["engines"] = brand_engines[mname]
                 models_updated += 1
+            years = sorted(model.get("years", []), reverse=True)
+            if years and not model.get("generations"):
+                generations = []
+                for start, end in ((2026, 2021), (2020, 2016), (2015, 2010)):
+                    bucket = [year for year in years if end <= year <= start]
+                    if bucket:
+                        generations.append({
+                            "slug": f"{max(bucket)}-{min(bucket)}",
+                            "label": f"{min(bucket)}-{max(bucket)}",
+                            "years_from": min(bucket),
+                            "years_to": max(bucket),
+                            "years": bucket,
+                            "precision": "coarse_generation",
+                            "note": "Условный диапазон поколения/рестайлинга до загрузки лицензированной применяемости по VIN.",
+                        })
+                model["generations"] = generations
 
     # Add fuel_filter metadata to parts_template
     for part in cat["parts_template"]:

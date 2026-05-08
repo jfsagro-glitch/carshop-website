@@ -12,6 +12,7 @@ import sys
 import os
 import argparse
 import hashlib
+import time
 import requests
 from pathlib import Path
 
@@ -3697,7 +3698,8 @@ def make_oem(prefix: str, model_slug: str, part_code: str, year: int, lookup: di
     if key in lookup:
         options = lookup[key]
         # Deterministic pick based on model slug so the same model always gets the same number
-        idx = int(hashlib.md5(model_slug.encode()).hexdigest(), 16) % len(options)
+        seed = f"{model_slug}|{year}|{part_code}"
+        idx = int(hashlib.md5(seed.encode()).hexdigest(), 16) % len(options)
         return options[idx]
     return None
 
@@ -3731,59 +3733,65 @@ def generate_records(catalog: dict, limit: int | None = None) -> list[dict]:
             mname = model["name"]
             mslug = model["slug"]
             years = sorted(model.get("years", []))
-            year_range = f"{min(years)}-{max(years)}" if years else ""
-            # Limit years to recent 5 to avoid explosion
-            recent_years = years[:5] if years else [2020]
+            generations = model.get("generations") or [{
+                "label": f"{min(years)}-{max(years)}" if years else "",
+                "years_from": min(years) if years else None,
+                "years_to": max(years) if years else None,
+                "years": years or [2020],
+            }]
             compatible = compatible_cars_str(bname, model)
 
             engines = model.get("engines", [])
 
-            for part in catalog["parts_template"]:
-                # Skip electric parts for non-electric engines (if noted)
-                not_for = part.get("not_for", [])
-                if engines and not_for:
-                    all_fuels = {e.get("fuel","") for e in engines}
-                    if "Электро" in not_for and all_fuels == {"Электро"}:
+            for generation in generations:
+                gen_years = sorted(generation.get("years") or years)
+                year_range = generation.get("label") or (f"{min(gen_years)}-{max(gen_years)}" if gen_years else "")
+                seed_year = max(gen_years) if gen_years else 2020
+
+                for part in catalog["parts_template"]:
+                    # Skip electric parts for non-electric engines (if noted)
+                    not_for = part.get("not_for", [])
+                    if engines and not_for:
+                        all_fuels = {e.get("fuel","") for e in engines}
+                        if "Электро" in not_for and all_fuels == {"Электро"}:
+                            continue
+
+                    category = part.get("group", part.get("category", "Прочее"))
+                    name = f"{part['name']} {bname} {mname}"
+                    if year_range:
+                        name += f" ({year_range})"
+
+                    oem = make_oem(prefix, f"{mslug}-{year_range}", part["code"], seed_year, oem_lookup)
+                    if not oem:
                         continue
 
-                category = part.get("group", part.get("category", "Прочее"))
-                name = f"{part['name']} {bname} {mname}"
-                if year_range:
-                    name += f" ({year_range})"
+                    price_usd, price_kgs = price_for(category, bname)
 
-                # Use first recent year for OEM seed
-                seed_year = recent_years[0] if recent_years else 2020
-                oem = make_oem(prefix, mslug, part["code"], seed_year, oem_lookup)
-                if not oem:
-                    continue
+                    # stock: some in stock, some on order
+                    stock = random.choices([0, 0, 0, 1, 2, 3, 5], weights=[30,15,10,15,10,10,10])[0]
 
-                price_usd, price_kgs = price_for(category, bname)
+                    records.append({
+                        "oem_number": oem,
+                        "name": name,
+                        "name_ru": name,
+                        "brand": bname,
+                        "category": category,
+                        "models": [f"{bname} {mname}"],
+                        "years_from": min(gen_years) if gen_years else None,
+                        "years_to": max(gen_years) if gen_years else None,
+                        "price_usd": price_usd,
+                        "price_kgs": price_kgs,
+                        "stock_qty": stock,
+                        "is_available": stock > 0,
+                        "images": [],
+                        "description": (
+                            f"OEM-кандидат {part['name']} для {bname} {mname} {year_range}. "
+                            f"Категория: {category}. Номер требует проверки по VIN/году/двигателю: {oem}."
+                        ),
+                    })
 
-                # stock: some in stock, some on order
-                stock = random.choices([0, 0, 0, 1, 2, 3, 5], weights=[30,15,10,15,10,10,10])[0]
-
-                records.append({
-                    "oem_number": oem,
-                    "name": name,
-                    "name_ru": name,
-                    "brand": bname,
-                    "category": category,
-                    "models": [f"{bname} {mname}"],
-                    "years_from": min(years) if years else None,
-                    "years_to": max(years) if years else None,
-                    "price_usd": price_usd,
-                    "price_kgs": price_kgs,
-                    "stock_qty": stock,
-                    "is_available": stock > 0,
-                    "images": [],
-                    "description": (
-                        f"Запчасть {part['name']} для {bname} {mname}. "
-                        f"Категория: {category}. OEM: {oem}."
-                    ),
-                })
-
-                if limit and len(records) >= limit:
-                    return records
+                    if limit and len(records) >= limit:
+                        return records
 
     return records
 
@@ -3796,9 +3804,10 @@ def delete_generated_parts() -> None:
         "Authorization": f"Bearer {SUPABASE_SERVICE_KEY}",
         "Prefer": "return=minimal",
     }
-    url = f"{SUPABASE_URL}/rest/v1/parts?description=like.%D0%97%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D1%8C*"
-    resp = requests.delete(url, headers=headers, timeout=60)
-    resp.raise_for_status()
+    for pattern in ("%D0%97%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D1%8C*", "OEM-%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82*"):
+        url = f"{SUPABASE_URL}/rest/v1/parts?description=like.{pattern}"
+        resp = requests.delete(url, headers=headers, timeout=60)
+        resp.raise_for_status()
     print("Deleted previous generated parts rows")
 
 
@@ -3818,13 +3827,27 @@ def import_to_supabase(records: list[dict], batch_size: int = 200) -> tuple[int,
     ok = err = 0
     for i in range(0, len(records), batch_size):
         batch = records[i : i + batch_size]
-        resp = requests.post(url, json=batch, headers=headers)
-        if resp.status_code in (200, 201):
-            ok += len(batch)
-            print(f"  Imported batch {i//batch_size + 1}: {len(batch)} records OK")
-        else:
-            err += len(batch)
-            print(f"  Batch {i//batch_size + 1} ERROR {resp.status_code}: {resp.text[:200]}")
+        batch_no = i // batch_size + 1
+        for attempt in range(1, 5):
+            try:
+                resp = requests.post(url, json=batch, headers=headers, timeout=90)
+                if resp.status_code in (200, 201):
+                    ok += len(batch)
+                    print(f"  Imported batch {batch_no}: {len(batch)} records OK")
+                    break
+                if attempt == 4:
+                    err += len(batch)
+                    print(f"  Batch {batch_no} ERROR {resp.status_code}: {resp.text[:200]}")
+                else:
+                    print(f"  Retry batch {batch_no}: HTTP {resp.status_code}")
+                    time.sleep(attempt * 2)
+            except requests.RequestException as exc:
+                if attempt == 4:
+                    err += len(batch)
+                    print(f"  Batch {batch_no} ERROR {exc}")
+                else:
+                    print(f"  Retry batch {batch_no}: {exc}")
+                    time.sleep(attempt * 2)
     return ok, err
 
 def save_csv(records: list[dict], path: str):
