@@ -1074,6 +1074,7 @@ window.addEventListener('click', function(event) {
         });
 
         $('partsSearchInput')?.addEventListener('input', renderParts);
+        $('partsGroupSelect')?.addEventListener('change', renderParts);
         $('partsCategorySelect')?.addEventListener('change', renderParts);
         $('partsVinInput')?.addEventListener('input', event => {
             event.target.value = normalizeVin(event.target.value);
@@ -1212,9 +1213,21 @@ window.addEventListener('click', function(event) {
             const generationLabel = currentGeneration()?.label ? ` · поколение/рестайлинг ${currentGeneration().label}` : '';
             title.textContent = `${state.brand.name} ${state.model.name}${state.year ? ' ' + state.year : ''}${generationLabel}${engineLabel}: доступные запчасти`;
         }
+        fillGroupSelect();
         fillCategorySelect();
         renderParts();
         if (shouldScroll) panel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function fillGroupSelect() {
+        const select = $('partsGroupSelect');
+        if (!select) return;
+        const groups = [...new Set(state.parts.map(part => part.group))]
+            .filter(Boolean)
+            .sort((a, b) => a.localeCompare(b, 'ru'));
+        select.innerHTML = '<option value="">Все группы</option>' + groups
+            .map(group => `<option value="${esc(group)}">${esc(group)}</option>`)
+            .join('');
     }
 
     function fillCategorySelect() {
@@ -1230,8 +1243,10 @@ window.addEventListener('click', function(event) {
         const grid = $('partsGrid');
         if (!grid) return;
         const query = ($('partsSearchInput')?.value || '').trim().toLowerCase();
+        const group = $('partsGroupSelect')?.value || '';
         const category = $('partsCategorySelect')?.value || '';
         let list = state.parts;
+        if (group) list = list.filter(part => part.group === group);
         if (category) list = list.filter(part => part.category === category);
         if (query) {
             list = list.filter(part => [

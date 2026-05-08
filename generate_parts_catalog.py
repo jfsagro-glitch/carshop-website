@@ -14,6 +14,7 @@ import argparse
 import hashlib
 import time
 import requests
+from datetime import datetime, timezone
 from pathlib import Path
 
 # ─── Config ───────────────────────────────────────────────────────────────────
@@ -3655,6 +3656,7 @@ OEM_LOOKUP: dict[tuple[str, str], list[str]] = {
 }
 
 OEM_OVERRIDES_PATH = Path("data/oem_lookup_overrides.json")
+STRICT_REAL_ONLY = os.environ.get("OEM_STRICT_REAL_ONLY", "1").strip().lower() not in ("0", "false", "no")
 
 
 def load_oem_lookup_overrides(path: Path = OEM_OVERRIDES_PATH) -> dict[tuple[str, str], list[str]]:
@@ -3681,14 +3683,128 @@ def load_oem_lookup_overrides(path: Path = OEM_OVERRIDES_PATH) -> dict[tuple[str
 
 
 def get_merged_oem_lookup() -> dict[tuple[str, str], list[str]]:
-    """Base OEM map plus verified local overrides."""
+    """Merge OEM maps with optional strict mode (real-only, no synthetic overrides)."""
     merged = {key: list(values) for key, values in OEM_LOOKUP.items()}
-    for key, values in load_oem_lookup_overrides().items():
-        bucket = merged.setdefault(key, [])
-        for value in values:
-            if value not in bucket:
-                bucket.append(value)
+    
+    # Load real OEM catalog (priority over generated numbers)
+    try:
+        real_catalog = json.load(open("data/extended_oem_catalog.json", encoding="utf-8"))
+        for brand_prefix, codes in real_catalog.items():
+            for part_code, numbers in codes.items():
+                if isinstance(numbers, list):
+                    key = (brand_prefix, part_code)
+                    # Real catalog takes priority - replace generated numbers
+                    merged[key] = numbers
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+    
+    # Load VIN-indexed OEM database (highest priority when available)
+    try:
+        vin_db = json.load(open("data/real_vin_oem_database.json", encoding="utf-8"))
+        for spec_key, parts_dict in vin_db.items():
+            # Extract brand prefix from spec (format: "Brand|Model|Year|Engine")
+            parts = spec_key.split("|")
+            if len(parts) >= 1:
+                brand = parts[0]
+                # Map brand name to prefix
+                brand_map = {
+                    "Toyota": "TY", "BMW": "BM", "Mercedes-Benz": "MB",
+                    "Volkswagen": "VW", "Honda": "HO", "Ford": "FO",
+                    "Hyundai": "HY", "Nissan": "NI", "Audi": "AU"
+                }
+                prefix = brand_map.get(brand, brand[:2].upper())
+                for part_code, oem_nums in parts_dict.items():
+                    if isinstance(oem_nums, list):
+                        key = (prefix, part_code)
+                        # VIN data takes priority - it's verified per specification
+                        if key not in merged or not merged[key]:
+                            merged[key] = oem_nums
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+
+    # Load previously exported VIN mapping (string-key format: Brand|Model|Year|Engine).
+    try:
+        vin_map = json.load(open("data/vin_oem_mapping.json", encoding="utf-8"))
+        engine_oem = vin_map.get("engine_oem", {})
+        brand_map = {
+            "Toyota": "TY", "BMW": "BM", "Mercedes-Benz": "MB",
+            "Volkswagen": "VW", "Honda": "HO", "Ford": "FO",
+            "Hyundai": "HY", "Nissan": "NI", "Audi": "AU",
+        }
+        for spec_key, parts_dict in engine_oem.items():
+            if not isinstance(parts_dict, dict):
+                continue
+            brand = str(spec_key).split("|")[0]
+            prefix = brand_map.get(brand, brand[:2].upper())
+            for part_code, oem_nums in parts_dict.items():
+                if isinstance(oem_nums, list) and oem_nums:
+                    merged[(prefix, str(part_code).upper())] = [str(x).strip() for x in oem_nums if str(x).strip()]
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+    
+    # In strict mode skip overrides that may contain generated values.
+    if not STRICT_REAL_ONLY:
+        for key, values in load_oem_lookup_overrides().items():
+            bucket = merged.setdefault(key, [])
+            for value in values:
+                if value not in bucket:
+                    bucket.append(value)
+    
     return merged
+
+
+def save_hierarchy(catalog: dict, oem_lookup: dict[tuple[str, str], list[str]], path: str = "data/parts_catalog_hierarchy.json") -> None:
+    """Build hierarchical catalog grouped for convenient navigation."""
+    groups: dict[str, dict[str, list[dict]]] = {}
+    for part in catalog.get("parts_template", []):
+        grp = part.get("group", "Прочее")
+        cat = part.get("category", "Прочее")
+        groups.setdefault(grp, {}).setdefault(cat, []).append({
+            "code": part.get("code"),
+            "name": part.get("name"),
+            "quantity": part.get("quantity", 1),
+        })
+
+    group_rows = []
+    for grp, cats in sorted(groups.items(), key=lambda x: x[0]):
+        cat_rows = []
+        for cat, parts in sorted(cats.items(), key=lambda x: x[0]):
+            cat_rows.append({"category": cat, "parts": sorted(parts, key=lambda x: str(x["name"]))})
+        group_rows.append({"group": grp, "categories": cat_rows})
+
+    brand_rows = []
+    for brand in sorted(catalog.get("brands", []), key=lambda b: b.get("name", "")):
+        prefix = brand.get("prefix", brand.get("name", "")[:2].upper())
+        models = []
+        for model in sorted(brand.get("models", []), key=lambda m: m.get("name", "")):
+            years = sorted(model.get("years", []))
+            engines = [e.get("name") for e in model.get("engines", []) if isinstance(e, dict) and e.get("name")]
+            models.append({
+                "slug": model.get("slug"),
+                "name": model.get("name"),
+                "years": years,
+                "engines": engines,
+                "generations": model.get("generations", []),
+            })
+        covered_codes = sum(1 for p in catalog.get("parts_template", []) if (prefix, p.get("code")) in oem_lookup)
+        brand_rows.append({
+            "prefix": prefix,
+            "brand": brand.get("name"),
+            "models": models,
+            "oem_covered_codes": covered_codes,
+            "oem_total_codes": len(catalog.get("parts_template", [])),
+        })
+
+    output = {
+        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "strict_real_only": STRICT_REAL_ONLY,
+        "parts_groups": group_rows,
+        "brands": brand_rows,
+    }
+    out = Path(path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Saved hierarchy to {path}")
 
 
 def make_oem(prefix: str, model_slug: str, part_code: str, year: int, lookup: dict[tuple[str, str], list[str]] | None = None) -> str | None:
@@ -3873,6 +3989,8 @@ def main():
     print("Generating records...")
     records = generate_records(catalog, limit=args.limit)
     print(f"Generated {len(records)} records")
+
+    save_hierarchy(catalog, get_merged_oem_lookup())
 
     save_csv(records, args.output)
 
