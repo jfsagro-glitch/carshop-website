@@ -23,10 +23,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//formsubmit.co">
-    <link rel="preload" href="styles.css?v=20260508-telegram-fix" as="style">
-    <link rel="preload" href="premium-enhancements.css?v=20260508-telegram-fix" as="style">
-    <link rel="stylesheet" href="styles.css?v=20260508-telegram-fix">
-    <link rel="stylesheet" href="premium-enhancements.css?v=20260508-telegram-fix">
+    <link rel="preload" href="styles.css?v=20260508-main-market" as="style">
+    <link rel="preload" href="premium-enhancements.css?v=20260508-main-market" as="style">
+    <link rel="stylesheet" href="styles.css?v=20260508-main-market">
+    <link rel="stylesheet" href="premium-enhancements.css?v=20260508-main-market">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -136,15 +136,34 @@
         </div>
     </div>
 
+    <!-- Market Offers Monitor -->
+    <section class="telegram-offers-section" id="telegram-offers">
+        <div class="container">
+            <div class="telegram-offers-head">
+                <div>
+                    <h1 class="section-title">Актуальные предложения для заказа</h1>
+                    <p class="section-subtitle">Ежедневный мониторинг Telegram-каналов США, Европы и Грузии плюс проходные кандидаты Copart USA и Германия. В карточках сразу видны год, двигатель, мощность, пробег, цена и фото.</p>
+                </div>
+                <a href="https://t.me/expo_mir" class="btn-hero-primary telegram-offers-head__btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-telegram-plane"></i> Наш канал
+                </a>
+            </div>
+            <div class="telegram-offers-meta" id="telegramOffersMeta">Загружаем свежую подборку…</div>
+            <div class="telegram-offers-grid" id="telegramOffersGrid">
+                <div class="usa-empty-state">Загружаем предложения из Telegram…</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
     <section class="site-hero">
         <div class="container">
             <div class="site-hero__content">
                 <div class="site-hero__text">
-                    <h1 class="site-hero__title">Автомобили из-за рубежа<br><span class="site-hero__accent">без предоплаты</span></h1>
+                    <h2 class="site-hero__title">Автомобили из-за рубежа<br><span class="site-hero__accent">без предоплаты</span></h2>
                     <p class="site-hero__subtitle">Грузия, США, Корея, Китай, Европа — выкупаем за свои деньги, доставляем и растаможиваем за 3–5 дней</p>
                     <div class="site-hero__actions">
-                        <a href="georgia-catalog.html" class="btn-hero-primary">Смотреть каталог Грузия</a>
+                        <a href="#catalogs" class="btn-hero-primary">Выбрать направление</a>
                         <a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" class="btn-hero-whatsapp"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
                     </div>
                 </div>
@@ -155,7 +174,7 @@
                     </div>
                     <div class="hero-stat">
                         <span class="hero-stat__num">3–5</span>
-                        <span class="hero-stat__label">Дней доставки</span>
+                        <span class="hero-stat__label">Дней доставки из Грузии</span>
                     </div>
                     <div class="hero-stat">
                         <span class="hero-stat__num" data-count="5" data-suffix="">5</span>
@@ -163,28 +182,9 @@
                     </div>
                     <div class="hero-stat">
                         <span class="hero-stat__num">0₽</span>
-                        <span class="hero-stat__label">Предоплата</span>
+                        <span class="hero-stat__label">Предоплата по авто в наличии</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Telegram Offers Monitor -->
-    <section class="telegram-offers-section" id="telegram-offers">
-        <div class="container">
-            <div class="telegram-offers-head">
-                <div>
-                    <h2 class="section-title">Актуальные предложения из Telegram</h2>
-                    <p class="section-subtitle">Мониторинг каналов США, Грузии, Европы и премиум-сегмента. Проверим VIN, бюджет под ключ и реальную выгоду перед заказом.</p>
-                </div>
-                <a href="https://t.me/expo_mir" class="btn-hero-primary telegram-offers-head__btn" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-telegram-plane"></i> Наш канал
-                </a>
-            </div>
-            <div class="telegram-offers-meta" id="telegramOffersMeta">Загружаем свежую подборку…</div>
-            <div class="telegram-offers-grid" id="telegramOffersGrid">
-                <div class="usa-empty-state">Загружаем предложения из Telegram…</div>
             </div>
         </div>
     </section>
@@ -664,7 +664,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=20260508-telegram-fix"></script>
+    <script src="script.js?v=20260508-main-market"></script>
     <script src="header.js"></script>
     <script>
     (function() {

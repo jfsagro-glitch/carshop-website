@@ -2334,23 +2334,37 @@ async function loadTelegramOffersSection() {
     const meta = document.getElementById('telegramOffersMeta');
     if (!grid) return;
     try {
-        const response = await fetch('data/telegram_top_offers.json?v=20260508-telegram-details', { cache: 'no-store' });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const payload = await response.json();
-        const offers = Array.isArray(payload.offers) ? payload.offers : [];
+        const [telegramResult, auctionResult] = await Promise.allSettled([
+            fetch('data/telegram_top_offers.json?v=20260508-main-market', { cache: 'no-store' }),
+            fetch('data/featured_auction_offers.json?v=20260508-main-market', { cache: 'no-store' })
+        ]);
+        const telegramResponse = telegramResult.status === 'fulfilled' ? telegramResult.value : null;
+        const auctionResponse = auctionResult.status === 'fulfilled' ? auctionResult.value : null;
+        if (!telegramResponse?.ok && !auctionResponse?.ok) throw new Error('No market feeds available');
+        const payload = telegramResponse?.ok ? await telegramResponse.json() : {};
+        const auctionPayload = auctionResponse?.ok ? await auctionResponse.json() : {};
+        const telegramOffers = Array.isArray(payload.offers) ? payload.offers : [];
+        const auctionOffers = Array.isArray(auctionPayload.offers) ? auctionPayload.offers.map(item => ({
+            ...item,
+            source_type: 'auction_candidate',
+            facts: ['аукционный кандидат', ...(item.facts || [])]
+        })) : [];
+        const offers = [...telegramOffers, ...auctionOffers].slice(0, 12);
         if (meta) {
             const dt = payload.generated_at ? new Date(payload.generated_at).toLocaleString('ru-RU') : '';
-            meta.textContent = `Подборка обновлена: ${dt}. Источников: ${payload.source_count || 0}, постов обработано: ${payload.parsed_posts || 0}.`;
+            meta.textContent = `Telegram обновлён: ${dt || 'сегодня'}. Источников: ${payload.source_count || 0}, постов обработано: ${payload.parsed_posts || 0}. Дополнительно: проходные кандидаты Copart USA и Германия.`;
         }
         if (!offers.length) {
-            grid.innerHTML = '<div class="usa-empty-state">Пока нет подходящих Telegram-предложений</div>';
+            grid.innerHTML = '<div class="usa-empty-state">Пока нет подходящих предложений</div>';
             return;
         }
         grid.innerHTML = offers.map((offer, index) => {
             const images = Array.isArray(offer.images) && offer.images.length ? offer.images : [offer.image || telegramFallbackImage(offer.title)];
             const details = offer.details || {};
             const facts = (offer.facts || []).slice(0, 3).map(fact => `<span class="telegram-offer-card__chip">${escapeHtml(fact)}</span>`).join('');
-            const msg = encodeURIComponent(`Интересует авто из Telegram-подборки: ${offer.title}. Источник: ${offer.source}. Ориентир: ${offer.price || 'уточнить'}`);
+            const sourceLabel = offer.source_type === 'auction_candidate' ? 'Источник' : 'Пост';
+            const sourceIcon = offer.source_type === 'auction_candidate' ? 'fas fa-arrow-up-right-from-square' : 'fab fa-telegram-plane';
+            const msg = encodeURIComponent(`Интересует авто из главной подборки: ${offer.title}. Источник: ${offer.source}. Ориентир: ${offer.price || 'уточнить'}`);
             const specs = [
                 ['Год', offer.year || 'уточняется'],
                 ['Двигатель', details.engine || 'уточняется'],
@@ -2384,7 +2398,7 @@ async function loadTelegramOffersSection() {
                         <div class="telegram-offer-card__facts">${facts}</div>
                         <p class="telegram-offer-card__text">${escapeHtml(offer.text_excerpt || '').slice(0, 140)}…</p>
                         <div class="telegram-offer-card__actions">
-                            <a href="${escapeHtml(offer.source_url)}" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i> Пост</a>
+                            <a href="${escapeHtml(offer.source_url)}" target="_blank" rel="noopener noreferrer"><i class="${sourceIcon}"></i> ${sourceLabel}</a>
                             <a href="https://wa.me/996755666805?text=${msg}" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Заказать</a>
                         </div>
                     </div>

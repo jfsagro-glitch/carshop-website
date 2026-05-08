@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'expo-mir-pwa-v4-telegram-fix';
+const CACHE_VERSION = 'expo-mir-pwa-v5-main-market';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -19,6 +19,8 @@ const APP_SHELL = [
   '/site.webmanifest',
   '/cars_europe_new.json',
   '/cars_georgia_stock.json',
+  '/data/telegram_top_offers.json',
+  '/data/featured_auction_offers.json',
   '/images/android-chrome-192x192.png',
   '/images/android-chrome-512x512.png',
   '/images/apple-touch-icon.png',
