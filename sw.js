@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'expo-mir-pwa-v3';
+const CACHE_VERSION = 'expo-mir-pwa-v4-telegram-fix';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -51,6 +51,20 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+
+  if (['/script.js', '/styles.css', '/premium-enhancements.css'].includes(url.pathname)) {
+    event.respondWith(
+      fetch(request, { cache: 'no-store' })
+        .then(response => {
+          const cacheKey = new Request(url.pathname);
+          const copy = response.clone();
+          caches.open(CACHE_VERSION).then(cache => cache.put(cacheKey, copy));
+          return response;
+        })
+        .catch(() => caches.match(new Request(url.pathname)))
+    );
+    return;
+  }
 
   if (request.mode === 'navigate') {
     event.respondWith(
