@@ -131,17 +131,20 @@ jobs:
       - name: Validate public catalogs
         run: python car_parser.py --validate-catalogs
 
+      - name: Parse Telegram offer monitor
+        run: python tools/parse_telegram_offers.py --limit 10 --posts-per-channel 14 || true
+
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet cars_georgia_stock.json cars_europe_new.json || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet cars_georgia_stock.json cars_europe_new.json data/telegram_top_offers.json data/telegram_top_posts.md || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cars_georgia_stock.json cars_europe_new.json
+          git add cars_georgia_stock.json cars_europe_new.json data/telegram_top_offers.json data/telegram_top_posts.md
           git commit -m "auto: sync car catalogs [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push
 

@@ -3278,6 +3278,127 @@ textarea {
     box-shadow: 0 12px 36px rgba(0,0,0,0.4);
 }
 .country-card:hover::before { opacity: 1; }
+
+/* ======================================================
+   TELEGRAM OFFERS MONITOR
+   ====================================================== */
+.telegram-offers-section {
+    padding: 64px 0;
+    background: #0b1220;
+}
+.telegram-offers-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.telegram-offers-head .section-title,
+.telegram-offers-head .section-subtitle {
+    text-align: left;
+}
+.telegram-offers-head__btn { white-space: nowrap; }
+.telegram-offers-meta {
+    color: #94a3b8;
+    font-size: .9rem;
+    margin-bottom: 1.25rem;
+}
+.telegram-offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+.telegram-offer-card {
+    background: #111c2e;
+    border: 1px solid rgba(212, 175, 55, .22);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.telegram-offer-card__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #050914;
+    object-fit: cover;
+    display: block;
+}
+.telegram-offer-card__body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+    flex: 1;
+}
+.telegram-offer-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+.telegram-offer-card__source,
+.telegram-offer-card__region {
+    color: #d4af37;
+    font-size: .78rem;
+    font-weight: 700;
+}
+.telegram-offer-card__title {
+    color: #fff;
+    font-size: 1.08rem;
+    line-height: 1.25;
+    margin: 0;
+}
+.telegram-offer-card__facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+}
+.telegram-offer-card__chip {
+    border: 1px solid rgba(148, 163, 184, .28);
+    border-radius: 999px;
+    color: #cbd5e1;
+    font-size: .74rem;
+    padding: .25rem .55rem;
+}
+.telegram-offer-card__price {
+    color: #facc15;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+.telegram-offer-card__text {
+    color: #aab6c7;
+    font-size: .86rem;
+    line-height: 1.45;
+}
+.telegram-offer-card__actions {
+    display: flex;
+    gap: .5rem;
+    margin-top: auto;
+}
+.telegram-offer-card__actions a,
+.telegram-offer-card__actions button {
+    flex: 1;
+    min-height: 38px;
+    border-radius: 7px;
+    border: 1px solid rgba(212, 175, 55, .35);
+    background: rgba(212, 175, 55, .12);
+    color: #f8fafc;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem;
+    text-decoration: none;
+    font-size: .85rem;
+}
+@media (max-width: 700px) {
+    .telegram-offers-head {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
 .country-card__icon {
     width: 56px;
     height: 56px;

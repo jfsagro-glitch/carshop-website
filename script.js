@@ -626,6 +626,10 @@ function initializeApp() {
     if (document.getElementById('koreaUnder160Grid') || document.getElementById('koreaOrdersGrid')) {
         loadKoreaOrdersSection();
     }
+
+    if (document.getElementById('telegramOffersGrid')) {
+        loadTelegramOffersSection();
+    }
     
     // Обработчики свайпа для всех галерей (делегирование)
     document.addEventListener('touchstart', onTouchStart, { passive: true });
@@ -2311,6 +2315,64 @@ function loadKoreaOrdersSection(){
                 koreaOrdersGrid.innerHTML = '<div class="usa-empty-state">Ошибка загрузки данных</div>';
             }
         }
+    }
+}
+
+function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, ch => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[ch]));
+}
+
+function telegramFallbackImage(title) {
+    const label = encodeURIComponent(title || 'EXPO MIR');
+    return `https://placehold.co/800x600/0b1220/d4af37?text=${label}`;
+}
+
+async function loadTelegramOffersSection() {
+    const grid = document.getElementById('telegramOffersGrid');
+    const meta = document.getElementById('telegramOffersMeta');
+    if (!grid) return;
+    try {
+        const response = await fetch('data/telegram_top_offers.json?v=20260508', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const payload = await response.json();
+        const offers = Array.isArray(payload.offers) ? payload.offers : [];
+        if (meta) {
+            const dt = payload.generated_at ? new Date(payload.generated_at).toLocaleString('ru-RU') : '';
+            meta.textContent = `Подборка обновлена: ${dt}. Источников: ${payload.source_count || 0}, постов обработано: ${payload.parsed_posts || 0}.`;
+        }
+        if (!offers.length) {
+            grid.innerHTML = '<div class="usa-empty-state">Пока нет подходящих Telegram-предложений</div>';
+            return;
+        }
+        grid.innerHTML = offers.map((offer, index) => {
+            const image = offer.image || telegramFallbackImage(offer.title);
+            const facts = (offer.facts || []).slice(0, 3).map(fact => `<span class="telegram-offer-card__chip">${escapeHtml(fact)}</span>`).join('');
+            const msg = encodeURIComponent(`Интересует авто из Telegram-подборки: ${offer.title}. Источник: ${offer.source}. Ориентир: ${offer.price || 'уточнить'}`);
+            return `
+                <article class="telegram-offer-card">
+                    <img class="telegram-offer-card__image" src="${escapeHtml(image)}" alt="${escapeHtml(offer.title)}" loading="${index < 2 ? 'eager' : 'lazy'}" onerror="this.src='${telegramFallbackImage('EXPO MIR')}'">
+                    <div class="telegram-offer-card__body">
+                        <div class="telegram-offer-card__top">
+                            <span class="telegram-offer-card__source">${escapeHtml(offer.source)}</span>
+                            <span class="telegram-offer-card__region">${escapeHtml(offer.region || '')}</span>
+                        </div>
+                        <h3 class="telegram-offer-card__title">${escapeHtml(offer.title)}</h3>
+                        <div class="telegram-offer-card__price">${escapeHtml(offer.price || 'Цена по запросу')}</div>
+                        <div class="telegram-offer-card__facts">${facts}</div>
+                        <p class="telegram-offer-card__text">${escapeHtml(offer.text_excerpt || '').slice(0, 180)}…</p>
+                        <div class="telegram-offer-card__actions">
+                            <a href="${escapeHtml(offer.source_url)}" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i> Пост</a>
+                            <a href="https://wa.me/996755666805?text=${msg}" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Заказать</a>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }).join('');
+    } catch (error) {
+        if (meta) meta.textContent = 'Не удалось загрузить Telegram-подборку';
+        grid.innerHTML = '<div class="usa-empty-state">Ошибка загрузки Telegram-предложений</div>';
     }
 }
 
