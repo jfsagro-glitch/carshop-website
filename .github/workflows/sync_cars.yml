@@ -132,7 +132,7 @@ jobs:
         run: python car_parser.py --validate-catalogs
 
       - name: Parse Telegram offer monitor
-        run: python tools/parse_telegram_offers.py --limit 10 --posts-per-channel 14 || true
+        run: python tools/parse_telegram_offers.py --limit 10 --posts-per-channel 50 || true
 
       - name: Check for changes
         id: check_changes

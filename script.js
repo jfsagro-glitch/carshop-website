@@ -2334,7 +2334,7 @@ async function loadTelegramOffersSection() {
     const meta = document.getElementById('telegramOffersMeta');
     if (!grid) return;
     try {
-        const response = await fetch('data/telegram_top_offers.json?v=20260508', { cache: 'no-store' });
+        const response = await fetch('data/telegram_top_offers.json?v=20260508-telegram-details', { cache: 'no-store' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const payload = await response.json();
         const offers = Array.isArray(payload.offers) ? payload.offers : [];
@@ -2347,12 +2347,32 @@ async function loadTelegramOffersSection() {
             return;
         }
         grid.innerHTML = offers.map((offer, index) => {
-            const image = offer.image || telegramFallbackImage(offer.title);
+            const images = Array.isArray(offer.images) && offer.images.length ? offer.images : [offer.image || telegramFallbackImage(offer.title)];
+            const details = offer.details || {};
             const facts = (offer.facts || []).slice(0, 3).map(fact => `<span class="telegram-offer-card__chip">${escapeHtml(fact)}</span>`).join('');
             const msg = encodeURIComponent(`Интересует авто из Telegram-подборки: ${offer.title}. Источник: ${offer.source}. Ориентир: ${offer.price || 'уточнить'}`);
+            const specs = [
+                ['Год', offer.year || 'уточняется'],
+                ['Двигатель', details.engine || 'уточняется'],
+                ['Мощность', details.power || 'уточняется'],
+                ['Пробег', details.mileage || 'уточняется']
+            ].map(([label, value]) => `
+                <div class="telegram-offer-card__spec">
+                    <span>${label}</span>
+                    <b>${escapeHtml(value)}</b>
+                </div>
+            `).join('');
+            const galleryNav = images.length > 1 ? `
+                <button type="button" class="telegram-offer-card__nav telegram-offer-card__nav--prev" data-offer-index="${index}" data-gallery-dir="-1" aria-label="Предыдущее фото"><i class="fas fa-chevron-left"></i></button>
+                <button type="button" class="telegram-offer-card__nav telegram-offer-card__nav--next" data-offer-index="${index}" data-gallery-dir="1" aria-label="Следующее фото"><i class="fas fa-chevron-right"></i></button>
+                <span class="telegram-offer-card__counter" data-gallery-counter="${index}">1 / ${images.length}</span>
+            ` : '';
             return `
-                <article class="telegram-offer-card">
-                    <img class="telegram-offer-card__image" src="${escapeHtml(image)}" alt="${escapeHtml(offer.title)}" loading="${index < 2 ? 'eager' : 'lazy'}" onerror="this.src='${telegramFallbackImage('EXPO MIR')}'">
+                <article class="telegram-offer-card" data-gallery-images="${escapeHtml(JSON.stringify(images))}" data-gallery-active="0">
+                    <div class="telegram-offer-card__gallery">
+                        <img class="telegram-offer-card__image" data-gallery-image="${index}" src="${escapeHtml(images[0])}" alt="${escapeHtml(offer.title)}" loading="${index < 2 ? 'eager' : 'lazy'}" onerror="this.src='${telegramFallbackImage('EXPO MIR')}'">
+                        ${galleryNav}
+                    </div>
                     <div class="telegram-offer-card__body">
                         <div class="telegram-offer-card__top">
                             <span class="telegram-offer-card__source">${escapeHtml(offer.source)}</span>
@@ -2360,8 +2380,9 @@ async function loadTelegramOffersSection() {
                         </div>
                         <h3 class="telegram-offer-card__title">${escapeHtml(offer.title)}</h3>
                         <div class="telegram-offer-card__price">${escapeHtml(offer.price || 'Цена по запросу')}</div>
+                        <div class="telegram-offer-card__specs">${specs}</div>
                         <div class="telegram-offer-card__facts">${facts}</div>
-                        <p class="telegram-offer-card__text">${escapeHtml(offer.text_excerpt || '').slice(0, 180)}…</p>
+                        <p class="telegram-offer-card__text">${escapeHtml(offer.text_excerpt || '').slice(0, 140)}…</p>
                         <div class="telegram-offer-card__actions">
                             <a href="${escapeHtml(offer.source_url)}" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i> Пост</a>
                             <a href="https://wa.me/996755666805?text=${msg}" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Заказать</a>
@@ -2370,6 +2391,40 @@ async function loadTelegramOffersSection() {
                 </article>
             `;
         }).join('');
+        grid.querySelectorAll('[data-gallery-dir]').forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.telegram-offer-card');
+                if (!card) return;
+                let images = [];
+                try {
+                    images = JSON.parse(card.dataset.galleryImages || '[]');
+                } catch {
+                    images = [];
+                }
+                if (images.length < 2) return;
+                const dir = Number(button.dataset.galleryDir || 1);
+                const nextIndex = (Number(card.dataset.galleryActive || 0) + dir + images.length) % images.length;
+                card.dataset.galleryActive = String(nextIndex);
+                const img = card.querySelector('.telegram-offer-card__image');
+                const counter = card.querySelector('.telegram-offer-card__counter');
+                if (img) img.src = images[nextIndex];
+                if (counter) counter.textContent = `${nextIndex + 1} / ${images.length}`;
+            });
+        });
+        grid.querySelectorAll('.telegram-offer-card__gallery').forEach(gallery => {
+            let startX = 0;
+            gallery.addEventListener('touchstart', event => {
+                startX = event.changedTouches[0]?.clientX || 0;
+            }, { passive: true });
+            gallery.addEventListener('touchend', event => {
+                const endX = event.changedTouches[0]?.clientX || 0;
+                const delta = endX - startX;
+                if (Math.abs(delta) < 38) return;
+                const card = gallery.closest('.telegram-offer-card');
+                const selector = delta < 0 ? '[data-gallery-dir="1"]' : '[data-gallery-dir="-1"]';
+                card?.querySelector(selector)?.click();
+            }, { passive: true });
+        });
     } catch (error) {
         if (meta) meta.textContent = 'Не удалось загрузить Telegram-подборку';
         grid.innerHTML = '<div class="usa-empty-state">Ошибка загрузки Telegram-предложений</div>';

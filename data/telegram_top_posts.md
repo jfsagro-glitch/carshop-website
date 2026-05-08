@@ -1,172 +1,17 @@
 # Telegram top offers
 
-Generated: 2026-05-08T09:07:59Z
+Generated: 2026-05-08T13:56:30Z
 
-## 1. Arteon — @VitoDriveGE
-
-🔥 Arteon
-
-📍 Направление: Грузия / Корея / США
-📅 Год: 2022
-💰 Ориентир: 3.770.000 руб
-• указан пробег
-• есть расчёт под ключ/логистика
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @VitoDriveGE
-
-Фото: https://cdn4.telesco.pe/file/BF9CYMod34rxQNKR0FekezDh6uSpAPd9jlF-US3kA6ZRQ4__P5u0_kROG1rMW2Hhf-cOggXUYL87TEXrnjMI10On4pHHIjduxusp4a229Ratth1pm-NcQeU1_dBD6hwIuc03hERChAksUbxX5CN27GebSx0uf_l6z9peeUrqujGlZ4pW8HRxqRwuMc09xWXladH6yWxv4Emw2q40eyYtmyOqJnPtXeaQPJyfmDpum94luNNFpsyltRKGVC339zLuVGtcrHGCqq6BT3veclbVLY4Ln4JiLP-KFKrxCT2q913QwvJVwYAQlbhgJOUb5bwL_9DQd52QBHZOW2KGQlvAvw.jpg
-
-## 2. Mercedes — @BogdanVdeleMSK
-
-🔥 Mercedes
-
-📍 Направление: Премиум
-📅 Год: 2025
-💰 Ориентир: 11 990 000 руб
-• указан пробег
-• есть расчёт под ключ/логистика
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @BogdanVdeleMSK
-
-Фото: https://cdn4.telesco.pe/file/Xj2dgyuuSkP9WF857CXthJ4pE1gphmmho51HwGolWT-1DNN9ncZLSd81K7pVKXk2a9tZ3_UqhCx1Ypgx3keQQUdXiShY_EaqG5nXEpGaq7kfO4lM3t-ASopYSxyoSNzGicDb5OQfIEo0Bw1dW0rOHHCgfGx21AdLhfRBR0VieGtQXdt4LycL-NzIp9Jua7rTCNlTAQyEJ67_fiT_UwVli53iwCTMZ5Szj6BkIxdTOhH5P1h0e7i_BAeVdL8axnI2V-nVHy7UdDU-rtIkmlcaLAIUObQ6tzjNzGFD6Y9CtdKkViChopx9GqGPvFa4pxQ-XlzDG3mtlCwQ1iujqbGrKQ.jpg
-
-## 3. Hyundai Accent — @AutopodborGeo
-
-🔥 Hyundai Accent
-
-📍 Направление: Грузия
-📅 Год: 2023
-💰 Ориентир: цену уточним по запросу
-• есть VIN/данные для проверки
-• указан пробег
-• есть расчёт под ключ/логистика
-• актуально для рынка Грузии
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @AutopodborGeo
-
-Фото: https://cdn4.telesco.pe/file/poMKu_G86GqwYDIvm1ZhfjTUhnKe418_0Pr9iTm98PoQ-MBJxKVuUzdZiJcWGU2OCDmGhgYDsOp0XB1l9TIGMunp2v6Y28J2ZiTWS6eAEjeNkzQXCLeNoPShKNpaFJuXq6b7QiMbzClY479_nS8ynKcLWI8cGRwFYusWso1ozEDGwPEcf5af-ApIPQl91nOOs-JwU00uLMmWlC9jmu7YVW5cKeKDzAJunnyxgijbTY7njAvGIb1GsOdHu8ExsVuh1-u6Zzqz0r2fPgkp5KDqleT1wGdi_dgByfhVVcZkcwN-FsvZ-A2VtIe-D0xTQ8wDUKTFg0RK5ya62FT65lXvlw
-
-## 4. Prius — @AutopodborGeo
-
-🔥 Prius
-
-📍 Направление: Грузия
-📅 Год: 2026
-💰 Ориентир: 1 050 000 ₽
-• есть VIN/данные для проверки
-• есть расчёт под ключ/логистика
-• аукционный лот США
-• актуально для рынка Грузии
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @AutopodborGeo
-
-Фото: -
-
-## 5. MITSUBISHI ECLIPSE — @AutopodborGeo
-
-🔥 MITSUBISHI ECLIPSE
-
-📍 Направление: Грузия
-📅 Год: 2023
-💰 Ориентир: $11,940
-• есть расчёт под ключ/логистика
-• аукционный лот США
-• актуально для рынка Грузии
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @AutopodborGeo
-
-Фото: -
-
-## 6. RAM 1500 — @VitoDriveGE
-
-🔥 RAM 1500
-
-📍 Направление: Грузия / Корея / США
-📅 Год: 2024
-💰 Ориентир: 7 000 000 руб
-• указан пробег
-• есть расчёт под ключ/логистика
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @VitoDriveGE
-
-Фото: https://cdn4.telesco.pe/file/BYgsvg6CVXhocWUHW99Q3k9pIBovl5wA2HuGV2Z3noCwLz8i-A1CoTMD8VTSABMFO8ZSCGhl3XqgWrvNSMts0siqLt_EhHcklNXySZP90XCtP0gsizsx6v5_cgZeaxMJLEpc6kZgsqRx6cFV6bV5PDt9DIaoU7qTUy8VFiCJn1NE0iegsArmW3_9kIVneMmagnTCwqDTvAhX3jM1sxCOAlRbIT3hBeo6VqLEZZlk9XX0eU2Cz33iAIZiaYr3hsLf2ieV44E-sijM7wlgyLRsNpfhI-6Vb1nn3ByI9O42JkM6ASxHYxEvTul1LRg9ZygFgCH37UK4oUpjNCV1p2k6CA.jpg
-
-## 7. Golf 280TSI — @BogdanVdeleMSK
-
-🔥 Golf 280TSI
-
-📍 Направление: Премиум
-📅 Год: 2023
-💰 Ориентир: 2 400 000 руб
-• указан пробег
-• есть расчёт под ключ/логистика
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @BogdanVdeleMSK
-
-Фото: https://cdn4.telesco.pe/file/XxQNitc3M4U8b7OOz9SVzysaJbv8VY_2wtHfCp9OK7xJ7SKTQ8x9MJofvEOyidCA6CT_xmhOGE7-YSkLWNqrw5Pkg0LJtCiC6jdIGWeoW_3Uu5t-t0PdtJO1eBVOAcT1K1fA0g-CPAh6YifQw0zxXzJD7CahRP8gAeUIaEUZMnS6I-cmDxwqy2Uw2hQ5lPxKbwg_zKrI7KbY_v_YuVfCjQTW9TPwJ31UKoIDoQMFo-iWxbsd3ZBUkubTztnSw8DT7BlQrJa4px_aQSMdvUM90OE34KGloIqfvJgPzJ6Q5uktySdSRakSlrxflnYvBjEd1FcypRl6faaIAn-dnmvJxg.jpg
-
-## 8. Rolls-Royce Cullinan — @BogdanVdeleMSK
-
-🔥 Rolls-Royce Cullinan
-
-📍 Направление: Премиум
-📅 Год: 2025
-💰 Ориентир: 54 500 000 руб
-• указан пробег
-• есть расчёт под ключ/логистика
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @BogdanVdeleMSK
-
-Фото: https://cdn4.telesco.pe/file/hIu0DfrymycVOC8DSNT2JZm966i6ru8AoWcZ3m8uX1frjIFImD-5jPNHqoBxohIeRARWgrpDyw40uVWIQ5pqJYLaQauuOX3JZSUMt8rsxQMQJn5gfW_rOpwoRIrtFcna_QZ8oQaSv-4HOMLG3WpUZH1pXn8U7U_kLsbBoMfMuWa0v4uwoal10FCSGY7tlpQR3djP0wUiP6IKB-_DjhzL_uBhaYsEq6GZvHej1y130baruDThf815uYqFmh3jsuwLDF05MuGSuYh6MkNSpHDcpchcy0V9vcHUSPYOIwNMOIRw1qJaw4ln4lkoUSArPHn_6G9x4cmtX_yO2vWgwGsBqA.jpg
-
-## 9. Audi RS — @BogdanVdeleMSK
-
-🔥 Audi RS
-
-📍 Направление: Премиум
-📅 Год: 2025
-💰 Ориентир: 17 100 000 руб
-• указан пробег
-• есть расчёт под ключ/логистика
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @BogdanVdeleMSK
-
-Фото: https://cdn4.telesco.pe/file/X6Ss2Z_x1gmzysnTh2PNbkovFlpELyBtQKzVhhIMUyWmZTvH4fjq5icyLxqPqARyft1A4hQoLpI4i7yChUBe8tjUIuWiFKU-AuQxSFbtHP_T6oIGUHPPh5gov3_RmdzktYxpmiED4yt7E4aNNR3Lmg9syFDq_gzTMabOGZOFdzoc-_5_lh_JrkN0lEJ0MW-6AW7oDZYhy_pvJ5BgY94E_Vdzz4cVLgprRd7yVB9vl3SE4lxj8G6CdEq1J8j_7m4SIg4ROptjxdfnZ-R1lLNs73Mlt8oFH-cUaNhjOl_j8GrwNkb5jrSNtYPYxu78l09tz8inti3WXVnWwCX-futMRA.jpg
-
-## 10. Volkswagen — @autodeskusa
+## 1. Volkswagen — @autodeskusa
 
 🔥 Volkswagen
 
 📍 Направление: США / Европа / Грузия
-📅 Год: 2026
+📅 Год: 2021
 💰 Ориентир: 3 500 000 руб
+⚙️ Двигатель: 2.0 дизель
+🐎 Мощность: 150-200 л.с.
+🛣️ Пробег: 65300 км
 • указан пробег
 • есть расчёт под ключ/логистика
 
@@ -175,4 +20,90 @@ Generated: 2026-05-08T09:07:59Z
 📲 Напишите менеджеру: https://wa.me/996755666805
 Источник мониторинга: @autodeskusa
 
-Фото: https://cdn4.telesco.pe/file/i6aeGyM2icHN6ExA1cj8VY48O3nkmloOW9TzHDNwzjcTmeVRX6MzzZ2aS6eH_krUJwP5LWXpfUTa9TkNZcKwU0kR0CHytUYz1F3_J-qR7qyzoxwSOb_WFTngShqVkjU6Elw6lsfA_McblqiNTsj6qAjxnc62LBB0rEdM5TYjjfrctXISFNDmyo5gVp6_S6-kfxXjdOVRge87P6e4lk2pS-C4Lqxf1EYk89sDInk8UtiBdm6aKeKlhIH8DVwFm13zdgBS3z822IOag0iDEG8DvgdIeAEc_A30Qd2IYaG0yJ2_eOwpDoMSgz2xwDi-eWexkOpuGNyIW7xYomti1dGQsw.jpg
+Фото:
+- https://cdn4.telesco.pe/file/PwKAABdwhlZstllfe36olf9PvkJvWjxZZ5QLIB_X_13wMr-ZoLgpB-18iqu5ddY8GapXfOb7b2z_aPMOLp9vWaUx0-Qy6LVImbgem_64swTChlPqxMx3G0snSB8IbCJXIhKc_DsjapxtiXIP1bG40j0Sihi8lf29QDG4BujLwwCC2664eMfHZ4FITydAUGCqKNS4dA_cK_wIwpelcuxq0-s0IHNji5nzihv25dSTn673YOK4Z4cKobgG-qXaItrcZDfbG8Sef0BfaVmldKXuOdpgcELVQu2lw0_LhZuv8CLIqiRKPKE4ICIAOT2NCAvwgcg-uTT6f4SJahpxgdqjNQ.jpg
+- https://cdn4.telesco.pe/file/rVQuu57shwfwoyWLrSLk_Plt4-_LEDAypAW_qmQGq2A7m18YbaGdX6vKOD0NYwagk-Yefb_wGJodnPECf8YCOOX966DjYAqzCYJGda9TrViGafaG2B_YIV2ysRdD6AbkRi7ls5ZRW8t1NQrtuOg0i_Q3TmR9BBxPI0nnurKrK-PJwTnu0-p6yXYdZe0C55ecE4_1fcTCDLd2UTJUQ9AvRf_d9_Z3E4oFsQjppJfqzB-WywDWqR8TNU_b6BwSHvbULJ37R7RW7qjzK3QZOh4intGN3K5gzvLbKSb7loCtJluATF3oy3lccGumlm_oqLG_tYB1B4xevv6ymY5EjuukdQ.jpg
+- https://cdn4.telesco.pe/file/FpZLl3-cJie3FUQ77n4eWCx5WFv3XcvIVfeN1ve7-xWzz50BuqgFKLGxZELgINuFOUXGIdjUK0cBvaNptAp7HGP6x31SB3-N6MTFzaQdLIn6zuz1JWv9OMpTNKR7QoUKCn6oaCe0aIBoHC-dR-oeSowHjwsb8rleD9jWBDzD-xSesWgiMEzc3xjUpcC-luEzqU5BZGtrgtl3h9DNL9BosZMuFTpkwiKzagK9n5T7Z5wGc3LVkSe2NpUVR_JwXXK1RQt0PlMKiGbjAQ-Imna_qk-Ei5SsaPgu-cLWWhBlK-9eHsg29bgYKQjO5MnXHGzueUJGvpxzH46_5MboQWf0DA.jpg
+- https://cdn4.telesco.pe/file/b7utPrj2hqLvyAL5wXrf79uz97LhoTL5fvCKSMiG_M09rD6ddvqERczBX4jcuGX52lN0BAZDD2655sjhBoIiLltfv5qJXmypa9RjrCVB5mxhaa8_x333TmWzs4VFoqNNvl3poxJT3l3BoTibx_pVQulNZJstfSs8Rb_uPO2rwMb0fLEQZw1g3wH6rjqJJFYCSb-Wyktay-Fg5NkxCuMv1Wrq3dY_sSKRB3L4JvQcz401oBrJnR1ucnuhqqCzNDQ9eIt0K03mw74EufZCmqGXQydqPN_P4xkY7Cdav2KJgWuFpAGTQbPqAo1Vbbise1_Vn_VuUPciZB1GbSKSYABiYQ.jpg
+- https://cdn4.telesco.pe/file/fhggNYtibQNJM6QiziMIOvUCu_FDfxwxJzGs82-rI-oEfd80Mx82C9EeC8YqlvP5LTaEkmcIUB3NCY1yv9c0NY6Zc1ZLhh6EcWBL2kCSZn_LFZAObNVsUqnnEgnbKi7wmUjggqzco-4Qsiye-5wamKFH7CYkiF6BdQv_C-2q-axfdwCGkDFig49YZcTJBwv5rNlDoQNdjQbO7q-u-yEekzyy8viUVu1dCTnone1yKhG9VdlPg-7tZBWBW-kaP6jv7Wz7Kk6KwxrT5GclhZk5eQ7xuTeLAmXCgC19rdHvHboofXUooCPEshXlB8UgTLLBQMiaUWefY86nmQgzBjkY7g.jpg
+- https://cdn4.telesco.pe/file/rwgqbNanCJ6tdDntIwBlAd_OZsg907Z2u_RKtD6Pf93NvTl0jrD4QMD8lX_qdv_5b9KORrh59tF4i4VQGyjOyrryHsD-HNPyVoMW2bvAjq6Z05M-adJqQgizDjAOxDexVaWevN5GRK-NbBLA7WByThA-wLmgpj5RDS4mZ_r-7WtzEsJwTuCmGLjqMUPvgq7q8B3o1FnQnEo3ZFzEqJCCZ7U-nmwnfMSDpqJoZwCY7BKizjhyX6hfY1flUue7HPfqtuy4OwMBVNjOdib7e5Eg2RZYS1VniRvxZ0HuYvXgIWOoRKzJofZPt8cThSKndMtFa62flz6firTCNIm_KZ_ibw.jpg
+- https://cdn4.telesco.pe/file/bXCXdBJy77X83g-OKRTaoQadHcM11teLWWQvrzWVzSNW3bO3s8HADzghlJHdr89oNkuCGTRiWqPUDproAdnxqDgifmtTy5fwqYjilMbqNMgsOBlchadA3y7ND9tYSV_XEDmbqK9FW3o58D3fWI61P_H6UmOPrmnj0OKYXt-60Gsh1D0JhHCJHpdTF-knh8M-qKjPNZRmswlTiZboLbheEL7aW3FkoluAQJgrNRW9C_PCeGI6CaGTuouj18X25pXWShhC3bt0p-3OOg4kXw-al9wHkJvbQxpfadUiVuzsmHVvr4TJrVufepkpkSy81Aw9Eg_vat0ARr_BAG_63QZiug.jpg
+- https://cdn4.telesco.pe/file/pbUZ16bwdX0HGLnyLhrcwUCq9Knxus_FMMiclFZ6_5yqebIFcTc73iOvplnMF2mnmuoczaY-kh5WzT584NaJ5UlB2WLH5wMuHAOizihljsU_NbaZe6jGJ1sHzMdSrTZBv4zbn9P4hK5ZuoI1S-Ge_nv-oEE2BipE1w5rlRD-L1e0hMETk3mzcPskLjaL08n6aFSB7iTjzJUCuuLI0fO9AXd0TcUJaMzoOhs0doG4x4YM5GrwlmkasF3IAAYxRYPhESUaPVELcFKmD5wDe9QgnNvDlGyyriL9NDIqW59vAt0bJcKDB6TWgs2DR4ApoqeIKAjBTk7vV3UXxzXx9lX4rg.jpg
+
+## 2. Audi A4 — @auto4export
+
+🔥 Audi A4
+
+📍 Направление: США / экспорт
+📅 Год: 2017
+💰 Ориентир: 17 600$
+⚙️ Двигатель: 2.0
+🐎 Мощность: 252 л.с.
+🛣️ Пробег: 105,420 mi
+• указан пробег
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/996755666805
+Источник мониторинга: @auto4export
+
+Фото:
+- https://cdn4.telesco.pe/file/Nryznhp2L0I3GpvFZ8nsdy3MvnAmBXuM-GAVUWEhSVrRDqSNHKa2oBjGJ6xOa3Q3QfVgtkJLAPL5yQ2ZAPu469OSO8MKsiqUBZeonh3nZomVHpbS83naVDHC9GfDbIkFTg9EphMxQ1a4pXc5G-XrzbL1UkjqjbSDr27U46gM0r1Gf6GFKhBpWemlpxxT5mvMv5GE2fvIQpOOUVK6H7puedJLMdvUfwNBR37QszaApef3-1_-aRSgKCC4gyn3aU_Q-habGHjOwSvaceZJzvpF3qzpt63Nufh1I8LWevxSb7m70PFIm5L_TAj8BjJmp2C9aiBBrJRgY4RFe1bMnllu7Q.jpg
+- https://cdn4.telesco.pe/file/k9zFmONJQCbmW-ilNjbUC65yEHGdXeTwpbNTXp1kbsCrew2kP2__RqSmC2KysptSq1-i8sBsuta8bZJz7Wyl7pQuhhHc15GPPErBv1AxIMo0mezhdLz7rXgb-JcjTleVUTVQ6rBTcRQSkuvxLAMPfZFcZ881B11uvPhm2m7Og39zkgDDCaqxMYzNeu4VY4WB2QilBo1Cnc9AlunsJjW85ExyjX6anZCGzpHfl2YQLUpy8CsJNs2PeZMFs-y4l3JoeDSxjB99X4M39KXG5SkPBs9H8fVzNbcs3LDMhuiF2pffpN1Qy9raRKmIbR_vUicdZNQp1G0KLVkn7u0mOHOliQ.jpg
+- https://cdn4.telesco.pe/file/jLxB5IK6TmbB_r_KpDhbKkMUSvFxXBUYwmMgvRgzyDKzhtzIZZ2tEuV3abXateunbPE3MY_kyRDd36H736yHbE6P3PpH4Lrbn8agtvACOGir4243syH9yohxz88UhfpXMF3Mu3FrHz7n0CHmBnaLnVJTbNiP84C-vmFzZEsaX6G_wkZjnVn5Y24kGB_WYk0nYSIuIuSAmJVlfJ6Dcz2kk4W3xLFFvGmXSqjjZusGjht8_iKr25twcBemE2gpVfQCq4ZMUenZV2KTtvQFV7cRrcIA34zr-llWcsptHoK47e_n3du6hqkmSq5fcKqJguj3-wKzniFGUlut_qNGSmSk3w.jpg
+- https://cdn4.telesco.pe/file/D2dcD8y8WLUuj03U_y56gSC_TUeb7L94EiV8oF1xoKFJCgxuGXLxzpkO7bz4wrpnBQRQUJUNITw2v17NHsAJ5l24xDPyc8oE_AduBPu8_leauEHY_lPxDPk48ZTpFnm1FeKnasvm1NNDbW-JVoVWpE4ntngl7QvXkRnrEQ3dclNBOX4_fyV9s71iMzCCBiOLXFOEznBj0aTCBIZMv2ypzClWl0xHfV0-u2MCUNyANt0rIH1Lso1pQ0VF5ZWNABx3epWz6qfsD5J0xqfiEJwMeFIPt4fJoSWMcALlTeayqm_FA3aNFqyLejurCZ9ZlHTEoh_xR9_jFWyUONARWJPQHw.jpg
+- https://cdn4.telesco.pe/file/l4-IqGSdF35whITJZudAfRpY4H73zmClHuHZYv0ifttbOi_EfoPYwteOVyMH6zkqqFcQzu-pP6YZj0v0oSf_xPmz9VsJc0HQRM7JKGT46Fc-JIpyScYq_8-X4_93IhIWFfAt1BbBbUPV5GmgfymR6_SMoi2A6YAo4f3om0siGGttbAPDZfW_lJZ2QoOnGyB-vjGYiTwvXMHzoeZpFjoez8lRuPkyh_e6pPYslauBLgTErdbqOdx91odSzQtD_DemI-TPHXC_wXR5vN3HbZqJXSqQYgUcrC4xJBEViRcVjBzttVYBuOHakR0uubYuQVIHOoYOjyxLoYbqi5fIz1cevQ.jpg
+- https://cdn4.telesco.pe/file/V5bilel_SftAIzHjP2GXaXffw4bwUbY1NeN37Stf0uhTFQ5QlzdsmVUoMXj6BjNqzxtSBUFhL2Y37X4h1MjkyFAU5s9bz0EMqFUV8YavcfPqwTbhP4S1eypTuj-Eo-u3Qi0oDCh_D9o1idzQ69mY6lCFBpMw55iefDMNyRT3pleX4J0hme0yWVHKxx2lOU2CqUDNzRz4uRxyRfN9i6Z57trU0V2HFL7C_A1X8ZI_zXK1KXUERyuvyeQ6S5RaoUOXvUWqpyp2y6Hl_h9q5QiwEk3d-tNRv8-LW-Qq2w3ELLvAmfKdbUFvBSKJrGCOzr3CsENNsBAEPWPElyCaNxCmwg.jpg
+- https://cdn4.telesco.pe/file/H-59F2IsgLD5nc2jPshHKlGIkx2BJitqPGohMam4ilI3rtuLnKLY4kDHp4IoR3ixz8MlFojMb-wEEUOuXbZ-wspLKMIhF4Unp0OmSp-DekmYMWlefGnnsueXnSSuaBadL_nCkun4BnCL8JZpP6ixPQQ4wTnWbHXrYoFMOiCppKX8oB0X_4qVzwTqeq10YPIMZeg81gq9a7iSkj60vm12rFkwUoeImx8Wx-yN9_WMjdJjC4b345wfItAEnwt9yb7vtOK4cnNbp2dmgxI7qR29V3nWkHU_YAIpHSE0JCEkE13jT7qvsezXn13Or7U0-t7aYtY9qkvpJslZT5n1WO71zg.jpg
+- https://cdn4.telesco.pe/file/YBh0ViFRkn6s7IGkKm9WHkFsC3tRWrY1KPkWYq7JzkxHt4UPiJYpdYkcDBCJnMGpkfmRpGfgRfv_lOBfyrelI2oSvwZRugmCDtRWRKLqBhqiJbg2hmYF7GSfAhqcPvY_e7sAUhKc39Xh9iV-rMIytsRSFgkjNMFqPZhbEAxtLsx3Dkkaakyf0zQBic5TwfbJVx4aMz3ge9_zfk-2_0O3qPH1dWCpC3r9tP_uijt0YFBS1JKppCFea6fl9WFA_dXof79NeK2l5jyvvYfS2GQCkThQtT46r0bD7A-nbX2nhSOmVkjTyOjxmEr50IuP2B4pySUgr11arm-Ch4jurR6VUQ.jpg
+
+## 3. Audi A6 — @auto4export
+
+🔥 Audi A6
+
+📍 Направление: США / экспорт
+📅 Год: 2019
+💰 Ориентир: 20752$
+⚙️ Двигатель: 2.0
+🐎 Мощность: 245 л.с.
+🛣️ Пробег: 118 315 миль
+• указан пробег
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/996755666805
+Источник мониторинга: @auto4export
+
+Фото:
+- https://cdn4.telesco.pe/file/R7eRAgHTIwVJEEMxD_H5Z32hHWrZaozthMGfnB16ckDlugRAhwaD0VIdUFuUNUUrB48z6dhK_EFDjEiLyPgEZoheJclW0Qlbj0eW6EktUjop4tOdgwYXsDlpqUnm8JKDYA4PtznqNkCGD4lY8778YRvtcPRjCoAtiGIDmb8axG2BOgIkmNfq_kiv9Q0bEcPb5oel6dugHQCHDcu5f2vrcg2L7iZlQtSdnQo9810cn-LZljwsy4kZC3IwPItbjgX5tLKNuzyd-Ko4Y-PsfCqyC5lBnr7SVmtv_NcswzyzqlMcQuYYijeY7NXcrddSY2dQl6bGjlt5qmd1KrJL_f32NQ.jpg
+- https://cdn4.telesco.pe/file/KLfECjRjv7BpMfgGsh9eBM1xupyZ-0T3FQ7SsIi61OluwRb3_OzxKHfXvaR5QmvwSkMWVCB5KguFRZoEgwwyhNfepMDgfOoD8oHQmU23i4FVZKKsGe5LALGutxRLLAK_9sRhWe67mIMZ7-QzpvixP_TgU_bJoUN1Yvr7fRWYHFVbbibCg6-pPIgjM5mfv4NY34BMxFBNca_WlkgnrwasJlxwV1_dPmfVJ9xFOI4vK9y3FHgxlbdiGXHhTnxvaaxCk5IvrU7dWpcjBYLkrr68a7_w4HDy1RAnvcBuhZuLW4a7IcMNlwOqbdJ63JpIOduSZ2sMK1FW5EMZwukqVvI-_Q.jpg
+- https://cdn4.telesco.pe/file/Cp6x3QHAoPpVqYYQC7piCsISJQtwwb5nk3obniOgGHs7eLmdrylZdnp_ZWhfB47bAmtZXpXm8E0blcWVGF0aOd25VhHo7_w8vziGG3ETriQFO6Y7pT7bdbnLMkuTv-R-X26Vns3fn1wjzdDITeSweF4YuHxQRHRrDIaru06fIDgfmii5P93tzos8KJtHEuKtZjYli5XjRzMix9yGbxqSRwjZKz5fuXHKvfEsbSXgwmbE_R8BKv9-6_YvpKtqpHdP6B7ivu738YvU7JNkHsGgSIFDKWUzcUAiE32jgkb8tMOA806YZVbfJAKljsTg34lSVA82dV0Je3gAniSzphvjRw.jpg
+- https://cdn4.telesco.pe/file/fBBYuU4Ub34MWJdgk4-6QOnN3cPZYdLim-cWYuD6lD_ZnGokcs-zJ4agp9yShgTUzyEis1IIxg8LRXGWuRVE8VE-gi_6IGFzle82yizDp6VCLQ0s7TU9EPf54OxxyoiaaA_N_PsaqHjh7ZEBHC__ymicvyr480KKXJbKTS3TICflldKeT-QNzSrgVEZWrFalGMUcArSrTe965B0_gy80SnAy_YFTFPFzxm_ExZExWwHGEk4UqS-5_lRdhkqvovCvBFHhwKOioS4pynyqFgqsBrrFaaqFEKg_MqDu2Uu7An2v7if2tTiTw8bkkpPOrzB258fgE59Y922xL170TDGrAg.jpg
+- https://cdn4.telesco.pe/file/Wj2FbVjHO1hEXHCUnL0UrJUIlzQCZ_1LcK3zENFGCggGPQJtrnvBgGX9bdtlvZ2z1nflHC6AJKy5GxzprEXXqlYUB8_Pb_gZkRE3XKFFLEdR4ovGDMRkD6d-6NxNLFS4oHpdQ10JMxmUl-cW7kS2iCNE1UGFjZbQWmxM1GrqWJcpekaddCqWNudaDli0wCqomHckFioM4rCW6qd-5XYQzgCOZx0IvuqD_DD5flANwMgOg3huLki9Hx5Q53ukhUNUneGioYqsm-nAoCqNoetMpz5TF9v-7iUFArKY81WSlz0QySe-7bPDDJY9sPfbO81EaAuHToO67TeKfiXqWlbUZQ.jpg
+- https://cdn4.telesco.pe/file/EMibxCvyVNOKmsK2UqvaCvDAhbc0CcjRiL6Ftj6ig0wfFtAhNlcT1rjK3Hc1n6ickCLTwQZTyOqj7lMXqroeFM-Ti9M6upq8LaSnsI7oU58HM9A44H8vJg3GlzjiHlX9el_rc6vaGbjju_jljeZvSg1DIFR0hLEjbp7k74_zyKQTiTR27hQgFq6y3sLPoPP5CjjycMpxEgOLAkX5Zg0oE0AW6hpqUMW27yaODoPLxGPVlYF7ILC7Z4XpmYcTIvrAUbTH1Za4-3Rklvp-CAO7dXC58CXtSlZdlD-EyUiWYTPl17DP7spHYAMcn81Jc12XHVjRVm4xeJ_VrL-dKuzS5A.jpg
+- https://cdn4.telesco.pe/file/jnqyRic5Et-2HABbl1_7tT7wPczBn8IluBVmHnR-EVF6T3yrPe-xR80pkLN7c7PXJ5ZEfPen6v4SBGqiWJZnUjJP4KX3ei9ErnYGpGtl8_aqYsDrdlUcdpHZ2qwMkuOem-AIoCroirS_-7MZEFgdu33opPsd2OzZzFWThg2N2aRcK3bQPAohg2rjgjJwvE9aPZaUFSn9Iyf2sQZFCvJEcF0lVUcgc-5rZyvIflvBNwGgzgF0d1shGHllf1VgTgNIgGJAZ_QwTsdP9-CNZUm42FDXEn4GY0aWtuCDvTqftwFdd6hvBmq8JFrTjrJy6cGpP4ktAiaHjtivKfW78Z5C8w.jpg
+
+## 4. HYUNDAI ELANTRA — @auto4export
+
+🔥 HYUNDAI ELANTRA
+
+📍 Направление: США / экспорт
+📅 Год: 2022
+💰 Ориентир: 14900$
+⚙️ Двигатель: 1.6
+🐎 Мощность: 123-201 л.с.
+🛣️ Пробег: 43,442 mi
+• указан пробег
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/996755666805
+Источник мониторинга: @auto4export
+
+Фото:
+- https://cdn4.telesco.pe/file/DxFeSPHEhan_IUVvxUCA9SlSs9R2tSlDOl_qDfGoAHI4Bk2XP4Rx-jGKMPvYXbszfR-sDrVF1qDgEkE4GuxOR9qJErK7WozzawU3SH0G7bsoOK-RecmeXzZtAy2xC8U2p-TU6yNM_pzn-s_bWr1Nsl9_pFlL6kI-lM6DkP1ixjD4311QEIi2aCDu-vV9yxf0xvtOcC7DvDV1lC04-NnmdOKwf3rZOXJ-GG3vZASmo0LQq_1PjANTy1EL0t1NpOpWiQEvcWf_jMSDvCx3lGXNwKGP9QKhp1C4LK79nssPg2m2vFMMcz0eiLAh-TN-vz9QCmJpblTXGkKDMTR3_n3gYw.jpg
+- https://cdn4.telesco.pe/file/HWkYA5Pj_Z3Ch7EN-ulqsc4TX8pZFWTIjvwO34wLsFCpkxGxyVlOEck8a8FrkroR6NKF6WnkD7f9wy-S7Ud0fwqdFQAinyvt_aWDDIxFkse44ByPAF81sdwk4H840XHWTUVbE9m3SXcSK7gG0li4R54F30H4OzqjOD9xFebT4hwTQ18mRtAQ_w3TNbYji0JZfZQ1wLKrNfrk7RbZrNjhm-urKTJ4KrPfYgtK2TpM1zAPSxeQTyRjEk36bV7zAXmc1oUVmIFe0Kw2CQOVTm5UU8SeecE5UDgMSmbrytKcgb7tIW5Bp2ArH6smp6sT3CU-WCjX9y4dkYECOPDsMKFDlw.jpg
+- https://cdn4.telesco.pe/file/Zd7-77yMK_yHZJGELtmK8R9winnOtlgsRbFv3N3hIeJLdlueMLpqyBJi8BQfrjesIVPSflOP1I-Wq4CgptWztSwBRU__okvJfFQgtzV5QvaR0-DSlQMwo04eDC_WrqtROt-7cAmQTcNiQgDblF7_Ah4ueHI2UQrkVSI9Oq6mCGk7RqjkaD9Luqu4iDHzYyXs57xPFayXPoFypNl_Lkeazl5sTbF_H2dVIodNSFsE4mjvI6HbbEScPU87Dveecj8wnaA6uNTqTR3xdkJIUm2w4osEb0xhW6UtVRpKYuRaMFM4XRbU6qk1GrcAv3eJIt1Zg6k3iUobunf_runlKeBrSw.jpg
+- https://cdn4.telesco.pe/file/Bi9UGycxbRaw65pug3XRGdK4JJpzb2XKZrH2eDkhIsaPjYFKRaqOKC48GerH1_vtHg4GJbyfYkYEITN00PaUHT3fCfgzyqAi9BprbJ465t6yXMHEe_CyisHIDIW5RX7pH6wpna6lje4thgrYNr45vJE9a1voOJb-kPxxVo6c43z_I9CjrPxuvw3hA5e5NPWrhtdigOw6_BOjysl-FoB_UvG6WQjjBzbR3RP-oq9Q1c51FY_QDpbg21RfQn02gUgPCpgdz36MV4aEL6uGd21NzhJZTePN0-bs0r6fgO9iCEj73h3lKmXr022l_PPLZKhs6RwEA70PBMBzV1MthFcfcA.jpg
+- https://cdn4.telesco.pe/file/AbLDanq21pmb5DzouW-GVa91-ZybbHNunV0KZrh0DM6h6qhbCfX4jYEMqdJpTTPYHSZol1V7Aa_Ls43BklvOQayTEpefoZT7JAzoyQgo9YLFwModRMGSYoaySVREKi62hIcne0vJt4RpTz9XdBQrrzCB-QC7AKp99ouAEH2kTTwINTIo7jUYN19YPKgCDxxHR0Jk39lY2ZPZeDkGOiuVFmypRepFomRX7YS6_20kyEVyiha0FIxW3czWw1oJ8eokOhCeHlojWRWrHfvHs1fKIQbBeLDJnDSpJiXhk7wDVsnI_JOXlwFoqR9rlZS7CYSvIya3ZknNvgvBPb28s9bUFg.jpg
+- https://cdn4.telesco.pe/file/ZLWhTYyp9YsHoScCy5bFxR9WZ8rH6evA7qDAqWy9p2YJuXL2gdTLfj4GvrRkSrUwBe7nYZ6Tp3baaq0D3k-vd7Wj6bxRNec8vE1r9xEJQ9bJodh6Lwe5tGsP4rvLAimE4gUf55mb1Etrk8OFfafWo0DqLi0oGnbDoGpHLLEC3xtTyEGUMPL9EwmdvvRKXfwEH1JV9V_ejyxAYVCRbSEeQ-VCb-8C8s7t2y8wmECBmkHHehDRgPw8vAqg-BcZb_tkKTstWZt9GX3eh5d5_JGLnUdSIeo7X8Jj_hYX6lNYjzU4gf0YOlBD7zY_3cPvbuaaQYlag_v3Zrr7u77VRNpxPA.jpg
