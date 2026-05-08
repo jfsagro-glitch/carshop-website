@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 generate_sitemap.py — Генерация sitemap.xml для cmsauto.store (GitHub Pages).
 
@@ -24,7 +24,7 @@ BASE_URL = "https://cmsauto.store"
 
 STATIC_PAGES = [
     ("index.html",           0.9, "daily"),
-    ("georgia-catalog.html", 0.85, "hourly"),
+    ("georgia-stock.html", 0.85, "hourly"),
     ("georgia-stock.html",   0.8, "hourly"),
     ("europe-orders.html",   0.8, "hourly"),
     ("korea-orders.html",    0.7, "daily"),
@@ -149,3 +149,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

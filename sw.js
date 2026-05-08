@@ -1,8 +1,7 @@
-const CACHE_VERSION = 'expo-mir-pwa-v5-main-market';
+﻿const CACHE_VERSION = 'expo-mir-pwa-v6-home-georgia-stock';
 const APP_SHELL = [
   '/',
   '/index.html',
-  '/georgia-catalog.html',
   '/georgia-stock.html',
   '/europe-orders.html',
   '/usa-orders.html',
@@ -108,3 +107,5 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
+

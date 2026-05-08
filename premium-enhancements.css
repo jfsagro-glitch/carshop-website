@@ -47,10 +47,16 @@ html {
 .logo {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    text-decoration: none;
 }
 
 .logo:hover {
     transform: translateY(-2px);
+}
+
+.logo.active,
+.logo--home.active {
+    border-bottom: 3px solid #d4af37;
 }
 
 /* Navigation Enhancements - High Contrast */

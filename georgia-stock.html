@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Грузия-сток — Автомобили в наличии — EXPO MIR</title>
+    <title>Грузия — актуальный сток — Автомобили в наличии — EXPO MIR</title>
     <meta name="description" content="Автомобили в наличии в Грузии. Выкупаем автомобили за свои деньги без предоплаты. Срок доставки и растаможки 3-5 дней.">
     <meta name="keywords" content="грузия сток, авто грузия, мяавто, expo mir, авто в наличии">
-    <meta property="og:title" content="Грузия-сток — EXPO MIR">
+    <meta property="og:title" content="Грузия — актуальный сток — EXPO MIR">
     <meta property="og:description" content="Автомобили в наличии в Грузии без предоплаты.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://cmsauto.store/images/logo.png">
@@ -741,12 +741,9 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <img src="images/logo.png" alt="EXPO MIR" class="logo-img">
-                    <span>EXPO MIR</span>
-                </div>
+                <a href="index.html" class="logo"><img src="images/logo.png" alt="EXPO MIR" class="logo-img"><span>EXPO MIR</span></a>
                 <nav class="nav">
-                    <a href="georgia-catalog.html" data-i18n="nav_georgia">Грузия</a>
+                    <a href="georgia-stock.html" data-i18n="nav_georgia">Грузия</a>
                     <a href="usa-orders.html" data-i18n="nav_usa">США</a>
                     <a href="korea-orders.html" data-i18n="nav_korea">Корея</a>
                     <a href="china-orders.html" data-i18n="nav_china">Китай</a>
@@ -785,7 +782,7 @@
     <!-- Hero Section -->
     <section class="georgia-hero">
         <div class="container">
-            <h1>Грузия-сток - Автомобили в наличии</h1>
+            <h1>Грузия — актуальный сток - Автомобили в наличии</h1>
             <p>Широкий выбор качественных автомобилей с пробегом из Грузии</p>
             <p style="margin-top: 0.75rem; color: #60a5fa; font-weight: 500;">Выкупаем автомобили в Грузии за свои деньги и привозим под конкретного покупателя</p>
             <p id="syncTimestamp" style="margin-top:0.5rem;font-size:0.82rem;color:#9ca3af;letter-spacing:.03em;">Данные обновляются автоматически...</p>
@@ -973,12 +970,56 @@
             return car;
         }
 
+        function parseGeorgiaPower(car) {
+            const hpFields = [car.power_hp, car.hp, car.ps];
+            for (const value of hpFields) {
+                const num = Number(String(value || '').replace(',', '.').replace(/[^\d.]/g, ''));
+                if (num) return { hp: Math.round(num), kw: Math.round(num / 1.35962) };
+            }
+            const kwFields = [car.power_kw, car.kw];
+            for (const value of kwFields) {
+                const num = Number(String(value || '').replace(',', '.').replace(/[^\d.]/g, ''));
+                if (num) return { hp: Math.round(num * 1.35962), kw: Math.round(num) };
+            }
+            const text = `${car.power || ''} ${Array.isArray(car.specs) ? car.specs.join(' ') : ''}`.toLowerCase();
+            const hpValues = [...text.matchAll(/(\d+(?:[.,]\d+)?)\s*(?:л\.?\s?с\.?|лс|hp|ps)/gi)]
+                .map(match => Math.round(Number(match[1].replace(',', '.'))))
+                .filter(Boolean);
+            if (hpValues.length) {
+                const hp = Math.max(...hpValues);
+                return { hp, kw: Math.round(hp / 1.35962) };
+            }
+            const kwValues = [...text.matchAll(/(\d+(?:[.,]\d+)?)\s*(?:квт|kw)/gi)]
+                .map(match => Math.round(Number(match[1].replace(',', '.'))))
+                .filter(Boolean);
+            if (kwValues.length) {
+                const kw = Math.max(...kwValues);
+                return { hp: Math.round(kw * 1.35962), kw };
+            }
+            return { hp: 0, kw: 0 };
+        }
+
+        function isGeorgiaStockEligible(car) {
+            const year = getCarYear(car);
+            if (!year || year < 2021 || year > 2023) return false;
+            const images = filterImages(car.images);
+            if (!images.length) return false;
+            car._filteredImages = images;
+            const power = parseGeorgiaPower(car);
+            if (!power.hp && !power.kw) return false;
+            if (power.hp && power.hp > 160) return false;
+            if (power.kw && power.kw > 115) return false;
+            car._powerHp = power.hp;
+            car._powerKw = power.kw;
+            return true;
+        }
+
         // Загрузка данных
         async function loadCarsData() {
             try {
                 const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
                 // Нормализуем данные из JSON fallback
-                carsData = result.data.map(normalizeGeorgiaCar);
+                carsData = result.data.map(normalizeGeorgiaCar).filter(isGeorgiaStockEligible);
                 filteredCars = sortCars(carsData);
 
                 // Показываем timestamp обновления
@@ -986,7 +1027,7 @@
                 if (tsEl) {
                     const src = result._source === 'json' ? 'JSON' : 'Supabase';
                     const now = new Date().toLocaleDateString('ru-RU', {day:'2-digit',month:'2-digit',year:'numeric'});
-                    tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} авто в наличии`;
+                    tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} проходных авто с фото`;
                 }
 
                 await fetchUsdToRubRate();
@@ -1328,6 +1369,7 @@
                                 ${car.fuel_type ? `<div class="car-spec-item"><i class="fas fa-gas-pump" style="color:#d4af37"></i> ${car.fuel_type}</div>` : ''}
                                 ${car.transmission ? `<div class="car-spec-item"><i class="fas fa-cog" style="color:#d4af37"></i> ${car.transmission}</div>` : ''}
                                 ${car.engine ? `<div class="car-spec-item"><i class="fas fa-car-engine" style="color:#d4af37"></i> ${car.engine} л</div>` : ''}
+                                ${car._powerHp ? `<div class="car-spec-item"><i class="fas fa-gauge-high" style="color:#d4af37"></i> ${car._powerHp} л.с.</div>` : ''}
                                 ${car.vin && car.vin.trim() ? `<div class="car-spec-item">🔑 VIN: <a href="https://www.google.com/search?q=${encodeURIComponent(car.vin.trim())}" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; text-decoration: none; border-bottom: 1px solid #60a5fa;">${car.vin.trim()}</a></div>` : ''}
                             </div>
                             <div class="car-btns">
@@ -1363,6 +1405,7 @@
             const search = (getElement('search-input')?.value || '').trim().toLowerCase();
 
             filteredCars = carsData.filter(car => {
+                if (!isGeorgiaStockEligible(car)) return false;
                 if (brand && car.brand !== brand) return false;
                 if (model && car.model !== model) return false;
                 if (car.price && (car.price < priceFrom || car.price > priceTo)) return false;
@@ -1930,7 +1973,7 @@
                 `${orderItems}\n` +
                 `ИТОГО: ${total.toLocaleString('ru-RU')} €\n\n` +
                 `Дата заказа: ${new Date().toLocaleString('ru-RU')}\n` +
-                `Источник: Грузия-сток (georgia-stock.html)`;
+                `Источник: Грузия — актуальный сток (georgia-stock.html)`;
             
             // Отправляем заказ через веб-форму
             await sendOrderAutomatically(name, phone, email, orderItems, total, subject, body);
@@ -2213,8 +2256,7 @@
                 <div class="footer-section">
                     <h4>Каталоги</h4>
                     <ul>
-                        <li><a href="georgia-catalog.html">Грузия — в наличии</a></li>
-                        <li><a href="georgia-stock.html">Грузия-сток</a></li>
+                        <li><a href="georgia-stock.html">Грузия — актуальный сток</a></li>
                         <li><a href="usa-orders.html">США</a></li>
                         <li><a href="korea-orders.html">Корея</a></li>
                         <li><a href="china-orders.html">Китай</a></li>
@@ -2251,3 +2293,5 @@
     <script src="header.js"></script>
 </body>
 </html>
+
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * EXPO MIR — Shared header utilities
  * Handles: active nav, scroll-to-top, WhatsApp button, cart pulse,
  *          sticky header, modal Escape/backdrop close, mobile menu,
@@ -11,9 +11,9 @@
   function setActiveNav() {
     var page = location.pathname.split('/').pop() || 'index.html';
     var map = {
-      'index.html':           'nav_georgia',
-      '':                     'nav_georgia',
-      'georgia-catalog.html': 'nav_georgia',
+      'index.html':           null,
+      '':                     null,
+      'georgia-stock.html': 'nav_georgia',
       'georgia-stock.html':   'nav_georgia',
       'usa-orders.html':      'nav_usa',
       'korea-orders.html':    'nav_korea',
@@ -22,6 +22,14 @@
       'parts-orders.html':    null,
     };
     var i18nKey = map[page];
+    document.querySelectorAll('.logo').forEach(function (logo) {
+      logo.classList.toggle('active', page === 'index.html' || page === '');
+      if (page === 'index.html' || page === '') {
+        logo.setAttribute('aria-current', 'page');
+      } else {
+        logo.removeAttribute('aria-current');
+      }
+    });
     document.querySelectorAll('.nav a').forEach(function (a) {
       a.classList.remove('active');
       if (i18nKey && a.getAttribute('data-i18n') === i18nKey) {
@@ -180,8 +188,8 @@
     nav.id = 'mobileBottomNav';
     nav.setAttribute('aria-label', 'Мобильная навигация');
     nav.innerHTML = [
-      '<a href="georgia-catalog.html" class="mbn-item" data-page="georgia-catalog.html">',
-      '  <i class="fas fa-car"></i><span>Каталог</span>',
+      '<a href="georgia-stock.html" class="mbn-item" data-page="georgia-stock.html">',
+      '  <i class="fas fa-car"></i><span>Грузия</span>',
       '</a>',
       '<a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" class="mbn-item mbn-item--wa">',
       '  <i class="fab fa-whatsapp"></i><span>WhatsApp</span>',
@@ -384,3 +392,4 @@
     initServiceWorker();
   });
 })();
+

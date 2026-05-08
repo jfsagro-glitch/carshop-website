@@ -297,6 +297,17 @@ def parse_power_hp(value: Any) -> int:
     num = parse_float(text)
     return round(num) if num else 0
 
+def parse_power_kw(value: Any) -> int:
+    """Достаёт мощность в кВт из строки или конвертирует из л.с."""
+    if value in (None, ""):
+        return 0
+    text = str(value).lower()
+    kw_match = re.search(r"(\d+(?:[.,]\d+)?)\s*(?:kw|квт)", text, re.I)
+    if kw_match:
+        return round(float(kw_match.group(1).replace(",", ".")))
+    hp = parse_power_hp(value)
+    return round(hp / 1.35962) if hp else 0
+
 
 def year_range_from_age(min_age: int = 0, max_age: int = 0, current_year: Optional[int] = None) -> tuple[int, int]:
     if not min_age and not max_age:
@@ -358,8 +369,16 @@ def record_power_kw(record: dict) -> int:
     hp = parse_int(record.get("power_hp") or record.get("hp") or record.get("ps") or 0)
     if hp:
         return round(hp / 1.35962)
-    power = parse_power_hp(record.get("power") or record.get("мощность"))
-    return round(power / 1.35962) if power else 0
+    return parse_power_kw(record.get("power") or record.get("мощность"))
+
+def record_has_photo(record: dict) -> bool:
+    images = record.get("images")
+    if isinstance(images, list) and any((img.get("url") if isinstance(img, dict) else img) for img in images):
+        return True
+    photos = record.get("photos") or record.get("photo_url") or record.get("image")
+    if isinstance(photos, list):
+        return any(bool(p) for p in photos)
+    return bool(photos)
 
 def max_kw_for_hp_limit(max_power_hp: int) -> int:
     if not max_power_hp:
@@ -368,10 +387,13 @@ def max_kw_for_hp_limit(max_power_hp: int) -> int:
 
 
 def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0,
-                   min_year_month: int = 0, max_year_month: int = 0) -> List[dict]:
+                   min_year_month: int = 0, max_year_month: int = 0,
+                   require_photo: bool = False, require_known_power: bool = False) -> List[dict]:
     result = []
     max_power_kw = max_kw_for_hp_limit(max_power_hp)
     for record in records:
+        if require_photo and not record_has_photo(record):
+            continue
         year, month = record_year_month(record)
         if min_year and year and year < min_year:
             continue
@@ -384,9 +406,11 @@ def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, ma
         if max_year_month and year and year_month_for_max > max_year_month:
             continue
         hp = record_power_hp(record)
+        kw = record_power_kw(record)
+        if require_known_power and max_power_hp and not hp and not kw:
+            continue
         if max_power_hp and hp and hp > max_power_hp:
             continue
-        kw = record_power_kw(record)
         if max_power_kw and kw and kw > max_power_kw:
             continue
         result.append(record)
@@ -2066,7 +2090,16 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
 
     # Каждый запуск поддерживает публичный каталог в текущих фильтрах сайта.
     before_filter = len(existing)
-    existing = filter_records(existing, min_year, max_year, max_power_hp, min_year_month, max_year_month)
+    existing = filter_records(
+        existing,
+        min_year,
+        max_year,
+        max_power_hp,
+        min_year_month,
+        max_year_month,
+        require_photo=True,
+        require_known_power=bool(max_power_hp),
+    )
     if len(existing) < before_filter:
         log.info(f"Фильтр каталога: убрано {before_filter - len(existing)} записей вне условий")
 
@@ -2333,12 +2366,18 @@ def validate_catalog_constraints(filepath: str, min_year_month: int, max_year_mo
         data = json.load(f)
     bad = []
     for item in data:
+        is_georgia = "georgia" in filepath.lower()
+        if is_georgia and not record_has_photo(item):
+            bad.append(f"{item.get('brand')} {item.get('model')}: no photo")
+            continue
         year, month = record_year_month(item)
         year_month = year * 100 + (month or 1)
         hp = record_power_hp(item)
         kw = record_power_kw(item)
         if not year or year_month < min_year_month or year_month > max_year_month:
             bad.append(f"{item.get('brand')} {item.get('model')}: {year_month}")
+        elif is_georgia and not hp and not kw:
+            bad.append(f"{item.get('brand')} {item.get('model')}: unknown power")
         elif hp and hp > max_power_hp:
             bad.append(f"{item.get('brand')} {item.get('model')}: {hp} hp")
         elif kw and kw > max_power_kw:
@@ -2348,8 +2387,8 @@ def validate_catalog_constraints(filepath: str, min_year_month: int, max_year_mo
 
 
 def validate_public_catalogs() -> None:
-    validate_catalog_file("cars_europe_new.json", ["id", "brand", "model", "price", "images"], min_records=10)
-    validate_catalog_file("cars_georgia_stock.json", ["id", "brand", "model", "price", "url"], min_records=20)
+    validate_catalog_file("cars_europe_new.json", ["external_id", "brand", "model", "price", "images"], min_records=10)
+    validate_catalog_file("cars_georgia_stock.json", ["id", "brand", "model", "price", "url", "images"], min_records=20)
     min_ym, max_ym = month_range_from_age(3, 5)
     validate_catalog_constraints("cars_europe_new.json", min_ym, max_ym, 160, 115)
     validate_catalog_constraints("cars_georgia_stock.json", min_ym, max_ym, 160, 115)
