@@ -1261,7 +1261,15 @@ window.addEventListener('click', function(event) {
         }
         const count = $('partsResultsCount');
         if (count) count.textContent = `${list.length} ${pluralRu(list.length, 'позиция', 'позиции', 'позиций')}`;
-        grid.innerHTML = list.map((part, index) => `
+
+        const grouped = new Map();
+        list.forEach((part, index) => {
+            const key = part.group || 'Прочее';
+            if (!grouped.has(key)) grouped.set(key, []);
+            grouped.get(key).push({ part, index });
+        });
+
+        const cardMarkup = (part, index) => `
             <article class="parts-item-card">
                 <div class="parts-card-topline">
                     <span class="parts-number">${esc(part.number)}</span>
@@ -1279,9 +1287,27 @@ window.addEventListener('click', function(event) {
                     <button class="btn-primary parts-cart-only" type="button" data-part-index="${index}" title="Заказать" aria-label="Заказать ${esc(part.name)}"><i class="fas fa-shopping-cart" aria-hidden="true"></i></button>
                 </div>
             </article>
-        `).join('');
-        grid.querySelectorAll('[data-part-index]').forEach((button, index) => {
-            button.addEventListener('click', () => openLocalPartsOrder(list[index]));
+        `;
+
+        const sortedGroups = [...grouped.keys()].sort((a, b) => a.localeCompare(b, 'ru'));
+        grid.innerHTML = sortedGroups.map(groupName => {
+            const rows = grouped.get(groupName) || [];
+            return `
+                <section class="parts-group-block" style="margin-bottom:1.4rem;">
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:0.8rem;margin-bottom:0.65rem;">
+                        <h3 style="margin:0;font-size:1rem;color:#e2e8f0;">${esc(groupName)}</h3>
+                        <span class="parts-chip parts-chip--muted">${rows.length} ${pluralRu(rows.length, 'позиция', 'позиции', 'позиций')}</span>
+                    </div>
+                    <div class="parts-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
+                        ${rows.map(({ part, index }) => cardMarkup(part, index)).join('')}
+                    </div>
+                </section>
+            `;
+        }).join('');
+
+        grid.querySelectorAll('[data-part-index]').forEach(button => {
+            const idx = Number(button.getAttribute('data-part-index'));
+            button.addEventListener('click', () => openLocalPartsOrder(list[idx]));
         });
     }
 

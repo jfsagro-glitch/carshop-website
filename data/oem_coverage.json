@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-08T18:24:39Z",
+  "generated_at": "2026-05-09T04:08:14Z",
   "brands": 42,
   "part_codes": 230,
   "total_pairs": 9660,
-  "covered_pairs": 3247,
-  "coverage": 33.6,
-  "oem_lookup_pairs": 7625,
+  "covered_pairs": 3237,
+  "coverage": 33.5,
+  "oem_lookup_pairs": 7104,
   "brand_coverage": [
     {
       "brand": "Tesla",
@@ -192,16 +192,16 @@
     {
       "brand": "Honda",
       "prefix": "HO",
-      "covered": 86,
+      "covered": 85,
       "total": 230,
-      "coverage": 37.4
+      "coverage": 37.0
     },
     {
       "brand": "Nissan",
       "prefix": "NI",
-      "covered": 86,
+      "covered": 85,
       "total": 230,
-      "coverage": 37.4
+      "coverage": 37.0
     },
     {
       "brand": "Opel",
@@ -246,6 +246,20 @@
       "coverage": 39.1
     },
     {
+      "brand": "Audi",
+      "prefix": "AU",
+      "covered": 93,
+      "total": 230,
+      "coverage": 40.4
+    },
+    {
+      "brand": "Ford",
+      "prefix": "FO",
+      "covered": 94,
+      "total": 230,
+      "coverage": 40.9
+    },
+    {
       "brand": "Volvo",
       "prefix": "VO",
       "covered": 95,
@@ -253,39 +267,25 @@
       "coverage": 41.3
     },
     {
-      "brand": "Audi",
-      "prefix": "AU",
-      "covered": 96,
-      "total": 230,
-      "coverage": 41.7
-    },
-    {
-      "brand": "Ford",
-      "prefix": "FO",
-      "covered": 96,
-      "total": 230,
-      "coverage": 41.7
-    },
-    {
       "brand": "Hyundai",
       "prefix": "HY",
-      "covered": 100,
+      "covered": 99,
       "total": 230,
-      "coverage": 43.5
+      "coverage": 43.0
     },
     {
       "brand": "Mercedes-Benz",
       "prefix": "MB",
-      "covered": 116,
+      "covered": 115,
       "total": 230,
-      "coverage": 50.4
+      "coverage": 50.0
     },
     {
       "brand": "BMW",
       "prefix": "BM",
-      "covered": 118,
+      "covered": 117,
       "total": 230,
-      "coverage": 51.3
+      "coverage": 50.9
     },
     {
       "brand": "Toyota",

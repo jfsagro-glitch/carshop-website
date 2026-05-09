@@ -3656,7 +3656,9 @@ OEM_LOOKUP: dict[tuple[str, str], list[str]] = {
 }
 
 OEM_OVERRIDES_PATH = Path("data/oem_lookup_overrides.json")
+VERIFIED_OEM_LOOKUP_PATH = Path("data/oem_lookup_verified.json")
 STRICT_REAL_ONLY = os.environ.get("OEM_STRICT_REAL_ONLY", "1").strip().lower() not in ("0", "false", "no")
+ALLOW_UNVERIFIED_VIN_MAPPING = os.environ.get("OEM_ALLOW_UNVERIFIED_VIN_MAPPING", "0").strip().lower() in ("1", "true", "yes")
 
 
 def load_oem_lookup_overrides(path: Path = OEM_OVERRIDES_PATH) -> dict[tuple[str, str], list[str]]:
@@ -3674,6 +3676,28 @@ def load_oem_lookup_overrides(path: Path = OEM_OVERRIDES_PATH) -> dict[tuple[str
                 numbers = [numbers]
             clean = []
             for number in numbers or []:
+                value = str(number).strip()
+                if value and value not in clean:
+                    clean.append(value)
+            if clean:
+                merged[(str(prefix).upper(), str(code).upper())] = clean
+    return merged
+
+
+def load_verified_oem_lookup(path: Path = VERIFIED_OEM_LOOKUP_PATH) -> dict[tuple[str, str], list[str]]:
+    """Load OEM numbers that were validated and exported with provenance checks."""
+    if not path.exists():
+        return {}
+    raw = json.load(open(path, encoding="utf-8"))
+    lookup = raw.get("lookup", raw)
+    merged: dict[tuple[str, str], list[str]] = {}
+    for prefix, codes in lookup.items():
+        if not isinstance(codes, dict):
+            continue
+        for code, numbers in codes.items():
+            values = numbers if isinstance(numbers, list) else [numbers]
+            clean: list[str] = []
+            for number in values:
                 value = str(number).strip()
                 if value and value not in clean:
                     clean.append(value)
@@ -3722,25 +3746,33 @@ def get_merged_oem_lookup() -> dict[tuple[str, str], list[str]]:
     except (FileNotFoundError, json.JSONDecodeError):
         pass
 
-    # Load previously exported VIN mapping (string-key format: Brand|Model|Year|Engine).
-    try:
-        vin_map = json.load(open("data/vin_oem_mapping.json", encoding="utf-8"))
-        engine_oem = vin_map.get("engine_oem", {})
-        brand_map = {
-            "Toyota": "TY", "BMW": "BM", "Mercedes-Benz": "MB",
-            "Volkswagen": "VW", "Honda": "HO", "Ford": "FO",
-            "Hyundai": "HY", "Nissan": "NI", "Audi": "AU",
-        }
-        for spec_key, parts_dict in engine_oem.items():
-            if not isinstance(parts_dict, dict):
-                continue
-            brand = str(spec_key).split("|")[0]
-            prefix = brand_map.get(brand, brand[:2].upper())
-            for part_code, oem_nums in parts_dict.items():
-                if isinstance(oem_nums, list) and oem_nums:
-                    merged[(prefix, str(part_code).upper())] = [str(x).strip() for x in oem_nums if str(x).strip()]
-    except (FileNotFoundError, json.JSONDecodeError):
-        pass
+    # Load previously exported VIN mapping only when explicitly allowed.
+    if (not STRICT_REAL_ONLY) or ALLOW_UNVERIFIED_VIN_MAPPING:
+        try:
+            vin_map = json.load(open("data/vin_oem_mapping.json", encoding="utf-8"))
+            engine_oem = vin_map.get("engine_oem", {})
+            brand_map = {
+                "Toyota": "TY", "BMW": "BM", "Mercedes-Benz": "MB",
+                "Volkswagen": "VW", "Honda": "HO", "Ford": "FO",
+                "Hyundai": "HY", "Nissan": "NI", "Audi": "AU",
+            }
+            for spec_key, parts_dict in engine_oem.items():
+                if not isinstance(parts_dict, dict):
+                    continue
+                brand = str(spec_key).split("|")[0]
+                prefix = brand_map.get(brand, brand[:2].upper())
+                for part_code, oem_nums in parts_dict.items():
+                    if isinstance(oem_nums, list) and oem_nums:
+                        merged[(prefix, str(part_code).upper())] = [str(x).strip() for x in oem_nums if str(x).strip()]
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+
+    # Always include explicitly verified OEM lookup additions.
+    for key, values in load_verified_oem_lookup().items():
+        bucket = merged.setdefault(key, [])
+        for value in values:
+            if value not in bucket:
+                bucket.append(value)
     
     # In strict mode skip overrides that may contain generated values.
     if not STRICT_REAL_ONLY:
