@@ -308,6 +308,132 @@ def parse_power_kw(value: Any) -> int:
     hp = parse_power_hp(value)
     return round(hp / 1.35962) if hp else 0
 
+GEORGIA_POWER_CATALOG = [
+    {"brand": "Toyota", "model": "Camry", "engine": "2.5", "fuel": "", "hp": 150, "market": "any"},
+    {"brand": "Toyota", "model": "RAV4", "engine": "2.0", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Toyota", "model": "RAV 4", "engine": "2.0", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Toyota", "model": "Corolla", "engine": "1.8", "fuel": "гибрид", "hp": 122, "market": "any"},
+    {"brand": "Toyota", "model": "C-HR", "engine": "1.8", "fuel": "гибрид", "hp": 122, "market": "any"},
+    {"brand": "Toyota", "model": "Yaris", "engine": "1.5", "fuel": "гибрид", "hp": 116, "market": "any"},
+    {"brand": "Hyundai", "model": "Tucson", "engine": "2.0", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Hyundai", "model": "Santa Fe", "engine": "2.0", "fuel": "дизель", "hp": 150, "market": "europe"},
+    {"brand": "Hyundai", "model": "Creta", "engine": "1.6", "fuel": "", "hp": 123, "market": "any"},
+    {"brand": "Hyundai", "model": "i30", "engine": "1.5", "fuel": "", "hp": 110, "market": "europe"},
+    {"brand": "Kia", "model": "Sportage", "engine": "2.0", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Kia", "model": "Seltos", "engine": "1.6", "fuel": "", "hp": 123, "market": "any"},
+    {"brand": "Kia", "model": "Sorento", "engine": "2.0", "fuel": "дизель", "hp": 149, "market": "europe"},
+    {"brand": "Volkswagen", "model": "Tiguan", "engine": "1.4", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Volkswagen", "model": "Golf", "engine": "1.5", "fuel": "", "hp": 130, "market": "europe"},
+    {"brand": "Volkswagen", "model": "Polo", "engine": "1.0", "fuel": "", "hp": 95, "market": "europe"},
+    {"brand": "BMW", "model": "118i", "engine": "1.5", "fuel": "", "hp": 140, "market": "europe"},
+    {"brand": "BMW", "model": "316d", "engine": "2.0", "fuel": "дизель", "hp": 122, "market": "europe"},
+    {"brand": "Mercedes-Benz", "model": "C 200", "engine": "1.5", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Subaru", "model": "Forester", "engine": "2.0", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Lexus", "model": "NX 300h", "engine": "2.5", "fuel": "гибрид", "hp": 150, "market": "any"},
+    {"brand": "Lexus", "model": "UX 250h", "engine": "2.0", "fuel": "гибрид", "hp": 135, "market": "any"},
+    {"brand": "Nissan", "model": "Qashqai", "engine": "1.3", "fuel": "", "hp": 140, "market": "europe"},
+    {"brand": "Nissan", "model": "Juke", "engine": "1.0", "fuel": "", "hp": 114, "market": "europe"},
+    {"brand": "Mazda", "model": "CX-5", "engine": "2.0", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Mazda", "model": "3", "engine": "2.0", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Honda", "model": "CR-V", "engine": "1.5", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Honda", "model": "HR-V", "engine": "1.5", "fuel": "гибрид", "hp": 131, "market": "europe"},
+    {"brand": "Mitsubishi", "model": "Outlander", "engine": "2.0", "fuel": "", "hp": 146, "market": "europe"},
+    {"brand": "Mitsubishi", "model": "Eclipse Cross", "engine": "1.5", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Ford", "model": "Focus", "engine": "1.5", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Ford", "model": "Kuga", "engine": "1.5", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Ford", "model": "EcoSport", "engine": "1.0", "fuel": "", "hp": 125, "market": "europe"},
+    {"brand": "Renault", "model": "Duster", "engine": "1.3", "fuel": "", "hp": 130, "market": "europe"},
+    {"brand": "Renault", "model": "Arkana", "engine": "1.3", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Buick", "model": "Encore GX", "engine": "1.3", "fuel": "", "hp": 155, "market": "usa"},
+    {"brand": "Chevrolet", "model": "Trailblazer", "engine": "1.3", "fuel": "", "hp": 155, "market": "usa"},
+    {"brand": "Chevrolet", "model": "Trax", "engine": "1.4", "fuel": "", "hp": 155, "market": "usa"},
+    {"brand": "Hyundai", "model": "Elantra", "engine": "2.0", "fuel": "", "hp": 147, "market": "usa"},
+    {"brand": "Volkswagen", "model": "Jetta", "engine": "1.4", "fuel": "", "hp": 147, "market": "usa"},
+]
+
+
+def normalize_model_text(value: Any) -> str:
+    return re.sub(r"[^a-zа-я0-9]+", " ", str(value or "").lower()).strip()
+
+
+def parse_engine_liters(value: Any) -> float:
+    text = str(value or "").replace(",", ".")
+    match = re.search(r"\d+(?:\.\d+)?", text)
+    return float(match.group()) if match else 0.0
+
+
+def detect_source_market(record: dict) -> str:
+    explicit = str(record.get("source_market") or record.get("origin") or record.get("country") or "").lower()
+    text = " ".join(str(record.get(k) or "") for k in ("description", "url", "source", "region", "regionCode")).lower()
+    vin = str(record.get("vin") or "").strip().upper()
+    joined = f"{explicit} {text}"
+    if any(token in joined for token in ("сша", "usa", "america", "copart", "iaai", "autocheck", "carfax")):
+        return "usa"
+    if any(token in joined for token in ("европ", "germany", "deutsch", "mobile.de", "autoscout", "eu")):
+        return "europe"
+    if vin:
+        if vin[0] in ("1", "4", "5"):
+            return "usa"
+        if vin[0] in ("S", "T", "U", "V", "W", "Z"):
+            return "europe"
+        if vin[0] == "K":
+            return "korea"
+        if vin[0] == "J":
+            return "japan"
+    return "unknown"
+
+
+def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
+    """Estimate power from known catalog variants for Georgia stock filtering."""
+    source_hp = record_power_hp(record)
+    source_kw = record_power_kw(record)
+
+    brand = normalize_model_text(record.get("brand"))
+    model = normalize_model_text(record.get("model") or record.get("fullName"))
+    fuel = normalize_model_text(record.get("fuel_type") or record.get("fuel"))
+    engine = parse_engine_liters(record.get("engine"))
+    market = detect_source_market(record)
+
+    best = None
+    best_score = -1
+    for rule in GEORGIA_POWER_CATALOG:
+        if normalize_model_text(rule["brand"]) != brand:
+            continue
+        rule_model = normalize_model_text(rule["model"])
+        if rule_model and rule_model not in model:
+            continue
+        rule_market = rule.get("market", "any")
+        if rule_market != "any" and market not in (rule_market, "unknown"):
+            continue
+        rule_engine = parse_engine_liters(rule.get("engine"))
+        if rule_engine and engine and abs(rule_engine - engine) > 0.11:
+            continue
+        rule_fuel = normalize_model_text(rule.get("fuel"))
+        if rule_fuel and rule_fuel not in fuel:
+            continue
+        score = 10
+        if rule_model:
+            score += len(rule_model)
+        if rule_engine and engine:
+            score += 8
+        if rule_fuel:
+            score += 4
+        if rule_market == market:
+            score += 4
+        if score > best_score:
+            best = rule
+            best_score = score
+
+    if not best:
+        if source_hp or source_kw:
+            source_hp = source_hp or round(source_kw * 1.35962)
+            source_kw = source_kw or round(source_hp / 1.35962)
+            return source_hp, source_kw, "source"
+        return 0, 0, ""
+    hp = int(best["hp"])
+    kw = round(hp / 1.35962)
+    return hp, kw, f"catalog:{best['market']}"
+
 
 def year_range_from_age(min_age: int = 0, max_age: int = 0, current_year: Optional[int] = None) -> tuple[int, int]:
     if not min_age and not max_age:
@@ -407,6 +533,16 @@ def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, ma
             continue
         hp = record_power_hp(record)
         kw = record_power_kw(record)
+        if max_power_hp and (not hp or not kw):
+            estimated_hp, estimated_kw, estimate_source = estimate_georgia_catalog_power(record)
+            if estimated_hp or estimated_kw:
+                hp = hp or estimated_hp
+                kw = kw or estimated_kw
+                record["power_hp"] = hp
+                record["power_kw"] = kw
+                record["power"] = record.get("power") or f"{hp} л.с. / {kw} кВт"
+                record["power_source"] = record.get("power_source") or estimate_source
+                record["source_market"] = record.get("source_market") or detect_source_market(record)
         if require_known_power and max_power_hp and not hp and not kw:
             continue
         if max_power_hp and hp and hp > max_power_hp:
@@ -2078,6 +2214,16 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
             "images": car.extra.get("images") or ([{"url": car.photos, "order": 1}] if car.photos else []),
             "source": car.source or source,
         }
+        hp, kw, power_source = estimate_georgia_catalog_power(d)
+        if hp or kw:
+            d["power_hp"] = hp
+            d["power_kw"] = kw
+            d["power"] = f"{hp} л.с. / {kw} кВт"
+            d["power_source"] = power_source
+            detected_market = detect_source_market(d)
+            if detected_market == "unknown" and power_source.startswith("catalog:"):
+                detected_market = power_source.split(":", 1)[1]
+            d["source_market"] = detected_market
         key = stock_key(d)
         if key in fresh_keys:
             continue

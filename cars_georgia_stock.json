@@ -12,7 +12,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2023",
     "description": "myauto.ge/ru/pr/150000159",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/5/large/150000159_1.jpg",
@@ -26,7 +26,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000159",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 2,
@@ -41,7 +44,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000160",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000160_1.jpg",
@@ -55,7 +58,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000160",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 3,
@@ -70,7 +76,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000161",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000161_1.jpg",
@@ -84,7 +90,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000161",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 12,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 4,
@@ -99,7 +108,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000162",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000162_1.jpg",
@@ -113,7 +122,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000162",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 3,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 5,
@@ -128,7 +140,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000163",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000163_1.jpg",
@@ -142,7 +154,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000163",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 6,
@@ -157,7 +172,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000164",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000164_1.jpg",
@@ -171,7 +186,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000164",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 7,
@@ -186,7 +204,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000165",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000165_1.jpg",
@@ -200,7 +218,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000165",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 8,
@@ -215,7 +236,7 @@
     "transmission": "Механика",
     "color": "Красный",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000166",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000166_1.jpg",
@@ -229,7 +250,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000166",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 9,
@@ -244,7 +268,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "AWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "11/2022",
     "description": "myauto.ge/ru/pr/150000167",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000167_1.jpg",
@@ -258,7 +282,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000167",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 10,
@@ -273,7 +300,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000168",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000168_1.jpg",
@@ -287,7 +314,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000168",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 11,
@@ -302,7 +332,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "AWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000169",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/6/large/150000169_1.jpg",
@@ -316,7 +346,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000169",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 12,
@@ -331,7 +364,7 @@
     "transmission": "Механика",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000171",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/7/large/150000171_1.jpg",
@@ -345,7 +378,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000171",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 13,
@@ -360,7 +396,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000172",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/7/large/150000172_1.jpg",
@@ -374,7 +410,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000172",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 14,
@@ -389,7 +428,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "AWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000173",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/7/large/150000173_1.jpg",
@@ -403,7 +442,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000173",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 15,
@@ -418,7 +460,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000174",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/7/large/150000174_1.jpg",
@@ -432,7 +474,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000174",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 16,
@@ -447,7 +492,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000175",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/7/large/150000175_1.jpg",
@@ -461,7 +506,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000175",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 17,
@@ -476,7 +524,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000176",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/7/large/150000176_1.jpg",
@@ -490,7 +538,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000176",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 18,
@@ -505,7 +556,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000179",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/7/large/150000179_1.jpg",
@@ -519,7 +570,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000179",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 19,
@@ -534,7 +588,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000181",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/8/large/150000181_1.jpg",
@@ -548,7 +602,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000181",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 20,
@@ -563,7 +620,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000182",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/8/large/150000182_1.jpg",
@@ -577,7 +634,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000182",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 21,
@@ -592,7 +652,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "135 л.с. / 99 кВт",
+    "power": "135 ?.?. / 99 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000183",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/8/large/150000183_1.jpg",
@@ -606,7 +666,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000183",
-    "power_kw": 99
+    "power_kw": 99,
+    "month": 2,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 22,
@@ -621,7 +684,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "10/2022",
     "description": "myauto.ge/ru/pr/150000184",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/8/large/150000184_1.jpg",
@@ -635,7 +698,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000184",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 10,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 23,
@@ -650,7 +716,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "AWD",
-    "power": "114 л.с. / 84 кВт",
+    "power": "114 ?.?. / 84 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000185",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/8/large/150000185_1.jpg",
@@ -664,7 +730,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000185",
-    "power_kw": 84
+    "power_kw": 84,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 24,
@@ -679,7 +748,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000187",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/8/large/150000187_1.jpg",
@@ -693,7 +762,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000187",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 25,
@@ -708,7 +780,7 @@
     "transmission": "Механика",
     "color": "Перламутровый белый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2022",
     "description": "myauto.ge/ru/pr/150000188",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/8/large/150000188_1.jpg",
@@ -722,7 +794,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000188",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 26,
@@ -737,7 +812,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000189",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/8/large/150000189_1.jpg",
@@ -751,7 +826,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000189",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 27,
@@ -766,7 +844,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "131 л.с. / 96 кВт",
+    "power": "131 ?.?. / 96 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000190",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000190_1.jpg",
@@ -780,7 +858,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000190",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 28,
@@ -795,7 +876,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "146 л.с. / 107 кВт",
+    "power": "146 ?.?. / 107 ???",
     "date": "10/2022",
     "description": "myauto.ge/ru/pr/150000191",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000191_1.jpg",
@@ -809,7 +890,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000191",
-    "power_kw": 107
+    "power_kw": 107,
+    "month": 10,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 29,
@@ -824,7 +908,7 @@
     "transmission": "Механика",
     "color": "Чёрный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000192",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000192_1.jpg",
@@ -838,7 +922,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000192",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 30,
@@ -853,7 +940,7 @@
     "transmission": "Механика",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000193",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000193_1.jpg",
@@ -867,7 +954,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000193",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 31,
@@ -882,7 +972,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000194",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000194_1.jpg",
@@ -896,7 +986,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000194",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 32,
@@ -911,7 +1004,7 @@
     "transmission": "Механика",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "11/2021",
     "description": "myauto.ge/ru/pr/150000195",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000195_1.jpg",
@@ -925,7 +1018,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000195",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 33,
@@ -940,7 +1036,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000196",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000196_1.jpg",
@@ -954,7 +1050,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000196",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 34,
@@ -969,7 +1068,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000197",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000197_1.jpg",
@@ -983,7 +1082,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000197",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 35,
@@ -998,7 +1100,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000198",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000198_1.jpg",
@@ -1012,7 +1114,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000198",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 36,
@@ -1027,7 +1132,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000199",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/1/9/large/150000199_1.jpg",
@@ -1041,7 +1146,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000199",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 37,
@@ -1056,7 +1164,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000200",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000200_1.jpg",
@@ -1070,7 +1178,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000200",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 38,
@@ -1085,7 +1196,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000201",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000201_1.jpg",
@@ -1099,7 +1210,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000201",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 6,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 39,
@@ -1114,7 +1228,7 @@
     "transmission": "Механика",
     "color": "Коричневый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000202",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000202_1.jpg",
@@ -1128,7 +1242,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000202",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 40,
@@ -1143,7 +1260,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000203",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000203_1.jpg",
@@ -1157,7 +1274,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000203",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 41,
@@ -1172,7 +1292,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000204",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000204_1.jpg",
@@ -1186,7 +1306,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000204",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 42,
@@ -1201,7 +1324,7 @@
     "transmission": "Механика",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000205",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000205_1.jpg",
@@ -1215,7 +1338,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000205",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 43,
@@ -1230,7 +1356,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000206",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000206_1.jpg",
@@ -1244,7 +1370,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000206",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 44,
@@ -1259,7 +1388,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "11/2022",
     "description": "myauto.ge/ru/pr/150000207",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000207_1.jpg",
@@ -1273,7 +1402,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000207",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 11,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 45,
@@ -1288,7 +1420,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "AWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000209",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/0/large/150000209_1.jpg",
@@ -1302,7 +1434,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000209",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 46,
@@ -1317,7 +1452,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000210",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/1/large/150000210_1.jpg",
@@ -1331,7 +1466,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000210",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 47,
@@ -1346,7 +1484,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000211",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/1/large/150000211_1.jpg",
@@ -1360,7 +1498,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000211",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 48,
@@ -1375,7 +1516,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000212",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/1/large/150000212_1.jpg",
@@ -1389,7 +1530,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000212",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 49,
@@ -1404,7 +1548,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000213",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/1/large/150000213_1.jpg",
@@ -1418,7 +1562,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000213",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 50,
@@ -1433,7 +1580,7 @@
     "transmission": "Механика",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000214",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/1/large/150000214_1.jpg",
@@ -1447,7 +1594,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000214",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 51,
@@ -1462,7 +1612,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000217",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/1/large/150000217_1.jpg",
@@ -1476,7 +1626,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000217",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 52,
@@ -1491,7 +1644,7 @@
     "transmission": "Механика",
     "color": "Серебристый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2021",
     "description": "myauto.ge/ru/pr/150000219",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/1/large/150000219_1.jpg",
@@ -1505,7 +1658,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000219",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 53,
@@ -1520,7 +1676,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "10/2022",
     "description": "myauto.ge/ru/pr/150000220",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000220_1.jpg",
@@ -1534,7 +1690,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000220",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 10,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 54,
@@ -1549,7 +1708,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "AWD",
-    "power": "135 л.с. / 99 кВт",
+    "power": "135 ?.?. / 99 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000221",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000221_1.jpg",
@@ -1563,7 +1722,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000221",
-    "power_kw": 99
+    "power_kw": 99,
+    "month": 6,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 55,
@@ -1578,7 +1740,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000222",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000222_1.jpg",
@@ -1592,7 +1754,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000222",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 56,
@@ -1607,7 +1772,7 @@
     "transmission": "Механика",
     "color": "Серебристый",
     "drive": "AWD",
-    "power": "114 л.с. / 84 кВт",
+    "power": "114 ?.?. / 84 ???",
     "date": "06/2022",
     "description": "myauto.ge/ru/pr/150000223",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000223_1.jpg",
@@ -1621,7 +1786,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000223",
-    "power_kw": 84
+    "power_kw": 84,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 57,
@@ -1636,7 +1804,7 @@
     "transmission": "Механика",
     "color": "Белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000225",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000225_1.jpg",
@@ -1650,7 +1818,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000225",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 58,
@@ -1665,7 +1836,7 @@
     "transmission": "Механика",
     "color": "Синий",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000226",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000226_1.jpg",
@@ -1679,7 +1850,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000226",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 59,
@@ -1694,7 +1868,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000227",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000227_1.jpg",
@@ -1708,7 +1882,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000227",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 60,
@@ -1723,7 +1900,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "131 л.с. / 96 кВт",
+    "power": "131 ?.?. / 96 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000228",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000228_1.jpg",
@@ -1737,7 +1914,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000228",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 61,
@@ -1752,7 +1932,7 @@
     "transmission": "Механика",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "146 л.с. / 107 кВт",
+    "power": "146 ?.?. / 107 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000229",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/2/large/150000229_1.jpg",
@@ -1766,7 +1946,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000229",
-    "power_kw": 107
+    "power_kw": 107,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 62,
@@ -1781,7 +1964,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000230",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000230_1.jpg",
@@ -1795,7 +1978,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000230",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 63,
@@ -1810,7 +1996,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2022",
     "description": "myauto.ge/ru/pr/150000231",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000231_1.jpg",
@@ -1824,7 +2010,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000231",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 64,
@@ -1839,7 +2028,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000232",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000232_1.jpg",
@@ -1853,7 +2042,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000232",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 65,
@@ -1868,7 +2060,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "AWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000233",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000233_1.jpg",
@@ -1882,7 +2074,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000233",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 66,
@@ -1897,7 +2092,7 @@
     "transmission": "Механика",
     "color": "Синий",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000234",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000234_1.jpg",
@@ -1911,7 +2106,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000234",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 67,
@@ -1926,7 +2124,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000235",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000235_1.jpg",
@@ -1940,7 +2138,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000235",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 68,
@@ -1955,7 +2156,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000236",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000236_1.jpg",
@@ -1969,7 +2170,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000236",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 69,
@@ -1984,7 +2188,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "10/2021",
     "description": "myauto.ge/ru/pr/150000237",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000237_1.jpg",
@@ -1998,7 +2202,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000237",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 10,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 70,
@@ -2013,7 +2220,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000238",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000238_1.jpg",
@@ -2027,7 +2234,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000238",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 2,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 71,
@@ -2042,7 +2252,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000239",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/3/large/150000239_1.jpg",
@@ -2056,7 +2266,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000239",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 3,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 72,
@@ -2071,7 +2284,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000240",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000240_1.jpg",
@@ -2085,7 +2298,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000240",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 73,
@@ -2100,7 +2316,7 @@
     "transmission": "Механика",
     "color": "Серый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000241",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000241_1.jpg",
@@ -2114,7 +2330,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000241",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 74,
@@ -2129,7 +2348,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000242",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000242_1.jpg",
@@ -2143,7 +2362,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000242",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 9,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 75,
@@ -2158,7 +2380,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "AWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000243",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000243_1.jpg",
@@ -2172,7 +2394,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000243",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 76,
@@ -2187,7 +2412,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000244",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000244_1.jpg",
@@ -2201,7 +2426,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000244",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 77,
@@ -2216,7 +2444,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000245",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000245_1.jpg",
@@ -2230,7 +2458,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000245",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 78,
@@ -2245,7 +2476,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000247",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000247_1.jpg",
@@ -2259,7 +2490,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000247",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 79,
@@ -2274,7 +2508,7 @@
     "transmission": "Механика",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000248",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000248_1.jpg",
@@ -2288,7 +2522,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000248",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 80,
@@ -2303,7 +2540,7 @@
     "transmission": "Механика",
     "color": "Синий",
     "drive": "AWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000249",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/4/large/150000249_1.jpg",
@@ -2317,7 +2554,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000249",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 81,
@@ -2332,7 +2572,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000250",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/5/large/150000250_1.jpg",
@@ -2346,7 +2586,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000250",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 82,
@@ -2361,7 +2604,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000251",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/5/large/150000251_1.jpg",
@@ -2375,7 +2618,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000251",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 83,
@@ -2390,7 +2636,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000252",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/5/large/150000252_1.jpg",
@@ -2404,7 +2650,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000252",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 84,
@@ -2419,7 +2668,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000255",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/5/large/150000255_1.jpg",
@@ -2433,7 +2682,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000255",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 85,
@@ -2448,7 +2700,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000257",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/5/large/150000257_1.jpg",
@@ -2462,7 +2714,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000257",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 86,
@@ -2477,7 +2732,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000258",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/5/large/150000258_1.jpg",
@@ -2491,7 +2746,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000258",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 87,
@@ -2506,7 +2764,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "135 л.с. / 99 кВт",
+    "power": "135 ?.?. / 99 ???",
     "date": "10/2022",
     "description": "myauto.ge/ru/pr/150000259",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/5/large/150000259_1.jpg",
@@ -2520,7 +2778,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000259",
-    "power_kw": 99
+    "power_kw": 99,
+    "month": 10,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 88,
@@ -2535,7 +2796,7 @@
     "transmission": "Механика",
     "color": "Синий",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000260",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000260_1.jpg",
@@ -2549,7 +2810,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000260",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 89,
@@ -2564,7 +2828,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "114 л.с. / 84 кВт",
+    "power": "114 ?.?. / 84 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000261",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000261_1.jpg",
@@ -2578,7 +2842,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000261",
-    "power_kw": 84
+    "power_kw": 84,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 90,
@@ -2593,7 +2860,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "10/2022",
     "description": "myauto.ge/ru/pr/150000263",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000263_1.jpg",
@@ -2607,7 +2874,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000263",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 10,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 91,
@@ -2622,7 +2892,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000264",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000264_1.jpg",
@@ -2636,7 +2906,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000264",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 92,
@@ -2651,7 +2924,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000265",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000265_1.jpg",
@@ -2665,7 +2938,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000265",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 93,
@@ -2680,7 +2956,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "131 л.с. / 96 кВт",
+    "power": "131 ?.?. / 96 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000266",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000266_1.jpg",
@@ -2694,7 +2970,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000266",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 94,
@@ -2709,7 +2988,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "146 л.с. / 107 кВт",
+    "power": "146 ?.?. / 107 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000267",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000267_1.jpg",
@@ -2723,7 +3002,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000267",
-    "power_kw": 107
+    "power_kw": 107,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 95,
@@ -2738,7 +3020,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2021",
     "description": "myauto.ge/ru/pr/150000268",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000268_1.jpg",
@@ -2752,7 +3034,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000268",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 96,
@@ -2767,7 +3052,7 @@
     "transmission": "Механика",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000269",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/6/large/150000269_1.jpg",
@@ -2781,7 +3066,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000269",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 97,
@@ -2796,7 +3084,7 @@
     "transmission": "Механика",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000270",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000270_1.jpg",
@@ -2810,7 +3098,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000270",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 98,
@@ -2825,7 +3116,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000271",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000271_1.jpg",
@@ -2839,7 +3130,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000271",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 99,
@@ -2854,7 +3148,7 @@
     "transmission": "Механика",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2023",
     "description": "myauto.ge/ru/pr/150000272",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000272_1.jpg",
@@ -2868,7 +3162,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000272",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 100,
@@ -2883,7 +3180,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2023",
     "description": "myauto.ge/ru/pr/150000273",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000273_1.jpg",
@@ -2897,7 +3194,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000273",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 101,
@@ -2912,7 +3212,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000274",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000274_1.jpg",
@@ -2926,7 +3226,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000274",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 102,
@@ -2941,7 +3244,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "11/2022",
     "description": "myauto.ge/ru/pr/150000275",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000275_1.jpg",
@@ -2955,7 +3258,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000275",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 11,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 103,
@@ -2970,7 +3276,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000276",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000276_1.jpg",
@@ -2984,7 +3290,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000276",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 1,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 104,
@@ -2999,7 +3308,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000277",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000277_1.jpg",
@@ -3013,7 +3322,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000277",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 105,
@@ -3028,7 +3340,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "11/2021",
     "description": "myauto.ge/ru/pr/150000278",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000278_1.jpg",
@@ -3042,7 +3354,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000278",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 106,
@@ -3057,7 +3372,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000279",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/7/large/150000279_1.jpg",
@@ -3071,7 +3386,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000279",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 107,
@@ -3086,7 +3404,7 @@
     "transmission": "Механика",
     "color": "Графитовый",
     "drive": "AWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000280",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000280_1.jpg",
@@ -3100,7 +3418,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000280",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 108,
@@ -3115,7 +3436,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000281",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000281_1.jpg",
@@ -3129,7 +3450,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000281",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 109,
@@ -3144,7 +3468,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000282",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000282_1.jpg",
@@ -3158,7 +3482,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000282",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 110,
@@ -3173,7 +3500,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "AWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000283",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000283_1.jpg",
@@ -3187,7 +3514,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000283",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 111,
@@ -3202,7 +3532,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "AWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000285",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000285_1.jpg",
@@ -3216,7 +3546,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000285",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 112,
@@ -3231,7 +3564,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000286",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000286_1.jpg",
@@ -3245,7 +3578,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000286",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 113,
@@ -3260,7 +3596,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000287",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000287_1.jpg",
@@ -3274,7 +3610,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000287",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 114,
@@ -3289,7 +3628,7 @@
     "transmission": "Механика",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000288",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000288_1.jpg",
@@ -3303,7 +3642,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000288",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 115,
@@ -3318,7 +3660,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000289",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/8/large/150000289_1.jpg",
@@ -3332,7 +3674,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000289",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 116,
@@ -3347,7 +3692,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000290",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/9/large/150000290_1.jpg",
@@ -3361,7 +3706,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000290",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 117,
@@ -3376,7 +3724,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000293",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/9/large/150000293_1.jpg",
@@ -3390,7 +3738,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000293",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 118,
@@ -3405,7 +3756,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2022",
     "description": "myauto.ge/ru/pr/150000295",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/9/large/150000295_1.jpg",
@@ -3419,7 +3770,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000295",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 119,
@@ -3434,7 +3788,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000296",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/9/large/150000296_1.jpg",
@@ -3448,7 +3802,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000296",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 120,
@@ -3463,7 +3820,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "135 л.с. / 99 кВт",
+    "power": "135 ?.?. / 99 ???",
     "date": "10/2021",
     "description": "myauto.ge/ru/pr/150000297",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/9/large/150000297_1.jpg",
@@ -3477,7 +3834,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000297",
-    "power_kw": 99
+    "power_kw": 99,
+    "month": 10,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 121,
@@ -3492,7 +3852,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000298",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/9/large/150000298_1.jpg",
@@ -3506,7 +3866,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000298",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 122,
@@ -3521,7 +3884,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "114 л.с. / 84 кВт",
+    "power": "114 ?.?. / 84 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000299",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/2/9/large/150000299_1.jpg",
@@ -3535,7 +3898,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000299",
-    "power_kw": 84
+    "power_kw": 84,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 123,
@@ -3550,7 +3916,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000301",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000301_1.jpg",
@@ -3564,7 +3930,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000301",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 124,
@@ -3579,7 +3948,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000302",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000302_1.jpg",
@@ -3593,7 +3962,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000302",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 125,
@@ -3608,7 +3980,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000303",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000303_1.jpg",
@@ -3622,7 +3994,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000303",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 126,
@@ -3637,7 +4012,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "131 л.с. / 96 кВт",
+    "power": "131 ?.?. / 96 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000304",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000304_1.jpg",
@@ -3651,7 +4026,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000304",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 127,
@@ -3666,7 +4044,7 @@
     "transmission": "Механика",
     "color": "Графитовый",
     "drive": "AWD",
-    "power": "146 л.с. / 107 кВт",
+    "power": "146 ?.?. / 107 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000305",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000305_1.jpg",
@@ -3680,7 +4058,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000305",
-    "power_kw": 107
+    "power_kw": 107,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 128,
@@ -3695,7 +4076,7 @@
     "transmission": "Механика",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000306",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000306_1.jpg",
@@ -3709,7 +4090,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000306",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 129,
@@ -3724,7 +4108,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2023",
     "description": "myauto.ge/ru/pr/150000307",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000307_1.jpg",
@@ -3738,7 +4122,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000307",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 130,
@@ -3753,7 +4140,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000308",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000308_1.jpg",
@@ -3767,7 +4154,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000308",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 131,
@@ -3782,7 +4172,7 @@
     "transmission": "Механика",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "10/2021",
     "description": "myauto.ge/ru/pr/150000309",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/0/large/150000309_1.jpg",
@@ -3796,7 +4186,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000309",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 10,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 132,
@@ -3811,7 +4204,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000310",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000310_1.jpg",
@@ -3825,7 +4218,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000310",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 133,
@@ -3840,7 +4236,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000311",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000311_1.jpg",
@@ -3854,7 +4250,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000311",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 134,
@@ -3869,7 +4268,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000312",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000312_1.jpg",
@@ -3883,7 +4282,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000312",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 135,
@@ -3898,7 +4300,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000313",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000313_1.jpg",
@@ -3912,7 +4314,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000313",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 136,
@@ -3927,7 +4332,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000314",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000314_1.jpg",
@@ -3941,7 +4346,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000314",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 137,
@@ -3956,7 +4364,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "FWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000315",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000315_1.jpg",
@@ -3970,7 +4378,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000315",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 3,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 138,
@@ -3985,7 +4396,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000316",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000316_1.jpg",
@@ -3999,7 +4410,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000316",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 139,
@@ -4014,7 +4428,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000317",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000317_1.jpg",
@@ -4028,7 +4442,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000317",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 140,
@@ -4043,7 +4460,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000318",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000318_1.jpg",
@@ -4057,7 +4474,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000318",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 12,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 141,
@@ -4072,7 +4492,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "AWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000319",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/1/large/150000319_1.jpg",
@@ -4086,7 +4506,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000319",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 142,
@@ -4101,7 +4524,7 @@
     "transmission": "Механика",
     "color": "Синий",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000320",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/2/large/150000320_1.jpg",
@@ -4115,7 +4538,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000320",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 143,
@@ -4130,7 +4556,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "11/2022",
     "description": "myauto.ge/ru/pr/150000321",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/2/large/150000321_1.jpg",
@@ -4144,7 +4570,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000321",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 11,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 144,
@@ -4159,7 +4588,7 @@
     "transmission": "Механика",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000323",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/2/large/150000323_1.jpg",
@@ -4173,7 +4602,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000323",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 145,
@@ -4188,7 +4620,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000324",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/2/large/150000324_1.jpg",
@@ -4202,7 +4634,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000324",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 146,
@@ -4217,7 +4652,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "AWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000325",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/2/large/150000325_1.jpg",
@@ -4231,7 +4666,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000325",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 147,
@@ -4246,7 +4684,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000326",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/2/large/150000326_1.jpg",
@@ -4260,7 +4698,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000326",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 148,
@@ -4275,7 +4716,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000327",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/2/large/150000327_1.jpg",
@@ -4289,7 +4730,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000327",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 149,
@@ -4304,7 +4748,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000328",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/2/large/150000328_1.jpg",
@@ -4318,7 +4762,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000328",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 150,
@@ -4333,7 +4780,7 @@
     "transmission": "Механика",
     "color": "Перламутровый белый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000331",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/3/large/150000331_1.jpg",
@@ -4347,7 +4794,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000331",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 151,
@@ -4362,7 +4812,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000333",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/3/large/150000333_1.jpg",
@@ -4376,7 +4826,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000333",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 152,
@@ -4391,7 +4844,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000334",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/3/large/150000334_1.jpg",
@@ -4405,7 +4858,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000334",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 153,
@@ -4420,7 +4876,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "135 л.с. / 99 кВт",
+    "power": "135 ?.?. / 99 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000335",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/3/large/150000335_1.jpg",
@@ -4434,7 +4890,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000335",
-    "power_kw": 99
+    "power_kw": 99,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 154,
@@ -4449,7 +4908,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "11/2022",
     "description": "myauto.ge/ru/pr/150000336",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/3/large/150000336_1.jpg",
@@ -4463,7 +4922,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000336",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 155,
@@ -4478,7 +4940,7 @@
     "transmission": "Механика",
     "color": "Серебристый",
     "drive": "AWD",
-    "power": "114 л.с. / 84 кВт",
+    "power": "114 ?.?. / 84 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000337",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/3/large/150000337_1.jpg",
@@ -4492,7 +4954,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000337",
-    "power_kw": 84
+    "power_kw": 84,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 156,
@@ -4507,7 +4972,7 @@
     "transmission": "Механика",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2022",
     "description": "myauto.ge/ru/pr/150000339",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/3/large/150000339_1.jpg",
@@ -4521,7 +4986,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000339",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 157,
@@ -4536,7 +5004,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000340",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000340_1.jpg",
@@ -4550,7 +5018,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000340",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 158,
@@ -4565,7 +5036,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000341",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000341_1.jpg",
@@ -4579,7 +5050,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000341",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 159,
@@ -4594,7 +5068,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "AWD",
-    "power": "131 л.с. / 96 кВт",
+    "power": "131 ?.?. / 96 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000342",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000342_1.jpg",
@@ -4608,7 +5082,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000342",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 160,
@@ -4623,7 +5100,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "146 л.с. / 107 кВт",
+    "power": "146 ?.?. / 107 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000343",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000343_1.jpg",
@@ -4637,7 +5114,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000343",
-    "power_kw": 107
+    "power_kw": 107,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 161,
@@ -4652,7 +5132,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000344",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000344_1.jpg",
@@ -4666,7 +5146,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000344",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 162,
@@ -4681,7 +5164,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000345",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000345_1.jpg",
@@ -4695,7 +5178,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000345",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 163,
@@ -4710,7 +5196,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000346",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000346_1.jpg",
@@ -4724,7 +5210,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000346",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 164,
@@ -4739,7 +5228,7 @@
     "transmission": "Механика",
     "color": "Синий",
     "drive": "AWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000347",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000347_1.jpg",
@@ -4753,7 +5242,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000347",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 165,
@@ -4768,7 +5260,7 @@
     "transmission": "Механика",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000348",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000348_1.jpg",
@@ -4782,7 +5274,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000348",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 166,
@@ -4797,7 +5292,7 @@
     "transmission": "Механика",
     "color": "Красный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000349",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/4/large/150000349_1.jpg",
@@ -4811,7 +5306,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000349",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 167,
@@ -4826,7 +5324,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000350",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000350_1.jpg",
@@ -4840,7 +5338,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000350",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 168,
@@ -4855,7 +5356,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000351",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000351_1.jpg",
@@ -4869,7 +5370,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000351",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 2,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 169,
@@ -4884,7 +5388,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000352",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000352_1.jpg",
@@ -4898,7 +5402,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000352",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 2,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 170,
@@ -4913,7 +5420,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "AWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000353",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000353_1.jpg",
@@ -4927,7 +5434,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000353",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 12,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 171,
@@ -4942,7 +5452,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000354",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000354_1.jpg",
@@ -4956,7 +5466,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000354",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 172,
@@ -4971,7 +5484,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000355",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000355_1.jpg",
@@ -4985,7 +5498,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000355",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 173,
@@ -5000,7 +5516,7 @@
     "transmission": "Механика",
     "color": "Коричневый",
     "drive": "AWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000356",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000356_1.jpg",
@@ -5014,7 +5530,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000356",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 174,
@@ -5029,7 +5548,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "06/2022",
     "description": "myauto.ge/ru/pr/150000357",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000357_1.jpg",
@@ -5043,7 +5562,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000357",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 175,
@@ -5058,7 +5580,7 @@
     "transmission": "Механика",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000358",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000358_1.jpg",
@@ -5072,7 +5594,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000358",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 176,
@@ -5087,7 +5612,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000359",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/5/large/150000359_1.jpg",
@@ -5101,7 +5626,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000359",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 177,
@@ -5116,7 +5644,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000361",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/6/large/150000361_1.jpg",
@@ -5130,7 +5658,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000361",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 178,
@@ -5145,7 +5676,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000362",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/6/large/150000362_1.jpg",
@@ -5159,7 +5690,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000362",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 179,
@@ -5174,7 +5708,7 @@
     "transmission": "Механика",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "11/2022",
     "description": "myauto.ge/ru/pr/150000363",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/6/large/150000363_1.jpg",
@@ -5188,7 +5722,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000363",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 180,
@@ -5203,7 +5740,7 @@
     "transmission": "Механика",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "11/2021",
     "description": "myauto.ge/ru/pr/150000364",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/6/large/150000364_1.jpg",
@@ -5217,7 +5754,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000364",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 181,
@@ -5232,7 +5772,7 @@
     "transmission": "Механика",
     "color": "Коричневый",
     "drive": "AWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "05/2021",
     "description": "myauto.ge/ru/pr/150000365",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/6/large/150000365_1.jpg",
@@ -5246,7 +5786,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000365",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 182,
@@ -5261,7 +5804,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000366",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/6/large/150000366_1.jpg",
@@ -5275,7 +5818,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000366",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 183,
@@ -5290,7 +5836,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000369",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/6/large/150000369_1.jpg",
@@ -5304,7 +5850,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000369",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 184,
@@ -5319,7 +5868,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000371",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/7/large/150000371_1.jpg",
@@ -5333,7 +5882,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000371",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 185,
@@ -5348,7 +5900,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000372",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/7/large/150000372_1.jpg",
@@ -5362,7 +5914,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000372",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 186,
@@ -5377,7 +5932,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "135 л.с. / 99 кВт",
+    "power": "135 ?.?. / 99 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000373",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/7/large/150000373_1.jpg",
@@ -5391,7 +5946,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000373",
-    "power_kw": 99
+    "power_kw": 99,
+    "month": 12,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 187,
@@ -5406,7 +5964,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000374",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/7/large/150000374_1.jpg",
@@ -5420,7 +5978,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000374",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 188,
@@ -5435,7 +5996,7 @@
     "transmission": "Механика",
     "color": "Серый",
     "drive": "FWD",
-    "power": "114 л.с. / 84 кВт",
+    "power": "114 ?.?. / 84 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000375",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/7/large/150000375_1.jpg",
@@ -5449,7 +6010,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000375",
-    "power_kw": 84
+    "power_kw": 84,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 189,
@@ -5464,7 +6028,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000377",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/7/large/150000377_1.jpg",
@@ -5478,7 +6042,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000377",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 190,
@@ -5493,7 +6060,7 @@
     "transmission": "Механика",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000378",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/7/large/150000378_1.jpg",
@@ -5507,7 +6074,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000378",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 191,
@@ -5522,7 +6092,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000379",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/7/large/150000379_1.jpg",
@@ -5536,7 +6106,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000379",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 192,
@@ -5551,7 +6124,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "131 л.с. / 96 кВт",
+    "power": "131 ?.?. / 96 ???",
     "date": "10/2022",
     "description": "myauto.ge/ru/pr/150000380",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000380_1.jpg",
@@ -5565,7 +6138,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000380",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 10,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 193,
@@ -5580,7 +6156,7 @@
     "transmission": "Механика",
     "color": "Красный",
     "drive": "FWD",
-    "power": "146 л.с. / 107 кВт",
+    "power": "146 ?.?. / 107 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000381",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000381_1.jpg",
@@ -5594,7 +6170,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000381",
-    "power_kw": 107
+    "power_kw": 107,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 194,
@@ -5609,7 +6188,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000382",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000382_1.jpg",
@@ -5623,7 +6202,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000382",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 195,
@@ -5638,7 +6220,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000383",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000383_1.jpg",
@@ -5652,7 +6234,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000383",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 196,
@@ -5667,7 +6252,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000384",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000384_1.jpg",
@@ -5681,7 +6266,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000384",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 197,
@@ -5696,7 +6284,7 @@
     "transmission": "Механика",
     "color": "Перламутровый белый",
     "drive": "AWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000385",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000385_1.jpg",
@@ -5710,7 +6298,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000385",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 198,
@@ -5725,7 +6316,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000386",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000386_1.jpg",
@@ -5739,7 +6330,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000386",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 199,
@@ -5754,7 +6348,7 @@
     "transmission": "Механика",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000387",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000387_1.jpg",
@@ -5768,7 +6362,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000387",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 200,
@@ -5783,7 +6380,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000388",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000388_1.jpg",
@@ -5797,7 +6394,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000388",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 201,
@@ -5812,7 +6412,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "06/2022",
     "description": "myauto.ge/ru/pr/150000389",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/8/large/150000389_1.jpg",
@@ -5826,7 +6426,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000389",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 6,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 202,
@@ -5841,7 +6444,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000390",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000390_1.jpg",
@@ -5855,7 +6458,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000390",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 203,
@@ -5870,7 +6476,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000391",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000391_1.jpg",
@@ -5884,7 +6490,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000391",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 6,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 204,
@@ -5899,7 +6508,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000392",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000392_1.jpg",
@@ -5913,7 +6522,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000392",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 205,
@@ -5928,7 +6540,7 @@
     "transmission": "Механика",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2022",
     "description": "myauto.ge/ru/pr/150000393",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000393_1.jpg",
@@ -5942,7 +6554,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000393",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 206,
@@ -5957,7 +6572,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "02/2023",
     "description": "myauto.ge/ru/pr/150000394",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000394_1.jpg",
@@ -5971,7 +6586,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000394",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 2,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 207,
@@ -5986,7 +6604,7 @@
     "transmission": "Механика",
     "color": "Синий",
     "drive": "AWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "11/2021",
     "description": "myauto.ge/ru/pr/150000395",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000395_1.jpg",
@@ -6000,7 +6618,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000395",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 208,
@@ -6015,7 +6636,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000396",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000396_1.jpg",
@@ -6029,7 +6650,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000396",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 209,
@@ -6044,7 +6668,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000397",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000397_1.jpg",
@@ -6058,7 +6682,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000397",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 210,
@@ -6073,7 +6700,7 @@
     "transmission": "Механика",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000399",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/3/9/large/150000399_1.jpg",
@@ -6087,7 +6714,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000399",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 211,
@@ -6102,7 +6732,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2023",
     "description": "myauto.ge/ru/pr/150000400",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/0/large/150000400_1.jpg",
@@ -6116,7 +6746,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000400",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 212,
@@ -6131,7 +6764,7 @@
     "transmission": "Механика",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000401",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/0/large/150000401_1.jpg",
@@ -6145,7 +6778,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000401",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 213,
@@ -6160,7 +6796,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000402",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/0/large/150000402_1.jpg",
@@ -6174,7 +6810,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000402",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 214,
@@ -6189,7 +6828,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000403",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/0/large/150000403_1.jpg",
@@ -6203,7 +6842,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000403",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 215,
@@ -6218,7 +6860,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000404",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/0/large/150000404_1.jpg",
@@ -6232,7 +6874,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000404",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 216,
@@ -6247,7 +6892,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000407",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/0/large/150000407_1.jpg",
@@ -6261,7 +6906,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000407",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 217,
@@ -6276,7 +6924,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2023",
     "description": "myauto.ge/ru/pr/150000409",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/0/large/150000409_1.jpg",
@@ -6290,7 +6938,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000409",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 218,
@@ -6305,7 +6956,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000410",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000410_1.jpg",
@@ -6319,7 +6970,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000410",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 219,
@@ -6334,7 +6988,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "135 л.с. / 99 кВт",
+    "power": "135 ?.?. / 99 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000411",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000411_1.jpg",
@@ -6348,7 +7002,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000411",
-    "power_kw": 99
+    "power_kw": 99,
+    "month": 7,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 220,
@@ -6363,7 +7020,7 @@
     "transmission": "Механика",
     "color": "Серый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "10/2022",
     "description": "myauto.ge/ru/pr/150000412",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000412_1.jpg",
@@ -6377,7 +7034,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000412",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 10,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 221,
@@ -6392,7 +7052,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "114 л.с. / 84 кВт",
+    "power": "114 ?.?. / 84 ???",
     "date": "03/2022",
     "description": "myauto.ge/ru/pr/150000413",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000413_1.jpg",
@@ -6406,7 +7066,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000413",
-    "power_kw": 84
+    "power_kw": 84,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 222,
@@ -6421,7 +7084,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000415",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000415_1.jpg",
@@ -6435,7 +7098,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000415",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 223,
@@ -6450,7 +7116,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000416",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000416_1.jpg",
@@ -6464,7 +7130,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000416",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 224,
@@ -6479,7 +7148,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000417",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000417_1.jpg",
@@ -6493,7 +7162,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000417",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 225,
@@ -6508,7 +7180,7 @@
     "transmission": "Механика",
     "color": "Синий металлик",
     "drive": "AWD",
-    "power": "131 л.с. / 96 кВт",
+    "power": "131 ?.?. / 96 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000418",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000418_1.jpg",
@@ -6522,7 +7194,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000418",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 226,
@@ -6537,7 +7212,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "146 л.с. / 107 кВт",
+    "power": "146 ?.?. / 107 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000419",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/1/large/150000419_1.jpg",
@@ -6551,7 +7226,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000419",
-    "power_kw": 107
+    "power_kw": 107,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 227,
@@ -6566,7 +7244,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000420",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000420_1.jpg",
@@ -6580,7 +7258,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000420",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 228,
@@ -6595,7 +7276,7 @@
     "transmission": "Механика",
     "color": "Графитовый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "10/2022",
     "description": "myauto.ge/ru/pr/150000421",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000421_1.jpg",
@@ -6609,7 +7290,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000421",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 10,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 229,
@@ -6624,7 +7308,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000422",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000422_1.jpg",
@@ -6638,7 +7322,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000422",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 230,
@@ -6653,7 +7340,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000423",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000423_1.jpg",
@@ -6667,7 +7354,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000423",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 231,
@@ -6682,7 +7372,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "11/2021",
     "description": "myauto.ge/ru/pr/150000424",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000424_1.jpg",
@@ -6696,7 +7386,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000424",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 232,
@@ -6711,7 +7404,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000425",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000425_1.jpg",
@@ -6725,7 +7418,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000425",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 233,
@@ -6740,7 +7436,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000426",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000426_1.jpg",
@@ -6754,7 +7450,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000426",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 234,
@@ -6769,7 +7468,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000427",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000427_1.jpg",
@@ -6783,7 +7482,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000427",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 235,
@@ -6798,7 +7500,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000428",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000428_1.jpg",
@@ -6812,7 +7514,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000428",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 12,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 236,
@@ -6827,7 +7532,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "12/2021",
     "description": "myauto.ge/ru/pr/150000429",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/2/large/150000429_1.jpg",
@@ -6841,7 +7546,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000429",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 12,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 237,
@@ -6856,7 +7564,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "11/2021",
     "description": "myauto.ge/ru/pr/150000430",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000430_1.jpg",
@@ -6870,7 +7578,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000430",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 238,
@@ -6885,7 +7596,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000431",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000431_1.jpg",
@@ -6899,7 +7610,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000431",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 239,
@@ -6914,7 +7628,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "11/2021",
     "description": "myauto.ge/ru/pr/150000432",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000432_1.jpg",
@@ -6928,7 +7642,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000432",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 11,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 240,
@@ -6943,7 +7660,7 @@
     "transmission": "Механика",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000433",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000433_1.jpg",
@@ -6957,7 +7674,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000433",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 241,
@@ -6972,7 +7692,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000434",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000434_1.jpg",
@@ -6986,7 +7706,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000434",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 242,
@@ -7001,7 +7724,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "09/2021",
     "description": "myauto.ge/ru/pr/150000435",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000435_1.jpg",
@@ -7015,7 +7738,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000435",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 9,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 243,
@@ -7030,7 +7756,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000437",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000437_1.jpg",
@@ -7044,7 +7770,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000437",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 244,
@@ -7059,7 +7788,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000438",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000438_1.jpg",
@@ -7073,7 +7802,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000438",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 245,
@@ -7088,7 +7820,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000439",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/3/large/150000439_1.jpg",
@@ -7102,7 +7834,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000439",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 246,
@@ -7117,7 +7852,7 @@
     "transmission": "Механика",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "05/2021",
     "description": "myauto.ge/ru/pr/150000440",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/4/large/150000440_1.jpg",
@@ -7131,7 +7866,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000440",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 247,
@@ -7146,7 +7884,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000441",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/4/large/150000441_1.jpg",
@@ -7160,7 +7898,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000441",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 248,
@@ -7175,7 +7916,7 @@
     "transmission": "Автомат",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "08/2021",
     "description": "myauto.ge/ru/pr/150000442",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/4/large/150000442_1.jpg",
@@ -7189,7 +7930,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000442",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 249,
@@ -7204,7 +7948,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "12/2022",
     "description": "myauto.ge/ru/pr/150000445",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/4/large/150000445_1.jpg",
@@ -7218,7 +7962,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000445",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 12,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 250,
@@ -7233,7 +7980,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000447",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/4/large/150000447_1.jpg",
@@ -7247,7 +7994,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000447",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 251,
@@ -7262,7 +8012,7 @@
     "transmission": "Автомат",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2023",
     "description": "myauto.ge/ru/pr/150000448",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/4/large/150000448_1.jpg",
@@ -7276,7 +8026,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000448",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 252,
@@ -7291,7 +8044,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "135 л.с. / 99 кВт",
+    "power": "135 ?.?. / 99 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000449",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/4/large/150000449_1.jpg",
@@ -7305,7 +8058,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000449",
-    "power_kw": 99
+    "power_kw": 99,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 253,
@@ -7320,7 +8076,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000450",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000450_1.jpg",
@@ -7334,7 +8090,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000450",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 254,
@@ -7349,7 +8108,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "114 л.с. / 84 кВт",
+    "power": "114 ?.?. / 84 ???",
     "date": "10/2021",
     "description": "myauto.ge/ru/pr/150000451",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000451_1.jpg",
@@ -7363,7 +8122,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000451",
-    "power_kw": 84
+    "power_kw": 84,
+    "month": 10,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 255,
@@ -7378,7 +8140,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000453",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000453_1.jpg",
@@ -7392,7 +8154,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000453",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 256,
@@ -7407,7 +8172,7 @@
     "transmission": "Механика",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000454",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000454_1.jpg",
@@ -7421,7 +8186,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000454",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 257,
@@ -7436,7 +8204,7 @@
     "transmission": "Автомат",
     "color": "Зелёный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000455",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000455_1.jpg",
@@ -7450,7 +8218,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000455",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 258,
@@ -7465,7 +8236,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "131 л.с. / 96 кВт",
+    "power": "131 ?.?. / 96 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000456",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000456_1.jpg",
@@ -7479,7 +8250,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000456",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 259,
@@ -7494,7 +8268,7 @@
     "transmission": "Механика",
     "color": "Чёрный",
     "drive": "FWD",
-    "power": "146 л.с. / 107 кВт",
+    "power": "146 ?.?. / 107 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000457",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000457_1.jpg",
@@ -7508,7 +8282,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000457",
-    "power_kw": 107
+    "power_kw": 107,
+    "month": 8,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 260,
@@ -7523,7 +8300,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000458",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000458_1.jpg",
@@ -7537,7 +8314,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000458",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 261,
@@ -7552,7 +8332,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "02/2022",
     "description": "myauto.ge/ru/pr/150000459",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/5/large/150000459_1.jpg",
@@ -7566,7 +8346,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000459",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 2,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 262,
@@ -7581,7 +8364,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000460",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000460_1.jpg",
@@ -7595,7 +8378,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000460",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 263,
@@ -7610,7 +8396,7 @@
     "transmission": "Механика",
     "color": "Зелёный",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000461",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000461_1.jpg",
@@ -7624,7 +8410,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000461",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 264,
@@ -7639,7 +8428,7 @@
     "transmission": "Автомат",
     "color": "Коричневый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "01/2022",
     "description": "myauto.ge/ru/pr/150000462",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000462_1.jpg",
@@ -7653,7 +8442,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000462",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 1,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 265,
@@ -7668,7 +8460,7 @@
     "transmission": "Механика",
     "color": "Бежевый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000463",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000463_1.jpg",
@@ -7682,7 +8474,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000463",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 266,
@@ -7697,7 +8492,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "06/2021",
     "description": "myauto.ge/ru/pr/150000464",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000464_1.jpg",
@@ -7711,7 +8506,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000464",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 6,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 267,
@@ -7726,7 +8524,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "AWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000465",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000465_1.jpg",
@@ -7740,7 +8538,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000465",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 268,
@@ -7755,7 +8556,7 @@
     "transmission": "Автомат",
     "color": "Красный",
     "drive": "FWD",
-    "power": "122 л.с. / 90 кВт",
+    "power": "122 ?.?. / 90 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000466",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000466_1.jpg",
@@ -7769,7 +8570,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000466",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 4,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 269,
@@ -7784,7 +8588,7 @@
     "transmission": "Автомат",
     "color": "Белый",
     "drive": "AWD",
-    "power": "116 л.с. / 85 кВт",
+    "power": "116 ?.?. / 85 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000467",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000467_1.jpg",
@@ -7798,7 +8602,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000467",
-    "power_kw": 85
+    "power_kw": 85,
+    "month": 5,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 270,
@@ -7813,7 +8620,7 @@
     "transmission": "Автомат",
     "color": "Синий",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2023",
     "description": "myauto.ge/ru/pr/150000468",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000468_1.jpg",
@@ -7827,7 +8634,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000468",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 271,
@@ -7842,7 +8652,7 @@
     "transmission": "Автомат",
     "color": "Перламутровый белый",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2023",
     "description": "myauto.ge/ru/pr/150000469",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/6/large/150000469_1.jpg",
@@ -7856,7 +8666,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000469",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 272,
@@ -7871,7 +8684,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "08/2022",
     "description": "myauto.ge/ru/pr/150000470",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000470_1.jpg",
@@ -7885,7 +8698,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000470",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 8,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 273,
@@ -7900,7 +8716,7 @@
     "transmission": "Механика",
     "color": "Графитовый",
     "drive": "AWD",
-    "power": "110 л.с. / 81 кВт",
+    "power": "110 ?.?. / 81 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000471",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000471_1.jpg",
@@ -7914,7 +8730,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000471",
-    "power_kw": 81
+    "power_kw": 81,
+    "month": 3,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 274,
@@ -7929,7 +8748,7 @@
     "transmission": "Автомат",
     "color": "Серебристый",
     "drive": "AWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "04/2022",
     "description": "myauto.ge/ru/pr/150000472",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000472_1.jpg",
@@ -7943,7 +8762,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000472",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 4,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 275,
@@ -7958,7 +8780,7 @@
     "transmission": "Автомат",
     "color": "Серый",
     "drive": "FWD",
-    "power": "123 л.с. / 90 кВт",
+    "power": "123 ?.?. / 90 ???",
     "date": "03/2023",
     "description": "myauto.ge/ru/pr/150000473",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000473_1.jpg",
@@ -7972,7 +8794,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000473",
-    "power_kw": 90
+    "power_kw": 90,
+    "month": 3,
+    "power_source": "catalog:any",
+    "source_market": "any"
   },
   {
     "id": 276,
@@ -7987,7 +8812,7 @@
     "transmission": "Механика",
     "color": "Синий",
     "drive": "FWD",
-    "power": "149 л.с. / 110 кВт",
+    "power": "149 ?.?. / 110 ???",
     "date": "07/2022",
     "description": "myauto.ge/ru/pr/150000475",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000475_1.jpg",
@@ -8001,7 +8826,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000475",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 277,
@@ -8016,7 +8844,7 @@
     "transmission": "Автомат",
     "color": "Синий металлик",
     "drive": "FWD",
-    "power": "150 л.с. / 110 кВт",
+    "power": "150 ?.?. / 110 ???",
     "date": "05/2022",
     "description": "myauto.ge/ru/pr/150000476",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000476_1.jpg",
@@ -8030,7 +8858,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000476",
-    "power_kw": 110
+    "power_kw": 110,
+    "month": 5,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 278,
@@ -8045,7 +8876,7 @@
     "transmission": "Автомат",
     "color": "Графитовый",
     "drive": "FWD",
-    "power": "130 л.с. / 96 кВт",
+    "power": "130 ?.?. / 96 ???",
     "date": "07/2021",
     "description": "myauto.ge/ru/pr/150000477",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000477_1.jpg",
@@ -8059,7 +8890,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000477",
-    "power_kw": 96
+    "power_kw": 96,
+    "month": 7,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 279,
@@ -8074,7 +8908,7 @@
     "transmission": "Механика",
     "color": "Графитовый",
     "drive": "AWD",
-    "power": "95 л.с. / 70 кВт",
+    "power": "95 ?.?. / 70 ???",
     "date": "09/2022",
     "description": "myauto.ge/ru/pr/150000478",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000478_1.jpg",
@@ -8088,7 +8922,10 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000478",
-    "power_kw": 70
+    "power_kw": 70,
+    "month": 9,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   },
   {
     "id": 280,
@@ -8103,7 +8940,7 @@
     "transmission": "Механика",
     "color": "Белый",
     "drive": "FWD",
-    "power": "140 л.с. / 103 кВт",
+    "power": "140 ?.?. / 103 ???",
     "date": "11/2022",
     "description": "myauto.ge/ru/pr/150000479",
     "photos": "https://static.my.ge/myauto/photos/0/0/0/4/7/large/150000479_1.jpg",
@@ -8117,6 +8954,9 @@
       }
     ],
     "url": "https://myauto.ge/ru/pr/150000479",
-    "power_kw": 103
+    "power_kw": 103,
+    "month": 11,
+    "power_source": "catalog:europe",
+    "source_market": "europe"
   }
 ]
