@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-05-10T08:05:15Z
+Generated: 2026-05-10T10:59:17Z
 
 ## 1. Volkswagen — @autodeskusa
 
@@ -108,7 +108,52 @@ Generated: 2026-05-10T08:05:15Z
 - https://cdn4.telesco.pe/file/A9r7M88SLtTbsS3leqfNFVLf5-kvvUxhlEesHoqWIrpcLYg8S0F4oU57ZG_KbFHP-fl6AKDlDXpSVvUDpuB-o59pD9ks3pj1Mn5DWjR4WRQ4zCpYzgs_5kI1vrkrfXFqNzQc0BjyUj5QSNUh_dshr7nd7X6XA4j0APxvprJgSJU7BQqIkncB2uqJukJZoz0sICN-870wRiOzHDDxLmuWvQHu6t71wBRKJVpT7ggzDvINBqoZ45U0ZAIJrI1gYbeTnBmbCab4-q_xx1yIAW_aBGL0iVElPtmWZ4KNmrsQBssOF0YHsDLNREK3ba7RuRSzwESg_w00LiBauyA8azSiNA.jpg
 - https://cdn4.telesco.pe/file/S8ktZvwOlYGlTfwm9Mo0KQ5vgzuJjPFHZGrPU5C11aGRIISZQbIvXYR4zvDnfxn_8FJEfOCZgXFAkNNbm0a-i-gtLLObaAi9odGEiERBLCqvKhweNgK0sWM1K5r3zT_0swINaGpjKglGrYXZ1uEFcOyxe7vFGEJSj9w3IInowbKA1olHn6-hdHeNdA_K39_xVy6-lwgwyRpuOr7Cj0LC7jtOW5-GREpAF4-HhClgM50-pbPQ0zTo725HzK17DnpdPwQqQj0LqBP7cbSCkjjTF5DSlyVaJWn4XEBj7T-MMtDpUTnca4u3H03hHbI6sNHTsewSwXwyK-GrG52GMteAZA.jpg
 
-## 5. Volkswagen — @autodeskusa
+## 5. CHEVROLET EQUINOX — @auto4export
+
+🔥 CHEVROLET EQUINOX
+
+📍 Направление: США / экспорт
+📅 Год: 2024
+💰 Ориентир: 17.900$
+⚙️ Двигатель: 1.5
+🐎 Мощность: уточняется
+🛣️ Пробег: 42,183 миль
+• указан пробег
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/996755666805
+Источник мониторинга: @auto4export
+
+Фото:
+- https://cdn4.telesco.pe/file/B9qCmRGfQXtXxmkXMmvt_VyZDosH_CpGqdS2gvtaF29AwpvzNfxFr-_n37Y_OW_OuGCu1ulixaW694zrD4y5Lsly9WWTD2B4faCwDQlG-T4MNtjO38ldaTM4KOk2Pmo0izD56kWWiDAVuNNe01-wOhkQDv9jjsxruo_DqQumRJy9-5kWJhpQPOlq6W7GcpV7q3GbOtV4Hkiy20u9XTKYKQkHHKh3RJOubO65JpH3eql37eIW1ShF-PbfbigoJCK4q-Z3OrRQcecUX7ctlbWyiceNAloa9DZayZrtOPxAov6HyK5vwV3oOMssfXOWv4aCFtBlnqhBeoPERm3NNTDgrg.jpg
+- https://cdn4.telesco.pe/file/cwYubNwr8VwQZpX36_wLbRwdfz7I4BkWTAyJzVrxt90wqxxOHavUYpNJw_B3IRqc1bHfaq-Is-6TyWPNbKHi5BFpretE_psiPUTytR31mTgnhABZv78Ept_KmkUNEHgnHyvT3odZk2EhlnZC2ge2vopuad0bdiDAV0PP94DiV3XuANErnU9Cla3o7cLoOQWj4OKYJfQq6tTrjr557gqdBHgAFzVgjCzlkge9JEBPdld2rM7bjhqJws6ItTCLX6jvrpH9j2nPxn0DG2roJFZNEhvAp1DYojWZhPafx7uh7a3ws7RxO0O3GYW_nMOvDkPBQw3G8G2QJRuFSyg1pdQzFg.jpg
+- https://cdn4.telesco.pe/file/Ls0Te0Q5632RmXu8IQiVlzHjPkVepnlssOFDsA9oGDB1yuZQqblZuh4ai9pQ1lEdfLDGOUnZopUQQ162kMTfrtCZPZz_4GguOQ8ZFgjzPBconWeS74nFXWBDzBBRAtCCF-G_Wg6Ylq_nO-z_9EeCxliW3CIPwKLaQR98h_oYyZu-I0LTZQlFiwlXkerFY6Ksay13GDwrA48XtZRmKRwvCDzuhwzVil84pCntjFAe7sW4c7_YrAT0RyGUl63Rfj6DcM4erCsOy2WwurBSr9EwBGrfK3pQjdw1Qx71_kSpPw5gOlIehDqb82f_d8I7cetrHpfl-CWHnXsBZMk9eZpjfA.jpg
+- https://cdn4.telesco.pe/file/StQJ4GILVBAuipG2UEBc3AROY8pxVFA64WUbaJ0_npBv1qUG-Eltwj8a7mXut3_bofnnBueV9bmrw9b5y2PTL75x9qStaZLaKoFwS8XDoL489x_KOP_TSqIeGjQKFT4MeMByN6OXq4crpiCceBdSOUa-Rl7UYaqZL418_vuQEBWkjg0Uha45o8DZF_V3ZBksgd8VWm1w4c7t_9NHXd_DwPnccb41yhsy5HnIt2aQRWR5af_ZfwMJrbNzV3VkXaNvAn5hfQIAYrMToi5iq5gHxSbnq13h2MO227xTkLEMVg1s07D_juUSqm3eNaykwPAO3qsEtDmqEz_FleLTWiMBUQ.jpg
+- https://cdn4.telesco.pe/file/WymXOal5Q4kmxxzkE6mRTK4DGTi9jB82TgjKpMhIQ2vhwIXOiQ5NosH9R7QuViVcZZcEZDKGTGwxQdidQd7qDMW3KaAYN4rPbOknb8aa94hycqGPggp4TOtt01K6bXqdK2m99Ya1g9O4ZVfI-bHVqHz26FEem5pr98rMxX0bDSFLe85K-sZtSh4wg77bwm8C2_7YNNV7OECYs9omqRqPuR_ppLyOWQm3SF6rPfPtvzubIl5t7p2_BQOgonXaqIdQkkE3c0-Cr1xzNX22qOUXf64ZuWZ7VVHwfjhAVLyWWNd0-i0b7Tk-6XhTOd8uRGyEXjzoZGN_5stNK77DhhfqeQ.jpg
+
+## 6. Kia Seltos — @autodeskusa
+
+🔥 Kia Seltos
+
+📍 Направление: США / Европа / Грузия
+📅 Год: год уточним
+💰 Ориентир: 2.000.000 руб
+⚙️ Двигатель: уточняется
+🐎 Мощность: уточняется
+🛣️ Пробег: уточняется
+• есть расчёт под ключ/логистика
+• актуально для рынка Грузии
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/996755666805
+Источник мониторинга: @autodeskusa
+
+Фото:
+- https://cdn4.telesco.pe/file/uZ7rX2fQptlv5c7oHWnsdUjPOQEAicUtSlxhjoTz0vHBKgFSWbJwS8QHa4h_1ox4XEgZ1pPexxRsM4dtNL9zUF0rEFPVIb-osuGT00n_h-xIbBphk4aUt9zI_grgNZ8NN-9zAaSjFv0tL6dvc9rMn6ikr4Vc9XnyDLpOC4UssHQo2aHW2lW4b15n63Ol39ZsAzs0CvL1eiG3I8Wm1prV-Y1bobt57y2KioX2B1s2PUq7cttg2vyH0HvQmBGXAfhAYvHUKcmGvl6WVKyRmQqiGHzO5XjubgerJVj-29XySVV2VeP9Us18cz0M2lYEB23Rh6OIb8U0wowPQb4mx_V4Jg
+
+## 7. Volkswagen — @autodeskusa
 
 🔥 Volkswagen
 
@@ -128,7 +173,7 @@ Generated: 2026-05-10T08:05:15Z
 Фото:
 - https://cdn4.telesco.pe/file/lIZDhp4IROF5jPQctNJ45ZmK_ZY1f4pCGZF-RUfNpW40CVMXvPHb-WvZ3aHAMAZg6IhB1Nzk9GiAksjyGYGIsxZxn54SXBpUfpx8D6ZrxdjpKfhfC3h_xvp5dVa4nlQOeKQeFLnZy7eNbWrQwWWy9TVnnTIi-smc-J5e8nv3ysIGc4Rx4O-xbCT6mGPUAGs61b8rIe6nGuog8JDL8Dfd8tnEh8d0WnMC1uyw5JkX1Jr1Pz1pXtwPPeZCeRfS5rolk78zMFfPzW_r0Pb8nHFhHCZNT3SVmXfyu5adE-Z2wfzYiqGMjNs8UvGiKUWhDe7MsnQwdqkrpzq7_u6MF6C70Q
 
-## 6. BMW X3 — @VitoDriveGE
+## 8. BMW X3 — @VitoDriveGE
 
 🔥 BMW X3
 
@@ -149,7 +194,7 @@ Generated: 2026-05-10T08:05:15Z
 Фото:
 - https://cdn4.telesco.pe/file/g2RJH5IQeskpjytF5aSC1QXHqZINZtW46ta8U2l5qxCxCsi7yMLZYg9LiOAjcnSUZWT9BJhVUZMYqm1nePmP6Qp7CeKSp0sOqG8K9ZsqheZTHCQiiCYbRMai4Zpivfasfd3BGbo5XHocyNPUSANYK8NZ6LKkcDimt4Oc9_egR8p2wm3B7cI29OZPatBx0qTqZiJ4OwrRUSJkGugHrNkX9DuWousNZXS7YwxOJ8zETpdMzkYhL1G_01xSvoPFbx32P3zieU-w-mlSTCkPlTxM36P0WAR0R0d1EwMRRXODNzrmDkmg2X9ACsnwtbw8PTSZ_c44_Hcl5ip7Q1p5NlUFyA
 
-## 7. Kia Seltos — @VitoDriveGE
+## 9. Kia Seltos — @VitoDriveGE
 
 🔥 Kia Seltos
 
