@@ -1,0 +1,192 @@
+{
+  "accessible_sitemaps": [],
+  "blocked_sitemaps": [],
+  "api_endpoints": [],
+  "status_summary": {},
+  "vag_accessible": [
+    {
+      "url": "https://parts.skoda.de/sitemap.xml",
+      "brand_group": "VAG-skoda_partsinfo",
+      "status_code": 200,
+      "accessible": true,
+      "error": null,
+      "ssl_verified": false,
+      "valid_xml": false
+    },
+    {
+      "url": "https://partsinfo.skoda.de/sitemap.xml",
+      "brand_group": "VAG-skoda_partsinfo",
+      "status_code": 200,
+      "accessible": true,
+      "error": null,
+      "ssl_verified": false,
+      "valid_xml": false
+    }
+  ],
+  "vag_blocked": [
+    {
+      "url": "https://parts.volkswagen.de/sitemap.xml",
+      "brand_group": "VAG-volkswagen_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.volkswagen.de', port=443): Max retries exceeded with url: /sitemap.x",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://parts.vw.de/sitemap.xml",
+      "brand_group": "VAG-volkswagen_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.vw.de', port=443): Max retries exceeded with url: /sitemap.xml (Caus",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://partsinfo.volkswagen.de/sitemap.xml",
+      "brand_group": "VAG-volkswagen_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='partsinfo.volkswagen.de', port=443): Max retries exceeded with url: /sitem",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://parts.audi.de/sitemap.xml",
+      "brand_group": "VAG-audi_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.audi.de', port=443): Max retries exceeded with url: /sitemap.xml (Ca",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://partsinfo.audi.de/sitemap.xml",
+      "brand_group": "VAG-audi_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='partsinfo.audi.de', port=443): Max retries exceeded with url: /sitemap.xml",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://parts.audi.com/sitemap.xml",
+      "brand_group": "VAG-audi_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.audi.com', port=443): Max retries exceeded with url: /sitemap.xml (C",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://parts.skoda.com/sitemap.xml",
+      "brand_group": "VAG-skoda_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.skoda.com', port=443): Max retries exceeded with url: /sitemap.xml (",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://parts.seat.de/sitemap.xml",
+      "brand_group": "VAG-seat_partsinfo",
+      "status_code": 404,
+      "accessible": false,
+      "error": null,
+      "ssl_verified": false
+    },
+    {
+      "url": "https://partsinfo.seat.de/sitemap.xml",
+      "brand_group": "VAG-seat_partsinfo",
+      "status_code": 404,
+      "accessible": false,
+      "error": null,
+      "ssl_verified": false
+    },
+    {
+      "url": "https://parts.seat.com/sitemap.xml",
+      "brand_group": "VAG-seat_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.seat.com', port=443): Max retries exceeded with url: /sitemap.xml (C",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://parts.porsche.de/sitemap.xml",
+      "brand_group": "VAG-porsche_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.porsche.de', port=443): Max retries exceeded with url: /sitemap.xml ",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://partsinfo.porsche.de/sitemap.xml",
+      "brand_group": "VAG-porsche_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='partsinfo.porsche.de', port=443): Max retries exceeded with url: /sitemap.",
+      "ssl_verified": true,
+      "status_code": null
+    }
+  ],
+  "mercedes_accessible": [],
+  "mercedes_blocked": [
+    {
+      "url": "https://parts.mercedes-benz.de/sitemap.xml",
+      "brand_group": "Mercedes-mercedes_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.mercedes-benz.de', port=443): Max retries exceeded with url: /sitema",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://partsinfo.mercedes-benz.de/sitemap.xml",
+      "brand_group": "Mercedes-mercedes_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='partsinfo.mercedes-benz.de', port=443): Max retries exceeded with url: /si",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://parts.mercedes-benz.com/sitemap.xml",
+      "brand_group": "Mercedes-mercedes_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.mercedes-benz.com', port=443): Max retries exceeded with url: /sitem",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://parts.amg.de/sitemap.xml",
+      "brand_group": "Mercedes-amg_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='parts.amg.de', port=443): Max retries exceeded with url: /sitemap.xml (Cau",
+      "ssl_verified": true,
+      "status_code": null
+    },
+    {
+      "url": "https://partsinfo.amg.de/sitemap.xml",
+      "brand_group": "Mercedes-amg_partsinfo",
+      "accessible": false,
+      "error": "SSLError: HTTPSConnectionPool(host='partsinfo.amg.de', port=443): Max retries exceeded with url: /sitemap.xml ",
+      "ssl_verified": true,
+      "status_code": null
+    }
+  ],
+  "partner_apis": [
+    {
+      "url": "https://elcats.ru/api/oem",
+      "service": "elcats_ru",
+      "status_code": 404,
+      "accessible": false,
+      "error": null,
+      "requires_auth": false
+    },
+    {
+      "url": "https://exist.ru/api/search",
+      "service": "exist_ru_api",
+      "status_code": 404,
+      "accessible": false,
+      "error": null,
+      "requires_auth": true
+    },
+    {
+      "url": "https://api.emex.ru/search",
+      "service": "emex_ru_api",
+      "accessible": false,
+      "error": "HTTPSConnectionPool(host='api.emex.ru', port=443): Max retries exceeded with url: /search (Caused by",
+      "requires_auth": true
+    }
+  ]
+}

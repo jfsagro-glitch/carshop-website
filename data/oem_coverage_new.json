@@ -1,95 +1,95 @@
 {
-  "generated_at": "2026-05-11T07:19:50Z",
+  "generated_at": "2026-05-11T10:44:47Z",
   "brands": 42,
   "part_codes": 230,
   "total_pairs": 9660,
-  "covered_pairs": 7484,
-  "coverage": 77.5,
-  "oem_lookup_pairs": 22216,
+  "covered_pairs": 7527,
+  "coverage": 77.9,
+  "oem_lookup_pairs": 22413,
   "brand_coverage": [
     {
       "brand": "Tesla",
       "prefix": "TS",
-      "covered": 141,
+      "covered": 143,
       "total": 230,
-      "coverage": 61.3
-    },
-    {
-      "brand": "BYD",
-      "prefix": "BY",
-      "covered": 149,
-      "total": 230,
-      "coverage": 64.8
+      "coverage": 62.2
     },
     {
       "brand": "Geely",
       "prefix": "GL",
-      "covered": 149,
+      "covered": 150,
       "total": 230,
-      "coverage": 64.8
+      "coverage": 65.2
+    },
+    {
+      "brand": "BYD",
+      "prefix": "BY",
+      "covered": 151,
+      "total": 230,
+      "coverage": 65.7
     },
     {
       "brand": "Changan",
       "prefix": "CG",
-      "covered": 159,
+      "covered": 160,
       "total": 230,
-      "coverage": 69.1
+      "coverage": 69.6
     },
     {
       "brand": "Chery",
       "prefix": "CY",
-      "covered": 159,
+      "covered": 160,
       "total": 230,
-      "coverage": 69.1
+      "coverage": 69.6
     },
     {
       "brand": "Haval",
       "prefix": "HV",
-      "covered": 159,
+      "covered": 160,
       "total": 230,
-      "coverage": 69.1
-    },
-    {
-      "brand": "Mini",
-      "prefix": "MN",
-      "covered": 161,
-      "total": 230,
-      "coverage": 70.0
+      "coverage": 69.6
     },
     {
       "brand": "Buick",
       "prefix": "BU",
-      "covered": 162,
-      "total": 230,
-      "coverage": 70.4
-    },
-    {
-      "brand": "Chrysler",
-      "prefix": "CR",
-      "covered": 162,
-      "total": 230,
-      "coverage": 70.4
-    },
-    {
-      "brand": "Lexus",
-      "prefix": "LX",
       "covered": 163,
       "total": 230,
       "coverage": 70.9
     },
     {
-      "brand": "Genesis",
-      "prefix": "GE",
+      "brand": "Chrysler",
+      "prefix": "CR",
+      "covered": 163,
+      "total": 230,
+      "coverage": 70.9
+    },
+    {
+      "brand": "Mini",
+      "prefix": "MN",
+      "covered": 163,
+      "total": 230,
+      "coverage": 70.9
+    },
+    {
+      "brand": "Lexus",
+      "prefix": "LX",
       "covered": 164,
       "total": 230,
       "coverage": 71.3
     },
     {
+      "brand": "Genesis",
+      "prefix": "GE",
+      "covered": 165,
+      "total": 230,
+      "coverage": 71.7
+    },
+    {
       "brand": "Porsche",
       "prefix": "PO",
-      "covered": 164,
+      "covered": 165,
       "total": 230,
-      "coverage": 71.3
+      "coverage": 71.7
     },
     {
       "brand": "GMC",
@@ -101,23 +101,23 @@
     {
       "brand": "Infiniti",
       "prefix": "IN",
-      "covered": 166,
+      "covered": 167,
       "total": 230,
-      "coverage": 72.2
+      "coverage": 72.6
     },
     {
       "brand": "Seat",
       "prefix": "SE",
-      "covered": 166,
+      "covered": 167,
       "total": 230,
-      "coverage": 72.2
+      "coverage": 72.6
     },
     {
       "brand": "Cadillac",
       "prefix": "CA",
-      "covered": 167,
+      "covered": 168,
       "total": 230,
-      "coverage": 72.6
+      "coverage": 73.0
     },
     {
       "brand": "Citroen",
@@ -136,9 +136,9 @@
     {
       "brand": "Acura",
       "prefix": "AC",
-      "covered": 169,
+      "covered": 170,
       "total": 230,
-      "coverage": 73.5
+      "coverage": 73.9
     },
     {
       "brand": "Land Rover",
@@ -150,9 +150,9 @@
     {
       "brand": "Dodge",
       "prefix": "DG",
-      "covered": 172,
+      "covered": 173,
       "total": 230,
-      "coverage": 74.8
+      "coverage": 75.2
     },
     {
       "brand": "Jeep",
@@ -164,114 +164,114 @@
     {
       "brand": "Suzuki",
       "prefix": "SZ",
-      "covered": 176,
+      "covered": 178,
       "total": 230,
-      "coverage": 76.5
-    },
-    {
-      "brand": "Mitsubishi",
-      "prefix": "MI",
-      "covered": 179,
-      "total": 230,
-      "coverage": 77.8
+      "coverage": 77.4
     },
     {
       "brand": "Mazda",
       "prefix": "MA",
-      "covered": 180,
+      "covered": 181,
       "total": 230,
-      "coverage": 78.3
+      "coverage": 78.7
+    },
+    {
+      "brand": "Mitsubishi",
+      "prefix": "MI",
+      "covered": 181,
+      "total": 230,
+      "coverage": 78.7
     },
     {
       "brand": "Opel",
       "prefix": "OP",
-      "covered": 184,
-      "total": 230,
-      "coverage": 80.0
-    },
-    {
-      "brand": "Kia",
-      "prefix": "KI",
       "covered": 186,
       "total": 230,
       "coverage": 80.9
     },
     {
-      "brand": "Renault",
-      "prefix": "RE",
+      "brand": "Kia",
+      "prefix": "KI",
       "covered": 187,
       "total": 230,
       "coverage": 81.3
+    },
+    {
+      "brand": "Renault",
+      "prefix": "RE",
+      "covered": 188,
+      "total": 230,
+      "coverage": 81.7
     },
     {
       "brand": "Skoda",
       "prefix": "SK",
-      "covered": 187,
-      "total": 230,
-      "coverage": 81.3
-    },
-    {
-      "brand": "Peugeot",
-      "prefix": "PE",
       "covered": 189,
       "total": 230,
       "coverage": 82.2
     },
     {
-      "brand": "Honda",
-      "prefix": "HO",
+      "brand": "Peugeot",
+      "prefix": "PE",
       "covered": 190,
       "total": 230,
       "coverage": 82.6
     },
     {
+      "brand": "Honda",
+      "prefix": "HO",
+      "covered": 191,
+      "total": 230,
+      "coverage": 83.0
+    },
+    {
       "brand": "Audi",
       "prefix": "AU",
-      "covered": 192,
-      "total": 230,
-      "coverage": 83.5
-    },
-    {
-      "brand": "Chevrolet",
-      "prefix": "CH",
-      "covered": 192,
-      "total": 230,
-      "coverage": 83.5
-    },
-    {
-      "brand": "Nissan",
-      "prefix": "NI",
-      "covered": 192,
-      "total": 230,
-      "coverage": 83.5
-    },
-    {
-      "brand": "Volvo",
-      "prefix": "VO",
       "covered": 193,
       "total": 230,
       "coverage": 83.9
     },
     {
+      "brand": "Chevrolet",
+      "prefix": "CH",
+      "covered": 193,
+      "total": 230,
+      "coverage": 83.9
+    },
+    {
+      "brand": "Nissan",
+      "prefix": "NI",
+      "covered": 193,
+      "total": 230,
+      "coverage": 83.9
+    },
+    {
+      "brand": "Volvo",
+      "prefix": "VO",
+      "covered": 195,
+      "total": 230,
+      "coverage": 84.8
+    },
+    {
       "brand": "Subaru",
       "prefix": "SU",
-      "covered": 196,
+      "covered": 197,
       "total": 230,
-      "coverage": 85.2
+      "coverage": 85.7
     },
     {
       "brand": "Ford",
       "prefix": "FO",
-      "covered": 199,
+      "covered": 201,
       "total": 230,
-      "coverage": 86.5
+      "coverage": 87.4
     },
     {
       "brand": "Hyundai",
       "prefix": "HY",
-      "covered": 202,
+      "covered": 203,
       "total": 230,
-      "coverage": 87.8
+      "coverage": 88.3
     },
     {
       "brand": "Mercedes-Benz",
@@ -288,15 +288,15 @@
       "coverage": 95.7
     },
     {
-      "brand": "Volkswagen",
-      "prefix": "VW",
-      "covered": 222,
-      "total": 230,
-      "coverage": 96.5
-    },
-    {
       "brand": "Toyota",
       "prefix": "TY",
+      "covered": 223,
+      "total": 230,
+      "coverage": 97.0
+    },
+    {
+      "brand": "Volkswagen",
+      "prefix": "VW",
       "covered": 223,
       "total": 230,
       "coverage": 97.0
@@ -1186,33 +1186,6 @@
       ]
     },
     {
-      "missing_count": 5,
-      "category": "Двигатель",
-      "group": "Зажигание",
-      "name": "Высоковольтные провода",
-      "code": "SPW",
-      "examples": [
-        "Infiniti",
-        "Porsche",
-        "Dodge",
-        "Cadillac",
-        "Seat"
-      ]
-    },
-    {
-      "missing_count": 4,
-      "category": "Подвеска",
-      "group": "Подрамник",
-      "name": "Подрамник задний",
-      "code": "SBRM",
-      "examples": [
-        "Kia",
-        "Nissan",
-        "Honda",
-        "Mazda"
-      ]
-    },
-    {
       "missing_count": 3,
       "category": "Тормоза",
       "group": "Тормозная система",
@@ -1280,6 +1253,28 @@
       "examples": [
         "Nissan",
         "Lexus"
+      ]
+    },
+    {
+      "missing_count": 2,
+      "category": "Подвеска",
+      "group": "Стабилизатор",
+      "name": "Стойка стабилизатора",
+      "code": "SL",
+      "examples": [
+        "Lexus",
+        "Chrysler"
+      ]
+    },
+    {
+      "missing_count": 2,
+      "category": "ТО",
+      "group": "Ремни",
+      "name": "Ремень генератора",
+      "code": "ALB",
+      "examples": [
+        "Lexus",
+        "Suzuki"
       ]
     }
   ]
