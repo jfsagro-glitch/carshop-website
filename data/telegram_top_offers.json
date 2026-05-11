@@ -1,9 +1,45 @@
 {
-  "generated_at": "2026-05-09T14:48:46Z",
+  "generated_at": "2026-05-11T05:57:15Z",
   "source_count": 46,
-  "parsed_posts": 3,
+  "parsed_posts": 6,
   "errors": [],
   "offers": [
+    {
+      "channel": "VitoDriveGE",
+      "region": "Грузия / Корея / США",
+      "source": "@VitoDriveGE",
+      "source_url": "https://t.me/VitoDriveGE/6669",
+      "title": "RAM 1500",
+      "year": "2024",
+      "price": "4 300 000 руб",
+      "image": "https://cdn4.telesco.pe/file/T5cugxCMuYdfJFLYdCVni0WWFfPP0buNGD0zSkNoF6yJAfi5DHbvVZNa-Xx53xeF8rx2vvwkMVs5EzeR2oRmryreVaRBv0Ru6WzCXfWKPaXVqaZE9lxZpfxjvRKekkO7CndJVk8UjExYn0dv0W1y3UMYbwh8cg-RmisKUOW0n-Q9_AP1jeeYlgQzxeTyMQ-UexcknD7bT4K-F6hCJAq3UlMw2LdbfU0ReQA4pHIS61pX6ToUPOvxGdioRruxGgHLNpVTGCbTUgHvjo8PUQ0nCsmszoNCuAUSj1YChXgpKg6wj9y900zs-5WrpVpiNnlLE8S3x4Og4-oLQRJBjbbqyw.jpg",
+      "images": [
+        "https://cdn4.telesco.pe/file/T5cugxCMuYdfJFLYdCVni0WWFfPP0buNGD0zSkNoF6yJAfi5DHbvVZNa-Xx53xeF8rx2vvwkMVs5EzeR2oRmryreVaRBv0Ru6WzCXfWKPaXVqaZE9lxZpfxjvRKekkO7CndJVk8UjExYn0dv0W1y3UMYbwh8cg-RmisKUOW0n-Q9_AP1jeeYlgQzxeTyMQ-UexcknD7bT4K-F6hCJAq3UlMw2LdbfU0ReQA4pHIS61pX6ToUPOvxGdioRruxGgHLNpVTGCbTUgHvjo8PUQ0nCsmszoNCuAUSj1YChXgpKg6wj9y900zs-5WrpVpiNnlLE8S3x4Og4-oLQRJBjbbqyw.jpg",
+        "https://cdn4.telesco.pe/file/Df7WfH3wXAKZcSevCVCgoYqstjfF4CsPDU5p1D3sgtCIWFBgDeUW3iceSbZ6V8nVA8EMjNz-9u6Rs4jTGzhMihnaApITO_exDZxxXf5Gfwh68XUmiPlIhpUzB9IOe3R9S-vJeXpBC8-gYmHLMvnEgxrhSIjD9XCDQOsm7eD5wbavEuAcTfZY2Ta6NJgtxJeNqWYTG-rJHV-pJxz-q7rTCLpjSvngn0kBfjDS9OqSjQDTOzsgpoX7PyRT8xI7yergC8tqxD8qKMWqLKxA9gNXZkJtDuNfPNcylJTXYjoqE4w8wPhUuoz9NCWqsIKtjI4g-8eARArrWbap5QY5T7WYlg.jpg",
+        "https://cdn4.telesco.pe/file/R6WM2zHN2jVtwXlCT4QkBoywVL5d9qlIt_nz8vqDE9CPS7_DqFxveGkGP9zhRn-g2lRtaRc1xPEfxjnQZSAe6pQjpbIuEH0zzxHsaWs_7aNReWer1A-8ADtxI73BtM7R5t4Imyva3QKV3OG8PJ2J5fChiJrEH5iyNMOJrFmrn6q_PJwD6-3kdm8F0U-uPEXYF89tyqhht7bFgZXJPboW6xZbgX4DlslTRCmRR5YBbiD9gyvu15pVreYUw6maj6nwKmEUFMxXJtwNwuekZNMPxmgDjuOJA4wRAvk3whhv-qgLSVEBXTBt_4MTW-BKh0RlyrTB_ljTTy0yMfx0VKkqow.jpg",
+        "https://cdn4.telesco.pe/file/OwDLagrdm3hl4CJgOFkGTg6ZmK7SSgirxbllC1l0rddLA-nb1s544_maAapOGijG5bRXrf3DUekeZTuXsieHF76eJgFffCoHFxuWL3ZqL9DboXlxQOJMdkKH9Br6U-JIqgvvn49dqKrU2hfnC8aU4vSls6DWmfEN3qfIBfdavzgtRCX2FmTjJqxuswVfq_G04jGhJThJib7kaAwffAoH2qY93e7vCTQfv-_msI1vJlIiqMHnhoELPdi5uSguQJXu6QXpaV27YRhblHnAr0iNyMqbOJnWWHTDD-cH7sGdJFbcAimTlosnRnVHQ3EKA6sV4zWUuH-_UJGeqUVzPXoB-w.jpg",
+        "https://cdn4.telesco.pe/file/M1tMvxorKcv4qrOTkx8Rl-BNmcLRiBDGooAJGLTWl_tCZKzjz930mMgway1wl-R3K_uWs-hjKDao6fSikeKfe99jCwW92PM0KkBjWxJVox7Kf9mpfntqW78RBbhcycGOMNQ-glyNRrSajUGH4ToF_J3LvN4A_upDr5orF6ivwBnXWAoYBqSvh71kqAmTeOTQROQcsVApcIwlVdrkqTjfODjnaBscCM4F0wo8AGWtc48Nkj7PdBrRs-rFEJ5Tj437YZWkasHpfmGLFVNOFT6CUCVAwsSsrvF6hyzlLW2TFw6RRR7uY40o6dEQjm-NWeQcxRiDZ5x-vGpmW-cKnyFs9Q.jpg",
+        "https://cdn4.telesco.pe/file/mIaViQU5Ohlu6FzWDY3ywW9LsFEOPkXQ_fDepuLnp23iMC3KL9ilktu6NIfRimJ2bzxP6UxdSwMhk-3PqA20Ne64Iq1oVVJZQeSUbbjhwhtDUqoj_Y7nCCNTIREnUNR8qV4ZQhLmSqkBlzYuWV3Dp8jkaIvaaZswaLBC-cYXm_cjjfcx0OG8hKyazEbTawaEpuwj-8N5d7NjtGZKi7ODUBpeiyNpLOlvfmZ31Iz3wLb-RNB69-On3XZZzl1J1een7-LB1pXc1xA_UKRedi55C6CQ8tbgLV3yAmInZMou-qvpa9b88dPm6H6O4KGu008rzFOzjVCAkj5AjlVs5tl_Sg.jpg",
+        "https://cdn4.telesco.pe/file/jS_myjStWQg3LOz_mjBQnk63L4d6j-LYb3x4FNlrEQhjIMEu2UNtdaBE9xi5nH_NKSDutHkLUFsQm3Z1cUY9M56VnXQkWsuTWLUKtKgrmkzyeO8aZP3bK7QAed25TqGp3ANpj1dgRzAo6i_1eQxac6F8S4VwlRUSkomatveVjF-eLvTYML-37p7cmS7Y7uAE4yrSolz7HKJQG4TFKVd63ycMlbl6lPksavJzUM2DoTNZTvB3VAveTSAGAEqlgzDtgi54o_KUlx1JwD2Psb2sLb6ktqVxfYkS9F_nv5e65IDRuSi7LL_HBSgirt1geOwGDwU1Osw-lpzgJ0-KCs7mrA.jpg",
+        "https://cdn4.telesco.pe/file/hg0d1hs0QzJOzF72uCbZFrvMw4Fo2KKSjpmSWQKtPiGprGlkBAzByqigKDngIfpqY0hJfQBR7qvfrn1HBik_rP_D32wH8Ba3v34CX4NRwIxgZfREHGtgMaBeataF03AFyz0lFF-Z4cWjz-fkeNAk084XPYoDw4OncgW2-fCOj_bFWUlKIORDAYSCOVEsbiEwtsPzLJEi4cNmj15dyY5SMbPezqZc7UNMmAKE4recO4h439cww5ecbHLfW38fIhHMSSd2fyDYo3YussGewIc4tYmOUjbiV5EJ6rtUgAmyJq8Leik-wIYjjyzcDNr_0j1nrFnvydlhjxLoYpVLQi3kmA.jpg",
+        "https://cdn4.telesco.pe/file/HbR4mCEDlBI4aDOkT7toE6YHsi6v26KCAZ1F2r8vg1Fo3jo0ETa2vlC9Ch7tNoQcBczo7UrO_sT5mcg2N0S7_MOjeGYPTdmbYS1GypZhVn3X5tQyY91v2kxrgR-KPHJ2IRET8T8r_Cl0HndOi3b37P5_jDQjsKTp6QTKzAs0R5yugjFFe4osdsYVx7wtZ5g4asLckDqu4gwApGB7ELsg2Ral-5meWHr0ghr5mH82AiYosFtgx9In7mXRVPx8lDzbaYnyUzNfNxKjqhgJIsY721H4eTE9MC24G0plzl8oqsrEpLmk4Do4z-0MZ78GZLiTI8P75z5aw9UNTAUfvfKeFA.jpg",
+        "https://cdn4.telesco.pe/file/jAdJkb2rQGEmc7EDjKEEmy4TCFLGP8Dla05S_Q0MfzlMTwNr2y7JFEcQI40pfyL-3JCbBS1XWl9tAjhW3BXOUkbhhISRhiCrhtUjexwv2elFAQpsZGLe2dTlh78KAQGeUMUOnfKnFttUPovOU_oMgzgLeYB2vQlxwdYrvPOT-Bgh06a6hTyhxxXIdsuOHmadSojHFnSvybBgvp0a5tQUZZbS924NAikIQxAU5oMCPMExA4ZfWilXdTi0n3rOetXc0Yxj6W8mshA_jL73iCAV-vDFUY-syEXAS0chE-IBnysfOCb_B_T14OJ9Oci6EqexxfVNI3_vnILXetkHq3F2aQ.jpg"
+      ],
+      "details": {
+        "engine": "3.0 бензин",
+        "power": "340-367 л.с.",
+        "power_estimated": true,
+        "mileage": "54,950 mi"
+      },
+      "text_excerpt": "✅ 2025 RAM 1500 BIG HORN ✅ 🇺🇸 США 🇺🇸 Рассмотрим для примера проданный вариант на аукционе США. Я хочу показать пример входа в РАМ 1500 рестайловый с 3 литровым двигателем, реальный старт цен на этом примере По комплектации из интересного: Электропривод сидения, подогрев передних сидений, 7 дюймов приборная панель, мультимедиа 12 дюймов, 2 зонный климат, складывание зеркал, подогрев руля, музыка 9 динамиков с саббом, панорама, ❗️ пневмоподвеска ❗️ Доставка 80-120 дней до МСК Характеристики: 🟢 Двигатель: 3.0 бензин 🟢",
+      "facts": [
+        "указан пробег",
+        "есть расчёт под ключ/логистика"
+      ],
+      "score": 159,
+      "quality": "strict",
+      "telegram_post": "🔥 RAM 1500\n\n📍 Направление: Грузия / Корея / США\n📅 Год: 2024\n💰 Ориентир: 4 300 000 руб\n⚙️ Двигатель: 3.0 бензин\n🐎 Мощность: 340-367 л.с.\n🛣️ Пробег: 54,950 mi\n• указан пробег\n• есть расчёт под ключ/логистика\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: @VitoDriveGE"
+    },
     {
       "channel": "autodeskusa",
       "region": "США / Европа / Грузия",
@@ -114,14 +150,14 @@
       "title": "HYUNDAI ELANTRA",
       "year": "2022",
       "price": "14900$",
-      "image": "https://cdn4.telesco.pe/file/qBZK7NKY-NV0kaoNY15ZqfWt3V9TctpiMaglnQhpWNPpuhFaWBjGxPAaiv89h6xdDIjK38GzM_KzXpHtBhkRO7Wd_tebqOiuHqKnpVsG6-PP_e3Pb5wPW_IkAwi8jc7I1QAEznwSbqgOHgyuG5Oipw8AE1VsUeEu1M4zWXM5ROjUDuCTS14dgAgDOLBHoPRDJ0hvaGW_S3KsmeJzq87J1Ed8GPiX-1D3KGavY9MBmntutIjfIGOZFCDkmKqASLMJyt9BhOcd4gQ73l_SAaA0rP0bosemnbakUoCd7aJ7-61gDOa6B9L5ZHZHPEKO9Jhnpqp0hKhKQdPJsCvQb_H-Zg.jpg",
+      "image": "https://cdn4.telesco.pe/file/lDYn1LyHx6E1FuHuMQBYNe8cYzO-LXxBdFwlDLL97_IQqAh9oMwbpwK7DxUyO4aG-R3hJVnFzKRuMnC-pBpkzaeY1qv2Rard5VIH9moR2wNX_-4K3G28xRv3tTdwIxwKOw8QbIfQe2NGhUtRZZnPbfXvZeBiK_PIdPFg2cUuhhoC6r1ZS7xt50trJenKJEgP_oQc5Xz2RgEUTG2Ug0t-cFXKQH-FpN3RJIohpHAAZI_Qev7h2dIF1HoSh6hOvajp47lqQXacF9bmv5avzQFl5dBLb0sM6ND-TNFQRV4_5RKskvKR4NqdO59k_kzmIE7MbrJPv8EHkYo3qMaiwIi5UA.jpg",
       "images": [
-        "https://cdn4.telesco.pe/file/qBZK7NKY-NV0kaoNY15ZqfWt3V9TctpiMaglnQhpWNPpuhFaWBjGxPAaiv89h6xdDIjK38GzM_KzXpHtBhkRO7Wd_tebqOiuHqKnpVsG6-PP_e3Pb5wPW_IkAwi8jc7I1QAEznwSbqgOHgyuG5Oipw8AE1VsUeEu1M4zWXM5ROjUDuCTS14dgAgDOLBHoPRDJ0hvaGW_S3KsmeJzq87J1Ed8GPiX-1D3KGavY9MBmntutIjfIGOZFCDkmKqASLMJyt9BhOcd4gQ73l_SAaA0rP0bosemnbakUoCd7aJ7-61gDOa6B9L5ZHZHPEKO9Jhnpqp0hKhKQdPJsCvQb_H-Zg.jpg",
-        "https://cdn4.telesco.pe/file/L6Yx-9Qd5qykWiedeTwa3PxgjDK4hQ3oOwr7fJW1e8kfhBRNFKEdvBqLIuT_ST0ela84DdegvUzgan5Md1RnaYtnckMKd6-xIcSSImHRcYHrCj9vkg0QaY7sP8hi0EMzLdd0FBpx6-_YRardLS4HYhg3tdfDUINUxcLHdzdNd9vS9OtBd9K06pZ638LQJf-KN8iyBWYn71bTSBjEYiow7NVZSoebv3CSr93WwIWi_RSjUqA5MCXvd6P0p1XEgYi6S8JjScwIfWjqtNhoFoAjRId8z3vhqcLQIQ_BJb_wXeraK-RbE7pgERFBjFx1tI2_ShkevdSKjalwm26fROG_3A.jpg",
-        "https://cdn4.telesco.pe/file/G_toUtUiEkrxThVJwU0kbwWvTMSNdnxW8jSohbEHlf8G9lOsduIcnPpPWjHLLalUYJOUat-fhGPjID6L_Wx_e-vXDp7KKFgaurP4TfUChGjxZZHvB1vZpuzD-sXc4fj57TWSb4XmcOesBcDuAAyu8egvtPvFN4_FakfHmtFjHAUbxGYtZlhh_CBLG2n5TlmdQ8UIkcSIM6nyVRs6Om57c2wSzw7y9V9U8fpL6qjG65_FCX8eoUzCjVgKDLAN17zzKF8TadNHdPWt7tZuXJhWDBOc5HnwraXuuiUmHxFuTLXNUpCJHU8nGsbV5i9CdsaaigbBBinux9SH5dMktWQpSw.jpg",
-        "https://cdn4.telesco.pe/file/qDpGD-LHZrrwJ0fZYHG_4WZEqwc3NO2VOX9xWH3_cIjxeCIzSvmgrDEgxdocXQ48bYSN3h3x3i_QFUPb0FITNWejf8qsilMGoo1gBJdN8GJbQ0cmK-9dG6xpNBoUb9oJ3wQIIW5-CmCYVjkDg1G7jD1cTtZUIIastdhiSM4GC-xTJxEywKUJbVFeCk0r8GiKvwFmu9is0AARcHp571rAkiVfklMKby8D8AQaTNzkM-ghJENtJOnjxGClHKXN36gmDR6H8bAzVKVdB8VkQnziko4qJ9jg9tRL45RKDSHI6a53gfnQ-3MrCkiWz1cpnAh63VXaw3l-OVvIfKRc8CS52A.jpg",
-        "https://cdn4.telesco.pe/file/eg68_ItNsg_KDst6Yq4f3bn5CQY1T8QBqX-5OtFFQ8bWtMC5yUy6TtlmvxWhBeJtay6oPzU_7fSRJpEK19EEPfh0MfNCiBjafM_LCf3g-mxY4ggetUKMFp_8bH1jx9JDyc1JANVlIs5hbi2F2lhswdFzdFT4ZaGtp-LVBEAgnGkfM50ES6tgCmA4ri2ZDWvFDG8h2VtdO_GFs0klv8m-8cNdfkgjXSCQkEPGuCtBemUtdWP5a_qDalnIhUyUGcXMMTZOVba1NW3od0cX6ZWWypiF3C5jhb7-54gT0H9qwTx-1McxEB2y7qrSNUy3fMgAKffTiyMIisnqgs1RN5gM0w.jpg",
-        "https://cdn4.telesco.pe/file/BO2NUjqRz6ctfk-iQ7cdz2U-lkVks7I-sC3t1G6XrK5yvmF1bWXmYaNntvgPk9UZOInmirGeTGt8FLaA2k8YNugXMf3TnOzsinc3JgiX7u2MymRH6Oih5sYccmb5wVpaygKVPM_nRkr4mbW0NZbvqA8AQJgrq9AWm8Wjl5yFmGLnm_c8Hzal_QYIIE0sLU3FSCt1Pdtl5nwgvaukh-8_tOQALYeOOL6Aw1-3uUkgzKmMj1SXvJCPCN1es66J35dYmzDvMqLK3JscuwCA1ZRVXQwybRSOffLRueBS1-doXMY_6u7h5g9HGybMA48JqxVXYyhDgVV22t3MYZemloJzuA.jpg"
+        "https://cdn4.telesco.pe/file/lDYn1LyHx6E1FuHuMQBYNe8cYzO-LXxBdFwlDLL97_IQqAh9oMwbpwK7DxUyO4aG-R3hJVnFzKRuMnC-pBpkzaeY1qv2Rard5VIH9moR2wNX_-4K3G28xRv3tTdwIxwKOw8QbIfQe2NGhUtRZZnPbfXvZeBiK_PIdPFg2cUuhhoC6r1ZS7xt50trJenKJEgP_oQc5Xz2RgEUTG2Ug0t-cFXKQH-FpN3RJIohpHAAZI_Qev7h2dIF1HoSh6hOvajp47lqQXacF9bmv5avzQFl5dBLb0sM6ND-TNFQRV4_5RKskvKR4NqdO59k_kzmIE7MbrJPv8EHkYo3qMaiwIi5UA.jpg",
+        "https://cdn4.telesco.pe/file/b-g0xcufINaunnk_lHi_0N_hOKI30PZ0V-pRodoxTdYmbnbau_K3VrSWFLwCiWP9ISwd6mKuijftZKgj-gLSBBCIHoc1sYtzgk3jyfVBt5tyXejoZ86m9ZrnGJ11heSIv1q_VCaXIvjxuPNru3LRdGQu4CBfJH6oqTdH_jWHM5woqzHyoTOLPSBW3bLkHlF7roQoovLYSXJ20_UWMzM4bgQe7A_2k7t756seZXKmTjPyTu38oPZE_Ce1n_PRsTALizqtdL-1meN-Ok6wBm0C2mR7Rpxa4jqHa0T5v1FQ8tPVADgXz-h5G1CjF5PXyEm4xepkr_cTYbVxnPFfmZZ5zg.jpg",
+        "https://cdn4.telesco.pe/file/m6CD-iRSu0pxKkVrE5HAPXAviBAfBxhHWdQViFf4NNZzgscd4WyeROWJgUpPTqz2wS7xAvmRXEkRtOutxolim4AjF5bP7A06A4sCmUcNGO3FqGMJynR13l8ZCk3qwedpLtrWh9XUBT7Kqt0by_FxNaaPvfzkKVfMqAW1uCCCZv-6A0zB5J18b9oRepVn22Ao9TAeDmDx5jbZDHq7voyr42KLCa92d90zwp-Z5U4RKs2T9BnF93g1TBimbO6B65uZYFs0vMI2U_GtysQNKibTDLu9ZwG5RzseBFMh0EsIu5tXQloBBniWR_NGKIi4PNZP4WnOOb5IqzhZ8-i5MU0Ljw.jpg",
+        "https://cdn4.telesco.pe/file/EGeXiLTCEMAyZlvrLS44Al_mdJzV64TVej3z6lAyZQ4Pj8mhqQodeZ0s3MwUostSTEMbpp_POzacvMMelmVO8AF1YlJV0cnhjXPKM7wHxbQlDl1uFn65fQqFuHK42Wp_HDZ_QrGOqNWoMox-T_1A4reKFuBOMG8W9TjyLUf1FBwAsxRJIlqhw3B_YrS2JUtXbv6h-ivfZyYhHSaK1Q4sBot1sIaM7eZZa594mKcjphtcmGW75Bc0seFC12armJ5CgH3MyPq4QBIoeKQLZAv9Wxgd7DLuM-R5pWAaCBWT7KrM8RTO5j-gTZGYiulP4pfQKKCFI2hMOrIGeh780NRcGg.jpg",
+        "https://cdn4.telesco.pe/file/hg3OA7GvUMyxXvNfQ2ad1oB_PU_1LNpqRjnvZ4_3v5cS4KNTZCwmWeYUKcp6CH8yO1yO793zc7AM1Jg-gxoecXdWq0B2un-TFe3TzpWEylc7cLNa096wp4YHHeNuIqfQ8B9Pn8fs5we4v3FqfuZQGa2qL0HOPfW52yvJFqHorrU9tG1-Nclpsec5ApnsuYJRMUavUmB1pmRoh5jb84k1Aq9zuouupgM9IHQ2tb6dUJUEvCSDMRt4xZx0peltC4Tr3LU7qXu2Z0xuhwRqup9JYpEiCIaUcJpbA7sHpfUwTqdI_bXXgMEJ-y54CeyOuPuNwojH1cM0l7wI4V1pxS_dQA.jpg",
+        "https://cdn4.telesco.pe/file/O5Vnx6Vq_GwtVqtMqXSFxAOoPlrZq3Y1GmNf0zIJXVP4-wF-ixhEhV4KMzShHx6BIDF7uh650PWzr77CTTwG4cRPcccvCq9TuD9dcX_UH8XurLbEleX8xVO1E3r0Lk1eeNyo6JsmO7JRMmBCiG-ORbMq7BdKMY1HbDqdqr_pC9jDf3EmqGoVOWsmqEKt4Z2EwpYYGJE4xGVVqNoVH_ONsrpAemQXrFTJjVyNbla1vrYyY8xlA1W--5NlANsfol_44VT54bsVLkExEugD5GnroFeCKx7bYnOjKpNMhkxn8DmBym_-6-8qvwiQbwTfsB22bryS471HBbBr5fEvZdDSRA.jpg"
       ],
       "details": {
         "engine": "1.6",
@@ -136,6 +172,116 @@
       "score": 119,
       "quality": "strict",
       "telegram_post": "🔥 HYUNDAI ELANTRA\n\n📍 Направление: США / экспорт\n📅 Год: 2022\n💰 Ориентир: 14900$\n⚙️ Двигатель: 1.6\n🐎 Мощность: 123-201 л.с.\n🛣️ Пробег: 43,442 mi\n• указан пробег\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: @auto4export"
+    },
+    {
+      "channel": "auto4export",
+      "region": "США / экспорт",
+      "source": "@auto4export",
+      "source_url": "https://t.me/auto4export/16542",
+      "title": "CHEVROLET EQUINOX",
+      "year": "2024",
+      "price": "17.900$",
+      "image": "https://cdn4.telesco.pe/file/B9qCmRGfQXtXxmkXMmvt_VyZDosH_CpGqdS2gvtaF29AwpvzNfxFr-_n37Y_OW_OuGCu1ulixaW694zrD4y5Lsly9WWTD2B4faCwDQlG-T4MNtjO38ldaTM4KOk2Pmo0izD56kWWiDAVuNNe01-wOhkQDv9jjsxruo_DqQumRJy9-5kWJhpQPOlq6W7GcpV7q3GbOtV4Hkiy20u9XTKYKQkHHKh3RJOubO65JpH3eql37eIW1ShF-PbfbigoJCK4q-Z3OrRQcecUX7ctlbWyiceNAloa9DZayZrtOPxAov6HyK5vwV3oOMssfXOWv4aCFtBlnqhBeoPERm3NNTDgrg.jpg",
+      "images": [
+        "https://cdn4.telesco.pe/file/B9qCmRGfQXtXxmkXMmvt_VyZDosH_CpGqdS2gvtaF29AwpvzNfxFr-_n37Y_OW_OuGCu1ulixaW694zrD4y5Lsly9WWTD2B4faCwDQlG-T4MNtjO38ldaTM4KOk2Pmo0izD56kWWiDAVuNNe01-wOhkQDv9jjsxruo_DqQumRJy9-5kWJhpQPOlq6W7GcpV7q3GbOtV4Hkiy20u9XTKYKQkHHKh3RJOubO65JpH3eql37eIW1ShF-PbfbigoJCK4q-Z3OrRQcecUX7ctlbWyiceNAloa9DZayZrtOPxAov6HyK5vwV3oOMssfXOWv4aCFtBlnqhBeoPERm3NNTDgrg.jpg",
+        "https://cdn4.telesco.pe/file/cwYubNwr8VwQZpX36_wLbRwdfz7I4BkWTAyJzVrxt90wqxxOHavUYpNJw_B3IRqc1bHfaq-Is-6TyWPNbKHi5BFpretE_psiPUTytR31mTgnhABZv78Ept_KmkUNEHgnHyvT3odZk2EhlnZC2ge2vopuad0bdiDAV0PP94DiV3XuANErnU9Cla3o7cLoOQWj4OKYJfQq6tTrjr557gqdBHgAFzVgjCzlkge9JEBPdld2rM7bjhqJws6ItTCLX6jvrpH9j2nPxn0DG2roJFZNEhvAp1DYojWZhPafx7uh7a3ws7RxO0O3GYW_nMOvDkPBQw3G8G2QJRuFSyg1pdQzFg.jpg",
+        "https://cdn4.telesco.pe/file/Ls0Te0Q5632RmXu8IQiVlzHjPkVepnlssOFDsA9oGDB1yuZQqblZuh4ai9pQ1lEdfLDGOUnZopUQQ162kMTfrtCZPZz_4GguOQ8ZFgjzPBconWeS74nFXWBDzBBRAtCCF-G_Wg6Ylq_nO-z_9EeCxliW3CIPwKLaQR98h_oYyZu-I0LTZQlFiwlXkerFY6Ksay13GDwrA48XtZRmKRwvCDzuhwzVil84pCntjFAe7sW4c7_YrAT0RyGUl63Rfj6DcM4erCsOy2WwurBSr9EwBGrfK3pQjdw1Qx71_kSpPw5gOlIehDqb82f_d8I7cetrHpfl-CWHnXsBZMk9eZpjfA.jpg",
+        "https://cdn4.telesco.pe/file/StQJ4GILVBAuipG2UEBc3AROY8pxVFA64WUbaJ0_npBv1qUG-Eltwj8a7mXut3_bofnnBueV9bmrw9b5y2PTL75x9qStaZLaKoFwS8XDoL489x_KOP_TSqIeGjQKFT4MeMByN6OXq4crpiCceBdSOUa-Rl7UYaqZL418_vuQEBWkjg0Uha45o8DZF_V3ZBksgd8VWm1w4c7t_9NHXd_DwPnccb41yhsy5HnIt2aQRWR5af_ZfwMJrbNzV3VkXaNvAn5hfQIAYrMToi5iq5gHxSbnq13h2MO227xTkLEMVg1s07D_juUSqm3eNaykwPAO3qsEtDmqEz_FleLTWiMBUQ.jpg",
+        "https://cdn4.telesco.pe/file/WymXOal5Q4kmxxzkE6mRTK4DGTi9jB82TgjKpMhIQ2vhwIXOiQ5NosH9R7QuViVcZZcEZDKGTGwxQdidQd7qDMW3KaAYN4rPbOknb8aa94hycqGPggp4TOtt01K6bXqdK2m99Ya1g9O4ZVfI-bHVqHz26FEem5pr98rMxX0bDSFLe85K-sZtSh4wg77bwm8C2_7YNNV7OECYs9omqRqPuR_ppLyOWQm3SF6rPfPtvzubIl5t7p2_BQOgonXaqIdQkkE3c0-Cr1xzNX22qOUXf64ZuWZ7VVHwfjhAVLyWWNd0-i0b7Tk-6XhTOd8uRGyEXjzoZGN_5stNK77DhhfqeQ.jpg"
+      ],
+      "details": {
+        "engine": "1.5",
+        "power": "",
+        "power_estimated": false,
+        "mileage": "42,183 миль"
+      },
+      "text_excerpt": "2024 CHEVROLET EQUINOX RS ❗️ Скоро аукцион ❗️ 🚘 Пробег: 42,183 миль 🛠 1.5 🔩 FWD 📍 Run and Drive 📆 Дата Аукциона: 10.05.2026 (ночные торги) 💵 Ориентировочная цена в РБ со льготой - 17.900$ Связаться с нами: ☎️ +375333002266 🌐 Сайт: a4e.by",
+      "facts": [
+        "указан пробег"
+      ],
+      "score": 118,
+      "quality": "strict",
+      "telegram_post": "🔥 CHEVROLET EQUINOX\n\n📍 Направление: США / экспорт\n📅 Год: 2024\n💰 Ориентир: 17.900$\n⚙️ Двигатель: 1.5\n🐎 Мощность: уточняется\n🛣️ Пробег: 42,183 миль\n• указан пробег\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: @auto4export"
+    },
+    {
+      "channel": "autodeskusa",
+      "region": "США / Европа / Грузия",
+      "source": "@autodeskusa",
+      "source_url": "https://t.me/autodeskusa/59751",
+      "title": "Kia Seltos",
+      "year": "",
+      "price": "2.000.000 руб",
+      "image": "https://cdn4.telesco.pe/file/uZ7rX2fQptlv5c7oHWnsdUjPOQEAicUtSlxhjoTz0vHBKgFSWbJwS8QHa4h_1ox4XEgZ1pPexxRsM4dtNL9zUF0rEFPVIb-osuGT00n_h-xIbBphk4aUt9zI_grgNZ8NN-9zAaSjFv0tL6dvc9rMn6ikr4Vc9XnyDLpOC4UssHQo2aHW2lW4b15n63Ol39ZsAzs0CvL1eiG3I8Wm1prV-Y1bobt57y2KioX2B1s2PUq7cttg2vyH0HvQmBGXAfhAYvHUKcmGvl6WVKyRmQqiGHzO5XjubgerJVj-29XySVV2VeP9Us18cz0M2lYEB23Rh6OIb8U0wowPQb4mx_V4Jg",
+      "images": [
+        "https://cdn4.telesco.pe/file/uZ7rX2fQptlv5c7oHWnsdUjPOQEAicUtSlxhjoTz0vHBKgFSWbJwS8QHa4h_1ox4XEgZ1pPexxRsM4dtNL9zUF0rEFPVIb-osuGT00n_h-xIbBphk4aUt9zI_grgNZ8NN-9zAaSjFv0tL6dvc9rMn6ikr4Vc9XnyDLpOC4UssHQo2aHW2lW4b15n63Ol39ZsAzs0CvL1eiG3I8Wm1prV-Y1bobt57y2KioX2B1s2PUq7cttg2vyH0HvQmBGXAfhAYvHUKcmGvl6WVKyRmQqiGHzO5XjubgerJVj-29XySVV2VeP9Us18cz0M2lYEB23Rh6OIb8U0wowPQb4mx_V4Jg"
+      ],
+      "details": {
+        "engine": "",
+        "power": "",
+        "power_estimated": false,
+        "mileage": ""
+      },
+      "text_excerpt": "➡️ Kia Seltos — отличный полноприводный кроссовер! Можем привезти авто из Грузии, Китая или Кореи, подберём нужную сборку и состояние под ваш бюджет! 💰 Цена под ключ ориентировочно 2.000.000 рублей 💰 По всем вопросам пишите менеджеру 🤝",
+      "facts": [
+        "есть расчёт под ключ/логистика",
+        "актуально для рынка Грузии"
+      ],
+      "score": 109,
+      "quality": "price_photo",
+      "telegram_post": "🔥 Kia Seltos\n\n📍 Направление: США / Европа / Грузия\n📅 Год: год уточним\n💰 Ориентир: 2.000.000 руб\n⚙️ Двигатель: уточняется\n🐎 Мощность: уточняется\n🛣️ Пробег: уточняется\n• есть расчёт под ключ/логистика\n• актуально для рынка Грузии\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: @autodeskusa"
+    },
+    {
+      "channel": "autodeskusa",
+      "region": "США / Европа / Грузия",
+      "source": "@autodeskusa",
+      "source_url": "https://t.me/autodeskusa/59748",
+      "title": "Volkswagen",
+      "year": "",
+      "price": "500 000 руб",
+      "image": "https://cdn4.telesco.pe/file/sPfzzM7AOqQWgsotdsCxmCmmUsHfgw6wmcJ-PaytixRYMdbsXPlWJkX6COaPIpQILwTq-dTrjGRGf0SMhTzMbqlfJ0NMC_FQm-9D02q_c7KhnfDSFjZt4v7atcJ8C5T40wb913wGZ55A3aD6RHoahE1Q-576BN3CnffiFcg5ZUF1n-I52lHIDnagyvYGjrwCEapUjGvqnapdSAD-nOxItCMM3NR2fiY8IUH3mCNHYzp-0LwmyQ4_Fi6Js79oqzX3Q-FKVQfFvmwhXK2Cy40cH6WdOdfOILd46CZ_Uqrai1xFd9VjeZLTy4SeCnyaCH6F79S-XFcGAof_u2_mbPlS5A",
+      "images": [
+        "https://cdn4.telesco.pe/file/sPfzzM7AOqQWgsotdsCxmCmmUsHfgw6wmcJ-PaytixRYMdbsXPlWJkX6COaPIpQILwTq-dTrjGRGf0SMhTzMbqlfJ0NMC_FQm-9D02q_c7KhnfDSFjZt4v7atcJ8C5T40wb913wGZ55A3aD6RHoahE1Q-576BN3CnffiFcg5ZUF1n-I52lHIDnagyvYGjrwCEapUjGvqnapdSAD-nOxItCMM3NR2fiY8IUH3mCNHYzp-0LwmyQ4_Fi6Js79oqzX3Q-FKVQfFvmwhXK2Cy40cH6WdOdfOILd46CZ_Uqrai1xFd9VjeZLTy4SeCnyaCH6F79S-XFcGAof_u2_mbPlS5A"
+      ],
+      "details": {
+        "engine": "",
+        "power": "",
+        "power_estimated": false,
+        "mileage": ""
+      },
+      "text_excerpt": "✔️ Volkswagen Tayron — классная альтернатива Tiguan! Практически ничем не отличается, но разница минимум 500 000 рублей в твою пользу. Под ключ получается от 2 500 000 🔥 Хочешь узнать подробности? Напиши менеджеру, подберём вариант под тебя!",
+      "facts": [
+        "есть расчёт под ключ/логистика"
+      ],
+      "score": 107,
+      "quality": "price_photo",
+      "telegram_post": "🔥 Volkswagen\n\n📍 Направление: США / Европа / Грузия\n📅 Год: год уточним\n💰 Ориентир: 500 000 руб\n⚙️ Двигатель: уточняется\n🐎 Мощность: уточняется\n🛣️ Пробег: уточняется\n• есть расчёт под ключ/логистика\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: @autodeskusa"
+    },
+    {
+      "channel": "VitoDriveGE",
+      "region": "Грузия / Корея / США",
+      "source": "@VitoDriveGE",
+      "source_url": "https://t.me/VitoDriveGE/6614",
+      "title": "BMW X3",
+      "year": "",
+      "price": "7 370 000 руб",
+      "image": "https://cdn4.telesco.pe/file/g2RJH5IQeskpjytF5aSC1QXHqZINZtW46ta8U2l5qxCxCsi7yMLZYg9LiOAjcnSUZWT9BJhVUZMYqm1nePmP6Qp7CeKSp0sOqG8K9ZsqheZTHCQiiCYbRMai4Zpivfasfd3BGbo5XHocyNPUSANYK8NZ6LKkcDimt4Oc9_egR8p2wm3B7cI29OZPatBx0qTqZiJ4OwrRUSJkGugHrNkX9DuWousNZXS7YwxOJ8zETpdMzkYhL1G_01xSvoPFbx32P3zieU-w-mlSTCkPlTxM36P0WAR0R0d1EwMRRXODNzrmDkmg2X9ACsnwtbw8PTSZ_c44_Hcl5ip7Q1p5NlUFyA",
+      "images": [
+        "https://cdn4.telesco.pe/file/g2RJH5IQeskpjytF5aSC1QXHqZINZtW46ta8U2l5qxCxCsi7yMLZYg9LiOAjcnSUZWT9BJhVUZMYqm1nePmP6Qp7CeKSp0sOqG8K9ZsqheZTHCQiiCYbRMai4Zpivfasfd3BGbo5XHocyNPUSANYK8NZ6LKkcDimt4Oc9_egR8p2wm3B7cI29OZPatBx0qTqZiJ4OwrRUSJkGugHrNkX9DuWousNZXS7YwxOJ8zETpdMzkYhL1G_01xSvoPFbx32P3zieU-w-mlSTCkPlTxM36P0WAR0R0d1EwMRRXODNzrmDkmg2X9ACsnwtbw8PTSZ_c44_Hcl5ip7Q1p5NlUFyA"
+      ],
+      "details": {
+        "engine": "",
+        "power": "",
+        "power_estimated": false,
+        "mileage": ""
+      },
+      "text_excerpt": "🤔 Совсем новый BMW X3 в отличной комплектации в наличии в Грузии! Цена под ключ в РФ 7 370 000 рублей. Через Беларусь получится немного выгоднее ✔️ Пишите менеджеру — всё расскажем и быстро привезём авто для вас!",
+      "facts": [
+        "есть расчёт под ключ/логистика",
+        "актуально для рынка Грузии"
+      ],
+      "score": 104,
+      "quality": "price_photo",
+      "telegram_post": "🔥 BMW X3\n\n📍 Направление: Грузия / Корея / США\n📅 Год: год уточним\n💰 Ориентир: 7 370 000 руб\n⚙️ Двигатель: уточняется\n🐎 Мощность: уточняется\n🛣️ Пробег: уточняется\n• есть расчёт под ключ/логистика\n• актуально для рынка Грузии\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: @VitoDriveGE"
     },
     {
       "channel": "VitoDriveGE",
