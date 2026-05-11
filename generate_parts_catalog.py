@@ -3656,7 +3656,7 @@ OEM_LOOKUP: dict[tuple[str, str], list[str]] = {
 }
 
 OEM_OVERRIDES_PATH = Path("data/oem_lookup_overrides.json")
-VERIFIED_OEM_LOOKUP_PATH = Path("data/oem_lookup_verified.json")
+VERIFIED_OEM_LOOKUP_PATH = Path("data/oem_lookup_verified_complete.json")
 STRICT_REAL_ONLY = os.environ.get("OEM_STRICT_REAL_ONLY", "1").strip().lower() not in ("0", "false", "no")
 ALLOW_UNVERIFIED_VIN_MAPPING = os.environ.get("OEM_ALLOW_UNVERIFIED_VIN_MAPPING", "0").strip().lower() in ("1", "true", "yes")
 
