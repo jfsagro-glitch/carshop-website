@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-05-11T05:57:15Z
+Generated: 2026-05-11T09:38:24Z
 
 ## 1. RAM 1500 — @VitoDriveGE
 
@@ -30,7 +30,36 @@ Generated: 2026-05-11T05:57:15Z
 - https://cdn4.telesco.pe/file/jS_myjStWQg3LOz_mjBQnk63L4d6j-LYb3x4FNlrEQhjIMEu2UNtdaBE9xi5nH_NKSDutHkLUFsQm3Z1cUY9M56VnXQkWsuTWLUKtKgrmkzyeO8aZP3bK7QAed25TqGp3ANpj1dgRzAo6i_1eQxac6F8S4VwlRUSkomatveVjF-eLvTYML-37p7cmS7Y7uAE4yrSolz7HKJQG4TFKVd63ycMlbl6lPksavJzUM2DoTNZTvB3VAveTSAGAEqlgzDtgi54o_KUlx1JwD2Psb2sLb6ktqVxfYkS9F_nv5e65IDRuSi7LL_HBSgirt1geOwGDwU1Osw-lpzgJ0-KCs7mrA.jpg
 - https://cdn4.telesco.pe/file/hg0d1hs0QzJOzF72uCbZFrvMw4Fo2KKSjpmSWQKtPiGprGlkBAzByqigKDngIfpqY0hJfQBR7qvfrn1HBik_rP_D32wH8Ba3v34CX4NRwIxgZfREHGtgMaBeataF03AFyz0lFF-Z4cWjz-fkeNAk084XPYoDw4OncgW2-fCOj_bFWUlKIORDAYSCOVEsbiEwtsPzLJEi4cNmj15dyY5SMbPezqZc7UNMmAKE4recO4h439cww5ecbHLfW38fIhHMSSd2fyDYo3YussGewIc4tYmOUjbiV5EJ6rtUgAmyJq8Leik-wIYjjyzcDNr_0j1nrFnvydlhjxLoYpVLQi3kmA.jpg
 
-## 2. Volkswagen — @autodeskusa
+## 2. Рестайлинг BMW 8 — @VitoDriveGE
+
+🔥 Рестайлинг BMW 8
+
+📍 Направление: Грузия / Корея / США
+📅 Год: 2022
+💰 Ориентир: 46 000$
+⚙️ Двигатель: 3.0 RWD
+🐎 Мощность: 360 л.с.
+🛣️ Пробег: 82 000 км
+• указан пробег
+• есть расчёт под ключ/логистика
+• актуально для рынка Грузии
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/996755666805
+Источник мониторинга: @VitoDriveGE
+
+Фото:
+- https://cdn4.telesco.pe/file/QoSmMZz-3GIaqHXFqN55L5HaFpe3isCw-YijnLmmmcg6ODSY66rhxvNm5BEryPNkEGOtMJ9CjChlNrGxy9_eIRjee8iN2rxym1JCRrxEHUAO_TLarQJijKMU5OrfrAG4OP4cNWlt5cAoqoMyE8ZGbgbtOL-Fgy-R-pr7KRUVZQ7rH7adnDkSzKcapk2LoBJP3mZC8pwW_7VExqIWB65zzuKq3MZ_-Oa2nljiy-6kjNZJ2EhoidTBaH-PtZLa_hpVWxwxQR0q9zH4GV0l-crIRtcYNU3oDEDPbrxpPIY_v15GD4D_kzU5AF9QvMOeYBzUwjQ-l4M6migtbwjtb1Q9DA.jpg
+- https://cdn4.telesco.pe/file/Yn4ZFA2hHIQXuHbHmk3AXV8eMXdBz-_4DqU88rQqRB6ePv-83Im2mYnp-sIDUWDA68p07TDyOyJgikSbN525IpEAU8IHsez8uS2hEdCwOmCQp8FO0sB7Z8HGvEw5LtsUMWlAX973m76c5_I1s3zIvQUp6DtjHREiH86FzNlKZg-PDXOoLOCdSjKA4teyLoNxY2tODluW1aOng2lKolLGqOwG9tUeyFqvo67jDMb4u_UeSXlQvesoFcF4QsoS7Hgivp1VWqvGo5O9A536bpTV0gx8mCfh6r9v3VUphgZUgNTXANsECWuSvL3QYbMw8eMKPFYwk0Yx-jJuWUFS7TEhZQ.jpg
+- https://cdn4.telesco.pe/file/tTPz9yM1HvljFDmVhgQ6i43ka7OB5CfWXxSDwOm0kPzJouyMNJbq_PR84LXjUlyLIsYArBSlPCRdCg7rebLajZ7NSreEEHYOfmd78ADvutsK7vc2AXs0TRaZNQeems3Of8latRoIK1ArJuY5LKcBUKUAgTNr_h4dppGGgf9VPXs3e32zAnM4MP-KUvGbNZaIdWwZVkljbmisMkhPbcMWZZSy-Bm2sibjrr_NMm-a-pQwPYUenjvdVJ9MoQY82KF5PKpagg9no-8s1Kx2ahaL1IZhRB4FBYNfVJbYODlmP0kZoRC8OfjZZNnwYaiNUXhpHQoEJR-HxwEU90uqZD5VsQ.jpg
+- https://cdn4.telesco.pe/file/APMbxugV0PHETO8S_GLkqA6GYrlCZkAwA9TBPEw8NAvDEckj1noN-A6e8nKHlFf7PjPFtUUHwKvIrt522m9YY5zBSwqw9xkQXyrMpCKKAolwixUvk-i0eh29sq62cZlGJDgvcqcBNsS_LO1kl9fbVfnydsKCNuaE_xKjGmaKlGANawRpLqth9c_8BGB98EsUpGSYPYzjZApl6IG03xt9DNops99__VIbgNNejCH792lkd_T5Sh3t8Gv6NITK9LCpvI_RgbOReXcyD1MJFw9sI4PYABfq5mt0rWb56F9N76Ld-4gZrePzu-0eDRifHb-3PJGx2tybuAAYqN8erabloA.jpg
+- https://cdn4.telesco.pe/file/p59Rs4InRxX0K_zytC7jTzKfpy2VNRZnq51Wef_G1hiVaIniqeUrYngW0y69fZlqNpN_m5c1E-9c3PhPoRAJCNgB56yF0CrRLj4NWjFrPe8zz0OIGpc3F5RFQ-TiU_ElMp6ds_AgLiinoyOrLKFjGufWTAvPivBD0y7mqOkXjkv5nv7Ixlkycg9WZsGdCdg7lj7SclTRfsDZXOLwU8oIo1AKukJ_fsm5uPpAZ90l6u-1xrUWhMRbj0t-b4Y3b6Erl8vBISsaexV1Xhu0RbsBydfQ9Fr5pnswU0FlCn3maIFFwmkelRhqQecbG-apClnqmg8HvmsBAQphzduMP-3umA.jpg
+- https://cdn4.telesco.pe/file/IIjL45oZBKzl8ZAlnCcFcsm8GO3F-wtJDgZ4ABs20-sQDTYLB__HcBU-npKjndjSRQyNek1qxvyrHcM9PDDM-w5SJUhIL8Yt2ReG7EYpoiPrwsHzONFFn83znpTd4GQjbXb4e51EeFuvThcq4pfdJFTyFh0Li3Hi66WLPMv_Ynudar6lpnRfpjxxsuMLKDOp9sGXY6PB3hPg-qcfr9gVfcQXAtDu0xVmlMa2_djYJOFyZCKWVovZlCZyELR4ha-njE1Vy5gaCgrl7PhSh_yEtIbaBauxoHHI4FUMWNWcWWFEQ6V3Bn2QQuFTyl5kB5kTMoNYivqz7cBvEaq2pZKjiA.jpg
+- https://cdn4.telesco.pe/file/IEy13C_JsnmfNaffwaerESDYoZJLtRJcbgU6HfB0kV8Sij_op2lAKQ7illemt17LtHPn2S8mnESWydKbLSgIcEqq_5qxA3nSEpuVqQzHI_1slybDINv78g5fOXRELx-qd4x6ceWV1dxMLVCahpTI3NYLrEiHQ8DgVXZ7zsbAkjoYxHwILYYJP9kKg5Rklzr2YLme1XOQf4z6_qexvH3UL0EhQBWq3QtQb16n6S2Gwu4nvqp-w91YJftYNZPpTtHvwbZzFch_iiAYOzXqoRburqVPNxmo5qmVdmHC1Stj-thlMCf055EAAt7ZfFa8SkKPdpJUXbl8utqejVMECdHjyg.jpg
+- https://cdn4.telesco.pe/file/YbT_b30YEq9bCURkZQ3oBXwEbWbyKIzdr6s8PajJYy3EK32Sr1sm0J91SBIzPsYEDu0xtrh0bBONbzkFm0IKI-wEKMXBLtKUpDVOMRC7fnN5swNIQW7uNRMqkTG-5SwgDD1u_5O3x-sPikSUSCBJhN5fQ_HyUbEZzCKDGHr87mMaF95Bf4NJoV5flpUfpbBVO6wZ5yrqkjT9Y7tXMLYRIs57MW_UjKhF_21ZaqGLhKOjYSZ292oyNtpswTOO0hxwk9r7L-sbBsMc5rpkrJpI21RPogYrZQT37F4iebKvPG7O0R6djbbUWQREk3_DY5wRbl6YQvieUEEVEH3OFcGjlg.jpg
+
+## 3. Volkswagen — @autodeskusa
 
 🔥 Volkswagen
 
@@ -58,7 +87,7 @@ Generated: 2026-05-11T05:57:15Z
 - https://cdn4.telesco.pe/file/bXCXdBJy77X83g-OKRTaoQadHcM11teLWWQvrzWVzSNW3bO3s8HADzghlJHdr89oNkuCGTRiWqPUDproAdnxqDgifmtTy5fwqYjilMbqNMgsOBlchadA3y7ND9tYSV_XEDmbqK9FW3o58D3fWI61P_H6UmOPrmnj0OKYXt-60Gsh1D0JhHCJHpdTF-knh8M-qKjPNZRmswlTiZboLbheEL7aW3FkoluAQJgrNRW9C_PCeGI6CaGTuouj18X25pXWShhC3bt0p-3OOg4kXw-al9wHkJvbQxpfadUiVuzsmHVvr4TJrVufepkpkSy81Aw9Eg_vat0ARr_BAG_63QZiug.jpg
 - https://cdn4.telesco.pe/file/pbUZ16bwdX0HGLnyLhrcwUCq9Knxus_FMMiclFZ6_5yqebIFcTc73iOvplnMF2mnmuoczaY-kh5WzT584NaJ5UlB2WLH5wMuHAOizihljsU_NbaZe6jGJ1sHzMdSrTZBv4zbn9P4hK5ZuoI1S-Ge_nv-oEE2BipE1w5rlRD-L1e0hMETk3mzcPskLjaL08n6aFSB7iTjzJUCuuLI0fO9AXd0TcUJaMzoOhs0doG4x4YM5GrwlmkasF3IAAYxRYPhESUaPVELcFKmD5wDe9QgnNvDlGyyriL9NDIqW59vAt0bJcKDB6TWgs2DR4ApoqeIKAjBTk7vV3UXxzXx9lX4rg.jpg
 
-## 3. Audi A4 — @auto4export
+## 4. Audi A4 — @auto4export
 
 🔥 Audi A4
 
@@ -85,7 +114,28 @@ Generated: 2026-05-11T05:57:15Z
 - https://cdn4.telesco.pe/file/H-59F2IsgLD5nc2jPshHKlGIkx2BJitqPGohMam4ilI3rtuLnKLY4kDHp4IoR3ixz8MlFojMb-wEEUOuXbZ-wspLKMIhF4Unp0OmSp-DekmYMWlefGnnsueXnSSuaBadL_nCkun4BnCL8JZpP6ixPQQ4wTnWbHXrYoFMOiCppKX8oB0X_4qVzwTqeq10YPIMZeg81gq9a7iSkj60vm12rFkwUoeImx8Wx-yN9_WMjdJjC4b345wfItAEnwt9yb7vtOK4cnNbp2dmgxI7qR29V3nWkHU_YAIpHSE0JCEkE13jT7qvsezXn13Or7U0-t7aYtY9qkvpJslZT5n1WO71zg.jpg
 - https://cdn4.telesco.pe/file/YBh0ViFRkn6s7IGkKm9WHkFsC3tRWrY1KPkWYq7JzkxHt4UPiJYpdYkcDBCJnMGpkfmRpGfgRfv_lOBfyrelI2oSvwZRugmCDtRWRKLqBhqiJbg2hmYF7GSfAhqcPvY_e7sAUhKc39Xh9iV-rMIytsRSFgkjNMFqPZhbEAxtLsx3Dkkaakyf0zQBic5TwfbJVx4aMz3ge9_zfk-2_0O3qPH1dWCpC3r9tP_uijt0YFBS1JKppCFea6fl9WFA_dXof79NeK2l5jyvvYfS2GQCkThQtT46r0bD7A-nbX2nhSOmVkjTyOjxmEr50IuP2B4pySUgr11arm-Ch4jurR6VUQ.jpg
 
-## 4. Audi A6 — @auto4export
+## 5. Super Golf — @autodeskusa
+
+🔥 Super Golf
+
+📍 Направление: США / Европа / Грузия
+📅 Год: 2021
+💰 Ориентир: 2 300 000 руб
+⚙️ Двигатель: уточняется
+🐎 Мощность: уточняется
+🛣️ Пробег: 18 000 км
+• указан пробег
+• есть расчёт под ключ/логистика
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/996755666805
+Источник мониторинга: @autodeskusa
+
+Фото:
+- https://cdn4.telesco.pe/file/giy6kenCCPYPYxFA-m2F_tyV0QAW32vuG1Q-iJ3ntq9fXwxLBrJnqywzu84W2CDTyBxdlz9v0kGI6nIBAKqBpV9Hjk2GZz5OvHdQ69aTE1rqpd6LRoQKg0iuZMExzo226s_znxwBTj1Yclq53ioeKLqwDSG6qdqfLDEBkZyNsnKMb7gijq1rlu_19eqZQ9Vpg4OC4QyRfPoAAWTr84ylpfIw6w7HWJ38dKHm5phxbqcFlayorLoB49xiLDn5puAypjwRo3JUgzmCS3S6BcLQ5IFeKWmJhcCtF_lnheruALMPv-y8EVNHnuE5Zyk2bknDBDtCdzwJFm0aWuQyTYVsDQ
+
+## 6. Audi A6 — @auto4export
 
 🔥 Audi A6
 
@@ -111,7 +161,7 @@ Generated: 2026-05-11T05:57:15Z
 - https://cdn4.telesco.pe/file/EMibxCvyVNOKmsK2UqvaCvDAhbc0CcjRiL6Ftj6ig0wfFtAhNlcT1rjK3Hc1n6ickCLTwQZTyOqj7lMXqroeFM-Ti9M6upq8LaSnsI7oU58HM9A44H8vJg3GlzjiHlX9el_rc6vaGbjju_jljeZvSg1DIFR0hLEjbp7k74_zyKQTiTR27hQgFq6y3sLPoPP5CjjycMpxEgOLAkX5Zg0oE0AW6hpqUMW27yaODoPLxGPVlYF7ILC7Z4XpmYcTIvrAUbTH1Za4-3Rklvp-CAO7dXC58CXtSlZdlD-EyUiWYTPl17DP7spHYAMcn81Jc12XHVjRVm4xeJ_VrL-dKuzS5A.jpg
 - https://cdn4.telesco.pe/file/jnqyRic5Et-2HABbl1_7tT7wPczBn8IluBVmHnR-EVF6T3yrPe-xR80pkLN7c7PXJ5ZEfPen6v4SBGqiWJZnUjJP4KX3ei9ErnYGpGtl8_aqYsDrdlUcdpHZ2qwMkuOem-AIoCroirS_-7MZEFgdu33opPsd2OzZzFWThg2N2aRcK3bQPAohg2rjgjJwvE9aPZaUFSn9Iyf2sQZFCvJEcF0lVUcgc-5rZyvIflvBNwGgzgF0d1shGHllf1VgTgNIgGJAZ_QwTsdP9-CNZUm42FDXEn4GY0aWtuCDvTqftwFdd6hvBmq8JFrTjrJy6cGpP4ktAiaHjtivKfW78Z5C8w.jpg
 
-## 5. HYUNDAI ELANTRA — @auto4export
+## 7. HYUNDAI ELANTRA — @auto4export
 
 🔥 HYUNDAI ELANTRA
 
@@ -129,14 +179,14 @@ Generated: 2026-05-11T05:57:15Z
 Источник мониторинга: @auto4export
 
 Фото:
-- https://cdn4.telesco.pe/file/lDYn1LyHx6E1FuHuMQBYNe8cYzO-LXxBdFwlDLL97_IQqAh9oMwbpwK7DxUyO4aG-R3hJVnFzKRuMnC-pBpkzaeY1qv2Rard5VIH9moR2wNX_-4K3G28xRv3tTdwIxwKOw8QbIfQe2NGhUtRZZnPbfXvZeBiK_PIdPFg2cUuhhoC6r1ZS7xt50trJenKJEgP_oQc5Xz2RgEUTG2Ug0t-cFXKQH-FpN3RJIohpHAAZI_Qev7h2dIF1HoSh6hOvajp47lqQXacF9bmv5avzQFl5dBLb0sM6ND-TNFQRV4_5RKskvKR4NqdO59k_kzmIE7MbrJPv8EHkYo3qMaiwIi5UA.jpg
+- https://cdn4.telesco.pe/file/NQlCG4mRxCTBjLKa1qSF2EEOuAfhVEUFVvJIE3KRjlrZeWWzwoVTc9jZ9wmZja9Gf_KrMRmIcAVggVPl8c6rWkg-yQn_q4dhS1TjFWmyx8Kr6kLtm2ZmbL5YvWxVH0PHxLNEZA6M6TYy-XoXz9Ko0nRzg7i6RSvDSA6b_af7NzDhAGdaS48XxRfcp_1fA6wFlqkn13NfO0cOe2IHLrqYBD8hUNVzMHHFtNOdgtqp3wSNg9MybPQMnxPFDy5owMPPnXR29lqHQlmXdzAGYJF8Ivxy7O50b7pxxuHk__yuKH4-HpPtmknjk64l_pE83fAoJwx6xT4pHkue9S2uiBwrbA.jpg
 - https://cdn4.telesco.pe/file/b-g0xcufINaunnk_lHi_0N_hOKI30PZ0V-pRodoxTdYmbnbau_K3VrSWFLwCiWP9ISwd6mKuijftZKgj-gLSBBCIHoc1sYtzgk3jyfVBt5tyXejoZ86m9ZrnGJ11heSIv1q_VCaXIvjxuPNru3LRdGQu4CBfJH6oqTdH_jWHM5woqzHyoTOLPSBW3bLkHlF7roQoovLYSXJ20_UWMzM4bgQe7A_2k7t756seZXKmTjPyTu38oPZE_Ce1n_PRsTALizqtdL-1meN-Ok6wBm0C2mR7Rpxa4jqHa0T5v1FQ8tPVADgXz-h5G1CjF5PXyEm4xepkr_cTYbVxnPFfmZZ5zg.jpg
 - https://cdn4.telesco.pe/file/m6CD-iRSu0pxKkVrE5HAPXAviBAfBxhHWdQViFf4NNZzgscd4WyeROWJgUpPTqz2wS7xAvmRXEkRtOutxolim4AjF5bP7A06A4sCmUcNGO3FqGMJynR13l8ZCk3qwedpLtrWh9XUBT7Kqt0by_FxNaaPvfzkKVfMqAW1uCCCZv-6A0zB5J18b9oRepVn22Ao9TAeDmDx5jbZDHq7voyr42KLCa92d90zwp-Z5U4RKs2T9BnF93g1TBimbO6B65uZYFs0vMI2U_GtysQNKibTDLu9ZwG5RzseBFMh0EsIu5tXQloBBniWR_NGKIi4PNZP4WnOOb5IqzhZ8-i5MU0Ljw.jpg
 - https://cdn4.telesco.pe/file/EGeXiLTCEMAyZlvrLS44Al_mdJzV64TVej3z6lAyZQ4Pj8mhqQodeZ0s3MwUostSTEMbpp_POzacvMMelmVO8AF1YlJV0cnhjXPKM7wHxbQlDl1uFn65fQqFuHK42Wp_HDZ_QrGOqNWoMox-T_1A4reKFuBOMG8W9TjyLUf1FBwAsxRJIlqhw3B_YrS2JUtXbv6h-ivfZyYhHSaK1Q4sBot1sIaM7eZZa594mKcjphtcmGW75Bc0seFC12armJ5CgH3MyPq4QBIoeKQLZAv9Wxgd7DLuM-R5pWAaCBWT7KrM8RTO5j-gTZGYiulP4pfQKKCFI2hMOrIGeh780NRcGg.jpg
 - https://cdn4.telesco.pe/file/hg3OA7GvUMyxXvNfQ2ad1oB_PU_1LNpqRjnvZ4_3v5cS4KNTZCwmWeYUKcp6CH8yO1yO793zc7AM1Jg-gxoecXdWq0B2un-TFe3TzpWEylc7cLNa096wp4YHHeNuIqfQ8B9Pn8fs5we4v3FqfuZQGa2qL0HOPfW52yvJFqHorrU9tG1-Nclpsec5ApnsuYJRMUavUmB1pmRoh5jb84k1Aq9zuouupgM9IHQ2tb6dUJUEvCSDMRt4xZx0peltC4Tr3LU7qXu2Z0xuhwRqup9JYpEiCIaUcJpbA7sHpfUwTqdI_bXXgMEJ-y54CeyOuPuNwojH1cM0l7wI4V1pxS_dQA.jpg
 - https://cdn4.telesco.pe/file/O5Vnx6Vq_GwtVqtMqXSFxAOoPlrZq3Y1GmNf0zIJXVP4-wF-ixhEhV4KMzShHx6BIDF7uh650PWzr77CTTwG4cRPcccvCq9TuD9dcX_UH8XurLbEleX8xVO1E3r0Lk1eeNyo6JsmO7JRMmBCiG-ORbMq7BdKMY1HbDqdqr_pC9jDf3EmqGoVOWsmqEKt4Z2EwpYYGJE4xGVVqNoVH_ONsrpAemQXrFTJjVyNbla1vrYyY8xlA1W--5NlANsfol_44VT54bsVLkExEugD5GnroFeCKx7bYnOjKpNMhkxn8DmBym_-6-8qvwiQbwTfsB22bryS471HBbBr5fEvZdDSRA.jpg
 
-## 6. CHEVROLET EQUINOX — @auto4export
+## 8. CHEVROLET EQUINOX — @auto4export
 
 🔥 CHEVROLET EQUINOX
 
@@ -160,52 +210,11 @@ Generated: 2026-05-11T05:57:15Z
 - https://cdn4.telesco.pe/file/StQJ4GILVBAuipG2UEBc3AROY8pxVFA64WUbaJ0_npBv1qUG-Eltwj8a7mXut3_bofnnBueV9bmrw9b5y2PTL75x9qStaZLaKoFwS8XDoL489x_KOP_TSqIeGjQKFT4MeMByN6OXq4crpiCceBdSOUa-Rl7UYaqZL418_vuQEBWkjg0Uha45o8DZF_V3ZBksgd8VWm1w4c7t_9NHXd_DwPnccb41yhsy5HnIt2aQRWR5af_ZfwMJrbNzV3VkXaNvAn5hfQIAYrMToi5iq5gHxSbnq13h2MO227xTkLEMVg1s07D_juUSqm3eNaykwPAO3qsEtDmqEz_FleLTWiMBUQ.jpg
 - https://cdn4.telesco.pe/file/WymXOal5Q4kmxxzkE6mRTK4DGTi9jB82TgjKpMhIQ2vhwIXOiQ5NosH9R7QuViVcZZcEZDKGTGwxQdidQd7qDMW3KaAYN4rPbOknb8aa94hycqGPggp4TOtt01K6bXqdK2m99Ya1g9O4ZVfI-bHVqHz26FEem5pr98rMxX0bDSFLe85K-sZtSh4wg77bwm8C2_7YNNV7OECYs9omqRqPuR_ppLyOWQm3SF6rPfPtvzubIl5t7p2_BQOgonXaqIdQkkE3c0-Cr1xzNX22qOUXf64ZuWZ7VVHwfjhAVLyWWNd0-i0b7Tk-6XhTOd8uRGyEXjzoZGN_5stNK77DhhfqeQ.jpg
 
-## 7. Kia Seltos — @autodeskusa
-
-🔥 Kia Seltos
-
-📍 Направление: США / Европа / Грузия
-📅 Год: год уточним
-💰 Ориентир: 2.000.000 руб
-⚙️ Двигатель: уточняется
-🐎 Мощность: уточняется
-🛣️ Пробег: уточняется
-• есть расчёт под ключ/логистика
-• актуально для рынка Грузии
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @autodeskusa
-
-Фото:
-- https://cdn4.telesco.pe/file/uZ7rX2fQptlv5c7oHWnsdUjPOQEAicUtSlxhjoTz0vHBKgFSWbJwS8QHa4h_1ox4XEgZ1pPexxRsM4dtNL9zUF0rEFPVIb-osuGT00n_h-xIbBphk4aUt9zI_grgNZ8NN-9zAaSjFv0tL6dvc9rMn6ikr4Vc9XnyDLpOC4UssHQo2aHW2lW4b15n63Ol39ZsAzs0CvL1eiG3I8Wm1prV-Y1bobt57y2KioX2B1s2PUq7cttg2vyH0HvQmBGXAfhAYvHUKcmGvl6WVKyRmQqiGHzO5XjubgerJVj-29XySVV2VeP9Us18cz0M2lYEB23Rh6OIb8U0wowPQb4mx_V4Jg
-
-## 8. Volkswagen — @autodeskusa
-
-🔥 Volkswagen
-
-📍 Направление: США / Европа / Грузия
-📅 Год: год уточним
-💰 Ориентир: 500 000 руб
-⚙️ Двигатель: уточняется
-🐎 Мощность: уточняется
-🛣️ Пробег: уточняется
-• есть расчёт под ключ/логистика
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @autodeskusa
-
-Фото:
-- https://cdn4.telesco.pe/file/sPfzzM7AOqQWgsotdsCxmCmmUsHfgw6wmcJ-PaytixRYMdbsXPlWJkX6COaPIpQILwTq-dTrjGRGf0SMhTzMbqlfJ0NMC_FQm-9D02q_c7KhnfDSFjZt4v7atcJ8C5T40wb913wGZ55A3aD6RHoahE1Q-576BN3CnffiFcg5ZUF1n-I52lHIDnagyvYGjrwCEapUjGvqnapdSAD-nOxItCMM3NR2fiY8IUH3mCNHYzp-0LwmyQ4_Fi6Js79oqzX3Q-FKVQfFvmwhXK2Cy40cH6WdOdfOILd46CZ_Uqrai1xFd9VjeZLTy4SeCnyaCH6F79S-XFcGAof_u2_mbPlS5A
-
-## 9. BMW X3 — @VitoDriveGE
+## 9. BMW X3 — @autodeskusa
 
 🔥 BMW X3
 
-📍 Направление: Грузия / Корея / США
+📍 Направление: США / Европа / Грузия
 📅 Год: год уточним
 💰 Ориентир: 7 370 000 руб
 ⚙️ Двигатель: уточняется
@@ -217,16 +226,16 @@ Generated: 2026-05-11T05:57:15Z
 ✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
 🚚 Доставка, растаможка и оформление через EXPO MIR.
 📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @VitoDriveGE
+Источник мониторинга: @autodeskusa
 
 Фото:
-- https://cdn4.telesco.pe/file/g2RJH5IQeskpjytF5aSC1QXHqZINZtW46ta8U2l5qxCxCsi7yMLZYg9LiOAjcnSUZWT9BJhVUZMYqm1nePmP6Qp7CeKSp0sOqG8K9ZsqheZTHCQiiCYbRMai4Zpivfasfd3BGbo5XHocyNPUSANYK8NZ6LKkcDimt4Oc9_egR8p2wm3B7cI29OZPatBx0qTqZiJ4OwrRUSJkGugHrNkX9DuWousNZXS7YwxOJ8zETpdMzkYhL1G_01xSvoPFbx32P3zieU-w-mlSTCkPlTxM36P0WAR0R0d1EwMRRXODNzrmDkmg2X9ACsnwtbw8PTSZ_c44_Hcl5ip7Q1p5NlUFyA
+- https://cdn4.telesco.pe/file/bmjwSsff8ZlxT1xz9uJALBGuQ-GvtNxHkxz34IFK3ZOBiP8ki0q0Wr96lFyJ2poKObPCxKJxydStzFSJPiQiXkyukrXIEkM5RmEvH0p8yjVrmVho8QcV9nzmy0DtS-aZ38aImtq7EfIjhU-o4I8P5c2LH24QQxXBFe2xmyxFmd42N0Sp-2fYaTd6gHoBRhF4DbLadGbL0_8LuV6sJAodL6r95Eex308coXfEmMNMw_N-t5wqMiZu-YFMBJEqXgxWa0EnQPx80WzAn9nGZzKDWTFvKzqDsivDGQ5dL8eOx3dtZ9TyzFwBR9QPHeHGenwOHbI7OVnk3CEApwjTwi89Mg
 
-## 10. Kia Seltos — @VitoDriveGE
+## 10. Kia Seltos — @autodeskusa
 
 🔥 Kia Seltos
 
-📍 Направление: Грузия / Корея / США
+📍 Направление: США / Европа / Грузия
 📅 Год: год уточним
 💰 Ориентир: 2.000.000 руб
 ⚙️ Двигатель: уточняется
@@ -238,7 +247,7 @@ Generated: 2026-05-11T05:57:15Z
 ✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
 🚚 Доставка, растаможка и оформление через EXPO MIR.
 📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @VitoDriveGE
+Источник мониторинга: @autodeskusa
 
 Фото:
-- https://cdn4.telesco.pe/file/Rz3Uc9OXFt0mRUtsjHK1G7WfE2b3Wv_njqX8nZF-Pn28sUm70x6ri5XyIYIZ8OldNLjGI0gSDQ2goz8XR_rqO7WDYms9CuQ5FL8h6-xYkLreb5yEcM8sR0QKZBBSWEfU9uFKERQkSh3iVPw-bVROKuazlhsU4L_qKKgcierQe7SEX5W4PQX5kRaYceKKu8inx78S1nOImGhRGxXYSOeq4Q-ep5-91WGIFyq_UTon201vsB-uB3ephx0sUnpTQ11We3Pym4lbznpn49hWiS12ezxnMf4kdpXBheJ1cSi35ZaqkvyfCm7Cd2rHjdR-kZG7q1eWhMW-JAP7uiuvS8J44g
+- https://cdn4.telesco.pe/file/qm-r0_O2bxXY7eFpn2ceHdFbDd8CeSsM9DP_0JIub-LacKz3vIQ-AN2lATI-nfIfm5PQV6HiISafFiedI6JOv1YIkQMdeLMb1VvULXudVMUFPV6kt0xWT-xhGfcHcarAlCx0GqRtp7SaahPNLa9IxgunUeZey7YGGk9AOfwuvaGVFASt-Ugp3D4O75rM1dp79UFQ1vB6TxaImcKyNNI99Y2_PFyU1CCjmzAV0EeUXfctZAh59FXzjrQHPZonnqiEWjGleS003bb-yxR1BMqEIcSeD0PU7BnBt8X2wrVJszQYSE2wkpbCmhHbFB8Mn5UBlXADhhFhjoIJwFv9NLFrcA
