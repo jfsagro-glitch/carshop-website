@@ -1,0 +1,4 @@
+﻿brand_prefix,vin,model,year,engine,transmission,source_name,source_url,retrieved_at
+LX,JT2GM74K033123456,ES,2015,2AR-FSE,Automatic,vin_decoder_sample,https://vin-decoder.example.com/JT2GM74K033123456,2026-05-11T07:02:48.510710Z
+LX,JT2GM76K223234567,ES,2016,8AR-FSE,Automatic,vin_decoder_sample,https://vin-decoder.example.com/JT2GM76K223234567,2026-05-11T07:02:48.510734Z
+HY,KMHDN4AJ2GU123456,Elantra,2016,2.0L,Automatic,vin_decoder_sample,https://vin-decoder.example.com/KMHDN4AJ2GU123456,2026-05-11T07:02:48.510742Z
