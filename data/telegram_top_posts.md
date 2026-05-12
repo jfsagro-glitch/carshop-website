@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-05-12T11:52:19Z
+Generated: 2026-05-12T16:17:46Z
 
 ## 1. RAM 1500 — @VitoDriveGE
 
@@ -87,7 +87,28 @@ Generated: 2026-05-12T11:52:19Z
 - https://cdn4.telesco.pe/file/bXCXdBJy77X83g-OKRTaoQadHcM11teLWWQvrzWVzSNW3bO3s8HADzghlJHdr89oNkuCGTRiWqPUDproAdnxqDgifmtTy5fwqYjilMbqNMgsOBlchadA3y7ND9tYSV_XEDmbqK9FW3o58D3fWI61P_H6UmOPrmnj0OKYXt-60Gsh1D0JhHCJHpdTF-knh8M-qKjPNZRmswlTiZboLbheEL7aW3FkoluAQJgrNRW9C_PCeGI6CaGTuouj18X25pXWShhC3bt0p-3OOg4kXw-al9wHkJvbQxpfadUiVuzsmHVvr4TJrVufepkpkSy81Aw9Eg_vat0ARr_BAG_63QZiug.jpg
 - https://cdn4.telesco.pe/file/pbUZ16bwdX0HGLnyLhrcwUCq9Knxus_FMMiclFZ6_5yqebIFcTc73iOvplnMF2mnmuoczaY-kh5WzT584NaJ5UlB2WLH5wMuHAOizihljsU_NbaZe6jGJ1sHzMdSrTZBv4zbn9P4hK5ZuoI1S-Ge_nv-oEE2BipE1w5rlRD-L1e0hMETk3mzcPskLjaL08n6aFSB7iTjzJUCuuLI0fO9AXd0TcUJaMzoOhs0doG4x4YM5GrwlmkasF3IAAYxRYPhESUaPVELcFKmD5wDe9QgnNvDlGyyriL9NDIqW59vAt0bJcKDB6TWgs2DR4ApoqeIKAjBTk7vV3UXxzXx9lX4rg.jpg
 
-## 4. Audi A4 — @auto4export
+## 4. ТОП САМЫХ — @AutopodborGeo
+
+🔥 ТОП САМЫХ
+
+📍 Направление: Грузия
+📅 Год: 2021
+💰 Ориентир: 1.700.000 ₽
+⚙️ Двигатель: 1.5
+🐎 Мощность: уточняется
+🛣️ Пробег: уточняется
+• есть расчёт под ключ/логистика
+• аукционный лот США
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/996755666805
+Источник мониторинга: @AutopodborGeo
+
+Фото:
+- https://cdn4.telesco.pe/file/qINq79Q0ykkbOEYhHyV8izN9SA7vzIb4cLlDqBN3fTCvvnDdfVzPaK7mb4yw9u1-bHfhQ1teXBUARCMleW0xOQWB2tWcIRIhZ8JLVbRdhpJ8OA1QIZI1icD_TyrXqDLkNxx124m7Uos8HsMks4S8FHDbuTddz6AEdFJjBvNcDfCqRsi5Hh2AR91omH7nk7I3gVhvfBGjDM5vEoWmSzzDnbQm9txjEZRVmvrK7ffld5K0ypLlUh6VDbSeqFWcLx-Y_A-GaqHFfDGCMKukjLYhJL28OuaNnbfStIMHwEUfJp5IcIQwxUm9gCd-S9OZ_Z7xTtbgrzgtX6ZW8XbCNmLHAw.jpg
+
+## 5. Audi A4 — @auto4export
 
 🔥 Audi A4
 
@@ -114,7 +135,7 @@ Generated: 2026-05-12T11:52:19Z
 - https://cdn4.telesco.pe/file/H-59F2IsgLD5nc2jPshHKlGIkx2BJitqPGohMam4ilI3rtuLnKLY4kDHp4IoR3ixz8MlFojMb-wEEUOuXbZ-wspLKMIhF4Unp0OmSp-DekmYMWlefGnnsueXnSSuaBadL_nCkun4BnCL8JZpP6ixPQQ4wTnWbHXrYoFMOiCppKX8oB0X_4qVzwTqeq10YPIMZeg81gq9a7iSkj60vm12rFkwUoeImx8Wx-yN9_WMjdJjC4b345wfItAEnwt9yb7vtOK4cnNbp2dmgxI7qR29V3nWkHU_YAIpHSE0JCEkE13jT7qvsezXn13Or7U0-t7aYtY9qkvpJslZT5n1WO71zg.jpg
 - https://cdn4.telesco.pe/file/YBh0ViFRkn6s7IGkKm9WHkFsC3tRWrY1KPkWYq7JzkxHt4UPiJYpdYkcDBCJnMGpkfmRpGfgRfv_lOBfyrelI2oSvwZRugmCDtRWRKLqBhqiJbg2hmYF7GSfAhqcPvY_e7sAUhKc39Xh9iV-rMIytsRSFgkjNMFqPZhbEAxtLsx3Dkkaakyf0zQBic5TwfbJVx4aMz3ge9_zfk-2_0O3qPH1dWCpC3r9tP_uijt0YFBS1JKppCFea6fl9WFA_dXof79NeK2l5jyvvYfS2GQCkThQtT46r0bD7A-nbX2nhSOmVkjTyOjxmEr50IuP2B4pySUgr11arm-Ch4jurR6VUQ.jpg
 
-## 5. Super Golf — @autodeskusa
+## 6. Super Golf — @autodeskusa
 
 🔥 Super Golf
 
@@ -135,7 +156,7 @@ Generated: 2026-05-12T11:52:19Z
 Фото:
 - https://cdn4.telesco.pe/file/QKWcuq1OHhTlnlMh2jweR2FLyfFf8lsciA7sGq128oeb0L6D0tPEZyp-vzjUclDur-iov--cXtDqu3jHPg5gBBgyScDjLVUa1ep0nq5FjjGQ6ILIAykxUiAzeQTM4JNIIBiRSSjtzmvx3FEIwu3p_0Ppml3KcdhF12TTMV9cfPfgFHkGc4vXNu2ZpIQjeXAofdj8yBfWdpIPa3EnO3-L2HZLHu3Hz0y4g7oFviFhmnEdbFkuVkg2ndGEe4UMZUMLP6LU-BMT7VeZLPqYMHSWQs_XYrIwArJ5-bOnZrBCoxnSAE4Z8hn8lsCQL4dZReReCBFtbeJKMKrv9D19phlr5g
 
-## 6. Audi A6 — @auto4export
+## 7. Audi A6 — @auto4export
 
 🔥 Audi A6
 
@@ -161,7 +182,7 @@ Generated: 2026-05-12T11:52:19Z
 - https://cdn4.telesco.pe/file/EMibxCvyVNOKmsK2UqvaCvDAhbc0CcjRiL6Ftj6ig0wfFtAhNlcT1rjK3Hc1n6ickCLTwQZTyOqj7lMXqroeFM-Ti9M6upq8LaSnsI7oU58HM9A44H8vJg3GlzjiHlX9el_rc6vaGbjju_jljeZvSg1DIFR0hLEjbp7k74_zyKQTiTR27hQgFq6y3sLPoPP5CjjycMpxEgOLAkX5Zg0oE0AW6hpqUMW27yaODoPLxGPVlYF7ILC7Z4XpmYcTIvrAUbTH1Za4-3Rklvp-CAO7dXC58CXtSlZdlD-EyUiWYTPl17DP7spHYAMcn81Jc12XHVjRVm4xeJ_VrL-dKuzS5A.jpg
 - https://cdn4.telesco.pe/file/jnqyRic5Et-2HABbl1_7tT7wPczBn8IluBVmHnR-EVF6T3yrPe-xR80pkLN7c7PXJ5ZEfPen6v4SBGqiWJZnUjJP4KX3ei9ErnYGpGtl8_aqYsDrdlUcdpHZ2qwMkuOem-AIoCroirS_-7MZEFgdu33opPsd2OzZzFWThg2N2aRcK3bQPAohg2rjgjJwvE9aPZaUFSn9Iyf2sQZFCvJEcF0lVUcgc-5rZyvIflvBNwGgzgF0d1shGHllf1VgTgNIgGJAZ_QwTsdP9-CNZUm42FDXEn4GY0aWtuCDvTqftwFdd6hvBmq8JFrTjrJy6cGpP4ktAiaHjtivKfW78Z5C8w.jpg
 
-## 7. HYUNDAI ELANTRA — @auto4export
+## 8. HYUNDAI ELANTRA — @auto4export
 
 🔥 HYUNDAI ELANTRA
 
@@ -186,7 +207,7 @@ Generated: 2026-05-12T11:52:19Z
 - https://cdn4.telesco.pe/file/FIzPv6E_I74mlnIxBrB9AJ3cQ7HUOH51vMRj7sFvlwT-Cjk_XY3wFZnKEBChuNmLLCfanA0tSqWw59TyMLWkO0J78_sJzDGTGojAGOAyXH9s0tQdkC2qeZzBHZ29FmLFaclRduX1xjz_86rUDNCeUslb2um6hqPpeh9fEK9QzgUnQG634aIM7MBeKURkHIbfo_Lamki2eDoFAaMC-lOVWD5zYEQpXUjLW38mRHo2WRAOjaViFgmw14hlAeRJQFNllJtN4kb47nrgA9kEsztVKtjrIr95Q2x-ScWzrbWhZYYVZXkH5y01JtZ4uipO5RgMsaYGjFI-o0X-fFyX1pn4Zw.jpg
 - https://cdn4.telesco.pe/file/M2OPdHARfk_XBt5OeY53I77hf9kSZTB2YLZQQ5mpxy0VJqZ01qvmQ1lh39LH0C84JIgfdIX10MQtIelvzXHD0oMQSxOC1CiidLjA7SjcThiyWQljAdUq3230aaor-ugGeDveefGX72VXxSLxhI7bH6COdB1X904YdRic_y1ehJhM7hvwfgJIH80sdy7dRpef3fJgbJgPImUha63_nmgrYLchVT8YUTe-FrE3ApSJRpQu6FeFaOqVZKMpsuJVVtYuEa9PTY8eHpaHdqbBidGANT1yRcxPf_RW8jfKrqYLhtTBH9YPNSk2MrrVrV0f-LHp6La-nzOzK8JyEZ-48qS0lA.jpg
 
-## 8. CHEVROLET EQUINOX — @auto4export
+## 9. CHEVROLET EQUINOX — @auto4export
 
 🔥 CHEVROLET EQUINOX
 
@@ -210,7 +231,7 @@ Generated: 2026-05-12T11:52:19Z
 - https://cdn4.telesco.pe/file/Z7AnrJjeuh_7QDCt9os223Y7GZWDPHqrOBx9WuV6LRfN2AMPT5HTEGNY_gBlimS81kiFnl8KugO7pAng5cF26BxXKZlGt2iDOBIl6kXaJULrh7z2vKBb4W3QbG8uW2MjhmAaV20xcVFmI5Hr8DjGPre98-pnaQ9GQ3AI61i9s65J553K4YbxsPYPGI2R5krWhcsAmb9nkGdM8FM-cBGoyUcKQ5WmuLQucVykFNdtL-6e9Ue8lzWlpyKBfRgIayhnSGBMjf_x3B8c7cwO4uVUAzW8sA1UVfQAPtHCSQN5RDkRvEUEvtkLPT40YWauNLt1vgH3b4PpW5tTH6Fy7q_YWQ.jpg
 - https://cdn4.telesco.pe/file/vx8azWsPvLnw5pxuIBQkfl-QjNG1riXVpMWWridotYmxejQocCHNlXC4buR6PM-PF4KZyeJYHMmy94ZhPOxnS-2wW7wD3g3FFqzyzEDuA5DbngxdA7sEwNwk4vna2yeLS_SkZXlVjQAaDBY7P4NLEklMcwds6M7vlJ_5Emb7PXIGwexVRpmFsuwTHyXx_XLpDzKYcNO-kqvKpqzbMpNvD1X7KX8oPiEP3hY_4SVIOwi6KgRBtXw_3uSWpocDeyERbhfFCbuC0gDEUo-HdU5pyBk-yEV1zj9t--nVeGbuwV2S3FqRkE7QkeiTYvvw4fFPE2emG1SoJasp15kEidfbEA.jpg
 
-## 9. BMW X3 — @autodeskusa
+## 10. BMW X3 — @autodeskusa
 
 🔥 BMW X3
 
@@ -230,24 +251,3 @@ Generated: 2026-05-12T11:52:19Z
 
 Фото:
 - https://cdn4.telesco.pe/file/ganhZBPngtKqsWml9YJNQ1EZyv0i2B8RCLMVRH-WBz7nQ4MnGgD2sW0boHuZPO8MQnsa5O61bpTyefy34QBxeL7xS18g5az9wYp5CjGReWKkNJQccxEtwBtLTXSBzBlvJazysfNxm35eHGK4ZetYeIfuXnCDZNCXFLbIs5sAsMfhp6_MjXchf59SPl1iMGvjgZFiGnpCqgKpCMgHap_SO-TsSdzcSb8_p0LT-fjr-K0dHnf0CA9nxnNCzGdsLAyZy7mDnlWE0z2waKNwH1x-GwrQ-cFD-R2HAZDRIVsotMLvVRE3gwdsOHNpjvlC-Mgm3olQ65fUNhaEo0nMZiM-cA
-
-## 10. Kia Seltos — @autodeskusa
-
-🔥 Kia Seltos
-
-📍 Направление: США / Европа / Грузия
-📅 Год: год уточним
-💰 Ориентир: 2.000.000 руб
-⚙️ Двигатель: уточняется
-🐎 Мощность: уточняется
-🛣️ Пробег: уточняется
-• есть расчёт под ключ/логистика
-• актуально для рынка Грузии
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/996755666805
-Источник мониторинга: @autodeskusa
-
-Фото:
-- https://cdn4.telesco.pe/file/qm-r0_O2bxXY7eFpn2ceHdFbDd8CeSsM9DP_0JIub-LacKz3vIQ-AN2lATI-nfIfm5PQV6HiISafFiedI6JOv1YIkQMdeLMb1VvULXudVMUFPV6kt0xWT-xhGfcHcarAlCx0GqRtp7SaahPNLa9IxgunUeZey7YGGk9AOfwuvaGVFASt-Ugp3D4O75rM1dp79UFQ1vB6TxaImcKyNNI99Y2_PFyU1CCjmzAV0EeUXfctZAh59FXzjrQHPZonnqiEWjGleS003bb-yxR1BMqEIcSeD0PU7BnBt8X2wrVJszQYSE2wkpbCmhHbFB8Mn5UBlXADhhFhjoIJwFv9NLFrcA
