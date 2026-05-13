@@ -1002,11 +1002,11 @@
         }
 
         const GEORGIA_POWER_CATALOG = [
-            ['toyota','camry','2.5','',150], ['toyota','rav4','2.0','',150], ['toyota','rav 4','2.0','',150],
+            ['toyota','rav4','2.0','бензин',152], ['toyota','rav 4','2.0','бензин',152],
             ['toyota','corolla','1.8','гибрид',122], ['toyota','c-hr','1.8','гибрид',122], ['toyota','yaris','1.5','гибрид',116],
             ['hyundai','tucson','2.0','',150], ['hyundai','santa fe','2.0','дизель',150], ['hyundai','creta','1.6','',123], ['hyundai','i30','1.5','',110], ['hyundai','elantra','2.0','',147],
             ['kia','sportage','2.0','',150], ['kia','seltos','1.6','',123], ['kia','sorento','2.0','дизель',149],
-            ['volkswagen','tiguan','1.4','',150], ['volkswagen','golf','1.5','',130], ['volkswagen','polo','1.0','',95], ['volkswagen','jetta','1.4','',147],
+            ['volkswagen','tiguan','1.5','бензин',150], ['volkswagen','golf','1.5','бензин',150], ['volkswagen','golf','1.0','бензин',110], ['volkswagen','polo','1.0','бензин',95], ['volkswagen','jetta','1.4','бензин',147], ['volkswagen','jetta','1.5','бензин',158],
             ['bmw','118i','1.5','',140], ['bmw','316d','2.0','дизель',122],
             ['mercedes-benz','c 200','1.5','',150],
             ['subaru','forester','2.0','',150],
@@ -1041,31 +1041,45 @@
                 if (!model.includes(ruleModel)) return;
                 const engineValue = parseGeorgiaEngine(ruleEngine);
                 if (engine && engineValue && Math.abs(engine - engineValue) > 0.11) return;
-                if (ruleFuel && !fuel.includes(ruleFuel)) return;
-                const currentScore = ruleModel.length + (engine && engineValue ? 8 : 0) + (ruleFuel ? 4 : 0);
+                const currentScore = ruleModel.length + (engine && engineValue ? 8 : 0) + (ruleFuel && fuel.includes(ruleFuel) ? 4 : 0);
                 if (currentScore > score) {
-                    best = hp;
+                    best = { hp, fuel: ruleFuel };
                     score = currentScore;
                 }
             });
             if (!best) return { hp: 0, kw: 0 };
-            return { hp: best, kw: Math.round(best / 1.35962) };
+            return { hp: best.hp, kw: Math.round(best.hp / 1.35962), fuel: best.fuel };
+        }
+
+        function getGeorgiaImportAgeWindow() {
+            const now = new Date();
+            const month = now.getMonth() + 1;
+            return {
+                min: (now.getFullYear() - 5) * 100 + month,
+                max: (now.getFullYear() - 3) * 100 + month
+            };
         }
 
         function isGeorgiaStockEligible(car) {
             const year = getCarYear(car);
             const month = Number(car.month || (String(car.date || '').match(/^(0?[1-9]|1[0-2])\//)?.[1]) || 0);
-            const yearMonth = year ? year * 100 + (month || 1) : 0;
-            if (!yearMonth || yearMonth < 202105 || yearMonth > 202305) return false;
+            if (!year || month < 1 || month > 12) return false;
+            const yearMonth = year * 100 + month;
+            const ageWindow = getGeorgiaImportAgeWindow();
+            if (yearMonth < ageWindow.min || yearMonth > ageWindow.max) return false;
             const images = filterImages(car.images);
             if (!images.length) return false;
+            const sourceUrl = String(car.url || car.link || car.description || '');
+            if (!/myauto\.ge\/(?:ru\/)?pr\/\d{6,}/i.test(sourceUrl)) return false;
+            if (images.some(img => String((img && img.url) || img).includes('/150000'))) return false;
             car._filteredImages = images;
             const power = parseGeorgiaPower(car);
             if (!power.hp && !power.kw) return false;
             if (power.hp && power.hp > 160) return false;
-            if (power.kw && power.kw > 115) return false;
+            if (power.kw && power.kw > 116 && !power.hp) return false;
             car._powerHp = power.hp;
             car._powerKw = power.kw;
+            if (power.fuel) car.fuel_type = power.fuel.charAt(0).toUpperCase() + power.fuel.slice(1);
             if (!car.power) car.power = `${power.hp} л.с. / ${power.kw} кВт`;
             return true;
         }

@@ -11,9 +11,37 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
+
+
+def is_plausible_oem_number(value: str) -> bool:
+    """Reject common HTML/JS tokens accidentally captured as part numbers."""
+    token = str(value or "").strip().upper()
+    compact = re.sub(r"[^A-Z0-9]", "", token)
+    if not token:
+        return False
+    if len(compact) < 6 or len(compact) > 24:
+        return False
+    if token.startswith("0X"):
+        return False
+    if token.startswith(("HTTP", "WWW", "IMG", "SRC")):
+        return False
+    if token in {"CONTENT", "SCRIPT", "WINDOW", "SEARCH", "VALUE", "FALSE", "TRUE", "NULL", "UNDEFINED", "COOKIE", "DOCTYPE"}:
+        return False
+    if token.startswith(("WP-", "JS-")):
+        return False
+    if token.startswith("G-") and len(token) > 8:
+        return False
+    if not re.search(r"\d", compact):
+        return False
+    if re.fullmatch(r"[A-Z]+", compact):
+        return False
+    if len(set(compact)) <= 2:
+        return False
+    return True
 
 
 def build_verified_lookup(csv_path: Path) -> tuple[dict[str, dict[str, list[str]]], dict]:
@@ -43,6 +71,9 @@ def build_verified_lookup(csv_path: Path) -> tuple[dict[str, dict[str, list[str]
             retrieved_at = str(row.get("retrieved_at") or "").strip()
 
             if not (prefix and code and oem and source_name and source_url and retrieved_at):
+                rejected_rows += 1
+                continue
+            if not is_plausible_oem_number(oem):
                 rejected_rows += 1
                 continue
 

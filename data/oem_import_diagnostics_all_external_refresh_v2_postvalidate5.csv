@@ -1,0 +1,5 @@
+﻿brand,brand_prefix,part_code,oem_number,accepted,reason
+Audi,AU,CMP,B66B812CE4,0,invalid_oem_format
+Audi,AU,CKP,B66B812CE4,0,invalid_oem_format
+Seat,SE,CKP,27KPPSEZRIAA-300X169,0,invalid_oem_format
+Seat,SE,CMP,27KPPSEZRIAA-300X169,0,invalid_oem_format

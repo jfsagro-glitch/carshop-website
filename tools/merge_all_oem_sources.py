@@ -9,10 +9,31 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+def is_plausible_oem_number(value: str) -> bool:
+    """Reject common HTML/JS tokens accidentally captured as part numbers."""
+    token = str(value or "").strip().upper()
+    if not token:
+        return False
+    if token.startswith("0X"):
+        return False
+    if len(token) < 6:
+        return False
+    if token in {"CONTENT", "SCRIPT", "WINDOW", "SEARCH", "VALUE", "FALSE", "TRUE"}:
+        return False
+    if token.startswith(("WP-", "JS-")):
+        return False
+    if token.startswith("G-") and len(token) > 8:
+        return False
+    return True
+
+
 def merge_oem_sources(source_dir: Path, output_path: Path) -> dict:
     """Merge all oem_supplier_*.csv files and deduplicate."""
     
-    csv_files = sorted(source_dir.glob("oem_supplier_*.csv"))
+    csv_files = [
+        p for p in sorted(source_dir.glob("oem_supplier_*.csv"))
+        if p.resolve() != output_path.resolve()
+    ]
     print(f"Found {len(csv_files)} OEM source files:")
     for f in csv_files:
         print(f"  - {f.name}")
@@ -32,6 +53,10 @@ def merge_oem_sources(source_dir: Path, output_path: Path) -> dict:
                 prefix = str(row.get("brand_prefix") or "").strip().upper()
                 code = str(row.get("part_code") or "").strip().upper()
                 oem = str(row.get("oem_number") or "").strip()
+                if not (prefix and code and oem):
+                    continue
+                if not is_plausible_oem_number(oem):
+                    continue
                 
                 key = (prefix, code, oem)
                 if key not in seen:

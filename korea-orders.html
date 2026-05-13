@@ -441,7 +441,10 @@
             // Изображение
             if (!car.image) {
                 const imgs = car.images;
-                if (Array.isArray(imgs) && imgs.length) car.image = imgs[0];
+                if (Array.isArray(imgs) && imgs.length) {
+                    const first = imgs.find(Boolean);
+                    car.image = typeof first === 'string' ? first : (first && (first.url || first.src)) || '';
+                }
             }
             // Ссылка на источник
             if (!car.link && car.url) car.link = car.url;
@@ -474,7 +477,9 @@
                 if (typeof sbLoadCarsWithFallback !== 'function') throw new Error('supabase-client.js не загружен');
                 const result = await sbLoadCarsWithFallback('korea', './cars_korea_stock.json');
                 const data = (result && result.data) ? result.data : [];
-                window.koreaUnder160CarsData = data.map(_normalizeKoreaCar);
+                window.koreaUnder160CarsData = data
+                    .map(_normalizeKoreaCar)
+                    .filter(car => typeof matchesImportCatalogRule !== 'function' || matchesImportCatalogRule(car, 'korea'));
 
                 function initKoreaSection() {
                     if (typeof setupKoreaUnder160Section === 'function') {

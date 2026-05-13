@@ -1,0 +1,7 @@
+﻿brand,brand_prefix,part_code,oem_number,accepted,reason
+Audi,AU,EMB,31JULI2025,1,added
+Audi,AU,CMS,31JULI2025,0,invalid_oem_reuse
+Buick,BU,TSH,285-2548,1,added
+Buick,BU,FAN,285-2548,0,invalid_oem_reuse
+Seat,SE,CKP,27KPPSEZRIAA-300X169,0,invalid_oem_format
+Seat,SE,CMP,27KPPSEZRIAA-300X169,0,invalid_oem_format

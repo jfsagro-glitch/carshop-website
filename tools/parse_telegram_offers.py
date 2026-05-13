@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CHANNELS_PATH = ROOT / "data" / "telegram_car_channels.json"
 OUT_JSON = ROOT / "data" / "telegram_top_offers.json"
 OUT_MD = ROOT / "data" / "telegram_top_posts.md"
+PASSABLE_PATH = ROOT / "data" / "passable_import_filter.json"
 
 UA = "Mozilla/5.0 (compatible; EXPO-MIR Telegram offer monitor; +https://cmsauto.store/)"
 
@@ -22,13 +23,50 @@ MODEL_KEYWORDS = [
     "Sorento", "RAV4", "Lexus", "Mercedes", "Porsche", "Volkswagen", "VAG",
 ]
 SELLING_WORDS = [
-    "под ключ", "цена", "стоимость", "доставка", "растамож", "vin", "пробег",
+    "под ключ", "цена", "стоимость", "доставка", "растамож", "тамож", "рф", "росси", "vin", "пробег",
     "год", "купили", "выкуп", "лот", "copart", "iaai", "грузии", "германии",
     "mobile", "autoscout", "клиент", "выда", "расчет", "расчёт",
 ]
 BAD_WORDS = ["розыгрыш", "вакансия", "обучение", "курс", "подписывай", "новости", "утильсбор"]
-ALLOWED_REGION_HINTS = ("сша", "copart", "iaai", "груз", "тбилиси", "европ", "герман", "mobile", "autoscout")
+ALLOWED_REGION_HINTS = ("сша", "usa", "copart", "iaai", "груз", "тбилиси", "европ", "герман", "mobile", "autoscout")
 OUT_OF_SCOPE_REGION_HINTS = ("коре", "китай", "🇰🇷", "🇨🇳")
+RB_HINTS = (
+    "цена в рб",
+    "в рб",
+    "для рб",
+    "рб со",
+    "беларус",
+    "белорус",
+    "льготой",
+    "+375",
+    "a4e.by",
+)
+DELIVERY_TO_RF_HINTS = (
+    "под ключ",
+    "доставка",
+    "растамож",
+    "тамож",
+    "оформлен",
+    "в рф",
+    "для рф",
+    "росси",
+    "москв",
+    "спб",
+)
+
+
+def load_passable_catalog() -> list[dict]:
+    try:
+        payload = json.load(open(PASSABLE_PATH, encoding="utf-8"))
+    except Exception:
+        return []
+    return [
+        item for item in payload.get("vehicle_whitelist", [])
+        if set(item.get("regions", [])) & {"georgia", "usa", "europe"}
+    ]
+
+
+PASSABLE_CATALOG = load_passable_catalog()
 
 
 def clean_text(value: str) -> str:
@@ -105,7 +143,9 @@ def estimate_power(title: str, engine: str) -> tuple[str, bool]:
 
 def parse_power(text: str) -> str:
     patterns = [
+        r"(?:мощность|power)[:\s]*([\d\s]{2,4}\s?[-–]\s?[\d\s]{2,4})\s?(?:л\.?\s?с\.?|hp|лс)",
         r"(?:мощность|power)[:\s]*([\d\s]{2,4})\s?(?:л\.?\s?с\.?|hp|лс)",
+        r"\b([\d\s]{2,4}\s?[-–]\s?[\d\s]{2,4})\s?(?:л\.?\s?с\.?|hp|лс)\b",
         r"\b([\d\s]{2,4})\s?(?:л\.?\s?с\.?|hp|лс)\b",
     ]
     for pattern in patterns:
@@ -140,11 +180,102 @@ def parse_model(text: str) -> str:
 def is_allowed_offer(text: str, region: str = "") -> bool:
     text_region = text.lower()
     combined = f"{region} {text}".lower()
+    if any(hint in combined for hint in RB_HINTS):
+        return False
+    if any(hint in text_region for hint in OUT_OF_SCOPE_REGION_HINTS):
+        return False
     if not any(hint in combined for hint in ALLOWED_REGION_HINTS):
         return False
-    if any(hint in text_region for hint in OUT_OF_SCOPE_REGION_HINTS) and not any(hint in text_region for hint in ALLOWED_REGION_HINTS):
-        return False
     return True
+
+
+def has_delivery_to_rf(text: str) -> bool:
+    lower = text.lower()
+    return any(hint in lower for hint in DELIVERY_TO_RF_HINTS)
+
+
+def normalize_region(region: str, text: str = "") -> str:
+    combined = f"{region} {text}".lower()
+    parts = []
+    if any(hint in combined for hint in ("груз", "тбилиси")):
+        parts.append("Грузия")
+    if any(hint in combined for hint in ("сша", "usa", "copart", "iaai")):
+        parts.append("США")
+    if any(hint in combined for hint in ("европ", "герман", "mobile", "autoscout")):
+        parts.append("Европа")
+    return " / ".join(parts) or "Грузия / США / Европа"
+
+
+def normalize_match_text(value: str) -> str:
+    return re.sub(r"[^a-zа-я0-9]+", " ", str(value or "").lower()).strip()
+
+
+def parse_engine_liters(value: str) -> float:
+    match = re.search(r"\d+(?:[.,]\d+)?", str(value or "").replace(",", "."))
+    return float(match.group(0)) if match else 0.0
+
+
+def matches_passable_catalog(title: str, engine: str, text: str, region: str = "") -> tuple[bool, dict | None]:
+    if not PASSABLE_CATALOG:
+        return True, None
+    combined_region = f"{region} {text}".lower()
+    region_keys = set()
+    if any(hint in combined_region for hint in ("груз", "тбилиси")):
+        region_keys.add("georgia")
+    if any(hint in combined_region for hint in ("сша", "usa", "copart", "iaai")):
+        region_keys.add("usa")
+    if any(hint in combined_region for hint in ("европ", "герман", "mobile", "autoscout")):
+        region_keys.add("europe")
+    haystack = normalize_match_text(f"{title} {text}")
+    engine_value = parse_engine_liters(engine)
+    best = None
+    best_score = -1
+    for rule in PASSABLE_CATALOG:
+        rule_regions = set(rule.get("regions", []))
+        if region_keys and not (region_keys & rule_regions):
+            continue
+        brand = normalize_match_text(rule.get("brand", ""))
+        model = normalize_match_text(rule.get("model", ""))
+        if brand and brand not in haystack:
+            continue
+        if model and model not in haystack:
+            continue
+        rule_engine = parse_engine_liters(rule.get("engine", ""))
+        if engine_value and rule_engine and abs(engine_value - rule_engine) > 0.11:
+            continue
+        hp = int(rule.get("hp") or 0)
+        kw = int(rule.get("kw") or 0)
+        if hp > 160 or (kw > 116 and not hp):
+            continue
+        score = len(model) + (8 if engine_value and rule_engine else 0)
+        if score > best_score:
+            best = rule
+            best_score = score
+    return bool(best), best
+
+
+def has_required_offer_fields(item: dict) -> bool:
+    details = item.get("details") or {}
+    text = item.get("text_excerpt", "")
+    images = item.get("images") or ([item.get("image")] if item.get("image") else [])
+    passable, rule = matches_passable_catalog(item.get("title", ""), details.get("engine", ""), text, item.get("region", ""))
+    if passable and rule:
+        details["power"] = f"{rule.get('hp')} л.с."
+        details["engine"] = f"{rule.get('engine')} {rule.get('fuel')}".strip()
+        item["details"] = details
+    return all(
+        [
+            item.get("year"),
+            item.get("price"),
+            details.get("engine"),
+            details.get("power"),
+            details.get("mileage"),
+            images,
+            is_allowed_offer(text, item.get("region", "")),
+            has_delivery_to_rf(text) or has_delivery_to_rf(item.get("telegram_post", "")),
+            passable,
+        ]
+    )
 
 
 def parse_images(post) -> list[str]:
@@ -196,7 +327,7 @@ def build_caption(item: dict) -> str:
     specs_text = "\n".join(line for line in specs if line)
     return (
         f"🔥 {title}\n\n"
-        f"📍 Направление: {region}\n"
+        f"📍 Направление: {normalize_region(region, item.get('text_excerpt', ''))}\n"
         f"📅 Год: {year}\n"
         f"💰 Ориентир: {price}\n"
         f"{specs_text}\n"
@@ -230,8 +361,11 @@ def prepare_saved_offer(item: dict) -> dict:
     item["details"] = details
     if "images" not in item:
         item["images"] = [item["image"]] if item.get("image") else []
-    if not item.get("quality"):
-        item["quality"] = "strict" if (details.get("engine") or details.get("mileage") or details.get("power")) else "price_photo"
+    if has_required_offer_fields(item):
+        item["quality"] = "strict"
+    else:
+        item["quality"] = "out_of_scope"
+    item["region"] = normalize_region(item.get("region", ""), text)
     item["score"] = int(item.get("score") or post_score(text, 1, item.get("images", []), item.get("year", ""), item.get("price", ""), details))
     item["telegram_post"] = build_caption(item)
     return item
@@ -262,7 +396,7 @@ def parse_channel(channel: dict, limit_posts: int) -> list[dict]:
         power_estimated = False
         if not is_allowed_offer(text, channel.get("region", "")):
             continue
-        if not price or not images:
+        if not price or not year or not images:
             continue
         if not power:
             power, power_estimated = estimate_power(title, engine)
@@ -272,6 +406,16 @@ def parse_channel(channel: dict, limit_posts: int) -> list[dict]:
             "power_estimated": power_estimated,
             "mileage": parse_mileage(text),
         }
+        passable, rule = matches_passable_catalog(title, details["engine"], text, channel.get("region", ""))
+        if not passable:
+            continue
+        if rule:
+            details["engine"] = f"{rule.get('engine')} {rule.get('fuel')}".strip()
+            details["power"] = f"{rule.get('hp')} л.с."
+        if not (details["engine"] and details["power"] and details["mileage"]):
+            continue
+        if not has_delivery_to_rf(text):
+            continue
         facts = []
         if "vin" in text.lower():
             facts.append("есть VIN/данные для проверки")
@@ -279,13 +423,15 @@ def parse_channel(channel: dict, limit_posts: int) -> list[dict]:
             facts.append("указан пробег")
         if re.search(r"доставка|растамож|под ключ", text, re.I):
             facts.append("есть расчёт под ключ/логистика")
+        if re.search(r"рф|росси|москв|спб|растамож|тамож", text, re.I):
+            facts.append("доставка и растаможка в РФ")
         if re.search(r"copart|iaai|лот", text, re.I):
             facts.append("аукционный лот США")
         if re.search(r"груз", text, re.I):
             facts.append("актуально для рынка Грузии")
         item = {
             "channel": username,
-            "region": channel.get("region", ""),
+            "region": normalize_region(channel.get("region", ""), text),
             "source": f"@{username}",
             "source_url": post_link,
             "title": title,
@@ -298,7 +444,7 @@ def parse_channel(channel: dict, limit_posts: int) -> list[dict]:
             "facts": facts,
         }
         item["score"] = post_score(text, int(channel.get("priority", 1)), images, year, price, details)
-        item["quality"] = "strict" if (details["engine"] or details["mileage"] or details["power"]) else "price_photo"
+        item["quality"] = "strict"
         item["telegram_post"] = build_caption(item)
         items.append(item)
     return items
@@ -338,17 +484,14 @@ def main() -> None:
         key = (item["title"].lower(), item.get("price", ""), item["channel"])
         if key not in dedup or item["score"] >= dedup[key]["score"]:
             dedup[key] = item
-    in_scope = [item for item in dedup.values() if item.get("quality") != "out_of_scope"]
-    strict = [item for item in in_scope if item.get("quality") == "strict"]
-    relaxed = [item for item in in_scope if item.get("quality") != "strict"]
+    strict = [item for item in dedup.values() if item.get("quality") == "strict" and has_required_offer_fields(item)]
     top = sorted(strict, key=lambda item: item["score"], reverse=True)[:args.limit]
-    if len(top) < args.limit:
-        top += sorted(relaxed, key=lambda item: item["score"], reverse=True)[: args.limit - len(top)]
 
     payload = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source_count": len(channels),
         "parsed_posts": len(all_items),
+        "displayed_count": len(top),
         "errors": errors,
         "offers": top,
     }

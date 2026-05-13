@@ -114,6 +114,27 @@ MODEL_DB = {
                 {'years': (2017, 2023), 'engines': ['B58']},
             ]
         },
+        '7': {
+            'model': '7 Series',
+            'generations': [
+                {'years': (2009, 2015), 'engines': ['N52', 'N55', 'N63']},
+                {'years': (2016, 2025), 'engines': ['B58', 'N63TT']},
+            ]
+        },
+        'X3': {
+            'model': 'X3',
+            'generations': [
+                {'years': (2011, 2017), 'engines': ['N20', 'N26', 'N55']},
+                {'years': (2018, 2025), 'engines': ['B48', 'B58']},
+            ]
+        },
+        'X5': {
+            'model': 'X5',
+            'generations': [
+                {'years': (2007, 2013), 'engines': ['N55', 'N63']},
+                {'years': (2014, 2025), 'engines': ['B58', 'N63TT']},
+            ]
+        },
     },
     'TY': {
         'CAMRY': {
@@ -130,6 +151,20 @@ MODEL_DB = {
                 {'years': (2020, 2025), 'engines': ['1ZR-FE', '2ZR-FAE']},
             ]
         },
+        'RAV4': {
+            'model': 'RAV4',
+            'generations': [
+                {'years': (2013, 2018), 'engines': ['2AR-FE', '2GR-FE']},
+                {'years': (2019, 2025), 'engines': ['A25A-FKS', '8AR-FTS']},
+            ]
+        },
+        'HIGHLANDER': {
+            'model': 'Highlander',
+            'generations': [
+                {'years': (2014, 2019), 'engines': ['2GR-FE', '2GR-FKS']},
+                {'years': (2020, 2025), 'engines': ['A25A-FKS']},
+            ]
+        },
     },
     'LX': {
         'ES': {
@@ -144,6 +179,139 @@ MODEL_DB = {
             'generations': [
                 {'years': (2016, 2023), 'engines': ['8AR-FTS', '2GR-FE']},
                 {'years': (2024, 2025), 'engines': ['T24A-FTS']},
+            ]
+        },
+        'GX': {
+            'model': 'GX',
+            'generations': [
+                {'years': (2010, 2021), 'engines': ['3GR-FSE']},
+                {'years': (2022, 2025), 'engines': ['3GR-FSE', 'TT V35A']},
+            ]
+        },
+        'NX': {
+            'model': 'NX',
+            'generations': [
+                {'years': (2015, 2021), 'engines': ['8AR-FTS', '2AR-FSE']},
+                {'years': (2022, 2025), 'engines': ['M20A-FKS']},
+            ]
+        },
+    },
+    'HY': {
+        'ELANTRA': {
+            'model': 'Elantra',
+            'generations': [
+                {'years': (2011, 2016), 'engines': ['1.6L', '2.0L']},
+                {'years': (2017, 2025), 'engines': ['1.6L Turbo', '2.0L']},
+            ]
+        },
+        'TUCSON': {
+            'model': 'Tucson',
+            'generations': [
+                {'years': (2016, 2020), 'engines': ['1.6L Turbo', '2.0L']},
+                {'years': (2021, 2025), 'engines': ['1.6L Turbo', '2.0L']},
+            ]
+        },
+        'SONATA': {
+            'model': 'Sonata',
+            'generations': [
+                {'years': (2015, 2019), 'engines': ['1.6L Turbo', '2.0L', '2.4L']},
+                {'years': (2020, 2025), 'engines': ['1.6L Turbo', '2.5L']},
+            ]
+        },
+        'SANTA_FE': {
+            'model': 'Santa Fe',
+            'generations': [
+                {'years': (2013, 2018), 'engines': ['2.0L', '2.4L']},
+                {'years': (2019, 2025), 'engines': ['2.2L Diesel', '2.4L', '3.8L']},
+            ]
+        },
+    },
+    'KI': {
+        'SPORTAGE': {
+            'model': 'Sportage',
+            'generations': [
+                {'years': (2016, 2021), 'engines': ['1.6L Turbo', '2.0L']},
+                {'years': (2022, 2025), 'engines': ['1.6L Turbo', '2.0L']},
+            ]
+        },
+        'OPTIMA': {
+            'model': 'Optima',
+            'generations': [
+                {'years': (2016, 2020), 'engines': ['1.6L Turbo', '2.0L', '2.4L']},
+                {'years': (2021, 2025), 'engines': ['1.6L Turbo', '2.4L']},
+            ]
+        },
+        'SORENTO': {
+            'model': 'Sorento',
+            'generations': [
+                {'years': (2015, 2020), 'engines': ['2.0L', '2.4L', '3.3L']},
+                {'years': (2021, 2025), 'engines': ['2.2L Diesel', '2.4L', '3.8L']},
+            ]
+        },
+        'CERATO': {
+            'model': 'Cerato',
+            'generations': [
+                {'years': (2018, 2025), 'engines': ['1.6L', '2.0L']},
+            ]
+        },
+    },
+    'NI': {
+        'ALTIMA': {
+            'model': 'Altima',
+            'generations': [
+                {'years': (2013, 2018), 'engines': ['QR25', '2.5L Turbo']},
+                {'years': (2019, 2025), 'engines': ['2.5L', '2.5L Turbo']},
+            ]
+        },
+        'QASHQAI': {
+            'model': 'Qashqai',
+            'generations': [
+                {'years': (2014, 2021), 'engines': ['1.2L Turbo', '1.5L', '1.6L Diesel']},
+                {'years': (2022, 2025), 'engines': ['1.2L Turbo', '1.5L']},
+            ]
+        },
+        'ROGUE': {
+            'model': 'Rogue',
+            'generations': [
+                {'years': (2014, 2020), 'engines': ['2.5L']},
+                {'years': (2021, 2025), 'engines': ['2.5L']},
+            ]
+        },
+        'X-TRAIL': {
+            'model': 'X-Trail',
+            'generations': [
+                {'years': (2013, 2021), 'engines': ['1.6L', '2.0L', '2.5L']},
+                {'years': (2022, 2025), 'engines': ['1.5L', '2.0L']},
+            ]
+        },
+    },
+    'FO': {
+        'FUSION': {
+            'model': 'Fusion',
+            'generations': [
+                {'years': (2013, 2016), 'engines': ['1.5L EcoBoost', '1.6L EcoBoost', '2.0L EcoBoost', '2.5L']},
+                {'years': (2017, 2020), 'engines': ['1.5L EcoBoost', '2.0L EcoBoost', '2.5L']},
+            ]
+        },
+        'FOCUS': {
+            'model': 'Focus',
+            'generations': [
+                {'years': (2012, 2018), 'engines': ['1.6L', '2.0L EcoBoost', '1.5L EcoBoost']},
+                {'years': (2019, 2025), 'engines': ['1.5L EcoBoost', '1.5L EcoBlue Diesel']},
+            ]
+        },
+        'ESCAPE': {
+            'model': 'Escape',
+            'generations': [
+                {'years': (2013, 2019), 'engines': ['1.5L EcoBoost', '1.6L EcoBoost', '2.0L EcoBoost', '2.5L']},
+                {'years': (2020, 2025), 'engines': ['1.5L EcoBoost', '2.0L Hybrid']},
+            ]
+        },
+        'EXPLORER': {
+            'model': 'Explorer',
+            'generations': [
+                {'years': (2011, 2019), 'engines': ['2.0L EcoBoost', '3.5L', '3.0L EcoBoost']},
+                {'years': (2020, 2025), 'engines': ['2.3L EcoBoost', '3.0L EcoBoost']},
             ]
         },
     },

@@ -10,7 +10,6 @@ import time
 import logging
 from pathlib import Path
 from typing import Dict, List, Optional
-from urllib.parse import urljoin
 import warnings
 
 # Suppress SSL warnings for this probe
@@ -18,6 +17,65 @@ warnings.filterwarnings('ignore', message='Unverified HTTPS request')
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+
+def normalize_proxy_url(proxy: str) -> str:
+    proxy = proxy.strip()
+    if not proxy:
+        return ""
+    if not proxy.startswith('http://') and not proxy.startswith('https://'):
+        return f"http://{proxy}"
+    return proxy
+
+
+def load_proxy_entries(proxy_file: str, proxies_inline: str, regions_filter: set[str]) -> list[tuple[str, str]]:
+    entries: list[tuple[str, str]] = []
+
+    if proxy_file:
+        path = Path(proxy_file)
+        if path.exists():
+            for raw in path.read_text(encoding='utf-8').splitlines():
+                line = raw.strip()
+                if not line or line.startswith('#'):
+                    continue
+                region = ""
+                proxy = line
+                if '|' in line:
+                    region, proxy = [x.strip() for x in line.split('|', 1)]
+                proxy_url = normalize_proxy_url(proxy)
+                if proxy_url:
+                    entries.append((region.upper(), proxy_url))
+
+    if proxies_inline:
+        for item in proxies_inline.split(','):
+            proxy_url = normalize_proxy_url(item)
+            if proxy_url:
+                entries.append(("", proxy_url))
+
+    if regions_filter:
+        entries = [item for item in entries if (item[0] or '').upper() in regions_filter]
+
+    deduped: dict[str, tuple[str, str]] = {}
+    for region, proxy in entries:
+        deduped[proxy] = (region, proxy)
+    return list(deduped.values())
+
+
+class ProxyRotator:
+    def __init__(self, entries: list[tuple[str, str]], prefer_proxy: bool = False):
+        self.entries = entries
+        self.prefer_proxy = prefer_proxy
+        self._idx = 0
+
+    def sequence(self) -> list[str | None]:
+        if not self.entries:
+            return [None]
+        n = len(self.entries)
+        ordered = [self.entries[(self._idx + i) % n][1] for i in range(n)]
+        self._idx = (self._idx + 1) % n
+        if self.prefer_proxy:
+            return ordered + [None]
+        return [None] + ordered
 
 REPO_ROOT = Path(__file__).parent.parent
 DATA_DIR = REPO_ROOT / "data"
@@ -103,8 +161,9 @@ PARTNER_APIS = {
 
 
 class VAGMercedesProbe:
-    def __init__(self, verify_ssl: bool = True):
+    def __init__(self, verify_ssl: bool = True, proxy_rotator: Optional[ProxyRotator] = None):
         self.verify_ssl = verify_ssl
+        self.proxy_rotator = proxy_rotator or ProxyRotator([])
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -116,6 +175,27 @@ class VAGMercedesProbe:
             'api_endpoints': [],
             'status_summary': {},
         }
+
+    def _get_with_rotation(self, url: str, timeout: int, headers: Optional[dict] = None) -> requests.Response:
+        last_error: Optional[Exception] = None
+        for proxy in self.proxy_rotator.sequence():
+            proxy_dict = {'http': proxy, 'https': proxy} if proxy else None
+            try:
+                r = self.session.get(
+                    url,
+                    timeout=timeout,
+                    verify=self.verify_ssl,
+                    headers=headers,
+                    proxies=proxy_dict,
+                )
+                if r.status_code < 500:
+                    return r
+            except requests.RequestException as exc:
+                last_error = exc
+                continue
+        if last_error:
+            raise requests.RequestException(str(last_error))
+        raise requests.RequestException(f"Failed to fetch {url}")
     
     def probe_sitemap(self, url: str, brand_group: str, timeout: int = 10) -> Optional[Dict]:
         """
@@ -124,7 +204,7 @@ class VAGMercedesProbe:
         """
         try:
             logger.info(f"Probing sitemap: {url}")
-            r = self.session.get(url, timeout=timeout, verify=self.verify_ssl)
+            r = self._get_with_rotation(url, timeout=timeout)
             
             result = {
                 'url': url,
@@ -201,9 +281,8 @@ class VAGMercedesProbe:
             if requires_auth:
                 # Try with placeholder auth
                 headers['Authorization'] = 'Bearer test_token'
-            
-            r = self.session.get(api_url, headers=headers, timeout=timeout, 
-                               verify=self.verify_ssl)
+
+            r = self._get_with_rotation(api_url, timeout=timeout, headers=headers)
             
             result = {
                 'url': api_url,
@@ -378,12 +457,27 @@ def main():
     parser = argparse.ArgumentParser(description='Probe VAG and Mercedes OEM sources')
     parser.add_argument('--skip-ssl', action='store_true',
                        help='Skip SSL verification (for blocked domains)')
+    parser.add_argument('--proxy-file', default='',
+                       help='Proxy list file (one per line, optional REGION|host:port format)')
+    parser.add_argument('--proxies', default='',
+                       help='Comma-separated proxy URLs/hosts')
+    parser.add_argument('--regions', default='',
+                       help='Comma-separated region tags for proxy filtering')
+    parser.add_argument('--prefer-proxy', action='store_true',
+                       help='Try proxies before direct connection')
     parser.add_argument('--output', type=Path,
                        default=DATA_DIR / 'vag_mercedes_probe_results.json',
                        help='Output JSON path')
     args = parser.parse_args()
-    
-    probe = VAGMercedesProbe(verify_ssl=not args.skip_ssl)
+
+    regions_filter = {item.strip().upper() for item in args.regions.split(',') if item.strip()}
+    proxy_entries = load_proxy_entries(args.proxy_file, args.proxies, regions_filter)
+    logger.info(f"Loaded proxies: {len(proxy_entries)}")
+
+    probe = VAGMercedesProbe(
+        verify_ssl=not args.skip_ssl,
+        proxy_rotator=ProxyRotator(proxy_entries, prefer_proxy=args.prefer_proxy),
+    )
     probe.run_full_probe()
     probe.print_summary()
     probe.export_results(args.output)

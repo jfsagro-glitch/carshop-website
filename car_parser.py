@@ -135,6 +135,18 @@ BRAND_ALIASES: Dict[str, str] = {
     "бид": "BYD",
     "changan": "Changan",
     "чанган": "Changan",
+    "ssangyong": "SsangYong",
+    "ssangyong motor": "SsangYong",
+    "쌍용": "SsangYong",
+    "renault samsung": "Renault Samsung",
+    "renault korea": "Renault Samsung",
+    "르노코리아": "Renault Samsung",
+    "르노삼성": "Renault Samsung",
+    "기아": "KIA",
+    "현대": "Hyundai",
+    "쉐보레": "Chevrolet",
+    "한국지엠": "Chevrolet",
+    "kg모빌리티": "SsangYong",
 }
 
 FUEL_ALIASES: Dict[str, str] = {
@@ -352,6 +364,43 @@ GEORGIA_POWER_CATALOG = [
 ]
 
 
+def load_passable_import_catalog() -> List[Dict[str, Any]]:
+    path = Path("data/passable_import_filter.json")
+    if not path.exists():
+        return GEORGIA_POWER_CATALOG
+    try:
+        payload = json.load(open(path, encoding="utf-8"))
+    except Exception as exc:
+        log.warning(f"Не удалось загрузить {path}: {exc}")
+        return GEORGIA_POWER_CATALOG
+
+    rules = []
+    for item in payload.get("vehicle_whitelist", []):
+        regions = [str(region).lower() for region in item.get("regions", [])]
+        market = "any"
+        if "usa" in regions and "europe" not in regions:
+            market = "usa"
+        elif "europe" in regions and "usa" not in regions:
+            market = "europe"
+        elif "korea" in regions and len(regions) == 1:
+            market = "korea"
+        rules.append({
+            "brand": item.get("brand", ""),
+            "model": item.get("model", ""),
+            "engine": item.get("engine", ""),
+            "fuel": item.get("fuel", ""),
+            "fuel_display": item.get("fuel", ""),
+            "hp": int(item.get("hp") or 0),
+            "kw": int(item.get("kw") or 0),
+            "market": market,
+            "regions": regions,
+        })
+    return rules or GEORGIA_POWER_CATALOG
+
+
+GEORGIA_POWER_CATALOG = load_passable_import_catalog()
+
+
 def normalize_model_text(value: Any) -> str:
     return re.sub(r"[^a-zа-я0-9]+", " ", str(value or "").lower()).strip()
 
@@ -409,14 +458,12 @@ def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
         if rule_engine and engine and abs(rule_engine - engine) > 0.11:
             continue
         rule_fuel = normalize_model_text(rule.get("fuel"))
-        if rule_fuel and rule_fuel not in fuel:
-            continue
         score = 10
         if rule_model:
             score += len(rule_model)
         if rule_engine and engine:
             score += 8
-        if rule_fuel:
+        if rule_fuel and rule_fuel in fuel:
             score += 4
         if rule_market == market:
             score += 4
@@ -431,8 +478,46 @@ def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
             return source_hp, source_kw, "source"
         return 0, 0, ""
     hp = int(best["hp"])
-    kw = round(hp / 1.35962)
+    kw = int(best.get("kw") or round(hp / 1.35962))
+    if best.get("fuel_display"):
+        record["fuel_type"] = best["fuel_display"]
+    if best.get("engine") and not record.get("engine"):
+        record["engine"] = str(best["engine"])
     return hp, kw, f"catalog:{best['market']}"
+
+
+def apply_passable_catalog_record(record: dict, required_region: str = "") -> Optional[dict]:
+    """Keep only records from the passable import whitelist and normalize specs."""
+    region = (required_region or record.get("region") or record.get("regionCode") or "").lower()
+    year, month = record_year_month(record)
+    if not year or not month:
+        return None
+    min_ym, max_ym = month_range_from_age(3, 5)
+    year_month = year * 100 + month
+    if year_month < min_ym or year_month > max_ym:
+        return None
+
+    hp, kw, source = estimate_georgia_catalog_power(record)
+    if not hp and not kw:
+        return None
+    if hp and hp > 160:
+        return None
+    if kw and kw > 116 and not hp:
+        return None
+    if source.startswith("catalog:"):
+        market = source.split(":", 1)[1]
+        if region and market not in ("any", region):
+            return None
+    record["year"] = year
+    record["month"] = month
+    record["power_hp"] = hp
+    record["power_kw"] = kw
+    record["power"] = f"{hp} л.с. / {kw} кВт"
+    record["power_source"] = source
+    if region:
+        record["region"] = region
+        record["regionCode"] = region
+    return record
 
 
 def year_range_from_age(min_age: int = 0, max_age: int = 0, current_year: Optional[int] = None) -> tuple[int, int]:
@@ -506,10 +591,39 @@ def record_has_photo(record: dict) -> bool:
         return any(bool(p) for p in photos)
     return bool(photos)
 
+
+def record_photo_urls(record: dict) -> List[str]:
+    images = record.get("images")
+    urls: List[str] = []
+    if isinstance(images, list):
+        for img in images:
+            if isinstance(img, dict):
+                url = img.get("url") or img.get("src")
+            else:
+                url = img
+            if url:
+                urls.append(str(url))
+    photos = record.get("photos") or record.get("photo_url") or record.get("image")
+    if isinstance(photos, list):
+        urls.extend(str(p) for p in photos if p)
+    elif photos:
+        urls.append(str(photos))
+    return urls
+
+
+def has_live_europe_photo(record: dict) -> bool:
+    for url in record_photo_urls(record):
+        u = url.lower()
+        if "prod.pictures.autoscout24.net/listing-images" in u:
+            return True
+        if "img.classistatic.de" in u or ("classistatic.de" in u and "favicon" not in u):
+            return True
+    return False
+
 def max_kw_for_hp_limit(max_power_hp: int) -> int:
     if not max_power_hp:
         return 0
-    return min(115, round(max_power_hp / 1.35962))
+    return 116 if max_power_hp >= 160 else round(max_power_hp / 1.35962)
 
 
 def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0,
@@ -521,6 +635,8 @@ def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, ma
         if require_photo and not record_has_photo(record):
             continue
         year, month = record_year_month(record)
+        if (min_year_month or max_year_month) and require_known_power and year and not month:
+            continue
         if min_year and year and year < min_year:
             continue
         if max_year and year and year > max_year:
@@ -547,7 +663,7 @@ def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, ma
             continue
         if max_power_hp and hp and hp > max_power_hp:
             continue
-        if max_power_kw and kw and kw > max_power_kw:
+        if max_power_kw and kw and kw > max_power_kw and not hp:
             continue
         result.append(record)
     return result
@@ -563,6 +679,8 @@ def filter_cars(cars: List["Car"], min_year: int = 0, max_year: int = 0, max_pow
         if max_year and car.year and car.year > max_year:
             continue
         month = parse_int(car.extra.get("month") or car.extra.get("prod_month") or 0)
+        if (min_year_month or max_year_month) and car.year and not month:
+            continue
         year_month = car.year * 100 + (month or 1)
         if min_year_month and car.year and year_month < min_year_month:
             continue
@@ -573,7 +691,7 @@ def filter_cars(cars: List["Car"], min_year: int = 0, max_year: int = 0, max_pow
         if max_power_hp and hp and hp > max_power_hp:
             continue
         kw = parse_int(car.extra.get("power_kw") or 0)
-        if max_power_kw and kw and kw > max_power_kw:
+        if max_power_kw and kw and kw > max_power_kw and not hp:
             continue
         result.append(car)
     return result
@@ -1925,24 +2043,36 @@ class AutoScout24Parser:
                 break
             min_ym = self.min_year * 100 + datetime.now().month if self.min_year else 0
             max_ym = self.max_year * 100 + datetime.now().month if self.max_year else 0
-            page_records = filter_records(self._extract_page(html), self.min_year, self.max_year, self.max_power_hp, min_ym, max_ym)
+            page_records = filter_records(
+                self._extract_page(html),
+                self.min_year,
+                self.max_year,
+                self.max_power_hp,
+                min_ym,
+                max_ym,
+                require_photo=True,
+                require_known_power=bool(self.max_power_hp),
+            )
             if not page_records:
                 log.info(f"AutoScout24: страница {page}, данных нет")
                 break
             for record in page_records:
                 record_id = str(record.get("id") or record.get("url") or "")
                 model_key = f"{record.get('brand', '').lower()}|{record.get('model', '').lower()}"
-                if record_id in seen_ids or model_key in seen_models:
+                if record_id in seen_ids:
                     continue
-                if not record.get("images"):
+                if not has_live_europe_photo(record):
                     continue
+                normalized = apply_passable_catalog_record({**record, "region": "europe"}, "europe")
+                if normalized:
+                    record.update(normalized)
                 seen_ids.add(record_id)
                 seen_models.add(model_key)
                 records.append(record)
-                if len(records) >= self.max_cars or len(seen_models) >= self.unique_models:
+                if len(records) >= self.max_cars:
                     break
             log.info(f"AutoScout24: стр. {page}, собрано {len(records)} авто / {len(seen_models)} моделей")
-            if len(records) >= self.max_cars or len(seen_models) >= self.unique_models:
+            if len(records) >= self.max_cars:
                 break
             time.sleep(self.delay + random.uniform(0, 0.4))
 
@@ -1976,6 +2106,25 @@ class EncarParser:
         "CVT":  "Вариатор",
         "세미자동": "Робот",
     }
+    MODEL_MAP = {
+        "아반떼": "Avante",
+        "엘란트라": "Elantra",
+        "쏘나타": "Sonata",
+        "소나타": "Sonata",
+        "캐스퍼": "Casper",
+        "코나": "Kona",
+        "베뉴": "Venue",
+        "모닝": "Morning",
+        "레이": "Ray",
+        "셀토스": "Seltos",
+        "스토닉": "Stonic",
+        "니로": "Niro",
+        "스파크": "Spark",
+        "트랙스": "Trax",
+        "트레일블레이저": "Trailblazer",
+        "티볼리": "Tivoli",
+        "코란도": "Korando",
+    }
 
     UA_LIST = [
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
@@ -2001,7 +2150,7 @@ class EncarParser:
         proxies = {"http": self.proxy, "https": self.proxy} if self.proxy else None
         params = {
             "count": "true",
-            "q": "(CarType:A)",
+            "q": "(And.Hidden.N._.CarType.A.)",
             "sr": f"|ModifiedDate|{offset}|20",
         }
         try:
@@ -2013,6 +2162,32 @@ class EncarParser:
             log.warning(f"encar.com: ошибка запроса offset={offset}: {e}")
             return None
 
+    def _normalize_model(self, model: str) -> str:
+        text = str(model or "")
+        upper = text.upper()
+        for token in ("K3", "K5", "XM3", "SM6", "QM6"):
+            if token in upper:
+                return token
+        for needle, name in self.MODEL_MAP.items():
+            if needle in text:
+                return name
+        return text.strip()
+
+    def _parse_spec_fallback(self, text: str) -> tuple[str, str]:
+        fuel_type = ""
+        for needle, display in self.FUEL_MAP.items():
+            if needle and needle in text:
+                fuel_type = display
+                break
+        engine_match = re.search(r"\b(1[.,][0-9]{1,2}|2[.,]0)\b", text.replace(",", "."))
+        engine = engine_match.group(1) if engine_match else ""
+        return engine, fuel_type
+
+    def _num(self, value: Any) -> int:
+        if isinstance(value, (int, float)):
+            return int(value)
+        return parse_int(value)
+
     def _item_to_record(self, item: dict) -> Optional[dict]:
         try:
             car_id = str(item.get("Id", ""))
@@ -2021,7 +2196,10 @@ class EncarParser:
             badge = str(item.get("Badge") or "").strip()
             year_raw = item.get("Year") or 0
             # Year может быть "202301" (YYYYMM) или просто год
-            year_str = str(year_raw)
+            if isinstance(year_raw, (int, float)):
+                year_str = str(int(year_raw))
+            else:
+                year_str = str(parse_int(year_raw))
             if len(year_str) == 6:
                 year = int(year_str[:4])
                 month = int(year_str[4:6])
@@ -2029,13 +2207,13 @@ class EncarParser:
                 year = int(year_str)
                 month = 0
             else:
-                year = parse_int(year_str)
+                year = self._num(year_str)
                 month = 0
 
-            mileage = parse_int(item.get("Mileage") or 0)
+            mileage = self._num(item.get("Mileage") or 0)
             # Цена в 만원 (10 000 KRW) → переводим в USD по приблизительному курсу
             # Сохраняем оригинал в specs, price в USD
-            price_10k_krw = parse_int(item.get("Price") or 0)
+            price_10k_krw = self._num(item.get("Price") or 0)
             # 1 USD ≈ 1350 KRW → price_10k_krw * 10000 / 1350
             price_usd = round(price_10k_krw * 10000 / 1350) if price_10k_krw else 0
 
@@ -2044,15 +2222,22 @@ class EncarParser:
             trans_raw = str(spec.get("TransmissionName") or "").strip()
             fuel_type = self.FUEL_MAP.get(fuel_raw, normalize_fuel(fuel_raw) if fuel_raw else "Бензин")
             transmission = self.TRANS_MAP.get(trans_raw, normalize_transmission(trans_raw) if trans_raw else "Автомат")
-            displacement = parse_int(spec.get("Displacement") or 0)  # cc
+            displacement = self._num(spec.get("Displacement") or 0)  # cc
             engine = str(round(displacement / 1000, 1)).replace(".", ",") if displacement else ""
+            fallback_engine, fallback_fuel = self._parse_spec_fallback(f"{model} {badge}")
+            engine = engine or fallback_engine
+            fuel_type = fallback_fuel or fuel_type
             color = str(spec.get("ColorName") or "").strip()
             drive_raw = str(spec.get("DriveName") or "").strip()
 
             # Фото
             photos_data = item.get("Photo") or {}
-            photo_path = str(photos_data.get("RealPhotoFolderPath") or photos_data.get("FolderPath") or "").strip()
-            thumb = str(photos_data.get("ThumbnailUrl") or "").strip()
+            if isinstance(photos_data, str):
+                photo_path = photos_data.strip()
+                thumb = ""
+            else:
+                photo_path = str(photos_data.get("RealPhotoFolderPath") or photos_data.get("FolderPath") or "").strip()
+                thumb = str(photos_data.get("ThumbnailUrl") or "").strip()
             if photo_path:
                 first_photo = f"{self.PHOTO_BASE}{photo_path}001.jpg"
             elif thumb:
@@ -2062,7 +2247,7 @@ class EncarParser:
 
             images = []
             if first_photo:
-                images = [{"url": first_photo, "order": 1}]
+                images = [first_photo]
 
             full_title = " ".join(filter(None, [manufacturer, model, badge])).strip()
             url = f"https://www.encar.com/dc/dc_cardetailview.do?carid={car_id}"
@@ -2070,10 +2255,11 @@ class EncarParser:
             return {
                 "id": car_id,
                 "brand": normalize_brand(manufacturer) if manufacturer else "",
-                "model": f"{model} {badge}".strip() if badge else model,
+                "model": self._normalize_model(model),
                 "full_title": full_title,
                 "year": year,
                 "month": month,
+                "productionDate": f"{month:02d}.{year}" if month else str(year),
                 "price": float(price_usd),
                 "price_krw": price_10k_krw * 10000,
                 "price_type": "fixed",
@@ -2127,8 +2313,20 @@ class EncarParser:
             offset += page_size
             time.sleep(self.delay + random.uniform(0, 0.5))
 
-        log.info(f"encar.com: итого {len(records)} автомобилей")
-        return records[:self.max_cars]
+        filtered = []
+        filtered_keys = set()
+        for rec in records:
+            normalized = apply_passable_catalog_record(rec, "korea")
+            if normalized and record_has_photo(normalized):
+                image_key = (normalized.get("images") or [""])[0]
+                key = "|".join(str(normalized.get(k, "")).lower() for k in ("brand", "model", "year", "month", "mileage", "price"))
+                key = f"{key}|{image_key}"
+                if key in filtered_keys:
+                    continue
+                filtered_keys.add(key)
+                filtered.append(normalized)
+        log.info(f"encar.com: итого {len(records)} автомобилей, проходных с фото: {len(filtered)}")
+        return filtered[:self.max_cars]
 
 
 # ── Авто-синхронизация стока ──────────────────────────────────────────────────
@@ -2231,8 +2429,10 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
         fresh_keys.add(key)
 
     added = len(fresh_keys - existing_keys)
-    archived = [item for item in existing if stock_key(item) not in fresh_keys]
-    existing = fresh_records + archived
+    removed_archived = len(existing) - len(existing_keys & fresh_keys)
+    existing = fresh_records
+    if removed_archived > 0:
+        log.info(f"Сток: убрано архивных/устаревших записей: {removed_archived}")
 
     # Каждый запуск поддерживает публичный каталог в текущих фильтрах сайта.
     before_filter = len(existing)
@@ -2526,18 +2726,18 @@ def validate_catalog_constraints(filepath: str, min_year_month: int, max_year_mo
             bad.append(f"{item.get('brand')} {item.get('model')}: unknown power")
         elif hp and hp > max_power_hp:
             bad.append(f"{item.get('brand')} {item.get('model')}: {hp} hp")
-        elif kw and kw > max_power_kw:
+        elif kw and kw > max_power_kw and not hp:
             bad.append(f"{item.get('brand')} {item.get('model')}: {kw} kW")
     if bad:
-        raise RuntimeError(f"{filepath}: записи вне условий 05.2021-05.2023, <=160 hp, <=115 kW: {'; '.join(bad[:5])}")
+        raise RuntimeError(f"{filepath}: записи вне условий 05.2021-05.2023, <=160 hp, <=116 kW: {'; '.join(bad[:5])}")
 
 
 def validate_public_catalogs() -> None:
     validate_catalog_file("cars_europe_new.json", ["external_id", "brand", "model", "price", "images"], min_records=10)
     validate_catalog_file("cars_georgia_stock.json", ["id", "brand", "model", "price", "url", "images"], min_records=20)
     min_ym, max_ym = month_range_from_age(3, 5)
-    validate_catalog_constraints("cars_europe_new.json", min_ym, max_ym, 160, 115)
-    validate_catalog_constraints("cars_georgia_stock.json", min_ym, max_ym, 160, 115)
+    validate_catalog_constraints("cars_europe_new.json", min_ym, max_ym, 160, 116)
+    validate_catalog_constraints("cars_georgia_stock.json", min_ym, max_ym, 160, 116)
 
 
 def export_csv(cars: List[Car], filepath: str) -> None:

@@ -995,17 +995,19 @@ window.addEventListener('click', function(event) {
             })
             .map(part => {
                 const oem = pickOriginalOem(part);
+                if (!oem.candidates.length) return null;
                 const candidateText = oem.candidates.length ? oem.candidates.join(', ') : 'Нет кандидатов в базе';
                 return {
                     ...part,
-                    number: 'OEM по VIN',
+                    number: oem.candidates[0],
                     oem_candidates: oem.candidates,
                     analog_numbers: [candidateText],
                     applicability_precision: oem.precision,
                     generation_label: generation?.label || '',
                     note: oem.message
                 };
-            });
+            })
+            .filter(Boolean);
     }
 
     async function initLocalPartsCatalog() {
@@ -1282,7 +1284,7 @@ window.addEventListener('click', function(event) {
                     ${part.generation_label ? `<span class="parts-chip parts-chip--muted">${esc(part.generation_label)}</span>` : ''}
                 </div>
                 <span class="parts-analog" title="${esc(part.note || '')}">${esc(part.note || 'Точный OEM подтверждаем по VIN')}</span>
-                <span class="parts-analog" title="${esc((part.oem_candidates || []).join(', '))}">Кандидаты: ${esc((part.oem_candidates || []).slice(0, 3).join(', ') || 'по VIN')}</span>
+                <span class="parts-analog" title="${esc((part.oem_candidates || []).join(', '))}">Оригинальные OEM: ${esc((part.oem_candidates || []).slice(0, 3).join(', '))}</span>
                 <div class="parts-card-actions">
                     <button class="btn-primary parts-cart-only" type="button" data-part-index="${index}" title="Заказать" aria-label="Заказать ${esc(part.name)}"><i class="fas fa-shopping-cart" aria-hidden="true"></i></button>
                 </div>
@@ -1332,7 +1334,7 @@ window.addEventListener('click', function(event) {
         $('partsOrderClient').value = '';
         $('partsOrderPhone').value = '';
         $('partsOrderComment').value = part.oem_candidates?.length
-            ? `Возможные OEM-кандидаты: ${part.oem_candidates.join(', ')}. Нужна проверка по VIN.`
+            ? `Оригинальные OEM из справочника: ${part.oem_candidates.join(', ')}. Точный номер подтвердить по VIN/комплектации.`
             : '';
         const status = $('partsOrderStatus');
         if (status) status.style.display = 'none';

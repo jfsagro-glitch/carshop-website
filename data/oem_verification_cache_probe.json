@@ -1,0 +1,962 @@
+{
+  "CG|ABD|1015396-3C254": {
+    "prefix": "CG",
+    "part_code": "ABD",
+    "oem_number": "1015396-3C254",
+    "brand": "Changan",
+    "accepted": true,
+    "accepted_reason": "multi-source-oem",
+    "evidence_source": "emex",
+    "evidence_url": "https://emex.ru/products/1015396-3C254",
+    "checked_at": "2026-05-10T06:08:31Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/1015396-3C254",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=1015396-3C254",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=1015396-3C254",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=1015396-3C254",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=1015396-3C254",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "CH|ABD|12585398209": {
+    "prefix": "CH",
+    "part_code": "ABD",
+    "oem_number": "12585398209",
+    "brand": "Chevrolet",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=12585398209",
+    "checked_at": "2026-05-10T06:08:31Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/12585398209",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=12585398209",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=12585398209",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=12585398209",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=12585398209",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "AC|ABD|78510-0B6-768": {
+    "prefix": "AC",
+    "part_code": "ABD",
+    "oem_number": "78510-0B6-768",
+    "brand": "Acura",
+    "accepted": true,
+    "accepted_reason": "multi-source-oem",
+    "evidence_source": "emex",
+    "evidence_url": "https://emex.ru/products/78510-0B6-768",
+    "checked_at": "2026-05-10T06:08:31Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/78510-0B6-768",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=78510-0B6-768",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=78510-0B6-768",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=78510-0B6-768",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=78510-0B6-768",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "BU|ABD|12585262315": {
+    "prefix": "BU",
+    "part_code": "ABD",
+    "oem_number": "12585262315",
+    "brand": "Buick",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=12585262315",
+    "checked_at": "2026-05-10T06:08:31Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/12585262315",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=12585262315",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=12585262315",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=12585262315",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=12585262315",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "BY|ABD|B71-1018984": {
+    "prefix": "BY",
+    "part_code": "ABD",
+    "oem_number": "B71-1018984",
+    "brand": "BYD",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=B71-1018984",
+    "checked_at": "2026-05-10T06:08:31Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/B71-1018984",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=B71-1018984",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=B71-1018984",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=B71-1018984",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=B71-1018984",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "CA|ABD|12585455827": {
+    "prefix": "CA",
+    "part_code": "ABD",
+    "oem_number": "12585455827",
+    "brand": "Cadillac",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=12585455827",
+    "checked_at": "2026-05-10T06:08:31Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/12585455827",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=12585455827",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=12585455827",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=12585455827",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=12585455827",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "BM|ABD|10005390428": {
+    "prefix": "BM",
+    "part_code": "ABD",
+    "oem_number": "10005390428",
+    "brand": "BMW",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=10005390428",
+    "checked_at": "2026-05-10T06:08:31Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/10005390428",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=10005390428",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=10005390428",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=10005390428",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=10005390428",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "AU|ABD|060101585A": {
+    "prefix": "AU",
+    "part_code": "ABD",
+    "oem_number": "060101585A",
+    "brand": "Audi",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=060101585A",
+    "checked_at": "2026-05-10T06:08:31Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/060101585A",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=060101585A",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=060101585A",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=060101585A",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=060101585A",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      }
+    ]
+  },
+  "FO|ABD|3S1Z-52241-SA": {
+    "prefix": "FO",
+    "part_code": "ABD",
+    "oem_number": "3S1Z-52241-SA",
+    "brand": "Ford",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=3S1Z-52241-SA",
+    "checked_at": "2026-05-10T06:08:46Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/3S1Z-52241-SA",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=3S1Z-52241-SA",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=3S1Z-52241-SA",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=3S1Z-52241-SA",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=3S1Z-52241-SA",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "CR|ABD|100315017B": {
+    "prefix": "CR",
+    "part_code": "ABD",
+    "oem_number": "100315017B",
+    "brand": "Chrysler",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=100315017B",
+    "checked_at": "2026-05-10T06:08:46Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/100315017B",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=100315017B",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=100315017B",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=100315017B",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=100315017B",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "CY|ABD|T11-69022757": {
+    "prefix": "CY",
+    "part_code": "ABD",
+    "oem_number": "T11-69022757",
+    "brand": "Chery",
+    "accepted": true,
+    "accepted_reason": "multi-source-oem",
+    "evidence_source": "emex",
+    "evidence_url": "https://emex.ru/products/T11-69022757",
+    "checked_at": "2026-05-10T06:08:47Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/T11-69022757",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=T11-69022757",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=T11-69022757",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=T11-69022757",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=T11-69022757",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "FI|ABD|FI-54192-AB-ACA0": {
+    "prefix": "FI",
+    "part_code": "ABD",
+    "oem_number": "FI-54192-AB-ACA0",
+    "brand": "Fiat",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=FI-54192-AB-ACA0",
+    "checked_at": "2026-05-10T06:08:47Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/FI-54192-AB-ACA0",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=FI-54192-AB-ACA0",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=FI-54192-AB-ACA0",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=FI-54192-AB-ACA0",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=FI-54192-AB-ACA0",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "CI|ABD|74060F": {
+    "prefix": "CI",
+    "part_code": "ABD",
+    "oem_number": "74060F",
+    "brand": "Citroen",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "exist",
+    "evidence_url": "https://www.exist.ru/Price/Empty.aspx?q=74060F",
+    "checked_at": "2026-05-10T06:08:47Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/74060F",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=74060F",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=74060F",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=74060F",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=74060F",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "GL|ABD|1000007301": {
+    "prefix": "GL",
+    "part_code": "ABD",
+    "oem_number": "1000007301",
+    "brand": "Geely",
+    "accepted": true,
+    "accepted_reason": "multi-source-oem",
+    "evidence_source": "emex",
+    "evidence_url": "https://emex.ru/products/1000007301",
+    "checked_at": "2026-05-10T06:08:47Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/1000007301",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=1000007301",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=1000007301",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=1000007301",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=1000007301",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "GE|ABD|56900-08530": {
+    "prefix": "GE",
+    "part_code": "ABD",
+    "oem_number": "56900-08530",
+    "brand": "Genesis",
+    "accepted": true,
+    "accepted_reason": "multi-source-oem",
+    "evidence_source": "emex",
+    "evidence_url": "https://emex.ru/products/56900-08530",
+    "checked_at": "2026-05-10T06:08:47Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/56900-08530",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=56900-08530",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=56900-08530",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=56900-08530",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=56900-08530",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "DG|ABD|100193084B": {
+    "prefix": "DG",
+    "part_code": "ABD",
+    "oem_number": "100193084B",
+    "brand": "Dodge",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=100193084B",
+    "checked_at": "2026-05-10T06:08:47Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/100193084B",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=100193084B",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=100193084B",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=100193084B",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=100193084B",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "GM|ABD|12585542944": {
+    "prefix": "GM",
+    "part_code": "ABD",
+    "oem_number": "12585542944",
+    "brand": "GMC",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=12585542944",
+    "checked_at": "2026-05-10T06:09:01Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/12585542944",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=12585542944",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=12585542944",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=12585542944",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=12585542944",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "HO|ABD|78510-40D-955": {
+    "prefix": "HO",
+    "part_code": "ABD",
+    "oem_number": "78510-40D-955",
+    "brand": "Honda",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=78510-40D-955",
+    "checked_at": "2026-05-10T06:09:01Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/78510-40D-955",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=78510-40D-955",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=78510-40D-955",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=78510-40D-955",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=78510-40D-955",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "HV|ABD|100041995A40": {
+    "prefix": "HV",
+    "part_code": "ABD",
+    "oem_number": "100041995A40",
+    "brand": "Haval",
+    "accepted": true,
+    "accepted_reason": "multi-source-oem",
+    "evidence_source": "emex",
+    "evidence_url": "https://emex.ru/products/100041995A40",
+    "checked_at": "2026-05-10T06:09:02Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/100041995A40",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=100041995A40",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=100041995A40",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=100041995A40",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=100041995A40",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  },
+  "HY|ABD|56900-4E634": {
+    "prefix": "HY",
+    "part_code": "ABD",
+    "oem_number": "56900-4E634",
+    "brand": "Hyundai",
+    "accepted": true,
+    "accepted_reason": "brand+oem",
+    "evidence_source": "autoparts24",
+    "evidence_url": "https://www.autoparts24.eu/search/1/?type=all&q=56900-4E634",
+    "checked_at": "2026-05-10T06:09:02Z",
+    "hits": [
+      {
+        "source": "emex",
+        "url": "https://emex.ru/products/56900-4E634",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "exist",
+        "url": "https://www.exist.ru/Price/Empty.aspx?q=56900-4E634",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      },
+      {
+        "source": "rockauto",
+        "url": "https://www.rockauto.com/en/partsearch/?partnum=56900-4E634",
+        "status": 0,
+        "oem_hit": false,
+        "brand_hit": false
+      },
+      {
+        "source": "autoparts24",
+        "url": "https://www.autoparts24.eu/search/1/?type=all&q=56900-4E634",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": true
+      },
+      {
+        "source": "japan-parts",
+        "url": "https://www.japan-parts.eu/search?keyword=56900-4E634",
+        "status": 200,
+        "oem_hit": true,
+        "brand_hit": false
+      }
+    ]
+  }
+}

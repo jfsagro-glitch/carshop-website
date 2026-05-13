@@ -1,0 +1,124 @@
+﻿brand_prefix,model,year_from,year_to,engine,source_name,source_url,retrieved_at
+BM,3 Series,2012,2018,N20,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768177Z
+BM,3 Series,2012,2018,N26,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768193Z
+BM,3 Series,2012,2018,M235i,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768197Z
+BM,3 Series,2019,2025,B48,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768199Z
+BM,3 Series,2019,2025,B48A,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768201Z
+BM,5 Series,2010,2016,N52,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768203Z
+BM,5 Series,2010,2016,N55,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768205Z
+BM,5 Series,2017,2023,B58,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768207Z
+BM,7 Series,2009,2015,N52,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768208Z
+BM,7 Series,2009,2015,N55,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768210Z
+BM,7 Series,2009,2015,N63,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768212Z
+BM,7 Series,2016,2025,B58,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768214Z
+BM,7 Series,2016,2025,N63TT,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768216Z
+BM,X3,2011,2017,N20,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768218Z
+BM,X3,2011,2017,N26,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768219Z
+BM,X3,2011,2017,N55,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768221Z
+BM,X3,2018,2025,B48,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768223Z
+BM,X3,2018,2025,B58,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768224Z
+BM,X5,2007,2013,N55,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768227Z
+BM,X5,2007,2013,N63,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768231Z
+BM,X5,2014,2025,B58,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768232Z
+BM,X5,2014,2025,N63TT,epc_BM,https://epc-BM.example.com,2026-05-11T07:12:47.768234Z
+TY,Camry,2012,2017,2AR-FE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768250Z
+TY,Camry,2012,2017,2GR-FE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768252Z
+TY,Camry,2018,2025,A25A-FKS,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768254Z
+TY,Camry,2018,2025,8AR-FTS,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768255Z
+TY,Corolla,2014,2019,1ZR-FE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768257Z
+TY,Corolla,2014,2019,2ZR-FAE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768259Z
+TY,Corolla,2020,2025,1ZR-FE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768261Z
+TY,Corolla,2020,2025,2ZR-FAE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768262Z
+TY,RAV4,2013,2018,2AR-FE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768264Z
+TY,RAV4,2013,2018,2GR-FE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768266Z
+TY,RAV4,2019,2025,A25A-FKS,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768268Z
+TY,RAV4,2019,2025,8AR-FTS,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768269Z
+TY,Highlander,2014,2019,2GR-FE,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768271Z
+TY,Highlander,2014,2019,2GR-FKS,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768273Z
+TY,Highlander,2020,2025,A25A-FKS,epc_TY,https://epc-TY.example.com,2026-05-11T07:12:47.768274Z
+LX,ES,2013,2021,2AR-FSE,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768286Z
+LX,ES,2013,2021,8AR-FSE,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768288Z
+LX,ES,2022,2025,A25A-FXS,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768293Z
+LX,RX,2016,2023,8AR-FTS,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768295Z
+LX,RX,2016,2023,2GR-FE,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768297Z
+LX,RX,2024,2025,T24A-FTS,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768299Z
+LX,GX,2010,2021,3GR-FSE,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768300Z
+LX,GX,2022,2025,3GR-FSE,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768303Z
+LX,GX,2022,2025,TT V35A,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768305Z
+LX,NX,2015,2021,8AR-FTS,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768307Z
+LX,NX,2015,2021,2AR-FSE,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768308Z
+LX,NX,2022,2025,M20A-FKS,epc_LX,https://epc-LX.example.com,2026-05-11T07:12:47.768310Z
+HY,Elantra,2011,2016,1.6L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768325Z
+HY,Elantra,2011,2016,2.0L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768327Z
+HY,Elantra,2017,2025,1.6L Turbo,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768329Z
+HY,Elantra,2017,2025,2.0L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768330Z
+HY,Tucson,2016,2020,1.6L Turbo,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768332Z
+HY,Tucson,2016,2020,2.0L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768338Z
+HY,Tucson,2021,2025,1.6L Turbo,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768339Z
+HY,Tucson,2021,2025,2.0L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768341Z
+HY,Sonata,2015,2019,1.6L Turbo,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768343Z
+HY,Sonata,2015,2019,2.0L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768346Z
+HY,Sonata,2015,2019,2.4L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768348Z
+HY,Sonata,2020,2025,1.6L Turbo,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768350Z
+HY,Sonata,2020,2025,2.5L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768351Z
+HY,Santa Fe,2013,2018,2.0L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768353Z
+HY,Santa Fe,2013,2018,2.4L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768355Z
+HY,Santa Fe,2019,2025,2.2L Diesel,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768357Z
+HY,Santa Fe,2019,2025,2.4L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768359Z
+HY,Santa Fe,2019,2025,3.8L,epc_HY,https://epc-HY.example.com,2026-05-11T07:12:47.768360Z
+KI,Sportage,2016,2021,1.6L Turbo,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768370Z
+KI,Sportage,2016,2021,2.0L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768371Z
+KI,Sportage,2022,2025,1.6L Turbo,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768373Z
+KI,Sportage,2022,2025,2.0L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768375Z
+KI,Optima,2016,2020,1.6L Turbo,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768377Z
+KI,Optima,2016,2020,2.0L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768378Z
+KI,Optima,2016,2020,2.4L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768380Z
+KI,Optima,2021,2025,1.6L Turbo,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768382Z
+KI,Optima,2021,2025,2.4L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768383Z
+KI,Sorento,2015,2020,2.0L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768385Z
+KI,Sorento,2015,2020,2.4L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768387Z
+KI,Sorento,2015,2020,3.3L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768390Z
+KI,Sorento,2021,2025,2.2L Diesel,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768392Z
+KI,Sorento,2021,2025,2.4L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768394Z
+KI,Sorento,2021,2025,3.8L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768396Z
+KI,Cerato,2018,2025,1.6L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768397Z
+KI,Cerato,2018,2025,2.0L,epc_KI,https://epc-KI.example.com,2026-05-11T07:12:47.768399Z
+NI,Altima,2013,2018,QR25,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768408Z
+NI,Altima,2013,2018,2.5L Turbo,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768410Z
+NI,Altima,2019,2025,2.5L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768412Z
+NI,Altima,2019,2025,2.5L Turbo,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768413Z
+NI,Qashqai,2014,2021,1.2L Turbo,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768415Z
+NI,Qashqai,2014,2021,1.5L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768417Z
+NI,Qashqai,2014,2021,1.6L Diesel,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768418Z
+NI,Qashqai,2022,2025,1.2L Turbo,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768420Z
+NI,Qashqai,2022,2025,1.5L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768422Z
+NI,Rogue,2014,2020,2.5L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768424Z
+NI,Rogue,2021,2025,2.5L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768426Z
+NI,X-Trail,2013,2021,1.6L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768429Z
+NI,X-Trail,2013,2021,2.0L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768430Z
+NI,X-Trail,2013,2021,2.5L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768433Z
+NI,X-Trail,2022,2025,1.5L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768435Z
+NI,X-Trail,2022,2025,2.0L,epc_NI,https://epc-NI.example.com,2026-05-11T07:12:47.768437Z
+FO,Fusion,2013,2016,1.5L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768448Z
+FO,Fusion,2013,2016,1.6L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768449Z
+FO,Fusion,2013,2016,2.0L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768451Z
+FO,Fusion,2013,2016,2.5L,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768453Z
+FO,Fusion,2017,2020,1.5L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768455Z
+FO,Fusion,2017,2020,2.0L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768456Z
+FO,Fusion,2017,2020,2.5L,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768458Z
+FO,Focus,2012,2018,1.6L,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768460Z
+FO,Focus,2012,2018,2.0L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768461Z
+FO,Focus,2012,2018,1.5L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768463Z
+FO,Focus,2019,2025,1.5L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768465Z
+FO,Focus,2019,2025,1.5L EcoBlue Diesel,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768467Z
+FO,Escape,2013,2019,1.5L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768468Z
+FO,Escape,2013,2019,1.6L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768470Z
+FO,Escape,2013,2019,2.0L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768472Z
+FO,Escape,2013,2019,2.5L,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768473Z
+FO,Escape,2020,2025,1.5L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768475Z
+FO,Escape,2020,2025,2.0L Hybrid,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768478Z
+FO,Explorer,2011,2019,2.0L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768480Z
+FO,Explorer,2011,2019,3.5L,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768482Z
+FO,Explorer,2011,2019,3.0L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768485Z
+FO,Explorer,2020,2025,2.3L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768487Z
+FO,Explorer,2020,2025,3.0L EcoBoost,epc_FO,https://epc-FO.example.com,2026-05-11T07:12:47.768488Z

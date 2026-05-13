@@ -896,14 +896,14 @@
         async function loadCarsData() {
             try {
                 const result = await sbLoadCarsWithFallback('europe', './cars_europe_new.json');
-                carsData = result.data;
+                carsData = (result.data || []).filter(isEuropeCarEligible);
                 filteredCars = [...carsData];
 
                 // Показываем timestamp обновления
                 const tsEl = document.getElementById('syncTimestamp');
                 if (tsEl) {
                     const now = new Date().toLocaleDateString('ru-RU', {day:'2-digit',month:'2-digit',year:'numeric'});
-                    tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} авто доступно`;
+                    tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} проходных авто с фото`;
                 }
 
                 initializePage();
@@ -1043,6 +1043,45 @@
                 });
         }
 
+        function parseEuropeYearMonth(car) {
+            const source = String(car.first_registration || car.registration || car.date || car.productionDate || '').trim();
+            let match = source.match(/\b(0?[1-9]|1[0-2])[./-]((?:19|20)\d{2})\b/);
+            if (match) return Number(match[2]) * 100 + Number(match[1]);
+            match = source.match(/\b((?:19|20)\d{2})[./-](0?[1-9]|1[0-2])\b/);
+            if (match) return Number(match[1]) * 100 + Number(match[2]);
+            const year = Number(car.year || car.first_registration_year || 0);
+            const month = Number(car.month || car.first_registration_month || 0);
+            if (year && month >= 1 && month <= 12) return year * 100 + month;
+            return 0;
+        }
+
+        function getEuropeAgeWindow() {
+            const now = new Date();
+            const month = now.getMonth() + 1;
+            return {
+                min: (now.getFullYear() - 5) * 100 + month,
+                max: (now.getFullYear() - 3) * 100 + month
+            };
+        }
+
+        function isEuropeCarEligible(car) {
+            const images = filterImages(car.images);
+            if (!images.length) return false;
+            const yearMonth = parseEuropeYearMonth(car);
+            if (!yearMonth) return false;
+            const window = getEuropeAgeWindow();
+            if (yearMonth < window.min || yearMonth > window.max) return false;
+            const hp = Number(car.power_hp || car.hp || 0);
+            const kw = Number(car.power_kw || car.kw || 0);
+            if (!hp && !kw) return false;
+            if (hp && hp > 160) return false;
+            if (kw && kw > 116 && !hp) return false;
+            const sourceText = `${car.source || ''} ${car.url || ''}`.toLowerCase();
+            if (!sourceText.includes('autoscout24') && !sourceText.includes('mobile.de')) return false;
+            car._filteredImages = images;
+            return true;
+        }
+
         // Инициализация страницы
         function initializePage() {
             updateStats();
@@ -1132,7 +1171,7 @@
 
             const carsToShow = filteredCars.slice(0, displayedCount);
             grid.innerHTML = carsToShow.map((car, index) => {
-                const images = filterImages(car.images);
+                const images = car._filteredImages || filterImages(car.images);
                 const firstImage = images.length > 0 ? images[0].url : '';
                 const imageCount = images.length;
                 car._filteredImages = images;
@@ -1158,7 +1197,7 @@
                             ${finalImageUrl
                                 ? `<img src="${finalImageUrl}" alt="${car.brand} ${car.model}" loading="lazy" decoding="async" onload="this.classList.add('loaded');this.parentElement.classList.remove('loading')" onerror="this.parentElement.classList.add('img-error');this.remove()">`
                                 : ''}
-                            ${!finalImageUrl ? '<div class="car-img-placeholder"><i class="fas fa-car"></i></div>' : ''}
+                            ${!finalImageUrl ? '' : ''}
                             ${imageCount > 0 ? `<div class="image-count"><i class="fas fa-images"></i> ${imageCount}</div>` : ''}
                             ${car.first_registration_year ? `<div class="car-year-badge">${car.first_registration_year}</div>` : ''}
                         </div>

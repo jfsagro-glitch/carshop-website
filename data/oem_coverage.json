@@ -1,1677 +1,309 @@
 {
-  "generated_at": "2026-05-09T04:08:14Z",
+  "generated_at": "2026-05-13T20:15:26Z",
   "brands": 42,
   "part_codes": 230,
   "total_pairs": 9660,
-  "covered_pairs": 3237,
-  "coverage": 33.5,
-  "oem_lookup_pairs": 7104,
+  "covered_pairs": 7523,
+  "coverage": 77.9,
+  "oem_lookup_pairs": 34298,
   "brand_coverage": [
     {
       "brand": "Tesla",
       "prefix": "TS",
-      "covered": 43,
+      "covered": 143,
       "total": 230,
-      "coverage": 18.7
+      "coverage": 62.2
     },
     {
       "brand": "Geely",
       "prefix": "GL",
-      "covered": 50,
+      "covered": 150,
       "total": 230,
-      "coverage": 21.7
+      "coverage": 65.2
     },
     {
       "brand": "BYD",
       "prefix": "BY",
-      "covered": 51,
+      "covered": 151,
       "total": 230,
-      "coverage": 22.2
-    },
-    {
-      "brand": "Chrysler",
-      "prefix": "CR",
-      "covered": 56,
-      "total": 230,
-      "coverage": 24.3
-    },
-    {
-      "brand": "Lexus",
-      "prefix": "LX",
-      "covered": 56,
-      "total": 230,
-      "coverage": 24.3
-    },
-    {
-      "brand": "Buick",
-      "prefix": "BU",
-      "covered": 60,
-      "total": 230,
-      "coverage": 26.1
+      "coverage": 65.7
     },
     {
       "brand": "Changan",
       "prefix": "CG",
-      "covered": 60,
+      "covered": 160,
       "total": 230,
-      "coverage": 26.1
+      "coverage": 69.6
     },
     {
       "brand": "Chery",
       "prefix": "CY",
-      "covered": 60,
+      "covered": 160,
       "total": 230,
-      "coverage": 26.1
+      "coverage": 69.6
     },
     {
       "brand": "Haval",
       "prefix": "HV",
-      "covered": 60,
+      "covered": 160,
       "total": 230,
-      "coverage": 26.1
+      "coverage": 69.6
+    },
+    {
+      "brand": "Buick",
+      "prefix": "BU",
+      "covered": 163,
+      "total": 230,
+      "coverage": 70.9
+    },
+    {
+      "brand": "Chrysler",
+      "prefix": "CR",
+      "covered": 163,
+      "total": 230,
+      "coverage": 70.9
     },
     {
       "brand": "Mini",
       "prefix": "MN",
-      "covered": 63,
+      "covered": 163,
       "total": 230,
-      "coverage": 27.4
+      "coverage": 70.9
     },
     {
-      "brand": "Acura",
-      "prefix": "AC",
-      "covered": 64,
+      "brand": "Lexus",
+      "prefix": "LX",
+      "covered": 164,
       "total": 230,
-      "coverage": 27.8
-    },
-    {
-      "brand": "Dodge",
-      "prefix": "DG",
-      "covered": 64,
-      "total": 230,
-      "coverage": 27.8
-    },
-    {
-      "brand": "GMC",
-      "prefix": "GM",
-      "covered": 64,
-      "total": 230,
-      "coverage": 27.8
-    },
-    {
-      "brand": "Cadillac",
-      "prefix": "CA",
-      "covered": 65,
-      "total": 230,
-      "coverage": 28.3
+      "coverage": 71.3
     },
     {
       "brand": "Genesis",
       "prefix": "GE",
-      "covered": 65,
+      "covered": 165,
       "total": 230,
-      "coverage": 28.3
+      "coverage": 71.7
     },
     {
       "brand": "Porsche",
       "prefix": "PO",
-      "covered": 65,
+      "covered": 165,
       "total": 230,
-      "coverage": 28.3
-    },
-    {
-      "brand": "Infiniti",
-      "prefix": "IN",
-      "covered": 67,
-      "total": 230,
-      "coverage": 29.1
-    },
-    {
-      "brand": "Seat",
-      "prefix": "SE",
-      "covered": 67,
-      "total": 230,
-      "coverage": 29.1
+      "coverage": 71.7
     },
     {
       "brand": "Citroen",
       "prefix": "CI",
-      "covered": 68,
+      "covered": 166,
       "total": 230,
-      "coverage": 29.6
+      "coverage": 72.2
+    },
+    {
+      "brand": "GMC",
+      "prefix": "GM",
+      "covered": 166,
+      "total": 230,
+      "coverage": 72.2
+    },
+    {
+      "brand": "Infiniti",
+      "prefix": "IN",
+      "covered": 167,
+      "total": 230,
+      "coverage": 72.6
+    },
+    {
+      "brand": "Seat",
+      "prefix": "SE",
+      "covered": 167,
+      "total": 230,
+      "coverage": 72.6
+    },
+    {
+      "brand": "Cadillac",
+      "prefix": "CA",
+      "covered": 168,
+      "total": 230,
+      "coverage": 73.0
     },
     {
       "brand": "Fiat",
       "prefix": "FI",
-      "covered": 68,
+      "covered": 168,
       "total": 230,
-      "coverage": 29.6
+      "coverage": 73.0
     },
     {
-      "brand": "Jeep",
-      "prefix": "JP",
-      "covered": 68,
+      "brand": "Acura",
+      "prefix": "AC",
+      "covered": 170,
       "total": 230,
-      "coverage": 29.6
+      "coverage": 73.9
     },
     {
       "brand": "Land Rover",
       "prefix": "LR",
-      "covered": 70,
+      "covered": 170,
       "total": 230,
-      "coverage": 30.4
+      "coverage": 73.9
+    },
+    {
+      "brand": "Dodge",
+      "prefix": "DG",
+      "covered": 173,
+      "total": 230,
+      "coverage": 75.2
+    },
+    {
+      "brand": "Jeep",
+      "prefix": "JP",
+      "covered": 176,
+      "total": 230,
+      "coverage": 76.5
     },
     {
       "brand": "Suzuki",
       "prefix": "SZ",
-      "covered": 78,
+      "covered": 178,
       "total": 230,
-      "coverage": 33.9
+      "coverage": 77.4
     },
     {
       "brand": "Mazda",
       "prefix": "MA",
-      "covered": 81,
+      "covered": 181,
       "total": 230,
-      "coverage": 35.2
+      "coverage": 78.7
     },
     {
       "brand": "Mitsubishi",
       "prefix": "MI",
-      "covered": 81,
+      "covered": 181,
       "total": 230,
-      "coverage": 35.2
-    },
-    {
-      "brand": "Kia",
-      "prefix": "KI",
-      "covered": 82,
-      "total": 230,
-      "coverage": 35.7
-    },
-    {
-      "brand": "Honda",
-      "prefix": "HO",
-      "covered": 85,
-      "total": 230,
-      "coverage": 37.0
-    },
-    {
-      "brand": "Nissan",
-      "prefix": "NI",
-      "covered": 85,
-      "total": 230,
-      "coverage": 37.0
+      "coverage": 78.7
     },
     {
       "brand": "Opel",
       "prefix": "OP",
-      "covered": 86,
+      "covered": 186,
       "total": 230,
-      "coverage": 37.4
+      "coverage": 80.9
     },
     {
-      "brand": "Renault",
-      "prefix": "RE",
-      "covered": 88,
+      "brand": "Kia",
+      "prefix": "KI",
+      "covered": 187,
       "total": 230,
-      "coverage": 38.3
-    },
-    {
-      "brand": "Skoda",
-      "prefix": "SK",
-      "covered": 89,
-      "total": 230,
-      "coverage": 38.7
-    },
-    {
-      "brand": "Subaru",
-      "prefix": "SU",
-      "covered": 89,
-      "total": 230,
-      "coverage": 38.7
-    },
-    {
-      "brand": "Chevrolet",
-      "prefix": "CH",
-      "covered": 90,
-      "total": 230,
-      "coverage": 39.1
+      "coverage": 81.3
     },
     {
       "brand": "Peugeot",
       "prefix": "PE",
-      "covered": 90,
+      "covered": 188,
       "total": 230,
-      "coverage": 39.1
+      "coverage": 81.7
+    },
+    {
+      "brand": "Renault",
+      "prefix": "RE",
+      "covered": 188,
+      "total": 230,
+      "coverage": 81.7
+    },
+    {
+      "brand": "Skoda",
+      "prefix": "SK",
+      "covered": 189,
+      "total": 230,
+      "coverage": 82.2
+    },
+    {
+      "brand": "Honda",
+      "prefix": "HO",
+      "covered": 191,
+      "total": 230,
+      "coverage": 83.0
     },
     {
       "brand": "Audi",
       "prefix": "AU",
-      "covered": 93,
+      "covered": 193,
       "total": 230,
-      "coverage": 40.4
+      "coverage": 83.9
     },
     {
-      "brand": "Ford",
-      "prefix": "FO",
-      "covered": 94,
+      "brand": "Chevrolet",
+      "prefix": "CH",
+      "covered": 193,
       "total": 230,
-      "coverage": 40.9
+      "coverage": 83.9
+    },
+    {
+      "brand": "Nissan",
+      "prefix": "NI",
+      "covered": 193,
+      "total": 230,
+      "coverage": 83.9
     },
     {
       "brand": "Volvo",
       "prefix": "VO",
-      "covered": 95,
+      "covered": 195,
       "total": 230,
-      "coverage": 41.3
+      "coverage": 84.8
+    },
+    {
+      "brand": "Subaru",
+      "prefix": "SU",
+      "covered": 197,
+      "total": 230,
+      "coverage": 85.7
+    },
+    {
+      "brand": "Ford",
+      "prefix": "FO",
+      "covered": 201,
+      "total": 230,
+      "coverage": 87.4
     },
     {
       "brand": "Hyundai",
       "prefix": "HY",
-      "covered": 99,
+      "covered": 203,
       "total": 230,
-      "coverage": 43.0
+      "coverage": 88.3
     },
     {
       "brand": "Mercedes-Benz",
       "prefix": "MB",
-      "covered": 115,
+      "covered": 215,
       "total": 230,
-      "coverage": 50.0
+      "coverage": 93.5
     },
     {
       "brand": "BMW",
       "prefix": "BM",
-      "covered": 117,
+      "covered": 220,
       "total": 230,
-      "coverage": 50.9
+      "coverage": 95.7
     },
     {
       "brand": "Toyota",
       "prefix": "TY",
-      "covered": 123,
+      "covered": 223,
       "total": 230,
-      "coverage": 53.5
+      "coverage": 97.0
     },
     {
       "brand": "Volkswagen",
       "prefix": "VW",
-      "covered": 123,
+      "covered": 223,
       "total": 230,
-      "coverage": 53.5
+      "coverage": 97.0
     }
   ],
-  "fully_uncovered": [
-    {
-      "code": "O2F",
-      "category": "Двигатель",
-      "name": "Лямбда-зонд передний"
-    },
-    {
-      "code": "O2R",
-      "category": "Двигатель",
-      "name": "Лямбда-зонд задний"
-    },
-    {
-      "code": "RHU",
-      "category": "Охлаждение",
-      "name": "Патрубок радиатора верхний"
-    },
-    {
-      "code": "RHL",
-      "category": "Охлаждение",
-      "name": "Патрубок радиатора нижний"
-    },
-    {
-      "code": "FTC",
-      "category": "Топливная система",
-      "name": "Крышка топливного бака"
-    },
-    {
-      "code": "IPH",
-      "category": "Турбонаддув",
-      "name": "Патрубок интеркулера"
-    },
-    {
-      "code": "ATS",
-      "category": "Трансмиссия",
-      "name": "Соленоид АКПП"
-    },
-    {
-      "code": "MEC",
-      "category": "Трансмиссия",
-      "name": "Мехатроник"
-    },
-    {
-      "code": "CRLB",
-      "category": "Тормоза",
-      "name": "Суппорт задний левый"
-    },
-    {
-      "code": "CRRB",
-      "category": "Тормоза",
-      "name": "Суппорт задний правый"
-    },
-    {
-      "code": "CRK",
-      "category": "Тормоза",
-      "name": "Ремкомплект суппорта"
-    },
-    {
-      "code": "CSG",
-      "category": "Тормоза",
-      "name": "Направляющие суппорта"
-    },
-    {
-      "code": "FUB",
-      "category": "Электрика",
-      "name": "Блок предохранителей"
-    },
-    {
-      "code": "STR",
-      "category": "Электрика",
-      "name": "Реле стартера"
-    },
-    {
-      "code": "RVC",
-      "category": "Электрика",
-      "name": "Камера заднего вида"
-    },
-    {
-      "code": "ECU",
-      "category": "Электрика",
-      "name": "Блок управления двигателем"
-    },
-    {
-      "code": "INL",
-      "category": "Кузов/свет",
-      "name": "Подкрылок передний левый"
-    },
-    {
-      "code": "INR",
-      "category": "Кузов/свет",
-      "name": "Подкрылок передний правый"
-    },
-    {
-      "code": "RKL",
-      "category": "Кузов/свет",
-      "name": "Порог левый"
-    },
-    {
-      "code": "RKR",
-      "category": "Кузов/свет",
-      "name": "Порог правый"
-    },
-    {
-      "code": "MAT",
-      "category": "Салон",
-      "name": "Коврики салона"
-    },
-    {
-      "code": "DLC",
-      "category": "Салон",
-      "name": "Замок двери"
-    },
-    {
-      "code": "DOH",
-      "category": "Салон",
-      "name": "Ручка двери наружная"
-    },
-    {
-      "code": "MMU",
-      "category": "Салон",
-      "name": "Экран мультимедиа"
-    },
-    {
-      "code": "GLP",
-      "category": "Двигатель",
-      "name": "Свеча накаливания"
-    },
-    {
-      "code": "IGN",
-      "category": "Двигатель",
-      "name": "Модуль зажигания"
-    },
-    {
-      "code": "SPW",
-      "category": "Двигатель",
-      "name": "Высоковольтные провода"
-    },
-    {
-      "code": "EGR",
-      "category": "Двигатель",
-      "name": "Клапан EGR"
-    },
-    {
-      "code": "VVT",
-      "category": "Двигатель",
-      "name": "Клапан VVT"
-    },
-    {
-      "code": "HLA",
-      "category": "Двигатель",
-      "name": "Гидрокомпенсатор"
-    },
-    {
-      "code": "KNS",
-      "category": "Двигатель",
-      "name": "Датчик детонации"
-    },
-    {
-      "code": "CTS",
-      "category": "Двигатель",
-      "name": "Датчик температуры ОЖ"
-    },
-    {
-      "code": "IAT",
-      "category": "Двигатель",
-      "name": "Датчик температуры воздуха"
-    },
-    {
-      "code": "EVP",
-      "category": "Двигатель",
-      "name": "Клапан адсорбера"
-    },
-    {
-      "code": "OCL",
-      "category": "Охлаждение",
-      "name": "Масляный радиатор"
-    },
-    {
-      "code": "FSS",
-      "category": "Охлаждение",
-      "name": "Датчик включения вентилятора"
-    },
-    {
-      "code": "FCL",
-      "category": "Охлаждение",
-      "name": "Муфта вентилятора"
-    },
-    {
-      "code": "AUX",
-      "category": "Охлаждение",
-      "name": "Насос дополнительного охлаждения"
-    },
-    {
-      "code": "FRL",
-      "category": "Топливная система",
-      "name": "Топливная рампа"
-    },
-    {
-      "code": "CNF",
-      "category": "Топливная система",
-      "name": "Адсорбер"
-    },
-    {
-      "code": "TAC",
-      "category": "Турбонаддув",
-      "name": "Актуатор турбины"
-    },
-    {
-      "code": "BPS",
-      "category": "Турбонаддув",
-      "name": "Датчик давления наддува"
-    },
-    {
-      "code": "TGS",
-      "category": "Турбонаддув",
-      "name": "Прокладка турбины"
-    },
-    {
-      "code": "FWH",
-      "category": "Трансмиссия",
-      "name": "Маховик"
-    },
-    {
-      "code": "DMF",
-      "category": "Трансмиссия",
-      "name": "Двухмассовый маховик"
-    },
-    {
-      "code": "CPP",
-      "category": "Трансмиссия",
-      "name": "Корзина сцепления"
-    },
-    {
-      "code": "CLD",
-      "category": "Трансмиссия",
-      "name": "Диск сцепления"
-    },
-    {
-      "code": "AFL",
-      "category": "Трансмиссия",
-      "name": "Приводной вал передний левый"
-    },
-    {
-      "code": "AFR",
-      "category": "Трансмиссия",
-      "name": "Приводной вал передний правый"
-    },
-    {
-      "code": "DRS",
-      "category": "Трансмиссия",
-      "name": "Карданный вал"
-    },
-    {
-      "code": "AXS",
-      "category": "Трансмиссия",
-      "name": "Сальник привода"
-    },
-    {
-      "code": "DIF",
-      "category": "Трансмиссия",
-      "name": "Дифференциал"
-    },
-    {
-      "code": "TFC",
-      "category": "Трансмиссия",
-      "name": "Раздаточная коробка"
-    },
-    {
-      "code": "BRF",
-      "category": "Тормоза",
-      "name": "Тормозная жидкость"
-    },
-    {
-      "code": "BWS",
-      "category": "Тормоза",
-      "name": "Датчик износа колодок"
-    },
-    {
-      "code": "HBL",
-      "category": "Тормоза",
-      "name": "Трос ручного тормоза левый"
-    },
-    {
-      "code": "HBR",
-      "category": "Тормоза",
-      "name": "Трос ручного тормоза правый"
-    },
-    {
-      "code": "EPB",
-      "category": "Тормоза",
-      "name": "Мотор электронного ручника"
-    },
-    {
-      "code": "SBFM",
-      "category": "Подвеска",
-      "name": "Подрамник передний"
-    },
-    {
-      "code": "SBRM",
-      "category": "Подвеска",
-      "name": "Подрамник задний"
-    },
-    {
-      "code": "KNL",
-      "category": "Подвеска",
-      "name": "Кулак поворотный левый"
-    },
-    {
-      "code": "KNR",
-      "category": "Подвеска",
-      "name": "Кулак поворотный правый"
-    },
-    {
-      "code": "RAL",
-      "category": "Подвеска",
-      "name": "Рычаг задний левый"
-    },
-    {
-      "code": "RAR",
-      "category": "Подвеска",
-      "name": "Рычаг задний правый"
-    },
-    {
-      "code": "SCS",
-      "category": "Рулевое",
-      "name": "Кардан рулевого вала"
-    },
-    {
-      "code": "STC",
-      "category": "Рулевое",
-      "name": "Рулевая колонка"
-    },
-    {
-      "code": "SAS",
-      "category": "Рулевое",
-      "name": "Датчик угла поворота руля"
-    },
-    {
-      "code": "BCM",
-      "category": "Электрика",
-      "name": "Блок управления кузовом"
-    },
-    {
-      "code": "TCM",
-      "category": "Электрика",
-      "name": "Блок управления АКПП"
-    },
-    {
-      "code": "SRS",
-      "category": "Электрика",
-      "name": "Блок SRS Airbag"
-    },
-    {
-      "code": "WSS",
-      "category": "Электрика",
-      "name": "Датчик скорости колеса"
-    },
-    {
-      "code": "RNS",
-      "category": "Электрика",
-      "name": "Датчик дождя"
-    },
-    {
-      "code": "LTS",
-      "category": "Электрика",
-      "name": "Датчик света"
-    },
-    {
-      "code": "EWH",
-      "category": "Электрика",
-      "name": "Проводка двигателя"
-    },
-    {
-      "code": "DWH",
-      "category": "Электрика",
-      "name": "Проводка двери"
-    },
-    {
-      "code": "EXV",
-      "category": "Климат",
-      "name": "Клапан расширительный кондиционера"
-    },
-    {
-      "code": "APS",
-      "category": "Климат",
-      "name": "Датчик давления кондиционера"
-    },
-    {
-      "code": "CCM",
-      "category": "Климат",
-      "name": "Блок управления климатом"
-    },
-    {
-      "code": "HHL",
-      "category": "Кузов/свет",
-      "name": "Петля капота левая"
-    },
-    {
-      "code": "HHR",
-      "category": "Кузов/свет",
-      "name": "Петля капота правая"
-    },
-    {
-      "code": "HGS",
-      "category": "Кузов/свет",
-      "name": "Амортизатор капота"
-    },
-    {
-      "code": "TGSB",
-      "category": "Кузов/свет",
-      "name": "Амортизатор багажника"
-    },
-    {
-      "code": "TRK",
-      "category": "Кузов/свет",
-      "name": "Крышка багажника"
-    },
-    {
-      "code": "RADP",
-      "category": "Кузов/свет",
-      "name": "Панель передняя телевизор"
-    },
-    {
-      "code": "FBR",
-      "category": "Кузов/свет",
-      "name": "Усилитель бампера передний"
-    },
-    {
-      "code": "RBR",
-      "category": "Кузов/свет",
-      "name": "Усилитель бампера задний"
-    },
-    {
-      "code": "DRL",
-      "category": "Кузов/свет",
-      "name": "Дневной ходовой огонь левый"
-    },
-    {
-      "code": "DRR",
-      "category": "Кузов/свет",
-      "name": "Дневной ходовой огонь правый"
-    },
-    {
-      "code": "XBL",
-      "category": "Кузов/свет",
-      "name": "Блок розжига ксенона"
-    },
-    {
-      "code": "HLA2",
-      "category": "Кузов/свет",
-      "name": "Корректор фары"
-    },
-    {
-      "code": "WLS",
-      "category": "Салон",
-      "name": "Блок кнопок стеклоподъемника"
-    },
-    {
-      "code": "SBT",
-      "category": "Салон",
-      "name": "Механизм ремня безопасности"
-    },
-    {
-      "code": "SBB",
-      "category": "Салон",
-      "name": "Замок ремня безопасности"
-    },
-    {
-      "code": "ABD",
-      "category": "Салон",
-      "name": "Подушка безопасности водителя"
-    },
-    {
-      "code": "ABP",
-      "category": "Салон",
-      "name": "Подушка безопасности пассажира"
-    },
-    {
-      "code": "AMP",
-      "category": "Салон",
-      "name": "Радиатор мультимедиа/усилитель"
-    },
-    {
-      "code": "DFP",
-      "category": "Выхлоп",
-      "name": "Труба приемная"
-    },
-    {
-      "code": "DPF",
-      "category": "Выхлоп",
-      "name": "Сажевый фильтр"
-    },
-    {
-      "code": "EGT",
-      "category": "Выхлоп",
-      "name": "Датчик температуры выхлопа"
-    },
-    {
-      "code": "DPS",
-      "category": "Выхлоп",
-      "name": "Датчик давления DPF"
-    }
-  ],
+  "fully_uncovered": [],
   "priority_gaps": [
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Датчики",
-      "name": "Лямбда-зонд передний",
-      "code": "O2F",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Датчики",
-      "name": "Лямбда-зонд задний",
-      "code": "O2R",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Охлаждение",
-      "group": "Патрубки",
-      "name": "Патрубок радиатора верхний",
-      "code": "RHU",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Охлаждение",
-      "group": "Патрубки",
-      "name": "Патрубок радиатора нижний",
-      "code": "RHL",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "АКПП",
-      "name": "Соленоид АКПП",
-      "code": "ATS",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "АКПП/DSG",
-      "name": "Мехатроник",
-      "code": "MEC",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Суппорты",
-      "name": "Суппорт задний левый",
-      "code": "CRLB",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Суппорты",
-      "name": "Суппорт задний правый",
-      "code": "CRRB",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Суппорты",
-      "name": "Ремкомплект суппорта",
-      "code": "CRK",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Суппорты",
-      "name": "Направляющие суппорта",
-      "code": "CSG",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Зажигание",
-      "name": "Свеча накаливания",
-      "code": "GLP",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Зажигание",
-      "name": "Модуль зажигания",
-      "code": "IGN",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Зажигание",
-      "name": "Высоковольтные провода",
-      "code": "SPW",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Впуск/выхлоп",
-      "name": "Клапан EGR",
-      "code": "EGR",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "ГРМ",
-      "name": "Клапан VVT",
-      "code": "VVT",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "ГРМ",
-      "name": "Гидрокомпенсатор",
-      "code": "HLA",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Датчики",
-      "name": "Датчик детонации",
-      "code": "KNS",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Датчики",
-      "name": "Датчик температуры ОЖ",
-      "code": "CTS",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Датчики",
-      "name": "Датчик температуры воздуха",
-      "code": "IAT",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Двигатель",
-      "group": "Топливо",
-      "name": "Клапан адсорбера",
-      "code": "EVP",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Охлаждение",
-      "group": "Охлаждение",
-      "name": "Масляный радиатор",
-      "code": "OCL",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Охлаждение",
-      "group": "Охлаждение",
-      "name": "Датчик включения вентилятора",
-      "code": "FSS",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Охлаждение",
-      "group": "Охлаждение",
-      "name": "Муфта вентилятора",
-      "code": "FCL",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Охлаждение",
-      "group": "Охлаждение",
-      "name": "Насос дополнительного охлаждения",
-      "code": "AUX",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Сцепление",
-      "name": "Маховик",
-      "code": "FWH",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Сцепление",
-      "name": "Двухмассовый маховик",
-      "code": "DMF",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Сцепление",
-      "name": "Корзина сцепления",
-      "code": "CPP",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Сцепление",
-      "name": "Диск сцепления",
-      "code": "CLD",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Привод",
-      "name": "Приводной вал передний левый",
-      "code": "AFL",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Привод",
-      "name": "Приводной вал передний правый",
-      "code": "AFR",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Привод",
-      "name": "Карданный вал",
-      "code": "DRS",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Сальники",
-      "name": "Сальник привода",
-      "code": "AXS",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Дифференциал",
-      "name": "Дифференциал",
-      "code": "DIF",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Трансмиссия",
-      "group": "Раздатка",
-      "name": "Раздаточная коробка",
-      "code": "TFC",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Гидравлика",
-      "name": "Тормозная жидкость",
-      "code": "BRF",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Тормозная система",
-      "name": "Датчик износа колодок",
-      "code": "BWS",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Стояночный тормоз",
-      "name": "Трос ручного тормоза левый",
-      "code": "HBL",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Стояночный тормоз",
-      "name": "Трос ручного тормоза правый",
-      "code": "HBR",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Тормоза",
-      "group": "Стояночный тормоз",
-      "name": "Мотор электронного ручника",
-      "code": "EPB",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Подвеска",
-      "group": "Подрамник",
-      "name": "Подрамник передний",
-      "code": "SBFM",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Подвеска",
-      "group": "Подрамник",
-      "name": "Подрамник задний",
-      "code": "SBRM",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Подвеска",
-      "group": "Передняя подвеска",
-      "name": "Кулак поворотный левый",
-      "code": "KNL",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Подвеска",
-      "group": "Передняя подвеска",
-      "name": "Кулак поворотный правый",
-      "code": "KNR",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Подвеска",
-      "group": "Задняя подвеска",
-      "name": "Рычаг задний левый",
-      "code": "RAL",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 42,
-      "category": "Подвеска",
-      "group": "Задняя подвеска",
-      "name": "Рычаг задний правый",
-      "code": "RAR",
-      "examples": [
-        "Toyota",
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan"
-      ]
-    },
-    {
-      "missing_count": 41,
-      "category": "Двигатель",
-      "group": "Датчики",
-      "name": "Датчик положения коленвала",
-      "code": "CKP",
-      "examples": [
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan",
-        "Honda"
-      ]
-    },
-    {
-      "missing_count": 40,
-      "category": "ТО",
-      "group": "Фильтры и жидкости",
-      "name": "Шайба сливной пробки",
-      "code": "ODW",
-      "examples": [
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan",
-        "Honda",
-        "Ford"
-      ]
-    },
-    {
-      "missing_count": 40,
-      "category": "Двигатель",
-      "group": "Датчики",
-      "name": "Датчик давления масла",
-      "code": "OPS",
-      "examples": [
-        "Volkswagen",
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Kia",
-        "Nissan",
-        "Honda",
-        "Ford"
-      ]
-    },
-    {
-      "missing_count": 40,
-      "category": "Подвеска",
-      "group": "Стабилизатор",
-      "name": "Втулка стабилизатора задняя",
-      "code": "SBR",
-      "examples": [
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan",
-        "Honda",
-        "Ford"
-      ]
-    },
-    {
-      "missing_count": 39,
-      "category": "Трансмиссия",
-      "group": "Привод",
-      "name": "Пыльник ШРУС",
-      "code": "CVB",
-      "examples": [
-        "BMW",
-        "Mercedes-Benz",
-        "Audi",
-        "Kia",
-        "Nissan",
-        "Honda",
-        "Ford",
-        "Chevrolet"
-      ]
-    },
-    {
-      "missing_count": 39,
-      "category": "Подвеска",
-      "group": "Сайлентблоки",
-      "name": "Сайлентблок заднего рычага",
-      "code": "RAB",
-      "examples": [
-        "Mercedes-Benz",
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan",
-        "Honda",
-        "Ford",
-        "Chevrolet"
-      ]
-    },
     {
       "missing_count": 39,
       "category": "Подвеска",
@@ -1690,54 +322,20 @@
       ]
     },
     {
-      "missing_count": 38,
-      "category": "ТО",
-      "group": "Фильтры и жидкости",
-      "name": "Пробка сливная масляного поддона",
-      "code": "ODP",
+      "missing_count": 39,
+      "category": "Подвеска",
+      "group": "Стабилизатор",
+      "name": "Втулка стабилизатора задняя",
+      "code": "SBR",
       "examples": [
         "BMW",
         "Mercedes-Benz",
         "Audi",
-        "Kia",
-        "Honda",
-        "Ford",
-        "Chevrolet",
-        "Mazda"
-      ]
-    },
-    {
-      "missing_count": 38,
-      "category": "Двигатель",
-      "group": "Прокладки",
-      "name": "Прокладка впускного коллектора",
-      "code": "IMG",
-      "examples": [
-        "Audi",
         "Hyundai",
         "Kia",
-        "Nissan",
         "Honda",
         "Ford",
-        "Chevrolet",
-        "Mazda"
-      ]
-    },
-    {
-      "missing_count": 38,
-      "category": "Двигатель",
-      "group": "Прокладки",
-      "name": "Прокладка выпускного коллектора",
-      "code": "EMG",
-      "examples": [
-        "Audi",
-        "Hyundai",
-        "Kia",
-        "Nissan",
-        "Honda",
-        "Ford",
-        "Chevrolet",
-        "Mazda"
+        "Chevrolet"
       ]
     },
     {
@@ -1776,19 +374,19 @@
     },
     {
       "missing_count": 38,
-      "category": "Двигатель",
-      "group": "Датчики",
-      "name": "Датчик положения распредвала",
-      "code": "CMP",
+      "category": "Подвеска",
+      "group": "Сайлентблоки",
+      "name": "Сайлентблок заднего рычага",
+      "code": "RAB",
       "examples": [
+        "Mercedes-Benz",
         "Audi",
         "Hyundai",
         "Kia",
         "Nissan",
         "Honda",
         "Ford",
-        "Chevrolet",
-        "Mazda"
+        "Chevrolet"
       ]
     },
     {
@@ -1823,6 +421,860 @@
         "Ford",
         "Chevrolet",
         "Mazda"
+      ]
+    },
+    {
+      "missing_count": 36,
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Корпус термостата",
+      "code": "TSH",
+      "examples": [
+        "Audi",
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Ford",
+        "Chevrolet",
+        "Mazda"
+      ]
+    },
+    {
+      "missing_count": 36,
+      "category": "Трансмиссия",
+      "group": "Опоры",
+      "name": "Подушка КПП",
+      "code": "TMM",
+      "examples": [
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Ford",
+        "Chevrolet",
+        "Mazda",
+        "Lexus",
+        "Subaru"
+      ]
+    },
+    {
+      "missing_count": 35,
+      "category": "Двигатель",
+      "group": "Опоры",
+      "name": "Опора двигателя левая",
+      "code": "EML",
+      "examples": [
+        "Volkswagen",
+        "Audi",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Ford",
+        "Chevrolet",
+        "Mazda"
+      ]
+    },
+    {
+      "missing_count": 35,
+      "category": "Двигатель",
+      "group": "Опоры",
+      "name": "Опора двигателя правая",
+      "code": "EMR",
+      "examples": [
+        "Volkswagen",
+        "Audi",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Ford",
+        "Chevrolet",
+        "Mazda"
+      ]
+    },
+    {
+      "missing_count": 35,
+      "category": "Трансмиссия",
+      "group": "АКПП",
+      "name": "Прокладка поддона АКПП",
+      "code": "ATG",
+      "examples": [
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Ford",
+        "Mazda",
+        "Lexus",
+        "Subaru"
+      ]
+    },
+    {
+      "missing_count": 35,
+      "category": "Трансмиссия",
+      "group": "АКПП",
+      "name": "Поддон АКПП",
+      "code": "ATP",
+      "examples": [
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Ford",
+        "Mazda",
+        "Lexus",
+        "Subaru"
+      ]
+    },
+    {
+      "missing_count": 34,
+      "category": "ТО",
+      "group": "Фильтры и жидкости",
+      "name": "Шайба сливной пробки",
+      "code": "ODW",
+      "examples": [
+        "BMW",
+        "Mercedes-Benz",
+        "Audi",
+        "Hyundai",
+        "Kia",
+        "Chevrolet",
+        "Mazda",
+        "Subaru"
+      ]
+    },
+    {
+      "missing_count": 34,
+      "category": "Подвеска",
+      "group": "Сайлентблоки",
+      "name": "Сайлентблок переднего рычага",
+      "code": "CAB",
+      "examples": [
+        "Audi",
+        "Ford",
+        "Chevrolet",
+        "Mazda",
+        "Lexus",
+        "Subaru",
+        "Mitsubishi",
+        "Peugeot"
+      ]
+    },
+    {
+      "missing_count": 33,
+      "category": "Двигатель",
+      "group": "Датчики",
+      "name": "Датчик давления масла",
+      "code": "OPS",
+      "examples": [
+        "Volkswagen",
+        "Mercedes-Benz",
+        "Audi",
+        "Honda",
+        "Ford",
+        "Chevrolet",
+        "Mazda",
+        "Mitsubishi"
+      ]
+    },
+    {
+      "missing_count": 31,
+      "category": "Двигатель",
+      "group": "Сальники",
+      "name": "Сальник коленвала передний",
+      "code": "CSF",
+      "examples": [
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Subaru",
+        "Mitsubishi",
+        "Renault"
+      ]
+    },
+    {
+      "missing_count": 31,
+      "category": "Двигатель",
+      "group": "Сальники",
+      "name": "Сальник коленвала задний",
+      "code": "CSR",
+      "examples": [
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Subaru",
+        "Mitsubishi",
+        "Renault"
+      ]
+    },
+    {
+      "missing_count": 31,
+      "category": "Двигатель",
+      "group": "Впуск",
+      "name": "Дроссельная заслонка",
+      "code": "THB",
+      "examples": [
+        "Audi",
+        "Ford",
+        "Chevrolet",
+        "Lexus",
+        "Subaru",
+        "Peugeot",
+        "Renault",
+        "Opel"
+      ]
+    },
+    {
+      "missing_count": 30,
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Вентилятор радиатора",
+      "code": "FAN",
+      "examples": [
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Renault"
+      ]
+    },
+    {
+      "missing_count": 29,
+      "category": "ТО",
+      "group": "Ремни",
+      "name": "Комплект ремня навесного оборудования",
+      "code": "ABK",
+      "examples": [
+        "Volkswagen",
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi"
+      ]
+    },
+    {
+      "missing_count": 29,
+      "category": "ТО",
+      "group": "Ремни",
+      "name": "Ролик ремня навесного оборудования",
+      "code": "ABR",
+      "examples": [
+        "Volkswagen",
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi"
+      ]
+    },
+    {
+      "missing_count": 29,
+      "category": "ТО",
+      "group": "Ремни",
+      "name": "Натяжитель ремня навесного оборудования",
+      "code": "ABT",
+      "examples": [
+        "Volkswagen",
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi"
+      ]
+    },
+    {
+      "missing_count": 29,
+      "category": "Двигатель",
+      "group": "Датчики",
+      "name": "Датчик положения коленвала",
+      "code": "CKP",
+      "examples": [
+        "Volkswagen",
+        "Mercedes-Benz",
+        "Audi",
+        "Chevrolet",
+        "Mazda",
+        "Mitsubishi",
+        "Peugeot",
+        "Renault"
+      ]
+    },
+    {
+      "missing_count": 29,
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Расширительный бачок",
+      "code": "EXT",
+      "examples": [
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Opel"
+      ]
+    },
+    {
+      "missing_count": 29,
+      "category": "Трансмиссия",
+      "group": "Сцепление",
+      "name": "Выжимной подшипник",
+      "code": "CRB",
+      "examples": [
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Suzuki"
+      ]
+    },
+    {
+      "missing_count": 29,
+      "category": "Подвеска",
+      "group": "Передняя подвеска",
+      "name": "Опора передней стойки",
+      "code": "STM",
+      "examples": [
+        "Audi",
+        "Chevrolet",
+        "Lexus",
+        "Peugeot",
+        "Renault",
+        "Opel",
+        "Skoda",
+        "Suzuki"
+      ]
+    },
+    {
+      "missing_count": 28,
+      "category": "ТО",
+      "group": "Фильтры и жидкости",
+      "name": "Пробка сливная масляного поддона",
+      "code": "ODP",
+      "examples": [
+        "Mercedes-Benz",
+        "Audi",
+        "Chevrolet",
+        "Mazda",
+        "Mitsubishi",
+        "Peugeot",
+        "Renault",
+        "Opel"
+      ]
+    },
+    {
+      "missing_count": 28,
+      "category": "Двигатель",
+      "group": "Смазка",
+      "name": "Масляный насос",
+      "code": "OPM",
+      "examples": [
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Infiniti"
+      ]
+    },
+    {
+      "missing_count": 28,
+      "category": "Двигатель",
+      "group": "Вентиляция",
+      "name": "Клапан вентиляции картерных газов",
+      "code": "PCV",
+      "examples": [
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Infiniti"
+      ]
+    },
+    {
+      "missing_count": 28,
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Термостат",
+      "code": "TST",
+      "examples": [
+        "Hyundai",
+        "Kia",
+        "Nissan",
+        "Honda",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Infiniti"
+      ]
+    },
+    {
+      "missing_count": 28,
+      "category": "Трансмиссия",
+      "group": "Ступицы",
+      "name": "Ступица задняя",
+      "code": "HUR",
+      "examples": [
+        "Audi",
+        "Chevrolet",
+        "Peugeot",
+        "Renault",
+        "Opel",
+        "Skoda",
+        "Suzuki",
+        "Infiniti"
+      ]
+    },
+    {
+      "missing_count": 27,
+      "category": "Двигатель",
+      "group": "Прокладки",
+      "name": "Прокладка выпускного коллектора",
+      "code": "EMG",
+      "examples": [
+        "Audi",
+        "Kia",
+        "Honda",
+        "Mazda",
+        "Mitsubishi",
+        "Peugeot",
+        "Renault",
+        "Opel"
+      ]
+    },
+    {
+      "missing_count": 27,
+      "category": "Двигатель",
+      "group": "Датчики",
+      "name": "Датчик положения распредвала",
+      "code": "CMP",
+      "examples": [
+        "Audi",
+        "Chevrolet",
+        "Mazda",
+        "Mitsubishi",
+        "Peugeot",
+        "Renault",
+        "Opel",
+        "Skoda"
+      ]
+    },
+    {
+      "missing_count": 26,
+      "category": "Трансмиссия",
+      "group": "Привод",
+      "name": "Пыльник ШРУС",
+      "code": "CVB",
+      "examples": [
+        "BMW",
+        "Mercedes-Benz",
+        "Audi",
+        "Kia",
+        "Mazda",
+        "Mitsubishi",
+        "Peugeot",
+        "Renault"
+      ]
+    },
+    {
+      "missing_count": 26,
+      "category": "Двигатель",
+      "group": "Прокладки",
+      "name": "Прокладка клапанной крышки",
+      "code": "VCG",
+      "examples": [
+        "Kia",
+        "Nissan",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Infiniti",
+        "Acura",
+        "Jeep"
+      ]
+    },
+    {
+      "missing_count": 26,
+      "category": "Двигатель",
+      "group": "Прокладки",
+      "name": "Прокладка впускного коллектора",
+      "code": "IMG",
+      "examples": [
+        "Audi",
+        "Kia",
+        "Honda",
+        "Mazda",
+        "Mitsubishi",
+        "Peugeot",
+        "Renault",
+        "Opel"
+      ]
+    },
+    {
+      "missing_count": 24,
+      "category": "Двигатель",
+      "group": "Датчики",
+      "name": "Датчик массового расхода воздуха",
+      "code": "MAF",
+      "examples": [
+        "Audi",
+        "Kia",
+        "Honda",
+        "Ford",
+        "Chevrolet",
+        "Mazda",
+        "Lexus",
+        "Subaru"
+      ]
+    },
+    {
+      "missing_count": 24,
+      "category": "Двигатель",
+      "group": "Датчики",
+      "name": "Датчик абсолютного давления",
+      "code": "MAP",
+      "examples": [
+        "Hyundai",
+        "Nissan",
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Suzuki",
+        "Infiniti",
+        "Acura"
+      ]
+    },
+    {
+      "missing_count": 23,
+      "category": "Двигатель",
+      "group": "Прокладки",
+      "name": "Прокладка ГБЦ",
+      "code": "HGG",
+      "examples": [
+        "Mazda",
+        "Lexus",
+        "Mitsubishi",
+        "Infiniti",
+        "Acura",
+        "Jeep",
+        "Land Rover",
+        "Porsche"
+      ]
+    },
+    {
+      "missing_count": 22,
+      "category": "Трансмиссия",
+      "group": "Привод",
+      "name": "ШРУС наружный",
+      "code": "CVJ",
+      "examples": [
+        "Lexus",
+        "Infiniti",
+        "Acura",
+        "Jeep",
+        "Land Rover",
+        "Porsche",
+        "Dodge",
+        "Chrysler"
+      ]
+    },
+    {
+      "missing_count": 22,
+      "category": "Трансмиссия",
+      "group": "АКПП",
+      "name": "Фильтр АКПП",
+      "code": "ATF",
+      "examples": [
+        "Lexus",
+        "Infiniti",
+        "Acura",
+        "Jeep",
+        "Land Rover",
+        "Porsche",
+        "Dodge",
+        "Chrysler"
+      ]
+    },
+    {
+      "missing_count": 22,
+      "category": "Трансмиссия",
+      "group": "Сцепление",
+      "name": "Комплект сцепления",
+      "code": "CLK",
+      "examples": [
+        "Lexus",
+        "Infiniti",
+        "Acura",
+        "Jeep",
+        "Land Rover",
+        "Porsche",
+        "Dodge",
+        "Chrysler"
+      ]
+    },
+    {
+      "missing_count": 21,
+      "category": "ТО",
+      "group": "Фильтры",
+      "name": "Топливный фильтр",
+      "code": "FF",
+      "examples": [
+        "Kia",
+        "Chevrolet",
+        "Mazda",
+        "Lexus",
+        "Subaru",
+        "Mitsubishi",
+        "Peugeot",
+        "Renault"
+      ]
+    },
+    {
+      "missing_count": 21,
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Радиатор охлаждения",
+      "code": "RAD",
+      "examples": [
+        "Lexus",
+        "Infiniti",
+        "Acura",
+        "Jeep",
+        "Land Rover",
+        "Porsche",
+        "Dodge",
+        "Chrysler"
+      ]
+    },
+    {
+      "missing_count": 21,
+      "category": "Тормоза",
+      "group": "Гидравлика",
+      "name": "Главный тормозной цилиндр",
+      "code": "BMC",
+      "examples": [
+        "Toyota",
+        "Lexus",
+        "Skoda",
+        "Suzuki",
+        "Infiniti",
+        "Acura",
+        "Porsche",
+        "Dodge"
+      ]
+    },
+    {
+      "missing_count": 14,
+      "category": "Тормоза",
+      "group": "Суппорты",
+      "name": "Суппорт передний левый",
+      "code": "CFLB",
+      "examples": [
+        "Suzuki",
+        "Infiniti",
+        "Acura",
+        "Dodge",
+        "Chrysler",
+        "GMC",
+        "Cadillac",
+        "Buick"
+      ]
+    },
+    {
+      "missing_count": 14,
+      "category": "Тормоза",
+      "group": "Суппорты",
+      "name": "Суппорт передний правый",
+      "code": "CFRB",
+      "examples": [
+        "Suzuki",
+        "Infiniti",
+        "Acura",
+        "Dodge",
+        "Chrysler",
+        "GMC",
+        "Cadillac",
+        "Buick"
+      ]
+    },
+    {
+      "missing_count": 11,
+      "category": "Подвеска",
+      "group": "Пружины",
+      "name": "Пружина задняя",
+      "code": "SPR",
+      "examples": [
+        "Dodge",
+        "Chrysler",
+        "GMC",
+        "Cadillac",
+        "Buick",
+        "Tesla",
+        "BYD",
+        "Geely"
+      ]
+    },
+    {
+      "missing_count": 8,
+      "category": "Двигатель",
+      "group": "ГРМ",
+      "name": "Ремень/цепь ГРМ комплект",
+      "code": "TK",
+      "examples": [
+        "Chrysler",
+        "Buick",
+        "Tesla",
+        "BYD",
+        "Geely",
+        "Chery",
+        "Haval",
+        "Changan"
+      ]
+    },
+    {
+      "missing_count": 7,
+      "category": "Тормоза",
+      "group": "Тормозная система",
+      "name": "Датчик ABS",
+      "code": "ABS",
+      "examples": [
+        "Lexus",
+        "Subaru",
+        "Peugeot",
+        "Renault",
+        "Opel",
+        "Skoda",
+        "Suzuki"
+      ]
+    },
+    {
+      "missing_count": 6,
+      "category": "Подвеска",
+      "group": "Задняя подвеска",
+      "name": "Амортизатор задний",
+      "code": "SR",
+      "examples": [
+        "Audi",
+        "Lexus",
+        "Skoda",
+        "Suzuki",
+        "Chrysler",
+        "Seat"
+      ]
+    },
+    {
+      "missing_count": 3,
+      "category": "Тормоза",
+      "group": "Тормозная система",
+      "name": "Диск тормозной задний",
+      "code": "BDR",
+      "examples": [
+        "Kia",
+        "Lexus",
+        "Chrysler"
+      ]
+    },
+    {
+      "missing_count": 3,
+      "category": "Охлаждение",
+      "group": "Охлаждение",
+      "name": "Крышка расширительного бачка",
+      "code": "EXC",
+      "examples": [
+        "Tesla",
+        "BYD",
+        "Geely"
+      ]
+    },
+    {
+      "missing_count": 3,
+      "category": "Трансмиссия",
+      "group": "Сцепление",
+      "name": "Главный цилиндр сцепления",
+      "code": "CMC",
+      "examples": [
+        "Tesla",
+        "BYD",
+        "Geely"
+      ]
+    },
+    {
+      "missing_count": 3,
+      "category": "Тормоза",
+      "group": "Гидравлика",
+      "name": "Вакуумный усилитель тормозов",
+      "code": "BBR",
+      "examples": [
+        "Tesla",
+        "BYD",
+        "Geely"
+      ]
+    },
+    {
+      "missing_count": 2,
+      "category": "Двигатель",
+      "group": "Зажигание",
+      "name": "Катушка зажигания",
+      "code": "IC",
+      "examples": [
+        "Lexus",
+        "Tesla"
+      ]
+    },
+    {
+      "missing_count": 2,
+      "category": "Подвеска",
+      "group": "Передняя подвеска",
+      "name": "Рычаг передний правый",
+      "code": "CFR",
+      "examples": [
+        "Nissan",
+        "Lexus"
+      ]
+    },
+    {
+      "missing_count": 2,
+      "category": "Подвеска",
+      "group": "Стабилизатор",
+      "name": "Стойка стабилизатора",
+      "code": "SL",
+      "examples": [
+        "Lexus",
+        "Chrysler"
+      ]
+    },
+    {
+      "missing_count": 2,
+      "category": "ТО",
+      "group": "Ремни",
+      "name": "Ремень генератора",
+      "code": "ALB",
+      "examples": [
+        "Lexus",
+        "Suzuki"
       ]
     }
   ]

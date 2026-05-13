@@ -1,0 +1,920 @@
+{
+  "success_csv": "data\\oem_supplier_low_overlap_high_medium.csv",
+  "worklist_csv": "data\\oem_gap_worklist_low_overlap.csv",
+  "generated_at": "2026-05-13T03:44:01Z",
+  "min_opportunities": 2,
+  "global": [
+    {
+      "domain": "partsale.eu",
+      "opportunities": 153,
+      "hits": 22,
+      "unique_pair_hits": 22,
+      "conversion": 0.143791
+    },
+    {
+      "domain": "toyotacarmine.ru",
+      "opportunities": 7,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "fordparts.com",
+      "opportunities": 38,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "fiatdalys.lt",
+      "opportunities": 62,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "japancats.ru",
+      "opportunities": 389,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "realoem.com",
+      "opportunities": 82,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "parts.com",
+      "opportunities": 333,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "new.lrcat.com",
+      "opportunities": 60,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "emex.ru",
+      "opportunities": 296,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "hyundai.a-inside.ru",
+      "opportunities": 147,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "gmpartsdepartment.com",
+      "opportunities": 244,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "irito-parts.ru",
+      "opportunities": 71,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "elcats.ru",
+      "opportunities": 207,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "mitsubishi-autoparts.com.ua",
+      "opportunities": 51,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "acurapartswarehouse.com",
+      "opportunities": 113,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "trshop.audi.de",
+      "opportunities": 153,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "relines.ru",
+      "opportunities": 375,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "oemfordpart.com",
+      "opportunities": 38,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "kia.a-inside.ru",
+      "opportunities": 81,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "rmsauto.ru",
+      "opportunities": 296,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "xn--80aaonli0a.xn--p1ai",
+      "opportunities": 304,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "jeepchryslerparts.eu",
+      "opportunities": 204,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "hondaworld.ru",
+      "opportunities": 113,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "factorychryslerparts.com",
+      "opportunities": 204,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "service.citroen.com",
+      "opportunities": 103,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "eper.fiatklubpolska.pl",
+      "opportunities": 62,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "public.servicebox.peugeot.com",
+      "opportunities": 103,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "needet.ru",
+      "opportunities": 235,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "hondapartsdeals.com",
+      "opportunities": 113,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    },
+    {
+      "domain": "bmwcats.com",
+      "opportunities": 82,
+      "hits": 0,
+      "unique_pair_hits": 0,
+      "conversion": 0.0
+    }
+  ],
+  "by_brand": {
+    "AC": [
+      {
+        "domain": "acurapartswarehouse.com",
+        "opportunities": 67,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "hondaworld.ru",
+        "opportunities": 67,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "hondapartsdeals.com",
+        "opportunities": 67,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "AU": [
+      {
+        "domain": "partsale.eu",
+        "opportunities": 38,
+        "hits": 22,
+        "unique_pair_hits": 22,
+        "conversion": 0.578947
+      },
+      {
+        "domain": "trshop.audi.de",
+        "opportunities": 38,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "BM": [
+      {
+        "domain": "realoem.com",
+        "opportunities": 13,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "bmwcats.com",
+        "opportunities": 13,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "BU": [
+      {
+        "domain": "gmpartsdepartment.com",
+        "opportunities": 71,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "parts.com",
+        "opportunities": 71,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "BY": [
+      {
+        "domain": "relines.ru",
+        "opportunities": 81,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "xn--80aaonli0a.xn--p1ai",
+        "opportunities": 81,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "CA": [
+      {
+        "domain": "gmpartsdepartment.com",
+        "opportunities": 66,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "parts.com",
+        "opportunities": 66,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "CG": [
+      {
+        "domain": "relines.ru",
+        "opportunities": 71,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "xn--80aaonli0a.xn--p1ai",
+        "opportunities": 71,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "CH": [
+      {
+        "domain": "gmpartsdepartment.com",
+        "opportunities": 41,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "parts.com",
+        "opportunities": 41,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "CI": [
+      {
+        "domain": "service.citroen.com",
+        "opportunities": 62,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "public.servicebox.peugeot.com",
+        "opportunities": 62,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "CR": [
+      {
+        "domain": "factorychryslerparts.com",
+        "opportunities": 75,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "jeepchryslerparts.eu",
+        "opportunities": 75,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "CY": [
+      {
+        "domain": "relines.ru",
+        "opportunities": 71,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "xn--80aaonli0a.xn--p1ai",
+        "opportunities": 71,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "DG": [
+      {
+        "domain": "factorychryslerparts.com",
+        "opportunities": 67,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "jeepchryslerparts.eu",
+        "opportunities": 67,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "FI": [
+      {
+        "domain": "fiatdalys.lt",
+        "opportunities": 62,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "eper.fiatklubpolska.pl",
+        "opportunities": 62,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "FO": [
+      {
+        "domain": "oemfordpart.com",
+        "opportunities": 38,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "fordparts.com",
+        "opportunities": 38,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "GE": [
+      {
+        "domain": "hyundai.a-inside.ru",
+        "opportunities": 66,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "GL": [
+      {
+        "domain": "relines.ru",
+        "opportunities": 81,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "xn--80aaonli0a.xn--p1ai",
+        "opportunities": 81,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "GM": [
+      {
+        "domain": "gmpartsdepartment.com",
+        "opportunities": 66,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "parts.com",
+        "opportunities": 66,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "HO": [
+      {
+        "domain": "hondaworld.ru",
+        "opportunities": 46,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "acurapartswarehouse.com",
+        "opportunities": 46,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "hondapartsdeals.com",
+        "opportunities": 46,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "HV": [
+      {
+        "domain": "relines.ru",
+        "opportunities": 71,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "irito-parts.ru",
+        "opportunities": 71,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "HY": [
+      {
+        "domain": "kia.a-inside.ru",
+        "opportunities": 32,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "hyundai.a-inside.ru",
+        "opportunities": 32,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "IN": [
+      {
+        "domain": "japancats.ru",
+        "opportunities": 64,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "needet.ru",
+        "opportunities": 64,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "JP": [
+      {
+        "domain": "factorychryslerparts.com",
+        "opportunities": 62,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "jeepchryslerparts.eu",
+        "opportunities": 62,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "KI": [
+      {
+        "domain": "kia.a-inside.ru",
+        "opportunities": 49,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "hyundai.a-inside.ru",
+        "opportunities": 49,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "LR": [
+      {
+        "domain": "new.lrcat.com",
+        "opportunities": 60,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "LX": [
+      {
+        "domain": "japancats.ru",
+        "opportunities": 75,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "needet.ru",
+        "opportunities": 75,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "MA": [
+      {
+        "domain": "japancats.ru",
+        "opportunities": 50,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "needet.ru",
+        "opportunities": 50,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "MB": [
+      {
+        "domain": "elcats.ru",
+        "opportunities": 15,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "emex.ru",
+        "opportunities": 15,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "rmsauto.ru",
+        "opportunities": 15,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "MI": [
+      {
+        "domain": "mitsubishi-autoparts.com.ua",
+        "opportunities": 51,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "japancats.ru",
+        "opportunities": 51,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "MN": [
+      {
+        "domain": "realoem.com",
+        "opportunities": 69,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "bmwcats.com",
+        "opportunities": 69,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "NI": [
+      {
+        "domain": "japancats.ru",
+        "opportunities": 46,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "needet.ru",
+        "opportunities": 46,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "OP": [
+      {
+        "domain": "elcats.ru",
+        "opportunities": 46,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "emex.ru",
+        "opportunities": 46,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "rmsauto.ru",
+        "opportunities": 46,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "PE": [
+      {
+        "domain": "service.citroen.com",
+        "opportunities": 41,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "public.servicebox.peugeot.com",
+        "opportunities": 41,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "PO": [
+      {
+        "domain": "elcats.ru",
+        "opportunities": 66,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "emex.ru",
+        "opportunities": 66,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "rmsauto.ru",
+        "opportunities": 66,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "RE": [
+      {
+        "domain": "elcats.ru",
+        "opportunities": 43,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "emex.ru",
+        "opportunities": 43,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "rmsauto.ru",
+        "opportunities": 43,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "SE": [
+      {
+        "domain": "trshop.audi.de",
+        "opportunities": 64,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "partsale.eu",
+        "opportunities": 64,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "SK": [
+      {
+        "domain": "trshop.audi.de",
+        "opportunities": 43,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "partsale.eu",
+        "opportunities": 43,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "SU": [
+      {
+        "domain": "japancats.ru",
+        "opportunities": 42,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "SZ": [
+      {
+        "domain": "japancats.ru",
+        "opportunities": 54,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "TS": [
+      {
+        "domain": "emex.ru",
+        "opportunities": 89,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "rmsauto.ru",
+        "opportunities": 89,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "parts.com",
+        "opportunities": 89,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "TY": [
+      {
+        "domain": "toyotacarmine.ru",
+        "opportunities": 7,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "japancats.ru",
+        "opportunities": 7,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "VO": [
+      {
+        "domain": "elcats.ru",
+        "opportunities": 37,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "emex.ru",
+        "opportunities": 37,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "rmsauto.ru",
+        "opportunities": 37,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ],
+    "VW": [
+      {
+        "domain": "trshop.audi.de",
+        "opportunities": 8,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      },
+      {
+        "domain": "partsale.eu",
+        "opportunities": 8,
+        "hits": 0,
+        "unique_pair_hits": 0,
+        "conversion": 0.0
+      }
+    ]
+  }
+}

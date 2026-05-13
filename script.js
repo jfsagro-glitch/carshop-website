@@ -2156,7 +2156,7 @@ function renderPreferentialCars(){
 
     const visibleCars = usaUnder160Cars.filter(matchesImportCatalogRule);
     if (!visibleCars.length) {
-        container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по условиям 05.2021-05.2023 и до 160 л.с. / 115 кВт</div>';
+        container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по условиям 05.2021-05.2023 и до 160 л.с. / 116 кВт</div>';
         return;
     }
 
@@ -2329,6 +2329,36 @@ function telegramFallbackImage(title) {
     return `https://placehold.co/800x600/0b1220/d4af37?text=${label}`;
 }
 
+function isValidMarketOffer(offer) {
+    const details = offer?.details || {};
+    const text = `${offer?.region || ''} ${offer?.text_excerpt || ''} ${offer?.telegram_post || ''}`.toLowerCase();
+    const allowedRegion = /(груз|тбилиси|сша|usa|copart|iaai|европ|герман|mobile|autoscout)/i.test(text);
+    const blockedRegion = /(цена в рб|(?:^|\s)в рб(?:\s|$)|для рб|рб со|беларус|белорус|льготой|\+375|a4e\.by)/i.test(text);
+    const outOfScopeRegion = /(коре|китай|🇰🇷|🇨🇳)/i.test(text);
+    const deliveryRf = /(под ключ|доставка|растамож|тамож|оформлен|в рф|для рф|росси|москв|спб)/i.test(text);
+    const images = Array.isArray(offer?.images) ? offer.images.filter(Boolean) : (offer?.image ? [offer.image] : []);
+    return Boolean(
+        allowedRegion &&
+        !blockedRegion &&
+        !outOfScopeRegion &&
+        deliveryRf &&
+        offer?.year &&
+        offer?.price &&
+        details.engine &&
+        details.power &&
+        details.mileage &&
+        images.length
+    );
+}
+
+function preloadOfferImages(images) {
+    (images || []).filter(Boolean).forEach(src => {
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = src;
+    });
+}
+
 async function loadTelegramOffersSection() {
     const grid = document.getElementById('telegramOffersGrid');
     const meta = document.getElementById('telegramOffersMeta');
@@ -2343,23 +2373,25 @@ async function loadTelegramOffersSection() {
         if (!telegramResponse?.ok && !auctionResponse?.ok) throw new Error('No market feeds available');
         const payload = telegramResponse?.ok ? await telegramResponse.json() : {};
         const auctionPayload = auctionResponse?.ok ? await auctionResponse.json() : {};
-        const telegramOffers = Array.isArray(payload.offers) ? payload.offers : [];
+        const telegramOffers = Array.isArray(payload.offers) ? payload.offers.filter(isValidMarketOffer) : [];
         const auctionOffers = Array.isArray(auctionPayload.offers) ? auctionPayload.offers.map(item => ({
             ...item,
             source_type: 'auction_candidate',
             facts: ['аукционный кандидат', ...(item.facts || [])]
-        })) : [];
+        })).filter(isValidMarketOffer) : [];
         const offers = [...telegramOffers, ...auctionOffers].slice(0, 12);
         if (meta) {
             const dt = payload.generated_at ? new Date(payload.generated_at).toLocaleString('ru-RU') : '';
-            meta.textContent = `Telegram обновлён: ${dt || 'сегодня'}. Источников: ${payload.source_count || 0}, постов обработано: ${payload.parsed_posts || 0}. Дополнительно: проходные кандидаты Copart USA и Германия.`;
+            const displayedCount = Number(payload.displayed_count || telegramOffers.length || 0);
+            meta.textContent = `Telegram обновлён: ${dt || 'сегодня'}. Источников: ${payload.source_count || 0}, подходящих объявлений: ${displayedCount}. Показываем только Грузию, США и Европу с доставкой и растаможкой в РФ.`;
         }
         if (!offers.length) {
             grid.innerHTML = '<div class="usa-empty-state">Пока нет подходящих предложений</div>';
             return;
         }
         grid.innerHTML = offers.map((offer, index) => {
-            const images = Array.isArray(offer.images) && offer.images.length ? offer.images : [offer.image || telegramFallbackImage(offer.title)];
+            const images = Array.isArray(offer.images) && offer.images.length ? offer.images.filter(Boolean) : [offer.image || telegramFallbackImage(offer.title)];
+            preloadOfferImages(images);
             const details = offer.details || {};
             const facts = (offer.facts || []).slice(0, 3).map(fact => `<span class="telegram-offer-card__chip">${escapeHtml(fact)}</span>`).join('');
             const sourceLabel = offer.source_type === 'auction_candidate' ? 'Источник' : 'Пост';
@@ -4067,8 +4099,60 @@ function getImportAgeWindow(){
     };
 }
 
-function getCatalogYearMonth(car){
+const KOREA_PASSABLE_CATALOG = [
+    ['Chevrolet','Spark','1.0','Бензин',75,55], ['Chevrolet','Trax','1.4','Бензин',140,103], ['Chevrolet','Trailblazer','1.35','Бензин',156,115],
+    ['Hyundai','Avante','1.6','Бензин',123,90], ['Hyundai','Elantra','1.6','Бензин',123,90], ['Hyundai','Casper','1.0','Бензин',76,56],
+    ['Hyundai','Kona','2.0','Бензин',149,110], ['Hyundai','Kona','1.6','Гибрид',105,77], ['Hyundai','Sonata','2.0','Бензин',160,116], ['Hyundai','Venue','1.6','Бензин',123,90],
+    ['KIA','K3','1.6','Бензин',123,90], ['KIA','K5','2.0','Бензин',160,116], ['KIA','Morning','1.0','Бензин',76,56], ['KIA','Ray','1.0','Бензин',76,56],
+    ['KIA','Seltos','1.6','Бензин',123,90], ['KIA','Stonic','1.0','Бензин',100,74], ['KIA','Niro','1.6','Гибрид',105,77],
+    ['Renault Samsung','XM3','1.3','Бензин',152,112], ['Renault Samsung','XM3','1.6','Бензин',123,90], ['Renault Samsung','SM6','1.3','Бензин',152,112], ['Renault Samsung','QM6','2.0','Газ/Бензин',144,106],
+    ['SsangYong','Tivoli','1.6','Дизель',136,100], ['SsangYong','Korando','1.6','Дизель',136,100]
+];
+
+function normalizeImportText(value){
+    return String(value || '').toLowerCase().replace(/[^a-zа-я0-9]+/g, ' ').trim();
+}
+
+function parseImportEngine(value){
+    const match = String(value || '').replace(',', '.').match(/\d+(?:\.\d+)?/);
+    return match ? Number(match[0]) : 0;
+}
+
+function getImportImages(car){
+    const images = Array.isArray(car?.images) ? car.images : [];
+    return images
+        .map(img => typeof img === 'string' ? img : (img && (img.url || img.src)))
+        .filter(Boolean);
+}
+
+function findKoreaPassableRule(car){
+    const brand = normalizeImportText(car?.brand);
+    const model = normalizeImportText(`${car?.model || ''} ${car?.name || ''} ${car?.full_title || ''}`);
+    const engine = parseImportEngine(car?.engine || car?.engineVolume);
+    let best = null;
+    let score = -1;
+    KOREA_PASSABLE_CATALOG.forEach(([ruleBrand, ruleModel, ruleEngine, ruleFuel, hp, kw]) => {
+        if (normalizeImportText(ruleBrand) !== brand) return;
+        const modelText = normalizeImportText(ruleModel);
+        if (modelText && !model.includes(modelText)) return;
+        const ruleEngineValue = parseImportEngine(ruleEngine);
+        if (engine && ruleEngineValue && Math.abs(engine - ruleEngineValue) > 0.11) return;
+        const currentScore = modelText.length + (engine && ruleEngineValue ? 8 : 0);
+        if (currentScore > score) {
+            best = { fuel: ruleFuel, hp, kw };
+            score = currentScore;
+        }
+    });
+    return best;
+}
+
+function getCatalogYearMonth(car, requireMonth = false){
     if (!car) return 0;
+    const explicitYear = Number(car.year);
+    const explicitMonth = Number(car.month || car.prod_month || car.first_registration_month || 0);
+    if (Number.isFinite(explicitYear) && explicitYear > 1900 && explicitMonth >= 1 && explicitMonth <= 12) {
+        return explicitYear * 100 + explicitMonth;
+    }
     const source = String(car.productionDate || car.date || car.first_registration || car.years || car.year || car.name || '').trim();
     const monthYear = source.match(/\b(0?[1-9]|1[0-2])[./-]((?:19|20)\d{2})\b/);
     if (monthYear) return parseInt(monthYear[2], 10) * 100 + parseInt(monthYear[1], 10);
@@ -4076,6 +4160,7 @@ function getCatalogYearMonth(car){
     if (yearMonth) return parseInt(yearMonth[1], 10) * 100 + parseInt(yearMonth[2], 10);
     const years = [...source.matchAll(/\b((?:19|20)\d{2})\b/g)].map(match => parseInt(match[1], 10));
     if (!years.length) return 0;
+    if (requireMonth) return 0;
     return Math.max(...years) * 100 + 1;
 }
 
@@ -4112,15 +4197,31 @@ function getCatalogPower(car){
     return { hp, kw: kw || (hp ? Math.round(hp / 1.35962) : 0) };
 }
 
-function matchesImportCatalogRule(car){
-    const yearMonth = getCatalogYearMonth(car);
+function matchesImportCatalogRule(car, region = ''){
+    const strictRegion = String(region || '').toLowerCase();
+    const yearMonth = getCatalogYearMonth(car, Boolean(strictRegion));
+    if (!yearMonth && strictRegion) return false;
     if (yearMonth) {
         const window = getImportAgeWindow();
         if (yearMonth < window.min || yearMonth > window.max) return false;
     }
+    if (strictRegion === 'korea') {
+        const images = getImportImages(car);
+        if (!images.length && !car?.image) return false;
+        const urlText = String(car?.url || car?.link || '');
+        const carId = Number((urlText.match(/carid=(\d+)/) || [])[1] || 0);
+        if (!carId || carId < 10000000) return false;
+        if (!images.concat(car?.image || []).some(src => String(src).includes('ci.encar.com'))) return false;
+        const rule = findKoreaPassableRule(car);
+        if (!rule) return false;
+        car.power_hp = rule.hp;
+        car.power_kw = rule.kw;
+        car.power = `${rule.hp} л.с. / ${rule.kw} кВт`;
+        car.fuel_type = rule.fuel;
+    }
     const power = getCatalogPower(car);
     if (power.hp && power.hp > 160) return false;
-    if (power.kw && power.kw > 115) return false;
+    if (power.kw && power.kw > 116 && !power.hp) return false;
     return true;
 }
 
@@ -4297,7 +4398,7 @@ function setupKoreaUnder160Section(){
 
     if (!state.koreaUnder160 || state.koreaUnder160.data.length !== dataSource.length) {
         state.koreaUnder160 = {
-            data: dataSource.filter(matchesImportCatalogRule).map((car, index) => ({
+            data: dataSource.filter(car => matchesImportCatalogRule(car, 'korea')).map((car, index) => ({
                 ...car,
                 price: getUnder160PriceValue(car),
                 _order: index

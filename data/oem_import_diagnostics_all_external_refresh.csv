@@ -1,0 +1,5 @@
+﻿brand,brand_prefix,part_code,oem_number,accepted,reason
+Audi,AU,CKP,B66B812CE4,0,duplicate_oem_in_lookup
+Audi,AU,CMP,B66B812CE4,0,duplicate_oem_in_lookup
+Seat,SE,CKP,CROPPED-BRAKE-192X192,0,duplicate_oem_in_lookup
+Seat,SE,CMS,CROPPED-BRAKE-192X192,0,duplicate_oem_in_lookup
