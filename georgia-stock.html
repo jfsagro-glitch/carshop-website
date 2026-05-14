@@ -1140,10 +1140,13 @@
                 const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
                 const normalizeAndFilter = data => (data || []).map(normalizeGeorgiaCar).filter(isGeorgiaStockEligible);
                 carsData = normalizeAndFilter(result.data);
-                if (!carsData.length && result._source !== 'json') {
-                    const fallback = await fetch('./cars_georgia_stock.json?v=' + Date.now(), { cache: 'no-store' });
+                if (carsData.length < 20 && result._source !== 'json') {
+                    const fallback = await fetch('./cars_georgia_stock.json?v=georgia-0a516c0-' + Date.now(), { cache: 'no-store' });
                     if (fallback.ok) {
-                        carsData = normalizeAndFilter(await fallback.json());
+                        const fallbackCars = normalizeAndFilter(await fallback.json());
+                        if (fallbackCars.length > carsData.length) {
+                            carsData = fallbackCars;
+                        }
                     }
                 }
                 filteredCars = sortCars(carsData);
