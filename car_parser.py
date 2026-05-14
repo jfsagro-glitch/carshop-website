@@ -399,6 +399,14 @@ def load_passable_import_catalog() -> List[Dict[str, Any]]:
 
 
 GEORGIA_POWER_CATALOG = load_passable_import_catalog()
+GEORGIA_IN_TRANSIT_LOCATION_IDS = {23}
+OVER_LIMIT_HYBRID_VARIANTS = {
+    ("hyundai", "tucson", "1.6"),
+    ("kia", "sportage", "1.6"),
+}
+DISALLOWED_GEORGIA_VARIANTS = {
+    ("volkswagen", "jetta", "1.5"),
+}
 
 
 def normalize_model_text(value: Any) -> str:
@@ -409,6 +417,74 @@ def parse_engine_liters(value: Any) -> float:
     text = str(value or "").replace(",", ".")
     match = re.search(r"\d+(?:\.\d+)?", text)
     return float(match.group()) if match else 0.0
+
+
+def fuel_family(value: Any) -> str:
+    text = normalize_model_text(value)
+    if any(token in text for token in ("plug in", "plugin", "phev", "плагин")):
+        return "hybrid"
+    if any(token in text for token in ("hybrid", "гибрид", "hev")):
+        return "hybrid"
+    if any(token in text for token in ("electric", "electro", "электро", "ev")):
+        return "electric"
+    if any(token in text for token in ("diesel", "дизель")):
+        return "diesel"
+    if any(token in text for token in ("gasoline", "petrol", "бензин", "газ бензин")):
+        return "gasoline"
+    return ""
+
+
+def is_hybrid_record(record: dict) -> bool:
+    fuel_text = " ".join(str(record.get(k) or "") for k in ("fuel_type", "fuel", "power_source"))
+    decoded = record.get("vin_decode") if isinstance(record.get("vin_decode"), dict) else {}
+    fuel_text += " " + str(decoded.get("fuel") or "") + " " + str(decoded.get("electrification") or "")
+    fuel_id = parse_int(record.get("fuel_type_id") or record.get("raw_fuel_type_id") or 0)
+    return fuel_family(fuel_text) == "hybrid" or fuel_id in (6, 10)
+
+
+def is_known_over_limit_hybrid(record: dict) -> bool:
+    if not is_hybrid_record(record):
+        return False
+    brand = normalize_model_text(record.get("brand"))
+    model = normalize_model_text(record.get("model") or record.get("fullName"))
+    engine = parse_engine_liters(record.get("engine"))
+    for rule_brand, rule_model, rule_engine in OVER_LIMIT_HYBRID_VARIANTS:
+        if brand != rule_brand:
+            continue
+        if rule_model not in model:
+            continue
+        if abs(engine - float(rule_engine)) <= 0.11:
+            return True
+    return False
+
+
+def is_known_disallowed_variant(record: dict) -> bool:
+    if is_known_over_limit_hybrid(record):
+        return True
+    region = str(record.get("region") or record.get("regionCode") or "").lower()
+    if region != "georgia":
+        return False
+    brand = normalize_model_text(record.get("brand"))
+    model = normalize_model_text(record.get("model") or record.get("fullName"))
+    engine = parse_engine_liters(record.get("engine"))
+    market = detect_source_market(record)
+    for rule_brand, rule_model, rule_engine in DISALLOWED_GEORGIA_VARIANTS:
+        if brand != rule_brand or rule_model not in model:
+            continue
+        if abs(engine - float(rule_engine)) > 0.11:
+            continue
+        if market != "europe":
+            return True
+    return False
+
+
+def is_georgia_in_transit(record: dict) -> bool:
+    location_id = parse_int(record.get("location_id") or 0)
+    parent_location_id = parse_int(record.get("parent_loc_id") or record.get("parent_location_id") or 0)
+    if location_id in GEORGIA_IN_TRANSIT_LOCATION_IDS or parent_location_id in GEORGIA_IN_TRANSIT_LOCATION_IDS:
+        return True
+    text = " ".join(str(record.get(k) or "") for k in ("location", "status", "availability", "description")).lower()
+    return any(token in text for token in ("по пути в грузию", "on the way to georgia", "in transit to georgia"))
 
 
 def detect_source_market(record: dict) -> str:
@@ -514,6 +590,8 @@ def apply_vin_decode_to_record(record: dict) -> tuple[int, int, str]:
 
 def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
     """Estimate power from known catalog variants for Georgia stock filtering."""
+    if is_known_disallowed_variant(record):
+        return 999, 735, "blocked:known-disallowed-variant"
     vin_hp, vin_kw, vin_source = apply_vin_decode_to_record(record)
     if vin_source:
         return vin_hp, vin_kw, vin_source
@@ -526,6 +604,7 @@ def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
     fuel = normalize_model_text(record.get("fuel_type") or record.get("fuel"))
     engine = parse_engine_liters(record.get("engine"))
     market = detect_source_market(record)
+    record_region = str(record.get("region") or record.get("regionCode") or "").lower()
 
     best = None
     best_score = -1
@@ -536,12 +615,18 @@ def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
         if rule_model and rule_model not in model:
             continue
         rule_market = rule.get("market", "any")
-        if rule_market != "any" and market not in (rule_market, "unknown"):
+        rule_regions = [str(region).lower() for region in rule.get("regions", [])]
+        region_match = bool(record_region and record_region in rule_regions)
+        if not region_match and rule_market != "any" and market not in (rule_market, "unknown"):
             continue
         rule_engine = parse_engine_liters(rule.get("engine"))
         if rule_engine and engine and abs(rule_engine - engine) > 0.11:
             continue
         rule_fuel = normalize_model_text(rule.get("fuel"))
+        record_fuel_family = fuel_family(fuel)
+        rule_fuel_family = fuel_family(rule_fuel)
+        if record_fuel_family and rule_fuel_family and record_fuel_family != rule_fuel_family:
+            continue
         score = 10
         if rule_model:
             score += len(rule_model)
@@ -567,7 +652,8 @@ def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
         record["fuel_type"] = best["fuel_display"]
     if best.get("engine") and not record.get("engine"):
         record["engine"] = str(best["engine"])
-    return hp, kw, f"catalog:{best['market']}"
+    source_market = record_region if record_region and record_region in [str(r).lower() for r in best.get("regions", [])] else best["market"]
+    return hp, kw, f"catalog:{source_market}"
 
 
 def apply_passable_catalog_record(record: dict, required_region: str = "") -> Optional[dict]:
@@ -716,6 +802,8 @@ def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, ma
     result = []
     max_power_kw = max_kw_for_hp_limit(max_power_hp)
     for record in records:
+        if is_georgia_in_transit(record) or is_known_disallowed_variant(record):
+            continue
         if require_photo and not record_has_photo(record):
             continue
         year, month = record_year_month(record)
@@ -1305,8 +1393,8 @@ class MyAutoGeParser:
     PHOTO_BASE = "https://static.my.ge/myauto/photos/"
 
     # Маппинги типов из API
-    FUEL_MAP = {1: "Бензин", 2: "Дизель", 3: "Гибрид", 4: "Электро",
-                5: "Газ/Бензин", 6: "Плагин-гибрид", 7: "Водород"}
+    FUEL_MAP = {1: "Бензин", 2: "Бензин", 3: "Дизель", 4: "Газ/Бензин",
+                5: "Газ/Бензин", 6: "Гибрид", 7: "Электро", 10: "Плагин-гибрид"}
     TRANS_MAP = {1: "Механика", 2: "Автомат", 3: "Вариатор", 4: "Робот"}
     DRIVE_MAP = {1: "FWD", 2: "RWD", 3: "4WD", 4: "AWD"}
 
@@ -1376,6 +1464,12 @@ class MyAutoGeParser:
             car.transmission = self.TRANS_MAP.get(item.get("gear_type_id", 2), "Автомат")
             car.drive        = self.DRIVE_MAP.get(item.get("drive_type_id", 0), "")
             car.color        = str(item.get("color", ""))
+            car.extra["fuel_type_id"] = parse_int(item.get("fuel_type_id") or 0)
+            car.extra["status_id"] = parse_int(item.get("status_id") or 0)
+            car.extra["customs_passed"] = bool(item.get("customs_passed"))
+            car.extra["location_id"] = parse_int(item.get("location_id") or 0)
+            car.extra["parent_loc_id"] = parse_int(item.get("parent_loc_id") or 0)
+            car.extra["trim_name"] = str(item.get("trim_name") or item.get("car_model") or "")
             # hp недоступен в списке — используем engine_volume как запасной индикатор
             car.power        = str(item.get("hp") or "")
 
@@ -1456,6 +1550,11 @@ class MyAutoGeParser:
             for item in items:
                 car = self._item_to_car(item)
                 if car and car.brand:
+                    if is_georgia_in_transit({
+                        "location_id": car.extra.get("location_id"),
+                        "parent_loc_id": car.extra.get("parent_loc_id"),
+                    }):
+                        continue
                     # Фильтр по марке
                     if self.brand and self.brand.lower() not in car.brand.lower():
                         continue
@@ -2509,12 +2608,20 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
             "color": car.color,
             "drive": car.drive,
             "vin": car.vin,
+            "fuel_type_id": car.extra.get("fuel_type_id") or 0,
+            "status_id": car.extra.get("status_id") or 0,
+            "customs_passed": bool(car.extra.get("customs_passed")),
+            "location_id": car.extra.get("location_id") or 0,
+            "parent_loc_id": car.extra.get("parent_loc_id") or 0,
+            "trim_name": car.extra.get("trim_name") or "",
             "url": url,
             "region": "georgia",
             "regionCode": "georgia",
             "images": car.extra.get("images") or ([{"url": car.photos, "order": 1}] if car.photos else []),
             "source": car.source or source,
         }
+        if is_georgia_in_transit(d) or is_known_disallowed_variant(d):
+            continue
         hp, kw, power_source = estimate_georgia_catalog_power(d)
         if hp or kw:
             d["power_hp"] = hp
