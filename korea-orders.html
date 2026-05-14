@@ -477,9 +477,16 @@
                 if (typeof sbLoadCarsWithFallback !== 'function') throw new Error('supabase-client.js не загружен');
                 const result = await sbLoadCarsWithFallback('korea', './cars_korea_stock.json');
                 const data = (result && result.data) ? result.data : [];
-                window.koreaUnder160CarsData = data
+                const normalizeAndFilter = rows => (rows || [])
                     .map(_normalizeKoreaCar)
                     .filter(car => typeof matchesImportCatalogRule !== 'function' || matchesImportCatalogRule(car, 'korea'));
+                window.koreaUnder160CarsData = normalizeAndFilter(data);
+                if (!window.koreaUnder160CarsData.length && result._source !== 'json') {
+                    const fallback = await fetch('./cars_korea_stock.json?v=' + Date.now(), { cache: 'no-store' });
+                    if (fallback.ok) {
+                        window.koreaUnder160CarsData = normalizeAndFilter(await fallback.json());
+                    }
+                }
 
                 function initKoreaSection() {
                     if (typeof setupKoreaUnder160Section === 'function') {

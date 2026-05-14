@@ -73,6 +73,21 @@ def clean_text(value: str) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
 
 
+def build_model_keywords() -> list[str]:
+    keywords = set(MODEL_KEYWORDS)
+    for rule in PASSABLE_CATALOG:
+        brand = clean_text(rule.get("brand", ""))
+        model = clean_text(rule.get("model", ""))
+        if model:
+            keywords.add(model)
+        if brand and model:
+            keywords.add(f"{brand} {model}")
+    return sorted(keywords, key=len, reverse=True)
+
+
+MODEL_KEYWORDS = build_model_keywords()
+
+
 def clean_number(value: str) -> str:
     value = clean_text(value)
     value = re.sub(r"\s+([,.])", r"\1", value)
@@ -177,6 +192,19 @@ def parse_model(text: str) -> str:
     return clean_text(match.group(0)) if match else "Интересное авто"
 
 
+def fill_details_from_rule(details: dict, rule: dict | None) -> dict:
+    if not rule:
+        return details
+    if not details.get("engine"):
+        details["engine"] = f"{rule.get('engine')} {rule.get('fuel')}".strip()
+    if not details.get("power"):
+        details["power"] = f"{rule.get('hp')} л.с. / {rule.get('kw')} кВт"
+    else:
+        details["power"] = f"{rule.get('hp')} л.с. / {rule.get('kw')} кВт"
+    details["power_estimated"] = True
+    return details
+
+
 def is_allowed_offer(text: str, region: str = "") -> bool:
     text_region = text.lower()
     combined = f"{region} {text}".lower()
@@ -260,8 +288,7 @@ def has_required_offer_fields(item: dict) -> bool:
     images = item.get("images") or ([item.get("image")] if item.get("image") else [])
     passable, rule = matches_passable_catalog(item.get("title", ""), details.get("engine", ""), text, item.get("region", ""))
     if passable and rule:
-        details["power"] = f"{rule.get('hp')} л.с."
-        details["engine"] = f"{rule.get('engine')} {rule.get('fuel')}".strip()
+        details = fill_details_from_rule(details, rule)
         item["details"] = details
     return all(
         [
@@ -371,6 +398,118 @@ def prepare_saved_offer(item: dict) -> dict:
     return item
 
 
+def local_image_urls(value) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    urls = []
+    for item in value:
+        url = item if isinstance(item, str) else item.get("url", "")
+        if url and url not in urls:
+            urls.append(url)
+    return urls
+
+
+def format_local_price(item: dict, default_currency: str = "") -> str:
+    price = item.get("price")
+    if not price:
+        return ""
+    try:
+        value = int(round(float(price)))
+    except Exception:
+        return str(price)
+    currency = str(item.get("price_currency") or item.get("currency") or default_currency or "").upper()
+    if currency == "EUR":
+        return f"{value:,} €".replace(",", " ")
+    if currency == "USD":
+        return f"${value:,}".replace(",", " ")
+    return f"{value:,} ₽".replace(",", " ")
+
+
+def local_year_month(item: dict) -> int:
+    year = int(item.get("year") or item.get("first_registration_year") or 0)
+    month = int(item.get("month") or item.get("first_registration_month") or 0)
+    if not month:
+        registration = str(item.get("first_registration") or item.get("productionDate") or "")
+        match = re.search(r"\b(0?[1-9]|1[0-2])[./-](20\d{2})\b", registration)
+        if match:
+            year = int(match.group(2))
+            month = int(match.group(1))
+    return year * 100 + month if year and month else year * 100
+
+
+def build_local_fallback_offer(item: dict, region_label: str, source_label: str, source_type: str, default_currency: str) -> dict | None:
+    images = local_image_urls(item.get("images", []))
+    if not images:
+        return None
+    hp = int(float(item.get("power_hp") or 0))
+    kw = int(float(item.get("power_kw") or 0))
+    if hp > 160 or (kw > 116 and not hp):
+        return None
+    year = str(item.get("year") or item.get("first_registration_year") or "")
+    title = clean_text(f"{item.get('brand', '')} {item.get('model', '')} {year}").strip()
+    details = {
+        "engine": clean_text(f"{item.get('engine', '')} {item.get('fuel_type') or item.get('fuel') or ''}").strip() or "уточняется",
+        "power": clean_text(f"{hp or ''} л.с. / {kw or ''} кВт").strip(" /") if (hp or kw) else "уточняется",
+        "mileage": f"{int(item.get('mileage')):,} км".replace(",", " ") if item.get("mileage") else "уточняется",
+    }
+    offer = {
+        "channel": source_type,
+        "region": region_label,
+        "source": source_label,
+        "source_type": "catalog_fallback",
+        "source_url": item.get("url") or item.get("link") or "#",
+        "title": title,
+        "year": year,
+        "price": format_local_price(item, default_currency) or "Цена по запросу",
+        "image": images[0],
+        "images": images[:12],
+        "details": details,
+        "text_excerpt": (
+            f"{title}: проходной автомобиль {region_label}, {details['engine']}, {details['power']}, "
+            "с фото, доставкой, растаможкой и оформлением в РФ."
+        ),
+        "facts": [
+            "проходной возраст 3-5 лет",
+            "до 160 л.с. / 116 кВт",
+            "доставка и растаможка в РФ",
+        ],
+        "score": 80 + (local_year_month(item) % 10000),
+        "quality": "candidate",
+    }
+    offer["telegram_post"] = build_caption(offer)
+    return offer
+
+
+def load_catalog_fallbacks(limit: int, used_keys: set[tuple[str, str]]) -> list[dict]:
+    sources = [
+        (ROOT / "cars_georgia_stock.json", "Грузия", "MyAuto Georgia", "myauto_georgia", "USD"),
+        (ROOT / "cars_europe_new.json", "Европа", "AutoScout24 / mobile.de", "europe_catalog", "EUR"),
+    ]
+    buckets = []
+    for path, region, source, source_type, default_currency in sources:
+        try:
+            rows = json.load(open(path, encoding="utf-8"))
+        except Exception:
+            rows = []
+        offers = []
+        for item in rows:
+            offer = build_local_fallback_offer(item, region, source, source_type, default_currency)
+            if not offer:
+                continue
+            key = (offer["title"].lower(), offer.get("price", ""))
+            if key in used_keys:
+                continue
+            used_keys.add(key)
+            offers.append(offer)
+        buckets.append(sorted(offers, key=lambda offer: offer.get("score", 0), reverse=True))
+    result = []
+    while len(result) < limit and any(buckets):
+        for bucket in buckets:
+            if bucket and len(result) < limit:
+                result.append(bucket.pop(0))
+    return result
+
+
 def parse_channel(channel: dict, limit_posts: int) -> list[dict]:
     username = channel["username"].lstrip("@")
     url = f"https://t.me/s/{username}"
@@ -410,12 +549,11 @@ def parse_channel(channel: dict, limit_posts: int) -> list[dict]:
         if not passable:
             continue
         if rule:
-            details["engine"] = f"{rule.get('engine')} {rule.get('fuel')}".strip()
-            details["power"] = f"{rule.get('hp')} л.с."
-        if not (details["engine"] and details["power"] and details["mileage"]):
-            continue
-        if not has_delivery_to_rf(text):
-            continue
+            title = f"{rule.get('brand')} {rule.get('model')}"
+            details = fill_details_from_rule(details, rule)
+        if not details["mileage"]:
+            details["mileage"] = "уточняется"
+        has_delivery = has_delivery_to_rf(text)
         facts = []
         if "vin" in text.lower():
             facts.append("есть VIN/данные для проверки")
@@ -425,6 +563,8 @@ def parse_channel(channel: dict, limit_posts: int) -> list[dict]:
             facts.append("есть расчёт под ключ/логистика")
         if re.search(r"рф|росси|москв|спб|растамож|тамож", text, re.I):
             facts.append("доставка и растаможка в РФ")
+        if not has_delivery:
+            facts.append("доставку и растаможку в РФ рассчитаем")
         if re.search(r"copart|iaai|лот", text, re.I):
             facts.append("аукционный лот США")
         if re.search(r"груз", text, re.I):
@@ -444,7 +584,7 @@ def parse_channel(channel: dict, limit_posts: int) -> list[dict]:
             "facts": facts,
         }
         item["score"] = post_score(text, int(channel.get("priority", 1)), images, year, price, details)
-        item["quality"] = "strict"
+        item["quality"] = "strict" if has_delivery else "candidate"
         item["telegram_post"] = build_caption(item)
         items.append(item)
     return items
@@ -455,8 +595,8 @@ def main() -> None:
     parser.add_argument("--channels", default=str(CHANNELS_PATH))
     parser.add_argument("--out", default=str(OUT_JSON))
     parser.add_argument("--markdown", default=str(OUT_MD))
-    parser.add_argument("--limit", type=int, default=10)
-    parser.add_argument("--posts-per-channel", type=int, default=12)
+    parser.add_argument("--limit", type=int, default=8)
+    parser.add_argument("--posts-per-channel", type=int, default=40)
     args = parser.parse_args()
 
     channels = json.load(open(args.channels, encoding="utf-8"))
@@ -465,7 +605,10 @@ def main() -> None:
     if previous_path.exists():
         try:
             previous_payload = json.load(open(previous_path, encoding="utf-8"))
-            previous_offers = [prepare_saved_offer(item) for item in previous_payload.get("offers", [])]
+            previous_offers = [
+                prepare_saved_offer(item) for item in previous_payload.get("offers", [])
+                if item.get("source_type") != "catalog_fallback"
+            ]
         except Exception:
             previous_offers = []
     all_items = []
@@ -484,8 +627,14 @@ def main() -> None:
         key = (item["title"].lower(), item.get("price", ""), item["channel"])
         if key not in dedup or item["score"] >= dedup[key]["score"]:
             dedup[key] = item
-    strict = [item for item in dedup.values() if item.get("quality") == "strict" and has_required_offer_fields(item)]
+    strict = [
+        item for item in dedup.values()
+        if item.get("quality") in {"strict", "candidate"} and has_required_offer_fields(item)
+    ]
     top = sorted(strict, key=lambda item: item["score"], reverse=True)[:args.limit]
+    if len(top) < args.limit:
+        used = {(item["title"].lower(), item.get("price", "")) for item in top}
+        top.extend(load_catalog_fallbacks(args.limit - len(top), used))
 
     payload = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

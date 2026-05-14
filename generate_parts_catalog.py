@@ -3668,6 +3668,14 @@ def is_plausible_oem_number(value: str) -> bool:
     compact = re.sub(r"[^A-Z0-9]", "", token)
     if not token or len(compact) < 6 or len(compact) > 24:
         return False
+    if re.fullmatch(r"20\d{2}[-./]\d{1,2}[-./]\d{1,2}", token):
+        return False
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}", token):
+        return False
+    if re.fullmatch(r"\d{1,2}[A-ZÄÖÜ]{3,}\d{4}", token):
+        return False
+    if any(month in token for month in ("JULI", "JANUAR", "FEBRUAR", "MAERZ", "MÄRZ", "APRIL", "JUNI", "AUGUST", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DEZEMBER")):
+        return False
     if token.startswith(("0X", "HTTP", "WWW", "IMG", "SRC", "WP-", "JS-")):
         return False
     if token.startswith("G-") and len(token) > 8:

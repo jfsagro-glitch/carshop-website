@@ -4579,8 +4579,7 @@
         "G-3Z0088RGKJ"
       ],
       "EMB": [
-        "G-3Z0088RGKJ",
-        "31JULI2025"
+        "G-3Z0088RGKJ"
       ],
       "EMG": [
         "G-3Z0088RGKJ"
@@ -39710,6 +39709,36 @@
       "skipped_invalid_pairs": 0,
       "skipped_invalid_oem": 2,
       "skipped_invalid_reuse": 2,
+      "only_uncovered_pairs": true,
+      "only_catalog_pairs": true,
+      "validate_oem_format": true,
+      "max_codes_per_oem_per_brand": 1
+    },
+    {
+      "source": "data/oem_supplier_all_external_refresh_v4.csv",
+      "imported_at": "2026-05-13T20:41:58Z",
+      "file": "data/oem_supplier_all_external_refresh_v4.csv",
+      "added": 1,
+      "skipped": 0,
+      "skipped_pairs": 0,
+      "skipped_invalid_pairs": 0,
+      "skipped_invalid_oem": 0,
+      "skipped_invalid_reuse": 3,
+      "only_uncovered_pairs": true,
+      "only_catalog_pairs": true,
+      "validate_oem_format": true,
+      "max_codes_per_oem_per_brand": 1
+    },
+    {
+      "source": "all_external_refresh_v4_revalidated",
+      "imported_at": "2026-05-14T04:38:59Z",
+      "file": "data\\oem_supplier_all_external_refresh_v4.csv",
+      "added": 0,
+      "skipped": 0,
+      "skipped_pairs": 0,
+      "skipped_invalid_pairs": 0,
+      "skipped_invalid_oem": 4,
+      "skipped_invalid_reuse": 0,
       "only_uncovered_pairs": true,
       "only_catalog_pairs": true,
       "validate_oem_format": true,

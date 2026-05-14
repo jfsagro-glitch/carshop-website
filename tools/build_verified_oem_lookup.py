@@ -27,6 +27,14 @@ def is_plausible_oem_number(value: str) -> bool:
         return False
     if token.startswith("0X"):
         return False
+    if re.fullmatch(r"20\d{2}[-./]\d{1,2}[-./]\d{1,2}", token):
+        return False
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}", token):
+        return False
+    if re.fullmatch(r"\d{1,2}[A-ZÄÖÜ]{3,}\d{4}", token):
+        return False
+    if any(month in token for month in ("JULI", "JANUAR", "FEBRUAR", "MAERZ", "MÄRZ", "APRIL", "JUNI", "AUGUST", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DEZEMBER")):
+        return False
     if token.startswith(("HTTP", "WWW", "IMG", "SRC")):
         return False
     if token in {"CONTENT", "SCRIPT", "WINDOW", "SEARCH", "VALUE", "FALSE", "TRUE", "NULL", "UNDEFINED", "COOKIE", "DOCTYPE"}:

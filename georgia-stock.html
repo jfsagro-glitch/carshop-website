@@ -209,22 +209,23 @@
 
         .cars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 0.9rem;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 0.65rem;
         }
 
-        @media (min-width: 1500px) { .cars-grid { grid-template-columns: repeat(5, 1fr); } }
-        @media (max-width: 1024px) { .cars-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); } }
-        @media (max-width: 640px)  { .cars-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 1280px) { .cars-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        @media (max-width: 1024px) { .cars-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (max-width: 760px)  { .cars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 520px)  { .cars-grid { grid-template-columns: 1fr; } }
 
         .car-card {
             background: #0f172a;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             transition: all 0.2s;
             cursor: pointer;
             border: 1px solid #1f2937;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
         }
 
         .car-card:hover {
@@ -235,9 +236,9 @@
 
         .car-image {
             width: 100%;
-            height: 230px !important;
-            min-height: 230px !important;
-            max-height: 230px !important;
+            height: 142px !important;
+            min-height: 142px !important;
+            max-height: 142px !important;
             position: relative;
             background: #141f35;
             display: flex;
@@ -265,7 +266,7 @@
             object-fit: contain !important;
             display: block;
             opacity: 1;
-            padding: 6px !important;
+            padding: 4px !important;
         }
 
         .car-image img[loading="lazy"] {
@@ -286,43 +287,45 @@
         }
 
         .car-info {
-            padding: 0.85rem 1rem 1rem;
+            padding: 0.55rem 0.68rem 0.68rem;
         }
 
         .car-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-            color: #f3f4f6;
-            line-height: 1.35;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 0.22rem;
+            color: #ffffff;
+            line-height: 1.18;
+            min-height: 2.05em;
         }
 
         .car-price {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.05rem;
+            font-weight: 800;
             color: #facc15;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.35rem;
         }
 
         .car-price-full {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #10b981;
-            margin-bottom: 0.5rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #86efac;
+            margin-bottom: 0.38rem;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            align-items: baseline;
             gap: 0.25rem;
         }
 
         .car-price-full-label {
-            color: #9ca3af;
-            font-size: 0.78rem;
-            line-height: 1.4;
+            color: #cbd5e1;
+            font-size: 0.68rem;
+            line-height: 1.1;
         }
 
         .car-price-full-value {
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 800;
+            font-size: 0.78rem;
         }
 
         .image-count {
@@ -331,9 +334,9 @@
             right: 10px;
             background: rgba(0,0,0,0.55);
             color: white;
-            padding: 0.3rem 0.55rem;
+            padding: 0.22rem 0.42rem;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 0.72rem;
             border: 1px solid rgba(255,255,255,0.15);
         }
 
@@ -343,57 +346,98 @@
             left: 10px;
             background: rgba(212,175,55,0.85);
             color: #0b1220;
-            padding: 0.25rem 0.6rem;
+            padding: 0.2rem 0.48rem;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 0.72rem;
             font-weight: 700;
         }
 
         .car-specs {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.3rem 0.5rem;
-            font-size: 0.8rem;
-            color: #9ca3af;
-            margin-bottom: 0.75rem;
+            gap: 0.18rem 0.32rem;
+            font-size: 0.69rem;
+            color: #e5edf9;
+            margin-bottom: 0.42rem;
         }
 
         .car-spec-item {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.25rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            min-width: 0;
+            line-height: 1.15;
+            font-weight: 700;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
         }
 
         .car-spec-item i {
-            width: 14px;
+            width: 12px;
             flex-shrink: 0;
+            font-size: 0.72rem;
+        }
+
+        .car-spec-item--wide {
+            grid-column: 1 / -1;
+        }
+
+        .vin-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 14px;
+            align-items: center;
+            column-gap: 0.25rem;
+        }
+
+        .vin-code {
+            color: #60a5fa;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(96, 165, 250, 0.8);
+            font-size: clamp(0.54rem, 0.72vw, 0.64rem);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            letter-spacing: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-width: 0;
+            font-weight: 800;
+        }
+
+        .vin-code:hover {
+            color: #bfdbfe;
+            border-bottom-color: #bfdbfe;
+        }
+
+        .vin-verified {
+            color: #22c55e;
+            font-size: 0.72rem;
+            line-height: 1;
         }
 
         .car-btns {
             display: grid;
-            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
-            gap: 0.45rem;
-            margin-top: 0.65rem;
+            grid-template-columns: 34px minmax(0, 1fr);
+            gap: 0.35rem;
+            margin-top: 0.4rem;
         }
 
         .car-btns .btn-primary,
         .car-btns .btn-secondary {
             width: 100%;
             min-width: 0;
-            min-height: 40px;
-            padding: 0.48rem 0.65rem !important;
+            min-height: 34px;
+            padding: 0.36rem 0.5rem !important;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 0.78rem !important;
-            font-weight: 600;
+            font-size: 0.72rem !important;
+            font-weight: 800;
             transition: all 0.18s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.35rem;
+            gap: 0.28rem;
             white-space: nowrap;
         }
 
@@ -411,6 +455,11 @@
             background: transparent;
             color: #e5e7eb;
             border: 1px solid #374151;
+        }
+
+        .car-btns .source-link {
+            padding: 0 !important;
+            font-size: 0.8rem !important;
         }
 
         .car-btns .btn-secondary:hover {
@@ -1004,20 +1053,21 @@
         const GEORGIA_POWER_CATALOG = [
             ['toyota','rav4','2.0','бензин',152], ['toyota','rav 4','2.0','бензин',152],
             ['toyota','corolla','1.8','гибрид',122], ['toyota','c-hr','1.8','гибрид',122], ['toyota','yaris','1.5','гибрид',116],
-            ['hyundai','tucson','2.0','',150], ['hyundai','santa fe','2.0','дизель',150], ['hyundai','creta','1.6','',123], ['hyundai','i30','1.5','',110], ['hyundai','elantra','2.0','',147],
+            ['hyundai','tucson','2.0','',150], ['hyundai','santa fe','2.0','дизель',150], ['hyundai','creta','1.6','',123], ['hyundai','i30','1.5','',110], ['hyundai','elantra','2.0','',147], ['hyundai','accent','1.6','',120],
             ['kia','sportage','2.0','',150], ['kia','seltos','1.6','',123], ['kia','sorento','2.0','дизель',149],
-            ['volkswagen','tiguan','1.5','бензин',150], ['volkswagen','golf','1.5','бензин',150], ['volkswagen','golf','1.0','бензин',110], ['volkswagen','polo','1.0','бензин',95], ['volkswagen','jetta','1.4','бензин',147], ['volkswagen','jetta','1.5','бензин',158],
+            ['volkswagen','tiguan','1.5','бензин',150], ['volkswagen','golf','1.5','бензин',150], ['volkswagen','golf','1.0','бензин',110], ['volkswagen','polo','1.0','бензин',95], ['volkswagen','jetta','1.4','бензин',147],
             ['bmw','118i','1.5','',140], ['bmw','316d','2.0','дизель',122],
             ['mercedes-benz','c 200','1.5','',150],
             ['subaru','forester','2.0','',150],
             ['lexus','nx 300h','2.5','гибрид',150], ['lexus','ux 250h','2.0','гибрид',135],
             ['nissan','qashqai','1.3','',140], ['nissan','juke','1.0','',114],
-            ['mazda','cx-5','2.0','',150], ['mazda','3','2.0','',150],
-            ['honda','cr-v','1.5','',150], ['honda','hr-v','1.5','гибрид',131],
+            ['mazda','cx-5','2.0','',150], ['mazda','3','2.0','',150], ['mazda','cx-3','2.0','',148],
+            ['honda','cr-v','1.5','',150], ['honda','hr-v','1.5','гибрид',131], ['honda','fit','1.5','',130],
             ['mitsubishi','outlander','2.0','',146], ['mitsubishi','eclipse cross','1.5','',150],
-            ['ford','focus','1.5','',150], ['ford','kuga','1.5','',150], ['ford','ecosport','1.0','',125],
+            ['ford','focus','1.5','',150], ['ford','kuga','1.5','',150], ['ford','ecosport','1.0','',125], ['ford','fiesta','1.6','',120],
             ['renault','duster','1.3','',130], ['renault','arkana','1.3','',150],
-            ['buick','encore gx','1.3','',155], ['chevrolet','trailblazer','1.3','',155], ['chevrolet','trax','1.4','',155]
+            ['buick','encore gx','1.3','',155], ['buick','encore','1.4','',138], ['chevrolet','trailblazer','1.3','',155], ['chevrolet','trax','1.4','',155],
+            ['mini','cooper','1.5','',134], ['mini','countryman','1.5','',134]
         ];
 
         function normalizeGeorgiaText(value) {
@@ -1088,8 +1138,14 @@
         async function loadCarsData() {
             try {
                 const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
-                // Нормализуем данные из JSON fallback
-                carsData = result.data.map(normalizeGeorgiaCar).filter(isGeorgiaStockEligible);
+                const normalizeAndFilter = data => (data || []).map(normalizeGeorgiaCar).filter(isGeorgiaStockEligible);
+                carsData = normalizeAndFilter(result.data);
+                if (!carsData.length && result._source !== 'json') {
+                    const fallback = await fetch('./cars_georgia_stock.json?v=' + Date.now(), { cache: 'no-store' });
+                    if (fallback.ok) {
+                        carsData = normalizeAndFilter(await fallback.json());
+                    }
+                }
                 filteredCars = sortCars(carsData);
 
                 // Показываем timestamp обновления
@@ -1418,6 +1474,7 @@
                 const year = getCarYear(car);
                 const yearDisplay = year ? ` ${year}` : '';
                 const finalImageUrl = firstImage || '';
+                const vinDecoded = car.vin_decode && (car.vin_decode.year || car.vin_decode.engine_l || car.vin_decode.hp);
 
                 return `
                     <div class="car-card" data-index="${index}">
@@ -1430,20 +1487,19 @@
                             <div class="car-title">${car.brand} ${car.model}${yearDisplay}</div>
                             <div class="car-price">${price}</div>
                             ${displayPrice ? `<div class="car-price-full">
-                                <span class="car-price-full-label">Стоимость с доставкой и растаможкой:</span>
+                                <span class="car-price-full-label">под ключ:</span>
                                 <span class="car-price-full-value" id="full-price-${index}">${currencySymbol}${displayPrice.toLocaleString('ru-RU')}</span>
                             </div>` : ''}
                             <div class="car-specs">
-                                ${year ? `<div class="car-spec-item"><i class="fas fa-calendar-alt" style="color:#d4af37"></i> ${year} год</div>` : ''}
                                 ${car.mileage ? `<div class="car-spec-item"><i class="fas fa-road" style="color:#d4af37"></i> ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
                                 ${car.fuel_type ? `<div class="car-spec-item"><i class="fas fa-gas-pump" style="color:#d4af37"></i> ${car.fuel_type}</div>` : ''}
                                 ${car.transmission ? `<div class="car-spec-item"><i class="fas fa-cog" style="color:#d4af37"></i> ${car.transmission}</div>` : ''}
                                 ${car.engine ? `<div class="car-spec-item"><i class="fas fa-car-engine" style="color:#d4af37"></i> ${car.engine} л</div>` : ''}
                                 ${car._powerHp ? `<div class="car-spec-item"><i class="fas fa-gauge-high" style="color:#d4af37"></i> ${car._powerHp} л.с.</div>` : ''}
-                                ${car.vin && car.vin.trim() ? `<div class="car-spec-item">🔑 VIN: <a href="https://www.google.com/search?q=${encodeURIComponent(car.vin.trim())}" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; text-decoration: none; border-bottom: 1px solid #60a5fa;">${car.vin.trim()}</a></div>` : ''}
+                                ${car.vin && car.vin.trim() ? `<div class="car-spec-item car-spec-item--wide vin-row"><a class="vin-code" href="https://www.google.com/search?q=${encodeURIComponent(car.vin.trim())}" target="_blank" rel="noopener noreferrer" title="${car.vin.trim()}">${car.vin.trim()}</a>${vinDecoded ? '<i class="fas fa-check-circle vin-verified" title="VIN проверен"></i>' : ''}</div>` : ''}
                             </div>
                             <div class="car-btns">
-                                ${car.url ? `<a class="btn-secondary" href="${car.url.replace(/"/g, '&quot;')}" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;"><i class="fas fa-external-link-alt"></i> myauto.ge</a>` : ''}
+                                ${car.url ? `<a class="btn-secondary source-link" href="${car.url.replace(/"/g, '&quot;')}" target="_blank" rel="noopener" aria-label="Источник myauto.ge" title="Источник myauto.ge"><i class="fas fa-arrow-up-right-from-square"></i></a>` : ''}
                                 <button class="btn-primary" onclick="addToCartEurope(${index})">
                                     <i class="fas fa-shopping-cart"></i> Заказать
                                 </button>

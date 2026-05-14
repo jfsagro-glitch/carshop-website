@@ -50,6 +50,18 @@ BAD_OEM_FRAGMENTS = {
     "WEBP",
     "SVG",
     "GIF",
+    "JULI",
+    "JANUAR",
+    "FEBRUAR",
+    "MÄRZ",
+    "MAERZ",
+    "APRIL",
+    "JUNI",
+    "AUGUST",
+    "SEPTEMBER",
+    "OKTOBER",
+    "NOVEMBER",
+    "DEZEMBER",
 }
 
 OEM_FORMAT_PATTERNS = {
@@ -181,6 +193,13 @@ def build_brand_oem_index(lookup: dict) -> dict[tuple[str, str], set[str]]:
 def is_plausible_oem(prefix: str, number: str) -> bool:
     token = norm_oem(number)
     if not token or len(token) < 6 or len(token) > 20:
+        return False
+
+    if re.fullmatch(r"20\d{2}[-./]\d{1,2}[-./]\d{1,2}", token):
+        return False
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}", token):
+        return False
+    if re.fullmatch(r"\d{1,2}[A-ZÄÖÜ]{3,}\d{4}", token):
         return False
 
     if any(fragment in token for fragment in BAD_OEM_FRAGMENTS):

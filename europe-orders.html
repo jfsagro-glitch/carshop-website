@@ -896,7 +896,14 @@
         async function loadCarsData() {
             try {
                 const result = await sbLoadCarsWithFallback('europe', './cars_europe_new.json');
-                carsData = (result.data || []).filter(isEuropeCarEligible);
+                const filterEligible = rows => (rows || []).filter(isEuropeCarEligible);
+                carsData = filterEligible(result.data);
+                if (!carsData.length && result._source !== 'json') {
+                    const fallback = await fetch('./cars_europe_new.json?v=' + Date.now(), { cache: 'no-store' });
+                    if (fallback.ok) {
+                        carsData = filterEligible(await fallback.json());
+                    }
+                }
                 filteredCars = [...carsData];
 
                 // Показываем timestamp обновления
@@ -1021,7 +1028,7 @@
                         return false;
                     }
                     
-                    if (!u.includes('img.classistatic.de') && !u.includes('classistatic.de')) {
+                    if (!u.includes('img.classistatic.de') && !u.includes('classistatic.de') && !u.includes('autoscout24.net/listing-images')) {
                         return false;
                     }
                     

@@ -432,8 +432,92 @@ def detect_source_market(record: dict) -> str:
     return "unknown"
 
 
+VIN_DECODE_CACHE: Dict[str, Dict[str, Any]] = {}
+
+
+def decode_vin_nhtsa(vin: str) -> Dict[str, Any]:
+    """Decode public VIN data needed for import eligibility checks."""
+    vin = str(vin or "").strip().upper()
+    if not re.fullmatch(r"[A-HJ-NPR-Z0-9]{17}", vin):
+        return {}
+    if vin in VIN_DECODE_CACHE:
+        return VIN_DECODE_CACHE[vin]
+    if not REQUESTS_AVAILABLE:
+        return {}
+    url = f"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/{vin}"
+    try:
+        resp = requests.get(url, params={"format": "json"}, timeout=12)
+        resp.raise_for_status()
+        payload = resp.json()
+        row = (payload.get("Results") or [{}])[0]
+    except Exception as exc:
+        log.debug(f"VIN decode failed for {vin}: {exc}")
+        VIN_DECODE_CACHE[vin] = {}
+        return {}
+
+    def first_number(*keys: str) -> float:
+        values = []
+        for key in keys:
+            raw = str(row.get(key) or "").replace(",", ".")
+            match = re.search(r"\d+(?:\.\d+)?", raw)
+            if match:
+                values.append(float(match.group()))
+        return max(values) if values else 0.0
+
+    hp = first_number("EngineHP", "EngineHP_to", "Engine Brake (hp)", "Engine Brake (hp) From", "Engine Brake (hp) To", "Engine Power (kW)")
+    if row.get("Engine Power (kW)") and not any(row.get(k) for k in ("EngineHP", "EngineHP_to", "Engine Brake (hp)", "Engine Brake (hp) From", "Engine Brake (hp) To")):
+        hp = round(hp * 1.35962)
+    engine_l = first_number("DisplacementL", "Displacement (L)")
+    if not engine_l:
+        engine_cc = first_number("DisplacementCC", "Displacement (CC)")
+        engine_l = round(engine_cc / 1000, 2) if engine_cc else 0.0
+
+    decoded = {
+        "vin": vin,
+        "source": "nhtsa_vpic",
+        "year": parse_int(row.get("ModelYear") or row.get("Model Year") or 0),
+        "make": str(row.get("Make") or "").strip(),
+        "model": str(row.get("Model") or "").strip(),
+        "engine_l": engine_l,
+        "fuel": str(row.get("FuelTypePrimary") or row.get("Fuel Type - Primary") or row.get("FuelTypeSecondary") or row.get("Fuel Type - Secondary") or "").strip(),
+        "electrification": str(row.get("ElectrificationLevel") or row.get("Electrification Level") or "").strip(),
+        "hp": int(round(hp)) if hp else 0,
+        "kw": int(round(hp / 1.35962)) if hp else 0,
+        "error_code": str(row.get("ErrorCode") or row.get("Error Code") or "").strip(),
+        "error_text": str(row.get("ErrorText") or row.get("Error Text") or "").strip(),
+    }
+    VIN_DECODE_CACHE[vin] = decoded
+    return decoded
+
+
+def apply_vin_decode_to_record(record: dict) -> tuple[int, int, str]:
+    decoded = decode_vin_nhtsa(record.get("vin", ""))
+    if not decoded:
+        return 0, 0, ""
+    record["vin_decode"] = decoded
+    if decoded.get("engine_l") and not record.get("engine"):
+        record["engine"] = str(decoded["engine_l"]).replace(".", ",")
+    if decoded.get("fuel") and not record.get("fuel_type"):
+        record["fuel_type"] = decoded["fuel"]
+    hp = int(decoded.get("hp") or 0)
+    kw = int(decoded.get("kw") or 0)
+    if hp or kw:
+        hp = hp or round(kw * 1.35962)
+        kw = kw or round(hp / 1.35962)
+        record["power_hp"] = hp
+        record["power_kw"] = kw
+        record["power"] = f"{hp} л.с. / {kw} кВт"
+        record["power_source"] = "vin:nhtsa"
+        return hp, kw, "vin:nhtsa"
+    return 0, 0, ""
+
+
 def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
     """Estimate power from known catalog variants for Georgia stock filtering."""
+    vin_hp, vin_kw, vin_source = apply_vin_decode_to_record(record)
+    if vin_source:
+        return vin_hp, vin_kw, vin_source
+
     source_hp = record_power_hp(record)
     source_kw = record_power_kw(record)
 
@@ -506,7 +590,7 @@ def apply_passable_catalog_record(record: dict, required_region: str = "") -> Op
         return None
     if source.startswith("catalog:"):
         market = source.split(":", 1)[1]
-        if region and market not in ("any", region):
+        if region and region != "georgia" and market not in ("any", region):
             return None
     record["year"] = year
     record["month"] = month
@@ -659,6 +743,11 @@ def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, ma
                 record["power"] = record.get("power") or f"{hp} л.с. / {kw} кВт"
                 record["power_source"] = record.get("power_source") or estimate_source
                 record["source_market"] = record.get("source_market") or detect_source_market(record)
+        elif max_power_hp and record.get("vin"):
+            vin_hp, vin_kw, vin_source = apply_vin_decode_to_record(record)
+            if vin_source:
+                hp = vin_hp
+                kw = vin_kw
         if require_known_power and max_power_hp and not hp and not kw:
             continue
         if max_power_hp and hp and hp > max_power_hp:
@@ -1344,9 +1433,19 @@ class MyAutoGeParser:
             if self.max_price:
                 params["PriceTo"] = self.max_price
 
-            data = self._get_json(params)
+            data = None
+            for attempt in range(3):
+                data = self._get_json(params)
+                if data:
+                    break
+                log.warning(f"myauto.ge: повтор страницы {page}, попытка {attempt + 2}/3")
+                time.sleep(1.5 + attempt)
             if not data:
-                break
+                log.warning(f"myauto.ge: пропуск страницы {page} после 3 ошибок")
+                page += 1
+                if page > 5000:
+                    break
+                continue
 
             # Структура ответа: data.data.items + data.data.meta
             items = (data.get("data", {}) or {}).get("items") or data.get("items", [])
@@ -2248,6 +2347,10 @@ class EncarParser:
             images = []
             if first_photo:
                 images = [first_photo]
+                match = re.match(r"(.+_)\d{3}(\.jpg(?:\?.*)?)$", first_photo)
+                if match:
+                    prefix, suffix = match.groups()
+                    images = [f"{prefix}{idx:03d}{suffix}" for idx in range(1, 11)]
 
             full_title = " ".join(filter(None, [manufacturer, model, badge])).strip()
             url = f"https://www.encar.com/dc/dc_cardetailview.do?carid={car_id}"

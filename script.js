@@ -2048,7 +2048,7 @@ async function loadUsaOrdersSection(){
     // Обновляем метрики если есть секция
     if (metrics) {
         try {
-            const visibleUsaCars = usaUnder160Cars.filter(matchesImportCatalogRule);
+            const visibleUsaCars = usaUnder160Cars.filter(car => matchesImportCatalogRule(car));
             const prices = visibleUsaCars.map(item=>item.price).filter(Boolean).sort((a,b)=>a-b);
             const avg = prices.length ? Math.round(prices.reduce((sum,val)=>sum+val,0)/prices.length) : null;
             const min = prices.length ? prices[0] : null;
@@ -2154,7 +2154,7 @@ function renderPreferentialCars(){
         return;
     }
 
-    const visibleCars = usaUnder160Cars.filter(matchesImportCatalogRule);
+    const visibleCars = usaUnder160Cars.filter(car => matchesImportCatalogRule(car));
     if (!visibleCars.length) {
         container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по условиям 05.2021-05.2023 и до 160 л.с. / 116 кВт</div>';
         return;
@@ -2379,7 +2379,7 @@ async function loadTelegramOffersSection() {
             source_type: 'auction_candidate',
             facts: ['аукционный кандидат', ...(item.facts || [])]
         })).filter(isValidMarketOffer) : [];
-        const offers = [...telegramOffers, ...auctionOffers].slice(0, 12);
+        const offers = [...telegramOffers, ...auctionOffers].slice(0, 8);
         if (meta) {
             const dt = payload.generated_at ? new Date(payload.generated_at).toLocaleString('ru-RU') : '';
             const displayedCount = Number(payload.displayed_count || telegramOffers.length || 0);
@@ -4238,7 +4238,7 @@ function setupChinaUnder160Section(){
 
     if (!state.chinaUnder160) {
         state.chinaUnder160 = {
-            data: chinaCars.filter(matchesImportCatalogRule).map((car, index) => ({
+            data: chinaCars.filter(car => matchesImportCatalogRule(car)).map((car, index) => ({
                 ...car,
                 price: getUnder160PriceValue(car),
                 _order: index
