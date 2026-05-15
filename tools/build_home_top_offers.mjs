@@ -31,6 +31,16 @@ function formatBasePrice(car, currency) {
   return car.price ? `${symbol}${Number(car.price).toLocaleString('ru-RU')}` : 'Цена по запросу';
 }
 
+function formatPower(car) {
+  const hp = Number(car.power_hp || 0);
+  const kw = Number(car.power_kw || 0);
+  if (hp && kw) return `${hp} л.с. / ${kw} кВт`;
+  if (hp) return `${hp} л.с.`;
+  if (kw) return `${kw} кВт`;
+  const value = String(car.power || '').trim();
+  return value && !value.includes('?') ? value : 'уточняется';
+}
+
 function isBlockedGeorgia(car) {
   const text = `${car.status || ''} ${car.description || ''} ${car.full_title || ''} ${car.fullName || ''}`.toLowerCase();
   if (/в пути|on\s*the\s*way|ожидает|транзит|coming| onderweg/.test(text)) return true;
@@ -50,7 +60,7 @@ function toOffer(car, source) {
   const images = imageList(car);
   const title = `${car.brand || ''} ${car.model || ''} ${car.year || car.first_registration_year || ''}`.trim();
   const engine = `${car.engine || ''}${car.fuel_type ? ` ${car.fuel_type}` : ''}`.trim() || 'уточняется';
-  const power = car.power || [car.power_hp ? `${car.power_hp} л.с.` : '', car.power_kw ? `${car.power_kw} кВт` : ''].filter(Boolean).join(' / ');
+  const power = formatPower(car);
   const mileage = car.mileage ? `${Number(car.mileage).toLocaleString('ru-RU')} км` : 'уточняется';
   const turnkey = formatRub(car.turnkey_price_rub);
   const base = formatBasePrice(car, source.currency);

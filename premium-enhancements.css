@@ -3316,12 +3316,13 @@ textarea {
 }
 .telegram-offer-card {
     background: #111c2e;
-    border: 1px solid rgba(212, 175, 55, .22);
+    border: 1px solid rgba(148, 163, 184, .28);
     border-radius: 8px;
     overflow: hidden;
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .34);
 }
 .telegram-offer-card__gallery {
     position: relative;
@@ -3383,13 +3384,13 @@ textarea {
 }
 .telegram-offer-card__source,
 .telegram-offer-card__region {
-    color: #d4af37;
-    font-size: .78rem;
-    font-weight: 700;
+    color: #facc15;
+    font-size: .8rem;
+    font-weight: 800;
 }
 .telegram-offer-card__title {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.04rem;
     line-height: 1.25;
     margin: 0;
 }
@@ -3400,22 +3401,22 @@ textarea {
 }
 .telegram-offer-card__spec {
     min-width: 0;
-    border: 1px solid rgba(148, 163, 184, .18);
+    border: 1px solid rgba(148, 163, 184, .3);
     border-radius: 7px;
-    background: rgba(15, 23, 42, .56);
+    background: rgba(15, 23, 42, .74);
     padding: .45rem .5rem;
 }
 .telegram-offer-card__spec span {
     display: block;
-    color: #8796aa;
-    font-size: .68rem;
+    color: #a9b8cc;
+    font-size: .7rem;
     line-height: 1.1;
 }
 .telegram-offer-card__spec b {
     display: block;
     margin-top: .18rem;
-    color: #eef2f7;
-    font-size: .78rem;
+    color: #ffffff;
+    font-size: .82rem;
     line-height: 1.2;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3427,21 +3428,23 @@ textarea {
     gap: .4rem;
 }
 .telegram-offer-card__chip {
-    border: 1px solid rgba(148, 163, 184, .28);
+    border: 1px solid rgba(148, 163, 184, .36);
     border-radius: 999px;
-    color: #cbd5e1;
-    font-size: .74rem;
+    color: #e5eefb;
+    font-size: .76rem;
     padding: .25rem .55rem;
+    background: rgba(15, 23, 42, .62);
 }
 .telegram-offer-card__price {
     color: #facc15;
-    font-size: 1.06rem;
-    font-weight: 800;
+    font-size: 1.18rem;
+    font-weight: 900;
+    letter-spacing: 0;
 }
 .telegram-offer-card__text {
-    color: #aab6c7;
-    font-size: .8rem;
-    line-height: 1.38;
+    color: #c9d5e6;
+    font-size: .86rem;
+    line-height: 1.42;
 }
 .telegram-offer-card__actions {
     display: flex;
