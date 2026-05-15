@@ -45,6 +45,8 @@ def parse_sources(sources_str: str) -> List[Tuple[str, str]]:
             domain = item[: item.index("(")].strip()
             mode = item[item.index("(") + 1 : item.index(")")].strip()
             result.append((domain, mode))
+        elif item:
+            result.append((item, "direct"))
     return result
 
 

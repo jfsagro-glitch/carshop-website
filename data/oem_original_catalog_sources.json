@@ -1,0 +1,735 @@
+{
+  "generated_at": "2026-05-15T04:54:32Z",
+  "note": "Source indexes for manual/API-backed OEM lookup; not flat OEM-number exports.",
+  "rows": [
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "acura",
+      "brand_id": "153",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:acura.brand_id:153.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "AC"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "audi",
+      "brand_id": "3",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:audi.brand_id:3.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "AU"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "audi-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/audi/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "AU"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "bmw",
+      "brand_id": "4",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:bmw.brand_id:4.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "BM"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "bmw-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/bmw/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "BM"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "buick-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/gm/buick/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "BU"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "byd",
+      "brand_id": "45",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:BYD.brand_id:45.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "BY"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "byd-mk3-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/byd/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "BY"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "cadillac",
+      "brand_id": "144",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:cadillac.brand_id:144.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "CA"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "cadillac-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/gm/cadillac/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "CA"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "chevrolet",
+      "brand_id": "5",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:chevrolet.brand_id:5.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "CH"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "chevrolet-usa-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/gm/chevrolet/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "CH"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "chevrolet-elcats-ru",
+      "brand_id": "",
+      "url": "https://www.elcats.ru/chevrolet/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "CH"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "citroen",
+      "brand_id": "7",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:citroen.brand_id:7.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "CI"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "citroen-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/citroen/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "CI"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "chrysler",
+      "brand_id": "6",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:chrysler.brand_id:6.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "CR"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "chrysler-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/chrysler/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "CR"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "chery",
+      "brand_id": "46",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:CHERY.brand_id:46.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "CY"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "omoda",
+      "brand_id": "160",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:omoda.brand_id:160.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "CY"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "chery-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/chery/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "CY"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "dodge",
+      "brand_id": "37",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:dodge.brand_id:37.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "DG"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "fiat",
+      "brand_id": "8",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:FIAT.brand_id:8.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "FI"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "fiat-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/fiat/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "FI"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "ford",
+      "brand_id": "9",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:ford.brand_id:9.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "FO"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "ford-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/ford/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "FO"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "geely",
+      "brand_id": "52",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:GEELY.brand_id:52.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "GL"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "geely",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/geely/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "GL"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "geely-mk-4-mb",
+      "brand_id": "",
+      "url": "https://files.exist.ru/File2.axd?id=05388a30-51b4-469d-8571-7aa94159a3fa&MethodType=340&Name=MK+PARTS+CATALOG+200904.zip",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "GL"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "geely-fc-5-mb",
+      "brand_id": "",
+      "url": "https://files.exist.ru/File2.axd?id=4d602c59-de66-4c96-8ea8-09c9bb0c907a&MethodType=340&Name=FC+PARTS+CATALOG+200903.zip",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "GL"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "geely-ck-5-mb",
+      "brand_id": "",
+      "url": "https://files.exist.ru/File2.axd?id=95caa5f7-311e-483c-82c2-28aa24ed2e58&MethodType=340&Name=CK+PARTS+CATALOG+200807+Mini+edition.zip",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "GL"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "gmc",
+      "brand_id": "145",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:gmc.brand_id:145.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "GM"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "gmc-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/gm/gmc/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "GM"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "honda",
+      "brand_id": "11",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:honda.brand_id:11.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "HO"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "honda-japancats-ru",
+      "brand_id": "",
+      "url": "https://www.japancats.ru/honda/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "HO"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "great-wall",
+      "brand_id": "53",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:GREAT_WALL.brand_id:53.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "HV"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "haval",
+      "brand_id": "156",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:haval.brand_id:156.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "HV"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "hyundai",
+      "brand_id": "12",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:hyundai.brand_id:12.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "HY"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "hyundai-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/hyundai/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "HY"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "infiniti",
+      "brand_id": "13",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:infiniti.brand_id:13.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "IN"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "infiniti-japancats-ru",
+      "brand_id": "",
+      "url": "https://japancats.ru/infiniti/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "IN"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "jeep",
+      "brand_id": "15",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:jeep.brand_id:15.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "JP"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "kia",
+      "brand_id": "16",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:kia.brand_id:16.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "KI"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "kia-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/kia/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "KI"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "land-rover",
+      "brand_id": "18",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:land-rover.brand_id:18.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "LR"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "land-rover-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/landrover/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "LR"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "lexus",
+      "brand_id": "19",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:lexus.brand_id:19.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "LX"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "lexus-japancats-ru",
+      "brand_id": "",
+      "url": "https://www.japancats.ru/lexus/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "LX"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "mazda",
+      "brand_id": "20",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:mazda.brand_id:20.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "MA"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "mazda-japancats-ru",
+      "brand_id": "",
+      "url": "https://www.japancats.ru/mazda/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "MA"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "mercedes",
+      "brand_id": "21",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:mercedes.brand_id:21.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "MB"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "mercedes-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/mercedes/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "MB"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "mitsubishi",
+      "brand_id": "22",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:mitsubishi.brand_id:22.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "MI"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "mitsubishi-europe-japancats-ru",
+      "brand_id": "",
+      "url": "https://www.japancats.ru/mitsubishi/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "MI"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "mini",
+      "brand_id": "39",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:mini.brand_id:39.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "MN"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "mini",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/mini/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "MN"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "geely-ck-5-mb",
+      "brand_id": "",
+      "url": "https://files.exist.ru/File2.axd?id=95caa5f7-311e-483c-82c2-28aa24ed2e58&MethodType=340&Name=CK+PARTS+CATALOG+200807+Mini+edition.zip",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "MN"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "nissan",
+      "brand_id": "23",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:nissan.brand_id:23.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "NI"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "nissan-japancats-ru",
+      "brand_id": "",
+      "url": "https://www.japancats.ru/nissan/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "NI"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "opel",
+      "brand_id": "24",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:opel.brand_id:24.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "OP"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "vauxhall",
+      "brand_id": "61",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:vauxhall.brand_id:61.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "OP"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "opel-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/opel/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "OP"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "peugeot",
+      "brand_id": "25",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:peugeot.brand_id:25.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "PE"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "peugeot-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/peugeot/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "PE"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "porsche",
+      "brand_id": "26",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:porsche.brand_id:26.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "PO"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "porsche-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/porsche/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "PO"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "renault",
+      "brand_id": "27",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:renault.brand_id:27.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "RE"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "renault-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/renault/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "RE"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "seat",
+      "brand_id": "28",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:seat.brand_id:28.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "SE"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "seat-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/seat/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "SE"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "skoda",
+      "brand_id": "29",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:skoda.brand_id:29.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "SK"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "skoda-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/skoda/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "SK"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "subaru",
+      "brand_id": "31",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:subaru.brand_id:31.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "SU"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "subaru-japancats-ru",
+      "brand_id": "",
+      "url": "https://www.japancats.ru/subaru/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "SU"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "suzuki",
+      "brand_id": "32",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:suzuki.brand_id:32.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "SZ"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "suzuki-japancats-ru",
+      "brand_id": "",
+      "url": "https://www.japancats.ru/suzuki/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "SZ"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "toyota",
+      "brand_id": "33",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:toyota.brand_id:33.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "TY"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "toyota-japancats-ru",
+      "brand_id": "",
+      "url": "https://www.japancats.ru/toyota/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "TY"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "volvo",
+      "brand_id": "35",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:volvo.brand_id:35.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "VO"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "volvo-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/volvo/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "VO"
+    },
+    {
+      "source": "AvtoTO original catalogs",
+      "domain": "avtoto.ru",
+      "brand_slug": "vw",
+      "brand_id": "34",
+      "url": "https://www.avtoto.ru/lk/#catalog_original.acat:get_models_list.catalog:vw.brand_id:34.type_cat:1",
+      "mode": "public_index_spa_navigation",
+      "brand_prefix": "VW"
+    },
+    {
+      "source": "Exist original catalog links",
+      "domain": "exist.ru",
+      "brand_slug": "volkswagen-elcats-ru",
+      "brand_id": "",
+      "url": "http://www.elcats.ru/vw/",
+      "mode": "public_index_external_catalog",
+      "brand_prefix": "VW"
+    }
+  ]
+}

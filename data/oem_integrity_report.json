@@ -1,0 +1,430 @@
+{
+  "generated_at": "2026-05-15T05:04:41Z",
+  "strict_original_only": true,
+  "catalog": "data\\parts_catalog.json",
+  "generated_csv": "generated_parts_catalog.csv",
+  "lookup": {
+    "total_pairs": 9660,
+    "covered_pairs": 5291,
+    "missing_pairs": 4369,
+    "coverage_percent": 54.77,
+    "lookup_pairs": 5291,
+    "oem_numbers": 20124,
+    "invalid_oem_numbers": 0,
+    "internal_like_oem_numbers": 0,
+    "reused_oem_over_4_codes": 0,
+    "bad_samples": [],
+    "internal_samples": [],
+    "reuse_samples": [],
+    "missing_samples": [
+      {
+        "brand": "Toyota",
+        "brand_prefix": "TY",
+        "part_code": "HLL",
+        "part_name": "Фара передняя левая",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "Toyota",
+        "brand_prefix": "TY",
+        "part_code": "HLR",
+        "part_name": "Фара передняя правая",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "Toyota",
+        "brand_prefix": "TY",
+        "part_code": "TLL",
+        "part_name": "Фонарь задний левый",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "Toyota",
+        "brand_prefix": "TY",
+        "part_code": "TLR",
+        "part_name": "Фонарь задний правый",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "Toyota",
+        "brand_prefix": "TY",
+        "part_code": "BHF",
+        "part_name": "Тормозной шланг передний",
+        "category": "Тормоза",
+        "group": "Гидравлика"
+      },
+      {
+        "brand": "Toyota",
+        "brand_prefix": "TY",
+        "part_code": "BHR",
+        "part_name": "Тормозной шланг задний",
+        "category": "Тормоза",
+        "group": "Гидравлика"
+      },
+      {
+        "brand": "Toyota",
+        "brand_prefix": "TY",
+        "part_code": "BMC",
+        "part_name": "Главный тормозной цилиндр",
+        "category": "Тормоза",
+        "group": "Гидравлика"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "ABK",
+        "part_name": "Комплект ремня навесного оборудования",
+        "category": "ТО",
+        "group": "Ремни"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "ABR",
+        "part_name": "Ролик ремня навесного оборудования",
+        "category": "ТО",
+        "group": "Ремни"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "ABT",
+        "part_name": "Натяжитель ремня навесного оборудования",
+        "category": "ТО",
+        "group": "Ремни"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "EML",
+        "part_name": "Опора двигателя левая",
+        "category": "Двигатель",
+        "group": "Опоры"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "EMR",
+        "part_name": "Опора двигателя правая",
+        "category": "Двигатель",
+        "group": "Опоры"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "OPS",
+        "part_name": "Датчик давления масла",
+        "category": "Двигатель",
+        "group": "Датчики"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "CKP",
+        "part_name": "Датчик положения коленвала",
+        "category": "Двигатель",
+        "group": "Датчики"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "FBP",
+        "part_name": "Бампер передний",
+        "category": "Кузов/свет",
+        "group": "Кузов"
+      },
+      {
+        "brand": "Volkswagen",
+        "brand_prefix": "VW",
+        "part_code": "RBP",
+        "part_name": "Бампер задний",
+        "category": "Кузов/свет",
+        "group": "Кузов"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "IC",
+        "part_name": "Катушка зажигания",
+        "category": "Двигатель",
+        "group": "Зажигание"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "TK",
+        "part_name": "Ремень/цепь ГРМ комплект",
+        "category": "Двигатель",
+        "group": "ГРМ"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "WP",
+        "part_name": "Водяной насос",
+        "category": "Двигатель",
+        "group": "Охлаждение"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "BPF",
+        "part_name": "Колодки тормозные передние",
+        "category": "Тормоза",
+        "group": "Тормозная система"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "BPR",
+        "part_name": "Колодки тормозные задние",
+        "category": "Тормоза",
+        "group": "Тормозная система"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "BDF",
+        "part_name": "Диск тормозной передний",
+        "category": "Тормоза",
+        "group": "Тормозная система"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "BDR",
+        "part_name": "Диск тормозной задний",
+        "category": "Тормоза",
+        "group": "Тормозная система"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "ABS",
+        "part_name": "Датчик ABS",
+        "category": "Тормоза",
+        "group": "Тормозная система"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "SFL",
+        "part_name": "Амортизатор передний левый",
+        "category": "Подвеска",
+        "group": "Передняя подвеска"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "SFR",
+        "part_name": "Амортизатор передний правый",
+        "category": "Подвеска",
+        "group": "Передняя подвеска"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "SR",
+        "part_name": "Амортизатор задний",
+        "category": "Подвеска",
+        "group": "Задняя подвеска"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "CFL",
+        "part_name": "Рычаг передний левый",
+        "category": "Подвеска",
+        "group": "Передняя подвеска"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "CFR",
+        "part_name": "Рычаг передний правый",
+        "category": "Подвеска",
+        "group": "Передняя подвеска"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "SL",
+        "part_name": "Стойка стабилизатора",
+        "category": "Подвеска",
+        "group": "Стабилизатор"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "TEL",
+        "part_name": "Рулевой наконечник левый",
+        "category": "Рулевое",
+        "group": "Рулевое управление"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "TER",
+        "part_name": "Рулевой наконечник правый",
+        "category": "Рулевое",
+        "group": "Рулевое управление"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "CVB",
+        "part_name": "Пыльник ШРУС",
+        "category": "Трансмиссия",
+        "group": "Привод"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "HLL",
+        "part_name": "Фара передняя левая",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "HLR",
+        "part_name": "Фара передняя правая",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "TLL",
+        "part_name": "Фонарь задний левый",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "TLR",
+        "part_name": "Фонарь задний правый",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "ML",
+        "part_name": "Зеркало левое",
+        "category": "Кузов/свет",
+        "group": "Кузов"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "MR",
+        "part_name": "Зеркало правое",
+        "category": "Кузов/свет",
+        "group": "Кузов"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "ODW",
+        "part_name": "Шайба сливной пробки",
+        "category": "ТО",
+        "group": "Фильтры и жидкости"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "ALB",
+        "part_name": "Ремень генератора",
+        "category": "ТО",
+        "group": "Ремни"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "EML",
+        "part_name": "Опора двигателя левая",
+        "category": "Двигатель",
+        "group": "Опоры"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "EMR",
+        "part_name": "Опора двигателя правая",
+        "category": "Двигатель",
+        "group": "Опоры"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "MAF",
+        "part_name": "Датчик массового расхода воздуха",
+        "category": "Двигатель",
+        "group": "Датчики"
+      },
+      {
+        "brand": "BMW",
+        "brand_prefix": "BM",
+        "part_code": "SBR",
+        "part_name": "Втулка стабилизатора задняя",
+        "category": "Подвеска",
+        "group": "Стабилизатор"
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "brand_prefix": "MB",
+        "part_code": "TER",
+        "part_name": "Рулевой наконечник правый",
+        "category": "Рулевое",
+        "group": "Рулевое управление"
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "brand_prefix": "MB",
+        "part_code": "CVB",
+        "part_name": "Пыльник ШРУС",
+        "category": "Трансмиссия",
+        "group": "Привод"
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "brand_prefix": "MB",
+        "part_code": "HLL",
+        "part_name": "Фара передняя левая",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "brand_prefix": "MB",
+        "part_code": "HLR",
+        "part_name": "Фара передняя правая",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "brand_prefix": "MB",
+        "part_code": "TLL",
+        "part_name": "Фонарь задний левый",
+        "category": "Кузов/свет",
+        "group": "Оптика"
+      }
+    ]
+  },
+  "generated_rows": {
+    "exists": true,
+    "rows": 98529,
+    "invalid_rows": 0,
+    "internal_like_rows": 0,
+    "bad_samples": [],
+    "internal_samples": []
+  }
+}

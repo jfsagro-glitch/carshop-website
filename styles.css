@@ -128,6 +128,27 @@ body.premium .btn-secondary:hover {
     border-color: rgba(0, 0, 0, 0.3) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
 }
+
+.customs-toolbar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 8px;
+    border: 1px solid rgba(250, 204, 21, 0.85);
+    background: linear-gradient(135deg, #facc15, #f59e0b);
+    color: #111827;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.customs-toolbar-btn:hover {
+    color: #111827;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
+}
 body.premium .car-card { 
     background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.92)) !important; 
     border: 1px solid rgba(148, 163, 184, 0.12) !important; 
@@ -1614,6 +1635,10 @@ body.premium .about h2 {
     gap: 0.3rem;
 }
 
+.car-price-full--estimate {
+    background: rgba(250, 204, 21, 0.14);
+}
+
 .car-price-full-label {
     font-size: 0.85rem;
     color: #6b7280;
@@ -1624,6 +1649,12 @@ body.premium .about h2 {
     font-size: 1.1rem;
     color: #111827;
     font-weight: 700;
+}
+
+.car-price-full-note {
+    color: #6b7280;
+    font-size: 0.82rem;
+    font-weight: 600;
 }
 
 .car-specs {

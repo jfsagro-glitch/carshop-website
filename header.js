@@ -20,6 +20,7 @@
       'china-orders.html':    'nav_china',
       'europe-orders.html':   'nav_europe',
       'parts-orders.html':    null,
+      'customs-calculator.html': null,
     };
     var i18nKey = map[page];
     document.querySelectorAll('.logo').forEach(function (logo) {
@@ -38,7 +39,27 @@
       if (!i18nKey && page === 'parts-orders.html' && a.href.includes('parts-orders.html')) {
         a.classList.add('active');
       }
+      if (!i18nKey && page === 'customs-calculator.html' && a.href.includes('customs-calculator.html')) {
+        a.classList.add('active');
+      }
     });
+  }
+
+  /* ── Customs calculator toolbar shortcut ─────────────────── */
+  function initCustomsCalculatorShortcut() {
+    var actions = document.querySelector('.header-actions');
+    if (!actions || actions.querySelector('.customs-toolbar-btn')) return;
+
+    var link = document.createElement('a');
+    link.className = 'customs-toolbar-btn';
+    link.href = 'customs-calculator.html';
+    link.title = 'Таможенный калькулятор';
+    link.setAttribute('aria-label', 'Таможенный калькулятор');
+    link.innerHTML = '<i class="fas fa-calculator" aria-hidden="true"></i>';
+
+    var cart = actions.querySelector('#cartBtn');
+    if (cart) actions.insertBefore(link, cart);
+    else actions.insertBefore(link, actions.firstChild);
   }
 
   /* ── Sticky header shadow on scroll ─────────────────────── */
@@ -200,8 +221,8 @@
       '<a href="parts-orders.html" class="mbn-item" data-page="parts-orders.html">',
       '  <i class="fas fa-wrench"></i><span>Запчасти</span>',
       '</a>',
-      '<a href="tel:+996755666805" class="mbn-item">',
-      '  <i class="fas fa-phone"></i><span>Звонок</span>',
+      '<a href="customs-calculator.html" class="mbn-item" data-page="customs-calculator.html">',
+      '  <i class="fas fa-calculator"></i><span>Расчёт</span>',
       '</a>',
     ].join('');
     document.body.appendChild(nav);
@@ -377,6 +398,7 @@
   /* ── Init all ────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
+    initCustomsCalculatorShortcut();
     initStickyHeader();
     initScrollToTop();
     initWhatsAppButton();

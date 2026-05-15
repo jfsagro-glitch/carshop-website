@@ -4,13 +4,36 @@ from __future__ import annotations
 
 import argparse
 import csv
+import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-def is_plausible_oem_number(value: str) -> bool:
+from tools.oem_validation import is_plausible_oem as is_plausible_oem_for_brand
+from tools.oem_validation import split_oem_candidates
+
+
+BASE_FIELDNAMES = [
+    "brand",
+    "brand_prefix",
+    "part_code",
+    "part_name",
+    "priority",
+    "oem_number",
+    "source_name",
+    "source_url",
+    "retrieved_at",
+]
+
+
+def is_plausible_oem_number(value: str, prefix: str = "") -> bool:
     """Reject common HTML/JS tokens accidentally captured as part numbers."""
+    if prefix:
+        return is_plausible_oem_for_brand(prefix, value, strict_brand=True)
     token = str(value or "").strip().upper()
     if not token:
         return False
@@ -27,6 +50,21 @@ def is_plausible_oem_number(value: str) -> bool:
     return True
 
 
+def merged_fieldnames(rows: list[dict]) -> list[str]:
+    seen = set()
+    fieldnames: list[str] = []
+    for name in BASE_FIELDNAMES:
+        if any(name in row for row in rows):
+            seen.add(name)
+            fieldnames.append(name)
+    for row in rows:
+        for name in row:
+            if name not in seen:
+                seen.add(name)
+                fieldnames.append(name)
+    return fieldnames
+
+
 def merge_oem_sources(source_dir: Path, output_path: Path) -> dict:
     """Merge all oem_supplier_*.csv files and deduplicate."""
     
@@ -41,32 +79,33 @@ def merge_oem_sources(source_dir: Path, output_path: Path) -> dict:
     # Dedup by brand_prefix + part_code + oem_number
     seen = set()
     all_rows = []
-    col_names = None
-    
     for csv_file in csv_files:
         with csv_file.open("r", encoding="utf-8-sig", newline="") as f:
             reader = csv.DictReader(f)
-            if col_names is None:
-                col_names = reader.fieldnames
-            
+
             for row in reader:
                 prefix = str(row.get("brand_prefix") or "").strip().upper()
                 code = str(row.get("part_code") or "").strip().upper()
                 oem = str(row.get("oem_number") or "").strip()
                 if not (prefix and code and oem):
                     continue
-                if not is_plausible_oem_number(oem):
-                    continue
-                
-                key = (prefix, code, oem)
-                if key not in seen:
-                    seen.add(key)
-                    all_rows.append(row)
+                for candidate in split_oem_candidates(oem):
+                    if not is_plausible_oem_number(candidate, prefix):
+                        continue
+
+                    key = (prefix, code, candidate)
+                    if key not in seen:
+                        seen.add(key)
+                        out = dict(row)
+                        out["brand_prefix"] = prefix
+                        out["part_code"] = code
+                        out["oem_number"] = candidate
+                        all_rows.append(out)
     
     # Write merged file
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=col_names)
+        writer = csv.DictWriter(f, fieldnames=merged_fieldnames(all_rows), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(all_rows)
     

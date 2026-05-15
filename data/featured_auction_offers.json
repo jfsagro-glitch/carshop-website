@@ -1,7 +1,42 @@
 {
-  "generated_at": "2026-05-08T14:20:00Z",
+  "generated_at": "2026-05-15T05:30:00Z",
   "note": "Кандидаты для ежедневной проверки по аукционам и европейским площадкам. Финальную цену, историю и доступность проверяет менеджер перед ставкой.",
   "offers": [
+    {
+      "channel": "georgia-stock-candidate",
+      "region": "Грузия / MyAuto / доставка и растаможка в РФ",
+      "source": "EXPO MIR Georgia stock",
+      "source_url": "https://myauto.ge/ru/pr/121368885",
+      "title": "KIA Sportage 2023",
+      "year": "2023",
+      "price": "$28 000 / под ключ в РФ около 2 679 000 ₽",
+      "image": "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_1.jpg?v=1",
+      "images": [
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_1.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_2.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_3.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_4.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_5.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_6.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_7.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_8.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_9.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_10.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_11.jpg?v=1",
+        "https://static.my.ge/myauto/photos/8/8/8/6/3/large/121368885_12.jpg?v=1"
+      ],
+      "details": {
+        "engine": "1.6 дизель",
+        "power": "150 л.с.",
+        "mileage": "13 000 км"
+      },
+      "facts": [
+        "под ключ в РФ около 2,68 млн ₽",
+        "расчёт по месяцу выпуска 01.2023: ЕТС 3–5 лет",
+        "в наличии в Грузии"
+      ],
+      "text_excerpt": "KIA Sportage 2023 из Грузии: дизель 1.6, автомат, 4WD, 13 000 км. Расчёт по курсам ЦБ на 15.05.2026: пошлина, сбор, утильсбор, брокер, СБКТС/ЭПТС, реэкспорт, 2% конвертации и комиссия включены."
+    },
     {
       "channel": "copart-usa-candidate",
       "region": "США / Copart",

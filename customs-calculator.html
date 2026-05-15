@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таможенный калькулятор РФ/ЕАЭС — EXPO MIR</title>
+    <meta name="description" content="Калькулятор таможенных платежей при ввозе автомобиля в РФ/ЕАЭС: ЕТС для физлиц, СТП для юрлиц и электромобилей, утильсбор, акциз, НДС.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Таможенный калькулятор — EXPO MIR">
+    <meta property="og:description" content="Расчёт пошлины, таможенного сбора, акциза, НДС и утильсбора для ввоза авто в РФ/ЕАЭС.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cmsauto.store/images/logo.png">
+    <meta property="og:url" content="https://cmsauto.store/customs-calculator.html">
+    <meta name="theme-color" content="#0b1220">
+    <link rel="canonical" href="https://cmsauto.store/customs-calculator.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="premium-enhancements.css">
+    <link rel="stylesheet" href="src/features/customs-calculator/customs-calculator.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="premium">
+    <a href="#main-content" class="skip-link">Перейти к содержимому</a>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo logo--home"><img src="images/logo.png" alt="EXPO MIR" class="logo-img"><span>EXPO MIR</span></a>
+                <nav class="nav">
+                    <a href="georgia-stock.html" data-i18n="nav_georgia">Грузия</a>
+                    <a href="usa-orders.html" data-i18n="nav_usa">США</a>
+                    <a href="korea-orders.html" data-i18n="nav_korea">Корея</a>
+                    <a href="china-orders.html" data-i18n="nav_china">Китай</a>
+                    <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
+                    <a href="parts-orders.html">Запчасти</a>
+                </nav>
+                <div class="header-actions">
+                    <a class="customs-toolbar-btn" href="customs-calculator.html" aria-label="Таможенный калькулятор" title="Таможенный калькулятор">
+                        <i class="fas fa-calculator" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn-secondary" href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer">Заявка</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="cc-hero">
+            <div class="container">
+                <div class="cc-hero__content">
+                    <span class="cc-eyebrow"><i class="fas fa-calculator"></i> РФ/ЕАЭС 2026</span>
+                    <h1>Калькулятор таможенных платежей</h1>
+                    <p>Расчёт для легковых автомобилей: физлицо по ЕТС, юрлицо/СТП, электромобили, утильсбор и сценарий уже растаможенного авто в ЕАЭС.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cc-page">
+            <div class="container">
+                <div id="customsCalculatorApp"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EXPO MIR</h4>
+                    <p>Надёжный партнёр в покупке автомобилей из-за рубежа. Работаем без предоплаты с 2020 года.</p>
+                    <div class="footer-social">
+                        <a href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:carexportgeo@bk.ru" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Каталоги</h4>
+                    <ul>
+                        <li><a href="georgia-stock.html">Грузия — актуальный сток</a></li>
+                        <li><a href="usa-orders.html">США</a></li>
+                        <li><a href="korea-orders.html">Корея</a></li>
+                        <li><a href="china-orders.html">Китай</a></li>
+                        <li><a href="europe-orders.html">Европа</a></li>
+                        <li><a href="parts-orders.html">Запчасти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li>Продажа автомобилей</li>
+                        <li>Растаможка под ключ</li>
+                        <li>Доставка 3–5 дней</li>
+                        <li>Проверка по VIN</li>
+                        <li>Оформление документов</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone footer-icon"></i><a href="tel:+996755666805">+996 755 666 805</a></p>
+                    <p><i class="fas fa-envelope footer-icon"></i><a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a></p>
+                    <p><i class="fab fa-whatsapp footer-icon"></i><a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+                    <p><i class="fab fa-telegram footer-icon"></i><a href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer">Telegram-канал</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EXPO MIR. Все права защищены.</p>
+                <p class="footer-bottom__note">Калькулятор не является юридическим заключением</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="src/features/customs-calculator/CustomsCalculatorPage.js"></script>
+    <script src="header.js?v=20260515-customs"></script>
+</body>
+</html>

@@ -17,7 +17,7 @@ from collections import defaultdict
 from pathlib import Path
 from threading import Lock, local
 from typing import Dict, Iterable, List, Optional, Tuple
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 import requests
 
@@ -26,6 +26,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from generate_parts_catalog import get_merged_oem_lookup  # noqa: E402
+from tools.oem_validation import is_plausible_oem as is_plausible_oem_for_brand  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -46,6 +47,8 @@ SEARCH_TEMPLATES = {
     "elcats.ru": "https://elcats.ru/search?q={query}",
     "hondaworld.ru": "https://www.hondaworld.ru/search?q={query}",
     "acurapartswarehouse.com": "https://www.acurapartswarehouse.com/search?q={query}",
+    "relines.ru": "https://relines.ru/search?q={query}",
+    "exist.ru": "https://exist.ru/price/?pcode={query}",
 }
 
 SITE_SEARCH_TEMPLATE = "https://duckduckgo.com/html/?q={query}"
@@ -80,10 +83,20 @@ SITE_SEARCH_ENABLED_DOMAINS = {
     "jedip.ru",
     "auto2.ru",
     "parts.com",
+    "avtoto.ru",
+    "gmpartsgiant.com",
+    "xn--80aaonli0a.xn--p1ai",
+    "irito-parts.ru",
+    "relines.ru",
+    "shop.chinacar-club.ru",
+    "haval-service.ru",
+    "great-wall-parts.ru",
 }
 
 TRUSTED_EXTRACT_DOMAINS = {
     "emex.ru",
+    "exist.ru",
+    "relines.ru",
     "exist.ru",
     "acurapartswarehouse.com",
     "hondaworld.ru",
@@ -91,6 +104,60 @@ TRUSTED_EXTRACT_DOMAINS = {
     "bmwcats.com",
     "elcats.ru",
     "partsale.eu",
+    # Multi-brand Japanese/European OEM catalogs
+    "japan-parts.eu",
+    "autoparts24.eu",
+    "alvadi.ee",
+    "relines.ru",
+}
+
+COMMON_BAD_OEM_PATTERNS = [
+    re.compile(r"20\d{2}[-./]\d{1,2}[-./]\d{1,2}"),
+    re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}"),
+    re.compile(r"\d{1,2}[A-ZÄÖÜ]{3,}\d{4}"),
+    re.compile(r"\d{2,4}X\d{2,4}"),
+]
+
+BAD_OEM_WORDS = {
+    "CONTENT",
+    "SCRIPT",
+    "STYLE",
+    "WINDOW",
+    "RETURN",
+    "SEARCH",
+    "PARTS",
+    "QUERY",
+    "INDEX",
+    "CLASS",
+    "VALUE",
+    "FALSE",
+    "TRUE",
+    "NULL",
+    "UNDEFINED",
+    "COOKIE",
+    "DOCTYPE",
+    "PRESET",
+    "SPACING",
+    "DISPLAY",
+    "MARGIN",
+    "PADDING",
+    "BORDER",
+    "INLINE",
+}
+
+BAD_DATE_WORDS = {
+    "JULI",
+    "JANUAR",
+    "FEBRUAR",
+    "MÄRZ",
+    "MAERZ",
+    "APRIL",
+    "JUNI",
+    "AUGUST",
+    "SEPTEMBER",
+    "OKTOBER",
+    "NOVEMBER",
+    "DEZEMBER",
 }
 
 BRAND_QUERY_HINTS = {
@@ -104,6 +171,37 @@ BRAND_QUERY_HINTS = {
     "SE": ["seat"],
     "TY": ["toyota"],
     "LX": ["lexus"],
+    "NI": ["nissan"],
+    "IN": ["infiniti"],
+    "HY": ["hyundai"],
+    "KI": ["kia"],
+    "GE": ["genesis"],
+    "MA": ["mazda"],
+    "MI": ["mitsubishi"],
+    "SU": ["subaru"],
+    "SZ": ["suzuki"],
+    "VO": ["volvo"],
+    "FO": ["ford"],
+    "LR": ["land rover", "landrover"],
+    "OP": ["opel", "vauxhall"],
+    "CA": ["cadillac"],
+    "BU": ["buick"],
+    "CH": ["chevrolet"],
+    "GM": ["gmc"],
+    "JP": ["jeep"],
+    "DG": ["dodge"],
+    "CR": ["chrysler"],
+    "RE": ["renault"],
+    "PE": ["peugeot"],
+    "CI": ["citroen"],
+    "FI": ["fiat"],
+    "PO": ["porsche"],
+    "TS": ["tesla"],
+    "GL": ["geely"],
+    "BY": ["byd"],
+    "CG": ["changan"],
+    "CY": ["chery", "omoda"],
+    "HV": ["haval", "great wall"],
 }
 
 OEM_FORMAT_PATTERNS = {
@@ -118,6 +216,11 @@ OEM_FORMAT_PATTERNS = {
     "BM": [
         re.compile(r"\b\d{2}[\s\-]?\d{2}[\s\-]?\d{1,7}\b"),
     ],
+    "MN": [
+        # Mini uses BMW-style 11-digit numbers
+        re.compile(r"\b\d{11}\b"),
+        re.compile(r"\b\d{2}[\s\-]?\d{2}[\s\-]?\d{1,7}\b"),
+    ],
     "MB": [
         re.compile(r"\bA\d{10}\b"),
         re.compile(r"\bA\d{3}\s?\d{2}\s?\d{2}\s?\d{2}\b"),
@@ -127,6 +230,164 @@ OEM_FORMAT_PATTERNS = {
     ],
     "AU": [
         re.compile(r"\b[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[A-Z0-9]{0,2}\b"),
+    ],
+    "SK": [
+        re.compile(r"\b[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[A-Z0-9]{0,2}\b"),
+    ],
+    "SE": [
+        re.compile(r"\b[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[A-Z0-9]{0,2}\b"),
+    ],
+    # Toyota / Lexus: 5+5 digits with hyphen, e.g. 90311-35006
+    "TY": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{5}-[A-Z0-9]{5}\b"),
+        re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"),
+        re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b"),
+    ],
+    "LX": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{5}-[A-Z0-9]{5}\b"),
+        re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"),
+        re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b"),
+    ],
+    # Nissan / Infiniti: 5+5 or 5+alpha+digits
+    "NI": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{5}-[A-Z0-9]{4,5}\b"),
+    ],
+    "IN": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{5}-[A-Z0-9]{4,5}\b"),
+    ],
+    # Hyundai / Kia / Genesis: 5+5 digits with hyphen
+    "HY": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{5}-[A-Z0-9]{5}\b"),
+        re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"),
+        re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b"),
+    ],
+    "KI": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{5}-[A-Z0-9]{5}\b"),
+        re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"),
+        re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b"),
+    ],
+    "GE": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{5}-[A-Z0-9]{5}\b"),
+        re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"),
+        re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b"),
+    ],
+    # Mazda: letter-prefix codes like BPYN-XX-XXX, LF01-YY-ZZ0
+    "MA": [
+        re.compile(r"\b[A-Z0-9]{2,4}-[A-Z0-9]{2,3}-[A-Z0-9]{2,3}\b"),
+        re.compile(r"\b[A-Z]\d{3}-[A-Z0-9]{2}-[A-Z0-9]{3}\b"),
+    ],
+    # Mitsubishi: MN/MD/MR + 6 digits
+    "MI": [
+        re.compile(r"\bM[NDCROP]\d{6}\b"),
+        re.compile(r"\bMD\d{6}\b"),
+    ],
+    # Subaru: 6 digit + suffix or pure numeric
+    "SU": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{8}\b"),
+        re.compile(r"\b[A-Z]{2}\d{6}\b"),
+    ],
+    # Suzuki: similar to Toyota-style
+    "SZ": [
+        re.compile(r"\b\d{5}-\d{5}\b"),
+        re.compile(r"\b\d{8}\b"),
+    ],
+    # Volvo: 8-digit numeric
+    "VO": [
+        re.compile(r"\b3\d{7}\b"),
+        re.compile(r"\b\d{8}\b"),
+    ],
+    # Ford: alphanumeric with hyphens
+    "FO": [
+        re.compile(r"\b[A-Z]\d[A-Z]{2}-[A-Z0-9]{4,5}-[A-Z]{1,2}\b"),
+        re.compile(r"\b[A-Z]{2}\d{7}\b"),
+        re.compile(r"\bF[A-Z0-9]{8,10}\b"),
+    ],
+    # Land Rover: LR + 6 digits, or ANR/RTC + digits
+    "LR": [
+        re.compile(r"\bLR\d{6}\b"),
+        re.compile(r"\b[A-Z]{3}\d{4,5}[A-Z]?\b"),
+    ],
+    # Opel / GM-Europe: 8-13 digits
+    "OP": [re.compile(r"\b\d{8,13}\b")],
+    "CA": [re.compile(r"\b\d{8,13}\b")],
+    "BU": [re.compile(r"\b\d{8,13}\b")],
+    "CH": [re.compile(r"\b\d{8,13}\b")],
+    "GM": [re.compile(r"\b\d{8,13}\b")],
+    # Jeep/Dodge/Chrysler (Stellantis/Mopar): numeric 8-13 with optional letter suffix
+    "JP": [
+        re.compile(r"\b\d{9,13}\b"),
+        re.compile(r"\b\d{8,10}[A-Z]{1,2}\b"),
+        re.compile(r"\b[A-Z]{2}\d{8,10}\b"),
+    ],
+    "DG": [
+        re.compile(r"\b\d{9,13}\b"),
+        re.compile(r"\b\d{8,10}[A-Z]{1,2}\b"),
+    ],
+    "CR": [
+        re.compile(r"\b\d{9,13}\b"),
+        re.compile(r"\b\d{8,10}[A-Z]{1,2}\b"),
+    ],
+    # Renault: 8XXXX pattern
+    "RE": [
+        re.compile(r"\b\d{8}\b"),
+        re.compile(r"\b[0-9A-Z]{2}\s\d{3}\s\d{3}\b"),
+    ],
+    # Peugeot: 9-digit or alphanumeric
+    "PE": [
+        re.compile(r"\b\d{9,10}\b"),
+        re.compile(r"\b[0-9A-Z]{4}\s[0-9A-Z]{2}\b"),
+    ],
+    # Citroen: same as Peugeot (Stellantis)
+    "CI": [
+        re.compile(r"\b\d{9,10}\b"),
+        re.compile(r"\b[0-9A-Z]{4}\s[0-9A-Z]{2}\b"),
+    ],
+    # Fiat: 8-digit numeric
+    "FI": [
+        re.compile(r"\b\d{8,10}\b"),
+    ],
+    # Porsche: NNN.NNN.NNN.NN style
+    "PO": [
+        re.compile(r"\b\d{3}[\.\s]?\d{3}[\.\s]?\d{3}[\.\s]?\d{0,2}\b"),
+        re.compile(r"\b9\d{2}[\s\-\.]\d{3}[\s\-\.]\d{3}[\s\-\.]\d{2}\b"),
+    ],
+    # Haval / Great Wall: XXXXXXXX-EG01 / XXXXXXXX-ED01 pattern
+    "HV": [
+        re.compile(r"\b[0-9]{7,10}-E[GD]\d{2}\b"),
+        re.compile(r"\b[0-9]{7,10}-[A-Z]{2}\d{2}\b"),
+    ],
+    # Chery / Omoda: A11-XXXXXXX / T11-XXXXXXX pattern
+    "CY": [
+        re.compile(r"\b[AT]\d{2}-[0-9]{7,10}\b"),
+        re.compile(r"\b[0-9]{3}[HJ]-[0-9]{7,10}\b"),
+        re.compile(r"\bSQRE4[A-Z0-9]{2,10}-[0-9]{7,10}\b"),
+    ],
+    # Geely: 10-digit numeric or JLH-prefix
+    "GL": [
+        re.compile(r"\b[0-9]{10}\b"),
+        re.compile(r"\bJLH-[A-Z0-9]{6,12}\b"),
+    ],
+    # Changan: F01LXXXXX pattern
+    "CG": [
+        re.compile(r"\bF01L[0-9]{5,6}\b"),
+        re.compile(r"\bJL[0-9][A-Z][0-9]{2,4}[A-Z]{0,4}\b"),
+    ],
+    # BYD: BYD-prefix or 10-digit numeric or XXXXXXXXXX-XX
+    "BY": [
+        re.compile(r"\bBYD[0-9]{7,10}\b"),
+        re.compile(r"\b[0-9]{10}(-[0-9]{2})?\b"),
+    ],
+    # Tesla: XXXXXXX-XX-X (7-digit + 2-digit + letter)
+    "TS": [
+        re.compile(r"\b[0-9]{7}-[0-9]{2}-[A-Z]\b"),
     ],
 }
 
@@ -154,14 +415,19 @@ class GapTargetedImporter:
         "duckduckgo.com",
     }
 
-    def __init__(self, timeout: int = 8, max_oem_reuse_per_domain: int = 2):
+    def __init__(
+        self,
+        timeout: int = 8,
+        max_oem_reuse_per_domain: int = 2,
+        lookup_pairs: Optional[Iterable[Tuple[str, str]]] = None,
+    ):
         self.timeout = timeout
         self.max_oem_reuse_per_domain = max(1, int(max_oem_reuse_per_domain))
         self._tls = local()
         self._lock = Lock()
         self.results: List[Dict[str, str]] = []
         self.failed_searches: List[Dict[str, str]] = []
-        self._lookup_pairs = set(get_merged_oem_lookup().keys())
+        self._lookup_pairs = set(lookup_pairs) if lookup_pairs is not None else set(get_merged_oem_lookup().keys())
         self._domain_stats: Dict[str, Dict[str, int]] = defaultdict(lambda: {"attempts": 0, "hits": 0})
         self._domain_oem_pairs: Dict[Tuple[str, str], set[Tuple[str, str]]] = defaultdict(set)
 
@@ -187,6 +453,70 @@ class GapTargetedImporter:
         token = re.sub(r"[^A-Z0-9\-]", "", token)
         token = re.sub(r"-{2,}", "-", token)
         return token.strip("-")
+
+    def _normalize_domain(self, value: str) -> str:
+        text = str(value or "").strip().lower()
+        if not text:
+            return ""
+        if "://" in text:
+            parsed = urlparse(text)
+            text = parsed.netloc or parsed.path
+        text = text.split("/", 1)[0].split("?", 1)[0].strip()
+        if text.startswith("www."):
+            text = text[4:]
+        return text
+
+    def _looks_like_html_or_date_token(self, token: str) -> bool:
+        token = self._normalize_oem(token)
+        compact = re.sub(r"[^A-Z0-9]", "", token)
+        if not token or not compact:
+            return True
+        if token in BAD_OEM_WORDS:
+            return True
+        if any(word in token for word in BAD_DATE_WORDS):
+            return True
+        if any(pattern.fullmatch(token) or pattern.fullmatch(compact) for pattern in COMMON_BAD_OEM_PATTERNS):
+            return True
+        if token.startswith(("HTTP", "WWW", "IMG", "SRC", "DATA", "WP-", "JS-")):
+            return True
+        if token.startswith("G-") and len(token) > 8:
+            return True
+        return False
+
+    def _compact_text(self, value: str) -> str:
+        return re.sub(r"[^A-Z0-9А-ЯЁ]", "", str(value or "").upper())
+
+    def _page_has_search_context(
+        self,
+        text: str,
+        query: str,
+        part_code: str,
+        brand_prefix: str,
+        part_name: str,
+    ) -> bool:
+        page = str(text or "")
+        if not page:
+            return False
+
+        page_upper = page.upper()
+        compact_page = self._compact_text(page)
+        compact_part = self._compact_text(part_code)
+        compact_query = self._compact_text(query)
+
+        if compact_part and len(compact_part) >= 2 and compact_part in compact_page:
+            return True
+        if compact_query and len(compact_query) >= 6 and compact_query in compact_page:
+            return True
+
+        hints = BRAND_QUERY_HINTS.get(brand_prefix, [])
+        brand_hit = any(hint.upper() in page_upper for hint in hints if len(hint) >= 2)
+        name_words = [
+            w.upper()
+            for w in re.findall(r"[A-Za-zА-Яа-яЁё0-9]{4,}", str(part_name or ""))
+            if w.upper() not in {"OEM", "ORIGINAL", "PARTS", "ЗАПЧАСТЬ"}
+        ]
+        part_name_hit = any(word in page_upper for word in name_words[:4])
+        return brand_hit and part_name_hit
 
     def _candidate_tokens(self, html: str) -> Iterable[str]:
         upper = html.upper()
@@ -219,31 +549,6 @@ class GapTargetedImporter:
             return []
 
         normalized_part = part_code.strip().upper()
-        blacklist = {
-            "HTTP",
-            "HTTPS",
-            "CONTENT",
-            "SCRIPT",
-            "STYLE",
-            "WINDOW",
-            "RETURN",
-            "SEARCH",
-            "PARTS",
-            "QUERY",
-            "INDEX",
-            "CLASS",
-            "VALUE",
-            "FALSE",
-            "TRUE",
-            "PRESET",
-            "SPACING",
-            "DISPLAY",
-            "MARGIN",
-            "PADDING",
-            "BORDER",
-            "INLINE",
-        }
-
         ranked: List[Tuple[int, str]] = []
         seen = set()
         for token in tokens:
@@ -251,15 +556,11 @@ class GapTargetedImporter:
                 continue
             seen.add(token)
 
-            if token in blacklist:
+            if self._looks_like_html_or_date_token(token):
                 continue
             if "--" in token:
                 continue
-            if token.startswith("WP-") or token.startswith("JS-"):
-                continue
             if re.fullmatch(r"0X[0-9A-F]+", token):
-                continue
-            if re.fullmatch(r"\d{2,4}X\d{2,4}", token):
                 continue
             if token == normalized_part:
                 continue
@@ -300,13 +601,15 @@ class GapTargetedImporter:
 
     def _is_plausible_oem(self, token: str, brand_prefix: str) -> bool:
         token = self._normalize_oem(token)
+        if not is_plausible_oem_for_brand(brand_prefix, token, strict_brand=True):
+            return False
         if not token or len(token) < 6 or len(token) > 20:
             return False
 
         if any(part in token for part in self.BAD_OEM_FRAGMENTS):
             return False
 
-        if token.startswith(("HTTP", "WWW", "IMG", "SRC", "DATA")):
+        if self._looks_like_html_or_date_token(token):
             return False
 
         if re.fullmatch(r"[A-Z]{4,}", token):
@@ -357,7 +660,7 @@ class GapTargetedImporter:
         return True
 
     def _is_domain_allowed_oem(self, domain: str, token: str, brand_prefix: str) -> bool:
-        d = str(domain or "").strip().lower()
+        d = self._normalize_domain(domain)
         if d not in self.STRICT_DOMAIN_FILTERS:
             return True
 
@@ -388,9 +691,15 @@ class GapTargetedImporter:
         sources = []
         for item in sources_str.split(";"):
             item = item.strip()
+            if not item:
+                continue
+            search_type = ""
+            domain = item
             if "(" in item and ")" in item:
                 domain = item[: item.index("(")].strip()
                 search_type = item[item.index("(") + 1 : item.index(")")].strip()
+            domain = self._normalize_domain(domain)
+            if domain:
                 sources.append((domain, search_type))
         return sources
 
@@ -426,6 +735,28 @@ class GapTargetedImporter:
             base = [f"{part_code} honda", f"{part_code} acura"] + base
         elif domain == "partsale.eu" and brand_prefix in {"VW", "AU", "SK", "SE"}:
             base = [f"{part_code} vag", f"{part_code} audi", f"{part_code} volkswagen"] + base
+        elif domain in {"japan-parts.eu", "elcats.ru", "relines.ru"} and brand_prefix in {
+            "TY", "LX", "NI", "IN", "HO", "AC", "MA", "MI", "SU", "SZ"
+        }:
+            brand_hint = BRAND_QUERY_HINTS.get(brand_prefix, [brand.lower()])
+            h = brand_hint[0] if brand_hint else brand.lower()
+            base = [f"{h} {part_code}", f"{h} oem {part_code}"] + base
+        elif domain in {"autoparts24.eu", "alvadi.ee"}:
+            brand_hint = BRAND_QUERY_HINTS.get(brand_prefix, [brand.lower()])
+            h = brand_hint[0] if brand_hint else brand.lower()
+            base = [f"{h} {part_code}", f"{h} {part_code} oem"] + base
+        elif domain in {"relines.ru", "xn--80aaonli0a.xn--p1ai", "shop.chinacar-club.ru",
+                        "irito-parts.ru", "haval-service.ru", "great-wall-parts.ru"} \
+                and brand_prefix in {"GL", "BY", "CG", "CY", "HV"}:
+            brand_hint = BRAND_QUERY_HINTS.get(brand_prefix, [brand.lower()])
+            h = brand_hint[0] if brand_hint else brand.lower()
+            base = [f"{h} {part_code}", f"{h} {part_name} oem", f"{h} запчасти {part_name}"] + base
+        elif domain in {"exist.ru", "emex.ru"} and brand_prefix in BRAND_QUERY_HINTS:
+            h = BRAND_QUERY_HINTS[brand_prefix][0]
+            base = [f"{h} {part_code}", f"{h} {part_name}"] + base
+        elif domain in {"avtoto.ru", "gmpartsgiant.com"} and brand_prefix in BRAND_QUERY_HINTS:
+            h = BRAND_QUERY_HINTS[brand_prefix][0]
+            base = [f"{h} {part_code} original catalog", f"{h} {part_name} OEM"] + base
 
         out = []
         seen = set()
@@ -446,6 +777,7 @@ class GapTargetedImporter:
         max_retries: int,
         source_domain: str,
         extract_mode: str = "generic",
+        part_name: str = "",
     ) -> Optional[Dict[str, str]]:
         def extract_candidates(text: str) -> List[str]:
             if extract_mode == "realoem":
@@ -490,6 +822,14 @@ class GapTargetedImporter:
                 try:
                     r = self._get_session().get(url, timeout=self.timeout)
                     if r.status_code == 200 and len(r.text) > 100:
+                        if not self._page_has_search_context(
+                            r.text,
+                            query=query,
+                            part_code=part_code,
+                            brand_prefix=brand_prefix,
+                            part_name=part_name,
+                        ):
+                            continue
                         candidates = [
                             c for c in extract_candidates(r.text)
                             if self._is_domain_allowed_oem(source_domain, c, brand_prefix)
@@ -566,6 +906,7 @@ class GapTargetedImporter:
             domain,
             max_retries,
             source_domain=domain,
+            part_name=part_name,
         )
 
     def search_domain_specialized(
@@ -597,6 +938,7 @@ class GapTargetedImporter:
             max_retries,
             source_domain=domain,
             extract_mode=mode,
+            part_name=part_name,
         )
 
     def search_domain_generic(
@@ -624,6 +966,7 @@ class GapTargetedImporter:
                 domain,
                 max_retries,
                 source_domain=domain,
+                part_name=part_name,
             )
 
         # Low-overlap domain fallback: site-restricted search over DDG HTML endpoint.
@@ -637,6 +980,7 @@ class GapTargetedImporter:
                 f"{domain}:site_search",
                 max_retries,
                 source_domain="duckduckgo.com",
+                part_name=part_name,
             )
         return None
 
@@ -672,7 +1016,8 @@ class GapTargetedImporter:
 
             if domain == "emex.ru":
                 result = self.search_domain_emex(domain, brand, brand_prefix, part_code, part_name, max_retries=retries)
-            elif domain in {"realoem.com", "bmwcats.com", "acurapartswarehouse.com", "hondaworld.ru", "partsale.eu", "elcats.ru"}:
+            elif domain in {"realoem.com", "bmwcats.com", "acurapartswarehouse.com", "hondaworld.ru",
+                            "partsale.eu", "elcats.ru", "relines.ru", "exist.ru"}:
                 result = self.search_domain_specialized(
                     domain,
                     brand,
@@ -731,6 +1076,9 @@ class GapTargetedImporter:
         only_uncovered: bool = True,
         top_gaps: Optional[int] = None,
         adaptive_retry: bool = True,
+        checkpoint_output: Optional[Path] = None,
+        checkpoint_failed_output: Optional[Path] = None,
+        checkpoint_every: int = 25,
     ) -> int:
         logger.info(f"Reading gap worklist from {worklist_path}")
 
@@ -783,6 +1131,13 @@ class GapTargetedImporter:
 
         processed = 0
         found = 0
+        checkpoint_every = max(0, int(checkpoint_every or 0))
+
+        def write_checkpoint() -> None:
+            if checkpoint_output and self.results:
+                self.export_results(checkpoint_output)
+            if checkpoint_failed_output and self.failed_searches:
+                self.export_failed_searches(checkpoint_failed_output)
 
         def process_gap(gap: Dict[str, str]) -> Optional[Dict[str, str]]:
             sources_str = str(gap.get("suggested_sources") or "")
@@ -813,7 +1168,10 @@ class GapTargetedImporter:
 
                 if processed % 50 == 0:
                     logger.info(f"Progress: {processed}/{len(all_gaps)} gaps processed, {found} OEM found")
+                if checkpoint_every and processed % checkpoint_every == 0:
+                    write_checkpoint()
 
+        write_checkpoint()
         logger.info(f"Completed: {processed} gaps searched, {found} OEM found")
         return found
 
@@ -908,6 +1266,24 @@ def main() -> None:
         action="store_true",
         help="Include pairs already covered in merged lookup",
     )
+    parser.add_argument(
+        "--checkpoint-output",
+        type=Path,
+        default=None,
+        help="Write partial confirmed OEM results while the parser is still running",
+    )
+    parser.add_argument(
+        "--checkpoint-failed-output",
+        type=Path,
+        default=None,
+        help="Write partial failed searches while the parser is still running",
+    )
+    parser.add_argument(
+        "--checkpoint-every",
+        type=int,
+        default=25,
+        help="Checkpoint every N processed gaps; 0 disables checkpointing",
+    )
     args = parser.parse_args()
 
     importer = GapTargetedImporter(
@@ -925,6 +1301,9 @@ def main() -> None:
         only_uncovered=not args.include_covered,
         top_gaps=args.top_gaps,
         adaptive_retry=not args.no_adaptive_retry,
+        checkpoint_output=args.checkpoint_output,
+        checkpoint_failed_output=args.checkpoint_failed_output,
+        checkpoint_every=args.checkpoint_every,
     )
 
     if found > 0:

@@ -12,13 +12,23 @@ import argparse
 import csv
 import json
 import re
+import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-def is_plausible_oem_number(value: str) -> bool:
+from tools.oem_validation import is_plausible_oem as is_plausible_oem_for_brand
+from tools.oem_validation import split_oem_candidates
+
+
+def is_plausible_oem_number(value: str, prefix: str = "") -> bool:
     """Reject common HTML/JS tokens accidentally captured as part numbers."""
+    if prefix:
+        return is_plausible_oem_for_brand(prefix, value, strict_brand=True)
     token = str(value or "").strip().upper()
     compact = re.sub(r"[^A-Z0-9]", "", token)
     if not token:
@@ -81,14 +91,18 @@ def build_verified_lookup(csv_path: Path) -> tuple[dict[str, dict[str, list[str]
             if not (prefix and code and oem and source_name and source_url and retrieved_at):
                 rejected_rows += 1
                 continue
-            if not is_plausible_oem_number(oem):
-                rejected_rows += 1
-                continue
 
-            bucket = lookup[prefix][code]
-            if oem not in bucket:
-                bucket.append(oem)
-            accepted_rows += 1
+            accepted_any = False
+            for candidate in split_oem_candidates(oem):
+                if not is_plausible_oem_number(candidate, prefix):
+                    continue
+                bucket = lookup[prefix][code]
+                if candidate not in bucket:
+                    bucket.append(candidate)
+                accepted_any = True
+                accepted_rows += 1
+            if not accepted_any:
+                rejected_rows += 1
 
     lookup_out = {
         prefix: {code: nums for code, nums in sorted(codes.items())}

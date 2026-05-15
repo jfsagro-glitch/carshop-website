@@ -769,6 +769,33 @@
             return false; // Для Грузии цены уже в USD
         }
 
+        function formatGeorgiaRubPrice(value) {
+            const amount = Math.round(Number(value) || 0);
+            return amount ? `${amount.toLocaleString('ru-RU')} ₽` : '';
+        }
+
+        function getGeorgiaTurnkeyHtml(car) {
+            if (!car.turnkey_price_rub || Number(car.price || 0) <= 0) {
+                return `<div class="car-price-full car-price-full--estimate">
+                    <span class="car-price-full-label">Под ключ в РФ:</span>
+                    <span class="car-price-full-value">по запросу</span>
+                </div>`;
+            }
+
+            if (car.turnkey_calculation_complete === false) {
+                return `<div class="car-price-full car-price-full--estimate" title="Расчёт требует уточнения ставок">
+                    <span class="car-price-full-label">Под ключ в РФ:</span>
+                    <span class="car-price-full-value">уточнить</span>
+                    <span class="car-price-full-note">${formatGeorgiaRubPrice(car.turnkey_price_rub)}</span>
+                </div>`;
+            }
+
+            return `<div class="car-price-full">
+                <span class="car-price-full-label">Под ключ в РФ:</span>
+                <span class="car-price-full-value">${formatGeorgiaRubPrice(car.turnkey_price_rub)}</span>
+            </div>`;
+        }
+
         // Фильтрация изображений
         function filterGeorgiaImages(images) {
             if (!images) return [];
@@ -936,10 +963,6 @@
                 // Используем formatPrice из translations.js для конвертации в выбранную валюту
                 const price = displayPrice ? (typeof formatPrice === 'function' ? formatPrice(displayPrice) : `$${displayPrice.toLocaleString('ru-RU')}`) : (typeof translations !== 'undefined' && translations[currentLanguage] ? translations[currentLanguage].price_on_request : 'Цена по запросу');
                 
-                // Добавляем 5690 долларов к стоимости с доставкой и растаможкой
-                const fullPrice = displayPrice ? displayPrice + 5690 : null;
-                const fullPriceFormatted = fullPrice ? (typeof formatPrice === 'function' ? formatPrice(fullPrice) : `$${fullPrice.toLocaleString('ru-RU')}`) : '';
-                
                 const year = getGeorgiaCarYear(car);
                 const yearDisplay = year ? ` ${year}` : '';
                 
@@ -976,10 +999,7 @@
                         <div class="car-info">
                             <div class="car-title">${car.brand} ${car.model}${yearDisplay}</div>
                             <div class="car-price">${price}</div>
-                            ${fullPrice ? `<div class="car-price-full">
-                                <span class="car-price-full-label" data-i18n="catalog_price_with_delivery">Стоимость с доставкой и растаможкой:</span>
-                                <span class="car-price-full-value">${fullPriceFormatted}</span>
-                            </div>` : ''}
+                            ${getGeorgiaTurnkeyHtml(car)}
                             <div class="car-specs">
                                 ${year ? `<div class="car-spec-item">📅 ${year} год</div>` : ''}
                                 ${car.mileage ? `<div class="car-spec-item">📏 ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}

@@ -16,6 +16,7 @@ from collections import defaultdict, deque
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 from xml.etree import ElementTree as ET
 
 import requests
@@ -285,6 +286,11 @@ RULES = {
         "match_groups": [("map sensor",), ("manifold absolute pressure sensor",)],
         "exclude_terms": ["connector", "harness", "clip", "bracket", "stay", "holder", "spacer", "joint", "cover", "insulator", "hose", "bolt", "gasket"],
     },
+    "MAF": {
+        "seed_terms": ["mass", "air", "flow", "airflow", "sensor"],
+        "match_groups": [("mass air flow sensor",), ("mass airflow",), ("air mass sensor",)],
+        "exclude_terms": ["connector", "harness", "clip", "bracket", "stay", "holder", "cover", "duct", "hose", "bolt", "gasket"],
+    },
     "ODW": {
         "seed_terms": ["drain", "washer", "gasket", "plug"],
         "match_groups": [("drain plug washer",), ("drain plug gasket",), ("oil drain plug washer",), ("washer", "drain plug")],
@@ -426,10 +432,10 @@ def parse_fitment(soup: BeautifulSoup, brand: str) -> dict[str, str]:
                 models.append(model)
             year_from = start if year_from is None else min(year_from, start)
             year_to = end if year_to is None else max(year_to, end)
-        if len(cells) >= 3:
-            engine = cells[2].strip()
-            if engine and engine not in engines:
-                engines.append(engine)
+            if len(cells) >= 3:
+                engine = cells[2].strip()
+                if engine and engine not in engines:
+                    engines.append(engine)
     return {
         "model": "; ".join(models[:4]),
         "year_from": str(year_from or ""),
@@ -474,6 +480,15 @@ def page_matches_brand(config: dict[str, Any], soup: BeautifulSoup, title: str, 
     return False
 
 
+def page_mentions_brand(config: dict[str, Any], html: str, title: str, part_description: str) -> bool:
+    """Looser brand check for React pages where fitment lives in embedded JSON, not tables."""
+    if page_matches_brand(config, BeautifulSoup(html, "html.parser"), title, part_description):
+        return True
+    aliases = [alias.lower() for alias in config.get("brand_aliases", [config["brand"]])]
+    full_text = normalize_text(html)
+    return any(alias in full_text for alias in aliases)
+
+
 def parse_oem_from_url(url: str) -> str:
     stem = url.rsplit("/", 1)[-1].split(".html", 1)[0]
     token = stem.rsplit("~", 1)[-1]
@@ -500,7 +515,7 @@ def fetch_row(
     part_description = specs.get("Part Description", "")
     if not page_matches_brand(config, soup, title, part_description):
         return None
-    code = classify_code(" ".join([title, part_description]), target_codes)
+    code = classify_code(" ".join([title, part_description, specs.get("Other Names", "")]), target_codes)
     if not code:
         return None
 
@@ -584,6 +599,77 @@ def import_site(
     return sorted(results.values(), key=lambda row: (row["part_code"], row["oem_number"]))
 
 
+def import_product_urls(
+    urls: list[str],
+    session: requests.Session,
+    target_codes_by_prefix: dict[str, set[str]],
+    verify_ssl: bool,
+    rotator: ProxyRotator,
+) -> list[dict[str, str]]:
+    rows: dict[tuple[str, str, str], dict[str, str]] = {}
+    for url in urls:
+        url = url.strip()
+        if not url:
+            continue
+        domain = urlparse(url).netloc.lower()
+        if domain.startswith("www."):
+            domain = domain[4:]
+
+        matching_prefixes = [
+            prefix
+            for prefix, config in SITE_CONFIGS.items()
+            if config["source_domain"].lower().removeprefix("www.") == domain
+        ]
+        if not matching_prefixes:
+            continue
+
+        try:
+            response = session_get(session, url, REQUEST_TIMEOUT_SHORT, verify_ssl, rotator)
+        except requests.RequestException as exc:
+            print(f"product_url_error={type(exc).__name__} url={url}")
+            continue
+        if response.status_code != 200:
+            print(f"product_url_http={response.status_code} url={url}")
+            continue
+
+        soup = BeautifulSoup(response.text, "html.parser")
+        title_tag = soup.find("h1")
+        title = title_tag.get_text(" ", strip=True) if title_tag else ""
+        specs = extract_spec_table(soup)
+        part_description = specs.get("Part Description", "")
+        classify_text = " ".join([title, part_description, specs.get("Other Names", "")])
+        oem_number = specs.get("Manufacturer Part Number", "") or parse_oem_from_url(url)
+        if not oem_number:
+            continue
+
+        for prefix in matching_prefixes:
+            config = SITE_CONFIGS[prefix]
+            target_codes = set(RULES)
+            if not page_mentions_brand(config, response.text, title, part_description):
+                continue
+            code = classify_code(classify_text, target_codes)
+            if not code:
+                continue
+            fitment = parse_fitment(soup, config["brand"])
+            row = {
+                "brand_prefix": prefix,
+                "part_code": code,
+                "oem_number": oem_number,
+                "source_name": config["source_name"],
+                "source_url": url,
+                "retrieved_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "brand": config["brand"],
+                "model": fitment["model"],
+                "year_from": fitment["year_from"],
+                "year_to": fitment["year_to"],
+                "engine": fitment["engine"],
+                "restyle": "",
+                "vin_pattern": "",
+            }
+            rows[(prefix, code, oem_number)] = row
+    return sorted(rows.values(), key=lambda row: (row["brand_prefix"], row["part_code"], row["oem_number"]))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Import exact OEM rows from official brand parts sites")
     parser.add_argument("--brands", default="BM,AC,HO,TY,LX,HY,KI,NI,FO,SU,CH,GM,CA,BU,CR,DG,JP,VW,AU,SK,SE,MB", help="Comma-separated brand prefixes to import")
@@ -593,6 +679,7 @@ def main() -> None:
     parser.add_argument("--proxies", default="", help="Comma-separated proxy URLs/hosts")
     parser.add_argument("--regions", default="", help="Comma-separated region tags to filter proxy file entries")
     parser.add_argument("--prefer-proxy", action="store_true", help="Try proxies before direct connection")
+    parser.add_argument("--product-urls", default="", help="Direct product URLs to import, separated by comma or newline")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT), help="Output CSV path")
     args = parser.parse_args()
 
@@ -609,6 +696,16 @@ def main() -> None:
     print(f"proxy_count={len(proxies)}")
 
     rows: list[dict[str, str]] = []
+    product_urls = [
+        item.strip()
+        for item in re.split(r"[\n,]+", args.product_urls or "")
+        if item.strip()
+    ]
+    if product_urls:
+        direct_rows = import_product_urls(product_urls, session, unresolved, verify_ssl, rotator)
+        print(f"product_urls={len(product_urls)} imported={len(direct_rows)}")
+        rows.extend(direct_rows)
+
     for prefix in requested:
         if prefix not in SITE_CONFIGS:
             continue

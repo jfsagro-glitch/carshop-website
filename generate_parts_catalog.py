@@ -15,6 +15,8 @@ import hashlib
 import re
 import time
 import requests
+from tools.oem_validation import is_plausible_oem as is_plausible_oem_for_brand
+from tools.oem_validation import split_oem_candidates
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -3662,8 +3664,10 @@ STRICT_REAL_ONLY = os.environ.get("OEM_STRICT_REAL_ONLY", "1").strip().lower() n
 ALLOW_UNVERIFIED_VIN_MAPPING = os.environ.get("OEM_ALLOW_UNVERIFIED_VIN_MAPPING", "0").strip().lower() in ("1", "true", "yes")
 
 
-def is_plausible_oem_number(value: str) -> bool:
+def is_plausible_oem_number(value: str, prefix: str = "") -> bool:
     """Conservative guard against HTML/JS/search tokens masquerading as OEM numbers."""
+    if prefix:
+        return is_plausible_oem_for_brand(prefix, value, strict_brand=STRICT_REAL_ONLY)
     token = str(value or "").strip().upper()
     compact = re.sub(r"[^A-Z0-9]", "", token)
     if not token or len(compact) < 6 or len(compact) > 24:
@@ -3691,14 +3695,14 @@ def is_plausible_oem_number(value: str) -> bool:
     return True
 
 
-def clean_oem_numbers(values) -> list[str]:
+def clean_oem_numbers(values, prefix: str = "") -> list[str]:
     if isinstance(values, str):
         values = [values]
     clean: list[str] = []
     for number in values or []:
-        value = str(number).strip()
-        if is_plausible_oem_number(value) and value not in clean:
-            clean.append(value)
+        for value in split_oem_candidates(number):
+            if is_plausible_oem_number(value, prefix) and value not in clean:
+                clean.append(value)
     return clean
 
 
@@ -3715,7 +3719,7 @@ def load_oem_lookup_overrides(path: Path = OEM_OVERRIDES_PATH) -> dict[tuple[str
         for code, numbers in codes.items():
             if isinstance(numbers, str):
                 numbers = [numbers]
-            clean = clean_oem_numbers(numbers)
+            clean = clean_oem_numbers(numbers, str(prefix).upper())
             if clean:
                 merged[(str(prefix).upper(), str(code).upper())] = clean
     return merged
@@ -3732,7 +3736,7 @@ def load_verified_oem_lookup(path: Path = VERIFIED_OEM_LOOKUP_PATH) -> dict[tupl
         if not isinstance(codes, dict):
             continue
         for code, numbers in codes.items():
-            clean = clean_oem_numbers(numbers)
+            clean = clean_oem_numbers(numbers, str(prefix).upper())
             if clean:
                 merged[(str(prefix).upper(), str(code).upper())] = clean
     return merged
@@ -3750,7 +3754,7 @@ def get_merged_oem_lookup() -> dict[tuple[str, str], list[str]]:
                 if isinstance(numbers, list):
                     key = (brand_prefix, part_code)
                     # Real catalog takes priority - replace generated numbers
-                    clean = clean_oem_numbers(numbers)
+                    clean = clean_oem_numbers(numbers, str(brand_prefix).upper())
                     if clean:
                         merged[key] = clean
     except (FileNotFoundError, json.JSONDecodeError):
@@ -3775,7 +3779,7 @@ def get_merged_oem_lookup() -> dict[tuple[str, str], list[str]]:
                     if isinstance(oem_nums, list):
                         key = (prefix, part_code)
                         # VIN data takes priority - it's verified per specification
-                        clean = clean_oem_numbers(oem_nums)
+                        clean = clean_oem_numbers(oem_nums, prefix)
                         if clean and (key not in merged or not merged[key]):
                             merged[key] = clean
     except (FileNotFoundError, json.JSONDecodeError):
@@ -3798,7 +3802,7 @@ def get_merged_oem_lookup() -> dict[tuple[str, str], list[str]]:
                 prefix = brand_map.get(brand, brand[:2].upper())
                 for part_code, oem_nums in parts_dict.items():
                     if isinstance(oem_nums, list) and oem_nums:
-                        clean = clean_oem_numbers(oem_nums)
+                        clean = clean_oem_numbers(oem_nums, prefix)
                         if clean:
                             merged[(prefix, str(part_code).upper())] = clean
         except (FileNotFoundError, json.JSONDecodeError):
@@ -3816,20 +3820,20 @@ def get_merged_oem_lookup() -> dict[tuple[str, str], list[str]]:
         for key, values in load_oem_lookup_overrides().items():
             bucket = merged.setdefault(key, [])
             for value in values:
-                if is_plausible_oem_number(value) and value not in bucket:
+                if is_plausible_oem_number(value, key[0]) and value not in bucket:
                     bucket.append(value)
 
     return {
         key: clean
         for key, values in merged.items()
-        if (clean := clean_oem_numbers(values))
+        if (clean := clean_oem_numbers(values, key[0]))
     }
 
 
 def lookup_to_nested(oem_lookup: dict[tuple[str, str], list[str]]) -> dict[str, dict[str, list[str]]]:
     nested: dict[str, dict[str, list[str]]] = {}
     for (prefix, code), values in sorted(oem_lookup.items()):
-        clean = clean_oem_numbers(values)
+        clean = clean_oem_numbers(values, prefix)
         if clean:
             nested.setdefault(prefix, {})[code] = clean
     return nested
@@ -4021,8 +4025,12 @@ def delete_generated_parts() -> None:
     }
     for pattern in ("%D0%97%D0%B0%D0%BF%D1%87%D0%B0%D1%81%D1%82%D1%8C*", "OEM-%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82*"):
         url = f"{SUPABASE_URL}/rest/v1/parts?description=like.{pattern}"
-        resp = requests.delete(url, headers=headers, timeout=60)
-        resp.raise_for_status()
+        try:
+            resp = requests.delete(url, headers=headers, timeout=60)
+            if resp.status_code not in (200, 204):
+                print(f"Warning: delete returned HTTP {resp.status_code} for pattern {pattern!r}, skipping")
+        except requests.RequestException as exc:
+            print(f"Warning: delete failed for pattern {pattern!r}: {exc}, skipping")
     print("Deleted previous generated parts rows")
 
 

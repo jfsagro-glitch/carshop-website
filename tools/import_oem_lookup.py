@@ -31,6 +31,7 @@ sys.path.insert(0, str(ROOT))
 
 from tools.build_parts_catalog import BRAND_PREFIX  # noqa: E402
 from generate_parts_catalog import get_merged_oem_lookup  # noqa: E402
+from tools.oem_validation import is_plausible_oem as is_plausible_oem_for_brand  # noqa: E402
 
 TARGET = ROOT / "data" / "oem_lookup_overrides.json"
 PARTS_CATALOG = ROOT / "data" / "parts_catalog.json"
@@ -74,7 +75,7 @@ OEM_FORMAT_PATTERNS = {
         re.compile(r"\b\d{5}-[A-Z0-9]{2}[0-9]{2}\b"),
     ],
     "BM": [re.compile(r"\b\d{2}[\s\-]?\d{2}[\s\-]?\d{6,7}\b")],
-    "MN": [re.compile(r"\b\d{2}[\s\-]?\d{2}[\s\-]?\d{6,7}\b")],
+    "MN": [re.compile(r"\b\d{11}\b"), re.compile(r"\b\d{2}[\s\-]?\d{2}[\s\-]?\d{6,7}\b")],
     "MB": [
         re.compile(r"\bA\d{10}\b"),
         re.compile(r"\bA\d{3}\s?\d{2}\s?\d{2}\s?\d{2}\b"),
@@ -83,6 +84,33 @@ OEM_FORMAT_PATTERNS = {
     "AU": [re.compile(r"\b[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[A-Z0-9]{0,2}\b")],
     "SK": [re.compile(r"\b[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[A-Z0-9]{0,2}\b")],
     "SE": [re.compile(r"\b[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[0-9A-Z]{3}[\s\-]?[A-Z0-9]{0,2}\b")],
+    "TY": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"), re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b")],
+    "LX": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"), re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b")],
+    "NI": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{5}-[A-Z0-9]{4,5}\b")],
+    "IN": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{5}-[A-Z0-9]{4,5}\b")],
+    "HY": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"), re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b")],
+    "KI": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"), re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b")],
+    "GE": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{5}-\d{4}[A-Z0-9]\b"), re.compile(r"\b[A-Z0-9]{4,6}-\d{5}\b")],
+    "MA": [re.compile(r"\b[A-Z0-9]{2,4}-[A-Z0-9]{2,3}-[A-Z0-9]{2,3}\b"), re.compile(r"\b[A-Z]\d{3}-[A-Z0-9]{2}-[A-Z0-9]{3}\b")],
+    "MI": [re.compile(r"\bM[NDCROP]\d{6}\b")],
+    "SU": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{8}\b"), re.compile(r"\b[A-Z]{2}\d{6}\b")],
+    "SZ": [re.compile(r"\b\d{5}-\d{5}\b"), re.compile(r"\b\d{8}\b")],
+    "VO": [re.compile(r"\b3\d{7}\b"), re.compile(r"\b\d{8}\b")],
+    "FO": [re.compile(r"\b[A-Z]\d[A-Z]{2}-[A-Z0-9]{4,5}-[A-Z]{1,2}\b"), re.compile(r"\b[A-Z]{2}\d{7}\b"), re.compile(r"\bF[A-Z0-9]{8,10}\b")],
+    "LR": [re.compile(r"\bLR\d{6}\b"), re.compile(r"\b[A-Z]{3}\d{4,5}[A-Z]?\b")],
+    "OP": [re.compile(r"\b\d{8,13}\b")],
+    "CA": [re.compile(r"\b\d{8,13}\b")],
+    "BU": [re.compile(r"\b\d{8,13}\b")],
+    "CH": [re.compile(r"\b\d{8,13}\b")],
+    "GM": [re.compile(r"\b\d{8,13}\b")],
+    "JP": [re.compile(r"\b\d{9,13}\b"), re.compile(r"\b\d{8,10}[A-Z]{1,2}\b"), re.compile(r"\b[A-Z]{2}\d{8,10}\b")],
+    "DG": [re.compile(r"\b\d{9,13}\b"), re.compile(r"\b\d{8,10}[A-Z]{1,2}\b")],
+    "CR": [re.compile(r"\b\d{9,13}\b"), re.compile(r"\b\d{8,10}[A-Z]{1,2}\b")],
+    "RE": [re.compile(r"\b\d{8}\b"), re.compile(r"\b[0-9A-Z]{2}\s\d{3}\s\d{3}\b")],
+    "PE": [re.compile(r"\b\d{9,10}\b"), re.compile(r"\b[0-9A-Z]{4}\s[0-9A-Z]{2}\b")],
+    "CI": [re.compile(r"\b\d{9,10}\b"), re.compile(r"\b[0-9A-Z]{4}\s[0-9A-Z]{2}\b")],
+    "FI": [re.compile(r"\b\d{8,10}\b")],
+    "PO": [re.compile(r"\b\d{3}[\.\s]?\d{3}[\.\s]?\d{3}[\.\s]?\d{0,2}\b"), re.compile(r"\b9\d{2}[\s\-\.]\d{3}[\s\-\.]\d{3}[\s\-\.]\d{2}\b")],
 }
 
 
@@ -191,6 +219,10 @@ def build_brand_oem_index(lookup: dict) -> dict[tuple[str, str], set[str]]:
 
 
 def is_plausible_oem(prefix: str, number: str) -> bool:
+    return is_plausible_oem_for_brand(prefix, number, strict_brand=True)
+
+
+def is_plausible_oem_legacy(prefix: str, number: str) -> bool:
     token = norm_oem(number)
     if not token or len(token) < 6 or len(token) > 20:
         return False

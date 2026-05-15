@@ -317,6 +317,10 @@
             gap: 0.25rem;
         }
 
+        .car-price-full--estimate {
+            color: #fde68a;
+        }
+
         body.premium .car-card .car-price-full {
             color: #bbf7d0 !important;
             background: rgba(15, 23, 42, 0.5) !important;
@@ -339,6 +343,12 @@
         .car-price-full-value {
             font-weight: 800;
             font-size: 0.78rem;
+        }
+
+        .car-price-full-note {
+            color: #94a3b8;
+            font-size: 0.66rem;
+            white-space: nowrap;
         }
 
         body.premium .car-card .car-price-full-value {
@@ -1019,6 +1029,33 @@
             return Math.round(rubValue / usdToRubRate);
         }
 
+        function formatRubPrice(value) {
+            const amount = Math.round(Number(value) || 0);
+            return amount ? `${amount.toLocaleString('ru-RU')} ₽` : '';
+        }
+
+        function getTurnkeyPriceHtml(car, index) {
+            if (!car.turnkey_price_rub || Number(car.price || 0) <= 0) {
+                return `<div class="car-price-full car-price-full--estimate">
+                    <span class="car-price-full-label">под ключ в РФ:</span>
+                    <span class="car-price-full-value" id="full-price-${index}">по запросу</span>
+                </div>`;
+            }
+
+            if (car.turnkey_calculation_complete === false) {
+                return `<div class="car-price-full car-price-full--estimate" title="Расчёт требует уточнения ставок">
+                    <span class="car-price-full-label">под ключ в РФ:</span>
+                    <span class="car-price-full-value" id="full-price-${index}">уточнить</span>
+                    <span class="car-price-full-note">${formatRubPrice(car.turnkey_price_rub)}</span>
+                </div>`;
+            }
+
+            return `<div class="car-price-full">
+                <span class="car-price-full-label">под ключ в РФ:</span>
+                <span class="car-price-full-value" id="full-price-${index}">${formatRubPrice(car.turnkey_price_rub)}</span>
+            </div>`;
+        }
+
         // Определение, является ли значение ценой в рублях
         // Для Грузии цены уже в USD, поэтому не конвертируем если валюта указана
         function isPriceInRubles(value, currency) {
@@ -1521,10 +1558,7 @@
                         <div class="car-info">
                             <div class="car-title">${car.brand} ${car.model}${yearDisplay}</div>
                             <div class="car-price">${price}</div>
-                            ${displayPrice ? `<div class="car-price-full">
-                                <span class="car-price-full-label">под ключ:</span>
-                                <span class="car-price-full-value" id="full-price-${index}">${currencySymbol}${displayPrice.toLocaleString('ru-RU')}</span>
-                            </div>` : ''}
+                            ${getTurnkeyPriceHtml(car, index)}
                             <div class="car-specs">
                                 ${car.mileage ? `<div class="car-spec-item"><i class="fas fa-road" style="color:#d4af37"></i> ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
                                 ${car.fuel_type ? `<div class="car-spec-item"><i class="fas fa-gas-pump" style="color:#d4af37"></i> ${car.fuel_type}</div>` : ''}
