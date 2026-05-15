@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises';
+﻿import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -39,6 +39,15 @@ function formatPower(car) {
   if (kw) return `${kw} кВт`;
   const value = String(car.power || '').trim();
   return value && !value.includes('?') ? value : 'уточняется';
+}
+
+function isElectricCar(car) {
+  const fuel = String(car.fuel_type || car.fuel || car.engineType || car.engine_type || '').toLowerCase();
+  const model = [car.brand, car.model, car.full_title, car.title]
+    .map((value) => String(value || '').toLowerCase())
+    .join(' ');
+  if (/электро|electric|전기/.test(fuel) && !/гибрид|hybrid|бензин|diesel|дизель/.test(fuel)) return true;
+  return /(tesla|leaf|zoe|electric|mokka-e|corsa-e|e-niro|kona electric|ioniq electric|ev6|ev9|id\.[34567])/i.test(model);
 }
 
 function isBlockedGeorgia(car) {
@@ -98,6 +107,7 @@ for (const source of SOURCES) {
   const cars = JSON.parse(await fs.readFile(path.join(rootDir, source.file), 'utf8'));
   const filtered = cars
     .filter((car) => car.turnkey_calculation_complete && car.turnkey_price_rub && imageList(car).length)
+    .filter((car) => !isElectricCar(car))
     .filter((car) => source.region !== 'Грузия' || !isBlockedGeorgia(car))
     .sort((a, b) => score(a, source.region) - score(b, source.region))
     .slice(0, source.region === 'Корея' ? 12 : 8)
@@ -132,3 +142,4 @@ await fs.writeFile(
 );
 
 console.log(`Saved ${diversified.length} home top offers`);
+

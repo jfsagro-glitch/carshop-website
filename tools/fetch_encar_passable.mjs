@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises';
+﻿import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -102,9 +102,15 @@ function mapFuel(text) {
   return 'Бензин';
 }
 
+function isElectricFuel(value) {
+  const text = String(value || '').toLowerCase();
+  return /электро|electric|전기|(tesla|leaf|zoe|electric|mokka-e|corsa-e|e-niro|kona electric|ioniq electric|ev6|ev9|id\.[34567])/i.test(text);
+}
+
 function findKoreaRule(row) {
   const text = norm(`${row.Model || ''} ${row.Badge || ''} ${row.BadgeDetail || ''}`);
   const fuel = mapFuel(`${row.FuelType || ''} ${row.Badge || ''}`);
+  if (isElectricFuel(fuel) || isElectricFuel(`${row.FuelType || ''} ${row.Badge || ''}`)) return null;
   const engine = parseEngine(`${row.Badge || ''} ${row.BadgeDetail || ''}`);
   return KOREA_RULES.find(([brand, , ruleEngine, ruleFuel, , , aliases]) => {
     if (brand !== (MANUFACTURERS[row.Manufacturer] || row.Manufacturer)) return false;
@@ -119,6 +125,7 @@ function findEuropeRule(row, whitelist) {
   const rowText = norm(`${row.Model || ''} ${row.Badge || ''} ${row.BadgeDetail || ''}`);
   const engine = parseEngine(`${row.Badge || ''} ${row.BadgeDetail || ''}`);
   const fuel = mapFuel(`${row.FuelType || ''} ${row.Badge || ''}`);
+  if (isElectricFuel(fuel) || isElectricFuel(`${row.FuelType || ''} ${row.Badge || ''}`)) return null;
   const direct = ENCAR_EUROPE_RULES.find(([ruleBrand, , ruleEngine, ruleFuel, , , aliases]) => {
     if (norm(ruleBrand) !== norm(brand)) return false;
     if (!aliases.every((alias) => rowText.includes(norm(alias)))) return false;
@@ -240,3 +247,4 @@ await fs.writeFile(outPath, `${JSON.stringify(cars.slice(0, 300), null, 2)}\n`, 
 console.log(`Fetched ${rows.length} Encar rows`);
 console.log(`Matched brands: ${Array.from(new Set(cars.map((car) => car.brand))).sort().join(', ')}`);
 console.log(`Saved ${Math.min(cars.length, 300)} passable cars -> cars_korea_stock.json`);
+

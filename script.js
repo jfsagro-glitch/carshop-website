@@ -4225,7 +4225,22 @@ function getCatalogPower(car){
     return { hp, kw: kw || (hp ? Math.round(hp / 1.35962) : 0) };
 }
 
+function isElectricVehicle(car){
+    const fuel = String(car?.fuel_type || car?.fuel || car?.engineType || car?.engine_type || '').toLowerCase();
+    const model = [
+        car?.brand,
+        car?.model,
+        car?.name,
+        car?.title,
+        car?.full_title,
+        Array.isArray(car?.specs) ? car.specs.join(' ') : ''
+    ].map(value => String(value || '').toLowerCase()).join(' ');
+    if (/электро|electric|전기/.test(fuel) && !/гибрид|hybrid|бензин|diesel|дизель/.test(fuel)) return true;
+    return /(tesla|leaf|zoe|electric|mokka-e|corsa-e|e-niro|kona electric|ioniq electric|ev6|ev9|id\.[34567])/i.test(model);
+}
+
 function matchesImportCatalogRule(car, region = ''){
+    if (isElectricVehicle(car)) return false;
     const strictRegion = String(region || '').toLowerCase();
     const yearMonth = getCatalogYearMonth(car, Boolean(strictRegion));
     if (!yearMonth && strictRegion) return false;
@@ -4728,3 +4743,4 @@ function renderKoreaUnder160Cars(){
     grid.innerHTML = '';
     grid.appendChild(fragment);
 }
+

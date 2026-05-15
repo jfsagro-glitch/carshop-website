@@ -2190,6 +2190,7 @@ class AutoScout24Parser:
 
         record = {
             "id": str(item.get("id") or ""),
+            "external_id": str(item.get("id") or url or ""),
             "brand": brand,
             "model": model,
             "full_title": title,

@@ -987,6 +987,18 @@
             if (source.includes('mobile.de')) return 'mobile.de';
             return 'Источник';
         }
+
+        function formatEngineVolume(engine) {
+            const value = String(engine || '').replace(',', '.');
+            const liters = Number(value.match(/\d+(?:\.\d+)?/)?.[0]);
+            if (!Number.isFinite(liters) || liters <= 0) return '';
+            const cc = Math.round(liters * 1000);
+            const litersLabel = liters.toLocaleString('ru-RU', {
+                minimumFractionDigits: liters % 1 === 0 ? 1 : 0,
+                maximumFractionDigits: 2
+            });
+            return `${litersLabel} л / ${cc.toLocaleString('ru-RU')} см³`;
+        }
         
         function filterImages(images) {
             if (!images) return [];
@@ -1110,7 +1122,17 @@
             };
         }
 
+        function isElectricVehicle(car) {
+            const fuel = String(car.fuel_type || car.fuel || car.engineType || car.engine_type || '').toLowerCase();
+            const model = [car.brand, car.model, car.full_title, car.title]
+                .map(value => String(value || '').toLowerCase())
+                .join(' ');
+            if (/электро|electric|전기/.test(fuel) && !/гибрид|hybrid|бензин|diesel|дизель/.test(fuel)) return true;
+            return /(tesla|leaf|zoe|electric|mokka-e|corsa-e|e-niro|kona electric|ioniq electric|ev6|ev9|id\.[34567])/i.test(model);
+        }
+
         function isEuropeCarEligible(car) {
+            if (isElectricVehicle(car)) return false;
             const images = filterImages(car.images);
             if (!images.length) return false;
             const yearMonth = parseEuropeYearMonth(car);
@@ -1226,6 +1248,7 @@
                 const finalImageUrl = firstImage || '';
                 const sourceLabel = getSourceLabel(car);
                 const turnkeyHtml = getEuropeTurnkeyHtml(car);
+                const engineVolume = formatEngineVolume(car.engine);
 
                 const fuelIcon = {
                     'Бензин': 'fa-gas-pump', 'Дизель': 'fa-oil-can',
@@ -1255,6 +1278,7 @@
                             <div class="car-specs">
                                 ${car.mileage ? `<div class="car-spec-item"><i class="fas fa-road"></i> ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
                                 ${car.power_kw ? `<div class="car-spec-item"><i class="fas fa-tachometer-alt"></i> ${car.power_kw} kW / ${car.power_hp || ''} л.с.</div>` : ''}
+                                <div class="car-spec-item"><i class="fas fa-cogs"></i> ${engineVolume || 'Объём уточняется'}</div>
                                 ${car.fuel_type ? `<div class="car-spec-item"><i class="fas ${fuelIcon[car.fuel_type] || 'fa-gas-pump'}"></i> ${car.fuel_type}</div>` : ''}
                                 ${car.transmission ? `<div class="car-spec-item"><i class="fas ${transIcon[car.transmission] || 'fa-cog'}"></i> ${car.transmission}</div>` : ''}
                                 ${car.first_registration ? `<div class="car-spec-item"><i class="fas fa-calendar-alt"></i> ${car.first_registration}</div>` : ''}
@@ -2090,4 +2114,5 @@
     <script src="header.js"></script>
 </body>
 </html>
+
 

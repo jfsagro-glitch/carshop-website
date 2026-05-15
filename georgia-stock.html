@@ -1179,7 +1179,17 @@
             };
         }
 
+        function isElectricGeorgiaCar(car) {
+            const fuel = String(car.fuel_type || car.fuel || car.engineType || car.engine_type || '').toLowerCase();
+            const model = [car.brand, car.model, car.fullName, car.full_title, car.title]
+                .map(value => String(value || '').toLowerCase())
+                .join(' ');
+            if (/электро|electric|전기/.test(fuel) && !/гибрид|hybrid|бензин|diesel|дизель/.test(fuel)) return true;
+            return /(tesla|leaf|zoe|electric|mokka-e|corsa-e|e-niro|kona electric|ioniq electric|ev6|ev9|id\.[34567])/i.test(model);
+        }
+
         function isGeorgiaStockEligible(car) {
+            if (isElectricGeorgiaCar(car)) return false;
             const year = getCarYear(car);
             const month = Number(car.month || (String(car.date || '').match(/^(0?[1-9]|1[0-2])\//)?.[1]) || 0);
             if (!year || month < 1 || month > 12) return false;
@@ -2489,5 +2499,6 @@
     <script src="header.js"></script>
 </body>
 </html>
+
 
 

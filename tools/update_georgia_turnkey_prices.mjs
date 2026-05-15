@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises';
+﻿import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -64,6 +64,15 @@ function mapEngineType(car) {
   if (fuel.includes('гибрид')) return 'petrol_hybrid';
   if (fuel.includes('диз')) return 'diesel';
   return 'petrol';
+}
+
+function isElectricCar(car) {
+  const fuel = String(car.fuel_type || car.fuel || car.engineType || car.engine_type || '').toLowerCase();
+  const model = [car.brand, car.model, car.fullName, car.full_title, car.title]
+    .map((value) => String(value || '').toLowerCase())
+    .join(' ');
+  if (/электро|electric|전기/.test(fuel) && !/гибрид|hybrid|бензин|diesel|дизель/.test(fuel)) return true;
+  return /(tesla|leaf|zoe|electric|mokka-e|corsa-e|e-niro|kona electric|ioniq electric|ev6|ev9|id\.[34567])/i.test(model);
 }
 
 function buildManufactureFields(car) {
@@ -133,9 +142,10 @@ function buildCalculatorInput(car, rates) {
 
 const { rates, cbrDate } = await loadCbrRates();
 const cars = JSON.parse(await fs.readFile(stockPath, 'utf8'));
+const sourceCars = cars.filter((car) => !isElectricCar(car));
 let completeCount = 0;
 
-const updated = cars.map((car) => {
+const updated = sourceCars.map((car) => {
   const result = calculateCustoms(buildCalculatorInput(car, rates));
   if (result.isComplete) completeCount += 1;
   return {
@@ -158,6 +168,8 @@ const updated = cars.map((car) => {
 await fs.writeFile(stockPath, `${JSON.stringify(updated, null, 2)}\n`, 'utf8');
 
 console.log(`Updated ${updated.length} Georgia cars`);
+console.log(`Removed electric cars: ${cars.length - sourceCars.length}`);
 console.log(`Complete calculations: ${completeCount}/${updated.length}`);
 console.log(`CBR date: ${cbrDate}`);
 console.log(`Rates: USD ${rates.USD.toFixed(4)}, EUR ${rates.EUR.toFixed(4)}, GEL ${rates.GEL.toFixed(4)}`);
+
