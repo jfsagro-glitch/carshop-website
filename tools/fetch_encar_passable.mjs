@@ -161,6 +161,34 @@ function photoUrls(row) {
     .slice(0, 12);
 }
 
+function firstImage(car) {
+  const first = Array.isArray(car.images) ? car.images[0] : '';
+  return typeof first === 'string' ? first : first?.url || '';
+}
+
+function visualDuplicateKey(car) {
+  const image = firstImage(car).replace(/_\d+\./, '.').toLowerCase();
+  return [
+    car.brand || '',
+    car.model || '',
+    car.year || '',
+    car.month || '',
+    car.price_krw || '',
+    car.mileage || '',
+    image,
+  ].join('|').toLowerCase();
+}
+
+function dedupeVisualCars(rows) {
+  const seen = new Set();
+  return rows.filter((car) => {
+    const key = visualDuplicateKey(car);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function transform(row, rule) {
   const yearMonth = Number(row.Year || 0);
   const year = Math.floor(yearMonth / 100);
@@ -242,9 +270,11 @@ for (const row of rows) {
   cars.push(car);
 }
 
-cars.sort((a, b) => (a.price_krw - b.price_krw) || (a.mileage - b.mileage));
-await fs.writeFile(outPath, `${JSON.stringify(cars.slice(0, 300), null, 2)}\n`, 'utf8');
+const dedupedCars = dedupeVisualCars(cars);
+dedupedCars.sort((a, b) => (a.price_krw - b.price_krw) || (a.mileage - b.mileage));
+await fs.writeFile(outPath, `${JSON.stringify(dedupedCars.slice(0, 300), null, 2)}\n`, 'utf8');
 console.log(`Fetched ${rows.length} Encar rows`);
-console.log(`Matched brands: ${Array.from(new Set(cars.map((car) => car.brand))).sort().join(', ')}`);
-console.log(`Saved ${Math.min(cars.length, 300)} passable cars -> cars_korea_stock.json`);
+console.log(`Matched brands: ${Array.from(new Set(dedupedCars.map((car) => car.brand))).sort().join(', ')}`);
+console.log(`Removed visual duplicates: ${cars.length - dedupedCars.length}`);
+console.log(`Saved ${Math.min(dedupedCars.length, 300)} passable cars -> cars_korea_stock.json`);
 

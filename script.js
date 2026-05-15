@@ -4439,9 +4439,11 @@ function setupKoreaUnder160Section(){
         return;
     }
 
-    if (!state.koreaUnder160 || state.koreaUnder160.data.length !== dataSource.length) {
+    const dedupedDataSource = dedupeKoreaCars(dataSource);
+
+    if (!state.koreaUnder160 || state.koreaUnder160.data.length !== dedupedDataSource.length) {
         state.koreaUnder160 = {
-            data: dataSource.filter(car => matchesImportCatalogRule(car, 'korea')).map((car, index) => ({
+            data: dedupedDataSource.filter(car => matchesImportCatalogRule(car, 'korea')).map((car, index) => ({
                 ...car,
                 price: getUnder160PriceValue(car),
                 _order: index
@@ -4463,6 +4465,46 @@ function setupKoreaUnder160Section(){
         state.koreaUnder160.filtered = [...state.koreaUnder160.data];
         updateKoreaUnder160Counters();
     }
+}
+
+function getKoreaFirstImage(car){
+    const images = Array.isArray(car?.images) ? car.images : [];
+    const first = images.find(Boolean);
+    if (first) return typeof first === 'string' ? first : (first.url || first.src || '');
+    return car?.image || '';
+}
+
+function getKoreaVisualDuplicateKey(car){
+    const image = String(getKoreaFirstImage(car) || '').replace(/_\d+\./, '.').toLowerCase();
+    return [
+        car?.brand || '',
+        car?.model || '',
+        car?.year || '',
+        car?.month || '',
+        car?.price_krw || car?.price || '',
+        car?.mileage || '',
+        image
+    ].join('|').toLowerCase();
+}
+
+function dedupeKoreaCars(rows){
+    const seen = new Set();
+    return (rows || []).filter(car => {
+        const key = getKoreaVisualDuplicateKey(car);
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
+function formatKrwAmount(value){
+    const amount = Math.round(Number(value) || 0);
+    return amount ? `₩${amount.toLocaleString('ko-KR')}` : '';
+}
+
+function getKoreaBasePriceLabel(car){
+    if (Number(car?.price_krw || 0) > 0) return formatKrwAmount(car.price_krw);
+    return 'Цена по запросу';
 }
 
 function populateKoreaUnder160Filters(){
@@ -4632,29 +4674,7 @@ function renderKoreaUnder160Cars(){
             return `<li class="kspec-item"><i class="fas ${icon} kspec-icon"></i><span class="kspec-key">${key}:</span><span class="kspec-val">${val}</span></li>`;
         }).join('');
 
-        // Вычисляем USD цену (без двойной конвертации)
-        let usdPrice = 0;
-        let priceLabel = car.priceLabel;
-        if (priceLabel && priceLabel.includes('₽')) {
-            const priceMatch = priceLabel.match(/[\d\s]+/);
-            if (priceMatch) {
-                const priceRub = parseInt(priceMatch[0].replace(/\s/g, ''), 10);
-                if (priceRub > 10000) {
-                    const rate = usdToRubRate || 88;
-                    usdPrice = Math.round(priceRub / rate);
-                    // Используем formatPrice напрямую (не formatCurrency — избегаем двойной конвертации)
-                    priceLabel = typeof formatPrice === 'function' ? formatPrice(usdPrice) : `$${usdPrice.toLocaleString()}`;
-                }
-            }
-        } else if (!priceLabel) {
-            const pv = getUnder160PriceValue(car);
-            if (pv) {
-                usdPrice = pv;
-                priceLabel = typeof formatPrice === 'function' ? formatPrice(pv) : `$${pv.toLocaleString()}`;
-            } else {
-                priceLabel = 'Цена по запросу';
-            }
-        }
+        const priceLabel = getKoreaBasePriceLabel(car);
 
         // "Дополнительная цена" — отображаем со специальным форматированием
         let extraPriceHtml = '';
@@ -4705,7 +4725,7 @@ function renderKoreaUnder160Cars(){
                 </ul>
                 ${extraPriceHtml}
                 <div class="korea-card__price-row">
-                    <div class="usa-preferential-price car-price" ${usdPrice ? `data-usd-price="${usdPrice}"` : ''}>${priceLabel}</div>
+                    <div class="usa-preferential-price korea-base-price">${priceLabel}</div>
                     ${car.link ? `<a class="korea-card__src-link" href="${car.link}" target="_blank" rel="noopener noreferrer" title="Открыть источник"><i class="fas fa-external-link-alt"></i></a>` : ''}
                 </div>
                 ${getTurnkeyRubHtml(car)}

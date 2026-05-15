@@ -70,9 +70,9 @@ body.premium .catalog {
 }
 
 body.premium .logo span { 
-    color: #111827 !important; 
-    text-shadow: none !important;
-    font-weight: 700 !important;
+    color: #d9a400 !important;
+    text-shadow: 0 1px 0 rgba(17, 24, 39, 0.95), 0 0 14px rgba(250, 204, 21, 0.28) !important;
+    font-weight: 800 !important;
 }
 body.premium .logo i { color: var(--accent); }
 body.premium .cta-btn,
@@ -425,6 +425,12 @@ body.premium .about h2 {
 .logo--home.active {
     border-bottom-color: #d4af37;
     color: #ffffff !important;
+}
+
+.logo span {
+    color: #d9a400 !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 0 rgba(17, 24, 39, 0.95), 0 0 14px rgba(250, 204, 21, 0.28) !important;
 }
 
 .logo::before {

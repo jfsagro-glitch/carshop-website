@@ -427,7 +427,7 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="header.js"></script>
+    <script src="header.js?v=20260515-toolbar"></script>
     <script>
         // Нормализация записи из Supabase/JSON формата Korea для рендеринга
         function _normalizeKoreaCar(car) {
@@ -479,6 +479,32 @@
             return /(tesla|leaf|zoe|electric|mokka-e|corsa-e|e-niro|kona electric|ioniq electric|ev6|ev9|id\.[34567])/i.test(model);
         }
 
+        function getKoreaVisualDuplicateKey(car) {
+            const firstImage = Array.isArray(car.images) && car.images.length
+                ? (typeof car.images[0] === 'string' ? car.images[0] : (car.images[0] && (car.images[0].url || car.images[0].src)) || '')
+                : (car.image || '');
+            const normalizedImage = String(firstImage || '').replace(/_\d+\./, '.').toLowerCase();
+            return [
+                car.brand || '',
+                car.model || '',
+                car.year || '',
+                car.month || '',
+                car.price_krw || car.price || '',
+                car.mileage || '',
+                normalizedImage
+            ].join('|').toLowerCase();
+        }
+
+        function dedupeKoreaCars(rows) {
+            const seen = new Set();
+            return (rows || []).filter(car => {
+                const key = getKoreaVisualDuplicateKey(car);
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+        }
+
         // Асинхронная загрузка данных Кореи через Supabase / JSON fallback
         (async function() {
             const loadingIndicator = document.getElementById('koreaLoadingIndicator');
@@ -490,12 +516,12 @@
                     .map(_normalizeKoreaCar)
                     .filter(car => !isElectricKoreaCar(car))
                     .filter(car => typeof matchesImportCatalogRule !== 'function' || matchesImportCatalogRule(car, 'korea'));
-                window.koreaUnder160CarsData = normalizeAndFilter(data);
+                window.koreaUnder160CarsData = dedupeKoreaCars(normalizeAndFilter(data));
                 const hasTurnkeyPrices = window.koreaUnder160CarsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
                 if ((!window.koreaUnder160CarsData.length || !hasTurnkeyPrices) && result._source !== 'json') {
                     const fallback = await fetch('./cars_korea_stock.json?v=' + Date.now(), { cache: 'no-store' });
                     if (fallback.ok) {
-                        const fallbackCars = normalizeAndFilter(await fallback.json());
+                        const fallbackCars = dedupeKoreaCars(normalizeAndFilter(await fallback.json()));
                         if (fallbackCars.length && fallbackCars.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0)) {
                             window.koreaUnder160CarsData = fallbackCars;
                         }

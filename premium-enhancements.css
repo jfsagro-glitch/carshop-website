@@ -50,6 +50,13 @@ html {
     text-decoration: none;
 }
 
+.logo span,
+body.premium .logo span {
+    color: #d9a400 !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 0 rgba(17, 24, 39, 0.95), 0 0 14px rgba(250, 204, 21, 0.28) !important;
+}
+
 .logo:hover {
     transform: translateY(-2px);
 }

@@ -58,6 +58,10 @@
     });
 
     var actions = document.querySelector('.header-actions');
+    var cart = document.querySelector('#cartBtn');
+    if (!actions && cart && cart.parentElement) {
+      actions = cart.parentElement;
+    }
     if (!actions || actions.querySelector('.customs-toolbar-btn')) return;
 
     var link = document.createElement('a');
@@ -67,7 +71,7 @@
     link.setAttribute('aria-label', 'Таможенный калькулятор');
     link.innerHTML = '<i class="fas fa-calculator" aria-hidden="true"></i>';
 
-    var cart = actions.querySelector('#cartBtn');
+    cart = actions.querySelector('#cartBtn');
     if (cart) actions.insertBefore(link, cart);
     else actions.insertBefore(link, actions.firstChild);
   }
@@ -409,6 +413,8 @@
   document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
     initCustomsCalculatorShortcut();
+    window.setTimeout(initCustomsCalculatorShortcut, 250);
+    window.addEventListener('load', initCustomsCalculatorShortcut, { once: true });
     initStickyHeader();
     initScrollToTop();
     initWhatsAppButton();
