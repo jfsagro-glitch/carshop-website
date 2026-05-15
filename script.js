@@ -2332,9 +2332,9 @@ function telegramFallbackImage(title) {
 function isValidMarketOffer(offer) {
     const details = offer?.details || {};
     const text = `${offer?.region || ''} ${offer?.text_excerpt || ''} ${offer?.telegram_post || ''}`.toLowerCase();
-    const allowedRegion = /(груз|тбилиси|сша|usa|copart|iaai|европ|герман|mobile|autoscout)/i.test(text);
+    const allowedRegion = /(груз|тбилиси|сша|usa|copart|iaai|европ|герман|mobile|autoscout|коре|encar|енкар|🇰🇷)/i.test(text);
     const blockedRegion = /(цена в рб|(?:^|\s)в рб(?:\s|$)|для рб|рб со|беларус|белорус|льготой|\+375|a4e\.by)/i.test(text);
-    const outOfScopeRegion = /(коре|китай|🇰🇷|🇨🇳)/i.test(text);
+    const outOfScopeRegion = /(китай|🇨🇳)/i.test(text);
     const deliveryRf = /(под ключ|доставка|растамож|тамож|оформлен|в рф|для рф|росси|москв|спб)/i.test(text);
     const images = Array.isArray(offer?.images) ? offer.images.filter(Boolean) : (offer?.image ? [offer.image] : []);
     return Boolean(
@@ -2365,8 +2365,8 @@ async function loadTelegramOffersSection() {
     if (!grid) return;
     try {
         const [telegramResult, auctionResult] = await Promise.allSettled([
-            fetch('data/telegram_top_offers.json?v=20260508-main-market', { cache: 'no-store' }),
-            fetch('data/featured_auction_offers.json?v=20260508-main-market', { cache: 'no-store' })
+            fetch('data/telegram_top_offers.json?v=20260515-turnkey-market', { cache: 'no-store' }),
+            fetch('data/featured_auction_offers.json?v=20260515-turnkey-market', { cache: 'no-store' })
         ]);
         const telegramResponse = telegramResult.status === 'fulfilled' ? telegramResult.value : null;
         const auctionResponse = auctionResult.status === 'fulfilled' ? auctionResult.value : null;
@@ -2383,7 +2383,7 @@ async function loadTelegramOffersSection() {
         if (meta) {
             const dt = payload.generated_at ? new Date(payload.generated_at).toLocaleString('ru-RU') : '';
             const displayedCount = Number(payload.displayed_count || telegramOffers.length || 0);
-            meta.textContent = `Telegram обновлён: ${dt || 'сегодня'}. Источников: ${payload.source_count || 0}, подходящих объявлений: ${displayedCount}. Показываем только Грузию, США и Европу с доставкой и растаможкой в РФ.`;
+            meta.textContent = `Подборка обновлена: ${dt || 'сегодня'}. Источников: ${payload.source_count || 0}, подходящих объявлений: ${displayedCount}. Показываем проходные предложения с расчётом под ключ в РФ.`;
         }
         if (!offers.length) {
             grid.innerHTML = '<div class="usa-empty-state">Пока нет подходящих предложений</div>';
@@ -4090,6 +4090,34 @@ function getUnder160PriceValue(car){
     return price;
 }
 
+function formatRubAmount(value){
+    const amount = Math.round(Number(value) || 0);
+    return amount ? `${amount.toLocaleString('ru-RU')} ₽` : '';
+}
+
+function getTurnkeyRubValue(car){
+    if (!car) return null;
+    const value = Number(car.turnkey_price_rub || 0);
+    return value > 0 ? value : null;
+}
+
+function getTurnkeyRubHtml(car){
+    const complete = getTurnkeyRubValue(car);
+    if (complete) {
+        return `<div class="car-price-full">
+            <span class="car-price-full-label">под ключ в РФ:</span>
+            <span class="car-price-full-value">${formatRubAmount(complete)}</span>
+        </div>`;
+    }
+    if (Number(car?.turnkey_partial_price_rub || 0) > 0) {
+        return `<div class="car-price-full car-price-full--estimate" title="Расчёт требует уточнения данных">
+            <span class="car-price-full-label">под ключ в РФ:</span>
+            <span class="car-price-full-value">уточнить</span>
+        </div>`;
+    }
+    return '';
+}
+
 function getImportAgeWindow(){
     const now = new Date();
     const month = now.getMonth() + 1;
@@ -4359,15 +4387,15 @@ function updateChinaUnder160Counters(){
     metrics.querySelector('[data-metric="count"]').textContent = numberFormatter.format(list.length);
 
     const prices = list
-        .map(getUnder160PriceValue)
+        .map(car => getTurnkeyRubValue(car) || getUnder160PriceValue(car))
         .filter(value => typeof value === 'number' && value > 0)
         .sort((a, b) => a - b);
 
     const avg = prices.length ? Math.round(prices.reduce((sum, value) => sum + value, 0) / prices.length) : null;
     const min = prices.length ? prices[0] : null;
 
-    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatCurrency(avg) : '—';
-    metrics.querySelector('[data-metric="min"]').textContent = min ? formatCurrency(min) : '—';
+    metrics.querySelector('[data-metric="avg"]').textContent = avg ? formatRubAmount(avg) : '—';
+    metrics.querySelector('[data-metric="min"]').textContent = min ? formatRubAmount(min) : '—';
 }
 
 // Алиас для совместимости с updateAllDisplayedPrices
@@ -4665,6 +4693,7 @@ function renderKoreaUnder160Cars(){
                     <div class="usa-preferential-price car-price" ${usdPrice ? `data-usd-price="${usdPrice}"` : ''}>${priceLabel}</div>
                     ${car.link ? `<a class="korea-card__src-link" href="${car.link}" target="_blank" rel="noopener noreferrer" title="Открыть источник"><i class="fas fa-external-link-alt"></i></a>` : ''}
                 </div>
+                ${getTurnkeyRubHtml(car)}
                 <div class="usa-order-actions" style="margin-top:0.5rem;">
                     <button class="btn-primary" type="button"><i class="fas fa-paper-plane"></i> Запросить расчет</button>
                 </div>

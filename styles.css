@@ -149,6 +149,22 @@ body.premium .btn-secondary:hover {
     transform: translateY(-1px);
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
 }
+
+.nav-calculator-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav-calculator-link i {
+    color: #facc15;
+}
+
+body.premium .header .customs-toolbar-btn {
+    display: inline-flex !important;
+    color: #111827 !important;
+    background: linear-gradient(135deg, #facc15, #f59e0b) !important;
+}
 body.premium .car-card { 
     background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.92)) !important; 
     border: 1px solid rgba(148, 163, 184, 0.12) !important; 
@@ -1655,6 +1671,20 @@ body.premium .about h2 {
     color: #6b7280;
     font-size: 0.82rem;
     font-weight: 600;
+}
+
+body.premium .korea-card .car-price-full {
+    color: #bbf7d0 !important;
+    background: rgba(15, 23, 42, 0.58) !important;
+    border: 1px solid rgba(148, 163, 184, 0.22) !important;
+}
+
+body.premium .korea-card .car-price-full-label {
+    color: #cbd5e1 !important;
+}
+
+body.premium .korea-card .car-price-full-value {
+    color: #bbf7d0 !important;
 }
 
 .car-specs {

@@ -481,10 +481,14 @@
                     .map(_normalizeKoreaCar)
                     .filter(car => typeof matchesImportCatalogRule !== 'function' || matchesImportCatalogRule(car, 'korea'));
                 window.koreaUnder160CarsData = normalizeAndFilter(data);
-                if (!window.koreaUnder160CarsData.length && result._source !== 'json') {
+                const hasTurnkeyPrices = window.koreaUnder160CarsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
+                if ((!window.koreaUnder160CarsData.length || !hasTurnkeyPrices) && result._source !== 'json') {
                     const fallback = await fetch('./cars_korea_stock.json?v=' + Date.now(), { cache: 'no-store' });
                     if (fallback.ok) {
-                        window.koreaUnder160CarsData = normalizeAndFilter(await fallback.json());
+                        const fallbackCars = normalizeAndFilter(await fallback.json());
+                        if (fallbackCars.length && fallbackCars.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0)) {
+                            window.koreaUnder160CarsData = fallbackCars;
+                        }
                     }
                 }
 

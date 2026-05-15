@@ -299,6 +299,35 @@
             margin-bottom: 0.65rem;
         }
 
+        .car-price-full {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #bbf7d0;
+            margin-bottom: 0.72rem;
+            padding: 0.34rem 0.48rem;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.24);
+            border-radius: 6px;
+            display: flex;
+            align-items: baseline;
+            gap: 0.28rem;
+        }
+
+        .car-price-full--estimate {
+            color: #fde68a;
+        }
+
+        .car-price-full-label {
+            color: #cbd5e1;
+            font-size: 0.68rem;
+            line-height: 1.1;
+        }
+
+        .car-price-full-value {
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
         .image-count {
             position: absolute;
             top: 10px;
@@ -898,10 +927,14 @@
                 const result = await sbLoadCarsWithFallback('europe', './cars_europe_new.json');
                 const filterEligible = rows => (rows || []).filter(isEuropeCarEligible);
                 carsData = filterEligible(result.data);
-                if (!carsData.length && result._source !== 'json') {
+                const hasTurnkeyPrices = carsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
+                if ((!carsData.length || !hasTurnkeyPrices) && result._source !== 'json') {
                     const fallback = await fetch('./cars_europe_new.json?v=' + Date.now(), { cache: 'no-store' });
                     if (fallback.ok) {
-                        carsData = filterEligible(await fallback.json());
+                        const fallbackCars = filterEligible(await fallback.json());
+                        if (fallbackCars.length && fallbackCars.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0)) {
+                            carsData = fallbackCars;
+                        }
                     }
                 }
                 filteredCars = [...carsData];
@@ -1186,6 +1219,7 @@
                 // filterImages уже апгрейдил URL — не дублируем
                 const finalImageUrl = firstImage || '';
                 const sourceLabel = getSourceLabel(car);
+                const turnkeyHtml = getEuropeTurnkeyHtml(car);
 
                 const fuelIcon = {
                     'Бензин': 'fa-gas-pump', 'Дизель': 'fa-oil-can',
@@ -1211,6 +1245,7 @@
                         <div class="car-info">
                             <div class="car-title">${car.brand} ${car.model}</div>
                             <div class="car-price">${price}</div>
+                            ${turnkeyHtml}
                             <div class="car-specs">
                                 ${car.mileage ? `<div class="car-spec-item"><i class="fas fa-road"></i> ${car.mileage.toLocaleString('ru-RU')} км</div>` : ''}
                                 ${car.power_kw ? `<div class="car-spec-item"><i class="fas fa-tachometer-alt"></i> ${car.power_kw} kW / ${car.power_hp || ''} л.с.</div>` : ''}
@@ -1229,6 +1264,30 @@
                 `;
             }).join('');
             updateLoadMoreBtn();
+        }
+
+        function formatEuropeRubPrice(value) {
+            const amount = Math.round(Number(value) || 0);
+            return amount ? `${amount.toLocaleString('ru-RU')} ₽` : '';
+        }
+
+        function getEuropeTurnkeyHtml(car) {
+            if (car.turnkey_price_rub) {
+                return `<div class="car-price-full">
+                    <span class="car-price-full-label">под ключ в РФ:</span>
+                    <span class="car-price-full-value">${formatEuropeRubPrice(car.turnkey_price_rub)}</span>
+                </div>`;
+            }
+            if (car.turnkey_partial_price_rub) {
+                return `<div class="car-price-full car-price-full--estimate" title="Расчёт требует уточнения данных">
+                    <span class="car-price-full-label">под ключ в РФ:</span>
+                    <span class="car-price-full-value">уточнить</span>
+                </div>`;
+            }
+            return `<div class="car-price-full car-price-full--estimate">
+                <span class="car-price-full-label">под ключ в РФ:</span>
+                <span class="car-price-full-value">по запросу</span>
+            </div>`;
         }
 
         // Настройка фильтров

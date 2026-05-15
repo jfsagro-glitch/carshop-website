@@ -1104,6 +1104,16 @@
             try {
                 const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
                 georgiaCarsData = result.data;
+                const hasTurnkeyPrices = georgiaCarsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
+                if (!hasTurnkeyPrices && result._source !== 'json') {
+                    const fallback = await fetch('./cars_georgia_stock.json?v=' + Date.now(), { cache: 'no-store' });
+                    if (fallback.ok) {
+                        const fallbackCars = await fallback.json();
+                        if (fallbackCars.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0)) {
+                            georgiaCarsData = fallbackCars;
+                        }
+                    }
+                }
                 georgiaFilteredCars = [...georgiaCarsData];
 
                 // Сортировка

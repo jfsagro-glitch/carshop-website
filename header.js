@@ -47,6 +47,16 @@
 
   /* ── Customs calculator toolbar shortcut ─────────────────── */
   function initCustomsCalculatorShortcut() {
+    document.querySelectorAll('.nav').forEach(function (nav) {
+      if (!nav.querySelector('a[href*="customs-calculator.html"]')) {
+        var navLink = document.createElement('a');
+        navLink.href = 'customs-calculator.html';
+        navLink.className = 'nav-calculator-link';
+        navLink.innerHTML = '<i class="fas fa-calculator" aria-hidden="true"></i> Калькулятор';
+        nav.appendChild(navLink);
+      }
+    });
+
     var actions = document.querySelector('.header-actions');
     if (!actions || actions.querySelector('.customs-toolbar-btn')) return;
 

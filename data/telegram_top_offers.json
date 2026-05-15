@@ -1,304 +1,323 @@
 {
-  "generated_at": "2026-05-14T06:41:29Z",
-  "source_count": 46,
-  "parsed_posts": 1,
+  "generated_at": "2026-05-15T11:12:31.854Z",
+  "source_count": 3,
+  "parsed_posts": 0,
   "displayed_count": 8,
   "errors": [],
   "offers": [
     {
-      "channel": "AutopodborGeo",
-      "region": "Грузия / США",
-      "source": "@AutopodborGeo",
-      "source_url": "https://t.me/AutopodborGeo/4790",
-      "title": "Mitsubishi Eclipse Cross",
+      "channel": "encar_korea",
+      "region": "Корея",
+      "source": "Encar Korea",
+      "source_type": "catalog_best_turnkey",
+      "source_url": "https://www.encar.com/dc/dc_cardetailview.do?carid=42017409",
+      "title": "KIA Ray 2022",
+      "year": "2022",
+      "price": "1 001 249 ₽",
+      "base_price": "745 만₩",
+      "image": "https://ci.encar.com/carpicture01/pic4201/42017409_001.jpg",
+      "images": [
+        "https://ci.encar.com/carpicture01/pic4201/42017409_001.jpg",
+        "https://ci.encar.com/carpicture01/pic4201/42017409_003.jpg",
+        "https://ci.encar.com/carpicture01/pic4201/42017409_004.jpg",
+        "https://ci.encar.com/carpicture01/pic4201/42017409_007.jpg"
+      ],
+      "details": {
+        "engine": "1.0 Бензин",
+        "power": "76 л.с. / 56 кВт",
+        "mileage": "92 559 км"
+      },
+      "text_excerpt": "KIA Ray 2022: выгодное проходное предложение Корея, база 745 만₩, расчёт под ключ в РФ 1 001 249 ₽.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "под ключ в РФ: 1 001 249 ₽",
+        "Encar, доставка 3000 € включена"
+      ],
+      "score": 8947145,
+      "quality": "turnkey_catalog",
+      "telegram_post": "🔥 KIA Ray 2022\n\n📍 Направление: Корея\n💰 Под ключ в РФ: 1 001 249 ₽\nБазовая цена: 745 만₩\n⚙️ Двигатель: 1.0 Бензин\n🐎 Мощность: 76 л.с. / 56 кВт\n🛣️ Пробег: 92 559 км\n\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• под ключ в РФ: 1 001 249 ₽\n• Encar, доставка 3000 € включена\n\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник: Encar Korea"
+    },
+    {
+      "channel": "myauto_georgia",
+      "region": "Грузия",
+      "source": "MyAuto Georgia",
+      "source_type": "catalog_best_turnkey",
+      "source_url": "https://myauto.ge/ru/pr/120624948",
+      "title": "Hyundai Elantra 2022",
+      "year": "2022",
+      "price": "1 154 604 ₽",
+      "base_price": "$6 100",
+      "image": "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_1.jpg?v=17",
+      "images": [
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_1.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_2.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_3.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_4.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_5.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_6.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_7.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_8.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_9.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_10.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_11.jpg?v=17",
+        "https://static.my.ge/myauto/photos/4/9/4/2/6/large/120624948_12.jpg?v=17"
+      ],
+      "details": {
+        "engine": "2,0 Бензин",
+        "power": "147 ?.?. / 108 ???",
+        "mileage": "30 000 км"
+      },
+      "text_excerpt": "Hyundai Elantra 2022: выгодное проходное предложение Грузия, база $6 100, расчёт под ключ в РФ 1 154 604 ₽.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "под ключ в РФ: 1 154 604 ₽"
+      ],
+      "score": 8886396,
+      "quality": "turnkey_catalog",
+      "telegram_post": "🔥 Hyundai Elantra 2022\n\n📍 Направление: Грузия\n💰 Под ключ в РФ: 1 154 604 ₽\nБазовая цена: $6 100\n⚙️ Двигатель: 2,0 Бензин\n🐎 Мощность: 147 ?.?. / 108 ???\n🛣️ Пробег: 30 000 км\n\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• под ключ в РФ: 1 154 604 ₽\n\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник: MyAuto Georgia"
+    },
+    {
+      "channel": "myauto_georgia",
+      "region": "Грузия",
+      "source": "MyAuto Georgia",
+      "source_type": "catalog_best_turnkey",
+      "source_url": "https://myauto.ge/ru/pr/121820857",
+      "title": "Chevrolet Trax 2022",
+      "year": "2022",
+      "price": "1 239 636 ₽",
+      "base_price": "$10 700",
+      "image": "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_1.jpg?v=3",
+      "images": [
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_1.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_2.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_3.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_4.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_5.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_6.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_7.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_8.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_9.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_10.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_11.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/8/0/2/8/large/121820857_12.jpg?v=3"
+      ],
+      "details": {
+        "engine": "1,4 Бензин",
+        "power": "140 ?.?. / 103 ???",
+        "mileage": "23 000 км"
+      },
+      "text_excerpt": "Chevrolet Trax 2022: выгодное проходное предложение Грузия, база $10 700, расчёт под ключ в РФ 1 239 636 ₽.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "под ключ в РФ: 1 239 636 ₽"
+      ],
+      "score": 8813964,
+      "quality": "turnkey_catalog",
+      "telegram_post": "🔥 Chevrolet Trax 2022\n\n📍 Направление: Грузия\n💰 Под ключ в РФ: 1 239 636 ₽\nБазовая цена: $10 700\n⚙️ Двигатель: 1,4 Бензин\n🐎 Мощность: 140 ?.?. / 103 ???\n🛣️ Пробег: 23 000 км\n\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• под ключ в РФ: 1 239 636 ₽\n\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник: MyAuto Georgia"
+    },
+    {
+      "channel": "myauto_georgia",
+      "region": "Грузия",
+      "source": "MyAuto Georgia",
+      "source_type": "catalog_best_turnkey",
+      "source_url": "https://myauto.ge/ru/pr/121925161",
+      "title": "Hyundai kona 2022",
+      "year": "2022",
+      "price": "1 186 907 ₽",
+      "base_price": "$6 500",
+      "image": "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_1.jpg?v=0",
+      "images": [
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_1.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_2.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_3.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_4.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_5.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_6.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_7.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_8.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_9.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_10.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_11.jpg?v=0",
+        "https://static.my.ge/myauto/photos/6/1/5/2/9/large/121925161_12.jpg?v=0"
+      ],
+      "details": {
+        "engine": "2,0 Бензин",
+        "power": "147 ?.?. / 108 ???",
+        "mileage": "54 000 км"
+      },
+      "text_excerpt": "Hyundai kona 2022: выгодное проходное предложение Грузия, база $6 500, расчёт под ключ в РФ 1 186 907 ₽.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "под ключ в РФ: 1 186 907 ₽"
+      ],
+      "score": 8810893,
+      "quality": "turnkey_catalog",
+      "telegram_post": "🔥 Hyundai kona 2022\n\n📍 Направление: Грузия\n💰 Под ключ в РФ: 1 186 907 ₽\nБазовая цена: $6 500\n⚙️ Двигатель: 2,0 Бензин\n🐎 Мощность: 147 ?.?. / 108 ???\n🛣️ Пробег: 54 000 км\n\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• под ключ в РФ: 1 186 907 ₽\n\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник: MyAuto Georgia"
+    },
+    {
+      "channel": "myauto_georgia",
+      "region": "Грузия",
+      "source": "MyAuto Georgia",
+      "source_type": "catalog_best_turnkey",
+      "source_url": "https://myauto.ge/ru/pr/121662959",
+      "title": "Chevrolet Trailblazer 2023",
+      "year": "2023",
+      "price": "1 307 028 ₽",
+      "base_price": "$11 800",
+      "image": "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_1.jpg?v=3",
+      "images": [
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_1.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_2.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_3.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_4.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_5.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_6.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_7.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_8.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_9.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_10.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_11.jpg?v=3",
+        "https://static.my.ge/myauto/photos/5/9/2/6/6/large/121662959_12.jpg?v=3"
+      ],
+      "details": {
+        "engine": "1,3 Бензин",
+        "power": "155 ?.?. / 114 ???",
+        "mileage": "53 000 км"
+      },
+      "text_excerpt": "Chevrolet Trailblazer 2023: выгодное проходное предложение Грузия, база $11 800, расчёт под ключ в РФ 1 307 028 ₽.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "под ключ в РФ: 1 307 028 ₽"
+      ],
+      "score": 8757572,
+      "quality": "turnkey_catalog",
+      "telegram_post": "🔥 Chevrolet Trailblazer 2023\n\n📍 Направление: Грузия\n💰 Под ключ в РФ: 1 307 028 ₽\nБазовая цена: $11 800\n⚙️ Двигатель: 1,3 Бензин\n🐎 Мощность: 155 ?.?. / 114 ???\n🛣️ Пробег: 53 000 км\n\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• под ключ в РФ: 1 307 028 ₽\n\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник: MyAuto Georgia"
+    },
+    {
+      "channel": "myauto_georgia",
+      "region": "Грузия",
+      "source": "MyAuto Georgia",
+      "source_type": "catalog_best_turnkey",
+      "source_url": "https://myauto.ge/ru/pr/121940125",
+      "title": "Nissan Kicks 2022",
+      "year": "2022",
+      "price": "1 327 205 ₽",
+      "base_price": "$10 000",
+      "image": "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_1.jpg?v=0",
+      "images": [
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_1.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_2.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_3.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_4.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_5.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_6.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_7.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_8.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_9.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_10.jpg?v=0",
+        "https://static.my.ge/myauto/photos/2/1/0/4/9/large/121940125_11.jpg?v=0"
+      ],
+      "details": {
+        "engine": "1,6 Бензин",
+        "power": "122 ?.?. / 90 ???",
+        "mileage": "29 500 км"
+      },
+      "text_excerpt": "Nissan Kicks 2022: выгодное проходное предложение Грузия, база $10 000, расчёт под ключ в РФ 1 327 205 ₽.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "под ключ в РФ: 1 327 205 ₽"
+      ],
+      "score": 8714695,
+      "quality": "turnkey_catalog",
+      "telegram_post": "🔥 Nissan Kicks 2022\n\n📍 Направление: Грузия\n💰 Под ключ в РФ: 1 327 205 ₽\nБазовая цена: $10 000\n⚙️ Двигатель: 1,6 Бензин\n🐎 Мощность: 122 ?.?. / 90 ???\n🛣️ Пробег: 29 500 км\n\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• под ключ в РФ: 1 327 205 ₽\n\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник: MyAuto Georgia"
+    },
+    {
+      "channel": "europe_catalog",
+      "region": "Европа",
+      "source": "AutoScout24 / mobile.de",
+      "source_type": "catalog_best_turnkey",
+      "source_url": "https://www.autoscout24.de/angebote/fiat-500-1-0-cultbluetoothklimadab-benzin-weiss-0ab4b5db-683f-46b2-80d3-ca781bd11d1a",
+      "title": "Fiat 500 2021",
       "year": "2021",
-      "price": "1.700.000 ₽",
-      "image": "https://cdn4.telesco.pe/file/XZ_uXc3eQAf88vGAH05DmrpikkkptQ9V1ltC3DxNEohOL_xpcqYOLhlRBdiHreTtrHGu7065WqicKUk61OyGLlv1Ozgft7I_jK08Uabfr5xeDNRHlwIuW313epoITZjyelqn1UY5ZsuL9GEkFV6BWWHHiHGKxKrlhSf7A8FPjs_nsbHovM78Zy_z3Qvr8regpbKDHC7uMCEIJ4oBTTc4emLBPS2Apr1a7dNArJPonK4EtZi8A3FciY7UjHe3i1psENbp1VFfUpf1SUV53xsa2C9wbJPmW9czDfijDoGgjHI51TbJIDKb9s72eBT9HdYFxN4oyAxj8uM7ZcoN-fNw9w.jpg",
+      "price": "1 457 846 ₽",
+      "base_price": "€9 470",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_8ecd77ef-4548-4ca6-8f24-aea3855ae6fe.jpg/1024x768.webp",
       "images": [
-        "https://cdn4.telesco.pe/file/XZ_uXc3eQAf88vGAH05DmrpikkkptQ9V1ltC3DxNEohOL_xpcqYOLhlRBdiHreTtrHGu7065WqicKUk61OyGLlv1Ozgft7I_jK08Uabfr5xeDNRHlwIuW313epoITZjyelqn1UY5ZsuL9GEkFV6BWWHHiHGKxKrlhSf7A8FPjs_nsbHovM78Zy_z3Qvr8regpbKDHC7uMCEIJ4oBTTc4emLBPS2Apr1a7dNArJPonK4EtZi8A3FciY7UjHe3i1psENbp1VFfUpf1SUV53xsa2C9wbJPmW9czDfijDoGgjHI51TbJIDKb9s72eBT9HdYFxN4oyAxj8uM7ZcoN-fNw9w.jpg"
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_8ecd77ef-4548-4ca6-8f24-aea3855ae6fe.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_6683882a-8e6a-4f66-bcf6-c6a64c98eb7e.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_4d0aed76-8ffd-4e0d-8c5b-608b97292e85.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_163e800e-5492-4223-b253-d2af691eea40.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_23a84594-3359-4380-a0e8-af3e57d7a56f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_4e6fb9f3-226e-4c7d-ad96-962c0d86ffeb.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_9b455b97-22ee-43e2-8511-349da633cae5.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_260aa46e-d7c5-413c-8684-392032b36aac.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_a2661eba-79a6-48fd-8f8d-beb399eeaae2.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_956668d1-9251-4908-b966-fa5c6c541922.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_00fc479c-0d54-419e-8e33-c52b438fd41d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ab4b5db-683f-46b2-80d3-ca781bd11d1a_b71da5b1-1114-4933-9caa-475931cd0561.jpg/1024x768.webp"
       ],
       "details": {
-        "engine": "1.5",
-        "power": "152 л.с. / 112 кВт",
-        "power_estimated": true,
-        "mileage": "уточняется"
+        "engine": "1 Бензин",
+        "power": "69 л.с. / 51 кВт",
+        "mileage": "13 608 км"
       },
-      "text_excerpt": "🚙 ТОП САМЫХ ДЕШЁВЫХ SUV И КРОССОВЕРОВ ДО 1.700.000 ₽ ПОД КЛЮЧ ИЗ США 🇺🇸 ➡️ 🇷🇺 Многие думают, что за эти деньги невозможно привезти свежий кроссовер 2021–2023 года. Но рынок США сейчас даёт очень интересные варианты даже с учётом логистики, ремонта и растаможки. 🔥 Самые выгодные SUV в этом бюджете: ✅ Hyundai Kona • 2022–2023 год • AWD / передний привод • экономичный расход • цена под ключ: ≈ 1.5–1.65 млн ₽ ✅ Mitsubishi Eclipse Cross • турбо 1.5L • полный привод • хорошая комплектация • цена под ключ: ≈ 1.4–1.8 млн ₽",
-      "facts": [
-        "есть расчёт под ключ/логистика",
-        "доставка и растаможка в РФ",
-        "аукционный лот США"
-      ],
-      "score": 254,
-      "quality": "strict",
-      "telegram_post": "🔥 Mitsubishi Eclipse Cross\n\n📍 Направление: Грузия / США\n📅 Год: 2021\n💰 Ориентир: 1.700.000 ₽\n⚙️ Двигатель: 1.5\n🐎 Мощность: 152 л.с. / 112 кВт\n🛣️ Пробег: уточняется\n• есть расчёт под ключ/логистика\n• доставка и растаможка в РФ\n• аукционный лот США\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: @AutopodborGeo"
-    },
-    {
-      "channel": "myauto_georgia",
-      "region": "Грузия",
-      "source": "MyAuto Georgia",
-      "source_type": "catalog_fallback",
-      "source_url": "https://myauto.ge/ru/pr/121492353",
-      "title": "Nissan Sentra 2023",
-      "year": "2023",
-      "price": "$11 600",
-      "image": "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_1.jpg?v=4",
-      "images": [
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_1.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_2.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_3.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_4.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_5.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_6.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_7.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_8.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_9.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_10.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_11.jpg?v=4",
-        "https://static.my.ge/myauto/photos/5/3/2/9/4/large/121492353_12.jpg?v=4"
-      ],
-      "details": {
-        "engine": "2,0 Бензин",
-        "power": "149 л.с. / 110 кВт",
-        "mileage": "57 600 км"
-      },
-      "text_excerpt": "Nissan Sentra 2023: проходной автомобиль Грузия, 2,0 Бензин, 149 л.с. / 110 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
+      "text_excerpt": "Fiat 500 2021: выгодное проходное предложение Европа, база €9 470, расчёт под ключ в РФ 1 457 846 ₽.",
       "facts": [
         "проходной возраст 3-5 лет",
         "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
+        "под ключ в РФ: 1 457 846 ₽",
+        "доставка 3000 € включена"
       ],
-      "score": 2385,
-      "quality": "candidate",
-      "telegram_post": "🔥 Nissan Sentra 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $11 600\n⚙️ Двигатель: 2,0 Бензин\n🐎 Мощность: 149 л.с. / 110 кВт\n🛣️ Пробег: 57 600 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: MyAuto Georgia"
+      "score": 8517660,
+      "quality": "turnkey_catalog",
+      "telegram_post": "🔥 Fiat 500 2021\n\n📍 Направление: Европа\n💰 Под ключ в РФ: 1 457 846 ₽\nБазовая цена: €9 470\n⚙️ Двигатель: 1 Бензин\n🐎 Мощность: 69 л.с. / 51 кВт\n🛣️ Пробег: 13 608 км\n\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• под ключ в РФ: 1 457 846 ₽\n• доставка 3000 € включена\n\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник: AutoScout24 / mobile.de"
     },
     {
       "channel": "europe_catalog",
       "region": "Европа",
       "source": "AutoScout24 / mobile.de",
-      "source_type": "catalog_fallback",
-      "source_url": "https://www.autoscout24.de/angebote/toyota-yaris-1-0-comfort-rueckfahrkamera-klima-acc-gjr-benzin-weiss-b980cdeb-1e22-46e1-825f-448791798db3",
-      "title": "Toyota Yaris 2023",
-      "year": "2023",
-      "price": "12 480 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_a2c550aa-0236-4e8e-8d45-b12b87f3e9f1.jpg/1024x768.webp",
+      "source_type": "catalog_best_turnkey",
+      "source_url": "https://www.autoscout24.de/angebote/hyundai-i20-1-0-t-gdi-select-mild-hybrid-benzin-silber-141f5665-0d62-4493-ad09-a6ec75fdcfc0",
+      "title": "Hyundai i20 2022",
+      "year": "2022",
+      "price": "1 600 247 ₽",
+      "base_price": "€10 990",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_f080472c-5ab2-43d0-a8e9-1523bf4d117a.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_a2c550aa-0236-4e8e-8d45-b12b87f3e9f1.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_c93a134d-d117-479c-bdd4-6095e93e8faf.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_829246f2-a6b7-4b65-9c7f-b343d96999ec.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_ddf10d4d-fe62-465a-8a53-09be7849c5ad.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_a994a06c-e760-469a-b281-a75fad2738ed.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_fc39b2e3-1add-4b0e-9452-5bf34278bd7b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_2bfa15bb-1b8c-4ead-b80c-27485c99428a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_112b83f4-ad69-4814-ab7c-316f5d546994.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_bbf37d2b-cf27-4c0f-babf-43d4ac1a9299.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_40a24737-5cbd-4a58-862e-9654ece848f7.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_8260b578-e40a-46b5-bcd2-a02a358b8c42.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/b980cdeb-1e22-46e1-825f-448791798db3_536dc7cb-c17b-48df-8d54-9099b52465e1.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_f080472c-5ab2-43d0-a8e9-1523bf4d117a.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_eeebf38f-2109-4bdd-aab2-c7679a01d303.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_d742d8b1-8664-49b9-bd29-d5e7d338acec.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_d900d6cb-01b6-4293-a213-66bd35f7cd2b.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_abb71251-9a4e-4acd-aa4a-412260c53aba.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_96bea1aa-d45b-4578-adbf-f717c2538ac7.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_e8b65161-037c-4c3c-a7b0-13c8243f8f6b.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_d30deb14-f4dc-4fbd-985d-e3ad3e5624ca.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_07d3d77f-43cc-4737-a87a-43e5a6aa7934.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_9cf153d9-9865-4f72-8403-39ece1d1f8de.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_ea32a42f-41d9-487f-bf82-9d07c91f9f31.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/141f5665-0d62-4493-ad09-a6ec75fdcfc0_a00891c8-f929-4aeb-bb9c-b181d77219dd.jpg/1024x768.webp"
       ],
       "details": {
-        "engine": "1.5 Гибрид",
-        "power": "116 л.с. / 85 кВт",
-        "mileage": "85 850 км"
+        "engine": "1 Бензин",
+        "power": "101 л.с. / 74 кВт",
+        "mileage": "48 142 км"
       },
-      "text_excerpt": "Toyota Yaris 2023: проходной автомобиль Европа, 1.5 Гибрид, 116 л.с. / 85 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
+      "text_excerpt": "Hyundai i20 2022: выгодное проходное предложение Европа, база €10 990, расчёт под ключ в РФ 1 600 247 ₽.",
       "facts": [
         "проходной возраст 3-5 лет",
         "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
+        "под ключ в РФ: 1 600 247 ₽",
+        "доставка 3000 € включена"
       ],
-      "score": 2385,
-      "quality": "candidate",
-      "telegram_post": "🔥 Toyota Yaris 2023\n\n📍 Направление: Европа\n📅 Год: 2023\n💰 Ориентир: 12 480 €\n⚙️ Двигатель: 1.5 Гибрид\n🐎 Мощность: 116 л.с. / 85 кВт\n🛣️ Пробег: 85 850 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: AutoScout24 / mobile.de"
-    },
-    {
-      "channel": "myauto_georgia",
-      "region": "Грузия",
-      "source": "MyAuto Georgia",
-      "source_type": "catalog_fallback",
-      "source_url": "https://myauto.ge/ru/pr/121919473",
-      "title": "Hyundai Tucson 2023",
-      "year": "2023",
-      "price": "$10 700",
-      "image": "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_1.jpg?v=0",
-      "images": [
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_1.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_2.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_3.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_4.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_5.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_6.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_7.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_8.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_9.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_10.jpg?v=0",
-        "https://static.my.ge/myauto/photos/7/4/9/1/9/large/121919473_11.jpg?v=0"
-      ],
-      "details": {
-        "engine": "1,6 Бензин",
-        "power": "150 л.с. / 110 кВт",
-        "mileage": "19 200 км"
-      },
-      "text_excerpt": "Hyundai Tucson 2023: проходной автомобиль Грузия, 1,6 Бензин, 150 л.с. / 110 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2385,
-      "quality": "candidate",
-      "telegram_post": "🔥 Hyundai Tucson 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $10 700\n⚙️ Двигатель: 1,6 Бензин\n🐎 Мощность: 150 л.с. / 110 кВт\n🛣️ Пробег: 19 200 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: MyAuto Georgia"
-    },
-    {
-      "channel": "europe_catalog",
-      "region": "Европа",
-      "source": "AutoScout24 / mobile.de",
-      "source_type": "catalog_fallback",
-      "source_url": "https://www.autoscout24.de/angebote/volkswagen-tiguan-elegance-2-0-tdi-komfort-sitze-matrix-shz-diesel-schwarz-ed060da8-4a54-4bf6-a59a-63d63d55f8d7",
-      "title": "Volkswagen Tiguan 2023",
-      "year": "2023",
-      "price": "26 880 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_8fb659e6-54f0-4ad2-a515-f54fb5261288.jpg/1024x768.webp",
-      "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_8fb659e6-54f0-4ad2-a515-f54fb5261288.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_feaade3a-db25-424f-9680-fe859c664b71.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_ad870e9b-2a4b-4c9c-a5e4-76b87d7c2cd7.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_44feb686-d5bc-4f42-874b-ef90c8269897.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_cb96b45e-b78d-42bd-91b3-fa6db8d6d34f.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_b7c517b1-eff4-4596-bd6a-e6ef65a075a7.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_194d6475-7b05-481f-b934-de586da6781b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_4876cc09-e61b-4858-b625-0c7a0a626a72.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_e09962e4-0cde-437b-833b-f0fe2a540bc9.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_453facc5-f021-4a7d-81c6-b1a029817dca.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_2d6861d5-5e40-4cff-b539-4e3188b27fb9.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/ed060da8-4a54-4bf6-a59a-63d63d55f8d7_67d6f9e6-0115-462c-89fc-aabe56fd028c.jpg/1024x768.webp"
-      ],
-      "details": {
-        "engine": "1.5 Бензин",
-        "power": "150 л.с. / 110 кВт",
-        "mileage": "71 844 км"
-      },
-      "text_excerpt": "Volkswagen Tiguan 2023: проходной автомобиль Европа, 1.5 Бензин, 150 л.с. / 110 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2385,
-      "quality": "candidate",
-      "telegram_post": "🔥 Volkswagen Tiguan 2023\n\n📍 Направление: Европа\n📅 Год: 2023\n💰 Ориентир: 26 880 €\n⚙️ Двигатель: 1.5 Бензин\n🐎 Мощность: 150 л.с. / 110 кВт\n🛣️ Пробег: 71 844 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: AutoScout24 / mobile.de"
-    },
-    {
-      "channel": "myauto_georgia",
-      "region": "Грузия",
-      "source": "MyAuto Georgia",
-      "source_type": "catalog_fallback",
-      "source_url": "https://myauto.ge/ru/pr/119691620",
-      "title": "Hyundai Elantra 2023",
-      "year": "2023",
-      "price": "$15 200",
-      "image": "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_1.jpg?v=13",
-      "images": [
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_1.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_2.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_3.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_4.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_5.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_6.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_7.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_8.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_9.jpg?v=13",
-        "https://static.my.ge/myauto/photos/2/6/1/9/6/large/119691620_10.jpg?v=13"
-      ],
-      "details": {
-        "engine": "1,6 Бензин",
-        "power": "123 л.с. / 90 кВт",
-        "mileage": "19 300 км"
-      },
-      "text_excerpt": "Hyundai Elantra 2023: проходной автомобиль Грузия, 1,6 Бензин, 123 л.с. / 90 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2385,
-      "quality": "candidate",
-      "telegram_post": "🔥 Hyundai Elantra 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $15 200\n⚙️ Двигатель: 1,6 Бензин\n🐎 Мощность: 123 л.с. / 90 кВт\n🛣️ Пробег: 19 300 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: MyAuto Georgia"
-    },
-    {
-      "channel": "europe_catalog",
-      "region": "Европа",
-      "source": "AutoScout24 / mobile.de",
-      "source_type": "catalog_fallback",
-      "source_url": "https://www.autoscout24.de/angebote/peugeot-5008-1-5-bluehdi-130-gt-eat8-7-sitzer-el-panodach-navi-diesel-weiss-750fe986-a4bf-4b3c-9cc8-6f3de7355eb4",
-      "title": "Peugeot 5008 2023",
-      "year": "2023",
-      "price": "27 990 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_ecc31da0-ca86-46c0-8d4a-eb723ca25022.jpg/1024x768.webp",
-      "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_ecc31da0-ca86-46c0-8d4a-eb723ca25022.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_c94dc063-4ec0-48f1-811f-b239ceea56ff.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_5fc87bd7-cf87-4b6f-b0f3-d48ce40d8f1a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_a99cbc12-e93f-40bb-8dfb-30d1b686e166.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_17f07193-99cf-46b0-807d-17e9346729e0.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_5747022a-3044-4ea4-afba-7075bf71ae5c.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_03185e61-4ff2-4c09-bdec-9b89b278f54a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_d93c4959-7773-45e7-a432-67895f81642b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_ee8128e4-3d17-44e9-b229-12c8bdbe849e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_a409e1ce-5328-4d93-8598-384cd052e419.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_06632649-d120-4cd7-ba7a-fad044662953.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/750fe986-a4bf-4b3c-9cc8-6f3de7355eb4_570f6004-0364-4a27-b365-177d3968b714.jpg/1024x768.webp"
-      ],
-      "details": {
-        "engine": "Дизель",
-        "power": "131 л.с. / 96 кВт",
-        "mileage": "75 950 км"
-      },
-      "text_excerpt": "Peugeot 5008 2023: проходной автомобиль Европа, Дизель, 131 л.с. / 96 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2385,
-      "quality": "candidate",
-      "telegram_post": "🔥 Peugeot 5008 2023\n\n📍 Направление: Европа\n📅 Год: 2023\n💰 Ориентир: 27 990 €\n⚙️ Двигатель: Дизель\n🐎 Мощность: 131 л.с. / 96 кВт\n🛣️ Пробег: 75 950 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: AutoScout24 / mobile.de"
-    },
-    {
-      "channel": "myauto_georgia",
-      "region": "Грузия",
-      "source": "MyAuto Georgia",
-      "source_type": "catalog_fallback",
-      "source_url": "https://myauto.ge/ru/pr/121918672",
-      "title": "Hyundai Elantra 2023",
-      "year": "2023",
-      "price": "$11 700",
-      "image": "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_1.jpg?v=1",
-      "images": [
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_1.jpg?v=1",
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_2.jpg?v=1",
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_3.jpg?v=1",
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_4.jpg?v=1",
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_5.jpg?v=1",
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_6.jpg?v=1",
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_7.jpg?v=1",
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_8.jpg?v=1",
-        "https://static.my.ge/myauto/photos/7/6/8/1/9/large/121918672_9.jpg?v=1"
-      ],
-      "details": {
-        "engine": "2,0 Бензин",
-        "power": "147 л.с. / 108 кВт",
-        "mileage": "3 900 км"
-      },
-      "text_excerpt": "Hyundai Elantra 2023: проходной автомобиль Грузия, 2,0 Бензин, 147 л.с. / 108 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2385,
-      "quality": "candidate",
-      "telegram_post": "🔥 Hyundai Elantra 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $11 700\n⚙️ Двигатель: 2,0 Бензин\n🐎 Мощность: 147 л.с. / 108 кВт\n🛣️ Пробег: 3 900 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник мониторинга: MyAuto Georgia"
+      "score": 8378097,
+      "quality": "turnkey_catalog",
+      "telegram_post": "🔥 Hyundai i20 2022\n\n📍 Направление: Европа\n💰 Под ключ в РФ: 1 600 247 ₽\nБазовая цена: €10 990\n⚙️ Двигатель: 1 Бензин\n🐎 Мощность: 101 л.с. / 74 кВт\n🛣️ Пробег: 48 142 км\n\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• под ключ в РФ: 1 600 247 ₽\n• доставка 3000 € включена\n\n📲 Напишите менеджеру: https://wa.me/996755666805\nИсточник: AutoScout24 / mobile.de"
     }
   ]
 }
