@@ -662,6 +662,7 @@ window.addEventListener('click', function(event) {
         generation: null,
         engine: null,
         parts: [],
+        selectedGroup: '',
         selectedPart: null,
         pendingSelection: null,
         vinDecoded: null,
@@ -771,7 +772,7 @@ window.addEventListener('click', function(event) {
                 exact: null,
                 candidates: [],
                 precision: 'missing',
-                message: 'Нет проверенного OEM в базе. Подтвердим по VIN.'
+                message: ''
             };
         }
         const generation = currentGeneration();
@@ -792,7 +793,7 @@ window.addEventListener('click', function(event) {
             exact: null,
             candidates,
             precision: 'brand_code_only',
-            message: 'Возможные OEM из справочника марки. Точный номер зависит от года, рестайлинга, двигателя и VIN.'
+            message: ''
         };
     }
 
@@ -1020,7 +1021,7 @@ window.addEventListener('click', function(event) {
             // Reuse the catalog promise started by the inline script to avoid a second 437KB download
             state.catalog = window._partsCatalogPromise
                 ? await window._partsCatalogPromise
-                : await fetch('data/parts_catalog.json?v=20260507-applicability', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+                : await fetch('data/parts_catalog.json?v=20260516-parts-ui', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
             fillBrandSelect();
             updateStatsFromLocalCatalog();
             if (state.pendingSelection) {
@@ -1076,7 +1077,10 @@ window.addEventListener('click', function(event) {
         });
 
         $('partsSearchInput')?.addEventListener('input', renderParts);
-        $('partsGroupSelect')?.addEventListener('change', renderParts);
+        $('partsGroupSelect')?.addEventListener('change', event => {
+            state.selectedGroup = event.target.value || '';
+            renderParts();
+        });
         $('partsCategorySelect')?.addEventListener('change', renderParts);
         $('partsVinInput')?.addEventListener('input', event => {
             event.target.value = normalizeVin(event.target.value);
@@ -1207,6 +1211,7 @@ window.addEventListener('click', function(event) {
     function showPartsForSelection(options = {}) {
         const shouldScroll = options.scroll !== false;
         state.parts = buildPartsForCurrentModel();
+        state.selectedGroup = '';
         const panel = $('partsResultsPanel');
         const title = $('partsVehicleTitle');
         if (panel) panel.style.display = 'block';
@@ -1215,8 +1220,6 @@ window.addEventListener('click', function(event) {
             const generationLabel = currentGeneration()?.label ? ` · поколение/рестайлинг ${currentGeneration().label}` : '';
             title.textContent = `${state.brand.name} ${state.model.name}${state.year ? ' ' + state.year : ''}${generationLabel}${engineLabel}: доступные запчасти`;
         }
-        fillGroupSelect();
-        fillCategorySelect();
         renderParts();
         if (shouldScroll) panel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -1245,7 +1248,7 @@ window.addEventListener('click', function(event) {
         const grid = $('partsGrid');
         if (!grid) return;
         const query = ($('partsSearchInput')?.value || '').trim().toLowerCase();
-        const group = $('partsGroupSelect')?.value || '';
+        const group = state.selectedGroup || $('partsGroupSelect')?.value || '';
         const category = $('partsCategorySelect')?.value || '';
         let list = state.parts;
         if (group) list = list.filter(part => part.group === group);
@@ -1265,28 +1268,45 @@ window.addEventListener('click', function(event) {
         if (count) count.textContent = `${list.length} ${pluralRu(list.length, 'позиция', 'позиции', 'позиций')}`;
 
         const grouped = new Map();
-        list.forEach((part, index) => {
+        list.forEach((part) => {
             const key = part.group || 'Прочее';
             if (!grouped.has(key)) grouped.set(key, []);
-            grouped.get(key).push({ part, index });
+            grouped.get(key).push(part);
         });
 
-        const cardMarkup = (part, index) => `
+        if (!group && !query) {
+            const groups = [...grouped.entries()].sort((a, b) => a[0].localeCompare(b[0], 'ru'));
+            if (count) count.textContent = `${groups.length} ${pluralRu(groups.length, 'группа', 'группы', 'групп')}`;
+            grid.innerHTML = `
+                <div class="parts-group-list">
+                    ${groups.map(([groupName, rows]) => `
+                        <button type="button" class="parts-group-button" data-parts-group="${esc(groupName)}">
+                            <span class="parts-group-name">${esc(groupName)}</span>
+                            <span class="parts-group-count">${rows.length}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+            grid.querySelectorAll('[data-parts-group]').forEach(button => {
+                button.addEventListener('click', () => {
+                    state.selectedGroup = button.getAttribute('data-parts-group') || '';
+                    renderParts();
+                });
+            });
+            return;
+        }
+
+        const cardMarkup = (part) => `
             <article class="parts-item-card">
                 <div class="parts-card-topline">
-                    <span class="parts-number">${esc(part.number)}</span>
-                    <span class="parts-chip parts-chip--muted">${esc(part.quantity)} шт.</span>
+                    <div>
+                        <div class="parts-number-label">OEM номер</div>
+                        <span class="parts-number">${esc(part.number)}</span>
+                    </div>
                 </div>
                 <div class="parts-item-title">${esc(part.name)}</div>
-                <div class="parts-item-meta">
-                    <span class="parts-chip">${esc(part.category)}</span>
-                    <span class="parts-chip parts-chip--muted">${esc(part.group)}</span>
-                    ${part.generation_label ? `<span class="parts-chip parts-chip--muted">${esc(part.generation_label)}</span>` : ''}
-                </div>
-                <span class="parts-analog" title="${esc(part.note || '')}">${esc(part.note || 'Точный OEM подтверждаем по VIN')}</span>
-                <span class="parts-analog" title="${esc((part.oem_candidates || []).join(', '))}">Оригинальные OEM: ${esc((part.oem_candidates || []).slice(0, 3).join(', '))}</span>
                 <div class="parts-card-actions">
-                    <button class="btn-primary parts-cart-only" type="button" data-part-index="${index}" title="Заказать" aria-label="Заказать ${esc(part.name)}"><i class="fas fa-shopping-cart" aria-hidden="true"></i></button>
+                    <button class="btn-primary parts-cart-only" type="button" data-part-code="${esc(part.code)}" title="Заказать" aria-label="Заказать ${esc(part.name)}"><i class="fas fa-shopping-cart" aria-hidden="true"></i></button>
                 </div>
             </article>
         `;
@@ -1298,18 +1318,29 @@ window.addEventListener('click', function(event) {
                 <section class="parts-group-block" style="margin-bottom:1.4rem;">
                     <div style="display:flex;align-items:center;justify-content:space-between;gap:0.8rem;margin-bottom:0.65rem;">
                         <h3 style="margin:0;font-size:1rem;color:#e2e8f0;">${esc(groupName)}</h3>
-                        <span class="parts-chip parts-chip--muted">${rows.length} ${pluralRu(rows.length, 'позиция', 'позиции', 'позиций')}</span>
+                        ${group && !query ? '<button type="button" class="parts-group-back" data-parts-back>К группам</button>' : ''}
                     </div>
                     <div class="parts-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
-                        ${rows.map(({ part, index }) => cardMarkup(part, index)).join('')}
+                        ${rows.map(part => cardMarkup(part)).join('')}
                     </div>
                 </section>
             `;
         }).join('');
 
-        grid.querySelectorAll('[data-part-index]').forEach(button => {
-            const idx = Number(button.getAttribute('data-part-index'));
-            button.addEventListener('click', () => openLocalPartsOrder(list[idx]));
+        grid.querySelectorAll('[data-parts-back]').forEach(button => {
+            button.addEventListener('click', () => {
+                state.selectedGroup = '';
+                if ($('partsGroupSelect')) $('partsGroupSelect').value = '';
+                renderParts();
+            });
+        });
+
+        grid.querySelectorAll('[data-part-code]').forEach(button => {
+            const code = button.getAttribute('data-part-code');
+            const part = list.find(item => String(item.code) === String(code));
+            button.addEventListener('click', () => {
+                if (part) openLocalPartsOrder(part);
+            });
         });
     }
 
@@ -1333,9 +1364,7 @@ window.addEventListener('click', function(event) {
         if (state.vinDecoded?.vin) $('partsOrderVin').value = state.vinDecoded.vin;
         $('partsOrderClient').value = '';
         $('partsOrderPhone').value = '';
-        $('partsOrderComment').value = part.oem_candidates?.length
-            ? `Оригинальные OEM из справочника: ${part.oem_candidates.join(', ')}. Точный номер подтвердить по VIN/комплектации.`
-            : '';
+        $('partsOrderComment').value = '';
         const status = $('partsOrderStatus');
         if (status) status.style.display = 'none';
         const modal = $('partsOrderModal');
