@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    const DATA_URL = 'cars_europe_new.json?v=20260529-avtostok63';
+    const DATA_URL = 'cars_europe_new.json?v=20260529-avtostok63-passenger';
     const PAGE_SIZE = 18;
     const FINAL_PRICE_MARKUP_RUB = 200000;
     const RUB = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
@@ -85,9 +85,56 @@
         ].map(safeText).join(' ').toLowerCase();
     }
 
+    function commercialText(car) {
+        return [car.brand, car.model, car.full_title, car.equipment?.join(' ')]
+            .map(safeText)
+            .join(' ')
+            .toLowerCase();
+    }
+
+    function hasPassengerVanSignal(text) {
+        return /\b(tourer|tourneo|multivan|california|caravelle|shuttle|kombi|combi|life|9\s*-?\s*sitzer|8\s*-?\s*sitze|8\s*-?\s*sitzer|7\s*-?\s*sitzer|пассажир|passenger)\b/i.test(text);
+    }
+
+    function isCommercialVehicle(car) {
+        const brand = safeText(car.brand).toLowerCase();
+        const model = safeText(car.model).toLowerCase();
+        const text = commercialText(car);
+        const passengerVan = hasPassengerVanSignal(text);
+
+        if (brand === 'iveco') return true;
+
+        const commercialModels = [
+            'daily',
+            'ducato',
+            'sprinter',
+            'crafter',
+            'transit',
+            'transit custom',
+            'transit connect',
+            'vito',
+            'vivaro',
+            'trafic',
+            'proace',
+            'proace city',
+            'doblo',
+            'combo',
+            'caddy',
+            'transporter',
+        ];
+
+        const commercialModel = commercialModels.some(item => model.includes(item));
+        const hardCargoSignal = /\b(kasten|cargo|kastenwagen|panel\s*van|trenngitter|regale|nur\s+handel|heckflügeltür|ka\s|ka$)\b/i.test(text);
+
+        if (hardCargoSignal) return true;
+        if (!commercialModel) return false;
+        return !passengerVan;
+    }
+
     function normalizedCars(rows) {
         return (rows || [])
             .filter(car => car && (car.brand || car.model) && getImage(car))
+            .filter(car => !isCommercialVehicle(car))
             .map(car => ({
                 ...car,
                 _images: getImages(car),
