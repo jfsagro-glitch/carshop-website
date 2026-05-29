@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avtostok63 — автомобили из Европы</title>
+    <meta name="description" content="Европейские автомобили Avtostok63: актуальные предложения, расчёт под ключ, проверка истории и доставка.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Avtostok63 — автомобили из Европы">
+    <meta property="og:description" content="Подборка автомобилей из Европы с расчётом под ключ.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cmsauto.store/avtostok63-europe.html">
+    <meta property="og:image" content="https://cmsauto.store/images/logo.png">
+    <meta name="theme-color" content="#111827">
+    <link rel="canonical" href="https://cmsauto.store/avtostok63-europe.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="avtostok63-europe.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header class="as63-header">
+        <div class="as63-shell as63-header__inner">
+            <a class="as63-brand" href="avtostok63-europe.html" aria-label="Avtostok63">
+                <span class="as63-brand__mark">A63</span>
+                <span>
+                    <strong>Avtostok63</strong>
+                    <small>Europe stock</small>
+                </span>
+            </a>
+            <nav class="as63-nav" aria-label="Основная навигация">
+                <a href="#offers">Предложения</a>
+                <a href="#process">Как работаем</a>
+                <a href="https://web.telegram.org/k/#@Avtostok163" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a href="europe-orders.html">EXPO MIR Europe</a>
+            </nav>
+            <a class="as63-header__cta" href="https://wa.me/996755666805?text=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%B0%D0%B2%D1%82%D0%BE%20Avtostok63%20%D0%B8%D0%B7%20%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D1%8B" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                Подобрать авто
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="as63-hero" id="top">
+            <div class="as63-hero__media" id="heroMedia" aria-hidden="true"></div>
+            <div class="as63-hero__overlay"></div>
+            <div class="as63-shell as63-hero__content">
+                <p class="as63-eyebrow">Европейский сток под ключ</p>
+                <h1>Avtostok63</h1>
+                <p class="as63-hero__lead">Подборка проходных автомобилей из Европы с прозрачным расчётом, реальными фото и быстрой заявкой по конкретному лоту.</p>
+                <div class="as63-hero__actions">
+                    <a class="as63-btn as63-btn--primary" href="#offers">Смотреть предложения</a>
+                    <a class="as63-btn as63-btn--ghost" href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+                </div>
+                <dl class="as63-metrics" aria-label="Статистика каталога">
+                    <div><dt id="metricTotal">—</dt><dd>авто в подборке</dd></div>
+                    <div><dt id="metricBrands">—</dt><dd>марок</dd></div>
+                    <div><dt id="metricUpdated">—</dt><dd>обновление</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="as63-toolbar" id="offers">
+            <div class="as63-shell">
+                <div class="as63-toolbar__head">
+                    <div>
+                        <h2>Предложения из Европы</h2>
+                        <p>Фильтруйте по бюджету, мощности, пробегу и марке. Цена под ключ берётся из расчёта каталога, если он доступен.</p>
+                    </div>
+                    <span class="as63-count" id="offersCount">Загрузка...</span>
+                </div>
+                <form class="as63-filters" id="filtersForm">
+                    <label>
+                        <span>Поиск</span>
+                        <input id="searchInput" type="search" placeholder="BMW, Tiguan, 150 л.с.">
+                    </label>
+                    <label>
+                        <span>Марка</span>
+                        <select id="brandFilter"><option value="">Все марки</option></select>
+                    </label>
+                    <label>
+                        <span>Модель</span>
+                        <select id="modelFilter"><option value="">Все модели</option></select>
+                    </label>
+                    <label>
+                        <span>Бюджет под ключ</span>
+                        <select id="budgetFilter">
+                            <option value="">Любой</option>
+                            <option value="2000000">до 2 млн ₽</option>
+                            <option value="2500000">до 2.5 млн ₽</option>
+                            <option value="3000000">до 3 млн ₽</option>
+                            <option value="3500000">до 3.5 млн ₽</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Мощность</span>
+                        <select id="powerFilter">
+                            <option value="">Любая</option>
+                            <option value="116">до 116 л.с.</option>
+                            <option value="150">до 150 л.с.</option>
+                            <option value="160">до 160 л.с.</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Сортировка</span>
+                        <select id="sortFilter">
+                            <option value="turnkey_asc">Сначала дешевле</option>
+                            <option value="year_desc">Сначала свежее</option>
+                            <option value="mileage_asc">Меньше пробег</option>
+                        </select>
+                    </label>
+                    <button class="as63-btn as63-btn--filter" type="reset">Сбросить</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="as63-listing">
+            <div class="as63-shell">
+                <div class="as63-grid" id="offersGrid">
+                    <div class="as63-loading">Загружаем предложения...</div>
+                </div>
+                <div class="as63-more-wrap">
+                    <button class="as63-btn as63-btn--ghost" id="showMoreBtn" type="button" hidden>Показать ещё</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="as63-process" id="process">
+            <div class="as63-shell">
+                <h2>Как работает Avtostok63</h2>
+                <div class="as63-process__grid">
+                    <article><span>01</span><h3>Выбор лота</h3><p>Отправляете ссылку или выбираете автомобиль из подборки.</p></article>
+                    <article><span>02</span><h3>Проверка</h3><p>Смотрим историю, продавца, комплектацию, фото и применимость по условиям ввоза.</p></article>
+                    <article><span>03</span><h3>Расчёт</h3><p>Фиксируем ориентир под ключ и отдельно показываем платежи и логистику.</p></article>
+                    <article><span>04</span><h3>Доставка</h3><p>Ведём покупку, документы, логистику и передачу автомобиля клиенту.</p></article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="as63-footer">
+        <div class="as63-shell as63-footer__inner">
+            <div>
+                <strong>Avtostok63</strong>
+                <p>Европейские автомобили под заказ. Партнёрская страница EXPO MIR.</p>
+            </div>
+            <div class="as63-footer__links">
+                <a href="tel:+996755666805">+996 755 666 805</a>
+                <a href="mailto:carexportgeo@bk.ru">carexportgeo@bk.ru</a>
+                <a href="https://wa.me/996755666805" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a href="https://web.telegram.org/k/#@Avtostok163" target="_blank" rel="noopener noreferrer">Telegram-канал</a>
+            </div>
+        </div>
+    </footer>
+
+    <template id="offerCardTemplate">
+        <article class="as63-card">
+            <div class="as63-card__image-wrap">
+                <img class="as63-card__image" alt="" loading="lazy" decoding="async">
+                <span class="as63-card__badge"></span>
+            </div>
+            <div class="as63-card__body">
+                <div class="as63-card__brand"></div>
+                <h3></h3>
+                <div class="as63-card__prices">
+                    <strong class="as63-card__turnkey"></strong>
+                    <span class="as63-card__eur"></span>
+                </div>
+                <dl class="as63-card__specs"></dl>
+                <div class="as63-card__actions">
+                    <a class="as63-card__source" target="_blank" rel="noopener noreferrer">Источник</a>
+                    <a class="as63-card__whatsapp" target="_blank" rel="noopener noreferrer">Заявка</a>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <script src="avtostok63-europe.js"></script>
+</body>
+</html>
