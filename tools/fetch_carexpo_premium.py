@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch Avtostok63 premium stock from Carexpo catalog page."""
+"""Fetch Avtostok63 premium stock from Carexpo in-stock catalog."""
 
 from __future__ import annotations
 
@@ -13,7 +13,8 @@ import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_URL = "https://carexpo.group/catalog?status=in_stock&page=5"
+SOURCE_BASE_URL = "https://carexpo.group/catalog?status=in_stock"
+START_PAGE = 1
 OUTPUT = ROOT / "data" / "avtostok63_premium.json"
 
 
@@ -53,7 +54,7 @@ def extract_next_data(html: str) -> dict[str, Any]:
     return json.loads(match.group(1))
 
 
-def cars_from_next_data(data: dict[str, Any]) -> list[dict[str, Any]]:
+def page_from_next_data(data: dict[str, Any], page_number: int) -> dict[str, Any]:
     cached = (
         data.get("props", {})
         .get("pageProps", {})
@@ -62,10 +63,10 @@ def cars_from_next_data(data: dict[str, Any]) -> list[dict[str, Any]]:
         .get("carsList", {})
         .get("cached", {})
     )
-    page = cached.get("status=in_stock&page=5")
+    page = cached.get(f"status=in_stock&page={page_number}") or cached.get("status=in_stock")
     if not page or not isinstance(page.get("data"), list):
-        raise RuntimeError("Carexpo page 5 stock data not found")
-    return page["data"]
+        raise RuntimeError(f"Carexpo page {page_number} stock data not found")
+    return page
 
 
 def normalize(car: dict[str, Any]) -> dict[str, Any]:
@@ -108,9 +109,10 @@ def normalize(car: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def fetch() -> dict[str, Any]:
+def fetch_page(page_number: int) -> dict[str, Any]:
+    source_url = f"{SOURCE_BASE_URL}&page={page_number}"
     response = requests.get(
-        SOURCE_URL,
+        source_url,
         headers={
             "User-Agent": "Mozilla/5.0 Avtostok63 premium catalog updater",
             "Accept": "text/html,application/xhtml+xml",
@@ -118,13 +120,35 @@ def fetch() -> dict[str, Any]:
         timeout=35,
     )
     response.raise_for_status()
-    data = extract_next_data(response.text)
-    cars = [normalize(car) for car in cars_from_next_data(data)]
+    return page_from_next_data(extract_next_data(response.text), page_number)
+
+
+def fetch() -> dict[str, Any]:
+    first_page = fetch_page(START_PAGE)
+    meta = first_page.get("meta") or {}
+    last_page = int(meta.get("last_page") or START_PAGE)
+    raw_cars = list(first_page.get("data") or [])
+
+    for page_number in range(START_PAGE + 1, last_page + 1):
+        raw_cars.extend(fetch_page(page_number).get("data") or [])
+
+    cars = [normalize(car) for car in raw_cars]
     cars = [car for car in cars if car["brand"] and car["images"]]
+
+    seen: set[str] = set()
+    unique_cars = []
+    for car in cars:
+        if car["id"] in seen:
+            continue
+        seen.add(car["id"])
+        unique_cars.append(car)
+
     return {
-        "source": SOURCE_URL,
+        "source": SOURCE_BASE_URL,
+        "pages": last_page,
+        "total": meta.get("total") or len(unique_cars),
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "cars": cars,
+        "cars": unique_cars,
     }
 
 

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    const DATA_URL = 'data/avtostok63_premium.json?v=20260529';
+    const DATA_URL = 'data/avtostok63_premium.json?v=20260529-all-stock';
     const CONTACT_PHONE = '79178177711';
     const EUR = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
     const RUB = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
@@ -94,7 +94,7 @@
             createSpec('Состояние', car.condition || 'New')
         );
 
-        const sourceUrl = safeHttpUrl(car.url, 'https://carexpo.group/catalog?status=in_stock&page=5');
+        const sourceUrl = safeHttpUrl(car.url, 'https://carexpo.group/catalog?status=in_stock');
         source.href = sourceUrl;
 
         const message = [
