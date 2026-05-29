@@ -4,6 +4,7 @@
     const DATA_URL = 'cars_europe_new.json?v=20260529-avtostok63-passenger';
     const PAGE_SIZE = 18;
     const FINAL_PRICE_MARKUP_RUB = 200000;
+    const CONTACT_PHONE = '79178177711';
     const RUB = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
     const EUR = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
 
@@ -290,7 +291,7 @@
             `Цена под ключ: ${formatRub(car._turnkey)}`,
             `Источник: ${sourceUrl}`,
         ].join('\n');
-        whatsapp.href = `https://wa.me/996755666805?text=${encodeURIComponent(message)}`;
+        whatsapp.href = `https://wa.me/${CONTACT_PHONE}?text=${encodeURIComponent(message)}`;
         whatsapp.textContent = 'Заявка';
         return node;
     }
