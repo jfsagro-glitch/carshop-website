@@ -31,6 +31,8 @@ STATIC_PAGES = [
     ("usa-orders.html",      0.7, "weekly"),
     ("china-orders.html",    0.7, "weekly"),
     ("parts-orders.html",    0.7, "daily"),
+    ("avtostok63-europe.html", 0.8, "daily"),
+    ("avtostok63-premium.html", 0.75, "daily"),
 ]
 
 
