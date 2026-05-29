@@ -122,6 +122,11 @@ jobs:
             echo "Europe catalog after supplement: $COUNT2 cars"
           fi
 
+      - name: Remove unavailable Europe listings
+        run: |
+          python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 8 --timeout 12
+          python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 4 --timeout 15
+
       - name: Validate public catalogs
         run: python car_parser.py --validate-catalogs
 
