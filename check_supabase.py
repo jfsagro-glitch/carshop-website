@@ -1,9 +1,16 @@
 """Проверка RLS и текущего состояния Supabase таблиц."""
+import os
 import requests
 
-SB = "https://jolyujjfxzhkswflqodz.supabase.co"
-SERVICE = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvbHl1ampmeHpoa3N3Zmxxb2R6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Nzg0NDU2MSwiZXhwIjoyMDkzNDIwNTYxfQ.Ex7h9hdsXba1fWcoqx3CSlImdrXTw7IVn5bsFsAM1j8"
-ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvbHl1ampmeHpoa3N3Zmxxb2R6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4NDQ1NjEsImV4cCI6MjA5MzQyMDU2MX0.LJt1YGmO2REOhSdoFAk_liWJiD9RjtR6zkmrDITTT-E"
+SB = os.environ.get("SUPABASE_URL", "").rstrip("/")
+SERVICE = os.environ.get("SUPABASE_SERVICE_KEY", "")
+ANON = os.environ.get("SUPABASE_ANON_KEY", "")
+
+if not SB or not SERVICE or not ANON:
+    raise SystemExit(
+        "ERROR: set SUPABASE_URL, SUPABASE_SERVICE_KEY, and SUPABASE_ANON_KEY "
+        "in the environment. Never hardcode Supabase keys in source files."
+    )
 
 print("=== RLS check (anon key) ===")
 for table in ("cars", "leads", "parts", "search_events"):

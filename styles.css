@@ -1447,9 +1447,9 @@ body.premium .about h2 {
 
 .car-image {
     width: 100%;
-    height: 480px;
-    min-height: 480px;
-    max-height: 480px;
+    height: auto;
+    min-height: 0;
+    max-height: none;
     position: relative;
     background: #000000;
     display: flex;
@@ -2453,6 +2453,10 @@ body.premium .korea-card .car-price-full-value {
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
 }
 
 .close:hover {
@@ -2598,11 +2602,6 @@ body.premium .korea-card .car-price-full-value {
         gap: 1.5rem;
     }
 
-    .car-image {
-        height: 380px;
-        min-height: 380px;
-    }
-
     .delivery-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -2715,12 +2714,6 @@ body.premium .korea-card .car-price-full-value {
         gap: 1.5rem;
     }
 
-    .car-image {
-        height: 400px;
-        min-height: 400px;
-        font-size: 2.5rem;
-    }
-
     .car-info {
         padding: 1rem;
     }
@@ -2814,6 +2807,10 @@ body.premium .korea-card .car-price-full-value {
         padding: 0 10px;
     }
 
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+
     .hero {
         padding: 4rem 0 1.5rem;
     }
@@ -2837,11 +2834,6 @@ body.premium .korea-card .car-price-full-value {
     .about h2,
     .contact h2 {
         font-size: 1.75rem;
-    }
-
-    .car-image {
-        height: 320px;
-        font-size: 2rem;
     }
 
     .car-info {

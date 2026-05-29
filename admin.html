@@ -153,16 +153,9 @@
 
 <script>
 // ── Config ─────────────────────────────────────────────────────────────────
-const SB_URL     = 'https://jolyujjfxzhkswflqodz.supabase.co';
-// Service role key — admin only, password-protected page
-const SB_SRV_KEY = [
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.',
-    'eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvbHl1ampmeHpoa3N3Zmxxb2R6Iiwicm9sZSI6',
-    'InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Nzg0NDU2MSwiZXhwIjoyMDkzNDIwNTYxfQ.',
-    'Ex7h9hdsXba1fWcoqx3CSlImdrXTw7IVn5bsFsAM1j8'
-].join('');
-// SHA-256 of admin password (default: expo2026admin)
-const PASS_HASH  = '2346a5e31f72f27ae9e665befb1ddd6bf8379a79a5d594e4e37a14d117489a10';
+const SB_URL = '';
+const SB_SRV_KEY = '';
+const ADMIN_DISABLED = true;
 
 const PAGE_SIZE  = 30;
 
@@ -172,9 +165,14 @@ async function sha256(str) {
     return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
 }
 async function tryLogin() {
+    if (ADMIN_DISABLED) {
+        document.getElementById('login-error').textContent = 'Админ-панель отключена на публичном сайте. Используйте серверную панель с защищёнными env-секретами.';
+        document.getElementById('login-error').style.display = 'block';
+        return;
+    }
     const pw = document.getElementById('password-input').value;
     const hash = await sha256(pw);
-    if (hash === PASS_HASH) {
+    if (false) {
         sessionStorage.setItem('adm_ok','1');
         document.getElementById('login-screen').style.display = 'none';
         document.getElementById('admin-screen').style.display = 'block';
@@ -189,13 +187,13 @@ function logout() {
     location.reload();
 }
 // Auto-restore session
-if (sessionStorage.getItem('adm_ok') === '1') {
+if (!ADMIN_DISABLED && sessionStorage.getItem('adm_ok') === '1') {
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('admin-screen').style.display = 'block';
 }
 
 // ── API helpers ─────────────────────────────────────────────────────────────
-const HEADERS = { 'apikey': SB_SRV_KEY, 'Authorization': `Bearer ${SB_SRV_KEY}` };
+const HEADERS = {};
 
 async function sbGet(path) {
     const r = await fetch(`${SB_URL}/rest/v1/${path}`, { headers: HEADERS });
@@ -454,7 +452,7 @@ function switchTab(name, btn) {
 }
 
 // Auto-init if already authenticated
-if (sessionStorage.getItem('adm_ok') === '1') init();
+if (!ADMIN_DISABLED && sessionStorage.getItem('adm_ok') === '1') init();
 </script>
 </body>
 </html>

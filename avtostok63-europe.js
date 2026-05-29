@@ -3,6 +3,7 @@
 
     const DATA_URL = 'cars_europe_new.json?v=20260529-avtostok63';
     const PAGE_SIZE = 18;
+    const FINAL_PRICE_MARKUP_RUB = 200000;
     const RUB = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
     const EUR = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
 
@@ -54,6 +55,19 @@
         return number > 0 ? `${RUB.format(number)} км` : '—';
     }
 
+    function withFinalMarkup(value) {
+        const number = Number(value || 0);
+        return number > 0 ? number + FINAL_PRICE_MARKUP_RUB : 0;
+    }
+
+    function parseBudgetRange(value) {
+        const [minRaw, maxRaw] = String(value || '').split('-');
+        return {
+            min: Number(minRaw || 0),
+            max: Number(maxRaw || 0),
+        };
+    }
+
     function carTitle(car) {
         return safeText(car.full_title) || [car.brand, car.model].filter(Boolean).join(' ') || 'Автомобиль из Европы';
     }
@@ -79,7 +93,7 @@
                 _image: getImage(car),
                 _title: carTitle(car),
                 _search: carSearchText(car),
-                _turnkey: Number(car.turnkey_price_rub || 0),
+                _turnkey: withFinalMarkup(car.turnkey_price_rub),
                 _price: Number(car.price || 0),
                 _year: Number(car.first_registration_year || 0),
                 _mileage: Number(car.mileage || 0),
@@ -138,7 +152,7 @@
         const query = safeText($('searchInput')?.value).toLowerCase();
         const brand = $('brandFilter')?.value || '';
         const model = $('modelFilter')?.value || '';
-        const budget = Number($('budgetFilter')?.value || 0);
+        const budget = parseBudgetRange($('budgetFilter')?.value);
         const power = Number($('powerFilter')?.value || 0);
         const sort = $('sortFilter')?.value || 'turnkey_asc';
 
@@ -146,7 +160,8 @@
             if (query && !car._search.includes(query)) return false;
             if (brand && car.brand !== brand) return false;
             if (model && car.model !== model) return false;
-            if (budget && (!car._turnkey || car._turnkey > budget)) return false;
+            if (budget.min && (!car._turnkey || car._turnkey < budget.min)) return false;
+            if (budget.max && (!car._turnkey || car._turnkey > budget.max)) return false;
             if (power && (!car._power || car._power > power)) return false;
             return true;
         });
@@ -296,13 +311,17 @@
             render();
         } catch (error) {
             const grid = $('offersGrid');
+            const more = $('showMoreBtn');
             if (grid) {
                 grid.replaceChildren();
                 const message = document.createElement('div');
                 message.className = 'as63-empty';
-                message.textContent = `Не удалось загрузить предложения: ${safeText(error.message)}`;
+                message.textContent = location.protocol === 'file:'
+                    ? 'Предложения загружаются через сайт. Откройте страницу по адресу http://localhost:8029/avtostok63-europe.html или на домене cmsauto.store.'
+                    : `Не удалось загрузить предложения: ${safeText(error.message)}`;
                 grid.appendChild(message);
             }
+            if (more) more.hidden = true;
             if ($('offersCount')) $('offersCount').textContent = 'Ошибка загрузки';
         }
     }

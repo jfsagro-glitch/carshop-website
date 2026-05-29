@@ -7,11 +7,8 @@ SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_KEY", "")
 
 if not SUPABASE_URL or not SUPABASE_SERVICE_KEY:
-    try:
-        from import_to_supabase import SUPABASE_URL, SUPABASE_SERVICE_KEY
-    except:
-        print("ERROR: Supabase credentials not found")
-        exit(1)
+    print("ERROR: set SUPABASE_URL and SUPABASE_SERVICE_KEY in the environment")
+    raise SystemExit(1)
 
 # Check how many parts are in the database
 headers = {

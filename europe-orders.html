@@ -1626,7 +1626,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Таможенный калькулятор</h3>
-                <span class="close" onclick="closeCustomsModal()">&times;</span>
+                <button class="close" onclick="closeCustomsModal()" aria-label="Закрыть">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="customs-content">
@@ -1658,7 +1658,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Вы можете самостоятельно выбрать автомобиль на сайтах в Грузии, мы его проверим, привезем к вам и растаможим.</h3>
-                <span class="close" onclick="closeSelfCalcModal()">&times;</span>
+                <button class="close" onclick="closeSelfCalcModal()" aria-label="Закрыть">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="customs-content">
@@ -1690,7 +1690,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Заявка на подбор</h3>
-                <span class="close" onclick="closeRequestModal()">&times;</span>
+                <button class="close" onclick="closeRequestModal()" aria-label="Закрыть">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="requestForm" class="calc-form request-form" onsubmit="return false;">
@@ -1747,7 +1747,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Ваш заказ</h3>
-                <span class="close" onclick="closeCart()">&times;</span>
+                <button class="close" onclick="closeCart()" aria-label="Закрыть">&times;</button>
             </div>
             <div class="modal-body" id="cartBody">
                 <!-- Cart items will be loaded here -->
@@ -1766,7 +1766,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Оформление заказа</h3>
-                <span class="close" onclick="closeCheckoutModal()">&times;</span>
+                <button class="close" onclick="closeCheckoutModal()" aria-label="Закрыть">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="checkoutForm" onsubmit="event.preventDefault(); submitOrder();">

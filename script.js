@@ -630,7 +630,7 @@ function initializeApp() {
     if (document.getElementById('telegramOffersGrid')) {
         loadTelegramOffersSection();
     }
-    
+
     // Обработчики свайпа для всех галерей (делегирование)
     document.addEventListener('touchstart', onTouchStart, { passive: true });
     document.addEventListener('touchmove', onTouchMove, { passive: true });
@@ -2324,6 +2324,15 @@ function escapeHtml(value) {
     }[ch]));
 }
 
+function safeHttpUrl(value, fallback = '#') {
+    try {
+        const url = new URL(String(value || ''), location.origin);
+        return ['http:', 'https:'].includes(url.protocol) ? url.href : fallback;
+    } catch (_) {
+        return fallback;
+    }
+}
+
 function telegramFallbackImage(title) {
     const label = encodeURIComponent(title || 'EXPO MIR');
     return `https://placehold.co/800x600/0b1220/d4af37?text=${label}`;
@@ -2390,13 +2399,18 @@ async function loadTelegramOffersSection() {
             return;
         }
         grid.innerHTML = offers.map((offer, index) => {
-            const images = Array.isArray(offer.images) && offer.images.length ? offer.images.filter(Boolean) : [offer.image || telegramFallbackImage(offer.title)];
+            const rawImages = Array.isArray(offer.images) && offer.images.length ? offer.images.filter(Boolean) : [offer.image || telegramFallbackImage(offer.title)];
+            const images = rawImages
+                .map(src => safeHttpUrl(src, ''))
+                .filter(Boolean);
+            if (!images.length) images.push(telegramFallbackImage(offer.title));
             preloadOfferImages(images);
             const details = offer.details || {};
             const facts = (offer.facts || []).slice(0, 3).map(fact => `<span class="telegram-offer-card__chip">${escapeHtml(fact)}</span>`).join('');
             const sourceLabel = offer.source_type === 'auction_candidate' ? 'Источник' : 'Пост';
             const sourceIcon = offer.source_type === 'auction_candidate' ? 'fas fa-arrow-up-right-from-square' : 'fab fa-telegram-plane';
             const msg = encodeURIComponent(`Интересует авто из главной подборки: ${offer.title}. Источник: ${offer.source}. Ориентир: ${offer.price || 'уточнить'}`);
+            const sourceUrl = safeHttpUrl(offer.source_url, '#');
             const specs = [
                 ['Год', offer.year || 'уточняется'],
                 ['Двигатель', details.engine || 'уточняется'],
@@ -2430,7 +2444,7 @@ async function loadTelegramOffersSection() {
                         <div class="telegram-offer-card__facts">${facts}</div>
                         <p class="telegram-offer-card__text">${escapeHtml(offer.text_excerpt || '').slice(0, 140)}…</p>
                         <div class="telegram-offer-card__actions">
-                            <a href="${escapeHtml(offer.source_url)}" target="_blank" rel="noopener noreferrer"><i class="${sourceIcon}"></i> ${sourceLabel}</a>
+                            <a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer"><i class="${sourceIcon}"></i> ${sourceLabel}</a>
                             <a href="https://wa.me/996755666805?text=${msg}" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Заказать</a>
                         </div>
                     </div>

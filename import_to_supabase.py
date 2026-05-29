@@ -10,13 +10,9 @@ import os
 import requests
 from datetime import datetime, timezone
 
-SUPABASE_URL = "https://jolyujjfxzhkswflqodz.supabase.co"
-SUPABASE_KEY = (
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
-    ".eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvbHl1ampmeHpoa3N3Zmxxb2R6Iiwi"
-    "cm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Nzg0NDU2MSwiZXhwIjoyMDkzND"
-    "IwNTYxfQ.Ex7h9hdsXba1fWcoqx3CSlImdrXTw7IVn5bsFsAM1j8"
-)
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
+SUPABASE_SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_KEY", "")
+SUPABASE_KEY = SUPABASE_SERVICE_KEY
 HEADERS = {
     "apikey": SUPABASE_KEY,
     "Authorization": f"Bearer {SUPABASE_KEY}",
@@ -25,6 +21,15 @@ HEADERS = {
 }
 NOW = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 DRY_RUN = "--dry-run" in sys.argv
+
+
+def require_supabase_credentials() -> None:
+    if SUPABASE_URL and SUPABASE_SERVICE_KEY:
+        return
+    raise SystemExit(
+        "ERROR: set SUPABASE_URL and SUPABASE_SERVICE_KEY in the environment. "
+        "Never hardcode service-role keys in source files."
+    )
 
 def _float(v):
     try:
@@ -216,6 +221,8 @@ if __name__ == "__main__":
     print(f"{'='*60}")
     print(f"Supabase Car Import — {NOW}")
     print(f"DRY RUN: {DRY_RUN}")
+    if not DRY_RUN:
+        require_supabase_credentials()
 
     import_cars("cars_korea_stock.json", korea_to_row, "encar", "korea")
     import_cars("cars_europe_new.json", europe_to_row, "autoscout24", "europe")

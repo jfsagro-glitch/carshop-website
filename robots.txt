@@ -3,7 +3,6 @@ Allow: /
 
 # Основные каталоги авто
 Allow: /georgia-stock.html
-Allow: /georgia-stock.html
 Allow: /europe-orders.html
 Allow: /korea-orders.html
 Allow: /usa-orders.html

@@ -180,9 +180,9 @@ body.premium .logo span {
     background: #000000 !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    height: 480px !important;
-    min-height: 480px !important;
-    max-height: 480px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     aspect-ratio: 4 / 3 !important;
     display: flex !important;
     align-items: center !important;
@@ -1049,7 +1049,7 @@ main, .catalog, .hero, section {
 }
 .hero-stat__label {
     font-size: 0.8rem;
-    color: #64748b;
+    color: #94a3b8;
     margin-top: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -1120,7 +1120,7 @@ main, .catalog, .hero, section {
 }
 .why-card p {
     font-size: 0.875rem;
-    color: #64748b;
+    color: #94a3b8;
     line-height: 1.55;
 }
 
@@ -1210,7 +1210,7 @@ main, .catalog, .hero, section {
 }
 .footer-bottom__note {
     font-size: 0.8rem;
-    color: #374151 !important;
+    color: #64748b !important;
 }
 .footer-section ul li { margin-bottom: 0.35rem; }
 .footer-section ul li a,
@@ -1258,7 +1258,7 @@ main, .catalog, .hero, section {
 .section-subtitle {
     text-align: center;
     font-size: 1rem;
-    color: #64748b;
+    color: #94a3b8;
     margin-bottom: 2.5rem;
 }
 
@@ -1342,7 +1342,7 @@ main, .catalog, .hero, section {
 }
 .testimonial-author span {
     font-size: 0.78rem;
-    color: #475569;
+    color: #64748b;
 }
 
 /* ── Contact section enhancements ───────────────────────── */
@@ -2970,6 +2970,10 @@ section[id] {
     /* Cart badge pulse */
     .cart-pulse { animation: none !important; }
 
+    /* LED info banner */
+    .header-info-banner { animation: none !important; }
+    .header-info-banner::before { animation: none !important; }
+
     /* Scroll-reveal – ensure elements stay visible */
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
@@ -3102,6 +3106,7 @@ textarea {
 }
 .banner-calc-btn:hover { background: rgba(212,175,55,0.25); }
 
+.korea-card__img-wrap {
     position: relative;
     overflow: hidden;
     border-radius: 12px 12px 0 0;
@@ -3324,12 +3329,18 @@ textarea {
 .telegram-offer-card {
     background: #111c2e;
     border: 1px solid rgba(148, 163, 184, .28);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     box-shadow: 0 14px 34px rgba(0, 0, 0, .34);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.telegram-offer-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, .35);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .45);
 }
 .telegram-offer-card__gallery {
     position: relative;
@@ -3475,6 +3486,7 @@ textarea {
     text-decoration: none;
     font-size: .82rem;
 }
+
 @media (max-width: 700px) {
     .telegram-offers-head {
         align-items: stretch;
@@ -3503,7 +3515,7 @@ textarea {
 }
 .country-card__desc {
     font-size: 0.8rem;
-    color: #64748b;
+    color: #94a3b8;
     margin: 0;
     line-height: 1.4;
 }
@@ -3546,4 +3558,56 @@ textarea {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+}
+
+/* ======================================================
+   WAVE 16 — UX Polish
+   ====================================================== */
+
+/* Keyboard focus ring — visible only on keyboard nav */
+:focus-visible {
+    outline: 2px solid rgba(212, 175, 55, 0.7);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Telegram offer card action button hover */
+.telegram-offer-card__actions a:hover,
+.telegram-offer-card__actions button:hover {
+    background: rgba(212, 175, 55, 0.22);
+    border-color: rgba(212, 175, 55, 0.6);
+}
+
+/* Mobile: hero stats center-align on small screens */
+@media (max-width: 480px) {
+    .site-hero__stats {
+        justify-content: center;
+    }
+    .hero-stat {
+        align-items: center;
+        text-align: center;
+    }
+    .site-hero__text { max-width: 100%; }
+    .site-hero__subtitle { font-size: 0.95rem; }
+}
+
+/* Countries grid: ensure wraps cleanly on narrow screens */
+@media (max-width: 480px) {
+    .countries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .country-card {
+        padding: 20px 12px 18px;
+    }
+}
+
+/* Better telegram offers section heading on mobile */
+@media (max-width: 480px) {
+    .telegram-offers-section { padding: 40px 0; }
+    .countries-section { padding: 40px 0; }
+    .why-us { padding: 2.5rem 0; }
+    .testimonials { padding: 3rem 0; }
 }
