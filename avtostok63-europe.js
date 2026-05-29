@@ -11,6 +11,7 @@
         cars: [],
         filtered: [],
         visible: PAGE_SIZE,
+        renderedKeys: new Set(),
     };
 
     const $ = (id) => document.getElementById(id);
@@ -98,6 +99,8 @@
                 _year: Number(car.first_registration_year || 0),
                 _mileage: Number(car.mileage || 0),
                 _power: Number(car.power_hp || 0),
+                _key: safeText(car.id || car.external_id || car.url || `${car.brand}-${car.model}-${car.full_title}`),
+                _imageFailed: false,
             }));
     }
 
@@ -190,6 +193,7 @@
     function renderCard(car) {
         const template = $('offerCardTemplate');
         const node = template.content.firstElementChild.cloneNode(true);
+        node.dataset.carKey = car._key;
         const image = node.querySelector('.as63-card__image');
         const badge = node.querySelector('.as63-card__badge');
         const brand = node.querySelector('.as63-card__brand');
@@ -210,11 +214,10 @@
                 image.src = car._images[nextIndex];
                 return;
             }
-            image.remove();
-            const placeholder = document.createElement('span');
-            placeholder.className = 'as63-card__placeholder';
-            placeholder.textContent = [car.brand, car.model].filter(Boolean).join(' ') || 'Avtostok63';
-            node.querySelector('.as63-card__image-wrap')?.prepend(placeholder);
+            car._imageFailed = true;
+            state.renderedKeys.delete(car._key);
+            node.remove();
+            fillVisibleCards();
         });
 
         badge.textContent = car._power ? `${car._power} л.с.` : 'Europe';
@@ -245,27 +248,70 @@
         return node;
     }
 
-    function render() {
-        const grid = $('offersGrid');
+    function availableFilteredCars() {
+        return state.filtered.filter(car => !car._imageFailed);
+    }
+
+    function updateOffersCount() {
         const count = $('offersCount');
+        if (!count) return;
+        count.textContent = `${RUB.format(availableFilteredCars().length)} предложений`;
+    }
+
+    function fillVisibleCards() {
+        const grid = $('offersGrid');
         const more = $('showMoreBtn');
         if (!grid) return;
 
-        if (count) count.textContent = `${RUB.format(state.filtered.length)} предложений`;
-        grid.replaceChildren();
+        const available = availableFilteredCars();
+        updateOffersCount();
 
-        if (!state.filtered.length) {
+        const currentCount = grid.querySelectorAll('.as63-card').length;
+        const target = Math.min(state.visible, available.length);
+        if (!available.length) {
+            grid.replaceChildren();
             const empty = document.createElement('div');
             empty.className = 'as63-empty';
-            empty.textContent = 'По выбранным фильтрам предложений не найдено';
+            empty.textContent = 'По выбранным фильтрам предложений с фото не найдено';
             grid.appendChild(empty);
             if (more) more.hidden = true;
             return;
         }
 
-        const page = state.filtered.slice(0, state.visible);
-        page.forEach(car => grid.appendChild(renderCard(car)));
-        if (more) more.hidden = state.visible >= state.filtered.length;
+        if (currentCount >= target) {
+            if (more) more.hidden = state.visible >= available.length;
+            return;
+        }
+
+        for (const car of available) {
+            if (grid.querySelectorAll('.as63-card').length >= target) break;
+            if (state.renderedKeys.has(car._key)) continue;
+            state.renderedKeys.add(car._key);
+            grid.appendChild(renderCard(car));
+        }
+
+        if (more) more.hidden = state.visible >= available.length;
+    }
+
+    function render() {
+        const grid = $('offersGrid');
+        const more = $('showMoreBtn');
+        if (!grid) return;
+
+        state.renderedKeys = new Set();
+        updateOffersCount();
+        grid.replaceChildren();
+
+        if (!availableFilteredCars().length) {
+            const empty = document.createElement('div');
+            empty.className = 'as63-empty';
+            empty.textContent = 'По выбранным фильтрам предложений с фото не найдено';
+            grid.appendChild(empty);
+            if (more) more.hidden = true;
+            return;
+        }
+
+        fillVisibleCards();
     }
 
     function bindFilters() {
