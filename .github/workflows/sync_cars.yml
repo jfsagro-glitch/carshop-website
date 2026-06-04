@@ -127,6 +127,9 @@ jobs:
           python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 8 --timeout 12
           python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 4 --timeout 15
 
+      - name: Recalculate Europe turnkey prices by CBR rates
+        run: node tools/update_europe_turnkey_prices.mjs
+
       - name: Sync Avtostok63 premium stock
         run: python tools/fetch_carexpo_premium.py
 
