@@ -25,7 +25,7 @@ on:
       europe_max:
         description: 'Сколько объявлений AutoScout24 проверить'
         required: true
-        default: '240'
+        default: '500'
 
 jobs:
   sync:
@@ -86,8 +86,20 @@ jobs:
           COUNT=$(python -c "import json; data=json.load(open('cars_georgia_stock.json')); print(len(data))")
           echo "Georgia stock after strict photo/year/power filters: $COUNT cars"
 
-      - name: Sync Europe catalog from mobile.de
+      - name: Sync Europe catalog from AutoScout24
         run: |
+          python car_parser.py \
+            --source autoscout24 \
+            --max "$EUROPE_MAX" \
+            --unique-models 500 \
+            --max-pages 300 \
+            --min-age "$MIN_AGE" \
+            --max-age "$MAX_AGE" \
+            --max-power-hp "$MAX_POWER_HP" \
+            --min-records 50 \
+            --delay 1 \
+            --out cars_europe_new.json \
+            --quiet || \
           python car_parser.py \
             --source mobilede \
             --max "$EUROPE_MAX" \
@@ -96,18 +108,6 @@ jobs:
             --max-power-hp "$MAX_POWER_HP" \
             --min-records 50 \
             --delay 2 \
-            --out cars_europe_new.json \
-            --quiet || \
-          python car_parser.py \
-            --source autoscout24 \
-            --max "$EUROPE_MAX" \
-            --unique-models 200 \
-            --max-pages 140 \
-            --min-age "$MIN_AGE" \
-            --max-age "$MAX_AGE" \
-            --max-power-hp "$MAX_POWER_HP" \
-            --min-records 50 \
-            --delay 1 \
             --out cars_europe_new.json \
             --quiet || true
 
@@ -124,8 +124,7 @@ jobs:
 
       - name: Remove unavailable Europe listings
         run: |
-          python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 8 --timeout 12
-          python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 4 --timeout 15
+          python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 32 --timeout 8
 
       - name: Recalculate Europe turnkey prices by CBR rates
         run: node tools/update_europe_turnkey_prices.mjs

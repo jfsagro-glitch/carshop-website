@@ -95,17 +95,23 @@ def check_listing(index: int, car: dict[str, Any], timeout: float) -> CheckResul
     }
 
     try:
-        response = requests.get(url, headers=headers, timeout=timeout, allow_redirects=True)
+        response = requests.get(url, headers=headers, timeout=timeout, allow_redirects=True, stream=True)
     except requests.RequestException as exc:
         return CheckResult(index, "keep", url, f"network-error:{exc.__class__.__name__}")
 
     final_url = response.url.lower()
     if response.status_code in (404, 410):
+        response.close()
         return CheckResult(index, "remove", url, f"http-{response.status_code}")
     if response.status_code >= 500:
+        response.close()
         return CheckResult(index, "keep", url, f"http-{response.status_code}")
+    if response.status_code == 200 and "autoscout24" in final_url and "/angebote/" in final_url:
+        response.close()
+        return CheckResult(index, "keep", url, "http-200")
 
     html = response.text or ""
+    response.close()
     unavailable_reason = looks_unavailable(html)
     if unavailable_reason:
         return CheckResult(index, "remove", url, f"unavailable:{unavailable_reason}")

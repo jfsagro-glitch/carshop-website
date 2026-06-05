@@ -2096,6 +2096,12 @@ class AutoScout24Parser:
     """
 
     SEARCH_URL = "https://www.autoscout24.de/lst"
+    PRIORITY_BRANDS = {
+        "Audi": "audi",
+        "BMW": "bmw",
+        "Volkswagen": "volkswagen",
+        "Mercedes-Benz": "mercedes-benz",
+    }
 
     UA_LIST = [
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
@@ -2126,7 +2132,7 @@ class AutoScout24Parser:
             "Referer": "https://www.autoscout24.de/",
         })
 
-    def _build_url(self, page: int) -> str:
+    def _build_url(self, page: int, brand_slug: str = "") -> str:
         params = {
             "atype": "C",
             "cy": "D",
@@ -2140,17 +2146,21 @@ class AutoScout24Parser:
             params["fregto"] = self.max_year
         if self.max_power_hp:
             params["powerto"] = round(self.max_power_hp / 1.35962)
-        return f"{self.SEARCH_URL}?{urlencode(params)}"
+        path = f"{self.SEARCH_URL}/{brand_slug}" if brand_slug else self.SEARCH_URL
+        return f"{path}?{urlencode(params)}"
 
     def _get(self, url: str) -> Optional[str]:
         proxies = {"http": self.proxy, "https": self.proxy} if self.proxy else None
-        try:
-            resp = self._session.get(url, proxies=proxies, timeout=25)
-            resp.raise_for_status()
-            return resp.text
-        except Exception as e:
-            log.warning(f"AutoScout24: ошибка запроса {url}: {e}")
-            return None
+        for attempt in range(1, 4):
+            try:
+                resp = self._session.get(url, proxies=proxies, timeout=30)
+                resp.raise_for_status()
+                return resp.text
+            except Exception as e:
+                log.warning(f"AutoScout24: ошибка запроса {url} (попытка {attempt}/3): {e}")
+                if attempt < 3:
+                    time.sleep(1.5 * attempt)
+        return None
 
     def _vehicle_detail(self, item: dict, label: str) -> str:
         for detail in item.get("vehicleDetails") or []:
@@ -2212,13 +2222,8 @@ class AutoScout24Parser:
         return record
 
     def _extract_page(self, html: str) -> List[dict]:
-        soup = BeautifulSoup(html, "html.parser")
-        script = soup.find("script", id="__NEXT_DATA__")
-        if not script or not script.string:
-            return []
-        try:
-            data = json.loads(script.string)
-        except Exception:
+        data = self._next_data(html)
+        if not data:
             return []
         items = (((data.get("props") or {}).get("pageProps") or {}).get("listings") or [])
         records = []
@@ -2230,16 +2235,32 @@ class AutoScout24Parser:
                 records.append(record)
         return records
 
-    def parse(self) -> List[dict]:
-        log.info("AutoScout24: начало загрузки европейских объявлений...")
-        records: List[dict] = []
-        seen_ids: set[str] = set()
-        seen_models: set[str] = set()
+    def _next_data(self, html: str) -> dict:
+        soup = BeautifulSoup(html, "html.parser")
+        script = soup.find("script", id="__NEXT_DATA__")
+        if not script or not script.string:
+            return {}
+        try:
+            return json.loads(script.string)
+        except Exception:
+            return {}
 
-        for page in range(1, self.max_pages + 1):
-            html = self._get(self._build_url(page))
+    def _number_of_pages(self, html: str) -> int:
+        data = self._next_data(html)
+        page_props = ((data.get("props") or {}).get("pageProps") or {})
+        return parse_int(page_props.get("numberOfPages")) or self.max_pages
+
+    def _collect_pages(self, records: List[dict], seen_ids: set[str], seen_models: set[str],
+                       brand_name: str = "", brand_slug: str = "", stop_at_max: bool = True) -> None:
+        label = brand_name or "общий каталог"
+        page = 1
+        page_limit = self.max_pages
+        while page <= page_limit:
+            html = self._get(self._build_url(page, brand_slug))
             if not html:
                 break
+            if page == 1:
+                page_limit = min(self.max_pages, self._number_of_pages(html))
             min_ym = self.min_year * 100 + datetime.now().month if self.min_year else 0
             max_ym = self.max_year * 100 + datetime.now().month if self.max_year else 0
             page_records = filter_records(
@@ -2253,9 +2274,12 @@ class AutoScout24Parser:
                 require_known_power=bool(self.max_power_hp),
             )
             if not page_records:
-                log.info(f"AutoScout24: страница {page}, данных нет")
+                log.info(f"AutoScout24: {label}, стр. {page}, данных нет")
                 break
+            added_on_page = 0
             for record in page_records:
+                if brand_name and record.get("brand") != brand_name:
+                    continue
                 record_id = str(record.get("id") or record.get("url") or "")
                 model_key = f"{record.get('brand', '').lower()}|{record.get('model', '').lower()}"
                 if record_id in seen_ids:
@@ -2268,15 +2292,30 @@ class AutoScout24Parser:
                 seen_ids.add(record_id)
                 seen_models.add(model_key)
                 records.append(record)
-                if len(records) >= self.max_cars:
+                added_on_page += 1
+                if stop_at_max and len(records) >= self.max_cars:
                     break
-            log.info(f"AutoScout24: стр. {page}, собрано {len(records)} авто / {len(seen_models)} моделей")
-            if len(records) >= self.max_cars:
+            log.info(
+                f"AutoScout24: {label}, стр. {page}, +{added_on_page}, "
+                f"собрано {len(records)} авто / {len(seen_models)} моделей"
+            )
+            if stop_at_max and len(records) >= self.max_cars:
                 break
+            page += 1
             time.sleep(self.delay + random.uniform(0, 0.4))
 
+    def parse(self) -> List[dict]:
+        log.info("AutoScout24: начало загрузки европейских объявлений...")
+        records: List[dict] = []
+        seen_ids: set[str] = set()
+        seen_models: set[str] = set()
+
+        self._collect_pages(records, seen_ids, seen_models, stop_at_max=True)
+        for brand_name, brand_slug in self.PRIORITY_BRANDS.items():
+            self._collect_pages(records, seen_ids, seen_models, brand_name, brand_slug, stop_at_max=False)
+
         log.info(f"AutoScout24: итого {len(records)} авто, уникальных моделей {len(seen_models)}")
-        return records[:self.max_cars]
+        return records
 
 
 # ── Парсер encar.com (Корея) ─────────────────────────────────────────────────
