@@ -400,6 +400,27 @@ def load_passable_import_catalog() -> List[Dict[str, Any]]:
 
 GEORGIA_POWER_CATALOG = load_passable_import_catalog()
 GEORGIA_IN_TRANSIT_LOCATION_IDS = {23}
+GEORGIA_STALE_GRACE_DAYS = 3
+GEORGIA_MYAUTO_PASSABLE_MAN_IDS = [
+    3,   # BMW
+    5,   # Chevrolet
+    12,  # Ford
+    14,  # Honda
+    16,  # Hyundai
+    20,  # Kia
+    23,  # Lexus
+    24,  # Mazda
+    25,  # Mercedes-Benz
+    28,  # Mini
+    29,  # Mitsubishi
+    30,  # Nissan
+    38,  # Skoda
+    39,  # Subaru
+    41,  # Toyota
+    42,  # Volkswagen
+    43,  # Volvo
+    69,  # Buick
+]
 OVER_LIMIT_HYBRID_VARIANTS = {
     ("hyundai", "tucson", "1.6"),
     ("kia", "sportage", "1.6"),
@@ -1406,7 +1427,8 @@ class MyAutoGeParser:
     def __init__(self, max_cars: int = 100, delay: float = 1.5,
                  brand: str = "", min_year: int = 0, max_price_usd: int = 0,
                  max_year: int = 0, max_power_hp: int = 0,
-                 proxy: Optional[str] = None):
+                 proxy: Optional[str] = None,
+                 man_ids: Optional[List[int]] = None):
         if not REQUESTS_AVAILABLE:
             raise RuntimeError("Установите requests: pip install requests")
         self.max_cars  = max_cars
@@ -1417,6 +1439,7 @@ class MyAutoGeParser:
         self.max_power_hp = max_power_hp
         self.max_price = max_price_usd
         self.proxy     = proxy
+        self.man_ids   = [int(man_id) for man_id in (man_ids or []) if int(man_id)]
 
     def _get_json(self, params: dict) -> Optional[dict]:
         headers = {
@@ -1510,70 +1533,84 @@ class MyAutoGeParser:
     def parse(self) -> List[Car]:
         log.info("myauto.ge: начало загрузки объявлений...")
         cars: List[Car] = []
-        page = 1
+        seen: set = set()
+        man_queries = self.man_ids or [0]
+        per_man_limit = self.max_cars if len(man_queries) == 1 else max(120, (self.max_cars // len(man_queries)) + 1)
 
-        while len(cars) < self.max_cars:
-            params: dict = {
-                "TypeID": 0,
-                "ForRent": 0,
-                "SortOrder": 1,
-                "Curr": 3,   # USD
-                "Page": page,
-            }
-            if self.min_year:
-                params["YearFrom"] = self.min_year
-            if self.max_year:
-                params["YearTo"] = self.max_year
-            if self.max_price:
-                params["PriceTo"] = self.max_price
+        for man_id in man_queries:
+            page = 1
+            collected_for_man = 0
 
-            data = None
-            for attempt in range(3):
-                data = self._get_json(params)
-                if data:
+            while len(cars) < self.max_cars and collected_for_man < per_man_limit:
+                params: dict = {
+                    "TypeID": 0,
+                    "ForRent": 0,
+                    "SortOrder": 1,
+                    "Curr": 3,   # USD
+                    "Page": page,
+                }
+                if man_id:
+                    params["Mans"] = man_id
+                if self.min_year:
+                    params["ProdYearFrom"] = self.min_year
+                if self.max_year:
+                    params["ProdYearTo"] = self.max_year
+                if self.max_price:
+                    params["PriceTo"] = self.max_price
+
+                data = None
+                for attempt in range(3):
+                    data = self._get_json(params)
+                    if data:
+                        break
+                    log.warning(f"myauto.ge: повтор страницы {page}, попытка {attempt + 2}/3")
+                    time.sleep(1.5 + attempt)
+                if not data:
+                    log.warning(f"myauto.ge: пропуск страницы {page} после 3 ошибок")
+                    page += 1
+                    if page > 5000:
+                        break
+                    continue
+
+                # Структура ответа: data.data.items + data.data.meta
+                items = (data.get("data", {}) or {}).get("items") or data.get("items", [])
+                if not items:
+                    log.info("myauto.ge: страницы закончились")
                     break
-                log.warning(f"myauto.ge: повтор страницы {page}, попытка {attempt + 2}/3")
-                time.sleep(1.5 + attempt)
-            if not data:
-                log.warning(f"myauto.ge: пропуск страницы {page} после 3 ошибок")
+
+                for item in items:
+                    car = self._item_to_car(item)
+                    if car and car.brand:
+                        if is_georgia_in_transit({
+                            "location_id": car.extra.get("location_id"),
+                            "parent_loc_id": car.extra.get("parent_loc_id"),
+                        }):
+                            continue
+                        # Фильтр по марке
+                        if self.brand and self.brand.lower() not in car.brand.lower():
+                            continue
+                        if self.max_year and car.year and car.year > self.max_year:
+                            continue
+                        hp = parse_power_hp(car.power) or item.get("hp", 0)
+                        if self.max_power_hp and hp and hp > self.max_power_hp:
+                            continue
+                        key = car.vin.upper() if car.vin else car.description
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        cars.append(car)
+                        collected_for_man += 1
+                    if len(cars) >= self.max_cars or collected_for_man >= per_man_limit:
+                        break
+
+                total_pages = (data.get("data", {}) or {}).get("meta", {}).get("last_page", page)
+                marker = f", man_id={man_id}" if man_id else ""
+                log.info(f"myauto.ge: стр. {page}/{total_pages}{marker}, собрано {len(cars)} авто")
+
+                if page >= total_pages:
+                    break
                 page += 1
-                if page > 5000:
-                    break
-                continue
-
-            # Структура ответа: data.data.items + data.data.meta
-            items = (data.get("data", {}) or {}).get("items") or data.get("items", [])
-            if not items:
-                log.info("myauto.ge: страницы закончились")
-                break
-
-            for item in items:
-                car = self._item_to_car(item)
-                if car and car.brand:
-                    if is_georgia_in_transit({
-                        "location_id": car.extra.get("location_id"),
-                        "parent_loc_id": car.extra.get("parent_loc_id"),
-                    }):
-                        continue
-                    # Фильтр по марке
-                    if self.brand and self.brand.lower() not in car.brand.lower():
-                        continue
-                    if self.max_year and car.year and car.year > self.max_year:
-                        continue
-                    hp = parse_power_hp(car.power) or item.get("hp", 0)
-                    if self.max_power_hp and hp and hp > self.max_power_hp:
-                        continue
-                    cars.append(car)
-                if len(cars) >= self.max_cars:
-                    break
-
-            total_pages = (data.get("data", {}) or {}).get("meta", {}).get("last_page", page)
-            log.info(f"myauto.ge: стр. {page}/{total_pages}, собрано {len(cars)} авто")
-
-            if page >= total_pages:
-                break
-            page += 1
-            time.sleep(self.delay + random.uniform(0, 0.5))
+                time.sleep(self.delay + random.uniform(0, 0.5))
 
         log.info(f"myauto.ge: итого {len(cars)} автомобилей")
         return cars[:self.max_cars]
@@ -2610,7 +2647,8 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
     # Парсим новые данные
     if source == "myauto":
         parser = MyAutoGeParser(max_cars=max_cars, delay=delay, min_year=min_year,
-                                max_year=max_year, max_power_hp=max_power_hp, proxy=proxy)
+                                max_year=max_year, max_power_hp=max_power_hp, proxy=proxy,
+                                man_ids=GEORGIA_MYAUTO_PASSABLE_MAN_IDS)
     elif source in ("apge", "ap.ge"):
         parser = ApGeParser(max_cars=max_cars, delay=delay, proxy=proxy)
     else:
@@ -2628,6 +2666,7 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
     # с уже удаленными фотографиями.
     fresh_records: List[dict] = []
     fresh_keys = set()
+    today = datetime.now().strftime("%Y-%m-%d")
     for car in new_cars:
         url = car.description
         if url and not url.startswith("http"):
@@ -2659,6 +2698,7 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
             "regionCode": "georgia",
             "images": car.extra.get("images") or ([{"url": car.photos, "order": 1}] if car.photos else []),
             "source": car.source or source,
+            "last_seen_at": today,
         }
         if is_georgia_in_transit(d) or is_known_disallowed_variant(d):
             continue
@@ -2679,8 +2719,24 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
         fresh_keys.add(key)
 
     added = len(fresh_keys - existing_keys)
-    removed_archived = len(existing) - len(existing_keys & fresh_keys)
-    existing = fresh_records
+    retained_records: List[dict] = []
+    for item in existing:
+        key = stock_key(item)
+        if key in fresh_keys:
+            continue
+        last_seen = str(item.get("last_seen_at") or today)
+        try:
+            last_seen_dt = datetime.strptime(last_seen, "%Y-%m-%d")
+            stale_days = (datetime.now() - last_seen_dt).days
+        except ValueError:
+            stale_days = 0
+            last_seen = today
+        if stale_days <= GEORGIA_STALE_GRACE_DAYS:
+            item["last_seen_at"] = last_seen
+            retained_records.append(item)
+
+    existing = fresh_records + retained_records
+    removed_archived = len(existing_keys) - len(retained_records) - len(existing_keys & fresh_keys)
     if removed_archived > 0:
         log.info(f"Сток: убрано архивных/устаревших записей: {removed_archived}")
 

@@ -42,7 +42,7 @@ jobs:
       MIN_AGE: ${{ github.event.inputs.min_age || '3' }}
       MAX_AGE: ${{ github.event.inputs.max_age || '5' }}
       MAX_POWER_HP: ${{ github.event.inputs.max_power_hp || '160' }}
-      GEORGIA_MAX: ${{ github.event.inputs.georgia_max || '300' }}
+      GEORGIA_MAX: ${{ github.event.inputs.georgia_max || '1200' }}
       EUROPE_MAX: ${{ github.event.inputs.europe_max || '240' }}
     permissions:
       contents: write      # нужно для git push
