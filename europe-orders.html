@@ -783,6 +783,24 @@
                     <label>Пробег до:</label>
                     <input type="number" id="mileage-to" placeholder="км">
                 </div>
+                <div class="filter-group">
+                    <label>Коробка:</label>
+                    <select id="transmission-filter">
+                        <option value="">Любая</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Объём двигателя:</label>
+                    <select id="engine-volume-filter">
+                        <option value="">Любой</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Тип двигателя:</label>
+                    <select id="fuel-filter">
+                        <option value="">Любой</option>
+                    </select>
+                </div>
                 <button class="filter-btn" id="apply-filters">Применить</button>
                 <button class="btn-secondary" id="reset-filters">Сбросить</button>
             </div>
@@ -999,6 +1017,49 @@
             });
             return `${litersLabel} л / ${cc.toLocaleString('ru-RU')} см³`;
         }
+
+        function inferEngineLiters(car) {
+            const direct = String(car.engine || car.engineVolume || '').replace(',', '.');
+            let liters = Number(direct.match(/\d+(?:\.\d+)?/)?.[0]);
+            if (Number.isFinite(liters) && liters > 10) liters = liters / 1000;
+            if (Number.isFinite(liters) && liters > 0 && liters <= 8) return Number(liters.toFixed(1));
+
+            const text = `${car.full_title || ''} ${car.model || ''}`.toLowerCase().replace(',', '.');
+            const decimal = text.match(/(?:^|[\s|/-])([0-3]\.\d)\s*(?:tsi|tdi|tfsi|tfsie|turbo|hdi|bluehdi|dci|puretech|mpi|tce|benz|diesel|hybrid)?/i);
+            if (decimal) return Number(Number(decimal[1]).toFixed(1));
+            if (/\b(?:30|35|40)\s*tdi\b/.test(text)) return 2.0;
+            if (/\b30\s*tfsi\b/.test(text)) return 1.0;
+            if (/\b35\s*tfsi\b/.test(text)) return 1.5;
+            if (/\b40\s*tfsi\b/.test(text)) return 2.0;
+            if (/\b45\s*tfsi\s*e\b/.test(text)) return 1.4;
+            if (/\b(?:116|118|216|218)i\b/.test(text)) return 1.5;
+            if (/\b(?:116|118|216|218|318)d\b/.test(text)) return 2.0;
+            if (/\b(?:a|b|cla|gla|glb)\s*180\b/.test(text)) return 1.3;
+            if (/\bpuretech\s*130\b/.test(text)) return 1.2;
+            if (/\btce\s*(?:110|130|150)\b/.test(text)) return 1.3;
+            if (/\btsi\b/.test(text) && Number(car.power_hp || 0) <= 116) return 1.0;
+            if (/\btsi\b/.test(text)) return 1.5;
+            return 0;
+        }
+
+        function engineVolumeBucket(car) {
+            const liters = inferEngineLiters(car);
+            return liters ? liters.toFixed(1) : '';
+        }
+
+        function engineVolumeLabel(value) {
+            const liters = Number(value);
+            if (!Number.isFinite(liters) || liters <= 0) return '';
+            return `${liters.toLocaleString('ru-RU', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} л`;
+        }
+
+        function sortCarsByPriceAsc(list) {
+            return list.sort((a, b) => {
+                const priceA = Number(a.price || 0) || Number.MAX_SAFE_INTEGER;
+                const priceB = Number(b.price || 0) || Number.MAX_SAFE_INTEGER;
+                return priceA - priceB;
+            });
+        }
         
         function filterImages(images) {
             if (!images) return [];
@@ -1152,9 +1213,12 @@
 
         // Инициализация страницы
         function initializePage() {
+            sortCarsByPriceAsc(carsData);
+            sortCarsByPriceAsc(filteredCars);
             updateStats();
             populateBrandFilter();
             populateModelFilter();
+            populateExtraFilters();
             displayCars();
             setupFilters();
             setupModal();
@@ -1210,6 +1274,36 @@
             });
         }
 
+        function populateExtraFilters() {
+            populateSelectFromValues('transmission-filter', carsData.map(car => car.transmission).filter(Boolean), 'Любая');
+            populateSelectFromValues('fuel-filter', carsData.map(car => car.fuel_type).filter(Boolean), 'Любой');
+
+            const volumes = [...new Set(carsData.map(engineVolumeBucket).filter(Boolean))]
+                .sort((a, b) => Number(a) - Number(b));
+            const volumeFilter = document.getElementById('engine-volume-filter');
+            if (volumeFilter) {
+                volumeFilter.innerHTML = '<option value="">Любой</option>';
+                volumes.forEach(value => {
+                    const option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = engineVolumeLabel(value);
+                    volumeFilter.appendChild(option);
+                });
+            }
+        }
+
+        function populateSelectFromValues(id, values, emptyLabel) {
+            const select = document.getElementById(id);
+            if (!select) return;
+            select.innerHTML = `<option value="">${emptyLabel}</option>`;
+            [...new Set(values)].sort((a, b) => a.localeCompare(b, 'ru')).forEach(value => {
+                const option = document.createElement('option');
+                option.value = value;
+                option.textContent = value;
+                select.appendChild(option);
+            });
+        }
+
         // Отображение автомобилей
         function loadMoreCars() {
             displayedCount += PAGE_SIZE;
@@ -1248,7 +1342,7 @@
                 const finalImageUrl = firstImage || '';
                 const sourceLabel = getSourceLabel(car);
                 const turnkeyHtml = getEuropeTurnkeyHtml(car);
-                const engineVolume = formatEngineVolume(car.engine);
+                const engineVolume = formatEngineVolume(car.engine) || engineVolumeLabel(engineVolumeBucket(car));
 
                 const fuelIcon = {
                     'Бензин': 'fa-gas-pump', 'Дизель': 'fa-oil-can',
@@ -1338,6 +1432,9 @@
             const priceFrom = parseFloat(document.getElementById('price-from').value) || 0;
             const priceTo = parseFloat(document.getElementById('price-to').value) || Infinity;
             const mileageTo = parseFloat(document.getElementById('mileage-to').value) || Infinity;
+            const transmission = document.getElementById('transmission-filter').value;
+            const fuel = document.getElementById('fuel-filter').value;
+            const engineVolume = document.getElementById('engine-volume-filter').value;
             const search = (document.getElementById('search-input')?.value || '').trim().toLowerCase();
 
             filteredCars = carsData.filter(car => {
@@ -1345,17 +1442,30 @@
                 if (model && car.model !== model) return false;
                 if (car.price && (car.price < priceFrom || car.price > priceTo)) return false;
                 if (car.mileage && car.mileage > mileageTo) return false;
+                if (transmission && car.transmission !== transmission) return false;
+                if (fuel && car.fuel_type !== fuel) return false;
+                if (engineVolume && engineVolumeBucket(car) !== engineVolume) return false;
                 if (search) {
-                    const haystack = `${car.brand||''} ${car.model||''} ${car.fuel_type||''} ${car.transmission||''} ${car.first_registration||''} ${car.year||''}`.toLowerCase();
+                    const haystack = `${car.brand||''} ${car.model||''} ${car.full_title||''} ${car.fuel_type||''} ${car.transmission||''} ${engineVolumeLabel(engineVolumeBucket(car))} ${car.first_registration||''} ${car.year||''}`.toLowerCase();
                     if (!haystack.includes(search)) return false;
                 }
                 return true;
             });
+            sortCarsByPriceAsc(filteredCars);
 
             displayedCount = PAGE_SIZE;
             updateStats();
             displayCars();
-            sbLogSearch('europe-orders', {brand, model, priceFrom: priceFrom || undefined, priceTo: isFinite(priceTo) ? priceTo : undefined, mileageTo: isFinite(mileageTo) ? mileageTo : undefined}, filteredCars.length);
+            sbLogSearch('europe-orders', {
+                brand,
+                model,
+                priceFrom: priceFrom || undefined,
+                priceTo: isFinite(priceTo) ? priceTo : undefined,
+                mileageTo: isFinite(mileageTo) ? mileageTo : undefined,
+                transmission: transmission || undefined,
+                fuel: fuel || undefined,
+                engineVolume: engineVolume || undefined
+            }, filteredCars.length);
         }
 
         // Сброс фильтров
@@ -1365,10 +1475,13 @@
             document.getElementById('price-from').value = '';
             document.getElementById('price-to').value = '';
             document.getElementById('mileage-to').value = '';
+            document.getElementById('transmission-filter').value = '';
+            document.getElementById('engine-volume-filter').value = '';
+            document.getElementById('fuel-filter').value = '';
             const si = document.getElementById('search-input');
             if (si) si.value = '';
             populateModelFilter(); // Обновляем список моделей
-            filteredCars = [...carsData];
+            filteredCars = sortCarsByPriceAsc([...carsData]);
             displayedCount = PAGE_SIZE;
             updateStats();
             displayCars();
@@ -2114,5 +2227,3 @@
     <script src="header.js?v=20260515-toolbar"></script>
 </body>
 </html>
-
-
