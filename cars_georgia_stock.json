@@ -4,45 +4,6 @@
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
-    "year": 2023,
-    "month": 2,
-    "price": 13900,
-    "price_currency": "USD",
-    "mileage": 38000,
-    "engine": "1,2",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122130061",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/6/0/0/3/1/large/122130061_1.jpg?v=0",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-05",
-    "power_hp": 155,
-    "power_kw": 114,
-    "power": "155 л.с. / 114 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia"
-  },
-  {
-    "id": 2,
-    "brand": "Chevrolet",
-    "model": "Trailblazer",
-    "fullName": "Chevrolet Trailblazer",
     "year": 2022,
     "month": 4,
     "price": 12600,
@@ -78,7 +39,124 @@
     "source_market": "korea"
   },
   {
+    "id": 2,
+    "brand": "Chevrolet",
+    "model": "Trailblazer",
+    "fullName": "Chevrolet Trailblazer",
+    "year": 2022,
+    "month": 3,
+    "price": 17000,
+    "price_currency": "USD",
+    "mileage": 65600,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 58,
+    "parent_loc_id": 1,
+    "trim_name": "LT All-Wheel Drive Automatic",
+    "url": "https://myauto.ge/ru/pr/122204602",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/6/4/0/2/large/122204602_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia"
+  },
+  {
     "id": 3,
+    "brand": "Chevrolet",
+    "model": "Trailblazer",
+    "fullName": "Chevrolet Trailblazer",
+    "year": 2021,
+    "month": 7,
+    "price": 11900,
+    "price_currency": "USD",
+    "mileage": 57600,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KL79MR***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "LT All-Wheel Drive Automatic",
+    "url": "https://myauto.ge/ru/pr/120909180",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/9/0/9/large/120909180_1.jpg?v=8",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 156,
+    "power_kw": 115,
+    "power": "156 л.с. / 115 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea"
+  },
+  {
+    "id": 4,
+    "brand": "Chevrolet",
+    "model": "Trailblazer",
+    "fullName": "Chevrolet Trailblazer",
+    "year": 2021,
+    "month": 9,
+    "price": 0,
+    "price_currency": "USD",
+    "mileage": 69528,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KL79MV***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "ACTIV Front-Wheel Drive CVT",
+    "url": "https://myauto.ge/ru/pr/121566845",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/6/6/5/large/121566845_1.jpg?v=8",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 156,
+    "power_kw": 115,
+    "power": "156 л.с. / 115 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea"
+  },
+  {
+    "id": 5,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -117,7 +195,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 4,
+    "id": 6,
     "brand": "Chevrolet",
     "model": "Trax",
     "fullName": "Chevrolet Trax",
@@ -156,7 +234,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 5,
+    "id": 7,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -209,7 +287,7 @@
     "source_market": "korea"
   },
   {
-    "id": 6,
+    "id": 8,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -248,7 +326,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 7,
+    "id": 9,
     "brand": "Chevrolet",
     "model": "Trax",
     "fullName": "Chevrolet Trax",
@@ -287,7 +365,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 8,
+    "id": 10,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -340,7 +418,7 @@
     "source_market": "korea"
   },
   {
-    "id": 9,
+    "id": 11,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -393,13 +471,13 @@
     "source_market": "korea"
   },
   {
-    "id": 10,
+    "id": 12,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
     "year": 2023,
     "month": 1,
-    "price": 14500,
+    "price": 14000,
     "price_currency": "USD",
     "mileage": 49000,
     "engine": "1,3",
@@ -419,7 +497,7 @@
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/0/0/6/1/7/large/120716004_1.jpg?v=12",
+        "url": "https://static.my.ge/myauto/photos/0/0/6/1/7/large/120716004_1.jpg?v=13",
         "order": 1
       }
     ],
@@ -432,7 +510,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 11,
+    "id": 13,
     "brand": "Chevrolet",
     "model": "Trax",
     "fullName": "Chevrolet Trax",
@@ -471,46 +549,7 @@
     "source_market": "korea"
   },
   {
-    "id": 12,
-    "brand": "Chevrolet",
-    "model": "Trailblazer",
-    "fullName": "Chevrolet Trailblazer",
-    "year": 2023,
-    "month": 6,
-    "price": 16800,
-    "price_currency": "USD",
-    "mileage": 45000,
-    "engine": "1,3",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "KL79MR***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 30,
-    "parent_loc_id": 1,
-    "trim_name": "LT All-Wheel Drive Automatic",
-    "url": "https://myauto.ge/ru/pr/121731602",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_1.jpg?v=0",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-05",
-    "power_hp": 156,
-    "power_kw": 115,
-    "power": "156 л.с. / 115 кВт",
-    "power_source": "catalog:korea",
-    "source_market": "korea"
-  },
-  {
-    "id": 13,
+    "id": 14,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -549,7 +588,7 @@
     "source_market": "korea"
   },
   {
-    "id": 14,
+    "id": 15,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -588,7 +627,7 @@
     "source_market": "korea"
   },
   {
-    "id": 15,
+    "id": 16,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -641,7 +680,7 @@
     "source_market": "korea"
   },
   {
-    "id": 16,
+    "id": 17,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -680,7 +719,7 @@
     "source_market": "korea"
   },
   {
-    "id": 17,
+    "id": 18,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -733,7 +772,46 @@
     "source_market": "korea"
   },
   {
-    "id": 18,
+    "id": 19,
+    "brand": "Chevrolet",
+    "model": "Trailblazer",
+    "fullName": "Chevrolet Trailblazer",
+    "year": 2023,
+    "month": 2,
+    "price": 13900,
+    "price_currency": "USD",
+    "mileage": 38000,
+    "engine": "1,2",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122130061",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/0/0/3/1/large/122130061_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia"
+  },
+  {
+    "id": 20,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -772,7 +850,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 19,
+    "id": 21,
     "brand": "Chevrolet",
     "model": "Trax",
     "fullName": "Chevrolet Trax",
@@ -811,7 +889,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 20,
+    "id": 22,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -850,7 +928,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 21,
+    "id": 23,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -889,7 +967,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 22,
+    "id": 24,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -928,7 +1006,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 23,
+    "id": 25,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -967,7 +1045,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 24,
+    "id": 26,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -1006,7 +1084,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 25,
+    "id": 27,
     "brand": "Ford",
     "model": "EcoSport",
     "fullName": "Ford EcoSport",
@@ -1045,7 +1123,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 26,
+    "id": 28,
     "brand": "Ford",
     "model": "EcoSport",
     "fullName": "Ford EcoSport",
@@ -1084,7 +1162,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 27,
+    "id": 29,
     "brand": "Ford",
     "model": "EcoSport",
     "fullName": "Ford EcoSport",
@@ -1123,7 +1201,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 28,
+    "id": 30,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1162,7 +1240,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 29,
+    "id": 31,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1201,7 +1279,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 30,
+    "id": 32,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1240,7 +1318,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 31,
+    "id": 33,
     "brand": "Honda",
     "model": "Civic",
     "fullName": "Honda Civic",
@@ -1293,7 +1371,7 @@
     "source_market": "unknown"
   },
   {
-    "id": 32,
+    "id": 34,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1332,7 +1410,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 33,
+    "id": 35,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1371,7 +1449,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 34,
+    "id": 36,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1410,7 +1488,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 35,
+    "id": 37,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1449,7 +1527,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 36,
+    "id": 38,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1488,7 +1566,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 37,
+    "id": 39,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1541,7 +1619,7 @@
     "source_market": "unknown"
   },
   {
-    "id": 38,
+    "id": 40,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1594,7 +1672,7 @@
     "source_market": "unknown"
   },
   {
-    "id": 39,
+    "id": 41,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1633,7 +1711,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 40,
+    "id": 42,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1672,7 +1750,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 41,
+    "id": 43,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -1698,7 +1776,7 @@
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/0/0/3/8/7/large/121783006_1.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/0/3/8/7/large/121783006_1.jpg?v=3",
         "order": 1
       }
     ],
@@ -1711,7 +1789,7 @@
     "source_market": "korea"
   },
   {
-    "id": 42,
+    "id": 44,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -1750,7 +1828,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 43,
+    "id": 45,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -1789,7 +1867,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 44,
+    "id": 46,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -1828,46 +1906,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 45,
-    "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
-    "year": 2021,
-    "month": 8,
-    "price": 11300,
-    "price_currency": "USD",
-    "mileage": 72000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Робот",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": true,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "Limited 4dr Sedan CVT",
-    "url": "https://myauto.ge/ru/pr/122191348",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/3/1/9/1/large/122191348_1.jpg?v=1",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-05",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia"
-  },
-  {
-    "id": 46,
+    "id": 47,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -1906,7 +1945,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 47,
+    "id": 48,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -1943,45 +1982,6 @@
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia"
-  },
-  {
-    "id": 48,
-    "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
-    "year": 2023,
-    "month": 4,
-    "price": 10600,
-    "price_currency": "USD",
-    "mileage": 33600,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "KMHLL4***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "Limited 4dr Sedan CVT",
-    "url": "https://myauto.ge/ru/pr/122141650",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/5/6/1/4/1/large/122141650_1.jpg?v=3",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-05",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "korea"
   },
   {
     "id": 49,
@@ -2025,6 +2025,84 @@
   {
     "id": 50,
     "brand": "Hyundai",
+    "model": "kona",
+    "fullName": "Hyundai kona",
+    "year": 2022,
+    "month": 1,
+    "price": 11500,
+    "price_currency": "USD",
+    "mileage": 50000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/121972969",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/9/2/7/9/large/121972969_1.jpg?v=1",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia"
+  },
+  {
+    "id": 51,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2023,
+    "month": 4,
+    "price": 10600,
+    "price_currency": "USD",
+    "mileage": 33600,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KMHLL4***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "Limited 4dr Sedan CVT",
+    "url": "https://myauto.ge/ru/pr/122141650",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/1/4/1/large/122141650_1.jpg?v=3",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea"
+  },
+  {
+    "id": 52,
+    "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
     "year": 2022,
@@ -2062,7 +2140,7 @@
     "source_market": "korea"
   },
   {
-    "id": 51,
+    "id": 53,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2101,7 +2179,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 52,
+    "id": 54,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2154,46 +2232,7 @@
     "source_market": "korea"
   },
   {
-    "id": 53,
-    "brand": "Hyundai",
-    "model": "kona",
-    "fullName": "Hyundai kona",
-    "year": 2022,
-    "month": 1,
-    "price": 11500,
-    "price_currency": "USD",
-    "mileage": 50000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/121972969",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/6/9/2/7/9/large/121972969_1.jpg?v=1",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-05",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia"
-  },
-  {
-    "id": 54,
+    "id": 55,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2232,7 +2271,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 55,
+    "id": 56,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2285,7 +2324,163 @@
     "source_market": "usa"
   },
   {
-    "id": 56,
+    "id": 57,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2023,
+    "month": 3,
+    "price": 11500,
+    "price_currency": "USD",
+    "mileage": 69000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "SEL 4dr Sedan CVT",
+    "url": "https://myauto.ge/ru/pr/122134762",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/4/3/1/large/122134762_1.jpg?v=2",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia"
+  },
+  {
+    "id": 58,
+    "brand": "Hyundai",
+    "model": "kona",
+    "fullName": "Hyundai kona",
+    "year": 2023,
+    "month": 5,
+    "price": 11000,
+    "price_currency": "USD",
+    "mileage": 70053,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122204689",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/6/4/0/2/large/122204689_1.jpg?v=1",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia"
+  },
+  {
+    "id": 59,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2022,
+    "month": 9,
+    "price": 10800,
+    "price_currency": "USD",
+    "mileage": 104000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 39,
+    "parent_loc_id": 1,
+    "trim_name": "SE 4dr Sedan CVT",
+    "url": "https://myauto.ge/ru/pr/120226322",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/3/6/2/2/large/120226322_1.jpg?v=2",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia"
+  },
+  {
+    "id": 60,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2021,
+    "month": 12,
+    "price": 13500,
+    "price_currency": "USD",
+    "mileage": 92942,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": true,
+    "location_id": 16,
+    "parent_loc_id": 1,
+    "trim_name": "NLine",
+    "url": "https://myauto.ge/ru/pr/122203165",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/1/3/0/2/large/122203165_1.jpg?v=1",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia"
+  },
+  {
+    "id": 61,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2324,7 +2519,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 57,
+    "id": 62,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2363,7 +2558,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 58,
+    "id": 63,
     "brand": "Hyundai",
     "model": "venue",
     "fullName": "Hyundai venue",
@@ -2402,7 +2597,7 @@
     "source_market": "korea"
   },
   {
-    "id": 59,
+    "id": 64,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2441,7 +2636,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 60,
+    "id": 65,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -2480,7 +2675,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 61,
+    "id": 66,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2519,7 +2714,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 62,
+    "id": 67,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
@@ -2558,7 +2753,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 63,
+    "id": 68,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
@@ -2597,7 +2792,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 64,
+    "id": 69,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -2636,46 +2831,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 65,
-    "brand": "KIA",
-    "model": "Niro",
-    "fullName": "KIA Niro",
-    "year": 2023,
-    "month": 1,
-    "price": 15900,
-    "price_currency": "USD",
-    "mileage": 73000,
-    "engine": "1,6",
-    "fuel_type": "Гибрид",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "KNDCS3***********",
-    "fuel_type_id": 6,
-    "status_id": 1,
-    "customs_passed": true,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "ex plugin",
-    "url": "https://myauto.ge/ru/pr/121955854",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/5/8/5/5/9/large/121955854_1.jpg?v=11",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-05",
-    "power_hp": 105,
-    "power_kw": 77,
-    "power": "105 л.с. / 77 кВт",
-    "power_source": "catalog:korea",
-    "source_market": "korea"
-  },
-  {
-    "id": 66,
+    "id": 70,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -2714,7 +2870,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 67,
+    "id": 71,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -2753,7 +2909,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 68,
+    "id": 72,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -2806,7 +2962,7 @@
     "source_market": "korea"
   },
   {
-    "id": 69,
+    "id": 73,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -2845,7 +3001,46 @@
     "source_market": "georgia"
   },
   {
-    "id": 70,
+    "id": 74,
+    "brand": "KIA",
+    "model": "Seltos",
+    "fullName": "KIA Seltos",
+    "year": 2022,
+    "month": 2,
+    "price": 13700,
+    "price_currency": "USD",
+    "mileage": 80000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": true,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122179717",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/7/9/7/1/large/122179717_1.jpg?v=1",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia"
+  },
+  {
+    "id": 75,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
@@ -2884,7 +3079,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 71,
+    "id": 76,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -2923,13 +3118,13 @@
     "source_market": "georgia"
   },
   {
-    "id": 72,
+    "id": 77,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
     "year": 2022,
     "month": 10,
-    "price": 10000,
+    "price": 9800,
     "price_currency": "USD",
     "mileage": 75200,
     "engine": "2,0",
@@ -2949,7 +3144,7 @@
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/3/6/1/3/3/large/121331637_1.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/3/6/1/3/3/large/121331637_1.jpg?v=7",
         "order": 1
       }
     ],
@@ -2962,7 +3157,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 73,
+    "id": 78,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -2988,7 +3183,7 @@
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/4/5/8/7/8/large/121878541_1.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/4/5/8/7/8/large/121878541_1.jpg?v=3",
         "order": 1
       }
     ],
@@ -3001,7 +3196,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 74,
+    "id": 79,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -3040,7 +3235,7 @@
     "source_market": "korea"
   },
   {
-    "id": 75,
+    "id": 80,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3079,7 +3274,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 76,
+    "id": 81,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3118,7 +3313,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 77,
+    "id": 82,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -3171,7 +3366,7 @@
     "source_market": "korea"
   },
   {
-    "id": 78,
+    "id": 83,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3210,7 +3405,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 79,
+    "id": 84,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3249,7 +3444,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 80,
+    "id": 85,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3302,7 +3497,7 @@
     "source_market": "unknown"
   },
   {
-    "id": 81,
+    "id": 86,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3341,7 +3536,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 82,
+    "id": 87,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3380,7 +3575,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 83,
+    "id": 88,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3419,7 +3614,7 @@
     "source_market": "korea"
   },
   {
-    "id": 84,
+    "id": 89,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -3458,7 +3653,7 @@
     "source_market": "korea"
   },
   {
-    "id": 85,
+    "id": 90,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3497,7 +3692,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 86,
+    "id": 91,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3536,7 +3731,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 87,
+    "id": 92,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3575,7 +3770,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 88,
+    "id": 93,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3614,7 +3809,7 @@
     "source_market": "korea"
   },
   {
-    "id": 89,
+    "id": 94,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3653,7 +3848,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 90,
+    "id": 95,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3692,7 +3887,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 91,
+    "id": 96,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -3731,46 +3926,7 @@
     "source_market": "korea"
   },
   {
-    "id": 92,
-    "brand": "KIA",
-    "model": "Seltos",
-    "fullName": "KIA Seltos",
-    "year": 2022,
-    "month": 2,
-    "price": 13700,
-    "price_currency": "USD",
-    "mileage": 80000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": true,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122179717",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/7/9/7/1/large/122179717_1.jpg?v=1",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-05",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia"
-  },
-  {
-    "id": 93,
+    "id": 97,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3809,7 +3965,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 94,
+    "id": 98,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3848,7 +4004,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 95,
+    "id": 99,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3887,7 +4043,46 @@
     "source_market": "georgia"
   },
   {
-    "id": 96,
+    "id": 100,
+    "brand": "KIA",
+    "model": "Niro",
+    "fullName": "KIA Niro",
+    "year": 2023,
+    "month": 1,
+    "price": 15900,
+    "price_currency": "USD",
+    "mileage": 73000,
+    "engine": "1,6",
+    "fuel_type": "Гибрид",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KNDCS3***********",
+    "fuel_type_id": 6,
+    "status_id": 1,
+    "customs_passed": true,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "ex plugin",
+    "url": "https://myauto.ge/ru/pr/121955854",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/8/5/5/9/large/121955854_1.jpg?v=11",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-05",
+    "power_hp": 105,
+    "power_kw": 77,
+    "power": "105 л.с. / 77 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea"
+  },
+  {
+    "id": 101,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3926,7 +4121,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 97,
+    "id": 102,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3965,7 +4160,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 98,
+    "id": 103,
     "brand": "Mazda",
     "model": "Mazda 3",
     "fullName": "Mazda Mazda 3",
@@ -4004,7 +4199,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 99,
+    "id": 104,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -4057,7 +4252,7 @@
     "source_market": "europe"
   },
   {
-    "id": 100,
+    "id": 105,
     "brand": "Mini",
     "model": "Countryman",
     "fullName": "Mini Countryman",
@@ -4096,7 +4291,7 @@
     "source_market": "europe"
   },
   {
-    "id": 101,
+    "id": 106,
     "brand": "Mini",
     "model": "Countryman",
     "fullName": "Mini Countryman",
@@ -4135,7 +4330,7 @@
     "source_market": "europe"
   },
   {
-    "id": 102,
+    "id": 107,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -4174,7 +4369,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 103,
+    "id": 108,
     "brand": "Mini",
     "model": "Countryman",
     "fullName": "Mini Countryman",
@@ -4213,7 +4408,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 104,
+    "id": 109,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -4252,33 +4447,33 @@
     "source_market": "japan"
   },
   {
-    "id": 105,
+    "id": 110,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
     "year": 2023,
-    "month": 1,
-    "price": 14500,
+    "month": 2,
+    "price": 14200,
     "price_currency": "USD",
-    "mileage": 44800,
+    "mileage": 6000,
     "engine": "2,0",
     "fuel_type": "Бензин",
-    "transmission": "Робот",
+    "transmission": "Автомат",
     "color": "",
     "drive": "4WD",
     "vin": "JA4ARU***********",
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
-    "location_id": 8,
+    "location_id": 113,
     "parent_loc_id": 1,
     "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122202424",
+    "url": "https://myauto.ge/ru/pr/122006326",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/0/2/large/122202424_1.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/3/6/0/0/large/122006326_1.jpg?v=3",
         "order": 1
       }
     ],
@@ -4291,7 +4486,7 @@
     "source_market": "japan"
   },
   {
-    "id": 106,
+    "id": 111,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -4330,7 +4525,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 107,
+    "id": 112,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -4369,7 +4564,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 108,
+    "id": 113,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -4408,7 +4603,7 @@
     "source_market": "japan"
   },
   {
-    "id": 109,
+    "id": 114,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -4447,7 +4642,7 @@
     "source_market": "georgia"
   },
   {
-    "id": 110,
+    "id": 115,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -4486,7 +4681,7 @@
     "source_market": "japan"
   },
   {
-    "id": 111,
+    "id": 116,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
