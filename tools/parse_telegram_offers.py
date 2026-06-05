@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Parse public Telegram channel previews and prepare top car offers."""
 import argparse
 import json
@@ -361,7 +361,7 @@ def build_caption(item: dict) -> str:
         f"{facts_text}\n\n"
         f"✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n"
         f"🚚 Доставка, растаможка и оформление через EXPO MIR.\n"
-        f"📲 Напишите менеджеру: https://wa.me/996755666805\n"
+        f"📲 Напишите менеджеру: https://wa.me/37368925626\n"
         f"Источник мониторинга: {source}"
     )
 

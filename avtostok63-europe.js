@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     'use strict';
 
     const DATA_URL = 'cars_europe_new.json?v=20260529-avtostok63-passenger';

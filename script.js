@@ -2445,7 +2445,7 @@ async function loadTelegramOffersSection() {
                         <p class="telegram-offer-card__text">${escapeHtml(offer.text_excerpt || '').slice(0, 140)}…</p>
                         <div class="telegram-offer-card__actions">
                             <a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer"><i class="${sourceIcon}"></i> ${sourceLabel}</a>
-                            <a href="https://wa.me/996755666805?text=${msg}" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Заказать</a>
+                            <a href="https://wa.me/37368925626?text=${msg}" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Заказать</a>
                         </div>
                     </div>
                 </article>
@@ -3100,7 +3100,7 @@ function showCarDetails(carId) {
     const waText = encodeURIComponent(
         `Здравствуйте! Интересует ${car.year} ${car.brand} ${car.model}, VIN: ${car.vin}, цена ${formatCurrency(car.price)}. Хотел бы узнать подробности.`
     );
-    const waHref   = `https://wa.me/996755666805?text=${waText}`;
+    const waHref   = `https://wa.me/37368925626?text=${waText}`;
     const tgHref   = `https://t.me/expo_mir`;
 
     carModalBody.innerHTML = `

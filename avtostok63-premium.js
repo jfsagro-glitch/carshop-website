@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     'use strict';
 
     const DATA_URL = 'data/avtostok63_premium.json?v=20260529-all-stock';
