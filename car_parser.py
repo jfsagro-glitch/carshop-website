@@ -400,7 +400,7 @@ def load_passable_import_catalog() -> List[Dict[str, Any]]:
 
 GEORGIA_POWER_CATALOG = load_passable_import_catalog()
 GEORGIA_IN_TRANSIT_LOCATION_IDS = {23}
-GEORGIA_STALE_GRACE_DAYS = 3
+GEORGIA_STALE_GRACE_DAYS = -1
 GEORGIA_MYAUTO_PASSABLE_MAN_IDS = [
     3,   # BMW
     5,   # Chevrolet
@@ -810,6 +810,61 @@ def has_live_europe_photo(record: dict) -> bool:
         if "img.classistatic.de" in u or ("classistatic.de" in u and "favicon" not in u):
             return True
     return False
+
+
+def _photo_request_headers(url: str) -> Dict[str, str]:
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+    }
+    if "static.my.ge" in url or "myauto.ge" in url:
+        headers["Referer"] = "https://www.myauto.ge/"
+    return headers
+
+
+def is_live_photo_url(url: str, timeout: float = 2.5) -> bool:
+    if not url or not REQUESTS_AVAILABLE:
+        return bool(url)
+    try:
+        resp = requests.head(
+            url,
+            headers=_photo_request_headers(url),
+            timeout=timeout,
+            allow_redirects=True,
+        )
+        content_type = str(resp.headers.get("content-type") or "").lower()
+        if resp.status_code == 200 and content_type.startswith("image/"):
+            return True
+        if resp.status_code in (403, 405):
+            resp = requests.get(
+                url,
+                headers=_photo_request_headers(url),
+                timeout=timeout,
+                stream=True,
+                allow_redirects=True,
+            )
+            content_type = str(resp.headers.get("content-type") or "").lower()
+            return resp.status_code == 200 and content_type.startswith("image/")
+    except Exception:
+        return False
+    return False
+
+
+def keep_live_record_photos(record: dict, max_checks: int = 1) -> bool:
+    """Keep only image URLs that are still available; return whether any survived."""
+    images = record.get("images")
+    if not isinstance(images, list):
+        return is_live_photo_url(str(record.get("photos") or record.get("photo_url") or record.get("image") or ""))
+
+    live_images = []
+    for img in images[:max_checks]:
+        url = img.get("url") if isinstance(img, dict) else img
+        if not url:
+            continue
+        if is_live_photo_url(str(url)):
+            live_images.append(img)
+    record["images"] = live_images
+    return bool(live_images)
 
 def max_kw_for_hp_limit(max_power_hp: int) -> int:
     if not max_power_hp:
@@ -2754,6 +2809,11 @@ def sync_georgia_stock(source: str = "myauto", max_cars: int = 100,
     )
     if len(existing) < before_filter:
         log.info(f"Фильтр каталога: убрано {before_filter - len(existing)} записей вне условий")
+
+    before_live_photo_filter = len(existing)
+    existing = [item for item in existing if keep_live_record_photos(item)]
+    if len(existing) < before_live_photo_filter:
+        log.info(f"Фильтр фото: убрано {before_live_photo_filter - len(existing)} записей с недоступными изображениями")
 
     # Перенумеруем и сохраняем
     for i, item in enumerate(existing, start=1):
