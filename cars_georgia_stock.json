@@ -36,7 +36,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1421948,
+    "turnkey_payments_rub": 444812,
+    "customs_value_rub": 977136,
+    "customs_value_eur": 11420.72,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245604,
+    "georgia_conversion_fee_rub": 19818,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 2,
@@ -75,7 +103,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1347010,
+    "turnkey_payments_rub": 443342,
+    "customs_value_rub": 903667,
+    "customs_value_eur": 10562.02,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244135,
+    "georgia_conversion_fee_rub": 18349,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 3,
@@ -114,7 +170,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1436936,
+    "turnkey_payments_rub": 445106,
+    "customs_value_rub": 991830,
+    "customs_value_eur": 11592.46,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245898,
+    "georgia_conversion_fee_rub": 20112,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 4,
@@ -153,7 +237,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1436936,
+    "turnkey_payments_rub": 445106,
+    "customs_value_rub": 991830,
+    "customs_value_eur": 11592.46,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245898,
+    "georgia_conversion_fee_rub": 20112,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 5,
@@ -192,7 +304,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1384479,
+    "turnkey_payments_rub": 444077,
+    "customs_value_rub": 940402,
+    "customs_value_eur": 10991.37,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244869,
+    "georgia_conversion_fee_rub": 19084,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 6,
@@ -231,7 +371,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1324528,
+    "turnkey_payments_rub": 442901,
+    "customs_value_rub": 881627,
+    "customs_value_eur": 10304.41,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243694,
+    "georgia_conversion_fee_rub": 17908,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 7,
@@ -270,7 +438,37 @@
     "power_kw": 103,
     "power": "140 л.с. / 103 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 8,
@@ -323,7 +521,35 @@
     "power_kw": 115,
     "power": "156 л.с. / 115 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1601800,
+    "turnkey_payments_rub": 448338,
+    "customs_value_rub": 1153462,
+    "customs_value_eur": 13481.6,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249131,
+    "georgia_conversion_fee_rub": 23345,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 9,
@@ -362,7 +588,37 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 10,
@@ -401,7 +657,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1624281,
+    "turnkey_payments_rub": 448779,
+    "customs_value_rub": 1175502,
+    "customs_value_eur": 13739.21,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249571,
+    "georgia_conversion_fee_rub": 23786,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 11,
@@ -440,7 +724,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1670368,
+    "turnkey_payments_rub": 458131,
+    "customs_value_rub": 1212237,
+    "customs_value_eur": 14168.56,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 250306,
+    "georgia_conversion_fee_rub": 24520,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 12,
@@ -479,7 +791,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1942537,
+    "turnkey_payments_rub": 803769,
+    "customs_value_rub": 1138768,
+    "customs_value_eur": 13309.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 546608,
+    "customs_duty_eur": 6388.73,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 248837,
+    "georgia_conversion_fee_rub": 23051,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 13,
@@ -532,7 +872,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1549786,
+    "turnkey_payments_rub": 433059,
+    "customs_value_rub": 1116727,
+    "customs_value_eur": 13052.25,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 174539,
+    "customs_duty_eur": 2040,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248396,
+    "georgia_conversion_fee_rub": 22610,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 14,
@@ -571,7 +939,35 @@
     "power_kw": 115,
     "power": "156 л.с. / 115 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 2094418,
+    "turnkey_payments_rub": 860141,
+    "customs_value_rub": 1234278,
+    "customs_value_eur": 14426.17,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 592453,
+    "customs_duty_eur": 6924.56,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 250747,
+    "georgia_conversion_fee_rub": 24961,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 15,
@@ -610,7 +1006,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1474405,
+    "turnkey_payments_rub": 445840,
+    "customs_value_rub": 1028565,
+    "customs_value_eur": 12021.81,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246633,
+    "georgia_conversion_fee_rub": 20847,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 16,
@@ -649,7 +1073,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1497329,
+    "turnkey_payments_rub": 432030,
+    "customs_value_rub": 1065299,
+    "customs_value_eur": 12451.16,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 174539,
+    "customs_duty_eur": 2040,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247367,
+    "georgia_conversion_fee_rub": 21582,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 17,
@@ -688,7 +1140,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1526862,
+    "turnkey_payments_rub": 446869,
+    "customs_value_rub": 1079993,
+    "customs_value_eur": 12622.9,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247661,
+    "georgia_conversion_fee_rub": 21876,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 18,
@@ -741,7 +1221,37 @@
     "power_kw": 115,
     "power": "156 л.с. / 115 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 19,
@@ -780,7 +1290,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1707837,
+    "turnkey_payments_rub": 458865,
+    "customs_value_rub": 1248971,
+    "customs_value_eur": 14597.91,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251041,
+    "georgia_conversion_fee_rub": 25255,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 20,
@@ -819,7 +1357,37 @@
     "power_kw": 115,
     "power": "156 л.с. / 115 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 21,
@@ -858,7 +1426,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1436936,
+    "turnkey_payments_rub": 445106,
+    "customs_value_rub": 991830,
+    "customs_value_eur": 11592.46,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245898,
+    "georgia_conversion_fee_rub": 20112,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 22,
@@ -897,7 +1493,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1376542,
+    "turnkey_payments_rub": 458181,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 203629,
+    "customs_duty_eur": 2380,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 23,
@@ -936,7 +1560,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1181703,
+    "turnkey_payments_rub": 454361,
+    "customs_value_rub": 727342,
+    "customs_value_eur": 8501.14,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 203629,
+    "customs_duty_eur": 2380,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240608,
+    "georgia_conversion_fee_rub": 14823,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 24,
@@ -975,7 +1627,35 @@
     "power_kw": 115,
     "power": "156 л.с. / 115 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 2171561,
+    "turnkey_payments_rub": 885855,
+    "customs_value_rub": 1285706,
+    "customs_value_eur": 15027.27,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 617139,
+    "customs_duty_eur": 7213.09,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 251775,
+    "georgia_conversion_fee_rub": 25990,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 25,
@@ -1028,7 +1708,35 @@
     "power_kw": 115,
     "power": "156 л.с. / 115 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1942537,
+    "turnkey_payments_rub": 803769,
+    "customs_value_rub": 1138768,
+    "customs_value_eur": 13309.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 546608,
+    "customs_duty_eur": 6388.73,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 248837,
+    "georgia_conversion_fee_rub": 23051,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 26,
@@ -1067,7 +1775,35 @@
     "power_kw": 115,
     "power": "156 л.с. / 115 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1399467,
+    "turnkey_payments_rub": 444371,
+    "customs_value_rub": 955096,
+    "customs_value_eur": 11163.11,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245163,
+    "georgia_conversion_fee_rub": 19378,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 27,
@@ -1120,7 +1856,37 @@
     "power_kw": 115,
     "power": "156 л.с. / 115 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 28,
@@ -1159,7 +1925,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1452366,
+    "turnkey_payments_rub": 431148,
+    "customs_value_rub": 1021218,
+    "customs_value_eur": 11935.94,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 174539,
+    "customs_duty_eur": 2040,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246486,
+    "georgia_conversion_fee_rub": 20700,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 29,
@@ -1198,7 +1992,35 @@
     "power_kw": 92,
     "power": "123 л.с. / 92 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1053955,
+    "turnkey_payments_rub": 378041,
+    "customs_value_rub": 675914,
+    "customs_value_eur": 7900.05,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 128337,
+    "customs_duty_eur": 1500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 239580,
+    "georgia_conversion_fee_rub": 13794,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 30,
@@ -1237,7 +2059,35 @@
     "power_kw": 92,
     "power": "123 л.с. / 92 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1076436,
+    "turnkey_payments_rub": 378482,
+    "customs_value_rub": 697955,
+    "customs_value_eur": 8157.66,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 128337,
+    "customs_duty_eur": 1500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240020,
+    "georgia_conversion_fee_rub": 14235,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 31,
@@ -1276,7 +2126,35 @@
     "power_kw": 110,
     "power": "150 л.с. / 110 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1774396,
+    "turnkey_payments_rub": 488690,
+    "customs_value_rub": 1285706,
+    "customs_value_eur": 15027.27,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251775,
+    "georgia_conversion_fee_rub": 25990,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 32,
@@ -1315,7 +2193,35 @@
     "power_kw": 104,
     "power": "141 л.с. / 104 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1580407,
+    "turnkey_payments_rub": 640005,
+    "customs_value_rub": 940402,
+    "customs_value_eur": 10991.37,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244869,
+    "georgia_conversion_fee_rub": 19084,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 33,
@@ -1354,7 +2260,35 @@
     "power_kw": 110,
     "power": "150 л.с. / 110 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1751914,
+    "turnkey_payments_rub": 488249,
+    "customs_value_rub": 1263665,
+    "customs_value_eur": 14769.65,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251335,
+    "georgia_conversion_fee_rub": 25549,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 34,
@@ -1393,7 +2327,35 @@
     "power_kw": 110,
     "power": "150 л.с. / 110 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1721939,
+    "turnkey_payments_rub": 487661,
+    "customs_value_rub": 1234278,
+    "customs_value_eur": 14426.17,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 250747,
+    "georgia_conversion_fee_rub": 24961,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 35,
@@ -1434,7 +2396,7 @@
       "year": 2023,
       "make": "HONDA",
       "model": "Civic",
-      "engine_l": 2.0,
+      "engine_l": 2,
       "fuel": "Gasoline",
       "electrification": "",
       "hp": 158,
@@ -1446,7 +2408,35 @@
     "power_kw": 116,
     "power": "158 л.с. / 116 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "unknown"
+    "source_market": "unknown",
+    "turnkey_price_rub": 1574977,
+    "turnkey_payments_rub": 715391,
+    "customs_value_rub": 859586,
+    "customs_value_eur": 10046.8,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243253,
+    "georgia_conversion_fee_rub": 17467,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 36,
@@ -1485,7 +2475,35 @@
     "power_kw": 110,
     "power": "150 л.с. / 110 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1796877,
+    "turnkey_payments_rub": 489131,
+    "customs_value_rub": 1307746,
+    "customs_value_eur": 15284.88,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 252216,
+    "georgia_conversion_fee_rub": 26431,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 37,
@@ -1524,7 +2542,35 @@
     "power_kw": 104,
     "power": "141 л.с. / 104 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 2016172,
+    "turnkey_payments_rub": 656998,
+    "customs_value_rub": 1359175,
+    "customs_value_eur": 15885.97,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 253245,
+    "georgia_conversion_fee_rub": 27459,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 38,
@@ -1563,7 +2609,35 @@
     "power_kw": 104,
     "power": "141 л.с. / 104 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1355592,
+    "turnkey_payments_rub": 635597,
+    "customs_value_rub": 719995,
+    "customs_value_eur": 8415.27,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240461,
+    "georgia_conversion_fee_rub": 14676,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 39,
@@ -1602,7 +2676,35 @@
     "power_kw": 104,
     "power": "141 л.с. / 104 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1820210,
+    "turnkey_payments_rub": 644707,
+    "customs_value_rub": 1175502,
+    "customs_value_eur": 13739.21,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249571,
+    "georgia_conversion_fee_rub": 23786,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 40,
@@ -1641,7 +2743,35 @@
     "power_kw": 104,
     "power": "141 л.с. / 104 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1595395,
+    "turnkey_payments_rub": 640299,
+    "customs_value_rub": 955096,
+    "customs_value_eur": 11163.11,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245163,
+    "georgia_conversion_fee_rub": 19378,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 41,
@@ -1694,7 +2824,35 @@
     "power_kw": 104,
     "power": "141 л.с. / 104 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "unknown"
+    "source_market": "unknown",
+    "turnkey_price_rub": 1730284,
+    "turnkey_payments_rub": 642944,
+    "customs_value_rub": 1087340,
+    "customs_value_eur": 12708.77,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247808,
+    "georgia_conversion_fee_rub": 22023,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 42,
@@ -1747,7 +2905,35 @@
     "power_kw": 104,
     "power": "141 л.с. / 104 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "unknown"
+    "source_market": "unknown",
+    "turnkey_price_rub": 1662839,
+    "turnkey_payments_rub": 641622,
+    "customs_value_rub": 1021218,
+    "customs_value_eur": 11935.94,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246486,
+    "georgia_conversion_fee_rub": 20700,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 43,
@@ -1786,7 +2972,35 @@
     "power_kw": 104,
     "power": "141 л.с. / 104 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1557926,
+    "turnkey_payments_rub": 639564,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 44,
@@ -1825,7 +3039,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1649916,
+    "turnkey_payments_rub": 716861,
+    "customs_value_rub": 933055,
+    "customs_value_eur": 10905.5,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244722,
+    "georgia_conversion_fee_rub": 18937,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 45,
@@ -1864,7 +3106,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1380138,
+    "turnkey_payments_rub": 711571,
+    "customs_value_rub": 668567,
+    "customs_value_eur": 7814.18,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 239433,
+    "georgia_conversion_fee_rub": 13647,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 46,
@@ -1903,7 +3173,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1709866,
+    "turnkey_payments_rub": 718036,
+    "customs_value_rub": 991830,
+    "customs_value_eur": 11592.46,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245898,
+    "georgia_conversion_fee_rub": 20112,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 47,
@@ -1942,7 +3240,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1709866,
+    "turnkey_payments_rub": 718036,
+    "customs_value_rub": 991830,
+    "customs_value_eur": 11592.46,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245898,
+    "georgia_conversion_fee_rub": 20112,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 48,
@@ -1981,7 +3307,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1657410,
+    "turnkey_payments_rub": 717008,
+    "customs_value_rub": 940402,
+    "customs_value_eur": 10991.37,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244869,
+    "georgia_conversion_fee_rub": 19084,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 49,
@@ -2020,7 +3374,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1574977,
+    "turnkey_payments_rub": 715391,
+    "customs_value_rub": 859586,
+    "customs_value_eur": 10046.8,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243253,
+    "georgia_conversion_fee_rub": 17467,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 50,
@@ -2059,7 +3441,35 @@
     "power_kw": 90,
     "power": "123 л.с. / 90 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1665023,
+    "turnkey_payments_rub": 599724,
+    "customs_value_rub": 1065299,
+    "customs_value_eur": 12451.16,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247367,
+    "georgia_conversion_fee_rub": 21582,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 51,
@@ -2098,7 +3508,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1492545,
+    "turnkey_payments_rub": 713775,
+    "customs_value_rub": 778770,
+    "customs_value_eur": 9102.23,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241637,
+    "georgia_conversion_fee_rub": 15851,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 52,
@@ -2137,7 +3575,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1559990,
+    "turnkey_payments_rub": 715097,
+    "customs_value_rub": 844892,
+    "customs_value_eur": 9875.06,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 242959,
+    "georgia_conversion_fee_rub": 17174,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 53,
@@ -2178,7 +3644,7 @@
       "year": 2022,
       "make": "HYUNDAI",
       "model": "Elantra",
-      "engine_l": 2.0,
+      "engine_l": 2,
       "fuel": "Gasoline",
       "electrification": "",
       "hp": 147,
@@ -2190,7 +3656,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 54,
@@ -2229,7 +3723,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1500039,
+    "turnkey_payments_rub": 713922,
+    "customs_value_rub": 786117,
+    "customs_value_eur": 9188.1,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241784,
+    "georgia_conversion_fee_rub": 15998,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 55,
@@ -2270,7 +3792,7 @@
       "year": 2023,
       "make": "HYUNDAI",
       "model": "Elantra",
-      "engine_l": 2.0,
+      "engine_l": 2,
       "fuel": "Gasoline",
       "electrification": "",
       "hp": 147,
@@ -2282,7 +3804,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "usa"
+    "source_market": "usa",
+    "turnkey_price_rub": 1597459,
+    "turnkey_payments_rub": 715832,
+    "customs_value_rub": 881627,
+    "customs_value_eur": 10304.41,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243694,
+    "georgia_conversion_fee_rub": 17908,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 56,
@@ -2321,7 +3871,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1702373,
+    "turnkey_payments_rub": 717889,
+    "customs_value_rub": 984483,
+    "customs_value_eur": 11506.59,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245751,
+    "georgia_conversion_fee_rub": 19965,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 57,
@@ -2360,7 +3938,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 58,
@@ -2399,7 +4005,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1859743,
+    "turnkey_payments_rub": 720975,
+    "customs_value_rub": 1138768,
+    "customs_value_eur": 13309.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248837,
+    "georgia_conversion_fee_rub": 23051,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 59,
@@ -2438,7 +4072,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1559990,
+    "turnkey_payments_rub": 715097,
+    "customs_value_rub": 844892,
+    "customs_value_eur": 9875.06,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 242959,
+    "georgia_conversion_fee_rub": 17174,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 60,
@@ -2477,7 +4139,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1889718,
+    "turnkey_payments_rub": 721563,
+    "customs_value_rub": 1168156,
+    "customs_value_eur": 13653.34,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249424,
+    "georgia_conversion_fee_rub": 23639,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 61,
@@ -2516,7 +4206,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 995491,
+    "turnkey_payments_rub": 701615,
+    "customs_value_rub": 293876,
+    "customs_value_eur": 3434.8,
+    "customs_fee_rub": 2462,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 231939,
+    "georgia_conversion_fee_rub": 6153,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 62,
@@ -2557,7 +4275,7 @@
       "year": 2023,
       "make": "HYUNDAI",
       "model": "Elantra",
-      "engine_l": 2.0,
+      "engine_l": 2,
       "fuel": "Gasoline",
       "electrification": "",
       "hp": 147,
@@ -2569,7 +4287,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1597459,
+    "turnkey_payments_rub": 715832,
+    "customs_value_rub": 881627,
+    "customs_value_eur": 10304.41,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243694,
+    "georgia_conversion_fee_rub": 17908,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 63,
@@ -2608,7 +4354,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1642422,
+    "turnkey_payments_rub": 716714,
+    "customs_value_rub": 925708,
+    "customs_value_eur": 10819.63,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244575,
+    "georgia_conversion_fee_rub": 18790,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 64,
@@ -2647,7 +4421,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "usa"
+    "source_market": "usa",
+    "turnkey_price_rub": 1958286,
+    "turnkey_payments_rub": 731355,
+    "customs_value_rub": 1226931,
+    "customs_value_eur": 14340.3,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 250600,
+    "georgia_conversion_fee_rub": 24814,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 65,
@@ -2686,7 +4488,35 @@
     "power_kw": 88,
     "power": "120 л.с. / 88 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "europe"
+    "source_market": "europe",
+    "turnkey_price_rub": 1620060,
+    "turnkey_payments_rub": 598842,
+    "customs_value_rub": 1021218,
+    "customs_value_eur": 11935.94,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246486,
+    "georgia_conversion_fee_rub": 20700,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 66,
@@ -2725,7 +4555,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1507533,
+    "turnkey_payments_rub": 714069,
+    "customs_value_rub": 793464,
+    "customs_value_eur": 9273.97,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241931,
+    "georgia_conversion_fee_rub": 16145,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 67,
@@ -2764,7 +4622,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1447582,
+    "turnkey_payments_rub": 712893,
+    "customs_value_rub": 734689,
+    "customs_value_eur": 8587.01,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240755,
+    "georgia_conversion_fee_rub": 14969,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 68,
@@ -2803,7 +4689,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 69,
@@ -2842,7 +4756,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1784805,
+    "turnkey_payments_rub": 719506,
+    "customs_value_rub": 1065299,
+    "customs_value_eur": 12451.16,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247367,
+    "georgia_conversion_fee_rub": 21582,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 70,
@@ -2881,7 +4823,37 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 71,
@@ -2920,7 +4892,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1485052,
+    "turnkey_payments_rub": 713628,
+    "customs_value_rub": 771423,
+    "customs_value_eur": 9016.36,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241490,
+    "georgia_conversion_fee_rub": 15704,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 72,
@@ -2961,7 +4961,7 @@
       "year": 2023,
       "make": "HYUNDAI",
       "model": "Kona",
-      "engine_l": 2.0,
+      "engine_l": 2,
       "fuel": "Gasoline",
       "electrification": "",
       "hp": 147,
@@ -2973,7 +4973,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1664903,
+    "turnkey_payments_rub": 717155,
+    "customs_value_rub": 947749,
+    "customs_value_eur": 11077.24,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245016,
+    "georgia_conversion_fee_rub": 19231,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 73,
@@ -3014,7 +5042,7 @@
       "year": 2022,
       "make": "HYUNDAI",
       "model": "Kona",
-      "engine_l": 2.0,
+      "engine_l": 2,
       "fuel": "Gasoline",
       "electrification": "",
       "hp": 147,
@@ -3026,7 +5054,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1687385,
+    "turnkey_payments_rub": 717595,
+    "customs_value_rub": 969789,
+    "customs_value_eur": 11334.85,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245457,
+    "georgia_conversion_fee_rub": 19672,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 74,
@@ -3065,7 +5121,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 75,
@@ -3104,7 +5188,35 @@
     "power_kw": 90,
     "power": "123 л.с. / 90 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1612566,
+    "turnkey_payments_rub": 598696,
+    "customs_value_rub": 1013871,
+    "customs_value_eur": 11850.07,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246339,
+    "georgia_conversion_fee_rub": 20553,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 76,
@@ -3143,7 +5255,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 77,
@@ -3182,7 +5322,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1477558,
+    "turnkey_payments_rub": 713481,
+    "customs_value_rub": 764077,
+    "customs_value_eur": 8930.49,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241343,
+    "georgia_conversion_fee_rub": 15557,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 78,
@@ -3221,7 +5389,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1515027,
+    "turnkey_payments_rub": 714216,
+    "customs_value_rub": 800811,
+    "customs_value_eur": 9359.84,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 242078,
+    "georgia_conversion_fee_rub": 16292,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 79,
@@ -3260,7 +5456,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1485052,
+    "turnkey_payments_rub": 713628,
+    "customs_value_rub": 771423,
+    "customs_value_eur": 9016.36,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241490,
+    "georgia_conversion_fee_rub": 15704,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 80,
@@ -3299,7 +5523,35 @@
     "power_kw": 110,
     "power": "150 л.с. / 110 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 2160739,
+    "turnkey_payments_rub": 617892,
+    "customs_value_rub": 1542847,
+    "customs_value_eur": 18032.72,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 256918,
+    "georgia_conversion_fee_rub": 31133,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 81,
@@ -3338,7 +5590,35 @@
     "power_kw": 116,
     "power": "160 л.с. / 116 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1747335,
+    "turnkey_payments_rub": 718771,
+    "customs_value_rub": 1028565,
+    "customs_value_eur": 12021.81,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246633,
+    "georgia_conversion_fee_rub": 20847,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 82,
@@ -3377,7 +5657,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1500039,
+    "turnkey_payments_rub": 713922,
+    "customs_value_rub": 786117,
+    "customs_value_eur": 9188.1,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241784,
+    "georgia_conversion_fee_rub": 15998,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 83,
@@ -3416,7 +5724,37 @@
     "power_kw": 110,
     "power": "150 л.с. / 110 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "europe"
+    "source_market": "europe",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 84,
@@ -3455,7 +5793,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1522521,
+    "turnkey_payments_rub": 714363,
+    "customs_value_rub": 808158,
+    "customs_value_eur": 9445.71,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 242224,
+    "georgia_conversion_fee_rub": 16439,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 85,
@@ -3494,7 +5860,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1837466,
+    "turnkey_payments_rub": 852982,
+    "customs_value_rub": 984483,
+    "customs_value_eur": 11506.59,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 598907,
+    "customs_duty_eur": 7000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 245751,
+    "georgia_conversion_fee_rub": 19965,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 86,
@@ -3533,7 +5927,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1507533,
+    "turnkey_payments_rub": 714069,
+    "customs_value_rub": 793464,
+    "customs_value_eur": 9273.97,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241931,
+    "georgia_conversion_fee_rub": 16145,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 87,
@@ -3572,7 +5994,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1522521,
+    "turnkey_payments_rub": 714363,
+    "customs_value_rub": 808158,
+    "customs_value_eur": 9445.71,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 242224,
+    "georgia_conversion_fee_rub": 16439,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 88,
@@ -3611,7 +6061,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 89,
@@ -3650,7 +6128,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1559990,
+    "turnkey_payments_rub": 715097,
+    "customs_value_rub": 844892,
+    "customs_value_eur": 9875.06,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 242959,
+    "georgia_conversion_fee_rub": 17174,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 90,
@@ -3689,7 +6195,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1604953,
+    "turnkey_payments_rub": 715979,
+    "customs_value_rub": 888974,
+    "customs_value_eur": 10390.28,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243841,
+    "georgia_conversion_fee_rub": 18055,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 91,
@@ -3728,7 +6262,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 2018236,
+    "turnkey_payments_rub": 732531,
+    "customs_value_rub": 1285706,
+    "customs_value_eur": 15027.27,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251775,
+    "georgia_conversion_fee_rub": 25990,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 92,
@@ -3769,7 +6331,7 @@
       "year": 2023,
       "make": "KIA",
       "model": "Seltos",
-      "engine_l": 2.0,
+      "engine_l": 2,
       "fuel": "Gasoline",
       "electrification": "",
       "hp": 147,
@@ -3781,7 +6343,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1980767,
+    "turnkey_payments_rub": 731796,
+    "customs_value_rub": 1248971,
+    "customs_value_eur": 14597.91,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251041,
+    "georgia_conversion_fee_rub": 25255,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 93,
@@ -3820,7 +6410,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1807286,
+    "turnkey_payments_rub": 719946,
+    "customs_value_rub": 1087340,
+    "customs_value_eur": 12708.77,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247808,
+    "georgia_conversion_fee_rub": 22023,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 94,
@@ -3859,7 +6477,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1687385,
+    "turnkey_payments_rub": 717595,
+    "customs_value_rub": 969789,
+    "customs_value_eur": 11334.85,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245457,
+    "georgia_conversion_fee_rub": 19672,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 95,
@@ -3898,7 +6544,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 2340471,
+    "turnkey_payments_rub": 738849,
+    "customs_value_rub": 1601622,
+    "customs_value_eur": 18719.68,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 258094,
+    "georgia_conversion_fee_rub": 32308,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 96,
@@ -3939,7 +6613,7 @@
       "year": 2023,
       "make": "KIA",
       "model": "Forte",
-      "engine_l": 2.0,
+      "engine_l": 2,
       "fuel": "Gasoline",
       "electrification": "",
       "hp": 147,
@@ -3951,7 +6625,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "unknown"
+    "source_market": "unknown",
+    "turnkey_price_rub": 1657410,
+    "turnkey_payments_rub": 717008,
+    "customs_value_rub": 940402,
+    "customs_value_eur": 10991.37,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244869,
+    "georgia_conversion_fee_rub": 19084,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 97,
@@ -3990,7 +6692,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1784805,
+    "turnkey_payments_rub": 719506,
+    "customs_value_rub": 1065299,
+    "customs_value_eur": 12451.16,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247367,
+    "georgia_conversion_fee_rub": 21582,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 98,
@@ -4029,7 +6759,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 2123150,
+    "turnkey_payments_rub": 734588,
+    "customs_value_rub": 1388562,
+    "customs_value_eur": 16229.45,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 253833,
+    "georgia_conversion_fee_rub": 28047,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 99,
@@ -4068,7 +6826,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 2093175,
+    "turnkey_payments_rub": 734000,
+    "customs_value_rub": 1359175,
+    "customs_value_eur": 15885.97,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 253245,
+    "georgia_conversion_fee_rub": 27459,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 100,
@@ -4107,7 +6893,36 @@
     "power_kw": 77,
     "power": "105 л.с. / 77 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1680011,
+    "turnkey_payments_rub": 600018,
+    "customs_value_rub": 1079993,
+    "customs_value_eur": 12622.9,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247661,
+    "georgia_conversion_fee_rub": 21876,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением.",
+      "Для гибридов мощность нужно брать из ЭПТС/СБКТС/документов. Не складывай мощности без подтверждения."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 101,
@@ -4160,7 +6975,36 @@
     "power_kw": 77,
     "power": "105 л.с. / 77 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1665023,
+    "turnkey_payments_rub": 599724,
+    "customs_value_rub": 1065299,
+    "customs_value_eur": 12451.16,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247367,
+    "georgia_conversion_fee_rub": 21582,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением.",
+      "Для гибридов мощность нужно брать из ЭПТС/СБКТС/документов. Не складывай мощности без подтверждения."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 102,
@@ -4199,7 +7043,36 @@
     "power_kw": 77,
     "power": "105 л.с. / 77 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1724974,
+    "turnkey_payments_rub": 600900,
+    "customs_value_rub": 1124074,
+    "customs_value_eur": 13138.12,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248543,
+    "georgia_conversion_fee_rub": 22757,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением.",
+      "Для гибридов мощность нужно брать из ЭПТС/СБКТС/документов. Не складывай мощности без подтверждения."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 103,
@@ -4238,7 +7111,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1664903,
+    "turnkey_payments_rub": 717155,
+    "customs_value_rub": 947749,
+    "customs_value_eur": 11077.24,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245016,
+    "georgia_conversion_fee_rub": 19231,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 104,
@@ -4277,7 +7178,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1739842,
+    "turnkey_payments_rub": 718624,
+    "customs_value_rub": 1021218,
+    "customs_value_eur": 11935.94,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246486,
+    "georgia_conversion_fee_rub": 20700,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 105,
@@ -4316,7 +7245,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1814780,
+    "turnkey_payments_rub": 720093,
+    "customs_value_rub": 1094687,
+    "customs_value_eur": 12794.64,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247955,
+    "georgia_conversion_fee_rub": 22169,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 106,
@@ -4355,7 +7312,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1724854,
+    "turnkey_payments_rub": 718330,
+    "customs_value_rub": 1006524,
+    "customs_value_eur": 11764.2,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246192,
+    "georgia_conversion_fee_rub": 20406,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 107,
@@ -4394,7 +7379,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1447582,
+    "turnkey_payments_rub": 712893,
+    "customs_value_rub": 734689,
+    "customs_value_eur": 8587.01,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240755,
+    "georgia_conversion_fee_rub": 14969,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 108,
@@ -4433,7 +7446,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1747335,
+    "turnkey_payments_rub": 718771,
+    "customs_value_rub": 1028565,
+    "customs_value_eur": 12021.81,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246633,
+    "georgia_conversion_fee_rub": 20847,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 109,
@@ -4472,7 +7513,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1994836,
+    "turnkey_payments_rub": 856068,
+    "customs_value_rub": 1138768,
+    "customs_value_eur": 13309.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 598907,
+    "customs_duty_eur": 7000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 248837,
+    "georgia_conversion_fee_rub": 23051,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 110,
@@ -4511,7 +7580,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1432595,
+    "turnkey_payments_rub": 712600,
+    "customs_value_rub": 719995,
+    "customs_value_eur": 8415.27,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240461,
+    "georgia_conversion_fee_rub": 14676,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 111,
@@ -4550,7 +7647,37 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 112,
@@ -4589,7 +7716,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1958286,
+    "turnkey_payments_rub": 731355,
+    "customs_value_rub": 1226931,
+    "customs_value_eur": 14340.3,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 250600,
+    "georgia_conversion_fee_rub": 24814,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 113,
@@ -4628,7 +7783,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1965780,
+    "turnkey_payments_rub": 731502,
+    "customs_value_rub": 1234278,
+    "customs_value_eur": 14426.17,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 250747,
+    "georgia_conversion_fee_rub": 24961,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 114,
@@ -4667,7 +7850,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1597459,
+    "turnkey_payments_rub": 715832,
+    "customs_value_rub": 881627,
+    "customs_value_eur": 10304.41,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243694,
+    "georgia_conversion_fee_rub": 17908,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 115,
@@ -4706,7 +7917,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1589965,
+    "turnkey_payments_rub": 715685,
+    "customs_value_rub": 874280,
+    "customs_value_eur": 10218.54,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243547,
+    "georgia_conversion_fee_rub": 17761,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 116,
@@ -4745,7 +7984,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1859743,
+    "turnkey_payments_rub": 720975,
+    "customs_value_rub": 1138768,
+    "customs_value_eur": 13309.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248837,
+    "georgia_conversion_fee_rub": 23051,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 117,
@@ -4784,7 +8051,36 @@
     "power_kw": 77,
     "power": "105 л.с. / 77 кВт",
     "power_source": "catalog:korea",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1739961,
+    "turnkey_payments_rub": 601193,
+    "customs_value_rub": 1138768,
+    "customs_value_eur": 13309.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248837,
+    "georgia_conversion_fee_rub": 23051,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением.",
+      "Для гибридов мощность нужно брать из ЭПТС/СБКТС/документов. Не складывай мощности без подтверждения."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 118,
@@ -4823,7 +8119,37 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 119,
@@ -4862,7 +8188,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 120,
@@ -4901,7 +8255,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1822274,
+    "turnkey_payments_rub": 720240,
+    "customs_value_rub": 1102034,
+    "customs_value_eur": 12880.51,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248102,
+    "georgia_conversion_fee_rub": 22316,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 121,
@@ -4940,7 +8322,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "korea"
+    "source_market": "korea",
+    "turnkey_price_rub": 1709866,
+    "turnkey_payments_rub": 718036,
+    "customs_value_rub": 991830,
+    "customs_value_eur": 11592.46,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245898,
+    "georgia_conversion_fee_rub": 20112,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 122,
@@ -4979,7 +8389,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1859743,
+    "turnkey_payments_rub": 720975,
+    "customs_value_rub": 1138768,
+    "customs_value_eur": 13309.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248837,
+    "georgia_conversion_fee_rub": 23051,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 123,
@@ -5018,7 +8456,37 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 124,
@@ -5057,7 +8525,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1950792,
+    "turnkey_payments_rub": 731208,
+    "customs_value_rub": 1219584,
+    "customs_value_eur": 14254.43,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 250453,
+    "georgia_conversion_fee_rub": 24667,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 125,
@@ -5096,7 +8592,35 @@
     "power_kw": 108,
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 126,
@@ -5135,7 +8659,35 @@
     "power_kw": 114,
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1882224,
+    "turnkey_payments_rub": 721416,
+    "customs_value_rub": 1160809,
+    "customs_value_eur": 13567.47,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249277,
+    "georgia_conversion_fee_rub": 23492,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 127,
@@ -5188,7 +8740,35 @@
     "power_kw": 99,
     "power": "134 л.с. / 99 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "europe"
+    "source_market": "europe",
+    "turnkey_price_rub": 2104124,
+    "turnkey_payments_rub": 495155,
+    "customs_value_rub": 1608969,
+    "customs_value_eur": 18805.55,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 258241,
+    "georgia_conversion_fee_rub": 32455,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 128,
@@ -5227,7 +8807,35 @@
     "power_kw": 99,
     "power": "134 л.с. / 99 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "europe"
+    "source_market": "europe",
+    "turnkey_price_rub": 2561248,
+    "turnkey_payments_rub": 504118,
+    "customs_value_rub": 2057129,
+    "customs_value_eur": 24043.62,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 267204,
+    "georgia_conversion_fee_rub": 41418,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 129,
@@ -5266,7 +8874,35 @@
     "power_kw": 99,
     "power": "134 л.с. / 99 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "europe"
+    "source_market": "europe",
+    "turnkey_price_rub": 2973408,
+    "turnkey_payments_rub": 512200,
+    "customs_value_rub": 2461208,
+    "customs_value_eur": 28766.48,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 275285,
+    "georgia_conversion_fee_rub": 49500,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 130,
@@ -5305,7 +8941,35 @@
     "power_kw": 99,
     "power": "134 л.с. / 99 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1736926,
+    "turnkey_payments_rub": 487955,
+    "customs_value_rub": 1248971,
+    "customs_value_eur": 14597.91,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251041,
+    "georgia_conversion_fee_rub": 25255,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 131,
@@ -5344,7 +9008,35 @@
     "power_kw": 99,
     "power": "134 л.с. / 99 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 2523778,
+    "turnkey_payments_rub": 503384,
+    "customs_value_rub": 2020395,
+    "customs_value_eur": 23614.27,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 266469,
+    "georgia_conversion_fee_rub": 40684,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 132,
@@ -5383,7 +9075,35 @@
     "power_kw": 109,
     "power": "148 л.с. / 109 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1747335,
+    "turnkey_payments_rub": 718771,
+    "customs_value_rub": 1028565,
+    "customs_value_eur": 12021.81,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246633,
+    "georgia_conversion_fee_rub": 20847,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 133,
@@ -5422,7 +9142,35 @@
     "power_kw": 112,
     "power": "152 л.с. / 112 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1834346,
+    "turnkey_payments_rub": 489865,
+    "customs_value_rub": 1344481,
+    "customs_value_eur": 15714.23,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 252951,
+    "georgia_conversion_fee_rub": 27165,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 134,
@@ -5461,7 +9209,35 @@
     "power_kw": 109,
     "power": "148 л.с. / 109 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "japan"
+    "source_market": "japan",
+    "turnkey_price_rub": 2032305,
+    "turnkey_payments_rub": 856803,
+    "customs_value_rub": 1175502,
+    "customs_value_eur": 13739.21,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 598907,
+    "customs_duty_eur": 7000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 249571,
+    "georgia_conversion_fee_rub": 23786,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 135,
@@ -5500,7 +9276,35 @@
     "power_kw": 109,
     "power": "148 л.с. / 109 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1709866,
+    "turnkey_payments_rub": 718036,
+    "customs_value_rub": 991830,
+    "customs_value_eur": 11592.46,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245898,
+    "georgia_conversion_fee_rub": 20112,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 136,
@@ -5539,7 +9343,35 @@
     "power_kw": 109,
     "power": "148 л.с. / 109 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1410113,
+    "turnkey_payments_rub": 712159,
+    "customs_value_rub": 697955,
+    "customs_value_eur": 8157.66,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240020,
+    "georgia_conversion_fee_rub": 14235,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 137,
@@ -5578,7 +9410,35 @@
     "power_kw": 112,
     "power": "152 л.с. / 112 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1796877,
+    "turnkey_payments_rub": 489131,
+    "customs_value_rub": 1307746,
+    "customs_value_eur": 15284.88,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 252216,
+    "georgia_conversion_fee_rub": 26431,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 138,
@@ -5617,7 +9477,35 @@
     "power_kw": 109,
     "power": "148 л.с. / 109 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "japan"
+    "source_market": "japan",
+    "turnkey_price_rub": 1485052,
+    "turnkey_payments_rub": 713628,
+    "customs_value_rub": 771423,
+    "customs_value_eur": 9016.36,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241490,
+    "georgia_conversion_fee_rub": 15704,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 139,
@@ -5656,7 +9544,35 @@
     "power_kw": 109,
     "power": "148 л.с. / 109 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "georgia"
+    "source_market": "georgia",
+    "turnkey_price_rub": 1965780,
+    "turnkey_payments_rub": 731502,
+    "customs_value_rub": 1234278,
+    "customs_value_eur": 14426.17,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 250747,
+    "georgia_conversion_fee_rub": 24961,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 140,
@@ -5695,7 +9611,35 @@
     "power_kw": 109,
     "power": "148 л.с. / 109 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "japan"
+    "source_market": "japan",
+    "turnkey_price_rub": 1709866,
+    "turnkey_payments_rub": 718036,
+    "customs_value_rub": 991830,
+    "customs_value_eur": 11592.46,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245898,
+    "georgia_conversion_fee_rub": 20112,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   },
   {
     "id": 141,
@@ -5748,6 +9692,34 @@
     "power_kw": 112,
     "power": "152 л.с. / 112 кВт",
     "power_source": "vin:nhtsa",
-    "source_market": "japan"
+    "source_market": "japan",
+    "turnkey_price_rub": 2089136,
+    "turnkey_payments_rub": 494861,
+    "customs_value_rub": 1594275,
+    "customs_value_eur": 18633.81,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 257947,
+    "georgia_conversion_fee_rub": 32161,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-06",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
   }
 ]

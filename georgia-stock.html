@@ -1216,12 +1216,12 @@
                 const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
                 const normalizeAndFilter = data => (data || []).map(normalizeGeorgiaCar).filter(isGeorgiaStockEligible);
                 carsData = normalizeAndFilter(result.data);
-                const hasTurnkeyPrices = carsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
-                if ((carsData.length < 20 || !hasTurnkeyPrices) && result._source !== 'json') {
+                if (result._source !== 'json') {
                     const fallback = await fetch('./cars_georgia_stock.json?v=georgia-0a516c0-' + Date.now(), { cache: 'no-store' });
                     if (fallback.ok) {
                         const fallbackCars = normalizeAndFilter(await fallback.json());
-                        if (fallbackCars.length > carsData.length || fallbackCars.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0)) {
+                        const fallbackTurnkeyCount = fallbackCars.filter(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0).length;
+                        if (fallbackCars.length >= 20 && fallbackTurnkeyCount > 0) {
                             carsData = fallbackCars;
                         }
                     }

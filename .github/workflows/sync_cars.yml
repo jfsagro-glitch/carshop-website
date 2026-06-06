@@ -86,6 +86,9 @@ jobs:
           COUNT=$(python -c "import json; data=json.load(open('cars_georgia_stock.json')); print(len(data))")
           echo "Georgia stock after strict photo/year/power filters: $COUNT cars"
 
+      - name: Recalculate Georgia turnkey prices by CBR rates
+        run: node tools/update_georgia_turnkey_prices.mjs
+
       - name: Sync Europe catalog from AutoScout24
         run: |
           python car_parser.py \
