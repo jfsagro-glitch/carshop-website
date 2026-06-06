@@ -88,6 +88,7 @@ function findWhitelistEngine(car, whitelist) {
 
 function inferEngineLitersFromText(car) {
   const text = `${car.full_title || ''} ${car.model || ''}`.replace(',', '.');
+  const fuelText = normalizeText(car.fuel_type || car.fuel);
   const decimal = text.match(/(?:^|[\s|/-])([0-3]\.\d)\s*(?:tsi|tdi|tfsi|tfsie|turbo|eb|gdi|hdi|bluehdi|dci|puretech|multijet|mpi|tce|cvt|hybrid|phev|benz|s&s|ss|aut|dsg|edc)?/i);
   if (decimal) return decimal[1];
 
@@ -104,6 +105,7 @@ function inferEngineLitersFromText(car) {
   if (/\b(?:sdrive\s*)?18\s*i\b/.test(lower) || /\b116i\b/.test(lower) || /\b118i\b/.test(lower)) return '1.5';
   if (/\b318\b/.test(lower) && Number(car.power_hp || 0) <= 160) return '2.0';
   if (/\b114\s*cdi\b/.test(lower) || /\b116\s*cdi\b/.test(lower)) return '2.0';
+  if (/\b(?:a|b|cla|gla|glb)\s*180(?:\s*d)?\b/.test(lower) && /диз|diesel/.test(fuelText)) return '1.95';
   if (/\b(?:a|b|cla|gla|glb)\s*180\b/.test(lower)) return '1.3';
   if (/\bpuretech\s*130\b/.test(lower) || /\b130\s*s&s\b/.test(lower)) return '1.2';
   if (/\btce\s*110\b/.test(lower)) return '1.0';
@@ -126,7 +128,12 @@ function inferEngineLitersFromText(car) {
 }
 
 function parseEngineCc(car, whitelist) {
-  const engine = car.engine || findWhitelistEngine(car, whitelist) || inferEngineLitersFromText(car);
+  const inferredEngine = inferEngineLitersFromText(car);
+  const isMercedes180Diesel = inferredEngine === '1.95'
+    && normalizeBrand(car.brand) === 'mercedesbenz';
+  const engine = isMercedes180Diesel
+    ? inferredEngine
+    : car.engine || findWhitelistEngine(car, whitelist) || inferredEngine;
   const liters = Number(String(engine || '').replace(',', '.').match(/\d+(?:\.\d+)?/)?.[0]);
   if (!Number.isFinite(liters) || liters <= 0) return undefined;
   return Math.round(liters * 1000);

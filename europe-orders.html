@@ -1016,12 +1016,15 @@
         }
 
         function inferEngineLiters(car) {
+            const text = `${car.full_title || ''} ${car.model || ''}`.toLowerCase().replace(',', '.');
+            const fuel = String(car.fuel_type || car.fuel || '').toLowerCase();
+            if (/\b(?:a|b|cla|gla|glb)\s*180(?:\s*d)?\b/.test(text) && /диз|diesel/.test(fuel)) return 1.95;
+
             const direct = String(car.engine || car.engineVolume || '').replace(',', '.');
             let liters = Number(direct.match(/\d+(?:\.\d+)?/)?.[0]);
             if (Number.isFinite(liters) && liters > 10) liters = liters / 1000;
-            if (Number.isFinite(liters) && liters > 0 && liters <= 8) return Number(liters.toFixed(1));
+            if (Number.isFinite(liters) && liters > 0 && liters <= 8) return Number(liters.toFixed(2));
 
-            const text = `${car.full_title || ''} ${car.model || ''}`.toLowerCase().replace(',', '.');
             const decimal = text.match(/(?:^|[\s|/-])([0-3]\.\d)\s*(?:tsi|tdi|tfsi|tfsie|turbo|hdi|bluehdi|dci|puretech|mpi|tce|benz|diesel|hybrid)?/i);
             if (decimal) return Number(Number(decimal[1]).toFixed(1));
             if (/\b(?:30|35|40)\s*tdi\b/.test(text)) return 2.0;
