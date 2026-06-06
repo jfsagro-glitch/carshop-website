@@ -1,6 +1,6 @@
-﻿# Telegram top offers
+# Telegram top offers
 
-Generated: 2026-06-05T15:34:46Z
+Generated: 2026-06-06T03:39:36Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -191,16 +191,16 @@ Generated: 2026-06-05T15:34:46Z
 Фото:
 - https://static.my.ge/myauto/photos/6/9/4/9/2/large/121294968_1.jpg?v=3
 
-## 8. Volkswagen Golf 2023 — AutoScout24 / mobile.de
+## 8. Seat Ibiza 2023 — AutoScout24 / mobile.de
 
-🔥 Volkswagen Golf 2023
+🔥 Seat Ibiza 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 17 970 €
-⚙️ Двигатель: 1.0 Бензин
-🐎 Мощность: 110 л.с. / 81 кВт
-🛣️ Пробег: 88 993 км
+💰 Ориентир: 21 950 €
+⚙️ Двигатель: 1,5 Бензин
+🐎 Мощность: 150 л.с. / 110 кВт
+🛣️ Пробег: 32 091 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -211,14 +211,14 @@ Generated: 2026-06-05T15:34:46Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/ba58dee8-f4e8-482e-ae6a-56beb9e4acd7_15746638-b98c-4ee1-a1d6-229bd6381157.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/ba58dee8-f4e8-482e-ae6a-56beb9e4acd7_6dec2e37-490f-45b6-8986-dd31879a69c7.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/ba58dee8-f4e8-482e-ae6a-56beb9e4acd7_cab77ea0-4554-4986-8bd2-621f2e94cf00.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/ba58dee8-f4e8-482e-ae6a-56beb9e4acd7_7b627ac7-5557-4244-901c-40ef9438f326.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/ba58dee8-f4e8-482e-ae6a-56beb9e4acd7_caed0dfc-c5f7-4fd5-8fbd-a071f583220a.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/ba58dee8-f4e8-482e-ae6a-56beb9e4acd7_65584275-26fb-4423-aa35-e2c00cf92509.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/ba58dee8-f4e8-482e-ae6a-56beb9e4acd7_19b88a37-e695-4a6c-9865-5635a7195b97.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/ba58dee8-f4e8-482e-ae6a-56beb9e4acd7_01ec0a7d-4bc3-4c4d-937c-119a2552815e.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_2a69f002-393a-483b-8952-3ebf4934871a.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_aeb2266b-049d-41e3-ab33-83bdd7299332.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_e8b2d8d4-08b5-46db-9a2a-94903c335ff9.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_dc3e5008-cd2e-4349-bc9a-6823d835f9bd.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_e30b0acb-2710-40c9-b13f-b4122e49d01b.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_5c81d9bc-e052-4999-ac92-c47f45d8237d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_ed92f291-efd6-4226-874f-c72b496ad146.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_4c66882a-d484-4aba-ad61-f37480028e5d.jpg/1024x768.webp
 
 ## 9. Chevrolet Trailblazer 2023 — MyAuto Georgia
 
@@ -242,16 +242,16 @@ Generated: 2026-06-05T15:34:46Z
 Фото:
 - https://static.my.ge/myauto/photos/7/4/5/9/1/large/122195476_1.jpg?v=0
 
-## 10. Opel Corsa 2023 — AutoScout24 / mobile.de
+## 10. Volkswagen Caddy 2023 — AutoScout24 / mobile.de
 
-🔥 Opel Corsa 2023
+🔥 Volkswagen Caddy 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 16 890 €
-⚙️ Двигатель: 1.2 Бензин
-🐎 Мощность: 100 л.с. / 74 кВт
-🛣️ Пробег: 37 115 км
+💰 Ориентир: 30 950 €
+⚙️ Двигатель: 1,5 Бензин
+🐎 Мощность: 114 л.с. / 84 кВт
+🛣️ Пробег: 29 254 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -262,11 +262,11 @@ Generated: 2026-06-05T15:34:46Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_afe6bc21-585e-41e9-8bec-15a3419e4b0a.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_c916a0fa-7827-4196-86b0-d24ca417400f.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_0bfd462e-7570-4ae1-be79-e83754b4ec4d.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_b5d7e82b-2755-40d2-9fbc-dc1163443de2.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_d5c25d3e-b12d-4c81-aa53-35e1d3a4ab40.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_11e7d186-bf6e-47cc-a6d9-c251377f3316.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_eef79e34-a758-4fca-ab9b-271d2ff905c4.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_57771f76-1ecb-4e26-99e7-ae69aed26f28.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_c0698f15-2769-42bc-b22c-863d3ad05f6a.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_02e30b5f-d232-4c8d-86f6-388c7f7b99f8.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_f0b83732-343f-4dae-9af5-170cbcc40dbb.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_09d37067-bba7-4dd5-b24a-4649b6f4b2e4.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_f3bd2152-b119-40a7-88b8-52fcc10de70a.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_2e284139-b6e6-4401-b735-c49b1535a590.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_3a213afd-011a-4875-9c8c-d095e819190f.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_636e6eeb-f972-4a55-93d9-40c2bea276f8.jpg/1024x768.webp
