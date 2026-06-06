@@ -2278,6 +2278,16 @@ class AutoScout24Parser:
         power_text = self._vehicle_detail(item, "Leistung")
         power_hp = parse_power_hp(power_text)
         power_kw = round(power_hp / 1.35962) if power_hp else 0
+        displacement_value = (
+            vehicle.get("rawDisplacementInCCM")
+            or vehicle.get("rawCylinderCapacity")
+            or vehicle.get("displacementInCCM")
+            or vehicle.get("cylinderCapacity")
+            or self._vehicle_detail(item, "Hubraum")
+        )
+        engine_cc = parse_int(displacement_value)
+        if not (500 <= engine_cc <= 10000):
+            engine_cc = 0
 
         fuel = str(vehicle.get("fuel") or self._vehicle_detail(item, "Kraftstoff") or "")
         transmission = str(vehicle.get("transmission") or self._vehicle_detail(item, "Getriebe") or "")
@@ -2301,6 +2311,9 @@ class AutoScout24Parser:
             "mileage": mileage,
             "power_kw": power_kw,
             "power_hp": power_hp,
+            "engine": str(round(engine_cc / 1000, 3)).replace(".", ",") if engine_cc else "",
+            "engine_cc": engine_cc or None,
+            "engine_source": "autoscout24_search_structured" if engine_cc else "",
             "first_registration": first_registration,
             "first_registration_year": reg_year,
             "transmission": normalize_transmission(transmission) if transmission else "",
@@ -3049,6 +3062,47 @@ def export_json_records(records: List[dict], filepath: str) -> None:
     log.info(f"JSON экспорт: {filepath} ({len(records)} записей)")
 
 
+def carry_verified_engine_metadata(records: List[dict], filepath: str) -> int:
+    """Carry exact detail-page displacement into a freshly parsed Europe catalog."""
+    if not filepath or not os.path.exists(filepath):
+        return 0
+    try:
+        previous = json.loads(Path(filepath).read_text(encoding="utf-8-sig"))
+    except Exception as exc:
+        log.warning(f"Не удалось прочитать прежний каталог для переноса engine_cc: {exc}")
+        return 0
+
+    exact_by_key: Dict[str, dict] = {}
+    for item in previous if isinstance(previous, list) else []:
+        source = str(item.get("engine_source") or "")
+        cc = parse_int(item.get("engine_cc") or 0)
+        if not source.startswith("autoscout24_") or not (500 <= cc <= 10000):
+            continue
+        keys = {
+            str(item.get("id") or "").strip(),
+            str(item.get("external_id") or "").strip(),
+            str(item.get("url") or "").strip(),
+        }
+        for key in keys - {""}:
+            exact_by_key[key] = item
+
+    carried = 0
+    for item in records:
+        keys = (
+            str(item.get("id") or "").strip(),
+            str(item.get("external_id") or "").strip(),
+            str(item.get("url") or "").strip(),
+        )
+        previous_item = next((exact_by_key[key] for key in keys if key in exact_by_key), None)
+        if not previous_item:
+            continue
+        for field in ("engine", "engine_cc", "engine_source", "engine_verified_at"):
+            if previous_item.get(field) not in (None, ""):
+                item[field] = previous_item[field]
+        carried += 1
+    return carried
+
+
 def validate_catalog_file(filepath: str, required: List[str], min_records: int = 1) -> int:
     if not os.path.exists(filepath):
         raise RuntimeError(f"Каталог не найден: {filepath}")
@@ -3410,6 +3464,9 @@ def run(args: argparse.Namespace) -> None:
             sys.exit(2)
         if args.out:
             out = args.out if args.out.endswith(".json") else args.out + ".json"
+            carried = carry_verified_engine_metadata(europe_records, out)
+            if carried:
+                log.info(f"Перенесено точных engine_cc из прежнего каталога: {carried}")
             export_json_records(europe_records, out)
         else:
             print(json.dumps(europe_records, ensure_ascii=False, indent=2))

@@ -128,6 +128,18 @@ function inferEngineLitersFromText(car) {
 }
 
 function parseEngineCc(car, whitelist) {
+  const exactCc = Number(car.engine_cc || car.engine_displacement_cc || 0);
+  if (
+    Number.isFinite(exactCc)
+    && exactCc >= 500
+    && exactCc <= 10000
+    && String(car.engine_source || '').startsWith('autoscout24_')
+  ) {
+    return Math.round(exactCc);
+  }
+  const sourceText = `${car.source || ''} ${car.url || ''}`.toLowerCase();
+  if (sourceText.includes('autoscout24')) return undefined;
+
   const inferredEngine = inferEngineLitersFromText(car);
   const isMercedes180Diesel = inferredEngine === '1.95'
     && normalizeBrand(car.brand) === 'mercedesbenz';
@@ -241,10 +253,15 @@ const sourceCars = cars.filter((car) => !isElectricCar(car));
 const updated = sourceCars.map((car) => {
   const input = buildInput(car, rates, whitelist);
   const result = calculateCustoms(input);
+  const isAutoScout = `${car.source || ''} ${car.url || ''}`.toLowerCase().includes('autoscout24');
   if (result.isComplete) completeCount += 1;
   return {
     ...car,
-    engine: car.engine || (input.engineCc ? (input.engineCc / 1000).toLocaleString('ru-RU', { maximumFractionDigits: 2 }) : car.engine),
+    engine: input.engineCc
+      ? (input.engineCc / 1000).toLocaleString('ru-RU', { maximumFractionDigits: 3 })
+      : (isAutoScout ? '' : car.engine),
+    engine_cc: input.engineCc || (isAutoScout ? null : car.engine_cc),
+    engine_source: input.engineCc ? car.engine_source : (isAutoScout ? '' : car.engine_source),
     ...summarize(result),
     europe_road_eur: EUROPE_ROAD_EUR,
     turnkey_cost_profile: 'europe_plus_georgia_costs',

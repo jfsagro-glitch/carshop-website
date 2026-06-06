@@ -1016,6 +1016,18 @@
         }
 
         function inferEngineLiters(car) {
+            const exactCc = Number(car.engine_cc || car.engine_displacement_cc || 0);
+            if (
+                Number.isFinite(exactCc) &&
+                exactCc >= 500 &&
+                exactCc <= 10000 &&
+                String(car.engine_source || '').startsWith('autoscout24_')
+            ) {
+                return Number((exactCc / 1000).toFixed(3));
+            }
+            const sourceText = `${car.source || ''} ${car.url || ''}`.toLowerCase();
+            if (sourceText.includes('autoscout24')) return 0;
+
             const text = `${car.full_title || ''} ${car.model || ''}`.toLowerCase().replace(',', '.');
             const fuel = String(car.fuel_type || car.fuel || '').toLowerCase();
             if (/\b(?:a|b|cla|gla|glb)\s*180(?:\s*d)?\b/.test(text) && /диз|diesel/.test(fuel)) return 1.95;
@@ -1342,7 +1354,8 @@
                 const finalImageUrl = firstImage || '';
                 const sourceLabel = getSourceLabel(car);
                 const turnkeyHtml = getEuropeTurnkeyHtml(car);
-                const engineVolume = formatEngineVolume(car.engine) || engineVolumeLabel(engineVolumeBucket(car));
+                const engineLiters = inferEngineLiters(car);
+                const engineVolume = engineLiters ? formatEngineVolume(engineLiters) : '';
 
                 const fuelIcon = {
                     'Бензин': 'fa-gas-pump', 'Дизель': 'fa-oil-can',

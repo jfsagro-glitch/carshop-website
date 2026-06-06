@@ -129,6 +129,17 @@ jobs:
         run: |
           python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 32 --timeout 8
 
+      - name: Enrich AutoScout24 engine displacement from detail pages
+        run: |
+          python tools/enrich_autoscout_engine_displacement.py \
+            --input cars_europe_new.json \
+            --workers 6 \
+            --timeout 10 \
+            --limit 300 \
+            --checkpoint-every 25 \
+            --requests-per-second 3 \
+            --retries 3
+
       - name: Recalculate Europe turnkey prices by CBR rates
         run: node tools/update_europe_turnkey_prices.mjs
 
