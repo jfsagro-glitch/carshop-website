@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-06T03:39:36Z
+Generated: 2026-06-06T07:32:41Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -175,10 +175,10 @@ Generated: 2026-06-06T03:39:36Z
 
 📍 Направление: Грузия
 📅 Год: 2023
-💰 Ориентир: $17 500
+💰 Ориентир: $15 500
 ⚙️ Двигатель: 1,3 Бензин
-🐎 Мощность: 156 л.с. / 115 кВт
-🛣️ Пробег: 46 000 км
+🐎 Мощность: 155 л.с. / 114 кВт
+🛣️ Пробег: 62 712 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -189,18 +189,18 @@ Generated: 2026-06-06T03:39:36Z
 Источник мониторинга: MyAuto Georgia
 
 Фото:
-- https://static.my.ge/myauto/photos/6/9/4/9/2/large/121294968_1.jpg?v=3
+- https://static.my.ge/myauto/photos/5/1/0/3/8/large/121830151_1.jpg?v=0
 
-## 8. Seat Ibiza 2023 — AutoScout24 / mobile.de
+## 8. Jeep Compass 2023 — AutoScout24 / mobile.de
 
-🔥 Seat Ibiza 2023
+🔥 Jeep Compass 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 21 950 €
-⚙️ Двигатель: 1,5 Бензин
-🐎 Мощность: 150 л.с. / 110 кВт
-🛣️ Пробег: 32 091 км
+💰 Ориентир: 25 580 €
+⚙️ Двигатель: Бензин
+🐎 Мощность: 131 л.с. / 96 кВт
+🛣️ Пробег: 7 785 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -211,14 +211,14 @@ Generated: 2026-06-06T03:39:36Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_2a69f002-393a-483b-8952-3ebf4934871a.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_aeb2266b-049d-41e3-ab33-83bdd7299332.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_e8b2d8d4-08b5-46db-9a2a-94903c335ff9.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_dc3e5008-cd2e-4349-bc9a-6823d835f9bd.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_e30b0acb-2710-40c9-b13f-b4122e49d01b.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_5c81d9bc-e052-4999-ac92-c47f45d8237d.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_ed92f291-efd6-4226-874f-c72b496ad146.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_4c66882a-d484-4aba-ad61-f37480028e5d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8d62a6f5-c8c5-435f-b20e-20f103267aba_4d8ac8f0-e027-466f-9e1e-dfa337747c14.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8d62a6f5-c8c5-435f-b20e-20f103267aba_eddadf66-758e-46e8-b777-bb5d89c0fdf0.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8d62a6f5-c8c5-435f-b20e-20f103267aba_955c3df9-efcf-471a-aa5a-81097dba42f5.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8d62a6f5-c8c5-435f-b20e-20f103267aba_eaac26d3-fd13-4b20-9a29-65253b68f4f5.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8d62a6f5-c8c5-435f-b20e-20f103267aba_21f47579-d3c2-4a33-a858-be8817de89f3.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8d62a6f5-c8c5-435f-b20e-20f103267aba_e50fb421-62cd-4581-9c3e-a8813bd0bbc3.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8d62a6f5-c8c5-435f-b20e-20f103267aba_4241f115-015e-4c8c-999b-29f26c760cc1.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8d62a6f5-c8c5-435f-b20e-20f103267aba_420bd4d6-d687-46be-ba05-1f671a2097d5.jpg/1024x768.webp
 
 ## 9. Chevrolet Trailblazer 2023 — MyAuto Georgia
 
@@ -226,10 +226,10 @@ Generated: 2026-06-06T03:39:36Z
 
 📍 Направление: Грузия
 📅 Год: 2023
-💰 Ориентир: $15 500
+💰 Ориентир: $16 800
 ⚙️ Двигатель: 1,3 Бензин
 🐎 Мощность: 156 л.с. / 115 кВт
-🛣️ Пробег: 82 560 км
+🛣️ Пробег: 45 000 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -240,18 +240,18 @@ Generated: 2026-06-06T03:39:36Z
 Источник мониторинга: MyAuto Georgia
 
 Фото:
-- https://static.my.ge/myauto/photos/7/4/5/9/1/large/122195476_1.jpg?v=0
+- https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_1.jpg?v=0
 
-## 10. Volkswagen Caddy 2023 — AutoScout24 / mobile.de
+## 10. Ford Focus 2023 — AutoScout24 / mobile.de
 
-🔥 Volkswagen Caddy 2023
+🔥 Ford Focus 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 30 950 €
-⚙️ Двигатель: 1,5 Бензин
-🐎 Мощность: 114 л.с. / 84 кВт
-🛣️ Пробег: 29 254 км
+💰 Ориентир: 24 950 €
+⚙️ Двигатель: Дизель
+🐎 Мощность: 116 л.с. / 85 кВт
+🛣️ Пробег: 250 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -262,11 +262,11 @@ Generated: 2026-06-06T03:39:36Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_c0698f15-2769-42bc-b22c-863d3ad05f6a.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_02e30b5f-d232-4c8d-86f6-388c7f7b99f8.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_f0b83732-343f-4dae-9af5-170cbcc40dbb.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_09d37067-bba7-4dd5-b24a-4649b6f4b2e4.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_f3bd2152-b119-40a7-88b8-52fcc10de70a.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_2e284139-b6e6-4401-b735-c49b1535a590.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_3a213afd-011a-4875-9c8c-d095e819190f.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/4651f8b1-ef8f-410f-91ca-107032bba249_636e6eeb-f972-4a55-93d9-40c2bea276f8.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ca338d70-64cb-445a-b92c-7b56dde2719d_989eea1f-2377-4cda-8c67-da7accab6a0d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ca338d70-64cb-445a-b92c-7b56dde2719d_bf436a00-5db6-4efc-aad5-46c81126317d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ca338d70-64cb-445a-b92c-7b56dde2719d_6d7a8933-5407-49c0-a92a-5dcf5e8d83e6.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ca338d70-64cb-445a-b92c-7b56dde2719d_7c335662-f3ca-4c79-a8cd-ab65a7ecf90d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ca338d70-64cb-445a-b92c-7b56dde2719d_6df06ba0-bd71-48c4-85e0-4b5316634dba.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ca338d70-64cb-445a-b92c-7b56dde2719d_6cfbb88c-16ed-42b9-bc7f-11a10d46d12d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ca338d70-64cb-445a-b92c-7b56dde2719d_255d2e55-ff47-45dd-8f2e-544dd5f0dff9.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ca338d70-64cb-445a-b92c-7b56dde2719d_532813a4-c9d1-4ae9-9ad7-7777a0d7ec24.jpg/1024x768.webp
