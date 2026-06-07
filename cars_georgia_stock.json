@@ -140,6 +140,140 @@
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
+    "year": 2021,
+    "month": 7,
+    "price": 11900,
+    "price_currency": "USD",
+    "mileage": 57600,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KL79MR***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "LT All-Wheel Drive Automatic",
+    "url": "https://myauto.ge/ru/pr/120909180",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/9/0/9/large/120909180_1.jpg?v=8",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 156,
+    "power_kw": 115,
+    "power": "156 л.с. / 115 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea",
+    "turnkey_price_rub": 1317034,
+    "turnkey_payments_rub": 442755,
+    "customs_value_rub": 874280,
+    "customs_value_eur": 10218.54,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243547,
+    "georgia_conversion_fee_rub": 17761,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 4,
+    "brand": "Chevrolet",
+    "model": "Trailblazer",
+    "fullName": "Chevrolet Trailblazer",
+    "year": 2023,
+    "month": 3,
+    "price": 16000,
+    "price_currency": "USD",
+    "mileage": 77000,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KL79MU***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122220706",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/7/0/2/2/large/122220706_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 156,
+    "power_kw": 115,
+    "power": "156 л.с. / 115 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea",
+    "turnkey_price_rub": 1624281,
+    "turnkey_payments_rub": 448779,
+    "customs_value_rub": 1175502,
+    "customs_value_eur": 13739.21,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 189084,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249571,
+    "georgia_conversion_fee_rub": 23786,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 5,
+    "brand": "Chevrolet",
+    "model": "Trailblazer",
+    "fullName": "Chevrolet Trailblazer",
     "year": 2023,
     "month": 4,
     "price": 12800,
@@ -203,7 +337,7 @@
     }
   },
   {
-    "id": 4,
+    "id": 6,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -270,7 +404,7 @@
     }
   },
   {
-    "id": 5,
+    "id": 7,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -351,7 +485,7 @@
     }
   },
   {
-    "id": 6,
+    "id": 8,
     "brand": "Chevrolet",
     "model": "Trax",
     "fullName": "Chevrolet Trax",
@@ -420,7 +554,7 @@
     }
   },
   {
-    "id": 7,
+    "id": 9,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -487,7 +621,7 @@
     }
   },
   {
-    "id": 8,
+    "id": 10,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -554,7 +688,7 @@
     }
   },
   {
-    "id": 9,
+    "id": 11,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -621,13 +755,13 @@
     }
   },
   {
-    "id": 10,
+    "id": 12,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
     "year": 2022,
     "month": 5,
-    "price": 14700,
+    "price": 13900,
     "price_currency": "USD",
     "mileage": 51300,
     "engine": "1,3",
@@ -641,13 +775,13 @@
     "customs_passed": false,
     "location_id": 2,
     "parent_loc_id": 1,
-    "trim_name": "ACTIV All-Wheel Drive Automati",
+    "trim_name": "LT All-Wheel Drive Automatic",
     "url": "https://myauto.ge/ru/pr/121371546",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/4/5/1/7/3/large/121371546_1.jpg?v=3",
+        "url": "https://static.my.ge/myauto/photos/4/5/1/7/3/large/121371546_1.jpg?v=4",
         "order": 1
       }
     ],
@@ -658,18 +792,18 @@
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia",
-    "turnkey_price_rub": 1526862,
-    "turnkey_payments_rub": 446869,
-    "customs_value_rub": 1079993,
-    "customs_value_eur": 12622.9,
+    "turnkey_price_rub": 1466911,
+    "turnkey_payments_rub": 445693,
+    "customs_value_rub": 1021218,
+    "customs_value_eur": 11935.94,
     "customs_fee_rub": 4924,
     "customs_duty_rub": 189084,
     "customs_duty_eur": 2210,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 247661,
-    "georgia_conversion_fee_rub": 21876,
+    "additional_costs_rub": 246486,
+    "georgia_conversion_fee_rub": 20700,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [
       "Калькулятор не является юридическим заключением."
@@ -688,7 +822,7 @@
     }
   },
   {
-    "id": 11,
+    "id": 13,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -755,7 +889,7 @@
     }
   },
   {
-    "id": 12,
+    "id": 14,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -822,7 +956,7 @@
     }
   },
   {
-    "id": 13,
+    "id": 15,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -889,7 +1023,7 @@
     }
   },
   {
-    "id": 14,
+    "id": 16,
     "brand": "Chevrolet",
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
@@ -956,7 +1090,7 @@
     }
   },
   {
-    "id": 15,
+    "id": 17,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1023,7 +1157,7 @@
     }
   },
   {
-    "id": 16,
+    "id": 18,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1090,7 +1224,141 @@
     }
   },
   {
-    "id": 17,
+    "id": 19,
+    "brand": "Honda",
+    "model": "HR-V",
+    "fullName": "Honda HR-V",
+    "year": 2022,
+    "month": 5,
+    "price": 16000,
+    "price_currency": "USD",
+    "mileage": 42000,
+    "engine": "1,8",
+    "fuel_type": "Бензин",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "AWD",
+    "vin": "3CZRU5***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": true,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "EX 4dr Front-Wheel Drive CVT",
+    "url": "https://myauto.ge/ru/pr/122220553",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/5/0/2/2/large/122220553_1.jpg?v=1",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 141,
+    "power_kw": 104,
+    "power": "141 л.с. / 104 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1820210,
+    "turnkey_payments_rub": 644707,
+    "customs_value_rub": 1175502,
+    "customs_value_eur": 13739.21,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 385012,
+    "customs_duty_eur": 4500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249571,
+    "georgia_conversion_fee_rub": 23786,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 20,
+    "brand": "Honda",
+    "model": "CR-V",
+    "fullName": "Honda CR-V",
+    "year": 2022,
+    "month": 1,
+    "price": 19000,
+    "price_currency": "USD",
+    "mileage": 35000,
+    "engine": "1,5",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/119297554",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/5/7/9/2/large/119297554_1.jpg?v=11",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 150,
+    "power_kw": 110,
+    "power": "150 л.с. / 110 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1886803,
+    "turnkey_payments_rub": 490894,
+    "customs_value_rub": 1395909,
+    "customs_value_eur": 16315.32,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 218173,
+    "customs_duty_eur": 2550,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 253979,
+    "georgia_conversion_fee_rub": 28194,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 21,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1157,7 +1425,7 @@
     }
   },
   {
-    "id": 18,
+    "id": 22,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1224,7 +1492,7 @@
     }
   },
   {
-    "id": 19,
+    "id": 23,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1291,7 +1559,7 @@
     }
   },
   {
-    "id": 20,
+    "id": 24,
     "brand": "Honda",
     "model": "Civic",
     "fullName": "Honda Civic",
@@ -1372,76 +1640,7 @@
     }
   },
   {
-    "id": 21,
-    "brand": "Honda",
-    "model": "HR-V",
-    "fullName": "Honda HR-V",
-    "year": 2021,
-    "month": 12,
-    "price": 0,
-    "price_currency": "USD",
-    "mileage": 55000,
-    "engine": "1,8",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "3CZRU6***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "EX 4dr All-Wheel Drive CVT",
-    "url": "https://myauto.ge/ru/pr/121795129",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/2/1/5/9/7/large/121795129_1.jpg?v=2",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 141,
-    "power_kw": 104,
-    "power": "141 л.с. / 104 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 0,
-    "turnkey_payments_rub": 0,
-    "customs_value_rub": 0,
-    "customs_value_eur": 0,
-    "customs_fee_rub": 0,
-    "customs_duty_rub": 0,
-    "customs_duty_eur": 0,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 0,
-    "additional_costs_rub": 0,
-    "georgia_conversion_fee_rub": 0,
-    "turnkey_calculation_complete": false,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [
-      "Стоимость автомобиля должна быть больше 0."
-    ],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 22,
+    "id": 25,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1508,7 +1707,7 @@
     }
   },
   {
-    "id": 23,
+    "id": 26,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1589,7 +1788,7 @@
     }
   },
   {
-    "id": 24,
+    "id": 27,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1656,74 +1855,7 @@
     }
   },
   {
-    "id": 25,
-    "brand": "Honda",
-    "model": "HR-V",
-    "fullName": "Honda HR-V",
-    "year": 2021,
-    "month": 11,
-    "price": 17200,
-    "price_currency": "USD",
-    "mileage": 94400,
-    "engine": "1,8",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "3CZRU5***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/121805122",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/2/1/5/0/8/large/121805122_1.jpg?v=1",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 141,
-    "power_kw": 104,
-    "power": "141 л.с. / 104 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1918753,
-    "turnkey_payments_rub": 655088,
-    "customs_value_rub": 1263665,
-    "customs_value_eur": 14769.65,
-    "customs_fee_rub": 13541,
-    "customs_duty_rub": 385012,
-    "customs_duty_eur": 4500,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 251335,
-    "georgia_conversion_fee_rub": 25549,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 26,
+    "id": 28,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1790,7 +1922,7 @@
     }
   },
   {
-    "id": 27,
+    "id": 29,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1857,7 +1989,7 @@
     }
   },
   {
-    "id": 28,
+    "id": 30,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1924,7 +2056,7 @@
     }
   },
   {
-    "id": 29,
+    "id": 31,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1991,7 +2123,7 @@
     }
   },
   {
-    "id": 30,
+    "id": 32,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -2058,7 +2190,7 @@
     }
   },
   {
-    "id": 31,
+    "id": 33,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -2125,7 +2257,7 @@
     }
   },
   {
-    "id": 32,
+    "id": 34,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -2206,7 +2338,7 @@
     }
   },
   {
-    "id": 33,
+    "id": 35,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -2287,79 +2419,12 @@
     }
   },
   {
-    "id": 34,
-    "brand": "Honda",
-    "model": "HR-V",
-    "fullName": "Honda HR-V",
-    "year": 2021,
-    "month": 6,
-    "price": 12500,
-    "price_currency": "USD",
-    "mileage": 121600,
-    "engine": "1,8",
-    "fuel_type": "Бензин",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "EX 4dr All-Wheel Drive CVT",
-    "url": "https://myauto.ge/ru/pr/122185135",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/3/1/5/8/1/large/122185135_1.jpg?v=0",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 141,
-    "power_kw": 104,
-    "power": "141 л.с. / 104 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1557926,
-    "turnkey_payments_rub": 639564,
-    "customs_value_rub": 918361,
-    "customs_value_eur": 10733.76,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 385012,
-    "customs_duty_eur": 4500,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 244429,
-    "georgia_conversion_fee_rub": 18643,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 35,
+    "id": 36,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
     "year": 2023,
-    "month": 5,
+    "month": 1,
     "price": 11000,
     "price_currency": "USD",
     "mileage": 70053,
@@ -2368,7 +2433,7 @@
     "transmission": "Вариатор",
     "color": "",
     "drive": "4WD",
-    "vin": "",
+    "vin": "KM8K3C***********",
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
@@ -2380,17 +2445,17 @@
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/8/6/4/0/2/large/122204689_1.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/8/6/4/0/2/large/122204689_1.jpg?v=2",
         "order": 1
       }
     ],
     "source": "myauto_ge",
     "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
+    "power_hp": 149,
+    "power_kw": 110,
+    "power": "149 л.с. / 110 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea",
     "turnkey_price_rub": 1522521,
     "turnkey_payments_rub": 714363,
     "customs_value_rub": 808158,
@@ -2421,7 +2486,7 @@
     }
   },
   {
-    "id": 36,
+    "id": 37,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2488,7 +2553,7 @@
     }
   },
   {
-    "id": 37,
+    "id": 38,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2555,7 +2620,7 @@
     }
   },
   {
-    "id": 38,
+    "id": 39,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2604,73 +2669,6 @@
     "recycling_fee_rub": 5200,
     "additional_costs_rub": 242224,
     "georgia_conversion_fee_rub": 16439,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 39,
-    "brand": "Hyundai",
-    "model": "kona",
-    "fullName": "Hyundai kona",
-    "year": 2022,
-    "month": 2,
-    "price": 9200,
-    "price_currency": "USD",
-    "mileage": 163200,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 30,
-    "parent_loc_id": 1,
-    "trim_name": "SEL 4dr All-Wheel Drive CVT",
-    "url": "https://myauto.ge/ru/pr/121783000",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/3/8/7/large/121783000_1.jpg?v=4",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1387632,
-    "turnkey_payments_rub": 711718,
-    "customs_value_rub": 675914,
-    "customs_value_eur": 7900.05,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 462014,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 239580,
-    "georgia_conversion_fee_rub": 13794,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [
       "Калькулятор не является юридическим заключением."
@@ -2761,6 +2759,73 @@
     "model": "kona",
     "fullName": "Hyundai kona",
     "year": 2022,
+    "month": 2,
+    "price": 9200,
+    "price_currency": "USD",
+    "mileage": 163200,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "SEL 4dr All-Wheel Drive CVT",
+    "url": "https://myauto.ge/ru/pr/121783000",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/0/3/8/7/large/121783000_1.jpg?v=4",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1387632,
+    "turnkey_payments_rub": 711718,
+    "customs_value_rub": 675914,
+    "customs_value_eur": 7900.05,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 239580,
+    "georgia_conversion_fee_rub": 13794,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 42,
+    "brand": "Hyundai",
+    "model": "kona",
+    "fullName": "Hyundai kona",
+    "year": 2022,
     "month": 12,
     "price": 13500,
     "price_currency": "USD",
@@ -2823,7 +2888,222 @@
     }
   },
   {
-    "id": 42,
+    "id": 43,
+    "brand": "Hyundai",
+    "model": "venue",
+    "fullName": "Hyundai venue",
+    "year": 2022,
+    "month": 8,
+    "price": 8800,
+    "price_currency": "USD",
+    "mileage": 33000,
+    "engine": "1,6",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KMHRC8***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122221279",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/7/2/1/2/2/large/122221279_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 123,
+    "power_kw": 90,
+    "power": "123 л.с. / 90 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea",
+    "turnkey_price_rub": 1237875,
+    "turnkey_payments_rub": 591349,
+    "customs_value_rub": 646526,
+    "customs_value_eur": 7556.57,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 238992,
+    "georgia_conversion_fee_rub": 13206,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 44,
+    "brand": "Hyundai",
+    "model": "venue",
+    "fullName": "Hyundai venue",
+    "year": 2022,
+    "month": 2,
+    "price": 12400,
+    "price_currency": "USD",
+    "mileage": 44000,
+    "engine": "1,6",
+    "fuel_type": "Бензин",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": true,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "Limited 4dr Front-Wheel Drive ",
+    "url": "https://myauto.ge/ru/pr/122220622",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/0/2/2/large/122220622_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 123,
+    "power_kw": 90,
+    "power": "123 л.с. / 90 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1507653,
+    "turnkey_payments_rub": 596638,
+    "customs_value_rub": 911014,
+    "customs_value_eur": 10647.89,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244282,
+    "georgia_conversion_fee_rub": 18496,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 45,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2021,
+    "month": 7,
+    "price": 10000,
+    "price_currency": "USD",
+    "mileage": 134400,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "FWD",
+    "vin": "5NPLM4AG8NH058937",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/121887907",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/7/8/8/large/121887907_1.jpg?v=6",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "vin_decode": {
+      "vin": "5NPLM4AG8NH058937",
+      "source": "nhtsa_vpic",
+      "year": 2022,
+      "make": "HYUNDAI",
+      "model": "Elantra",
+      "engine_l": 2,
+      "fuel": "Gasoline",
+      "electrification": "",
+      "hp": 147,
+      "kw": 108,
+      "error_code": "0",
+      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
+    },
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "vin:nhtsa",
+    "source_market": "usa",
+    "turnkey_price_rub": 1447582,
+    "turnkey_payments_rub": 712893,
+    "customs_value_rub": 734689,
+    "customs_value_eur": 8587.01,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240755,
+    "georgia_conversion_fee_rub": 14969,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 46,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2890,7 +3170,7 @@
     }
   },
   {
-    "id": 43,
+    "id": 47,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -2957,7 +3237,7 @@
     }
   },
   {
-    "id": 44,
+    "id": 48,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -3024,7 +3304,7 @@
     }
   },
   {
-    "id": 45,
+    "id": 49,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -3091,7 +3371,7 @@
     }
   },
   {
-    "id": 46,
+    "id": 50,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3158,7 +3438,7 @@
     }
   },
   {
-    "id": 47,
+    "id": 51,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3239,7 +3519,7 @@
     }
   },
   {
-    "id": 48,
+    "id": 52,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3306,55 +3586,55 @@
     }
   },
   {
-    "id": 49,
+    "id": 53,
     "brand": "Hyundai",
-    "model": "kona",
-    "fullName": "Hyundai kona",
-    "year": 2022,
-    "month": 1,
-    "price": 15800,
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2023,
+    "month": 3,
+    "price": 11500,
     "price_currency": "USD",
-    "mileage": 56000,
+    "mileage": 69000,
     "engine": "2,0",
     "fuel_type": "Бензин",
     "transmission": "Автомат",
     "color": "",
-    "drive": "4WD",
-    "vin": "KM8K3C***********",
+    "drive": "FWD",
+    "vin": "",
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
-    "location_id": 2,
+    "location_id": 30,
     "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122219314",
+    "trim_name": "SEL 4dr Sedan CVT",
+    "url": "https://myauto.ge/ru/pr/122134762",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/1/3/9/1/2/large/122219314_1.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/7/4/3/1/large/122134762_1.jpg?v=3",
         "order": 1
       }
     ],
     "source": "myauto_ge",
     "last_seen_at": "2026-06-07",
-    "power_hp": 149,
-    "power_kw": 110,
-    "power": "149 л.с. / 110 кВт",
-    "power_source": "catalog:korea",
-    "source_market": "korea",
-    "turnkey_price_rub": 1882224,
-    "turnkey_payments_rub": 721416,
-    "customs_value_rub": 1160809,
-    "customs_value_eur": 13567.47,
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1559990,
+    "turnkey_payments_rub": 715097,
+    "customs_value_rub": 844892,
+    "customs_value_eur": 9875.06,
     "customs_fee_rub": 4924,
     "customs_duty_rub": 462014,
     "customs_duty_eur": 5400,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 249277,
-    "georgia_conversion_fee_rub": 23492,
+    "additional_costs_rub": 242959,
+    "georgia_conversion_fee_rub": 17174,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [
       "Калькулятор не является юридическим заключением."
@@ -3373,7 +3653,557 @@
     }
   },
   {
-    "id": 50,
+    "id": 54,
+    "brand": "Hyundai",
+    "model": "kona",
+    "fullName": "Hyundai kona",
+    "year": 2022,
+    "month": 1,
+    "price": 12500,
+    "price_currency": "USD",
+    "mileage": 67200,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/121804381",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/3/4/0/8/large/121804381_1.jpg?v=7",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1634928,
+    "turnkey_payments_rub": 716567,
+    "customs_value_rub": 918361,
+    "customs_value_eur": 10733.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244429,
+    "georgia_conversion_fee_rub": 18643,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 55,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2022,
+    "month": 7,
+    "price": 12700,
+    "price_currency": "USD",
+    "mileage": 51000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "SE 4dr Sedan CVT",
+    "url": "https://myauto.ge/ru/pr/121401738",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/7/1/0/4/large/121401738_1.jpg?v=1",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1649916,
+    "turnkey_payments_rub": 716861,
+    "customs_value_rub": 933055,
+    "customs_value_eur": 10905.5,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244722,
+    "georgia_conversion_fee_rub": 18937,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 56,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2021,
+    "month": 9,
+    "price": 11800,
+    "price_currency": "USD",
+    "mileage": 91000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Робот",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "SEL w SULEV 4dr Sedan CVT",
+    "url": "https://myauto.ge/ru/pr/121401702",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/7/1/0/4/large/121401702_1.jpg?v=3",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1582471,
+    "turnkey_payments_rub": 715538,
+    "customs_value_rub": 866933,
+    "customs_value_eur": 10132.67,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243400,
+    "georgia_conversion_fee_rub": 17614,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 57,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2023,
+    "month": 6,
+    "price": 14000,
+    "price_currency": "USD",
+    "mileage": 52800,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Механика",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KMHLS4***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122220841",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/0/2/2/large/122220841_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea",
+    "turnkey_price_rub": 1882429,
+    "turnkey_payments_rub": 853864,
+    "customs_value_rub": 1028565,
+    "customs_value_eur": 12021.81,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 598907,
+    "customs_duty_eur": 7000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 246633,
+    "georgia_conversion_fee_rub": 20847,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 58,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2023,
+    "month": 6,
+    "price": 13400,
+    "price_currency": "USD",
+    "mileage": 41000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "SEL 4dr Sedan CVT",
+    "url": "https://myauto.ge/ru/pr/121862020",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/0/2/6/8/large/121862020_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1837466,
+    "turnkey_payments_rub": 852982,
+    "customs_value_rub": 984483,
+    "customs_value_eur": 11506.59,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 598907,
+    "customs_duty_eur": 7000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 3400,
+    "additional_costs_rub": 245751,
+    "georgia_conversion_fee_rub": 19965,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 59,
+    "brand": "Hyundai",
+    "model": "kona",
+    "fullName": "Hyundai kona",
+    "year": 2022,
+    "month": 11,
+    "price": 15300,
+    "price_currency": "USD",
+    "mileage": 23700,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KM8K6CAB0PU994558",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "SEL 4dr All-Wheel Drive CVT",
+    "url": "https://myauto.ge/ru/pr/122066506",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/5/6/6/0/large/122066506_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "vin_decode": {
+      "vin": "KM8K6CAB0PU994558",
+      "source": "nhtsa_vpic",
+      "year": 2023,
+      "make": "HYUNDAI",
+      "model": "Kona",
+      "engine_l": 2,
+      "fuel": "Gasoline",
+      "electrification": "",
+      "hp": 147,
+      "kw": 108,
+      "error_code": "0",
+      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
+    },
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "vin:nhtsa",
+    "source_market": "korea",
+    "turnkey_price_rub": 1844755,
+    "turnkey_payments_rub": 720681,
+    "customs_value_rub": 1124074,
+    "customs_value_eur": 13138.12,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248543,
+    "georgia_conversion_fee_rub": 22757,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 60,
+    "brand": "Hyundai",
+    "model": "kona",
+    "fullName": "Hyundai kona",
+    "year": 2022,
+    "month": 1,
+    "price": 11700,
+    "price_currency": "USD",
+    "mileage": 32000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": true,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/121941094",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/9/0/1/4/9/large/121941094_1.jpg?v=1",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1574977,
+    "turnkey_payments_rub": 715391,
+    "customs_value_rub": 859586,
+    "customs_value_eur": 10046.8,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243253,
+    "georgia_conversion_fee_rub": 17467,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 61,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2022,
+    "month": 1,
+    "price": 12800,
+    "price_currency": "USD",
+    "mileage": 29000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/121720058",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/0/0/2/7/large/121720058_1.jpg?v=10",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1657410,
+    "turnkey_payments_rub": 717008,
+    "customs_value_rub": 940402,
+    "customs_value_eur": 10991.37,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244869,
+    "georgia_conversion_fee_rub": 19084,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 62,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3440,7 +4270,7 @@
     }
   },
   {
-    "id": 51,
+    "id": 63,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3507,7 +4337,7 @@
     }
   },
   {
-    "id": 52,
+    "id": 64,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -3574,7 +4404,7 @@
     }
   },
   {
-    "id": 53,
+    "id": 65,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3641,7 +4471,7 @@
     }
   },
   {
-    "id": 54,
+    "id": 66,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3708,7 +4538,7 @@
     }
   },
   {
-    "id": 55,
+    "id": 67,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3775,7 +4605,7 @@
     }
   },
   {
-    "id": 56,
+    "id": 68,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3842,7 +4672,7 @@
     }
   },
   {
-    "id": 57,
+    "id": 69,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -3909,7 +4739,7 @@
     }
   },
   {
-    "id": 58,
+    "id": 70,
     "brand": "Hyundai",
     "model": "Accent",
     "fullName": "Hyundai Accent",
@@ -3976,7 +4806,7 @@
     }
   },
   {
-    "id": 59,
+    "id": 71,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -4057,7 +4887,7 @@
     }
   },
   {
-    "id": 60,
+    "id": 72,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -4138,7 +4968,7 @@
     }
   },
   {
-    "id": 61,
+    "id": 73,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -4205,7 +5035,7 @@
     }
   },
   {
-    "id": 62,
+    "id": 74,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -4272,7 +5102,7 @@
     }
   },
   {
-    "id": 63,
+    "id": 75,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -4339,7 +5169,7 @@
     }
   },
   {
-    "id": 64,
+    "id": 76,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -4408,7 +5238,7 @@
     }
   },
   {
-    "id": 65,
+    "id": 77,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -4475,7 +5305,7 @@
     }
   },
   {
-    "id": 66,
+    "id": 78,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -4542,74 +5372,7 @@
     }
   },
   {
-    "id": 67,
-    "brand": "Hyundai",
-    "model": "kona",
-    "fullName": "Hyundai kona",
-    "year": 2022,
-    "month": 1,
-    "price": 12500,
-    "price_currency": "USD",
-    "mileage": 67200,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 30,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/121804381",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/8/3/4/0/8/large/121804381_1.jpg?v=7",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1634928,
-    "turnkey_payments_rub": 716567,
-    "customs_value_rub": 918361,
-    "customs_value_eur": 10733.76,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 462014,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 244429,
-    "georgia_conversion_fee_rub": 18643,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 68,
+    "id": 79,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -4676,7 +5439,7 @@
     }
   },
   {
-    "id": 69,
+    "id": 80,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -4743,7 +5506,7 @@
     }
   },
   {
-    "id": 70,
+    "id": 81,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -4810,7 +5573,74 @@
     }
   },
   {
-    "id": 71,
+    "id": 82,
+    "brand": "Hyundai",
+    "model": "kona",
+    "fullName": "Hyundai kona",
+    "year": 2022,
+    "month": 4,
+    "price": 12700,
+    "price_currency": "USD",
+    "mileage": 92114,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KM8K6C***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "SEL 4dr All-Wheel Drive CVT",
+    "url": "https://myauto.ge/ru/pr/121207866",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/8/7/0/2/large/121207866_1.jpg?v=0",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 149,
+    "power_kw": 110,
+    "power": "149 л.с. / 110 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea",
+    "turnkey_price_rub": 1649916,
+    "turnkey_payments_rub": 716861,
+    "customs_value_rub": 933055,
+    "customs_value_eur": 10905.5,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244722,
+    "georgia_conversion_fee_rub": 18937,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 83,
     "brand": "Hyundai",
     "model": "Tucson",
     "fullName": "Hyundai Tucson",
@@ -4877,7 +5707,7 @@
     }
   },
   {
-    "id": 72,
+    "id": 84,
     "brand": "Hyundai",
     "model": "kona",
     "fullName": "Hyundai kona",
@@ -4944,7 +5774,7 @@
     }
   },
   {
-    "id": 73,
+    "id": 85,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -5011,281 +5841,13 @@
     }
   },
   {
-    "id": 74,
-    "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
-    "year": 2022,
-    "month": 9,
-    "price": 12200,
-    "price_currency": "USD",
-    "mileage": 25500,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122216407",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/0/4/6/1/2/large/122216407_1.jpg?v=0",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1612447,
-    "turnkey_payments_rub": 716126,
-    "customs_value_rub": 896321,
-    "customs_value_eur": 10476.15,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 462014,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 243988,
-    "georgia_conversion_fee_rub": 18202,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 75,
-    "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
-    "year": 2022,
-    "month": 5,
-    "price": 11000,
-    "price_currency": "USD",
-    "mileage": 62027,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Робот",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 113,
-    "parent_loc_id": 1,
-    "trim_name": "SEL 4dr Sedan",
-    "url": "https://myauto.ge/ru/pr/121740428",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/2/4/0/4/7/large/121740428_1.jpg?v=2",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1522521,
-    "turnkey_payments_rub": 714363,
-    "customs_value_rub": 808158,
-    "customs_value_eur": 9445.71,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 462014,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 242224,
-    "georgia_conversion_fee_rub": 16439,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 76,
-    "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
-    "year": 2023,
-    "month": 6,
-    "price": 13400,
-    "price_currency": "USD",
-    "mileage": 41000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "SEL 4dr Sedan CVT",
-    "url": "https://myauto.ge/ru/pr/121862020",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/2/0/2/6/8/large/121862020_1.jpg?v=0",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1837466,
-    "turnkey_payments_rub": 852982,
-    "customs_value_rub": 984483,
-    "customs_value_eur": 11506.59,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 598907,
-    "customs_duty_eur": 7000,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 3400,
-    "additional_costs_rub": 245751,
-    "georgia_conversion_fee_rub": 19965,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 77,
-    "brand": "Hyundai",
-    "model": "kona",
-    "fullName": "Hyundai kona",
-    "year": 2021,
-    "month": 11,
-    "price": 13200,
-    "price_currency": "USD",
-    "mileage": 42000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/121664885",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/8/8/4/6/6/large/121664885_1.jpg?v=5",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1687385,
-    "turnkey_payments_rub": 717595,
-    "customs_value_rub": 969789,
-    "customs_value_eur": 11334.85,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 462014,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 245457,
-    "georgia_conversion_fee_rub": 19672,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 78,
+    "id": 86,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
     "year": 2023,
     "month": 4,
-    "price": 16600,
+    "price": 16300,
     "price_currency": "USD",
     "mileage": 43200,
     "engine": "2,0",
@@ -5305,7 +5867,7 @@
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/5/4/9/3/1/large/122139454_1.jpg?v=4",
+        "url": "https://static.my.ge/myauto/photos/5/4/9/3/1/large/122139454_1.jpg?v=5",
         "order": 1
       }
     ],
@@ -5316,18 +5878,18 @@
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia",
-    "turnkey_price_rub": 1950792,
-    "turnkey_payments_rub": 731208,
-    "customs_value_rub": 1219584,
-    "customs_value_eur": 14254.43,
-    "customs_fee_rub": 13541,
+    "turnkey_price_rub": 1919694,
+    "turnkey_payments_rub": 722150,
+    "customs_value_rub": 1197543,
+    "customs_value_eur": 13996.82,
+    "customs_fee_rub": 4924,
     "customs_duty_rub": 462014,
     "customs_duty_eur": 5400,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 250453,
-    "georgia_conversion_fee_rub": 24667,
+    "additional_costs_rub": 250012,
+    "georgia_conversion_fee_rub": 24227,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [
       "Калькулятор не является юридическим заключением."
@@ -5346,7 +5908,7 @@
     }
   },
   {
-    "id": 79,
+    "id": 87,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -5414,7 +5976,7 @@
     }
   },
   {
-    "id": 80,
+    "id": 88,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
@@ -5481,7 +6043,7 @@
     }
   },
   {
-    "id": 81,
+    "id": 89,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -5548,7 +6110,7 @@
     }
   },
   {
-    "id": 82,
+    "id": 90,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
@@ -5615,7 +6177,7 @@
     }
   },
   {
-    "id": 83,
+    "id": 91,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -5682,7 +6244,7 @@
     }
   },
   {
-    "id": 84,
+    "id": 92,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -5749,7 +6311,7 @@
     }
   },
   {
-    "id": 85,
+    "id": 93,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -5816,7 +6378,7 @@
     }
   },
   {
-    "id": 86,
+    "id": 94,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -5883,7 +6445,7 @@
     }
   },
   {
-    "id": 87,
+    "id": 95,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -5950,88 +6512,7 @@
     }
   },
   {
-    "id": 88,
-    "brand": "KIA",
-    "model": "Seltos",
-    "fullName": "KIA Seltos",
-    "year": 2022,
-    "month": 1,
-    "price": 17000,
-    "price_currency": "USD",
-    "mileage": 75200,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "KNDERCAA2P7384918",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122000044",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/0/0/0/0/large/122000044_1.jpg?v=3",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "vin_decode": {
-      "vin": "KNDERCAA2P7384918",
-      "source": "nhtsa_vpic",
-      "year": 2023,
-      "make": "KIA",
-      "model": "Seltos",
-      "engine_l": 2,
-      "fuel": "Gasoline",
-      "electrification": "",
-      "hp": 147,
-      "kw": 108,
-      "error_code": "0",
-      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
-    },
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "vin:nhtsa",
-    "source_market": "korea",
-    "turnkey_price_rub": 1980767,
-    "turnkey_payments_rub": 731796,
-    "customs_value_rub": 1248971,
-    "customs_value_eur": 14597.91,
-    "customs_fee_rub": 13541,
-    "customs_duty_rub": 462014,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 251041,
-    "georgia_conversion_fee_rub": 25255,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 89,
+    "id": 96,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -6098,7 +6579,142 @@
     }
   },
   {
-    "id": 90,
+    "id": 97,
+    "brand": "KIA",
+    "model": "Seltos",
+    "fullName": "KIA Seltos",
+    "year": 2021,
+    "month": 12,
+    "price": 15500,
+    "price_currency": "USD",
+    "mileage": 64000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KNDERC***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "ex",
+    "url": "https://myauto.ge/ru/pr/121069140",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/1/9/6/0/large/121069140_1.jpg?v=3",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea",
+    "turnkey_price_rub": 1859743,
+    "turnkey_payments_rub": 720975,
+    "customs_value_rub": 1138768,
+    "customs_value_eur": 13309.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 462014,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248837,
+    "georgia_conversion_fee_rub": 23051,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 98,
+    "brand": "KIA",
+    "model": "Niro",
+    "fullName": "KIA Niro",
+    "year": 2022,
+    "month": 1,
+    "price": 14500,
+    "price_currency": "USD",
+    "mileage": 78400,
+    "engine": "1,6",
+    "fuel_type": "Гибрид",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KNDCE3***********",
+    "fuel_type_id": 6,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/120832017",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/2/3/8/large/120832017_1.jpg?v=21",
+        "order": 1
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-06-07",
+    "power_hp": 105,
+    "power_kw": 77,
+    "power": "105 л.с. / 77 кВт",
+    "power_source": "catalog:korea",
+    "source_market": "korea",
+    "turnkey_price_rub": 1665023,
+    "turnkey_payments_rub": 599724,
+    "customs_value_rub": 1065299,
+    "customs_value_eur": 12451.16,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 342233,
+    "customs_duty_eur": 4000,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247367,
+    "georgia_conversion_fee_rub": 21582,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [
+      "Калькулятор не является юридическим заключением.",
+      "Для гибридов мощность нужно брать из ЭПТС/СБКТС/документов. Не складывай мощности без подтверждения."
+    ],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-06-07",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "06.06.2026",
+    "turnkey_rates": {
+      "USD": 73.4689,
+      "EUR": 85.5582,
+      "GEL": 27.5712,
+      "CNY": 10.853,
+      "KRW": 0.048063,
+      "JPY": 0.4593
+    }
+  },
+  {
+    "id": 99,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -6165,7 +6781,7 @@
     }
   },
   {
-    "id": 91,
+    "id": 100,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
@@ -6232,7 +6848,7 @@
     }
   },
   {
-    "id": 92,
+    "id": 101,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -6299,7 +6915,7 @@
     }
   },
   {
-    "id": 93,
+    "id": 102,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -6366,7 +6982,7 @@
     }
   },
   {
-    "id": 94,
+    "id": 103,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -6447,7 +7063,7 @@
     }
   },
   {
-    "id": 95,
+    "id": 104,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
@@ -6514,157 +7130,7 @@
     }
   },
   {
-    "id": 96,
-    "brand": "KIA",
-    "model": "Niro",
-    "fullName": "KIA Niro",
-    "year": 2022,
-    "month": 1,
-    "price": 14700,
-    "price_currency": "USD",
-    "mileage": 78400,
-    "engine": "1,6",
-    "fuel_type": "Гибрид",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "KNDCE3***********",
-    "fuel_type_id": 6,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/120832017",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/2/3/8/large/120832017_1.jpg?v=20",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 105,
-    "power_kw": 77,
-    "power": "105 л.с. / 77 кВт",
-    "power_source": "catalog:korea",
-    "source_market": "korea",
-    "turnkey_price_rub": 1680011,
-    "turnkey_payments_rub": 600018,
-    "customs_value_rub": 1079993,
-    "customs_value_eur": 12622.9,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 342233,
-    "customs_duty_eur": 4000,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 247661,
-    "georgia_conversion_fee_rub": 21876,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением.",
-      "Для гибридов мощность нужно брать из ЭПТС/СБКТС/документов. Не складывай мощности без подтверждения."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 97,
-    "brand": "KIA",
-    "model": "Niro",
-    "fullName": "KIA Niro",
-    "year": 2023,
-    "month": 3,
-    "price": 14500,
-    "price_currency": "USD",
-    "mileage": 144000,
-    "engine": "1,6",
-    "fuel_type": "Гибрид",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "FWD",
-    "vin": "KNDCP3LE1P5087261",
-    "fuel_type_id": 6,
-    "status_id": 1,
-    "customs_passed": true,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122146015",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/6/4/1/large/122146015_1.jpg?v=6",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "vin_decode": {
-      "vin": "KNDCP3LE1P5087261",
-      "source": "nhtsa_vpic",
-      "year": 2023,
-      "make": "KIA",
-      "model": "Niro",
-      "engine_l": 1.6,
-      "fuel": "Gasoline",
-      "electrification": "Strong HEV (Hybrid Electric Vehicle)",
-      "hp": 0,
-      "kw": 0,
-      "error_code": "0",
-      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
-    },
-    "power_hp": 105,
-    "power_kw": 77,
-    "power": "105 л.с. / 77 кВт",
-    "power_source": "catalog:korea",
-    "source_market": "korea",
-    "turnkey_price_rub": 1665023,
-    "turnkey_payments_rub": 599724,
-    "customs_value_rub": 1065299,
-    "customs_value_eur": 12451.16,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 342233,
-    "customs_duty_eur": 4000,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 247367,
-    "georgia_conversion_fee_rub": 21582,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением.",
-      "Для гибридов мощность нужно брать из ЭПТС/СБКТС/документов. Не складывай мощности без подтверждения."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 98,
+    "id": 105,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -6731,7 +7197,7 @@
     }
   },
   {
-    "id": 99,
+    "id": 106,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -6800,7 +7266,7 @@
     }
   },
   {
-    "id": 100,
+    "id": 107,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -6867,7 +7333,7 @@
     }
   },
   {
-    "id": 101,
+    "id": 108,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -6934,7 +7400,7 @@
     }
   },
   {
-    "id": 102,
+    "id": 109,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -7001,7 +7467,7 @@
     }
   },
   {
-    "id": 103,
+    "id": 110,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -7068,7 +7534,7 @@
     }
   },
   {
-    "id": 104,
+    "id": 111,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -7136,7 +7602,7 @@
     }
   },
   {
-    "id": 105,
+    "id": 112,
     "brand": "KIA",
     "model": "Soul",
     "fullName": "KIA Soul",
@@ -7203,7 +7669,7 @@
     }
   },
   {
-    "id": 106,
+    "id": 113,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -7270,7 +7736,7 @@
     }
   },
   {
-    "id": 107,
+    "id": 114,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -7337,7 +7803,7 @@
     }
   },
   {
-    "id": 108,
+    "id": 115,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -7404,7 +7870,7 @@
     }
   },
   {
-    "id": 109,
+    "id": 116,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -7472,7 +7938,7 @@
     }
   },
   {
-    "id": 110,
+    "id": 117,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -7539,7 +8005,7 @@
     }
   },
   {
-    "id": 111,
+    "id": 118,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -7606,7 +8072,7 @@
     }
   },
   {
-    "id": 112,
+    "id": 119,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -7673,141 +8139,7 @@
     }
   },
   {
-    "id": 113,
-    "brand": "KIA",
-    "model": "Seltos",
-    "fullName": "KIA Seltos",
-    "year": 2022,
-    "month": 1,
-    "price": 14000,
-    "price_currency": "USD",
-    "mileage": 23000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "KNDEPC***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122202208",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/0/2/2/0/2/large/122202208_1.jpg?v=2",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "korea",
-    "turnkey_price_rub": 1747335,
-    "turnkey_payments_rub": 718771,
-    "customs_value_rub": 1028565,
-    "customs_value_eur": 12021.81,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 462014,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 246633,
-    "georgia_conversion_fee_rub": 20847,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 114,
-    "brand": "KIA",
-    "model": "Forte",
-    "fullName": "KIA Forte",
-    "year": 2023,
-    "month": 6,
-    "price": 15500,
-    "price_currency": "USD",
-    "mileage": 83200,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Робот",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "HT Line",
-    "url": "https://myauto.ge/ru/pr/122200411",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/4/0/0/2/large/122200411_1.jpg?v=0",
-        "order": 1
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-06-07",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1994836,
-    "turnkey_payments_rub": 856068,
-    "customs_value_rub": 1138768,
-    "customs_value_eur": 13309.86,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 598907,
-    "customs_duty_eur": 7000,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 3400,
-    "additional_costs_rub": 248837,
-    "georgia_conversion_fee_rub": 23051,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Калькулятор не является юридическим заключением."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-06-07",
-    "turnkey_rates_source": "CBR",
-    "turnkey_rates_cbr_date": "06.06.2026",
-    "turnkey_rates": {
-      "USD": 73.4689,
-      "EUR": 85.5582,
-      "GEL": 27.5712,
-      "CNY": 10.853,
-      "KRW": 0.048063,
-      "JPY": 0.4593
-    }
-  },
-  {
-    "id": 115,
+    "id": 120,
     "brand": "Mazda",
     "model": "Mazda 3",
     "fullName": "Mazda Mazda 3",
@@ -7874,7 +8206,7 @@
     }
   },
   {
-    "id": 116,
+    "id": 121,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -7955,7 +8287,7 @@
     }
   },
   {
-    "id": 117,
+    "id": 122,
     "brand": "Mini",
     "model": "Countryman",
     "fullName": "Mini Countryman",
@@ -8022,7 +8354,7 @@
     }
   },
   {
-    "id": 118,
+    "id": 123,
     "brand": "Mini",
     "model": "Countryman",
     "fullName": "Mini Countryman",
@@ -8089,7 +8421,7 @@
     }
   },
   {
-    "id": 119,
+    "id": 124,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -8156,7 +8488,7 @@
     }
   },
   {
-    "id": 120,
+    "id": 125,
     "brand": "Mini",
     "model": "Countryman",
     "fullName": "Mini Countryman",
@@ -8223,7 +8555,7 @@
     }
   },
   {
-    "id": 121,
+    "id": 126,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -8290,7 +8622,7 @@
     }
   },
   {
-    "id": 122,
+    "id": 127,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -8357,7 +8689,7 @@
     }
   },
   {
-    "id": 123,
+    "id": 128,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -8424,7 +8756,7 @@
     }
   },
   {
-    "id": 124,
+    "id": 129,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -8491,7 +8823,7 @@
     }
   },
   {
-    "id": 125,
+    "id": 130,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -8558,7 +8890,7 @@
     }
   },
   {
-    "id": 126,
+    "id": 131,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -8625,7 +8957,7 @@
     }
   },
   {
-    "id": 127,
+    "id": 132,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -8692,7 +9024,7 @@
     }
   },
   {
-    "id": 128,
+    "id": 133,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -8759,7 +9091,7 @@
     }
   },
   {
-    "id": 129,
+    "id": 134,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -8826,7 +9158,7 @@
     }
   },
   {
-    "id": 130,
+    "id": 135,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
@@ -8893,7 +9225,7 @@
     }
   },
   {
-    "id": 131,
+    "id": 136,
     "brand": "Mitsubishi",
     "model": "Outlander Sport",
     "fullName": "Mitsubishi Outlander Sport",
