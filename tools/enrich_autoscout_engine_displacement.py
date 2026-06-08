@@ -37,6 +37,13 @@ class RateLimiter:
         if delay:
             time.sleep(delay)
 
+    def penalize(self, seconds: float) -> None:
+        with self.lock:
+            self.next_request_at = max(
+                self.next_request_at,
+                time.monotonic() + max(0.0, seconds),
+            )
+
 
 def nested_get(value: Any, *keys: str) -> Any:
     for key in keys:
@@ -165,6 +172,8 @@ def fetch_displacement(
         if response.status_code not in {429, 500, 502, 503, 504}:
             response.raise_for_status()
             break
+        if response.status_code == 429:
+            limiter.penalize(min(60, 8 * (attempt + 1)))
         if attempt + 1 < retries:
             time.sleep((2 ** attempt) + random.uniform(0.2, 0.8))
     if response is None:
@@ -188,7 +197,14 @@ def format_liters(cc: int) -> str:
 def save_records(path: Path, records: list[dict]) -> None:
     temp_path = path.with_suffix(path.suffix + ".tmp")
     temp_path.write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    os.replace(temp_path, path)
+    for attempt in range(6):
+        try:
+            os.replace(temp_path, path)
+            return
+        except PermissionError:
+            if attempt == 5:
+                raise
+            time.sleep(0.5 * (attempt + 1))
 
 
 def should_enrich(record: dict, refresh: bool) -> bool:

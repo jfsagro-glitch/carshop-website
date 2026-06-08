@@ -279,10 +279,23 @@ const updated = sourceCars.map((car) => {
   };
 });
 
-await fs.writeFile(stockPath, `${JSON.stringify(updated, null, 2)}\n`, 'utf8');
+const published = updated.filter((car) => {
+  const isAutoScout = `${car.source || ''} ${car.url || ''}`.toLowerCase().includes('autoscout24');
+  const hasVerifiedEngine = !isAutoScout || (
+    Number(car.engine_cc || 0) >= 500
+    && String(car.engine_source || '').startsWith('autoscout24_')
+  );
+  return hasVerifiedEngine
+    && car.turnkey_calculation_complete
+    && Number(car.turnkey_price_rub || 0) > 0;
+});
+const removedIncomplete = updated.length - published.length;
 
-console.log(`Updated ${updated.length} Europe cars`);
+await fs.writeFile(stockPath, `${JSON.stringify(published, null, 2)}\n`, 'utf8');
+
+console.log(`Updated ${published.length} Europe cars`);
 console.log(`Removed electric cars: ${cars.length - sourceCars.length}`);
+console.log(`Removed without verified engine/turnkey price: ${removedIncomplete}`);
 console.log(`Complete calculations: ${completeCount}/${updated.length}`);
 console.log(`Road cost: ${EUROPE_ROAD_EUR} EUR`);
 console.log(`CBR date: ${cbrDate}`);

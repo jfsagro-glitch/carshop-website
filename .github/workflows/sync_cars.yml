@@ -133,12 +133,11 @@ jobs:
         run: |
           python tools/enrich_autoscout_engine_displacement.py \
             --input cars_europe_new.json \
-            --workers 6 \
-            --timeout 10 \
-            --limit 300 \
-            --checkpoint-every 25 \
-            --requests-per-second 3 \
-            --retries 3
+            --workers 12 \
+            --timeout 15 \
+            --checkpoint-every 250 \
+            --requests-per-second 6 \
+            --retries 5
 
       - name: Recalculate Europe turnkey prices by CBR rates
         run: node tools/update_europe_turnkey_prices.mjs
