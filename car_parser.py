@@ -2194,6 +2194,10 @@ class AutoScout24Parser:
         "Volkswagen": "volkswagen",
         "Mercedes-Benz": "mercedes-benz",
     }
+    PRIORITY_MODELS = (
+        ("Opel Mokka", "opel/mokka", "Opel", re.compile(r"^mokka(?:\s|$)", re.I), 12),
+        ("Opel Crossland", "opel/crossland", "Opel", re.compile(r"^crossland(?:\s|$)", re.I), 12),
+    )
 
     UA_LIST = [
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
@@ -2356,8 +2360,10 @@ class AutoScout24Parser:
         return parse_int(page_props.get("numberOfPages")) or self.max_pages
 
     def _collect_pages(self, records: List[dict], seen_ids: set[str], seen_models: set[str],
-                       brand_name: str = "", brand_slug: str = "", stop_at_max: bool = True) -> None:
-        label = brand_name or "общий каталог"
+                       brand_name: str = "", brand_slug: str = "", stop_at_max: bool = True,
+                       model_pattern: Optional[re.Pattern] = None, label: str = "",
+                       page_cap: int = 0) -> None:
+        label = label or brand_name or "общий каталог"
         page = 1
         page_limit = self.max_pages
         while page <= page_limit:
@@ -2366,6 +2372,8 @@ class AutoScout24Parser:
                 break
             if page == 1:
                 page_limit = min(self.max_pages, self._number_of_pages(html))
+                if page_cap:
+                    page_limit = min(page_limit, page_cap)
             min_ym = self.min_year * 100 + datetime.now().month if self.min_year else 0
             max_ym = self.max_year * 100 + datetime.now().month if self.max_year else 0
             page_records = filter_records(
@@ -2384,6 +2392,8 @@ class AutoScout24Parser:
             added_on_page = 0
             for record in page_records:
                 if brand_name and record.get("brand") != brand_name:
+                    continue
+                if model_pattern and not model_pattern.search(str(record.get("model") or "")):
                     continue
                 record_id = str(record.get("id") or record.get("url") or "")
                 model_key = f"{record.get('brand', '').lower()}|{record.get('model', '').lower()}"
@@ -2418,6 +2428,18 @@ class AutoScout24Parser:
         self._collect_pages(records, seen_ids, seen_models, stop_at_max=True)
         for brand_name, brand_slug in self.PRIORITY_BRANDS.items():
             self._collect_pages(records, seen_ids, seen_models, brand_name, brand_slug, stop_at_max=False)
+        for label, model_slug, brand_name, model_pattern, page_cap in self.PRIORITY_MODELS:
+            self._collect_pages(
+                records,
+                seen_ids,
+                seen_models,
+                brand_name,
+                model_slug,
+                stop_at_max=False,
+                model_pattern=model_pattern,
+                label=label,
+                page_cap=page_cap,
+            )
 
         log.info(f"AutoScout24: итого {len(records)} авто, уникальных моделей {len(seen_models)}")
         return records
