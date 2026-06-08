@@ -498,7 +498,7 @@
 
         .car-btns {
             display: grid;
-            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+            grid-template-columns: 40px minmax(0, 1fr);
             gap: 0.45rem;
             margin-top: 0.65rem;
         }
@@ -535,6 +535,8 @@
             background: transparent;
             color: #e5e7eb;
             border: 1px solid #374151;
+            padding: 0 !important;
+            aspect-ratio: 1;
         }
 
         .car-btns .btn-secondary:hover {
@@ -1098,13 +1100,6 @@
             return url;
         }
 
-        function getSourceLabel(car) {
-            const source = `${car.source || ''} ${car.url || ''}`.toLowerCase();
-            if (source.includes('autoscout24')) return 'AutoScout24';
-            if (source.includes('mobile.de')) return 'mobile.de';
-            return 'Источник';
-        }
-
         function formatEngineVolume(engine) {
             const value = String(engine || '').replace(',', '.');
             const liters = Number(value.match(/\d+(?:\.\d+)?/)?.[0]);
@@ -1165,15 +1160,6 @@
             const liters = Number(value);
             if (!Number.isFinite(liters) || liters <= 0) return '';
             return `${liters.toLocaleString('ru-RU', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} л`;
-        }
-
-        function customsAgeLabel(ageBand) {
-            return {
-                under_3: 'до 3 лет',
-                from_3_to_5: '3–5 лет',
-                from_5_to_7: '5–7 лет',
-                over_7: 'старше 7 лет'
-            }[ageBand] || '';
         }
 
         function sortCarsByPriceAsc(list) {
@@ -1463,7 +1449,6 @@
                 const price = car.price ? `${car.price.toLocaleString('ru-RU')} €` : 'Цена по запросу';
                 // filterImages уже апгрейдил URL — не дублируем
                 const finalImageUrl = firstImage || '';
-                const sourceLabel = getSourceLabel(car);
                 const turnkeyHtml = getEuropeTurnkeyHtml(car);
                 const engineLiters = inferEngineLiters(car);
                 const engineVolume = engineLiters ? formatEngineVolume(engineLiters) : '';
@@ -1500,10 +1485,9 @@
                                 ${car.fuel_type ? `<div class="car-spec-item"><i class="fas ${fuelIcon[car.fuel_type] || 'fa-gas-pump'}"></i> ${car.fuel_type}</div>` : ''}
                                 ${car.transmission ? `<div class="car-spec-item"><i class="fas ${transIcon[car.transmission] || 'fa-cog'}"></i> ${car.transmission}</div>` : ''}
                                 ${car.first_registration ? `<div class="car-spec-item"><i class="fas fa-calendar-alt"></i> ${car.first_registration}</div>` : ''}
-                                ${car.customs_age_band ? `<div class="car-spec-item"><i class="fas fa-hourglass-half"></i> Таможенная категория: ${customsAgeLabel(car.customs_age_band)}</div>` : ''}
                             </div>
                             <div class="car-btns">
-                                ${car.url ? `<a class="btn-secondary" href="${car.url}" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.4rem;"><i class="fas fa-external-link-alt"></i> ${sourceLabel}</a>` : ''}
+                                ${car.url ? `<a class="btn-secondary" href="${car.url}" target="_blank" rel="noopener noreferrer" title="Открыть исходное объявление" aria-label="Открыть исходное объявление"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>` : ''}
                                 <button class="btn-primary" onclick="addToCartEurope(${index})">
                                     <i class="fas fa-shopping-cart"></i> Заказать
                                 </button>
