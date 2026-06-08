@@ -1,32 +1,21 @@
-﻿User-agent: *
+# Public content is available to search engines and AI discovery agents,
+# including Googlebot, Bingbot, OAI-SearchBot, ChatGPT-User, ClaudeBot
+# and PerplexityBot.
+User-agent: *
 Allow: /
-
-# Основные каталоги авто
-Allow: /georgia-stock.html
-Allow: /europe-orders.html
-Allow: /korea-orders.html
-Allow: /usa-orders.html
-Allow: /china-orders.html
-Allow: /parts-orders.html
-
-# Закрыть от индексирования системные страницы и данные
 Disallow: /admin.html
 Disallow: /admin
+Disallow: /offline.html
 Disallow: /config.py
 Disallow: /config_example.py
 Disallow: /database/
+Disallow: /new-project/
+Disallow: /images/car*/
 Disallow: /*.py$
 Disallow: /*.csv$
-Disallow: /*.json$
 Disallow: /test.txt
 Disallow: /check_*.py
 Disallow: /tools/
 
-# Разрешить JSON-каталоги (используются фронтендом)
-Allow: /cars_georgia_stock.json
-Allow: /cars_europe_new.json
-Allow: /cars_korea_stock.json
-
-# Sitemap
+Host: cmsauto.store
 Sitemap: https://cmsauto.store/sitemap.xml
-

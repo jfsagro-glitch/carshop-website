@@ -151,6 +151,11 @@ jobs:
       - name: Validate public catalogs
         run: python car_parser.py --validate-catalogs
 
+      - name: Validate SEO metadata and sitemap
+        run: |
+          python generate_sitemap.py
+          python tools/check_seo.py
+
       - name: Parse Telegram offer monitor
         run: python tools/parse_telegram_offers.py --limit 10 --posts-per-channel 50 || true
 
@@ -204,6 +209,10 @@ jobs:
           git add -A cars_korea_stock.json sitemap.xml 2>/dev/null || true
           git diff --cached --quiet || git commit -m "auto: korea stock + sitemap [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push || true
+
+      - name: Notify IndexNow about catalog updates
+        continue-on-error: true
+        run: node tools/submit_indexnow.mjs
 
       - name: Import parts catalog to Supabase
         run: python parts_parser.py --input parts_catalog.csv --quiet || true
