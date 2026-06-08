@@ -25,6 +25,27 @@ function images(car) {
     .slice(0, 12);
 }
 
+async function hasReachableImage(car) {
+  for (const url of images(car).slice(0, 3)) {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0',
+          Referer: 'https://www.autoscout24.de/',
+        },
+      });
+      if (response.ok && String(response.headers.get('content-type') || '').startsWith('image/')) {
+        await response.body?.cancel();
+        return true;
+      }
+      await response.body?.cancel();
+    } catch {
+      // Try the next photo or candidate.
+    }
+  }
+  return false;
+}
+
 function matches(car, target) {
   const modelText = `${car.model || ''} ${car.full_title || ''}`.trim();
   return normalize(car.brand) === normalize(target.brand) && target.model.test(modelText);
@@ -77,8 +98,9 @@ function toOffer(car, target) {
 }
 
 const cars = JSON.parse(await fs.readFile(sourcePath, 'utf8'));
-const offers = TARGETS.map((target) => {
-  const cheapest = cars
+const offers = [];
+for (const target of TARGETS) {
+  const candidates = cars
     .filter((car) => matches(car, target))
     .filter((car) => {
       const mileage = Number(car.mileage || 0);
@@ -89,9 +111,16 @@ const offers = TARGETS.map((target) => {
         && car.turnkey_calculation_complete
         && images(car).length > 0;
     })
-    .sort((a, b) => Number(a.price) - Number(b.price))[0];
-  return cheapest ? toOffer(cheapest, target) : null;
-}).filter(Boolean);
+    .sort((a, b) => Number(a.price) - Number(b.price));
+  let selected = null;
+  for (const candidate of candidates) {
+    if (await hasReachableImage(candidate)) {
+      selected = candidate;
+      break;
+    }
+  }
+  if (selected) offers.push(toOffer(selected, target));
+}
 
 if (offers.length !== TARGETS.length) {
   throw new Error(`Expected ${TARGETS.length} featured Europe offers, got ${offers.length}`);

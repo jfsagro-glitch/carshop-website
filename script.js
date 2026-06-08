@@ -2368,6 +2368,33 @@ function preloadOfferImages(images) {
     });
 }
 
+function showNextOfferImage(img) {
+    const card = img.closest('.telegram-offer-card');
+    if (!card) {
+        img.onerror = null;
+        img.src = telegramFallbackImage('EXPO MIR');
+        return;
+    }
+    let images = [];
+    try {
+        images = JSON.parse(card.dataset.galleryImages || '[]');
+    } catch {
+        images = [];
+    }
+    const failed = Number(img.dataset.failedImages || 0) + 1;
+    img.dataset.failedImages = String(failed);
+    if (failed >= images.length) {
+        img.onerror = null;
+        img.src = telegramFallbackImage('EXPO MIR');
+        return;
+    }
+    const nextIndex = (Number(card.dataset.galleryActive || 0) + 1) % images.length;
+    card.dataset.galleryActive = String(nextIndex);
+    img.src = images[nextIndex];
+    const counter = card.querySelector('.telegram-offer-card__counter');
+    if (counter) counter.textContent = `${nextIndex + 1} / ${images.length}`;
+}
+
 async function loadTelegramOffersSection() {
     const grid = document.getElementById('telegramOffersGrid');
     const meta = document.getElementById('telegramOffersMeta');
@@ -2436,7 +2463,7 @@ async function loadTelegramOffersSection() {
             return `
                 <article class="telegram-offer-card" data-gallery-images="${escapeHtml(JSON.stringify(images))}" data-gallery-active="0">
                     <div class="telegram-offer-card__gallery">
-                        <img class="telegram-offer-card__image" data-gallery-image="${index}" src="${escapeHtml(images[0])}" alt="${escapeHtml(offer.title)}" loading="${index < 2 ? 'eager' : 'lazy'}" onerror="this.src='${telegramFallbackImage('EXPO MIR')}'">
+                        <img class="telegram-offer-card__image" data-gallery-image="${index}" src="${escapeHtml(images[0])}" alt="${escapeHtml(offer.title)}" loading="${index < 2 ? 'eager' : 'lazy'}" onerror="showNextOfferImage(this)">
                         ${galleryNav}
                     </div>
                     <div class="telegram-offer-card__body">
@@ -2473,7 +2500,10 @@ async function loadTelegramOffersSection() {
                 card.dataset.galleryActive = String(nextIndex);
                 const img = card.querySelector('.telegram-offer-card__image');
                 const counter = card.querySelector('.telegram-offer-card__counter');
-                if (img) img.src = images[nextIndex];
+                if (img) {
+                    img.dataset.failedImages = '0';
+                    img.src = images[nextIndex];
+                }
                 if (counter) counter.textContent = `${nextIndex + 1} / ${images.length}`;
             });
         });

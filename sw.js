@@ -1,4 +1,4 @@
-﻿const CACHE_VERSION = 'expo-mir-pwa-v8-secondary-phone';
+﻿const CACHE_VERSION = 'expo-mir-pwa-v9-home-image-fallback';
 const APP_SHELL = [
   '/',
   '/index.html',
