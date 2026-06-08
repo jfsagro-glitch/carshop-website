@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { calculateCustoms } from '../src/features/customs-calculator/customsCalculator.js';
+import { resolveAgeBand } from '../src/features/customs-calculator/age.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
@@ -253,6 +254,7 @@ const sourceCars = cars.filter((car) => !isElectricCar(car));
 const updated = sourceCars.map((car) => {
   const input = buildInput(car, rates, whitelist);
   const result = calculateCustoms(input);
+  const ageBand = resolveAgeBand(input);
   const isAutoScout = `${car.source || ''} ${car.url || ''}`.toLowerCase().includes('autoscout24');
   if (result.isComplete) completeCount += 1;
   return {
@@ -262,6 +264,7 @@ const updated = sourceCars.map((car) => {
       : (isAutoScout ? '' : car.engine),
     engine_cc: input.engineCc || (isAutoScout ? null : car.engine_cc),
     engine_source: input.engineCc ? car.engine_source : (isAutoScout ? '' : car.engine_source),
+    customs_age_band: ageBand,
     ...summarize(result),
     europe_road_eur: EUROPE_ROAD_EUR,
     turnkey_cost_profile: 'europe_plus_georgia_costs',

@@ -1065,6 +1065,15 @@
             return `${liters.toLocaleString('ru-RU', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} л`;
         }
 
+        function customsAgeLabel(ageBand) {
+            return {
+                under_3: 'до 3 лет',
+                from_3_to_5: '3–5 лет',
+                from_5_to_7: '5–7 лет',
+                over_7: 'старше 7 лет'
+            }[ageBand] || '';
+        }
+
         function sortCarsByPriceAsc(list) {
             return list.sort((a, b) => {
                 const priceA = Number(a.price || 0) || Number.MAX_SAFE_INTEGER;
@@ -1389,6 +1398,7 @@
                                 ${car.fuel_type ? `<div class="car-spec-item"><i class="fas ${fuelIcon[car.fuel_type] || 'fa-gas-pump'}"></i> ${car.fuel_type}</div>` : ''}
                                 ${car.transmission ? `<div class="car-spec-item"><i class="fas ${transIcon[car.transmission] || 'fa-cog'}"></i> ${car.transmission}</div>` : ''}
                                 ${car.first_registration ? `<div class="car-spec-item"><i class="fas fa-calendar-alt"></i> ${car.first_registration}</div>` : ''}
+                                ${car.customs_age_band ? `<div class="car-spec-item"><i class="fas fa-hourglass-half"></i> Таможенная категория: ${customsAgeLabel(car.customs_age_band)}</div>` : ''}
                             </div>
                             <div class="car-btns">
                                 ${car.url ? `<a class="btn-secondary" href="${car.url}" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.4rem;"><i class="fas fa-external-link-alt"></i> ${sourceLabel}</a>` : ''}

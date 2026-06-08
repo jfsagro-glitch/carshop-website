@@ -5,7 +5,7 @@ export function resolveManufactureDate(input) {
 
   if (input.manufactureMonth && input.manufactureYear) {
     const month = String(input.manufactureMonth).slice(5, 7) || String(input.manufactureMonth).padStart(2, '0');
-    return `${input.manufactureYear}-${month}-15`;
+    return `${input.manufactureYear}-${month}-01`;
   }
 
   if (input.manufactureYear) {

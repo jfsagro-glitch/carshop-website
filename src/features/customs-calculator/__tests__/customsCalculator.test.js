@@ -118,7 +118,8 @@ test('calculation is incomplete without CBR rates source', () => {
 
 test('manufacture date resolution and age', () => {
   assert.equal(resolveManufactureDate({ manufactureYear: 2023 }), '2023-07-01');
-  assert.equal(resolveManufactureDate({ manufactureMonth: '2023-08', manufactureYear: 2023 }), '2023-08-15');
+  assert.equal(resolveManufactureDate({ manufactureMonth: '2023-08', manufactureYear: 2023 }), '2023-08-01');
   assert.equal(getAgeBand('2023-07-01', '2026-07-01'), 'under_3');
   assert.equal(getAgeBand('2023-06-30', '2026-07-01'), 'from_3_to_5');
+  assert.equal(getAgeBand('2023-06-01', '2026-06-08'), 'from_3_to_5');
 });

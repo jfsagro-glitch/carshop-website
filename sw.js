@@ -1,4 +1,4 @@
-﻿const CACHE_VERSION = 'expo-mir-pwa-v9-home-image-fallback';
+﻿const CACHE_VERSION = 'expo-mir-pwa-v10-customs-age-fix';
 const APP_SHELL = [
   '/',
   '/index.html',
