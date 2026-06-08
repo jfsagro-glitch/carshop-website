@@ -3357,6 +3357,7 @@ function setupEventListeners() {
             const m = document.getElementById(id);
             if (m && m.style.display === 'block') m.style.display = 'none';
         });
+        document.body.classList.remove('request-modal-open');
     });
 
     // Brand filter → auto-populate model filter
@@ -3687,6 +3688,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const m = document.getElementById('requestModal');
         if (!m) return;
         m.style.display = 'block';
+        document.body.classList.add('request-modal-open');
         // фокус для мобильных
         const firstField = document.getElementById('reqBrand');
         if (firstField) setTimeout(()=> firstField.focus(), 50);
@@ -3694,6 +3696,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     window.closeRequestModal = function(){
         const m = document.getElementById('requestModal');
         if (m) m.style.display = 'none';
+        document.body.classList.remove('request-modal-open');
     }
 
     const requestBtn = document.getElementById('requestSubmit');

@@ -2955,6 +2955,215 @@ body.premium .korea-card .kspec-val {
     color: #d5deeb !important;
 }
 
+/* Vehicle selection request modal */
+#requestModal {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+#requestModal .request-modal__content {
+    width: min(720px, 100%);
+    max-width: 720px;
+    max-height: calc(100dvh - 48px);
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+#requestModal .modal-header {
+    flex: 0 0 auto;
+    padding: 1rem 1.25rem;
+}
+
+#requestModal .modal-header h3 {
+    font-size: 1.2rem;
+}
+
+#requestModal .close {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    font-size: 1.75rem;
+}
+
+#requestModal .close:hover {
+    background: rgba(148, 163, 184, 0.12);
+}
+
+#requestModal .modal-body {
+    min-height: 0;
+    max-height: none;
+    padding: 1.1rem 1.25rem 1.25rem;
+    overflow-y: auto;
+}
+
+#requestModal .request-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem 1rem;
+    width: 100%;
+    align-items: start;
+}
+
+#requestModal .request-form .calc-row {
+    display: flex;
+    min-width: 0;
+    margin: 0;
+    gap: 0.38rem;
+}
+
+#requestModal .request-form .calc-row label,
+#requestModal .request-form__field label {
+    color: #b8c5d8 !important;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+#requestModal .request-form input,
+#requestModal .request-form textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #39475d !important;
+    border-radius: 6px;
+    background: #111827 !important;
+    color: #f8fafc !important;
+    font: inherit;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    box-shadow: none;
+}
+
+#requestModal .request-form input {
+    height: 42px;
+    padding: 0 0.75rem;
+}
+
+#requestModal .request-form textarea {
+    min-height: 76px;
+    padding: 0.65rem 0.75rem;
+    resize: vertical;
+}
+
+#requestModal .request-form input::placeholder,
+#requestModal .request-form textarea::placeholder {
+    color: #6f7e93;
+    opacity: 1;
+}
+
+#requestModal .request-form input:focus,
+#requestModal .request-form textarea:focus {
+    outline: none;
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+#requestModal .request-form__price {
+    grid-column: 1 / -1;
+    width: calc(50% - 0.5rem);
+}
+
+#requestModal .calc-row--full,
+#requestModal .calc-actions--full {
+    grid-column: 1 / -1;
+}
+
+#requestModal .request-form__contacts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+#requestModal .request-form__field {
+    min-width: 0;
+    gap: 0.38rem;
+}
+
+#requestModal .calc-actions--full {
+    margin: 0.1rem 0 0;
+}
+
+#requestModal .calc-actions--full .btn-primary {
+    min-height: 44px;
+    border-radius: 6px;
+}
+
+#requestModal #requestStatus:empty {
+    display: none;
+}
+
+#requestModal #requestStatus {
+    margin-top: 0.9rem;
+}
+
+body.request-modal-open {
+    overflow: hidden;
+}
+
+body.request-modal-open .floating-subscribe,
+body.request-modal-open .floating-wa,
+body.request-modal-open .back-to-top,
+body.request-modal-open #mobileBottomNav {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+@media (max-width: 640px) {
+    #requestModal {
+        padding: 10px;
+    }
+
+    #requestModal .request-modal__content {
+        max-height: calc(100dvh - 20px);
+        margin: 0 auto;
+    }
+
+    #requestModal .modal-header {
+        padding: 0.8rem 0.9rem;
+    }
+
+    #requestModal .modal-body {
+        padding: 0.85rem 0.9rem 1rem;
+    }
+
+    #requestModal .request-form {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+
+    #requestModal .request-form > .calc-row:not(.request-form__year) {
+        grid-column: 1 / -1;
+    }
+
+    #requestModal .request-form__price {
+        width: 100%;
+    }
+
+    #requestModal .request-form__contacts {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+
+    #requestModal .request-form__field:first-child {
+        grid-column: 1 / -1;
+    }
+
+    #requestModal .request-form input {
+        height: 40px;
+    }
+
+    #requestModal .request-form textarea {
+        min-height: 68px;
+    }
+}
+
 .seo-faq {
     padding: 4rem 0;
     background: #0b1220;

@@ -219,9 +219,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//formsubmit.co">
-    <link rel="preload" href="styles.css?v=20260508-home-georgia-stock" as="style">
+    <link rel="preload" href="styles.css?v=20260608-request-modal" as="style">
     <link rel="preload" href="premium-enhancements.css?v=20260508-home-georgia-stock" as="style">
-    <link rel="stylesheet" href="styles.css?v=20260508-home-georgia-stock">
+    <link rel="stylesheet" href="styles.css?v=20260608-request-modal">
     <link rel="stylesheet" href="premium-enhancements.css?v=20260508-home-georgia-stock">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -756,13 +756,13 @@
 
     <!-- Request Modal -->
     <div id="requestModal" class="modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
-        <div class="modal-content">
+        <div class="modal-content request-modal__content">
             <div class="modal-header">
                 <h3 id="requestModalTitle">Заявка на подбор</h3>
                 <button class="close" onclick="closeRequestModal()" aria-label="Закрыть">&times;</button>
             </div>
             <div class="modal-body">
-                <form id="requestForm" class="calc-form request-form" onsubmit="return false;">
+                <form id="requestForm" class="request-form" onsubmit="return false;">
                     <div class="calc-row">
                         <label for="reqBrand">Марка</label>
                         <input id="reqBrand" placeholder="Например, Toyota" required maxlength="100" autocomplete="off">
@@ -771,21 +771,21 @@
                         <label for="reqModel">Модель</label>
                         <input id="reqModel" placeholder="Например, Camry" required maxlength="100" autocomplete="off">
                     </div>
-                    <div class="calc-row">
+                    <div class="calc-row request-form__year">
                         <label for="reqYearFrom">Год выпуска (от)</label>
                         <input type="number" id="reqYearFrom" placeholder="2018" min="1990" max="2100">
                     </div>
-                    <div class="calc-row">
+                    <div class="calc-row request-form__year">
                         <label for="reqYearTo">Год выпуска (до)</label>
                         <input type="number" id="reqYearTo" placeholder="2024" min="1990" max="2100">
                     </div>
-                    <div class="calc-row">
+                    <div class="calc-row request-form__price">
                         <label for="reqPriceTo">Стоимость (до), $</label>
                         <input type="number" id="reqPriceTo" placeholder="3000000" min="0" step="1000">
                     </div>
                     <div class="calc-row calc-row--full">
                         <label for="reqNote">Примечание</label>
-                        <textarea id="reqNote" rows="4" placeholder="Пожелания по комплектации, цвету и т.д." maxlength="2000"></textarea>
+                        <textarea id="reqNote" rows="3" placeholder="Комплектация, цвет и другие пожелания" maxlength="2000"></textarea>
                     </div>
                     <div class="calc-row calc-row--full">
                         <div class="request-form__contacts">
@@ -836,7 +836,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=20260608-home-image-fallback"></script>
+    <script src="script.js?v=20260608-request-modal"></script>
     <script src="header.js?v=20260608-secondary-phone"></script>
     <script>
     (function() {
