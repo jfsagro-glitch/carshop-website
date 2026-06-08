@@ -1,4 +1,4 @@
-﻿const CACHE_VERSION = 'expo-mir-pwa-v6-home-georgia-stock';
+﻿const CACHE_VERSION = 'expo-mir-pwa-v7-home-europe-featured';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -19,6 +19,7 @@ const APP_SHELL = [
   '/cars_europe_new.json',
   '/cars_georgia_stock.json',
   '/data/telegram_top_offers.json',
+  '/data/home_featured_europe.json',
   '/data/featured_auction_offers.json',
   '/images/android-chrome-192x192.png',
   '/images/android-chrome-512x512.png',

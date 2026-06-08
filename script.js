@@ -2373,25 +2373,30 @@ async function loadTelegramOffersSection() {
     const meta = document.getElementById('telegramOffersMeta');
     if (!grid) return;
     try {
-        const [telegramResult, auctionResult] = await Promise.allSettled([
+        const [telegramResult, auctionResult, europeResult] = await Promise.allSettled([
             fetch('data/telegram_top_offers.json?v=20260515-turnkey-market', { cache: 'no-store' }),
-            fetch('data/featured_auction_offers.json?v=20260515-turnkey-market', { cache: 'no-store' })
+            fetch('data/featured_auction_offers.json?v=20260515-turnkey-market', { cache: 'no-store' }),
+            fetch('data/home_featured_europe.json?v=20260608', { cache: 'no-store' })
         ]);
         const telegramResponse = telegramResult.status === 'fulfilled' ? telegramResult.value : null;
         const auctionResponse = auctionResult.status === 'fulfilled' ? auctionResult.value : null;
-        if (!telegramResponse?.ok && !auctionResponse?.ok) throw new Error('No market feeds available');
+        const europeResponse = europeResult.status === 'fulfilled' ? europeResult.value : null;
+        if (!telegramResponse?.ok && !auctionResponse?.ok && !europeResponse?.ok) throw new Error('No market feeds available');
         const payload = telegramResponse?.ok ? await telegramResponse.json() : {};
         const auctionPayload = auctionResponse?.ok ? await auctionResponse.json() : {};
+        const europePayload = europeResponse?.ok ? await europeResponse.json() : {};
         const telegramOffers = Array.isArray(payload.offers) ? payload.offers.filter(isValidMarketOffer) : [];
         const auctionOffers = Array.isArray(auctionPayload.offers) ? auctionPayload.offers.map(item => ({
             ...item,
             source_type: 'auction_candidate',
             facts: ['аукционный кандидат', ...(item.facts || [])]
         })).filter(isValidMarketOffer) : [];
-        const offers = [...telegramOffers, ...auctionOffers].slice(0, 8);
+        const marketOffers = [...telegramOffers, ...auctionOffers].slice(0, 8);
+        const featuredEuropeOffers = Array.isArray(europePayload.offers) ? europePayload.offers : [];
+        const offers = [...featuredEuropeOffers, ...marketOffers];
         if (meta) {
             const dt = payload.generated_at ? new Date(payload.generated_at).toLocaleString('ru-RU') : '';
-            const displayedCount = Number(payload.displayed_count || telegramOffers.length || 0);
+            const displayedCount = offers.length;
             meta.textContent = `Подборка обновлена: ${dt || 'сегодня'}. Источников: ${payload.source_count || 0}, подходящих объявлений: ${displayedCount}. Показываем проходные предложения с расчётом под ключ в РФ.`;
         }
         if (!offers.length) {
@@ -2407,8 +2412,9 @@ async function loadTelegramOffersSection() {
             preloadOfferImages(images);
             const details = offer.details || {};
             const facts = (offer.facts || []).slice(0, 3).map(fact => `<span class="telegram-offer-card__chip">${escapeHtml(fact)}</span>`).join('');
-            const sourceLabel = offer.source_type === 'auction_candidate' ? 'Источник' : 'Пост';
-            const sourceIcon = offer.source_type === 'auction_candidate' ? 'fas fa-arrow-up-right-from-square' : 'fab fa-telegram-plane';
+            const catalogOffer = ['auction_candidate', 'europe_catalog'].includes(offer.source_type);
+            const sourceLabel = catalogOffer ? 'Источник' : 'Пост';
+            const sourceIcon = catalogOffer ? 'fas fa-arrow-up-right-from-square' : 'fab fa-telegram-plane';
             const msg = encodeURIComponent(`Интересует авто из главной подборки: ${offer.title}. Источник: ${offer.source}. Ориентир: ${offer.price || 'уточнить'}`);
             const sourceUrl = safeHttpUrl(offer.source_url, '#');
             const specs = [

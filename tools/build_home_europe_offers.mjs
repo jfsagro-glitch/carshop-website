@@ -1,0 +1,106 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(__dirname, '..');
+const sourcePath = path.join(rootDir, 'cars_europe_new.json');
+const outputPath = path.join(rootDir, 'data', 'home_featured_europe.json');
+
+const TARGETS = [
+  { brand: 'Audi', model: /(?:^|\s)A4(?:\s|$)/i },
+  { brand: 'BMW', model: /(?:^|\s)(?:3|3er|3[\s-]?series|31[68][di]?|32\d[di]?|33\d[di]?|34\d[di]?)(?:\s|$)/i },
+  { brand: 'Mercedes-Benz', model: /(?:^|\s)GLA(?:\s|$)/i },
+  { brand: 'Volkswagen', model: /(?:^|\s)Arteon(?:\s|$)/i },
+];
+
+function normalize(value) {
+  return String(value || '').toLowerCase().replace(/[^a-zа-я0-9]/g, '');
+}
+
+function images(car) {
+  return (Array.isArray(car.images) ? car.images : [])
+    .map((image) => typeof image === 'string' ? image : image?.url)
+    .filter(Boolean)
+    .slice(0, 12);
+}
+
+function matches(car, target) {
+  const modelText = `${car.model || ''} ${car.full_title || ''}`.trim();
+  return normalize(car.brand) === normalize(target.brand) && target.model.test(modelText);
+}
+
+function engineLabel(car) {
+  const cc = Number(car.engine_cc || 0);
+  const verified = String(car.engine_source || '').startsWith('autoscout24_');
+  if (!verified || cc < 500 || cc > 10000) return 'уточняется';
+  const liters = (cc / 1000).toLocaleString('ru-RU', { maximumFractionDigits: 3 });
+  return `${liters} ${car.fuel_type || ''}`.trim();
+}
+
+function powerLabel(car) {
+  const hp = Number(car.power_hp || 0);
+  const kw = Number(car.power_kw || 0);
+  if (hp && kw) return `${hp} л.с. / ${kw} кВт`;
+  if (hp) return `${hp} л.с.`;
+  if (kw) return `${kw} кВт`;
+  return 'уточняется';
+}
+
+function toOffer(car, target) {
+  const carImages = images(car);
+  const year = car.year || car.first_registration_year || '';
+  const title = `${car.brand || target.brand} ${car.model || ''} ${year}`.trim();
+  const turnkey = `${Math.round(Number(car.turnkey_price_rub)).toLocaleString('ru-RU')} ₽`;
+  const basePrice = `${Number(car.price).toLocaleString('ru-RU')} €`;
+
+  return {
+    channel: 'europe_catalog',
+    region: 'Европа',
+    source: 'AutoScout24',
+    source_type: 'europe_catalog',
+    source_url: car.url || '',
+    title,
+    year: String(year),
+    price: turnkey,
+    base_price: basePrice,
+    image: carImages[0],
+    images: carImages,
+    details: {
+      engine: engineLabel(car),
+      power: powerLabel(car),
+      mileage: `${Number(car.mileage).toLocaleString('ru-RU')} км`,
+    },
+    text_excerpt: `${car.full_title || title}. Цена в Европе ${basePrice}, стоимость под ключ в РФ ${turnkey}.`,
+    facts: ['выгодное предложение', 'пробег до 100 000 км', `цена в Европе: ${basePrice}`],
+  };
+}
+
+const cars = JSON.parse(await fs.readFile(sourcePath, 'utf8'));
+const offers = TARGETS.map((target) => {
+  const cheapest = cars
+    .filter((car) => matches(car, target))
+    .filter((car) => {
+      const mileage = Number(car.mileage || 0);
+      return mileage > 0
+        && mileage <= 100000
+        && Number(car.price || 0) > 0
+        && Number(car.turnkey_price_rub || 0) > 0
+        && car.turnkey_calculation_complete
+        && images(car).length > 0;
+    })
+    .sort((a, b) => Number(a.price) - Number(b.price))[0];
+  return cheapest ? toOffer(cheapest, target) : null;
+}).filter(Boolean);
+
+if (offers.length !== TARGETS.length) {
+  throw new Error(`Expected ${TARGETS.length} featured Europe offers, got ${offers.length}`);
+}
+
+await fs.writeFile(
+  outputPath,
+  `${JSON.stringify({ generated_at: new Date().toISOString(), offers }, null, 2)}\n`,
+  'utf8',
+);
+
+console.log(`Saved ${offers.length} featured Europe offers`);

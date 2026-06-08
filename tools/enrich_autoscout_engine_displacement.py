@@ -203,6 +203,47 @@ def should_enrich(record: dict, refresh: bool) -> bool:
     )
 
 
+def home_feature_target(record: dict) -> int:
+    mileage = float(record.get("mileage") or 0)
+    images = record.get("images") if isinstance(record.get("images"), list) else []
+    if not (0 < mileage <= 100000) or not images or not float(record.get("price") or 0):
+        return -1
+    brand = re.sub(r"[^a-z0-9]", "", str(record.get("brand") or "").lower())
+    model = f"{record.get('model') or ''} {record.get('full_title') or ''}"
+    targets = (
+        ("audi", r"(?:^|\s)a4(?:\s|$)"),
+        ("bmw", r"(?:^|\s)(?:3|3er|3[\s-]?series|31[68][di]?|32\d[di]?|33\d[di]?|34\d[di]?)(?:\s|$)"),
+        ("mercedesbenz", r"(?:^|\s)gla(?:\s|$)"),
+        ("volkswagen", r"(?:^|\s)arteon(?:\s|$)"),
+    )
+    for index, (target_brand, pattern) in enumerate(targets):
+        if brand == target_brand and re.search(pattern, model, re.I):
+            return index
+    return -1
+
+
+def prioritize_candidates(candidates: list[tuple[int, dict]]) -> list[tuple[int, dict]]:
+    buckets = [[] for _ in range(4)]
+    remaining = []
+    for candidate in candidates:
+        target = home_feature_target(candidate[1])
+        (buckets[target] if target >= 0 else remaining).append(candidate)
+    for bucket in buckets:
+        bucket.sort(key=lambda item: float(item[1].get("price") or float("inf")))
+
+    prioritized = []
+    for offset in range(12):
+        for bucket in buckets:
+            if offset < len(bucket):
+                prioritized.append(bucket[offset])
+    selected = {index for index, _ in prioritized}
+    prioritized.extend(
+        candidate for bucket in buckets for candidate in bucket if candidate[0] not in selected
+    )
+    prioritized.extend(remaining)
+    return prioritized
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", default="cars_europe_new.json")
@@ -218,7 +259,11 @@ def main() -> int:
     path = Path(args.input)
     payload = json.loads(path.read_text(encoding="utf-8-sig"))
     records = payload if isinstance(payload, list) else [payload]
-    candidates = [(index, item) for index, item in enumerate(records) if should_enrich(item, args.refresh)]
+    candidates = prioritize_candidates([
+        (index, item)
+        for index, item in enumerate(records)
+        if should_enrich(item, args.refresh)
+    ])
     if args.limit:
         candidates = candidates[: args.limit]
 
