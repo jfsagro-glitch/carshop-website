@@ -81,7 +81,7 @@ export function resultToText(result) {
     `Цена авто + платежи: ${formatRub(result.totalWithCarRub)}`,
   ];
   if (result.warnings.length) {
-    lines.push('', 'Предупреждения:', ...result.warnings.map((item) => `- ${item}`));
+    lines.push('', 'Важно:', ...result.warnings.map((item) => `- ${item}`));
   }
   return lines.join('\n');
 }
@@ -91,7 +91,7 @@ function renderMessages(result) {
   const warnings = result.warnings.map((item) => `<li>${escapeHtml(item)}</li>`).join('');
   return `
     ${errors ? `<div class="cc-message cc-message--error"><strong>Проверьте поля</strong><ul>${errors}</ul></div>` : ''}
-    ${warnings ? `<div class="cc-message"><strong>Предупреждения</strong><ul>${warnings}</ul></div>` : ''}
+    ${warnings ? `<div class="cc-message"><strong>Важно</strong><ul>${warnings}</ul></div>` : ''}
   `;
 }
 

@@ -191,9 +191,7 @@ export function calculateRecyclingFee(input, ageBand, powerHp) {
 }
 
 export function calculateCustoms(input) {
-  const warnings = [
-    'Калькулятор не является юридическим заключением.',
-  ];
+  const warnings = [];
   const errors = validateInput(input);
   const breakdown = [];
   let isComplete = errors.length === 0;

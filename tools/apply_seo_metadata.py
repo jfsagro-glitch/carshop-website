@@ -25,7 +25,7 @@ PAGES = {
     "georgia-stock.html": {
         "path": "/georgia-stock.html",
         "title": "Автомобили из Грузии в наличии и под заказ — EXPO MIR",
-        "description": "Актуальный каталог автомобилей из Грузии с фото, пробегом, характеристиками и расчётом цены под ключ в РФ. Проверка и доставка без предоплаты.",
+        "description": "Актуальный каталог автомобилей из Грузии с фото, пробегом, характеристиками и расчётом цены под ключ в РФ. Проверка и доставка.",
         "name": "Автомобили из Грузии",
         "kind": "CollectionPage",
         "service": "Подбор и доставка автомобилей из Грузии",
@@ -100,6 +100,7 @@ PAGES = {
 
 MANAGED_TAGS = re.compile(
     r"\s*<(?:meta|link)\b[^>]*\bdata-seo-managed=[\"']true[\"'][^>]*>\s*"
+    r"|\s*<title\b[^>]*\bdata-seo-managed=[\"']true[\"'][^>]*>.*?</title>\s*"
     r"|\s*<script\b[^>]*\bdata-seo-managed=[\"']true[\"'][^>]*>.*?</script>\s*",
     re.IGNORECASE | re.DOTALL,
 )
