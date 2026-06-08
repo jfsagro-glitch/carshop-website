@@ -236,8 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setLanguage(savedLang);
     }
     if (typeof setCurrency === 'function') {
-        const savedCurrency = localStorage.getItem('currency') || 'USD';
-        setCurrency(savedCurrency);
+        setCurrency('RUB');
     }
 });
 

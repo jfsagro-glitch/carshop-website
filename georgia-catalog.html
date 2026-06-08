@@ -33,7 +33,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="translations.js"></script>
+    <script src="translations.js?v=20260608-rub-only"></script>
     <script src="supabase-client.js"></script>
     <script type="application/ld+json">
     {
@@ -68,14 +68,6 @@
                     <a href="europe-orders.html" data-i18n="nav_europe">Европа</a>
                 </nav>
                 <div class="header-actions">
-                    <div class="currency-selector">
-                        <select id="currencySelector" class="currency-select" onchange="setCurrency(this.value)" aria-label="Выбор валюты">
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="KGS">сом</option>
-                            <option value="RUB">RUB</option>
-                        </select>
-                    </div>
                     <div class="language-selector">
                         <select id="languageSelector" class="language-select" onchange="setLanguage(this.value)" aria-label="Выбор языка">
                             <option value="ru" data-flag="images/Lang/rus.png">RU</option>

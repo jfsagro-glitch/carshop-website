@@ -542,8 +542,9 @@ const currencies = {
     RUB: { symbol: '₽', name: { ru: 'Российский рубль', en: 'Russian Ruble', ky: 'Орус рублу' } }
 };
 
-// Текущая валюта (по умолчанию USD)
-let currentCurrency = localStorage.getItem('currency') || 'USD';
+// Каталожные цены на сайте фиксированно показываются в рублях.
+let currentCurrency = 'RUB';
+localStorage.setItem('currency', currentCurrency);
 
 // Курсы валют (будут загружены с API ЦБ)
 let exchangeRates = {
@@ -597,9 +598,8 @@ function formatPrice(priceInUsd, currency = currentCurrency) {
 
 // Функция переключения валюты
 function setCurrency(currency) {
-    if (!currencies[currency]) return;
-    currentCurrency = currency;
-    localStorage.setItem('currency', currency);
+    currentCurrency = 'RUB';
+    localStorage.setItem('currency', currentCurrency);
     updateCurrencySelector();
     updateAllPrices();
 }
