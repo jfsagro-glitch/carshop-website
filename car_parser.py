@@ -2198,6 +2198,9 @@ class AutoScout24Parser:
         ("Opel Mokka", "opel/mokka", "Opel", re.compile(r"^mokka(?:\s|$)", re.I), 12),
         ("Opel Crossland", "opel/crossland", "Opel", re.compile(r"^crossland(?:\s|$)", re.I), 12),
     )
+    PRIORITY_BRAND_SEARCHES = (
+        ("Skoda", "skoda", 12),
+    )
 
     UA_LIST = [
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
@@ -2428,6 +2431,16 @@ class AutoScout24Parser:
         self._collect_pages(records, seen_ids, seen_models, stop_at_max=True)
         for brand_name, brand_slug in self.PRIORITY_BRANDS.items():
             self._collect_pages(records, seen_ids, seen_models, brand_name, brand_slug, stop_at_max=False)
+        for brand_name, brand_slug, page_cap in self.PRIORITY_BRAND_SEARCHES:
+            self._collect_pages(
+                records,
+                seen_ids,
+                seen_models,
+                brand_name,
+                brand_slug,
+                stop_at_max=False,
+                page_cap=page_cap,
+            )
         for label, model_slug, brand_name, model_pattern, page_cap in self.PRIORITY_MODELS:
             self._collect_pages(
                 records,

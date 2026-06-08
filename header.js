@@ -126,6 +126,55 @@
     document.body.appendChild(btn);
   }
 
+  /* ── Secondary contact phone ─────────────────────────────── */
+  function initSecondaryContactPhone() {
+    var page = (location.pathname.split('/').pop() || '').toLowerCase();
+    if (page.indexOf('avtostok') !== -1) return;
+    if (document.querySelector('[data-secondary-contact-phone]')) return;
+
+    var phoneHref = 'tel:+79184140636';
+    var whatsappHref = 'https://wa.me/79184140636';
+    var phoneLabel = '+7 918 414 06 36';
+    var primaryPhoneItem = Array.prototype.find.call(
+      document.querySelectorAll('.contact-item'),
+      function (item) {
+        return item.querySelector('a[href^="tel:"]');
+      }
+    );
+
+    if (primaryPhoneItem && primaryPhoneItem.parentElement) {
+      var contactItem = document.createElement('div');
+      contactItem.className = 'contact-item';
+      contactItem.setAttribute('data-secondary-contact-phone', '');
+      contactItem.innerHTML = [
+        '<i class="fas fa-phone-alt"></i>',
+        '<div>',
+        '  <h4>Дополнительный телефон</h4>',
+        '  <p><a href="' + phoneHref + '">' + phoneLabel + '</a></p>',
+        '  <p><a href="' + whatsappHref + '" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>',
+        '</div>',
+      ].join('');
+      primaryPhoneItem.insertAdjacentElement('afterend', contactItem);
+    }
+
+    document.querySelectorAll('.footer-section').forEach(function (section) {
+      var heading = section.querySelector('h4');
+      if (!heading || heading.textContent.trim().toLowerCase() !== 'контакты') return;
+      if (section.querySelector('[data-secondary-contact-phone]')) return;
+      var row = document.createElement('p');
+      row.setAttribute('data-secondary-contact-phone', '');
+      row.innerHTML = [
+        '<i class="fas fa-phone footer-icon"></i>',
+        '<a href="' + phoneHref + '">' + phoneLabel + '</a>',
+        ' · <a href="' + whatsappHref + '" target="_blank" rel="noopener noreferrer">WhatsApp</a>',
+      ].join('');
+      var firstPhone = section.querySelector('a[href^="tel:"]');
+      var firstPhoneRow = firstPhone ? firstPhone.closest('p') : null;
+      if (firstPhoneRow) firstPhoneRow.insertAdjacentElement('afterend', row);
+      else section.appendChild(row);
+    });
+  }
+
   /* ── Cart badge pulse on add ─────────────────────────────── */
   function initCartBadgePulse() {
     var countEl = document.getElementById('cartCount');
@@ -415,6 +464,7 @@
     initStickyHeader();
     initScrollToTop();
     initWhatsAppButton();
+    initSecondaryContactPhone();
     initCartBadgePulse();
     initModalClose();
     initMobileMenu();
