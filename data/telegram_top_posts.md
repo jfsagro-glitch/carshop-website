@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-08T08:12:29Z
+Generated: 2026-06-09T07:56:43Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -167,7 +167,7 @@ Generated: 2026-06-08T08:12:29Z
 Источник мониторинга: @AutopodborGeo
 
 Фото:
-- https://cdn4.telesco.pe/file/HHIyNOyt7KYQNZcW5X99wKVBoDDjn55wAQHhiPd0xNyp4HmmbzGQetGwHilpD3LtB-PbcgcuaSLIx793pxfS2TJ1cXKMYYx4Ups_YK_WYRoFUxrnCp9Sv3Wpst114GgXL4Vrt5K-CGzMAO4uG6exKV3VeGeQ9egUufLr-_he_j-mts4mWV-QrMmmkNkhSkkXXE5s051QYCcTdDu0saoX3jrhp6QbdlKOItkYgV-BrN796lzG0teRO37F31E7rcwEcYf3v2UxoKy5t8SU1-q3jp2hQ6-R3-7NTsTbbDalCe95senBUG5-I4sMgVafp7wlEoRj1OYZhd_Ssc-_oslpBQ.jpg
+- https://cdn4.telesco.pe/file/agkbNiLUfG5-G5q9nSCRXhdGs_jxxpXRO5GOIzfG7fE9Aytu8aamrIi1GAtVmcJ5Jv-Xg0uGR5omFxvabXkV6P_44gJDAPduXVmsVIpu1b5VmEwOFJ2ZBLSMZJF-lk9QCCpbPTSmngtJyV2GfNMHi8K1BHjrrhP67_m-gEaAmdaaiNTKMYuXz6_pxh2gpx1lW6yo7U2VwAHY3MX1jZA3SnMqR3EUziSs7qy5zP8wXUjAEqh8_uzWUKdSaDEXsjKqQYWypFdBnNQaZtPZS9UYdrK9c8HIm4tfxcPq9Ur1t2IvxinFZAThrNbtGrc1YWYrvKPCgIbbEY-gFxaqeBgfXQ.jpg
 
 ## 7. Hyundai Kona — @autodeskusa
 
@@ -197,6 +197,57 @@ Generated: 2026-06-08T08:12:29Z
 
 📍 Направление: Грузия
 📅 Год: 2023
+💰 Ориентир: $15 500
+⚙️ Двигатель: 1,3 Бензин
+🐎 Мощность: 155 л.с. / 114 кВт
+🛣️ Пробег: 25 000 км
+• проходной возраст 3-5 лет
+• до 160 л.с. / 116 кВт
+• доставка и растаможка в РФ
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/37368925626
+Источник мониторинга: MyAuto Georgia
+
+Фото:
+- https://static.my.ge/myauto/photos/9/0/8/3/2/large/122238097_1.jpg?v=0
+
+## 9. Dacia Jogger 2023 — AutoScout24 / mobile.de
+
+🔥 Dacia Jogger 2023
+
+📍 Направление: Европа
+📅 Год: 2023
+💰 Ориентир: 17 490 €
+⚙️ Двигатель: 0,999 Бензин
+🐎 Мощность: 91 л.с. / 67 кВт
+🛣️ Пробег: 34 460 км
+• проходной возраст 3-5 лет
+• до 160 л.с. / 116 кВт
+• доставка и растаможка в РФ
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/37368925626
+Источник мониторинга: AutoScout24 / mobile.de
+
+Фото:
+- https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_cffdf2fb-c735-4f5d-99e5-85a8ae81e95d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_093b40ec-f72b-4e97-bc77-9f28024bf5c7.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_332b43f9-6d77-458d-a272-04cb854d1506.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_8d87cad6-db90-4a78-a7fa-934abb6d3598.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_1cbeae23-21c7-46ff-a9a3-f34d4fe03e43.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_c2b0f804-eee0-4cda-bbd4-1f6752074d8f.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_bbcfb4bf-e02f-4392-a8a9-a7b41144e1be.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_cf65ad61-5fb9-487e-b387-373d9abe48d0.jpg/1024x768.webp
+
+## 10. Chevrolet Trailblazer 2023 — MyAuto Georgia
+
+🔥 Chevrolet Trailblazer 2023
+
+📍 Направление: Грузия
+📅 Год: 2023
 💰 Ориентир: $16 800
 ⚙️ Двигатель: 1,3 Бензин
 🐎 Мощность: 156 л.с. / 115 кВт
@@ -212,54 +263,3 @@ Generated: 2026-06-08T08:12:29Z
 
 Фото:
 - https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_1.jpg?v=1
-
-## 9. Toyota C-HR 2023 — AutoScout24 / mobile.de
-
-🔥 Toyota C-HR 2023
-
-📍 Направление: Европа
-📅 Год: 2023
-💰 Ориентир: 23 990 €
-⚙️ Двигатель: Гибрид
-🐎 Мощность: 122 л.с. / 90 кВт
-🛣️ Пробег: 16 335 км
-• проходной возраст 3-5 лет
-• до 160 л.с. / 116 кВт
-• доставка и растаможка в РФ
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/37368925626
-Источник мониторинга: AutoScout24 / mobile.de
-
-Фото:
-- https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_415a41a8-1b2d-4c50-b1a7-503f9400d6c0.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_95a6219e-2b45-4f42-afa9-b16b7237d9a5.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_b4a699d7-2a0c-4894-bffd-c851277aeec0.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_2b1d0212-e2d8-4713-901d-2ce532fd52e7.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_c0668621-955c-439d-a1ad-2ca0ddf01183.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_eb365e98-7c6f-445c-b168-f24d524e07d8.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_8699458c-824c-44df-9918-760a29c9968a.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_6f82c162-0de1-4111-ab35-f60f5a2417fa.jpg/1024x768.webp
-
-## 10. Honda HR-V 2023 — MyAuto Georgia
-
-🔥 Honda HR-V 2023
-
-📍 Направление: Грузия
-📅 Год: 2023
-💰 Ориентир: $17 700
-⚙️ Двигатель: 2,0 Бензин
-🐎 Мощность: 158 л.с. / 116 кВт
-🛣️ Пробег: 15 000 км
-• проходной возраст 3-5 лет
-• до 160 л.с. / 116 кВт
-• доставка и растаможка в РФ
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/37368925626
-Источник мониторинга: MyAuto Georgia
-
-Фото:
-- https://static.my.ge/myauto/photos/8/6/2/0/9/large/120902685_1.jpg?v=15

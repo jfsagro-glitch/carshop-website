@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-08T08:12:29Z",
+  "generated_at": "2026-06-09T07:56:43Z",
   "source_count": 46,
-  "parsed_posts": 2,
+  "parsed_posts": 1,
   "displayed_count": 10,
   "errors": [],
   "offers": [
@@ -217,9 +217,9 @@
       "title": "Mitsubishi Eclipse Cross",
       "year": "2021",
       "price": "1.700.000 ₽",
-      "image": "https://cdn4.telesco.pe/file/HHIyNOyt7KYQNZcW5X99wKVBoDDjn55wAQHhiPd0xNyp4HmmbzGQetGwHilpD3LtB-PbcgcuaSLIx793pxfS2TJ1cXKMYYx4Ups_YK_WYRoFUxrnCp9Sv3Wpst114GgXL4Vrt5K-CGzMAO4uG6exKV3VeGeQ9egUufLr-_he_j-mts4mWV-QrMmmkNkhSkkXXE5s051QYCcTdDu0saoX3jrhp6QbdlKOItkYgV-BrN796lzG0teRO37F31E7rcwEcYf3v2UxoKy5t8SU1-q3jp2hQ6-R3-7NTsTbbDalCe95senBUG5-I4sMgVafp7wlEoRj1OYZhd_Ssc-_oslpBQ.jpg",
+      "image": "https://cdn4.telesco.pe/file/agkbNiLUfG5-G5q9nSCRXhdGs_jxxpXRO5GOIzfG7fE9Aytu8aamrIi1GAtVmcJ5Jv-Xg0uGR5omFxvabXkV6P_44gJDAPduXVmsVIpu1b5VmEwOFJ2ZBLSMZJF-lk9QCCpbPTSmngtJyV2GfNMHi8K1BHjrrhP67_m-gEaAmdaaiNTKMYuXz6_pxh2gpx1lW6yo7U2VwAHY3MX1jZA3SnMqR3EUziSs7qy5zP8wXUjAEqh8_uzWUKdSaDEXsjKqQYWypFdBnNQaZtPZS9UYdrK9c8HIm4tfxcPq9Ur1t2IvxinFZAThrNbtGrc1YWYrvKPCgIbbEY-gFxaqeBgfXQ.jpg",
       "images": [
-        "https://cdn4.telesco.pe/file/HHIyNOyt7KYQNZcW5X99wKVBoDDjn55wAQHhiPd0xNyp4HmmbzGQetGwHilpD3LtB-PbcgcuaSLIx793pxfS2TJ1cXKMYYx4Ups_YK_WYRoFUxrnCp9Sv3Wpst114GgXL4Vrt5K-CGzMAO4uG6exKV3VeGeQ9egUufLr-_he_j-mts4mWV-QrMmmkNkhSkkXXE5s051QYCcTdDu0saoX3jrhp6QbdlKOItkYgV-BrN796lzG0teRO37F31E7rcwEcYf3v2UxoKy5t8SU1-q3jp2hQ6-R3-7NTsTbbDalCe95senBUG5-I4sMgVafp7wlEoRj1OYZhd_Ssc-_oslpBQ.jpg"
+        "https://cdn4.telesco.pe/file/agkbNiLUfG5-G5q9nSCRXhdGs_jxxpXRO5GOIzfG7fE9Aytu8aamrIi1GAtVmcJ5Jv-Xg0uGR5omFxvabXkV6P_44gJDAPduXVmsVIpu1b5VmEwOFJ2ZBLSMZJF-lk9QCCpbPTSmngtJyV2GfNMHi8K1BHjrrhP67_m-gEaAmdaaiNTKMYuXz6_pxh2gpx1lW6yo7U2VwAHY3MX1jZA3SnMqR3EUziSs7qy5zP8wXUjAEqh8_uzWUKdSaDEXsjKqQYWypFdBnNQaZtPZS9UYdrK9c8HIm4tfxcPq9Ur1t2IvxinFZAThrNbtGrc1YWYrvKPCgIbbEY-gFxaqeBgfXQ.jpg"
       ],
       "details": {
         "engine": "1.5",
@@ -270,6 +270,73 @@
       "region": "Грузия",
       "source": "MyAuto Georgia",
       "source_type": "catalog_fallback",
+      "source_url": "https://myauto.ge/ru/pr/122238097",
+      "title": "Chevrolet Trailblazer 2023",
+      "year": "2023",
+      "price": "$15 500",
+      "image": "https://static.my.ge/myauto/photos/9/0/8/3/2/large/122238097_1.jpg?v=0",
+      "images": [
+        "https://static.my.ge/myauto/photos/9/0/8/3/2/large/122238097_1.jpg?v=0"
+      ],
+      "details": {
+        "engine": "1,3 Бензин",
+        "power": "155 л.с. / 114 кВт",
+        "mileage": "25 000 км"
+      },
+      "text_excerpt": "Chevrolet Trailblazer 2023: проходной автомобиль Грузия, 1,3 Бензин, 155 л.с. / 114 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "доставка и растаможка в РФ"
+      ],
+      "score": 2386,
+      "quality": "candidate",
+      "telegram_post": "🔥 Chevrolet Trailblazer 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $15 500\n⚙️ Двигатель: 1,3 Бензин\n🐎 Мощность: 155 л.с. / 114 кВт\n🛣️ Пробег: 25 000 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: MyAuto Georgia"
+    },
+    {
+      "channel": "europe_catalog",
+      "region": "Европа",
+      "source": "AutoScout24 / mobile.de",
+      "source_type": "catalog_fallback",
+      "source_url": "https://www.autoscout24.de/angebote/dacia-jogger-tce-100-eco-g-7-sitzer-extreme+-benzin-cat_ma16360mo76029-469e892a-230b-4cb7-80c2-3122c1c5c99e",
+      "title": "Dacia Jogger 2023",
+      "year": "2023",
+      "price": "17 490 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_cffdf2fb-c735-4f5d-99e5-85a8ae81e95d.jpg/1024x768.webp",
+      "images": [
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_cffdf2fb-c735-4f5d-99e5-85a8ae81e95d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_093b40ec-f72b-4e97-bc77-9f28024bf5c7.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_332b43f9-6d77-458d-a272-04cb854d1506.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_8d87cad6-db90-4a78-a7fa-934abb6d3598.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_1cbeae23-21c7-46ff-a9a3-f34d4fe03e43.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_c2b0f804-eee0-4cda-bbd4-1f6752074d8f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_bbcfb4bf-e02f-4392-a8a9-a7b41144e1be.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_cf65ad61-5fb9-487e-b387-373d9abe48d0.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_4839104d-20a9-4e5e-858a-0e226a575329.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_01d989f8-1d2c-417f-9f62-f31f4a7b2200.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_2dc96870-0cd2-42cc-9007-e7f877c6a5fb.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/469e892a-230b-4cb7-80c2-3122c1c5c99e_78fb23de-0cd2-4f91-92f3-14594576d25a.jpg/1024x768.webp"
+      ],
+      "details": {
+        "engine": "0,999 Бензин",
+        "power": "91 л.с. / 67 кВт",
+        "mileage": "34 460 км"
+      },
+      "text_excerpt": "Dacia Jogger 2023: проходной автомобиль Европа, 0,999 Бензин, 91 л.с. / 67 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "доставка и растаможка в РФ"
+      ],
+      "score": 2386,
+      "quality": "candidate",
+      "telegram_post": "🔥 Dacia Jogger 2023\n\n📍 Направление: Европа\n📅 Год: 2023\n💰 Ориентир: 17 490 €\n⚙️ Двигатель: 0,999 Бензин\n🐎 Мощность: 91 л.с. / 67 кВт\n🛣️ Пробег: 34 460 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: AutoScout24 / mobile.de"
+    },
+    {
+      "channel": "myauto_georgia",
+      "region": "Грузия",
+      "source": "MyAuto Georgia",
+      "source_type": "catalog_fallback",
       "source_url": "https://myauto.ge/ru/pr/121731602",
       "title": "Chevrolet Trailblazer 2023",
       "year": "2023",
@@ -292,73 +359,6 @@
       "score": 2386,
       "quality": "candidate",
       "telegram_post": "🔥 Chevrolet Trailblazer 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $16 800\n⚙️ Двигатель: 1,3 Бензин\n🐎 Мощность: 156 л.с. / 115 кВт\n🛣️ Пробег: 45 000 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: MyAuto Georgia"
-    },
-    {
-      "channel": "europe_catalog",
-      "region": "Европа",
-      "source": "AutoScout24 / mobile.de",
-      "source_type": "catalog_fallback",
-      "source_url": "https://www.autoscout24.de/angebote/toyota-c-hr-hybrid-team-d-1-8-eu6d-navi-led-acc-apple-carplay-elektro-benzin-blau-cat_ma70mo74374-05b85d59-171a-4a4d-8868-574fe771413e",
-      "title": "Toyota C-HR 2023",
-      "year": "2023",
-      "price": "23 990 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_415a41a8-1b2d-4c50-b1a7-503f9400d6c0.jpg/1024x768.webp",
-      "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_415a41a8-1b2d-4c50-b1a7-503f9400d6c0.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_95a6219e-2b45-4f42-afa9-b16b7237d9a5.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_b4a699d7-2a0c-4894-bffd-c851277aeec0.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_2b1d0212-e2d8-4713-901d-2ce532fd52e7.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_c0668621-955c-439d-a1ad-2ca0ddf01183.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_eb365e98-7c6f-445c-b168-f24d524e07d8.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_8699458c-824c-44df-9918-760a29c9968a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_6f82c162-0de1-4111-ab35-f60f5a2417fa.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_0c634c63-d505-413c-b264-3baaa8d521f2.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_99366673-1a88-4801-8baf-2a79d0f5b717.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_57d0194d-96ba-4e77-876a-c5db5035379b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/05b85d59-171a-4a4d-8868-574fe771413e_5caa8dfe-29e0-4aa6-8c89-9e164c8bf51a.jpg/1024x768.webp"
-      ],
-      "details": {
-        "engine": "Гибрид",
-        "power": "122 л.с. / 90 кВт",
-        "mileage": "16 335 км"
-      },
-      "text_excerpt": "Toyota C-HR 2023: проходной автомобиль Европа, Гибрид, 122 л.с. / 90 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2386,
-      "quality": "candidate",
-      "telegram_post": "🔥 Toyota C-HR 2023\n\n📍 Направление: Европа\n📅 Год: 2023\n💰 Ориентир: 23 990 €\n⚙️ Двигатель: Гибрид\n🐎 Мощность: 122 л.с. / 90 кВт\n🛣️ Пробег: 16 335 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: AutoScout24 / mobile.de"
-    },
-    {
-      "channel": "myauto_georgia",
-      "region": "Грузия",
-      "source": "MyAuto Georgia",
-      "source_type": "catalog_fallback",
-      "source_url": "https://myauto.ge/ru/pr/120902685",
-      "title": "Honda HR-V 2023",
-      "year": "2023",
-      "price": "$17 700",
-      "image": "https://static.my.ge/myauto/photos/8/6/2/0/9/large/120902685_1.jpg?v=15",
-      "images": [
-        "https://static.my.ge/myauto/photos/8/6/2/0/9/large/120902685_1.jpg?v=15"
-      ],
-      "details": {
-        "engine": "2,0 Бензин",
-        "power": "158 л.с. / 116 кВт",
-        "mileage": "15 000 км"
-      },
-      "text_excerpt": "Honda HR-V 2023: проходной автомобиль Грузия, 2,0 Бензин, 158 л.с. / 116 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2386,
-      "quality": "candidate",
-      "telegram_post": "🔥 Honda HR-V 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $17 700\n⚙️ Двигатель: 2,0 Бензин\n🐎 Мощность: 158 л.с. / 116 кВт\n🛣️ Пробег: 15 000 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: MyAuto Georgia"
     }
   ]
 }
