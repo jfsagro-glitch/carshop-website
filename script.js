@@ -2368,11 +2368,47 @@ function preloadOfferImages(images) {
     });
 }
 
+function loadOfferImage(url, timeoutMs = 8000) {
+    return new Promise(resolve => {
+        const img = new Image();
+        const timer = setTimeout(() => {
+            img.onload = null;
+            img.onerror = null;
+            resolve(false);
+        }, timeoutMs);
+        img.onload = () => {
+            clearTimeout(timer);
+            resolve(img.naturalWidth > 0 && img.naturalHeight > 0);
+        };
+        img.onerror = () => {
+            clearTimeout(timer);
+            resolve(false);
+        };
+        img.src = url;
+    });
+}
+
+async function prepareOfferWithPhoto(offer) {
+    const rawImages = Array.isArray(offer?.images) && offer.images.length
+        ? offer.images.filter(Boolean)
+        : [offer?.image].filter(Boolean);
+    const images = rawImages.map(src => safeHttpUrl(src, '')).filter(Boolean);
+    for (let index = 0; index < Math.min(images.length, 4); index += 1) {
+        if (await loadOfferImage(images[index])) {
+            return {
+                ...offer,
+                image: images[index],
+                images: [images[index], ...images.filter((_, imageIndex) => imageIndex !== index)]
+            };
+        }
+    }
+    return null;
+}
+
 function showNextOfferImage(img) {
     const card = img.closest('.telegram-offer-card');
     if (!card) {
-        img.onerror = null;
-        img.src = telegramFallbackImage('EXPO MIR');
+        img.remove();
         return;
     }
     let images = [];
@@ -2385,7 +2421,11 @@ function showNextOfferImage(img) {
     img.dataset.failedImages = String(failed);
     if (failed >= images.length) {
         img.onerror = null;
-        img.src = telegramFallbackImage('EXPO MIR');
+        card.remove();
+        const grid = document.getElementById('telegramOffersGrid');
+        if (grid && !grid.querySelector('.telegram-offer-card')) {
+            grid.innerHTML = '<div class="usa-empty-state">Пока нет предложений с доступными фотографиями</div>';
+        }
         return;
     }
     const nextIndex = (Number(card.dataset.galleryActive || 0) + 1) % images.length;
@@ -2420,7 +2460,8 @@ async function loadTelegramOffersSection() {
         })).filter(isValidMarketOffer) : [];
         const marketOffers = [...telegramOffers, ...auctionOffers].slice(0, 8);
         const featuredEuropeOffers = Array.isArray(europePayload.offers) ? europePayload.offers : [];
-        const offers = [...featuredEuropeOffers, ...marketOffers];
+        const candidateOffers = [...featuredEuropeOffers, ...marketOffers];
+        const offers = (await Promise.all(candidateOffers.map(prepareOfferWithPhoto))).filter(Boolean);
         if (meta) {
             const dt = payload.generated_at ? new Date(payload.generated_at).toLocaleString('ru-RU') : '';
             const displayedCount = offers.length;
@@ -2431,11 +2472,11 @@ async function loadTelegramOffersSection() {
             return;
         }
         grid.innerHTML = offers.map((offer, index) => {
-            const rawImages = Array.isArray(offer.images) && offer.images.length ? offer.images.filter(Boolean) : [offer.image || telegramFallbackImage(offer.title)];
+            const rawImages = Array.isArray(offer.images) && offer.images.length ? offer.images.filter(Boolean) : [offer.image].filter(Boolean);
             const images = rawImages
                 .map(src => safeHttpUrl(src, ''))
                 .filter(Boolean);
-            if (!images.length) images.push(telegramFallbackImage(offer.title));
+            if (!images.length) return '';
             preloadOfferImages(images);
             const details = offer.details || {};
             const facts = (offer.facts || []).slice(0, 3).map(fact => `<span class="telegram-offer-card__chip">${escapeHtml(fact)}</span>`).join('');
