@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-10T03:54:26Z
+Generated: 2026-06-10T08:20:07Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -213,16 +213,16 @@ Generated: 2026-06-10T03:54:26Z
 Фото:
 - https://static.my.ge/myauto/photos/9/0/8/3/2/large/122238097_1.jpg?v=0
 
-## 9. Opel Corsa 2023 — AutoScout24 / mobile.de
+## 9. Jeep Compass 2023 — AutoScout24 / mobile.de
 
-🔥 Opel Corsa 2023
+🔥 Jeep Compass 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 16 890 €
-⚙️ Двигатель: 1,199 Бензин
-🐎 Мощность: 100 л.с. / 74 кВт
-🛣️ Пробег: 37 115 км
+💰 Ориентир: 25 080 €
+⚙️ Двигатель: 1,469 Бензин
+🐎 Мощность: 131 л.с. / 96 кВт
+🛣️ Пробег: 13 536 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -233,14 +233,14 @@ Generated: 2026-06-10T03:54:26Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_21154906-fc5a-4b64-81da-d79d1c4f2df7.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_3f27609c-17c0-4023-ba22-ce6d1b67d5eb.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_ffa8c280-4749-40b9-9955-29cc1e2eaf06.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_33a72613-697f-4a00-8d6b-ce281a1ddf01.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_37f85635-68fd-49e4-8104-81df3dae595f.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_7dadf096-f04e-4b56-89cb-ca48fdbb36a9.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_fcdf99df-ae35-46f5-9078-d5784b56ed44.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_8d710dc3-7c20-43d5-b802-afe2c36980c2.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_93212632-798a-4966-8a18-5f13e6bbb5c3.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_97ef2be3-73c6-477e-8b1d-b4b2aee5650f.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_d032146c-07f2-4ede-9709-546af8df1e20.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_cdac1070-60e1-4876-add8-836c939e4340.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_4b2cab9e-e3ca-4039-b2ae-2f5d9df68547.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_4469df82-00fb-4fce-b224-4ddd74655b56.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_56e6cbcb-c605-4065-baa9-0149478b124b.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_31e54de8-6836-4494-9a75-f12c730fc1bc.jpg/1024x768.webp
 
 ## 10. Honda HR-V 2023 — MyAuto Georgia
 
