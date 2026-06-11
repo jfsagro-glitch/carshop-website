@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-10T15:57:18Z
+Generated: 2026-06-11T15:57:43Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -167,7 +167,7 @@ Generated: 2026-06-10T15:57:18Z
 Источник мониторинга: @AutopodborGeo
 
 Фото:
-- https://cdn4.telesco.pe/file/UekrdmhTYlYXVvddmf794imf3EdQkTDIbNOi4oe-3nZA8SAcB7ZdADrQjgINnNw1RGZjJNJJ-S3lE6oS0L_mDcoLyttYiSvL34QS974M-3HcKyeis3_RLuB0zorBng7DAQPScTxflMbH4GCgnK-X7906HE11ow3qC7PdRm-nWUcptGqmVDmYlG1-ujQeP9tvr-WELroOA8KkaPyd8HOHMRi-Aik23aWOTq5xu8N0a_t5qZA8HqkzZCh-smjkRl8qM3NSF_e0FFc7_UI3slcL1ca8wF0OE06T_Oh5ecm7-1QEUv7GTgtTmC6W7ST5njTJEs3HgmyVP4_Fhiy5Q4QM4w.jpg
+- https://cdn4.telesco.pe/file/Bp8yIUQnC_QZ1ccU9oiU7A2vm8DNBxwcYR4UpTOSVF74x-d-wGvZun23Yh8mFBy4q1bfcsF1Crp3e99VJHrZ7FVEe2Wu8YaC6EhmAPpxiwRaNlh0dGf8ROgibtRIsJlJtYaBYpTrGM2tuOZgstxSrROrZeUcMa0nhk10X4jeAOE95EgHkv_g_n30FMKY-K8-2zj7P9ThAOvc5Na5WwMAd7-xvb8otnevHYLVI9Xa2d8X2cM1FBeemafFVqpWsC2t-cGCE-tffvfbruFU8KwqF72LxXAbIwOXqQIXrD35pd7ko2-QTwg-L-_1AEBAu7Cempo5eFt5_1yEBgK1SL6btw.jpg
 
 ## 7. Hyundai Kona — @autodeskusa
 
@@ -197,10 +197,10 @@ Generated: 2026-06-10T15:57:18Z
 
 📍 Направление: Грузия
 📅 Год: 2023
-💰 Ориентир: $15 500
+💰 Ориентир: $15 000
 ⚙️ Двигатель: 1,3 Бензин
 🐎 Мощность: 155 л.с. / 114 кВт
-🛣️ Пробег: 25 000 км
+🛣️ Пробег: 81 600 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -211,18 +211,18 @@ Generated: 2026-06-10T15:57:18Z
 Источник мониторинга: MyAuto Georgia
 
 Фото:
-- https://static.my.ge/myauto/photos/9/0/8/3/2/large/122238097_1.jpg?v=0
+- https://static.my.ge/myauto/photos/8/0/6/7/2/large/122276080_1.jpg?v=0
 
-## 9. Opel Corsa 2023 — AutoScout24 / mobile.de
+## 9. Jeep Compass 2023 — AutoScout24 / mobile.de
 
-🔥 Opel Corsa 2023
+🔥 Jeep Compass 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 16 890 €
-⚙️ Двигатель: 1,199 Бензин
-🐎 Мощность: 100 л.с. / 74 кВт
-🛣️ Пробег: 37 115 км
+💰 Ориентир: 25 080 €
+⚙️ Двигатель: 1,469 Бензин
+🐎 Мощность: 131 л.с. / 96 кВт
+🛣️ Пробег: 13 536 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -233,25 +233,25 @@ Generated: 2026-06-10T15:57:18Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_5951252f-da34-419d-b2dc-11d4398cb7bc.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_e5973c7f-001b-431e-b998-bafc96f83daf.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_70d3c690-41a1-4e75-970b-bb9e0d84b7de.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_d6c55918-738d-4034-a83a-0eba58815f81.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_a3706411-cd41-40df-a0b4-5bd1fdd12957.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_086767d2-4d8b-40ae-acba-ac480d38a015.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_9e6baf2f-185a-47aa-b271-c75080d6136b.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/b63f8ae5-af63-4b87-9ee7-a21ac4eb260e_1a4acf9c-3d5f-4373-b450-42f65709797d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_93212632-798a-4966-8a18-5f13e6bbb5c3.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_97ef2be3-73c6-477e-8b1d-b4b2aee5650f.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_d032146c-07f2-4ede-9709-546af8df1e20.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_cdac1070-60e1-4876-add8-836c939e4340.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_4b2cab9e-e3ca-4039-b2ae-2f5d9df68547.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_4469df82-00fb-4fce-b224-4ddd74655b56.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_56e6cbcb-c605-4065-baa9-0149478b124b.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_31e54de8-6836-4494-9a75-f12c730fc1bc.jpg/1024x768.webp
 
-## 10. Hyundai Elantra 2023 — MyAuto Georgia
+## 10. Chevrolet Trailblazer 2023 — MyAuto Georgia
 
-🔥 Hyundai Elantra 2023
+🔥 Chevrolet Trailblazer 2023
 
 📍 Направление: Грузия
 📅 Год: 2023
-💰 Ориентир: $13 400
-⚙️ Двигатель: 2,0 Бензин
-🐎 Мощность: 147 л.с. / 108 кВт
-🛣️ Пробег: 41 000 км
+💰 Ориентир: $12 800
+⚙️ Двигатель: 1,2 Бензин
+🐎 Мощность: 155 л.с. / 114 кВт
+🛣️ Пробег: 94 200 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -262,4 +262,4 @@ Generated: 2026-06-10T15:57:18Z
 Источник мониторинга: MyAuto Georgia
 
 Фото:
-- https://static.my.ge/myauto/photos/2/0/2/6/8/large/121862020_1.jpg?v=0
+- https://static.my.ge/myauto/photos/1/1/3/7/2/large/122273116_1.jpg?v=3
