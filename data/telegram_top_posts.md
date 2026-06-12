@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-12T03:55:24Z
+Generated: 2026-06-12T08:29:09Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
