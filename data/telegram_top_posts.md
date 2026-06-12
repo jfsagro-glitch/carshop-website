@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-11T15:57:43Z
+Generated: 2026-06-12T03:55:24Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -213,16 +213,16 @@ Generated: 2026-06-11T15:57:43Z
 Фото:
 - https://static.my.ge/myauto/photos/8/0/6/7/2/large/122276080_1.jpg?v=0
 
-## 9. Jeep Compass 2023 — AutoScout24 / mobile.de
+## 9. Opel Grandland X 2023 — AutoScout24 / mobile.de
 
-🔥 Jeep Compass 2023
+🔥 Opel Grandland X 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 25 080 €
-⚙️ Двигатель: 1,469 Бензин
+💰 Ориентир: 22 490 €
+⚙️ Двигатель: 1,498 Дизель
 🐎 Мощность: 131 л.с. / 96 кВт
-🛣️ Пробег: 13 536 км
+🛣️ Пробег: 30 000 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -233,14 +233,14 @@ Generated: 2026-06-11T15:57:43Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_93212632-798a-4966-8a18-5f13e6bbb5c3.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_97ef2be3-73c6-477e-8b1d-b4b2aee5650f.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_d032146c-07f2-4ede-9709-546af8df1e20.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_cdac1070-60e1-4876-add8-836c939e4340.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_4b2cab9e-e3ca-4039-b2ae-2f5d9df68547.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_4469df82-00fb-4fce-b224-4ddd74655b56.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_56e6cbcb-c605-4065-baa9-0149478b124b.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/a3d4e86e-0fca-42f7-a54e-4c7d6599b80b_31e54de8-6836-4494-9a75-f12c730fc1bc.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/c3a3d2bd-cff5-47ef-bade-d0f7b640226e_1db3c9ef-70b0-48b3-82be-f561414d1323.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/c3a3d2bd-cff5-47ef-bade-d0f7b640226e_e5f16ac7-afe5-4a94-9768-725329dca754.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/c3a3d2bd-cff5-47ef-bade-d0f7b640226e_dde26043-f1bc-4455-80eb-fbb381100bb7.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/c3a3d2bd-cff5-47ef-bade-d0f7b640226e_c399b9ed-bbaa-42ef-b583-68675362784f.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/c3a3d2bd-cff5-47ef-bade-d0f7b640226e_28502340-9f95-464c-850d-6c8ec9f33a58.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/c3a3d2bd-cff5-47ef-bade-d0f7b640226e_cc229a65-657d-4483-89cc-1cf4849e0b54.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/c3a3d2bd-cff5-47ef-bade-d0f7b640226e_a3d6cec4-1a6a-4cc2-bd0e-2d266a47b1fa.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/c3a3d2bd-cff5-47ef-bade-d0f7b640226e_4eab3791-eb08-48c5-9337-907f73147621.jpg/1024x768.webp
 
 ## 10. Chevrolet Trailblazer 2023 — MyAuto Georgia
 
