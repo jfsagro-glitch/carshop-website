@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-12T08:29:09Z
+Generated: 2026-06-12T12:07:30Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -167,7 +167,7 @@ Generated: 2026-06-12T08:29:09Z
 Источник мониторинга: @AutopodborGeo
 
 Фото:
-- https://cdn4.telesco.pe/file/Bp8yIUQnC_QZ1ccU9oiU7A2vm8DNBxwcYR4UpTOSVF74x-d-wGvZun23Yh8mFBy4q1bfcsF1Crp3e99VJHrZ7FVEe2Wu8YaC6EhmAPpxiwRaNlh0dGf8ROgibtRIsJlJtYaBYpTrGM2tuOZgstxSrROrZeUcMa0nhk10X4jeAOE95EgHkv_g_n30FMKY-K8-2zj7P9ThAOvc5Na5WwMAd7-xvb8otnevHYLVI9Xa2d8X2cM1FBeemafFVqpWsC2t-cGCE-tffvfbruFU8KwqF72LxXAbIwOXqQIXrD35pd7ko2-QTwg-L-_1AEBAu7Cempo5eFt5_1yEBgK1SL6btw.jpg
+- https://cdn4.telesco.pe/file/Tz04YD2tzZV_v7yegimrCWJ_Yki09DPzjapWB2_TQ0IbhIdicFTjfW-l5CXg_f3Bq75iHn7XiSdsS0J0wO8dG9JNqab2QgMfAM0skA-9Y1wVh6q2QBFYepVgFjahPhqH3oErppc47GoWWoydoipO9jkoUqNLHwkhDLVVAQjdFhdJaWI__rA18qfRcj6sgVhDFi9TIgptelMFJeBK8RVZXwEzawoR1xXQh_sCdOdp26iO-cPuNLdge5uUKpZT1qix7u_SHm2RzLsbvB1mJhxeNMsWtHLwXtJk-65zn8yh5xwS4YPdrGAhVPMAJmbCD7wmOgvEVd3e4Va6FKvObEdUNg.jpg
 
 ## 7. Hyundai Kona — @autodeskusa
 
