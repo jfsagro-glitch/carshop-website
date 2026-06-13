@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-13T07:28:12Z
+Generated: 2026-06-13T11:33:27Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -167,7 +167,7 @@ Generated: 2026-06-13T07:28:12Z
 Источник мониторинга: @AutopodborGeo
 
 Фото:
-- https://cdn4.telesco.pe/file/Tz04YD2tzZV_v7yegimrCWJ_Yki09DPzjapWB2_TQ0IbhIdicFTjfW-l5CXg_f3Bq75iHn7XiSdsS0J0wO8dG9JNqab2QgMfAM0skA-9Y1wVh6q2QBFYepVgFjahPhqH3oErppc47GoWWoydoipO9jkoUqNLHwkhDLVVAQjdFhdJaWI__rA18qfRcj6sgVhDFi9TIgptelMFJeBK8RVZXwEzawoR1xXQh_sCdOdp26iO-cPuNLdge5uUKpZT1qix7u_SHm2RzLsbvB1mJhxeNMsWtHLwXtJk-65zn8yh5xwS4YPdrGAhVPMAJmbCD7wmOgvEVd3e4Va6FKvObEdUNg.jpg
+- https://cdn4.telesco.pe/file/FVna1RPYl2Veq1wlxUfOEmyy1HXco3SMKCKvHffPy1Jbi2G7RAGx7LxSHJ8s_kk5RmvL-jRwa-6qituphoNT7j7N_Ajsj7v-6LrS8Rn8AByv41w7qwR7Tm-hPZFSKHOkLBbjntQETL9-qapdLiqSOAuNf-gjE7XMbcvXZiAeuvx1ErFf_PNjZstkU7bWC--Mya87A_Od0LAPKD_JcTTMmeQgKOCFtUD3a_z10XuUvaMxYmc7SgKa1pJR_RgllYg0gpKU0-b9FEJ1K7bK4Eztpxu-HohZZxmqjAmtleZzQLBoB9bId2svVjhyiBSeq1atFfkt2-9vGZW9r-T-2tNgUQ.jpg
 
 ## 7. Hyundai Kona — @autodeskusa
 
@@ -213,16 +213,16 @@ Generated: 2026-06-13T07:28:12Z
 Фото:
 - https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_1.jpg?v=2
 
-## 9. Seat Ibiza 2023 — AutoScout24 / mobile.de
+## 9. Audi A1 2023 — AutoScout24 / mobile.de
 
-🔥 Seat Ibiza 2023
+🔥 Audi A1 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 21 950 €
-⚙️ Двигатель: 1,498 Бензин
-🐎 Мощность: 150 л.с. / 110 кВт
-🛣️ Пробег: 32 091 км
+💰 Ориентир: 20 800 €
+⚙️ Двигатель: 0,999 Бензин
+🐎 Мощность: 110 л.с. / 81 кВт
+🛣️ Пробег: 49 083 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -233,25 +233,25 @@ Generated: 2026-06-13T07:28:12Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_2a69f002-393a-483b-8952-3ebf4934871a.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_aeb2266b-049d-41e3-ab33-83bdd7299332.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_e8b2d8d4-08b5-46db-9a2a-94903c335ff9.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_dc3e5008-cd2e-4349-bc9a-6823d835f9bd.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_e30b0acb-2710-40c9-b13f-b4122e49d01b.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_5c81d9bc-e052-4999-ac92-c47f45d8237d.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_ed92f291-efd6-4226-874f-c72b496ad146.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/65bbf4d3-1e2a-4bec-8927-696bca1da888_4c66882a-d484-4aba-ad61-f37480028e5d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_f54bf20e-7c73-4501-923a-48a327887cf5.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_f64c3337-5ece-4a9a-b443-e854c1fc6c65.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_0beabb00-c4a9-49a7-b345-13010abb54d2.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_8894a6d7-d989-4316-a6d8-7e724c6fb932.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_132781d6-95dd-4e81-b4ad-35948c036a7c.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_508b629d-02d4-4cce-8372-568cfde68b5e.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_270ba372-c521-4a1a-96ae-b9873f89e40f.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_4b0e0d48-1454-41b5-abf7-877e28664b36.jpg/1024x768.webp
 
-## 10. Chevrolet Trailblazer 2023 — MyAuto Georgia
+## 10. Honda HR-V 2023 — MyAuto Georgia
 
-🔥 Chevrolet Trailblazer 2023
+🔥 Honda HR-V 2023
 
 📍 Направление: Грузия
 📅 Год: 2023
-💰 Ориентир: $15 000
-⚙️ Двигатель: 1,3 Бензин
-🐎 Мощность: 155 л.с. / 114 кВт
-🛣️ Пробег: 81 600 км
+💰 Ориентир: $17 700
+⚙️ Двигатель: 2,0 Бензин
+🐎 Мощность: 158 л.с. / 116 кВт
+🛣️ Пробег: 15 000 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -262,4 +262,4 @@ Generated: 2026-06-13T07:28:12Z
 Источник мониторинга: MyAuto Georgia
 
 Фото:
-- https://static.my.ge/myauto/photos/8/0/6/7/2/large/122276080_1.jpg?v=0
+- https://static.my.ge/myauto/photos/8/6/2/0/9/large/120902685_1.jpg?v=15
