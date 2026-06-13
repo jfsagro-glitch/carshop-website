@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-13T11:33:27Z
+Generated: 2026-06-13T15:28:24Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -191,58 +191,7 @@ Generated: 2026-06-13T11:33:27Z
 Фото:
 - https://cdn4.telesco.pe/file/B9jbpNtSqA70S3Y0zqi1jJKEkx4fiCee_jxdzsCq1X5NHyymxo2Qn6jEIW90dqo5R2-aNAebkHC5JNxnjvfgjrQ3E9bkkquOqM3I4WiRTfs--dCuZc9GuD-fAeQdGOz258EIo0ermmUjq6EDNdav47Q1qYoWAQTVpVX6ndbroub7LyRed27j578TSG0FUVJUMD3dLJd3QWixxLIo0zjvGB6Rc2auV1it1qjIVA15FUWbQJLp3tuMidNM9dz8Gkclg-wAtzVgtwZISE0uhM9mYM_jVH6kBSoOWpnZCAZeVcnDAddO2yle2hCSwKcMwoNuOspjw2z1F7EdIapVIhaNlg
 
-## 8. Chevrolet Trailblazer 2023 — MyAuto Georgia
-
-🔥 Chevrolet Trailblazer 2023
-
-📍 Направление: Грузия
-📅 Год: 2023
-💰 Ориентир: $16 000
-⚙️ Двигатель: 1,3 Бензин
-🐎 Мощность: 156 л.с. / 115 кВт
-🛣️ Пробег: 45 000 км
-• проходной возраст 3-5 лет
-• до 160 л.с. / 116 кВт
-• доставка и растаможка в РФ
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/37368925626
-Источник мониторинга: MyAuto Georgia
-
-Фото:
-- https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_1.jpg?v=2
-
-## 9. Audi A1 2023 — AutoScout24 / mobile.de
-
-🔥 Audi A1 2023
-
-📍 Направление: Европа
-📅 Год: 2023
-💰 Ориентир: 20 800 €
-⚙️ Двигатель: 0,999 Бензин
-🐎 Мощность: 110 л.с. / 81 кВт
-🛣️ Пробег: 49 083 км
-• проходной возраст 3-5 лет
-• до 160 л.с. / 116 кВт
-• доставка и растаможка в РФ
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/37368925626
-Источник мониторинга: AutoScout24 / mobile.de
-
-Фото:
-- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_f54bf20e-7c73-4501-923a-48a327887cf5.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_f64c3337-5ece-4a9a-b443-e854c1fc6c65.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_0beabb00-c4a9-49a7-b345-13010abb54d2.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_8894a6d7-d989-4316-a6d8-7e724c6fb932.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_132781d6-95dd-4e81-b4ad-35948c036a7c.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_508b629d-02d4-4cce-8372-568cfde68b5e.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_270ba372-c521-4a1a-96ae-b9873f89e40f.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_4b0e0d48-1454-41b5-abf7-877e28664b36.jpg/1024x768.webp
-
-## 10. Honda HR-V 2023 — MyAuto Georgia
+## 8. Honda HR-V 2023 — MyAuto Georgia
 
 🔥 Honda HR-V 2023
 
@@ -263,3 +212,54 @@ Generated: 2026-06-13T11:33:27Z
 
 Фото:
 - https://static.my.ge/myauto/photos/8/6/2/0/9/large/120902685_1.jpg?v=15
+
+## 9. Opel Astra 2023 — AutoScout24 / mobile.de
+
+🔥 Opel Astra 2023
+
+📍 Направление: Европа
+📅 Год: 2023
+💰 Ориентир: 19 270 €
+⚙️ Двигатель: 1,499 Дизель
+🐎 Мощность: 131 л.с. / 96 кВт
+🛣️ Пробег: 54 915 км
+• проходной возраст 3-5 лет
+• до 160 л.с. / 116 кВт
+• доставка и растаможка в РФ
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/37368925626
+Источник мониторинга: AutoScout24 / mobile.de
+
+Фото:
+- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_ed22473f-e6d0-4191-a69c-950f6dba3a17.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_05fedc44-7547-4abd-833d-bba3998b4703.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_99b661ba-2d0d-4625-b5f3-11fdcedb7060.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_0e1cee24-c9c1-43ad-8548-7a7725732281.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_24361013-9f8f-4a2a-ba04-5a0f69dc4da5.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_b6043a2a-a4b2-4dff-953c-acc725d1170e.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_6ec76328-2165-48a2-839f-64a269efbf9f.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_04005485-afaa-411e-bdd3-db0e3ac01ee1.jpg/1024x768.webp
+
+## 10. KIA Forte 2023 — MyAuto Georgia
+
+🔥 KIA Forte 2023
+
+📍 Направление: Грузия
+📅 Год: 2023
+💰 Ориентир: Цена по запросу
+⚙️ Двигатель: 2,0 Бензин
+🐎 Мощность: 147 л.с. / 108 кВт
+🛣️ Пробег: 27 000 км
+• проходной возраст 3-5 лет
+• до 160 л.с. / 116 кВт
+• доставка и растаможка в РФ
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/37368925626
+Источник мониторинга: MyAuto Georgia
+
+Фото:
+- https://static.my.ge/myauto/photos/3/2/6/0/0/large/122006230_1.jpg?v=2

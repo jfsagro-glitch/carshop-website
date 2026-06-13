@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T11:33:27Z",
+  "generated_at": "2026-06-13T15:28:24Z",
   "source_count": 46,
   "parsed_posts": 1,
   "displayed_count": 10,
@@ -270,73 +270,6 @@
       "region": "Грузия",
       "source": "MyAuto Georgia",
       "source_type": "catalog_fallback",
-      "source_url": "https://myauto.ge/ru/pr/121731602",
-      "title": "Chevrolet Trailblazer 2023",
-      "year": "2023",
-      "price": "$16 000",
-      "image": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_1.jpg?v=2",
-      "images": [
-        "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_1.jpg?v=2"
-      ],
-      "details": {
-        "engine": "1,3 Бензин",
-        "power": "156 л.с. / 115 кВт",
-        "mileage": "45 000 км"
-      },
-      "text_excerpt": "Chevrolet Trailblazer 2023: проходной автомобиль Грузия, 1,3 Бензин, 156 л.с. / 115 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2386,
-      "quality": "candidate",
-      "telegram_post": "🔥 Chevrolet Trailblazer 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $16 000\n⚙️ Двигатель: 1,3 Бензин\n🐎 Мощность: 156 л.с. / 115 кВт\n🛣️ Пробег: 45 000 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: MyAuto Georgia"
-    },
-    {
-      "channel": "europe_catalog",
-      "region": "Европа",
-      "source": "AutoScout24 / mobile.de",
-      "source_type": "catalog_fallback",
-      "source_url": "https://www.autoscout24.de/angebote/audi-a1-advanced-kamera-sitzheizung-pdc-app-benzin-weiss-cat_ma9mo19083-8e01f1fd-e204-4d17-a71a-47cd17d96eac",
-      "title": "Audi A1 2023",
-      "year": "2023",
-      "price": "20 800 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_f54bf20e-7c73-4501-923a-48a327887cf5.jpg/1024x768.webp",
-      "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_f54bf20e-7c73-4501-923a-48a327887cf5.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_f64c3337-5ece-4a9a-b443-e854c1fc6c65.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_0beabb00-c4a9-49a7-b345-13010abb54d2.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_8894a6d7-d989-4316-a6d8-7e724c6fb932.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_132781d6-95dd-4e81-b4ad-35948c036a7c.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_508b629d-02d4-4cce-8372-568cfde68b5e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_270ba372-c521-4a1a-96ae-b9873f89e40f.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_4b0e0d48-1454-41b5-abf7-877e28664b36.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_0c0b9a77-16b1-4c61-a6c0-a3a20ad50a00.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_1942054b-0105-4866-88d0-e2654e2f92db.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_a266745b-1534-42dd-b0ba-eaa0b345f6a6.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/8e01f1fd-e204-4d17-a71a-47cd17d96eac_e4e07630-9a97-4235-8f1d-0d8986c56aa0.jpg/1024x768.webp"
-      ],
-      "details": {
-        "engine": "0,999 Бензин",
-        "power": "110 л.с. / 81 кВт",
-        "mileage": "49 083 км"
-      },
-      "text_excerpt": "Audi A1 2023: проходной автомобиль Европа, 0,999 Бензин, 110 л.с. / 81 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
-      "facts": [
-        "проходной возраст 3-5 лет",
-        "до 160 л.с. / 116 кВт",
-        "доставка и растаможка в РФ"
-      ],
-      "score": 2386,
-      "quality": "candidate",
-      "telegram_post": "🔥 Audi A1 2023\n\n📍 Направление: Европа\n📅 Год: 2023\n💰 Ориентир: 20 800 €\n⚙️ Двигатель: 0,999 Бензин\n🐎 Мощность: 110 л.с. / 81 кВт\n🛣️ Пробег: 49 083 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: AutoScout24 / mobile.de"
-    },
-    {
-      "channel": "myauto_georgia",
-      "region": "Грузия",
-      "source": "MyAuto Georgia",
-      "source_type": "catalog_fallback",
       "source_url": "https://myauto.ge/ru/pr/120902685",
       "title": "Honda HR-V 2023",
       "year": "2023",
@@ -359,6 +292,73 @@
       "score": 2386,
       "quality": "candidate",
       "telegram_post": "🔥 Honda HR-V 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: $17 700\n⚙️ Двигатель: 2,0 Бензин\n🐎 Мощность: 158 л.с. / 116 кВт\n🛣️ Пробег: 15 000 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: MyAuto Georgia"
+    },
+    {
+      "channel": "europe_catalog",
+      "region": "Европа",
+      "source": "AutoScout24 / mobile.de",
+      "source_type": "catalog_fallback",
+      "source_url": "https://www.autoscout24.de/angebote/opel-astra-elegance-1-5-d-navi-rfk-acc-uvm-diesel-grau-cat_ma54mo1916-d445659d-fa30-44d4-b143-e92e77b8de09",
+      "title": "Opel Astra 2023",
+      "year": "2023",
+      "price": "19 270 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_ed22473f-e6d0-4191-a69c-950f6dba3a17.jpg/1024x768.webp",
+      "images": [
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_ed22473f-e6d0-4191-a69c-950f6dba3a17.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_05fedc44-7547-4abd-833d-bba3998b4703.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_99b661ba-2d0d-4625-b5f3-11fdcedb7060.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_0e1cee24-c9c1-43ad-8548-7a7725732281.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_24361013-9f8f-4a2a-ba04-5a0f69dc4da5.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_b6043a2a-a4b2-4dff-953c-acc725d1170e.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_6ec76328-2165-48a2-839f-64a269efbf9f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_04005485-afaa-411e-bdd3-db0e3ac01ee1.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_49b7ac32-5809-4a48-afac-035c6da29e73.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_81ae08b1-16ab-48a1-affa-abc73373db2d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_596f5542-ed86-4b9c-aee6-783760329a54.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_c74e7e6b-a3c3-4122-bf89-09113c7e3c2b.jpg/1024x768.webp"
+      ],
+      "details": {
+        "engine": "1,499 Дизель",
+        "power": "131 л.с. / 96 кВт",
+        "mileage": "54 915 км"
+      },
+      "text_excerpt": "Opel Astra 2023: проходной автомобиль Европа, 1,499 Дизель, 131 л.с. / 96 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "доставка и растаможка в РФ"
+      ],
+      "score": 2386,
+      "quality": "candidate",
+      "telegram_post": "🔥 Opel Astra 2023\n\n📍 Направление: Европа\n📅 Год: 2023\n💰 Ориентир: 19 270 €\n⚙️ Двигатель: 1,499 Дизель\n🐎 Мощность: 131 л.с. / 96 кВт\n🛣️ Пробег: 54 915 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: AutoScout24 / mobile.de"
+    },
+    {
+      "channel": "myauto_georgia",
+      "region": "Грузия",
+      "source": "MyAuto Georgia",
+      "source_type": "catalog_fallback",
+      "source_url": "https://myauto.ge/ru/pr/122006230",
+      "title": "KIA Forte 2023",
+      "year": "2023",
+      "price": "Цена по запросу",
+      "image": "https://static.my.ge/myauto/photos/3/2/6/0/0/large/122006230_1.jpg?v=2",
+      "images": [
+        "https://static.my.ge/myauto/photos/3/2/6/0/0/large/122006230_1.jpg?v=2"
+      ],
+      "details": {
+        "engine": "2,0 Бензин",
+        "power": "147 л.с. / 108 кВт",
+        "mileage": "27 000 км"
+      },
+      "text_excerpt": "KIA Forte 2023: проходной автомобиль Грузия, 2,0 Бензин, 147 л.с. / 108 кВт, с фото, доставкой, растаможкой и оформлением в РФ.",
+      "facts": [
+        "проходной возраст 3-5 лет",
+        "до 160 л.с. / 116 кВт",
+        "доставка и растаможка в РФ"
+      ],
+      "score": 2386,
+      "quality": "candidate",
+      "telegram_post": "🔥 KIA Forte 2023\n\n📍 Направление: Грузия\n📅 Год: 2023\n💰 Ориентир: Цена по запросу\n⚙️ Двигатель: 2,0 Бензин\n🐎 Мощность: 147 л.с. / 108 кВт\n🛣️ Пробег: 27 000 км\n• проходной возраст 3-5 лет\n• до 160 л.с. / 116 кВт\n• доставка и растаможка в РФ\n\n✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.\n🚚 Доставка, растаможка и оформление через EXPO MIR.\n📲 Напишите менеджеру: https://wa.me/37368925626\nИсточник мониторинга: MyAuto Georgia"
     }
   ]
 }
