@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-13T15:28:24Z
+Generated: 2026-06-14T03:54:54Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -213,16 +213,16 @@ Generated: 2026-06-13T15:28:24Z
 Фото:
 - https://static.my.ge/myauto/photos/8/6/2/0/9/large/120902685_1.jpg?v=15
 
-## 9. Opel Astra 2023 — AutoScout24 / mobile.de
+## 9. Ford Focus 2023 — AutoScout24 / mobile.de
 
-🔥 Opel Astra 2023
+🔥 Ford Focus 2023
 
 📍 Направление: Европа
 📅 Год: 2023
-💰 Ориентир: 19 270 €
-⚙️ Двигатель: 1,499 Дизель
-🐎 Мощность: 131 л.с. / 96 кВт
-🛣️ Пробег: 54 915 км
+💰 Ориентир: 18 498 €
+⚙️ Двигатель: 0,999 Бензин
+🐎 Мощность: 125 л.с. / 92 кВт
+🛣️ Пробег: 64 210 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -233,25 +233,25 @@ Generated: 2026-06-13T15:28:24Z
 Источник мониторинга: AutoScout24 / mobile.de
 
 Фото:
-- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_ed22473f-e6d0-4191-a69c-950f6dba3a17.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_05fedc44-7547-4abd-833d-bba3998b4703.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_99b661ba-2d0d-4625-b5f3-11fdcedb7060.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_0e1cee24-c9c1-43ad-8548-7a7725732281.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_24361013-9f8f-4a2a-ba04-5a0f69dc4da5.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_b6043a2a-a4b2-4dff-953c-acc725d1170e.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_6ec76328-2165-48a2-839f-64a269efbf9f.jpg/1024x768.webp
-- https://prod.pictures.autoscout24.net/listing-images/d445659d-fa30-44d4-b143-e92e77b8de09_04005485-afaa-411e-bdd3-db0e3ac01ee1.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ea607caf-5a80-4125-b2c2-06492d916023_b97fab6a-1ba5-4b79-b639-553afe8219cc.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ea607caf-5a80-4125-b2c2-06492d916023_7e944c99-a08f-467f-aea0-15090bd5e47d.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ea607caf-5a80-4125-b2c2-06492d916023_4b67684b-173d-4bde-8fae-bf7a6bf0321c.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ea607caf-5a80-4125-b2c2-06492d916023_cb926aa1-360d-43dc-99cb-93bce9028a0e.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ea607caf-5a80-4125-b2c2-06492d916023_6827ce35-6641-42e4-be11-29951926f338.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ea607caf-5a80-4125-b2c2-06492d916023_73ff6291-30a9-43fb-b6b0-5617be21b2c0.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ea607caf-5a80-4125-b2c2-06492d916023_492d75c8-b5b2-412b-9f64-7c9d5241fdde.jpg/1024x768.webp
+- https://prod.pictures.autoscout24.net/listing-images/ea607caf-5a80-4125-b2c2-06492d916023_24266207-f1e2-489f-b616-ba5f5b5cdc1f.jpg/1024x768.webp
 
-## 10. KIA Forte 2023 — MyAuto Georgia
+## 10. Hyundai Elantra 2023 — MyAuto Georgia
 
-🔥 KIA Forte 2023
+🔥 Hyundai Elantra 2023
 
 📍 Направление: Грузия
 📅 Год: 2023
-💰 Ориентир: Цена по запросу
+💰 Ориентир: $10 500
 ⚙️ Двигатель: 2,0 Бензин
 🐎 Мощность: 147 л.с. / 108 кВт
-🛣️ Пробег: 27 000 км
+🛣️ Пробег: 39 000 км
 • проходной возраст 3-5 лет
 • до 160 л.с. / 116 кВт
 • доставка и растаможка в РФ
@@ -262,4 +262,4 @@ Generated: 2026-06-13T15:28:24Z
 Источник мониторинга: MyAuto Georgia
 
 Фото:
-- https://static.my.ge/myauto/photos/3/2/6/0/0/large/122006230_1.jpg?v=2
+- https://static.my.ge/myauto/photos/1/4/1/5/1/large/122151412_1.jpg?v=1
