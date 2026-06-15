@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-14T15:35:49Z
+Generated: 2026-06-15T03:55:36Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -229,7 +229,28 @@ Generated: 2026-06-14T15:35:49Z
 - https://cdn4.telesco.pe/file/B483xdht2qaSnEIdYW8kV3Ctok7kTmAZY7PjU-0-eut9vacBza48MLagP_dgsGZbP5SwpCNuyMtTJs_D6b9cxRFzgSp4itx32VYqCir4rRm20JFmxhsZClJoz4vwVzzdj_-8uO6KMuj6MHLbCbyKaeNqwi2R6vcK-Kb3cgIustXLOzqVKvN-NXT9beWy39dRxgKaGE40y2nq-poC9RzZCdK0urcyVotq5ST_G96X50AZpClYCXy9PWE6vhCfMpqBO8C2cjbaSprYgm70hh6tyuOxAB1nhFNXeR3ZpTplmehqYVc-eOTqQrxUuP5SveIXHpmPNzX1uvsKqTyJF7E-pQ.jpg
 - https://cdn4.telesco.pe/file/TDgKy5d9Z91LhV7araY6nSk41woBs-eK6jIag12VKY7_L_-vg8K1f8BBuYG7NQs6MK7sKwGIElhAavXq6BEJyTYbnOWlG_yymL8_PYhGRSseZBIuQxinwCkE8VSe_7rRoQNjw2MZROO0McQz6CNcXhE0v4YOYKHE9w0m_j_FVmnSKyfB4sgtozYoViQTmIHzhbaQk7Da9hLCLvoFMj6Yf8xbcO5Sm5nqVe5ByRHN-siUJTD7muwCoYyvyn-zr-oO-SzZtkS1irqSpp4Ltx0AqiRiwJtXMTa1Xy7dPCvX9EOvajuis1pHEbxs3tahVxnNVPQROpJVppRcHpzpmYNDpg.jpg
 
-## 9. Hyundai Kona — @autodeskusa
+## 9. Mazda CX-30 — @autodeskusa
+
+🔥 Mazda CX-30
+
+📍 Направление: Грузия / США / Европа
+📅 Год: 2026
+💰 Ориентир: 3 750 000 ₽
+⚙️ Двигатель: 2.0 Бензин
+🐎 Мощность: 150 л.с. / 110 кВт
+🛣️ Пробег: уточняется
+• есть расчёт под ключ/логистика
+• актуально для рынка Грузии
+
+✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
+🚚 Доставка, растаможка и оформление через EXPO MIR.
+📲 Напишите менеджеру: https://wa.me/37368925626
+Источник мониторинга: @autodeskusa
+
+Фото:
+- https://cdn4.telesco.pe/file/FoJtvmY-CxAmPRvk4bjb42q3Lyuj0Ywmw3JaZf_-FGfQAAk2ExeF8LVN-UF17LzZdhSbUmQ3m7YKC-6_56ZEccmb7cZG_-kQ15I-3fTN8tc84n2uIvqIafJ7CPoTl1vLzfDrW7LzLi3NI-Syhe4abZzYqXquFkjTKiAO6LAGgRJkrdneA4ugCyIfWsDJ_uU2Vy0hUcXTBujxm3mPnWfcLd_jUU00CMYgipOLTIrkHrXQG_UbzQuSDmrJwdQ2eqZXDik9I1UGfKv5PXjnjQ6jasDQKeZSOv7IAn_-WcWEqXk-MnF1T6uFRcqRDQtEwwqy6WrM9n_rXC-xh58uzsdyUg
+
+## 10. Hyundai Kona — @autodeskusa
 
 🔥 Hyundai Kona
 
@@ -257,25 +278,3 @@ Generated: 2026-06-14T15:35:49Z
 - https://cdn4.telesco.pe/file/m_iQfbKbi1acwlbgP7NOi2I7YmL6S1zxzQsW4kQrshmE4WorSGvPtSJ-u0RYKdp7N05ncUQPeH3vcmUsWs2Kx0vd2m5n20sEv7fzm3EnN0ZzXsbIOyCcsVlnFpVdabq947E9r7rFuC1Uqj437vnn3mKLx2Tn_nU8glv7jzKIIiTE4Loj_y49hYnvpvtwnqTXFXbNAIJuR-__wnnA52SUQGtDSfO9Xaj-5nI1TXzBYSA8VyqQK40javKDVcitIyVHBXXkLBgTOAs0Hjzmk6FMFm57c6yADS85tIw5UHiyq_qQqRBQYZtdrDuCFl7ZJBaKDhHwfIF7naDCKHZNSWsWXA.jpg
 - https://cdn4.telesco.pe/file/k1Pv0ci5YampvFo7YAL1YsVa5w0owAT31IM1sGMsC2KOn1LONAZQ4K4wp1oRbtQlFk4oncjpZiqL-DQLaguI6zz6Cz2AxdBjqA5GrLTb2sI3k5XXOejKxiqk6CqkuIaY3fBPjHU3vT0pWV0oz9rVn1CkW1wMooJNqjxAuroMse_S7wLJsHbY2Y95XgSJYeZdE7TBI7zNE97aUMaXhKhQdXH0mAEPKL-TpPTwDjQKFuiZOv1CT_-wOuSNg_cugaS1zYtebZI_4_GaXUKkf7HhBKWws8Wb-g_Jm8-ypu3SwMgvPXmt24EoOkhS1YMzgM1s5bqkW5mrCWmF45xOrKqCSQ.jpg
 - https://cdn4.telesco.pe/file/OQxKll_ZfjjbT8rcJcD9n0rvcRcDlTlnsj9yDIKipmMfIbAAjX8PUDdHd-gidrkuS5oRLMf75tV8aetdpFxPW9CtpCAVYDfnwWhxuA14qNNJ5UI9rqwgVQU4v3puijWcyJqWojbNjE_H7uy_pjCSyc-Hi9ZAHrTYgNEvI_DBQjsWO79x4Xewzcr4cg_poecX7DTbxGu7hyWFfoZJZU7TTGmzVCZdHpz074SuR9QGBFMzYNoIjcDdnipPlaSeIlLAB_NEuifTO_bVD22WK_8ThYXoMQ1DZjzF6GH6NnqfDHVGfk5t5ET5QYkwdTxESNteBZCyNyTuFzbZskDz_hND5Q.jpg
-
-## 10. Hyundai Kona — @autodeskusa
-
-🔥 Hyundai Kona
-
-📍 Направление: Грузия / США / Европа
-📅 Год: 2024
-💰 Ориентир: 5 200 руб
-⚙️ Двигатель: 2.0
-🐎 Мощность: 147 л.с. / 108 кВт
-🛣️ Пробег: уточняется
-• есть расчёт под ключ/логистика
-• доставка и растаможка в РФ
-• актуально для рынка Грузии
-
-✅ Проверим VIN, историю, повреждения и полный бюджет под ключ.
-🚚 Доставка, растаможка и оформление через EXPO MIR.
-📲 Напишите менеджеру: https://wa.me/37368925626
-Источник мониторинга: @autodeskusa
-
-Фото:
-- https://cdn4.telesco.pe/file/B9jbpNtSqA70S3Y0zqi1jJKEkx4fiCee_jxdzsCq1X5NHyymxo2Qn6jEIW90dqo5R2-aNAebkHC5JNxnjvfgjrQ3E9bkkquOqM3I4WiRTfs--dCuZc9GuD-fAeQdGOz258EIo0ermmUjq6EDNdav47Q1qYoWAQTVpVX6ndbroub7LyRed27j578TSG0FUVJUMD3dLJd3QWixxLIo0zjvGB6Rc2auV1it1qjIVA15FUWbQJLp3tuMidNM9dz8Gkclg-wAtzVgtwZISE0uhM9mYM_jVH6kBSoOWpnZCAZeVcnDAddO2yle2hCSwKcMwoNuOspjw2z1F7EdIapVIhaNlg
