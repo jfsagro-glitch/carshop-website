@@ -1,0 +1,48 @@
+name: Morning Europe offers to Telegram
+
+on:
+  schedule:
+    # 09:00 Europe/Moscow = 06:00 UTC.
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Только проверить подборку, не отправлять в Telegram'
+        type: boolean
+        default: true
+
+concurrency:
+  group: morning-europe-telegram
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_EUROPE_CHANNEL_ID: ${{ secrets.TELEGRAM_EUROPE_CHANNEL_ID }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    steps:
+      - name: Checkout latest catalog
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pillow
+
+      - name: Rebuild homepage Europe selection
+        run: node tools/build_home_europe_offers.mjs
+
+      - name: Validate and publish Telegram album
+        if: ${{ github.event_name == 'schedule' || inputs.dry_run == false }}
+        run: python tools/post_europe_morning_telegram.py
+
+      - name: Dry-run Telegram album
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run == true }}
+        run: python tools/post_europe_morning_telegram.py --dry-run
