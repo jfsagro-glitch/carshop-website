@@ -1,6 +1,6 @@
 # Telegram top offers
 
-Generated: 2026-06-15T08:08:13Z
+Generated: 2026-06-15T16:51:01Z
 
 ## 1. Hyundai Elantra 2022 — MyAuto Georgia
 
@@ -167,7 +167,7 @@ Generated: 2026-06-15T08:08:13Z
 Источник мониторинга: @AutopodborGeo
 
 Фото:
-- https://cdn4.telesco.pe/file/KVOxjlM8sdCV0jrUHQuam4_NeY37Bwanb04LM23U9Ft921PMFpjMmKDhizDdpbtQJMGtclF_lHXwM9mx7H64MuP8nOZgmu8VZ80iFNSKisdfvv_VXY4X6noCTsC1Kj5NsSJwoZex2Lx0_CzhB04RcyfSTsyYQavWlLoQvNBQ7kpnrcGadP8aYjxVfIk-QHHCzCftO1SvdpOdyXsKzXBsRi7-PkG22CJLAaYr-VIqpVRb1Jf-VDAyE0XAGdsHZG8oEJFEMw86XwnIWUTb7EOsTrFn0tlQrkPwU8zaTfb_i2CcMuVA1vlx-V3R5sNJNPrlScpr6PiRIlQPW7OmJO5lEQ.jpg
+- https://cdn4.telesco.pe/file/E7M4gEirAmKOBZwgZD-j1wrQFDRakLtHicySgS3wTCoHGizgl7x580MSc5LM1AnZwgKErrXhJ2NRIGjp1CZj-RI615nYlBp76RM_a4PUQytv6rqG3Z0JS9WSOGIhtkCFDdQ3wB1RfcSncaMq8gabONORyOKvE4WC3b2m8Kkc6WXTnqkQmOgWHCZ5dlaHavSFguPJ6jKLDfO71FHXzpzNOmW_2xtDpfYXHPuJ0ppZKkuPpwZRve265seF6KBcGrIbNL2XT2mcNdNgF5azWnKOHfTg7SZv12KDHkxYGCZfhSHoMn8CuQhGCXad2EoGmw-ZomtSfEfPBoNotsvsvZUZ5w.jpg
 
 ## 7. Kia Ceed — @autodeskusa
 
