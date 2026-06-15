@@ -6,6 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 const sourcePath = path.join(rootDir, 'cars_europe_new.json');
 const outputPath = path.join(rootDir, 'data', 'home_featured_europe.json');
+const historyPath = path.join(rootDir, 'data', 'telegram_europe_history.json');
+const excludeHistory = process.argv.includes('--exclude-history');
 
 const TARGETS = [
   { brand: 'Audi', model: /(?:^|\s)A4(?:\s|$)/i },
@@ -100,10 +102,25 @@ function toOffer(car, target) {
 }
 
 const cars = JSON.parse(await fs.readFile(sourcePath, 'utf8'));
+let postedUrls = new Set();
+if (excludeHistory) {
+  try {
+    const history = JSON.parse(await fs.readFile(historyPath, 'utf8'));
+    postedUrls = new Set(
+      (Array.isArray(history.posts) ? history.posts : [])
+        .map((post) => post?.source_url)
+        .filter(Boolean),
+    );
+  } catch (error) {
+    if (error?.code !== 'ENOENT') throw error;
+  }
+}
+
 const offers = [];
 for (const target of TARGETS) {
   const candidates = cars
     .filter((car) => matches(car, target))
+    .filter((car) => !postedUrls.has(car.url))
     .filter((car) => {
       const mileage = Number(car.mileage || 0);
       return mileage > 0

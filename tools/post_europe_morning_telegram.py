@@ -8,6 +8,7 @@ import html
 import io
 import json
 import os
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -19,6 +20,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 OFFERS_PATH = ROOT / "data" / "home_featured_europe.json"
+HISTORY_PATH = ROOT / "data" / "telegram_europe_history.json"
 SITE_URL = "https://cmsauto.store/?source=pwa"
 EUROPE_URL = "https://cmsauto.store/europe-orders.html"
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
@@ -60,6 +62,51 @@ def load_offers() -> list[dict]:
     return valid[:10]
 
 
+def load_history() -> dict:
+    if not HISTORY_PATH.exists():
+        return {"posts": [], "cycle_offer_urls": []}
+    payload = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
+    return {
+        "posts": payload.get("posts") if isinstance(payload.get("posts"), list) else [],
+        "cycle_offer_urls": (
+            payload.get("cycle_offer_urls")
+            if isinstance(payload.get("cycle_offer_urls"), list)
+            else []
+        ),
+    }
+
+
+def save_history(history: dict) -> None:
+    HISTORY_PATH.write_text(
+        json.dumps(history, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
+def posted_urls(history: dict) -> set[str]:
+    return {
+        str(post.get("source_url"))
+        for post in history["posts"]
+        if isinstance(post, dict) and post.get("source_url")
+    }
+
+
+def initialize_cycle(history: dict, offers: list[dict]) -> None:
+    if not history["cycle_offer_urls"]:
+        history["cycle_offer_urls"] = [str(offer["source_url"]) for offer in offers]
+
+
+def rebuild_homepage_cycle(history: dict) -> list[dict]:
+    subprocess.run(
+        ["node", "tools/build_home_europe_offers.mjs", "--exclude-history"],
+        cwd=ROOT,
+        check=True,
+    )
+    offers = load_offers()
+    history["cycle_offer_urls"] = [str(offer["source_url"]) for offer in offers]
+    return offers
+
+
 def image_urls(offer: dict) -> list[str]:
     raw = offer.get("images") or [offer.get("image")]
     return [str(url) for url in raw if str(url or "").startswith(("https://", "http://"))]
@@ -82,30 +129,21 @@ def download_offer_photo(offer: dict) -> bytes | None:
     return None
 
 
-def offer_caption(offer: dict, first: bool = False) -> str:
+def offer_caption(offer: dict) -> str:
     details = offer.get("details") or {}
-    lines = []
-    if first:
-        lines.extend(
-            [
-                f"🇪🇺 <b>Утренняя подборка EXPO MIR · {datetime.now(ZoneInfo('Europe/Moscow')).strftime('%d.%m.%Y')}</b>",
-                "Актуальные предложения из Европы по критериям главной страницы.",
-                "",
-            ]
-        )
-    lines.extend(
-        [
-            f"🚘 <b>{html.escape(str(offer['title']))}</b>",
-            f"💰 Под ключ в РФ: <b>{html.escape(str(offer['price']))}</b>",
-            f"🇪🇺 Цена в Европе: {html.escape(str(offer.get('base_price') or 'уточняется'))}",
-            f"🛣 Пробег: {html.escape(str(details['mileage']))}",
-            f"⚙️ Двигатель: {html.escape(str(details['engine']))}",
-            f"🏁 Мощность: {html.escape(str(details['power']))}",
-            f'🔗 <a href="{html.escape(str(offer["source_url"]), quote=True)}">Открыть объявление</a>',
-        ]
-    )
-    if first:
-        lines.extend(["", f'🌐 <a href="{SITE_URL}">Смотреть подборку на сайте</a>'])
+    lines = [
+        f"🇪🇺 <b>Автомобиль дня · {datetime.now(ZoneInfo('Europe/Moscow')).strftime('%d.%m.%Y')}</b>",
+        "",
+        f"🚘 <b>{html.escape(str(offer['title']))}</b>",
+        f"💰 Под ключ в РФ: <b>{html.escape(str(offer['price']))}</b>",
+        f"🇪🇺 Цена в Европе: {html.escape(str(offer.get('base_price') or 'уточняется'))}",
+        f"🛣 Пробег: {html.escape(str(details['mileage']))}",
+        f"⚙️ Двигатель: {html.escape(str(details['engine']))}",
+        f"🏁 Мощность: {html.escape(str(details['power']))}",
+        f'🔗 <a href="{html.escape(str(offer["source_url"]), quote=True)}">Открыть объявление</a>',
+        "",
+        f'🌐 <a href="{SITE_URL}">Другие предложения на сайте</a>',
+    ]
     return "\n".join(lines)[:1024]
 
 
@@ -120,38 +158,15 @@ def telegram_request(method: str, **kwargs) -> requests.Response:
     return response
 
 
-def send_album(offers_with_photos: list[tuple[dict, bytes]]) -> None:
-    if len(offers_with_photos) == 1:
-        offer, photo = offers_with_photos[0]
-        telegram_request(
-            "sendPhoto",
-            data={
-                "chat_id": CHAT_ID,
-                "caption": offer_caption(offer, first=True),
-                "parse_mode": "HTML",
-            },
-            files={"photo": ("offer.jpg", photo, "image/jpeg")},
-        )
-        return
-
-    media = []
-    files = {}
-    for index, (offer, photo) in enumerate(offers_with_photos):
-        attachment = f"photo{index}"
-        media.append(
-            {
-                "type": "photo",
-                "media": f"attach://{attachment}",
-                "caption": offer_caption(offer, first=index == 0),
-                "parse_mode": "HTML",
-            }
-        )
-        files[attachment] = (f"offer-{index}.jpg", photo, "image/jpeg")
-
+def send_offer(offer: dict, photo: bytes) -> None:
     telegram_request(
-        "sendMediaGroup",
-        data={"chat_id": CHAT_ID, "media": json.dumps(media, ensure_ascii=False)},
-        files=files,
+        "sendPhoto",
+        data={
+            "chat_id": CHAT_ID,
+            "caption": offer_caption(offer),
+            "parse_mode": "HTML",
+        },
+        files={"photo": ("offer.jpg", photo, "image/jpeg")},
     )
 
 
@@ -161,28 +176,57 @@ def main() -> None:
     args = parser.parse_args()
 
     offers = load_offers()
-    prepared = []
-    for offer in offers:
+    history = load_history()
+    initialize_cycle(history, offers)
+    already_posted = posted_urls(history)
+    cycle_urls = set(history["cycle_offer_urls"])
+
+    candidates = [
+        offer
+        for offer in offers
+        if offer["source_url"] in cycle_urls and offer["source_url"] not in already_posted
+    ]
+    if not candidates and not args.dry_run:
+        offers = rebuild_homepage_cycle(history)
+        candidates = offers
+
+    selected = None
+    photo = None
+    for offer in candidates:
         downloaded = download_offer_photo(offer)
         if downloaded:
-            prepared.append((offer, downloaded))
-        else:
-            print(f"Skipped without reachable photo: {offer.get('title')}", file=sys.stderr)
+            selected = offer
+            photo = downloaded
+            break
+        print(f"Skipped without reachable photo: {offer.get('title')}", file=sys.stderr)
 
-    if not prepared:
-        raise RuntimeError("No Europe offers with reachable photos")
+    if selected is None or photo is None:
+        raise RuntimeError("No unpublished Europe offer with a reachable photo")
 
-    print(f"Prepared {len(prepared)} Europe offers:")
-    for offer, _ in prepared:
-        print(f" - {offer['title']} — {offer['price']}")
+    print(f"Prepared one Europe offer: {selected['title']} — {selected['price']}")
 
     if args.dry_run:
         return
     if not BOT_TOKEN or not CHAT_ID:
         raise RuntimeError("TELEGRAM_BOT_TOKEN and Telegram channel ID are required")
 
-    send_album(prepared)
-    print(f"Published {len(prepared)} offers to Telegram channel {CHAT_ID}")
+    send_offer(selected, photo)
+    history["posts"].append(
+        {
+            "source_url": selected["source_url"],
+            "title": selected["title"],
+            "published_at": datetime.now(ZoneInfo("Europe/Moscow")).isoformat(),
+        }
+    )
+
+    current_posted = posted_urls(history)
+    cycle_complete = all(url in current_posted for url in history["cycle_offer_urls"])
+    if cycle_complete:
+        rebuild_homepage_cycle(history)
+        print("Completed six-car cycle and refreshed homepage offers")
+
+    save_history(history)
+    print(f"Published one offer to Telegram channel {CHAT_ID}")
 
 
 if __name__ == "__main__":

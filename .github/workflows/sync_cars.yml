@@ -142,9 +142,6 @@ jobs:
       - name: Recalculate Europe turnkey prices by CBR rates
         run: node tools/update_europe_turnkey_prices.mjs
 
-      - name: Build home Europe offers
-        run: node tools/build_home_europe_offers.mjs
-
       - name: Sync Avtostok63 premium stock
         run: python tools/fetch_carexpo_premium.py
 
@@ -162,14 +159,14 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet cars_georgia_stock.json cars_europe_new.json data/avtostok63_premium.json data/home_featured_europe.json data/telegram_top_offers.json data/telegram_top_posts.md || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet cars_georgia_stock.json cars_europe_new.json data/avtostok63_premium.json data/telegram_top_offers.json data/telegram_top_posts.md || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cars_georgia_stock.json cars_europe_new.json data/avtostok63_premium.json data/home_featured_europe.json data/telegram_top_offers.json data/telegram_top_posts.md
+          git add cars_georgia_stock.json cars_europe_new.json data/avtostok63_premium.json data/telegram_top_offers.json data/telegram_top_posts.md
           git commit -m "auto: sync car catalogs [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push
 
