@@ -1,4 +1,17 @@
 {
-  "posts": [],
-  "cycle_offer_urls": []
+  "posts": [
+    {
+      "source_url": "https://www.autoscout24.de/angebote/audi-a4-avant-30-tdi-led-carplay-privacy-park-assist-diesel-schwarz-cat_ma9mo1626-8364302b-9955-4104-b40f-bdbed7881e79",
+      "title": "Audi A4 2022",
+      "published_at": "2026-06-16T09:25:17.204341+03:00"
+    }
+  ],
+  "cycle_offer_urls": [
+    "https://www.autoscout24.de/angebote/audi-a4-avant-30-tdi-led-carplay-privacy-park-assist-diesel-schwarz-cat_ma9mo1626-8364302b-9955-4104-b40f-bdbed7881e79",
+    "https://www.autoscout24.de/angebote/bmw-318-318d-advantage-aut-navi-led-tempo-pdc-shz-diesel-blau-cat_ma13mo1640-ff9dd67e-97fa-4bbd-ad35-65cd03124d4c",
+    "https://www.autoscout24.de/angebote/mercedes-benz-gla-250-e-progressive-navi-pdc-kamera-shz-sofort-elektro-benzin-schwarz-cat_ma47mo20345-68bb7ebc-2d52-4a76-a5f8-2f625f3380c1",
+    "https://www.autoscout24.de/angebote/volkswagen-arteon-shooting-brake-elegance-ehybrid-acc-360-elektro-benzin-blau-cat_ma74mo74550-766be55d-6e43-4eed-a6f0-c9174cbacc53",
+    "https://www.autoscout24.de/angebote/opel-mokka-edition-1-2-turbo-bluetooth-led-klima-benzin-gruen-cat_ma54mo20148-684fc4f3-97c3-4e69-8cbb-a40b248154c4",
+    "https://www.autoscout24.de/angebote/skoda-kodiaq-1-5-tsi-active-nav+led+carplay+tempomat-benzin-grau-cat_ma65mo74375-d9e8745a-3b5c-4002-bb9b-2170980ddff8"
+  ]
 }
