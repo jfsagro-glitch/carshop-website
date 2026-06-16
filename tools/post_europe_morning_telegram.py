@@ -218,10 +218,10 @@ def download_offer_photos(offer: dict, limit: int = 10) -> list[bytes]:
     return photos
 
 
-def offer_caption(offer: dict) -> str:
+def offer_caption(offer: dict, test: bool = False) -> str:
     details = offer.get("details") or {}
     lines = [
-        f"🇪🇺 <b>Автомобиль дня · {datetime.now(MOSCOW_TZ).strftime('%d.%m.%Y')}</b>",
+        f"🇪🇺 <b>{'Тестовая отправка' if test else 'Автомобиль дня'} · {datetime.now(MOSCOW_TZ).strftime('%d.%m.%Y')}</b>",
         "",
         f"🚘 <b>{html.escape(str(offer['title']))}</b>",
         f"💰 Под ключ в РФ: <b>{html.escape(str(offer['price']))}</b>",
@@ -247,13 +247,13 @@ def telegram_request(method: str, **kwargs) -> requests.Response:
     return response
 
 
-def send_offer(offer: dict, photos: list[bytes]) -> None:
+def send_offer(offer: dict, photos: list[bytes], test: bool = False) -> None:
     if len(photos) == 1:
         telegram_request(
             "sendPhoto",
             data={
                 "chat_id": CHAT_ID,
-                "caption": offer_caption(offer),
+                "caption": offer_caption(offer, test=test),
                 "parse_mode": "HTML",
             },
             files={"photo": ("offer.jpg", photos[0], "image/jpeg")},
@@ -269,7 +269,7 @@ def send_offer(offer: dict, photos: list[bytes]) -> None:
             "media": f"attach://{attachment}",
         }
         if index == 0:
-            item["caption"] = offer_caption(offer)
+            item["caption"] = offer_caption(offer, test=test)
             item["parse_mode"] = "HTML"
         media.append(item)
         files[attachment] = (f"offer-{index}.jpg", photo, "image/jpeg")
@@ -284,12 +284,13 @@ def send_offer(offer: dict, photos: list[bytes]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Post daily Europe offers to Telegram")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--test", action="store_true", help="Send a test post without recording publication history")
     args = parser.parse_args()
 
     offers = load_offers()
     catalog_by_url = load_europe_catalog_by_url()
     history = load_history()
-    if already_published_today(history):
+    if already_published_today(history) and not args.test:
         print(f"Europe offer already published today ({moscow_today()}); skipping")
         return
 
@@ -326,7 +327,11 @@ def main() -> None:
     if not BOT_TOKEN or not CHAT_ID:
         raise RuntimeError("TELEGRAM_BOT_TOKEN and Telegram channel ID are required")
 
-    send_offer(selected, photos)
+    send_offer(selected, photos, test=args.test)
+    if args.test:
+        print(f"Sent test offer to Telegram channel {CHAT_ID}")
+        return
+
     history["posts"].append(
         {
             "source_url": selected["source_url"],

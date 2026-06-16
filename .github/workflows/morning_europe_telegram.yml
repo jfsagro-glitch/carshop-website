@@ -22,6 +22,10 @@ on:
         description: 'Только проверить подборку, не отправлять в Telegram'
         type: boolean
         default: true
+      test_send:
+        description: 'Отправить тестовый пост без записи в историю'
+        type: boolean
+        default: false
 
 concurrency:
   group: morning-europe-telegram
@@ -63,25 +67,39 @@ jobs:
             SHOULD_PUBLISH=true
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "false" ]; then
             SHOULD_PUBLISH=true
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.test_send }}" = "true" ]; then
+            SHOULD_PUBLISH=true
+            TEST_SEND=true
           elif [ "${{ github.event_name }}" = "push" ]; then
+            if [[ "${{ github.event.head_commit.message }}" == *"[telegram-test]"* ]]; then
+              SHOULD_PUBLISH=true
+              TEST_SEND=true
+            fi
             HOUR="$(date -u +%H)"
             if [ "$HOUR" = "06" ] || [ "$HOUR" = "07" ]; then
               SHOULD_PUBLISH=true
             fi
           fi
           echo "publish=$SHOULD_PUBLISH" >> "$GITHUB_OUTPUT"
+          echo "test=$TEST_SEND" >> "$GITHUB_OUTPUT"
           echo "publish=$SHOULD_PUBLISH"
+          echo "test=$TEST_SEND"
 
       - name: Validate and publish one Telegram offer
         if: ${{ steps.publish_window.outputs.publish == 'true' }}
-        run: python tools/post_europe_morning_telegram.py
+        run: |
+          if [ "${{ steps.publish_window.outputs.test }}" = "true" ]; then
+            python tools/post_europe_morning_telegram.py --test
+          else
+            python tools/post_europe_morning_telegram.py
+          fi
 
       - name: Dry-run one Telegram offer
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run == true }}
         run: python tools/post_europe_morning_telegram.py --dry-run
 
       - name: Save publication history
-        if: ${{ steps.publish_window.outputs.publish == 'true' }}
+        if: ${{ steps.publish_window.outputs.publish == 'true' && steps.publish_window.outputs.test != 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
