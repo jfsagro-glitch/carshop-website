@@ -20,6 +20,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 OFFERS_PATH = ROOT / "data" / "home_featured_europe.json"
 HISTORY_PATH = ROOT / "data" / "telegram_europe_history.json"
+EUROPE_CATALOG_PATH = ROOT / "cars_europe_new.json"
 SITE_URL = "https://cmsauto.store/?source=pwa"
 EUROPE_URL = "https://cmsauto.store/europe-orders.html"
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
@@ -60,6 +61,71 @@ def load_offers() -> list[dict]:
             continue
         valid.append(offer)
     return valid[:10]
+
+
+def load_europe_catalog_by_url() -> dict[str, dict]:
+    if not EUROPE_CATALOG_PATH.exists():
+        return {}
+    cars = json.loads(EUROPE_CATALOG_PATH.read_text(encoding="utf-8"))
+    if not isinstance(cars, list):
+        return {}
+    return {str(car.get("url")): car for car in cars if isinstance(car, dict) and car.get("url")}
+
+
+def format_rub(value: object) -> str:
+    amount = round(float(value or 0))
+    return f"{amount:,}".replace(",", "\u00a0") + " ₽" if amount > 0 else ""
+
+
+def format_eur(value: object) -> str:
+    amount = round(float(value or 0))
+    return f"{amount:,}".replace(",", "\u00a0") + " €" if amount > 0 else ""
+
+
+def engine_label(car: dict) -> str:
+    cc = float(car.get("engine_cc") or 0)
+    source = str(car.get("engine_source") or "")
+    if not source.startswith("autoscout24_") or cc < 500 or cc > 10000:
+        return "уточняется"
+    liters = f"{cc / 1000:.3f}".rstrip("0").rstrip(".").replace(".", ",")
+    return f"{liters} {car.get('fuel_type') or ''}".strip()
+
+
+def power_label(car: dict) -> str:
+    hp = round(float(car.get("power_hp") or 0))
+    kw = round(float(car.get("power_kw") or 0))
+    if hp and kw:
+        return f"{hp} л.с. / {kw} кВт"
+    if hp:
+        return f"{hp} л.с."
+    if kw:
+        return f"{kw} кВт"
+    return "уточняется"
+
+
+def refresh_offer_from_catalog(offer: dict, catalog_by_url: dict[str, dict]) -> dict:
+    car = catalog_by_url.get(str(offer.get("source_url") or ""))
+    if not car:
+        return offer
+
+    updated = dict(offer)
+    details = dict(updated.get("details") or {})
+    if car.get("turnkey_price_rub"):
+        updated["price"] = format_rub(car.get("turnkey_price_rub"))
+    if car.get("price"):
+        updated["base_price"] = format_eur(car.get("price"))
+    if car.get("year") or car.get("first_registration_year"):
+        updated["year"] = str(car.get("year") or car.get("first_registration_year"))
+    if car.get("mileage"):
+        details["mileage"] = f"{round(float(car.get('mileage') or 0)):,}".replace(",", "\u00a0") + " км"
+    details["engine"] = engine_label(car)
+    details["power"] = power_label(car)
+    updated["details"] = details
+    updated["text_excerpt"] = (
+        f"{car.get('full_title') or updated.get('title')}. "
+        f"Цена в Европе {updated.get('base_price')}, стоимость под ключ в РФ {updated.get('price')}."
+    )
+    return updated
 
 
 def load_history() -> dict:
@@ -221,6 +287,7 @@ def main() -> None:
     args = parser.parse_args()
 
     offers = load_offers()
+    catalog_by_url = load_europe_catalog_by_url()
     history = load_history()
     if already_published_today(history):
         print(f"Europe offer already published today ({moscow_today()}); skipping")
@@ -244,7 +311,7 @@ def main() -> None:
     for offer in candidates:
         downloaded = download_offer_photos(offer, limit=10)
         if downloaded:
-            selected = offer
+            selected = refresh_offer_from_catalog(offer, catalog_by_url)
             photos = downloaded
             break
         print(f"Skipped without reachable photo: {offer.get('title')}", file=sys.stderr)
