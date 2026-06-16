@@ -4,6 +4,12 @@ permissions:
   contents: write
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/morning_europe_telegram.yml'
+      - 'tools/post_europe_morning_telegram.py'
   schedule:
     # 09:00 Europe/Moscow = 06:00 UTC. Extra attempts cover GitHub schedule delays.
     - cron: '0 6 * * *'
@@ -44,8 +50,25 @@ jobs:
       - name: Install dependencies
         run: pip install requests pillow
 
+      - name: Check publish window
+        id: publish_window
+        run: |
+          SHOULD_PUBLISH=false
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            SHOULD_PUBLISH=true
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "false" ]; then
+            SHOULD_PUBLISH=true
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            HOUR="$(date -u +%H)"
+            if [ "$HOUR" = "06" ] || [ "$HOUR" = "07" ]; then
+              SHOULD_PUBLISH=true
+            fi
+          fi
+          echo "publish=$SHOULD_PUBLISH" >> "$GITHUB_OUTPUT"
+          echo "publish=$SHOULD_PUBLISH"
+
       - name: Validate and publish one Telegram offer
-        if: ${{ github.event_name == 'schedule' || inputs.dry_run == false }}
+        if: ${{ steps.publish_window.outputs.publish == 'true' }}
         run: python tools/post_europe_morning_telegram.py
 
       - name: Dry-run one Telegram offer
@@ -53,7 +76,7 @@ jobs:
         run: python tools/post_europe_morning_telegram.py --dry-run
 
       - name: Save publication history
-        if: ${{ github.event_name == 'schedule' || inputs.dry_run == false }}
+        if: ${{ steps.publish_window.outputs.publish == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

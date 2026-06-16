@@ -65,8 +65,8 @@ jobs:
       - name: Backup publish Europe offer to Telegram
         run: |
           HOUR="$(date -u +%H)"
-          if [ "$HOUR" != "06" ] && [ "$HOUR" != "07" ]; then
-            echo "Not the morning Telegram window, current UTC hour is $HOUR"
+          if [ "$HOUR" -lt "06" ]; then
+            echo "Before the morning Telegram window, current UTC hour is $HOUR"
             exit 0
           fi
           python tools/post_europe_morning_telegram.py
