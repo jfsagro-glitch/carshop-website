@@ -127,21 +127,29 @@ def image_urls(offer: dict) -> list[str]:
     return [str(url) for url in raw if str(url or "").startswith(("https://", "http://"))]
 
 
-def download_offer_photo(offer: dict) -> bytes | None:
-    for url in image_urls(offer)[:4]:
-        try:
-            response = requests.get(url, headers=IMAGE_HEADERS, timeout=20)
-            content_type = response.headers.get("content-type", "").split(";")[0].lower()
-            if response.ok and content_type.startswith("image/") and 1_000 < len(response.content) < 10_000_000:
-                with Image.open(io.BytesIO(response.content)) as source:
-                    photo = source.convert("RGB")
-                    photo.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
-                    output = io.BytesIO()
-                    photo.save(output, format="JPEG", quality=88, optimize=True)
-                    return output.getvalue()
-        except (requests.RequestException, OSError):
-            continue
+def download_photo(url: str) -> bytes | None:
+    try:
+        response = requests.get(url, headers=IMAGE_HEADERS, timeout=20)
+        content_type = response.headers.get("content-type", "").split(";")[0].lower()
+        if response.ok and content_type.startswith("image/") and 1_000 < len(response.content) < 10_000_000:
+            with Image.open(io.BytesIO(response.content)) as source:
+                photo = source.convert("RGB")
+                photo.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
+                output = io.BytesIO()
+                photo.save(output, format="JPEG", quality=88, optimize=True)
+                return output.getvalue()
+    except (requests.RequestException, OSError):
+        return None
     return None
+
+
+def download_offer_photos(offer: dict, limit: int = 10) -> list[bytes]:
+    photos = []
+    for url in image_urls(offer)[:limit]:
+        photo = download_photo(url)
+        if photo:
+            photos.append(photo)
+    return photos
 
 
 def offer_caption(offer: dict) -> str:
@@ -173,15 +181,37 @@ def telegram_request(method: str, **kwargs) -> requests.Response:
     return response
 
 
-def send_offer(offer: dict, photo: bytes) -> None:
+def send_offer(offer: dict, photos: list[bytes]) -> None:
+    if len(photos) == 1:
+        telegram_request(
+            "sendPhoto",
+            data={
+                "chat_id": CHAT_ID,
+                "caption": offer_caption(offer),
+                "parse_mode": "HTML",
+            },
+            files={"photo": ("offer.jpg", photos[0], "image/jpeg")},
+        )
+        return
+
+    media = []
+    files = {}
+    for index, photo in enumerate(photos[:10]):
+        attachment = f"photo{index}"
+        item = {
+            "type": "photo",
+            "media": f"attach://{attachment}",
+        }
+        if index == 0:
+            item["caption"] = offer_caption(offer)
+            item["parse_mode"] = "HTML"
+        media.append(item)
+        files[attachment] = (f"offer-{index}.jpg", photo, "image/jpeg")
+
     telegram_request(
-        "sendPhoto",
-        data={
-            "chat_id": CHAT_ID,
-            "caption": offer_caption(offer),
-            "parse_mode": "HTML",
-        },
-        files={"photo": ("offer.jpg", photo, "image/jpeg")},
+        "sendMediaGroup",
+        data={"chat_id": CHAT_ID, "media": json.dumps(media, ensure_ascii=False)},
+        files=files,
     )
 
 
@@ -210,26 +240,26 @@ def main() -> None:
         candidates = offers
 
     selected = None
-    photo = None
+    photos = []
     for offer in candidates:
-        downloaded = download_offer_photo(offer)
+        downloaded = download_offer_photos(offer, limit=10)
         if downloaded:
             selected = offer
-            photo = downloaded
+            photos = downloaded
             break
         print(f"Skipped without reachable photo: {offer.get('title')}", file=sys.stderr)
 
-    if selected is None or photo is None:
+    if selected is None or not photos:
         raise RuntimeError("No unpublished Europe offer with a reachable photo")
 
-    print(f"Prepared one Europe offer: {selected['title']} — {selected['price']}")
+    print(f"Prepared one Europe offer: {selected['title']} — {selected['price']} ({len(photos)} photos)")
 
     if args.dry_run:
         return
     if not BOT_TOKEN or not CHAT_ID:
         raise RuntimeError("TELEGRAM_BOT_TOKEN and Telegram channel ID are required")
 
-    send_offer(selected, photo)
+    send_offer(selected, photos)
     history["posts"].append(
         {
             "source_url": selected["source_url"],
