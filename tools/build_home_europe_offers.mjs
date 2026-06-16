@@ -27,7 +27,9 @@ const TARGETS = [
   { brand: 'Volkswagen', model: /(?:^|\s)T6(?:\.1)?\s+Caravelle(?:\s|$)/i },
   { brand: 'Volkswagen', model: /(?:^|\s)Passat(?:\s|$)/i },
   { brand: 'Opel', model: /(?:^|\s)Mokka(?:\s|$)/i },
+  { brand: 'Opel', model: /(?:^|\s)Crossland(?:\s|$)/i },
   { brand: 'Skoda', model: /(?:^|\s)Kodiaq(?:\s|$)/i },
+  { brand: 'Skoda', model: /(?:^|\s)Octavia(?:\s|$)/i },
 ];
 
 function normalize(value) {
