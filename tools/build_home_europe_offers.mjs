@@ -11,9 +11,21 @@ const excludeHistory = process.argv.includes('--exclude-history');
 
 const TARGETS = [
   { brand: 'Audi', model: /(?:^|\s)A4(?:\s|$)/i },
+  { brand: 'Audi', model: /(?:^|\s)A3(?:\s|$)/i },
+  { brand: 'Audi', model: /(?:^|\s)Q3(?:\s|$)/i },
   { brand: 'BMW', model: /(?:^|\s)(?:3|3er|3[\s-]?series|31[68][di]?|32\d[di]?|33\d[di]?|34\d[di]?)(?:\s|$)/i },
+  { brand: 'BMW', model: /(?:^|\s)216[di]?(?:\s|$)/i },
+  { brand: 'BMW', model: /(?:^|\s)X1(?:\s|$)/i },
+  { brand: 'BMW', model: /(?:^|\s)X2(?:\s|$)/i },
+  { brand: 'Mercedes-Benz', model: /(?:^|\s)C\s*180(?:\s|$)/i },
+  { brand: 'Mercedes-Benz', model: /(?:^|\s)B\s*180(?:\s|$)/i },
   { brand: 'Mercedes-Benz', model: /(?:^|\s)GLA(?:\s|$)/i },
+  { brand: 'Mercedes-Benz', model: /(?:^|\s)GLB\s*180(?:\s|$)/i },
   { brand: 'Volkswagen', model: /(?:^|\s)Arteon(?:\s|$)/i },
+  { brand: 'Volkswagen', model: /(?:^|\s)T-?Roc(?:\s|$)/i },
+  { brand: 'Volkswagen', model: /(?:^|\s)Golf\s+GTE(?:\s|$)/i },
+  { brand: 'Volkswagen', model: /(?:^|\s)T6(?:\.1)?\s+Caravelle(?:\s|$)/i },
+  { brand: 'Volkswagen', model: /(?:^|\s)Passat(?:\s|$)/i },
   { brand: 'Opel', model: /(?:^|\s)Mokka(?:\s|$)/i },
   { brand: 'Skoda', model: /(?:^|\s)Kodiaq(?:\s|$)/i },
 ];
@@ -53,6 +65,18 @@ async function hasReachableImage(car) {
 function matches(car, target) {
   const modelText = `${car.model || ''} ${car.full_title || ''}`.trim();
   return normalize(car.brand) === normalize(target.brand) && target.model.test(modelText);
+}
+
+function hasAutomaticTransmission(car) {
+  const transmission = normalize(car.transmission || car.gearbox || '');
+  return transmission.includes('автомат')
+    || transmission.includes('automatic')
+    || transmission.includes('automatik')
+    || transmission.includes('dsg')
+    || transmission.includes('stronic')
+    || transmission.includes('steptronic')
+    || transmission.includes('gtronic')
+    || transmission.includes('dct');
 }
 
 function engineLabel(car) {
@@ -128,6 +152,7 @@ for (const target of TARGETS) {
         && Number(car.price || 0) > 0
         && Number(car.turnkey_price_rub || 0) > 0
         && car.turnkey_calculation_complete
+        && hasAutomaticTransmission(car)
         && images(car).length > 0;
     })
     .sort((a, b) => Number(a.price) - Number(b.price));

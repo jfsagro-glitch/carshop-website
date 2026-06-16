@@ -2440,32 +2440,15 @@ async function loadTelegramOffersSection() {
     const meta = document.getElementById('telegramOffersMeta');
     if (!grid) return;
     try {
-        const [telegramResult, auctionResult, europeResult] = await Promise.allSettled([
-            fetch('data/telegram_top_offers.json?v=20260515-turnkey-market', { cache: 'no-store' }),
-            fetch('data/featured_auction_offers.json?v=20260515-turnkey-market', { cache: 'no-store' }),
-            fetch('data/home_featured_europe.json?v=20260608', { cache: 'no-store' })
-        ]);
-        const telegramResponse = telegramResult.status === 'fulfilled' ? telegramResult.value : null;
-        const auctionResponse = auctionResult.status === 'fulfilled' ? auctionResult.value : null;
-        const europeResponse = europeResult.status === 'fulfilled' ? europeResult.value : null;
-        if (!telegramResponse?.ok && !auctionResponse?.ok && !europeResponse?.ok) throw new Error('No market feeds available');
-        const payload = telegramResponse?.ok ? await telegramResponse.json() : {};
-        const auctionPayload = auctionResponse?.ok ? await auctionResponse.json() : {};
-        const europePayload = europeResponse?.ok ? await europeResponse.json() : {};
-        const telegramOffers = Array.isArray(payload.offers) ? payload.offers.filter(isValidMarketOffer) : [];
-        const auctionOffers = Array.isArray(auctionPayload.offers) ? auctionPayload.offers.map(item => ({
-            ...item,
-            source_type: 'auction_candidate',
-            facts: ['аукционный кандидат', ...(item.facts || [])]
-        })).filter(isValidMarketOffer) : [];
-        const marketOffers = [...telegramOffers, ...auctionOffers].slice(0, 8);
-        const featuredEuropeOffers = Array.isArray(europePayload.offers) ? europePayload.offers : [];
-        const candidateOffers = [...featuredEuropeOffers, ...marketOffers];
+        const europeResponse = await fetch('data/home_featured_europe.json?v=20260616-europe-only', { cache: 'no-store' });
+        if (!europeResponse?.ok) throw new Error('Europe feed is not available');
+        const europePayload = await europeResponse.json();
+        const candidateOffers = Array.isArray(europePayload.offers) ? europePayload.offers : [];
         const offers = (await Promise.all(candidateOffers.map(prepareOfferWithPhoto))).filter(Boolean);
         if (meta) {
-            const dt = payload.generated_at ? new Date(payload.generated_at).toLocaleString('ru-RU') : '';
+            const dt = europePayload.generated_at ? new Date(europePayload.generated_at).toLocaleString('ru-RU') : '';
             const displayedCount = offers.length;
-            meta.textContent = `Подборка обновлена: ${dt || 'сегодня'}. Источников: ${payload.source_count || 0}, подходящих объявлений: ${displayedCount}. Показываем проходные предложения с расчётом под ключ в РФ.`;
+            meta.textContent = `Подборка обновлена: ${dt || 'сегодня'}. ${displayedCount} топовых предложений из Европы: автомат, пробег до 100 000 км, фото и расчёт под ключ в РФ.`;
         }
         if (!offers.length) {
             grid.innerHTML = '<div class="usa-empty-state">Пока нет подходящих предложений</div>';
@@ -2563,8 +2546,8 @@ async function loadTelegramOffersSection() {
             }, { passive: true });
         });
     } catch (error) {
-        if (meta) meta.textContent = 'Не удалось загрузить Telegram-подборку';
-        grid.innerHTML = '<div class="usa-empty-state">Ошибка загрузки Telegram-предложений</div>';
+        if (meta) meta.textContent = 'Не удалось загрузить европейскую подборку';
+        grid.innerHTML = '<div class="usa-empty-state">Ошибка загрузки европейских предложений</div>';
     }
 }
 
