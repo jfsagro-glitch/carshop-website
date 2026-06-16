@@ -5,8 +5,11 @@ permissions:
 
 on:
   schedule:
-    # 09:00 Europe/Moscow = 06:00 UTC.
+    # 09:00 Europe/Moscow = 06:00 UTC. Extra attempts cover GitHub schedule delays.
     - cron: '0 6 * * *'
+    - cron: '15 6 * * *'
+    - cron: '30 6 * * *'
+    - cron: '45 6 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

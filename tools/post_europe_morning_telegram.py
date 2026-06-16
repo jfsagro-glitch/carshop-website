@@ -10,9 +10,8 @@ import json
 import os
 import subprocess
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 import requests
 from PIL import Image
@@ -33,6 +32,7 @@ IMAGE_HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; ExpoMirBot/1.0)",
     "Referer": "https://www.autoscout24.de/",
 }
+MOSCOW_TZ = timezone(timedelta(hours=3), "MSK")
 
 
 def load_offers() -> list[dict]:
@@ -91,6 +91,21 @@ def posted_urls(history: dict) -> set[str]:
     }
 
 
+def moscow_today() -> str:
+    return datetime.now(MOSCOW_TZ).date().isoformat()
+
+
+def already_published_today(history: dict) -> bool:
+    today = moscow_today()
+    for post in history["posts"]:
+        if not isinstance(post, dict):
+            continue
+        published_at = str(post.get("published_at") or "")
+        if published_at.startswith(today):
+            return True
+    return False
+
+
 def initialize_cycle(history: dict, offers: list[dict]) -> None:
     if not history["cycle_offer_urls"]:
         history["cycle_offer_urls"] = [str(offer["source_url"]) for offer in offers]
@@ -132,7 +147,7 @@ def download_offer_photo(offer: dict) -> bytes | None:
 def offer_caption(offer: dict) -> str:
     details = offer.get("details") or {}
     lines = [
-        f"🇪🇺 <b>Автомобиль дня · {datetime.now(ZoneInfo('Europe/Moscow')).strftime('%d.%m.%Y')}</b>",
+        f"🇪🇺 <b>Автомобиль дня · {datetime.now(MOSCOW_TZ).strftime('%d.%m.%Y')}</b>",
         "",
         f"🚘 <b>{html.escape(str(offer['title']))}</b>",
         f"💰 Под ключ в РФ: <b>{html.escape(str(offer['price']))}</b>",
@@ -177,6 +192,10 @@ def main() -> None:
 
     offers = load_offers()
     history = load_history()
+    if already_published_today(history):
+        print(f"Europe offer already published today ({moscow_today()}); skipping")
+        return
+
     initialize_cycle(history, offers)
     already_posted = posted_urls(history)
     cycle_urls = set(history["cycle_offer_urls"])
@@ -215,7 +234,7 @@ def main() -> None:
         {
             "source_url": selected["source_url"],
             "title": selected["title"],
-            "published_at": datetime.now(ZoneInfo("Europe/Moscow")).isoformat(),
+            "published_at": datetime.now(MOSCOW_TZ).isoformat(),
         }
     )
 
