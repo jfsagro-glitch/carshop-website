@@ -755,13 +755,23 @@ select.language-select:active {
     .car-card:hover {
         transform: translateY(-6px) scale(1.01) !important;
     }
-    
+
     .logo-img {
-        height: 55px !important;
-        max-height: 55px !important;
+        height: 46px !important;
+        max-height: 46px !important;
         padding: 0 !important;
+        margin-right: 8px;
     }
-    
+
+    .logo {
+        font-size: 1.1rem !important;
+        margin-right: 0 !important;
+    }
+
+    .logo span {
+        font-size: 1.05rem !important;
+    }
+
     .btn-primary,
     .filter-btn,
     .cta-btn {
@@ -891,8 +901,16 @@ select.language-select:active {
         border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .nav a:last-child { border-bottom: none; }
-    .header-content { flex-wrap: wrap; position: relative; }
-    .header-actions { gap: 0.4rem; }
+    .header-content {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        position: relative;
+        padding: 0.65rem 0;
+        gap: 0.5rem;
+    }
+    .header-actions { gap: 0.4rem; flex-shrink: 0; }
     #openRequestBtn { display: none; }
     /* Prevent background scroll when mobile nav is open */
     body.nav-open { overflow: hidden; }
@@ -3610,4 +3628,361 @@ textarea {
     .countries-section { padding: 40px 0; }
     .why-us { padding: 2.5rem 0; }
     .testimonials { padding: 3rem 0; }
+}
+
+/* ======================================================
+   MOBILE HOME UX COMPACT HEADER (2026-06-18)
+   ====================================================== */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 92px;
+    }
+
+    body.premium {
+        padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+        overflow-x: hidden;
+    }
+
+    body.premium .header {
+        background: rgba(96, 106, 121, 0.96) !important;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.18) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.26) !important;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+
+    body.premium .header .container {
+        padding: 0 14px;
+    }
+
+    body.premium .header-content {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 74px 42px 42px 42px;
+        grid-template-areas:
+            "logo lang calc cart menu"
+            "nav nav nav nav nav";
+        align-items: center;
+        gap: 8px;
+        padding: 9px 0 8px !important;
+        min-height: 0;
+    }
+
+    body.premium .logo {
+        grid-area: logo;
+        justify-self: start;
+        min-width: 0;
+        margin: 0;
+        padding-bottom: 4px;
+        border-bottom-width: 2px;
+    }
+
+    body.premium .logo-img,
+    body.premium .header--scrolled .logo-img {
+        width: 50px !important;
+        height: 50px !important;
+        max-width: 50px !important;
+        max-height: 50px !important;
+        margin-right: 8px;
+        object-fit: contain;
+    }
+
+    body.premium .logo span {
+        max-width: 138px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 1.28rem;
+        line-height: 1;
+    }
+
+    body.premium .header-actions {
+        display: contents;
+    }
+
+    body.premium .language-selector {
+        grid-area: lang;
+        margin: 0;
+    }
+
+    body.premium .language-select {
+        width: 74px;
+        min-width: 74px;
+        height: 42px;
+        padding: 0 28px 0 13px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+    }
+
+    body.premium .customs-toolbar-btn {
+        grid-area: calc;
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        padding: 0;
+        border-radius: 12px;
+    }
+
+    body.premium .cart-btn {
+        grid-area: cart;
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        padding: 0;
+        border-radius: 12px;
+    }
+
+    body.premium .cart-count {
+        top: -8px;
+        right: -8px;
+        min-width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+
+    body.premium #openRequestBtn {
+        display: none !important;
+    }
+
+    body.premium #mobileMenuToggle {
+        grid-area: menu;
+        position: static;
+        width: 42px;
+        height: 42px;
+        margin: 0;
+        border-radius: 12px;
+        background: rgba(15, 23, 42, 0.22);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: none;
+    }
+
+    body.premium #mobileMenuToggle span {
+        width: 19px;
+        height: 2px;
+        background: #f8fafc;
+    }
+
+    body.premium .nav {
+        grid-area: nav;
+        display: none;
+        width: 100%;
+        margin: 0;
+        padding: 8px 0 2px;
+        gap: 7px;
+        justify-content: center;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    body.premium .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    body.premium .nav.nav--open {
+        display: flex;
+    }
+
+    body.premium .nav a {
+        flex: 0 0 auto;
+        padding: 7px 10px;
+        border: 1px solid rgba(226, 232, 240, 0.2);
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.34);
+        font-size: 0.8rem;
+        line-height: 1;
+    }
+
+    body.premium .nav a::after {
+        display: none;
+    }
+
+    body.premium #main-content {
+        padding-top: 80px;
+    }
+
+    body.premium .header-info-banner {
+        display: none;
+    }
+
+    body.premium .telegram-offers-section {
+        padding: 18px 0 calc(96px + env(safe-area-inset-bottom, 0px));
+        scroll-margin-top: 92px;
+    }
+
+    body.premium .telegram-offers-section .container {
+        padding: 0 16px;
+    }
+
+    body.premium .telegram-offers-head {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        margin-bottom: 14px;
+    }
+
+    body.premium .telegram-offers-head .section-title {
+        margin: 0;
+        font-size: clamp(1.65rem, 8vw, 2.15rem);
+        line-height: 1.15;
+        letter-spacing: 0;
+    }
+
+    body.premium .telegram-offers-head__btn {
+        width: 100%;
+        min-height: 52px;
+        border-radius: 11px;
+        justify-content: center;
+        font-size: 1rem;
+        box-shadow: 0 10px 28px rgba(212, 175, 55, 0.22);
+    }
+
+    body.premium .telegram-offers-meta {
+        margin: 0 0 18px;
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    body.premium .telegram-offers-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    body.premium .telegram-offer-card {
+        width: 100%;
+        min-width: 0;
+        border-radius: 13px;
+        overflow: hidden;
+    }
+
+    body.premium .telegram-offer-card__gallery {
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+        background: #050914;
+    }
+
+    body.premium .telegram-offer-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body.premium .telegram-offer-card__nav {
+        width: 36px;
+        height: 36px;
+        background: rgba(15, 23, 42, 0.72);
+    }
+
+    body.premium .telegram-offer-card__body {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    body.premium .telegram-offer-card__title {
+        font-size: 1.08rem;
+        line-height: 1.24;
+    }
+
+    body.premium .telegram-offer-card__price {
+        font-size: 1.38rem;
+    }
+
+    body.premium .telegram-offer-card__specs {
+        gap: 8px;
+    }
+
+    body.premium .telegram-offer-card__spec {
+        padding: 8px 9px;
+        border-radius: 9px;
+    }
+
+    body.premium .telegram-offer-card__spec b {
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    body.premium .telegram-offer-card__text {
+        font-size: 0.86rem;
+        line-height: 1.45;
+    }
+
+    body.premium #mobileBottomNav {
+        display: flex;
+        min-height: 62px;
+        padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+        z-index: 9996;
+    }
+
+    body.premium .mbn-item {
+        min-width: 0;
+        padding: 7px 4px;
+        border-radius: 12px;
+        font-size: 0.68rem;
+    }
+
+    body.premium .mbn-item i {
+        font-size: 1.05rem;
+    }
+
+    body.premium .floating-wa,
+    body.premium .floating-subscribe {
+        display: none !important;
+    }
+}
+
+@media (max-width: 390px) {
+    body.premium .header .container {
+        padding: 0 10px;
+    }
+
+    body.premium .header-content {
+        grid-template-columns: minmax(0, 1fr) 66px 38px 38px 38px;
+        gap: 6px;
+        padding-top: 8px !important;
+    }
+
+    body.premium .logo-img,
+    body.premium .header--scrolled .logo-img {
+        width: 44px !important;
+        height: 44px !important;
+        max-width: 44px !important;
+        max-height: 44px !important;
+        margin-right: 7px;
+    }
+
+    body.premium .logo span {
+        max-width: 114px;
+        font-size: 1.05rem;
+    }
+
+    body.premium .language-select {
+        width: 66px;
+        min-width: 66px;
+        height: 38px;
+        padding-left: 10px;
+        padding-right: 24px;
+    }
+
+    body.premium .customs-toolbar-btn,
+    body.premium .cart-btn,
+    body.premium #mobileMenuToggle {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+    }
+
+    body.premium #main-content {
+        padding-top: 74px;
+    }
+
+    body.premium .telegram-offers-section .container {
+        padding: 0 12px;
+    }
+
+    body.premium .telegram-offers-head .section-title {
+        font-size: 1.48rem;
+    }
+
+    body.premium .telegram-offer-card__body {
+        padding: 12px;
+    }
 }

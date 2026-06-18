@@ -28,6 +28,19 @@ CHAT_ID = (
     os.environ.get("TELEGRAM_EUROPE_CHANNEL_ID", "").strip()
     or os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 )
+# Additional public channel (e.g. https://t.me/+TFiMeJeIyediM2Vi).
+# Set TELEGRAM_PUBLIC_CHANNEL_ID to the numeric chat ID of that channel.
+PUBLIC_CHANNEL_ID = os.environ.get("TELEGRAM_PUBLIC_CHANNEL_ID", "").strip()
+
+
+def all_channel_ids() -> list[str]:
+    """Return de-duplicated list of channel IDs to post to."""
+    ids: list[str] = []
+    if CHAT_ID:
+        ids.append(CHAT_ID)
+    if PUBLIC_CHANNEL_ID and PUBLIC_CHANNEL_ID not in ids:
+        ids.append(PUBLIC_CHANNEL_ID)
+    return ids
 
 IMAGE_HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; ExpoMirBot/1.0)",
@@ -247,12 +260,13 @@ def telegram_request(method: str, **kwargs) -> requests.Response:
     return response
 
 
-def send_offer(offer: dict, photos: list[bytes], test: bool = False) -> None:
+def send_offer_to(chat_id: str, offer: dict, photos: list[bytes], test: bool = False) -> None:
+    """Send one offer (photos + caption) to a single chat/channel."""
     if len(photos) == 1:
         telegram_request(
             "sendPhoto",
             data={
-                "chat_id": CHAT_ID,
+                "chat_id": chat_id,
                 "caption": offer_caption(offer, test=test),
                 "parse_mode": "HTML",
             },
@@ -264,7 +278,7 @@ def send_offer(offer: dict, photos: list[bytes], test: bool = False) -> None:
     files = {}
     for index, photo in enumerate(photos[:10]):
         attachment = f"photo{index}"
-        item = {
+        item: dict = {
             "type": "photo",
             "media": f"attach://{attachment}",
         }
@@ -276,9 +290,21 @@ def send_offer(offer: dict, photos: list[bytes], test: bool = False) -> None:
 
     telegram_request(
         "sendMediaGroup",
-        data={"chat_id": CHAT_ID, "media": json.dumps(media, ensure_ascii=False)},
+        data={"chat_id": chat_id, "media": json.dumps(media, ensure_ascii=False)},
         files=files,
     )
+
+
+def send_offer(offer: dict, photos: list[bytes], test: bool = False) -> None:
+    """Send the offer to every configured channel."""
+    channels = all_channel_ids()
+    for chat_id in channels:
+        try:
+            send_offer_to(chat_id, offer, photos, test=test)
+            print(f"Sent to channel {chat_id}")
+        except RuntimeError as exc:
+            print(f"ERROR sending to channel {chat_id}: {exc}", file=sys.stderr)
+            raise
 
 
 def main() -> None:
@@ -324,12 +350,17 @@ def main() -> None:
 
     if args.dry_run:
         return
-    if not BOT_TOKEN or not CHAT_ID:
-        raise RuntimeError("TELEGRAM_BOT_TOKEN and Telegram channel ID are required")
+
+    channels = all_channel_ids()
+    if not BOT_TOKEN or not channels:
+        raise RuntimeError(
+            "TELEGRAM_BOT_TOKEN and at least one channel ID "
+            "(TELEGRAM_EUROPE_CHANNEL_ID or TELEGRAM_PUBLIC_CHANNEL_ID) are required"
+        )
 
     send_offer(selected, photos, test=args.test)
     if args.test:
-        print(f"Sent test offer to Telegram channel {CHAT_ID}")
+        print(f"Sent test offer to {len(channels)} channel(s): {', '.join(channels)}")
         return
 
     history["posts"].append(
@@ -347,7 +378,7 @@ def main() -> None:
         print("Completed six-car cycle and refreshed homepage offers")
 
     save_history(history)
-    print(f"Published one offer to Telegram channel {CHAT_ID}")
+    print(f"Published one offer to {len(channels)} channel(s): {', '.join(channels)}")
 
 
 if __name__ == "__main__":
