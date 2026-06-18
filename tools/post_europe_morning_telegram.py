@@ -28,9 +28,8 @@ CHAT_ID = (
     os.environ.get("TELEGRAM_EUROPE_CHANNEL_ID", "").strip()
     or os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 )
-# Additional public channel (e.g. https://t.me/+TFiMeJeIyediM2Vi).
-# Set TELEGRAM_PUBLIC_CHANNEL_ID to the numeric chat ID of that channel.
-PUBLIC_CHANNEL_ID = os.environ.get("TELEGRAM_PUBLIC_CHANNEL_ID", "").strip()
+# Additional public channel. Public usernames are safe to keep in code.
+PUBLIC_CHANNEL_ID = os.environ.get("TELEGRAM_PUBLIC_CHANNEL_ID", "@testforcar444").strip()
 
 
 def all_channel_ids() -> list[str]:
