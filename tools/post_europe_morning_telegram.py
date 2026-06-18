@@ -29,7 +29,7 @@ CHAT_ID = (
     or os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 )
 # Additional public channel. Public usernames are safe to keep in code.
-PUBLIC_CHANNEL_ID = os.environ.get("TELEGRAM_PUBLIC_CHANNEL_ID", "@testforcar444").strip()
+PUBLIC_CHANNEL_ID = os.environ.get("TELEGRAM_PUBLIC_CHANNEL_ID", "@expo_mir").strip()
 
 
 def all_channel_ids() -> list[str]:
@@ -233,8 +233,6 @@ def download_offer_photos(offer: dict, limit: int = 10) -> list[bytes]:
 def offer_caption(offer: dict, test: bool = False) -> str:
     details = offer.get("details") or {}
     lines = [
-        f"🇪🇺 <b>{'Тестовая отправка' if test else 'Автомобиль дня'} · {datetime.now(MOSCOW_TZ).strftime('%d.%m.%Y')}</b>",
-        "",
         f"🚘 <b>{html.escape(str(offer['title']))}</b>",
         f"💰 Под ключ в РФ: <b>{html.escape(str(offer['price']))}</b>",
         f"🇪🇺 Цена в Европе: {html.escape(str(offer.get('base_price') or 'уточняется'))}",
