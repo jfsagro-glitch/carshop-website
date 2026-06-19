@@ -55,11 +55,6 @@ jobs:
       - name: Install dependencies
         run: pip install requests pillow
 
-      - name: Refresh Europe prices by CBR rates
-        run: |
-          node tools/update_europe_turnkey_prices.mjs
-          node tools/build_home_europe_offers.mjs --exclude-history
-
       - name: Check publish window
         id: publish_window
         run: |

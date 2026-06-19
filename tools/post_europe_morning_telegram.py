@@ -75,6 +75,20 @@ def load_offers() -> list[dict]:
     return valid[:10]
 
 
+def refresh_prices_by_cbr() -> None:
+    """Refresh Europe turnkey prices from the latest CBR rates before posting."""
+    subprocess.run(
+        ["node", "tools/update_europe_turnkey_prices.mjs"],
+        cwd=ROOT,
+        check=True,
+    )
+    subprocess.run(
+        ["node", "tools/build_home_europe_offers.mjs", "--exclude-history"],
+        cwd=ROOT,
+        check=True,
+    )
+
+
 def load_europe_catalog_by_url() -> dict[str, dict]:
     if not EUROPE_CATALOG_PATH.exists():
         return {}
@@ -310,12 +324,14 @@ def main() -> None:
     parser.add_argument("--test", action="store_true", help="Send a test post without recording publication history")
     args = parser.parse_args()
 
-    offers = load_offers()
-    catalog_by_url = load_europe_catalog_by_url()
     history = load_history()
     if already_published_today(history) and not args.test:
         print(f"Europe offer already published today ({moscow_today()}); skipping")
         return
+
+    refresh_prices_by_cbr()
+    offers = load_offers()
+    catalog_by_url = load_europe_catalog_by_url()
 
     initialize_cycle(history, offers)
     already_posted = posted_urls(history)
