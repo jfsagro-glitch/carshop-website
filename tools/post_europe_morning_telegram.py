@@ -28,14 +28,15 @@ CHAT_ID = (
     os.environ.get("TELEGRAM_EUROPE_CHANNEL_ID", "").strip()
     or os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 )
-# Additional public channel. Public usernames are safe to keep in code.
-PUBLIC_CHANNEL_ID = os.environ.get("TELEGRAM_PUBLIC_CHANNEL_ID", "@expo_mir").strip()
+# Public channel is fixed intentionally so stale GitHub secrets cannot redirect posts.
+PUBLIC_CHANNEL_ID = "@expo_mir"
+BLOCKED_CHANNEL_IDS = {"@testforcar444", "testforcar444", "https://t.me/testforcar444"}
 
 
 def all_channel_ids() -> list[str]:
     """Return de-duplicated list of channel IDs to post to."""
     ids: list[str] = []
-    if CHAT_ID:
+    if CHAT_ID and CHAT_ID not in BLOCKED_CHANNEL_IDS:
         ids.append(CHAT_ID)
     if PUBLIC_CHANNEL_ID and PUBLIC_CHANNEL_ID not in ids:
         ids.append(PUBLIC_CHANNEL_ID)
@@ -368,7 +369,7 @@ def main() -> None:
     if not BOT_TOKEN or not channels:
         raise RuntimeError(
             "TELEGRAM_BOT_TOKEN and at least one channel ID "
-            "(TELEGRAM_EUROPE_CHANNEL_ID or TELEGRAM_PUBLIC_CHANNEL_ID) are required"
+            "(TELEGRAM_EUROPE_CHANNEL_ID or TELEGRAM_CHAT_ID) are required"
         )
 
     send_offer(selected, photos, test=args.test)
