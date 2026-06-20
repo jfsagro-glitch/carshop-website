@@ -100,7 +100,7 @@ carshop-website/
 - **Телефон:** +7 (915) 444-12-08
 - **Email:** carexportgeo@bk.ru
 - **Telegram:** [@Aleksandr_N_444](https://t.me/Aleksandr_N_444)
-- **WhatsApp:** [+373 (68) 925626](https://wa.me/37368925626)
+- **WhatsApp:** [+381 63 167 1218](https://wa.me/381631671218)
 - **Сайт:** [EXPO MIR](https://jfsagro-glitch.github.io/carshop-website)
 
 ## 📄 Лицензия

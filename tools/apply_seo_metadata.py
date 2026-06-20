@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Apply consistent SEO and entity metadata to public HTML pages."""
 
 from __future__ import annotations
@@ -127,12 +127,12 @@ def expo_organization() -> dict:
         "logo": {"@type": "ImageObject", "url": EXPO_IMAGE},
         "image": EXPO_IMAGE,
         "email": "carexportgeo@bk.ru",
-        "telephone": ["+37368925626", "+79184140636"],
+        "telephone": ["+381631671218", "+79184140636"],
         "sameAs": ["https://t.me/expo_mir"],
         "contactPoint": [
             {
                 "@type": "ContactPoint",
-                "telephone": "+37368925626",
+                "telephone": "+381631671218",
                 "contactType": "sales",
                 "availableLanguage": ["ru"],
             },

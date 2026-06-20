@@ -118,7 +118,7 @@
     if (document.getElementById('whatsappFloatBtn')) return;
     var btn = document.createElement('a');
     btn.id = 'whatsappFloatBtn';
-    btn.href = 'https://wa.me/37368925626';
+    btn.href = 'https://wa.me/381631671218';
     btn.target = '_blank';
     btn.rel = 'noopener noreferrer';
     btn.setAttribute('aria-label', 'Написать в WhatsApp');
@@ -275,7 +275,7 @@
       '<a href="georgia-stock.html" class="mbn-item" data-page="georgia-stock.html">',
       '  <i class="fas fa-car"></i><span>Грузия</span>',
       '</a>',
-      '<a href="https://wa.me/37368925626" target="_blank" rel="noopener noreferrer" class="mbn-item mbn-item--wa">',
+      '<a href="https://wa.me/381631671218" target="_blank" rel="noopener noreferrer" class="mbn-item mbn-item--wa">',
       '  <i class="fab fa-whatsapp"></i><span>WhatsApp</span>',
       '</a>',
       '<a href="javascript:void(0)" class="mbn-item mbn-item--cta" onclick="typeof openRequestModal!==\'undefined\'&&openRequestModal()">',
