@@ -1,4 +1,4 @@
-﻿const CACHE_VERSION = 'expo-mir-pwa-v10-customs-age-fix';
+const CACHE_VERSION = 'expo-mir-pwa-v11-stability-perf';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -16,9 +16,8 @@ const APP_SHELL = [
   '/translations.js',
   '/parts-orders.js',
   '/site.webmanifest',
-  '/cars_europe_new.json',
-  '/cars_georgia_stock.json',
   '/data/home_featured_europe.json',
+  '/data/stock_counts.json',
   '/images/android-chrome-192x192.png',
   '/images/android-chrome-512x512.png',
   '/images/apple-touch-icon.png',
@@ -30,7 +29,7 @@ const APP_SHELL = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_VERSION)
-      .then(cache => cache.addAll(APP_SHELL))
+      .then(cache => Promise.allSettled(APP_SHELL.map(url => cache.add(url))))
       .then(() => self.skipWaiting())
   );
 });
@@ -106,5 +105,3 @@ self.addEventListener('fetch', event => {
     })
   );
 });
-
-

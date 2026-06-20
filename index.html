@@ -828,21 +828,27 @@
         </div>
     </div>
 
-    <script src="script.js?v=20260609-home-real-photos"></script>
+    <script src="script.js?v=20260620-stability-perf"></script>
     <script src="header.js?v=20260608-secondary-phone"></script>
     <script>
     (function() {
-        // Live stock counts from auto-synced JSONs
-        function updateStockCount(url, elId, suffix) {
-            fetch(url + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r) { return r.ok ? r.json() : null; }).then(function(d) {
-                if (!d || !d.length) return;
-                var el = document.getElementById(elId);
-                if (el) el.textContent = d.length + suffix;
-            }).catch(function(){});
-        }
-        updateStockCount('cars_georgia_stock.json', 'georgiaStockCount', '+ авто');
-        updateStockCount('cars_europe_new.json', 'europeStockCount', '+ авто');
-        updateStockCount('cars_korea_stock.json', 'koreaStockCount', '+ авто');
+        // Lightweight stock counters. Never load full catalogs on the homepage.
+        fetch('data/stock_counts.json?v=20260620', { cache: 'no-store' })
+            .then(function(r) { return r.ok ? r.json() : null; })
+            .then(function(payload) {
+                var counts = payload && payload.counts ? payload.counts : {};
+                var targets = {
+                    georgiaStockCount: counts.georgia,
+                    europeStockCount: counts.europe,
+                    koreaStockCount: counts.korea
+                };
+                Object.keys(targets).forEach(function(id) {
+                    var value = Number(targets[id] || 0);
+                    var el = document.getElementById(id);
+                    if (el && value > 0) el.textContent = value + '+ авто';
+                });
+            })
+            .catch(function(){});
     })();
     </script>
     <button id="backToTop" class="back-to-top" aria-label="Прокрутить наверх" title="Наверх">
@@ -901,6 +907,10 @@
                 georgiaDomCache[id] = document.getElementById(id);
             }
             return georgiaDomCache[id];
+        }
+
+        function hasGeorgiaCatalogGrid() {
+            return Boolean(getGeorgiaElement('carsGrid'));
         }
 
         // Загрузка курса USD/RUB
@@ -1269,6 +1279,7 @@
 
         // Загрузка данных
         async function loadGeorgiaCarsData() {
+            if (!hasGeorgiaCatalogGrid()) return;
             try {
                 const result = await sbLoadCarsWithFallback('georgia', './cars_georgia_stock.json');
                 georgiaCarsData = result.data;
@@ -1298,27 +1309,6 @@
                     return 0;
                 });
 
-                // Обновляем счётчик в hero через Supabase count
-                try {
-                    const cnt = await sbCountCars('georgia');
-                    const el = document.getElementById('georgiaStockCount');
-                    if (el && cnt > 0) el.textContent = cnt + '+ авто';
-                } catch(_) {}
-
-                // Обновляем счётчик Europe через Supabase
-                try {
-                    const cntEu = await sbCountCars('europe');
-                    const elEu = document.getElementById('europeStockCount');
-                    if (elEu && cntEu > 0) elEu.textContent = cntEu + '+ авто';
-                } catch(_) {}
-
-                // Обновляем счётчик Korea через Supabase
-                try {
-                    const cntKr = await sbCountCars('korea');
-                    const elKr = document.getElementById('koreaStockCount');
-                    if (elKr && cntKr > 0) elKr.textContent = cntKr + '+ авто';
-                } catch(_) {}
-
                 // Загружаем курс
                 await loadGeorgiaUsdToRubRate();
 
@@ -1342,11 +1332,11 @@
         // Загружаем данные при загрузке страницы
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
-                loadGeorgiaCarsData();
+                if (hasGeorgiaCatalogGrid()) loadGeorgiaCarsData();
             });
         } else {
             // DOM уже загружен
-            loadGeorgiaCarsData();
+            if (hasGeorgiaCatalogGrid()) loadGeorgiaCarsData();
         }
 
         // Также пробуем загрузить при полной загрузке страницы

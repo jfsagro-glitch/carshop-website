@@ -88,6 +88,11 @@ def refresh_prices_by_cbr() -> None:
         cwd=ROOT,
         check=True,
     )
+    subprocess.run(
+        ["node", "tools/build_stock_counts.mjs"],
+        cwd=ROOT,
+        check=True,
+    )
 
 
 def load_europe_catalog_by_url() -> dict[str, dict]:

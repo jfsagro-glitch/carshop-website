@@ -2460,7 +2460,7 @@ async function loadTelegramOffersSection() {
                 .map(src => safeHttpUrl(src, ''))
                 .filter(Boolean);
             if (!images.length) return '';
-            preloadOfferImages(images);
+            if (index < 2) preloadOfferImages(images.slice(1, 3));
             const details = offer.details || {};
             const facts = (offer.facts || []).slice(0, 3).map(fact => `<span class="telegram-offer-card__chip">${escapeHtml(fact)}</span>`).join('');
             const catalogOffer = ['auction_candidate', 'europe_catalog'].includes(offer.source_type);

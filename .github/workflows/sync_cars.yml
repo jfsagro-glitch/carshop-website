@@ -80,7 +80,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cars_europe_new.json data/telegram_europe_history.json data/home_featured_europe.json
+          git add cars_europe_new.json data/telegram_europe_history.json data/home_featured_europe.json data/stock_counts.json
           if git diff --cached --quiet; then
             exit 0
           fi
@@ -181,6 +181,9 @@ jobs:
       - name: Sync Avtostok63 premium stock
         run: python tools/fetch_carexpo_premium.py
 
+      - name: Build stock counts
+        run: node tools/build_stock_counts.mjs
+
       - name: Validate public catalogs
         run: python car_parser.py --validate-catalogs
 
@@ -192,14 +195,14 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet cars_georgia_stock.json cars_europe_new.json data/avtostok63_premium.json data/home_featured_europe.json || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet cars_georgia_stock.json cars_europe_new.json data/avtostok63_premium.json data/home_featured_europe.json data/stock_counts.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cars_georgia_stock.json cars_europe_new.json data/avtostok63_premium.json data/home_featured_europe.json
+          git add cars_georgia_stock.json cars_europe_new.json data/avtostok63_premium.json data/home_featured_europe.json data/stock_counts.json
           git commit -m "auto: sync car catalogs [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push
 
@@ -223,6 +226,9 @@ jobs:
             echo "Korea stock after supplement: $COUNT2 cars"
           fi
 
+      - name: Refresh stock counts after Korea sync
+        run: node tools/build_stock_counts.mjs
+
       - name: Sync all catalogs to Supabase
         run: python import_to_supabase.py || true
 
@@ -236,7 +242,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A cars_korea_stock.json sitemap.xml 2>/dev/null || true
+          git add -A cars_korea_stock.json data/stock_counts.json sitemap.xml 2>/dev/null || true
           git diff --cached --quiet || git commit -m "auto: korea stock + sitemap [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push || true
 
