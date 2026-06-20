@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T15:48:22.833Z",
+  "generated_at": "2026-06-20T03:09:13.104Z",
   "offers": [
     {
       "channel": "europe_catalog",
@@ -80,31 +80,36 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/audi-q3-35-2-0-tdi-advanced-aut-keyless-led-tempomat-diesel-silber-cat_ma9mo19715-55a900e8-7457-443d-9995-7466651a12f1",
+      "source_url": "https://www.autoscout24.de/smyle/details/140ba250-9fed-4005-bc98-a888c77c056f/",
       "title": "Audi Q3 2022",
       "year": "2022",
-      "price": "2 876 181 ₽",
-      "base_price": "22 499 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_dcb09ad1-2de0-4363-8b35-54a16636bcd5.jpg/1024x768.webp",
+      "price": "2 667 412 ₽",
+      "base_price": "22 780 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_17b2caf9-749c-43cf-9b64-1e70aac70e53.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_dcb09ad1-2de0-4363-8b35-54a16636bcd5.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_3a6ac8e8-9704-4899-9c78-6e7f87f8c56a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_7ce98513-b12d-4bf3-b32a-14b0a970a6b1.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_d9c9e7e4-1241-45b5-8b5b-83a2c268a1bd.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_7b48abd7-3d61-4a68-b331-85750de88614.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_9d2f91ba-de91-4c86-b4fa-de4ef8d971aa.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_5bcb8444-ee18-4666-8334-7da5e914be14.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_17b2caf9-749c-43cf-9b64-1e70aac70e53.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_edf21c4e-0223-4b31-9004-0af0d9dd4989.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_92719756-d2a7-444f-90f5-1c95f5478132.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_22efeb1c-53f4-4fe4-91c4-2b0f8540715b.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_d82275d1-a940-41c9-afe6-ea459b5e31d9.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_0a683e18-a3b4-4602-a3d2-65780f4fcf66.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_6b391cc8-9830-46af-a4b0-7be9522aaff7.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_646dd97d-2be5-489f-9fba-b725f3b56d9d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_f1b85757-01c8-4fd4-80a3-82b873d86e85.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_6d0e0410-2a26-416d-9105-13e429e9788c.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_14136e03-1939-406b-895f-02fb549225f9.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/140ba250-9fed-4005-bc98-a888c77c056f_d935a38a-4b80-4717-a24a-55b150e35c5e.jpg/1024x768.webp"
       ],
       "details": {
-        "engine": "1,968 Дизель",
+        "engine": "1,498 Бензин",
         "power": "150 л.с. / 110 кВт",
-        "mileage": "96 271 км"
+        "mileage": "98 128 км"
       },
-      "text_excerpt": "35 2.0 TDI advanced Aut. KeyLess/LED/Tempomat. Цена в Европе 22 499 €, стоимость под ключ в РФ 2 876 181 ₽.",
+      "text_excerpt": "35 TFSI AHK virtual RfK ACC LED. Цена в Европе 22 780 €, стоимость под ключ в РФ 2 667 412 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 100 000 км",
-        "цена в Европе: 22 499 €"
+        "цена в Европе: 22 780 €"
       ]
     },
     {
