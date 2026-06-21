@@ -1,9 +1,10 @@
-const CACHE_VERSION = 'expo-mir-pwa-v11-stability-perf';
+const CACHE_VERSION = 'expo-mir-pwa-v12-premium-tab';
 const APP_SHELL = [
   '/',
   '/index.html',
   '/georgia-stock.html',
   '/europe-orders.html',
+  '/premium.html',
   '/usa-orders.html',
   '/korea-orders.html',
   '/china-orders.html',
@@ -13,11 +14,13 @@ const APP_SHELL = [
   '/premium-enhancements.css',
   '/script.js',
   '/header.js',
+  '/premium.js',
   '/translations.js',
   '/parts-orders.js',
   '/site.webmanifest',
   '/data/home_featured_europe.json',
   '/data/stock_counts.json',
+  '/data/avtostok63_premium.json',
   '/images/android-chrome-192x192.png',
   '/images/android-chrome-512x512.png',
   '/images/apple-touch-icon.png',

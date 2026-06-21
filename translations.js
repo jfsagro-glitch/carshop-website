@@ -7,6 +7,7 @@ const translations = {
         nav_korea: 'Корея',
         nav_china: 'Китай',
         nav_europe: 'Европа',
+        nav_premium: 'Premium',
         
         // Кнопки
         btn_request: 'Заявка на подбор',
@@ -111,6 +112,7 @@ const translations = {
         nav_korea: 'Korea',
         nav_china: 'China',
         nav_europe: 'Europe',
+        nav_premium: 'Premium',
         
         // Buttons
         btn_request: 'Request Selection',
@@ -215,6 +217,7 @@ const translations = {
         nav_korea: 'Корея',
         nav_china: 'Кытай',
         nav_europe: 'Европа',
+        nav_premium: 'Premium',
         
         // Кнопки
         btn_request: 'Тандоо суроосу',
@@ -319,6 +322,7 @@ const translations = {
         nav_korea: 'Korea',
         nav_china: 'China',
         nav_europe: 'Europa',
+        nav_premium: 'Premium',
         
         // Buttons
         btn_request: 'Anfrage stellen',
@@ -423,6 +427,7 @@ const translations = {
         nav_korea: 'კორეა',
         nav_china: 'ჩინეთი',
         nav_europe: 'ევროპა',
+        nav_premium: 'Premium',
         
         // Кнопки
         btn_request: 'მოთხოვნა',
@@ -674,6 +679,8 @@ function applyTranslations() {
                 el.textContent = t[key];
             } else if (el.tagName === 'OPTION') {
                 el.textContent = t[key];
+            } else if (el.classList && el.classList.contains('nav-premium-link')) {
+                el.innerHTML = '<i class="fas fa-crown" aria-hidden="true"></i> ' + t[key];
             } else {
                 // Для элементов с HTML (например, <br>), заменяем только текст
                 if (el.innerHTML.includes('<br>')) {

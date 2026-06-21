@@ -19,6 +19,7 @@
       'korea-orders.html':    'nav_korea',
       'china-orders.html':    'nav_china',
       'europe-orders.html':   'nav_europe',
+      'premium.html':         'nav_premium',
       'parts-orders.html':    null,
       'customs-calculator.html': null,
     };
