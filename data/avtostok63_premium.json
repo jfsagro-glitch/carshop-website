@@ -1,9 +1,53 @@
 {
   "source": "https://carexpo.group/catalog?status=in_stock",
   "pages": 11,
-  "total": 122,
-  "updated_at": "2026-06-22T08:51:26+00:00",
+  "total": 124,
+  "updated_at": "2026-06-22T12:47:07+00:00",
   "cars": [
+    {
+      "id": "carexpo-303",
+      "source_id": 303,
+      "brand": "Volkswagen",
+      "model": "Teramont X",
+      "title": "Teramont X",
+      "year": null,
+      "condition": "Used",
+      "status": "In Stock",
+      "price_eur": 33500,
+      "otd_price_eur": 30900,
+      "currency": "$",
+      "mileage": 11000,
+      "fuel_type": "Petrol",
+      "transmission": "7-speed wet dual-clutch automatic",
+      "power_hp": null,
+      "location": "China",
+      "images": [
+        "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/303/3569/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260622%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260622T124228Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d317424ed2942d7da85393ca2b2984e0e88b75583a6c81086e8ab6da9e22e652"
+      ],
+      "url": "https://carexpo.group/catalog?carId=303"
+    },
+    {
+      "id": "carexpo-302",
+      "source_id": 302,
+      "brand": "Volkswagen",
+      "model": "Teramont X",
+      "title": "Teramont X",
+      "year": null,
+      "condition": "Used",
+      "status": "In Stock",
+      "price_eur": 33000,
+      "otd_price_eur": 30700,
+      "currency": "$",
+      "mileage": 16000,
+      "fuel_type": "Petrol",
+      "transmission": "7-speed wet dual-clutch transmission",
+      "power_hp": null,
+      "location": "China",
+      "images": [
+        "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/302/3567/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260622%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260622T123507Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8c0eca0545fc1779295f1ee5cba83467740a494f97615c638ba34860823a82c2"
+      ],
+      "url": "https://carexpo.group/catalog?carId=302"
+    },
     {
       "id": "carexpo-300",
       "source_id": 300,
