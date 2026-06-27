@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T06:58:19.590Z",
+  "generated_at": "2026-06-27T07:06:42.260Z",
   "offers": [
     {
       "channel": "europe_catalog",
@@ -80,25 +80,31 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/audi-q3-45-tfsi-e-basis-elektro-benzin-rot-cat_ma9mo19715-d6dd995d-3d50-4efd-b0ec-6c466505f035",
-      "title": "Audi Q3 2021",
-      "year": "2021",
-      "price": "2 770 129 ₽",
-      "base_price": "21 000 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/d6dd995d-3d50-4efd-b0ec-6c466505f035_4e6ab0cd-735d-40e6-9d76-c1b59a2f4edc.jpg/1024x768.webp",
+      "source_url": "https://www.autoscout24.de/angebote/audi-q3-35-2-0-tdi-advanced-aut-keyless-led-tempomat-diesel-silber-cat_ma9mo19715-55a900e8-7457-443d-9995-7466651a12f1",
+      "title": "Audi Q3 2022",
+      "year": "2022",
+      "price": "2 978 023 ₽",
+      "base_price": "22 499 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_71822664-7af2-45b7-a998-52e585d248c8.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/d6dd995d-3d50-4efd-b0ec-6c466505f035_4e6ab0cd-735d-40e6-9d76-c1b59a2f4edc.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_71822664-7af2-45b7-a998-52e585d248c8.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_bbbd082a-0ecc-43c1-9657-9dd8d6cc8215.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_d28cf09e-be44-40ae-97b4-9840baccbe6f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_c1a25e05-0368-470f-a5b0-5913baa92b34.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_250eb92a-3389-42eb-b9fb-820f523310d7.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_a94d5274-0bd3-412e-8741-a4ac45ed0170.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/55a900e8-7457-443d-9995-7466651a12f1_bdefffe8-8049-446c-859d-ce4c530a7517.jpg/1024x768.webp"
       ],
       "details": {
-        "engine": "1,395 Elektro/Benzin",
+        "engine": "1,968 Дизель",
         "power": "150 л.с. / 110 кВт",
-        "mileage": "87 500 км"
+        "mileage": "96 271 км"
       },
-      "text_excerpt": "45 TFSI e basis. Цена в Европе 21 000 €, стоимость под ключ в РФ 2 770 129 ₽.",
+      "text_excerpt": "35 2.0 TDI advanced Aut. KeyLess/LED/Tempomat. Цена в Европе 22 499 €, стоимость под ключ в РФ 2 978 023 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 100 000 км",
-        "цена в Европе: 21 000 €"
+        "цена в Европе: 22 499 €"
       ]
     },
     {
