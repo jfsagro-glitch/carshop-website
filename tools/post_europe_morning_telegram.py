@@ -24,6 +24,8 @@ EUROPE_CATALOG_PATH = ROOT / "cars_europe_new.json"
 SITE_URL = "https://cmsauto.store/?source=pwa"
 EUROPE_URL = "https://cmsauto.store/europe-orders.html"
 CONTACT_PHONE_DISPLAY = "+79184140636"
+CONTACT_WHATSAPP_URL = "https://wa.me/79184140636"
+CONTACT_TELEGRAM_URL = "https://t.me/expo_mir"
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
 CHAT_ID = (
     os.environ.get("TELEGRAM_EUROPE_CHANNEL_ID", "").strip()
@@ -268,6 +270,7 @@ def offer_caption(offer: dict, test: bool = False) -> str:
         "",
         "📞 Телефон для связи:",
         CONTACT_PHONE_DISPLAY,
+        f'💬 <a href="{CONTACT_WHATSAPP_URL}">WhatsApp</a> · <a href="{CONTACT_TELEGRAM_URL}">Telegram</a>',
     ]
     return "\n".join(lines)[:1024]
 
