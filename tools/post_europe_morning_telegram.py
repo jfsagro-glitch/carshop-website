@@ -23,6 +23,7 @@ HISTORY_PATH = ROOT / "data" / "telegram_europe_history.json"
 EUROPE_CATALOG_PATH = ROOT / "cars_europe_new.json"
 SITE_URL = "https://cmsauto.store/?source=pwa"
 EUROPE_URL = "https://cmsauto.store/europe-orders.html"
+CONTACT_PHONE_DISPLAY = "+79184140636"
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
 CHAT_ID = (
     os.environ.get("TELEGRAM_EUROPE_CHANNEL_ID", "").strip()
@@ -262,6 +263,11 @@ def offer_caption(offer: dict, test: bool = False) -> str:
         f'🔗 <a href="{html.escape(str(offer["source_url"]), quote=True)}">Открыть объявление</a>',
         "",
         f'🌐 <a href="{SITE_URL}">Другие предложения на сайте</a>',
+        "",
+        "Привезем абсолютно любой автомобиль 🚘 под ваш бюджет 🚕",
+        "",
+        "📞 Телефон для связи:",
+        CONTACT_PHONE_DISPLAY,
     ]
     return "\n".join(lines)[:1024]
 
