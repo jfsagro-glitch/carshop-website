@@ -78,6 +78,14 @@ PAGES = {
         "kind": "WebApplication",
         "service": "Расчёт таможенных платежей автомобиля",
     },
+    "premium.html": {
+        "path": "/premium.html",
+        "title": "EXPO MIR Premium — премиальные автомобили со всего мира",
+        "description": "Premium-каталог EXPO MIR: новые и премиальные автомобили со всего мира в наличии, реальные фото, цена источника и заявка на подбор.",
+        "name": "EXPO MIR Premium",
+        "kind": "CollectionPage",
+        "service": "Подбор премиальных автомобилей со всего мира",
+    },
     "avtostok63-europe.html": {
         "path": "/avtostok63-europe.html",
         "title": "Avtostok63 — автомобили из Европы с доставкой в Самару",
