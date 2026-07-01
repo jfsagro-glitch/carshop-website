@@ -233,7 +233,7 @@ jobs:
         run: python import_to_supabase.py || true
 
       - name: Cleanup stale cars in Supabase
-        run: python cleanup_cars.py
+        run: python cleanup_cars.py || echo "Supabase cleanup failed; continuing catalog sync"
 
       - name: Generate sitemap.xml
         run: python generate_sitemap.py

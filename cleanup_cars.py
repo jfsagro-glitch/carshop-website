@@ -22,6 +22,7 @@ cleanup_cars.py — Авто-очистка устаревших записей 
 import argparse
 import os
 import sys
+from datetime import datetime, timedelta, timezone
 
 try:
     import requests
@@ -50,6 +51,10 @@ def _headers(cfg: dict) -> dict:
     }
 
 
+def _cutoff_iso(days: int) -> str:
+    return (datetime.now(timezone.utc) - timedelta(days=days)).isoformat(timespec="seconds")
+
+
 def deactivate_stale(cfg: dict, days: int = 30, dry_run: bool = False) -> int:
     """
     Помечает is_active=false все записи, у которых last_seen старше {days} дней.
@@ -58,7 +63,7 @@ def deactivate_stale(cfg: dict, days: int = 30, dry_run: bool = False) -> int:
     endpoint = f"{cfg['url']}/rest/v1/cars"
     params = {
         "is_active": "eq.true",
-        "last_seen": f"lt.now()-interval '{days} days'",
+        "last_seen": f"lt.{_cutoff_iso(days)}",
     }
     if dry_run:
         # Считаем сколько будет затронуто
@@ -88,7 +93,7 @@ def delete_old_inactive(cfg: dict, days: int = 60, dry_run: bool = False) -> int
     endpoint = f"{cfg['url']}/rest/v1/cars"
     params = {
         "is_active": "eq.false",
-        "updated_at": f"lt.now()-interval '{days} days'",
+        "updated_at": f"lt.{_cutoff_iso(days)}",
     }
     if dry_run:
         count_headers = {**_headers(cfg), "Prefer": "count=exact"}
