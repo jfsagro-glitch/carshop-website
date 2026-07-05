@@ -428,6 +428,9 @@ OVER_LIMIT_HYBRID_VARIANTS = {
 DISALLOWED_GEORGIA_VARIANTS = {
     ("volkswagen", "jetta", "1.5"),
 }
+DISALLOWED_EUROPE_MODELS = {
+    ("volkswagen", "up"),
+}
 
 
 def normalize_model_text(value: Any) -> str:
@@ -497,6 +500,19 @@ def is_known_disallowed_variant(record: dict) -> bool:
         if market != "europe":
             return True
     return False
+
+
+def is_disallowed_europe_model(record: dict) -> bool:
+    region = str(record.get("region") or record.get("regionCode") or "").lower()
+    market = detect_source_market(record)
+    source = str(record.get("source") or "").lower()
+    if region and region != "europe":
+        return False
+    if region != "europe" and market != "europe" and not any(token in source for token in ("autoscout", "mobile.de", "mobilede")):
+        return False
+    brand = normalize_model_text(record.get("brand"))
+    model = normalize_model_text(record.get("model") or record.get("fullName") or record.get("title"))
+    return (brand, model) in DISALLOWED_EUROPE_MODELS
 
 
 def is_georgia_in_transit(record: dict) -> bool:
@@ -2401,6 +2417,8 @@ class AutoScout24Parser:
                 record_id = str(record.get("id") or record.get("url") or "")
                 model_key = f"{record.get('brand', '').lower()}|{record.get('model', '').lower()}"
                 if record_id in seen_ids:
+                    continue
+                if is_disallowed_europe_model(record):
                     continue
                 if not has_live_europe_photo(record):
                     continue
