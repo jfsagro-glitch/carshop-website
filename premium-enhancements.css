@@ -1468,11 +1468,13 @@ main, .catalog, .hero, section {
 .mbn-item:hover i { transform: translateY(-2px); }
 .mbn-item--wa { color: #25d366 !important; }
 .mbn-item--wa:hover { color: #22c55e !important; }
+.mbn-item--premium { color: #facc15 !important; }
+.mbn-item--premium i { color: #facc15 !important; }
 .mbn-item--cta {
     background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.08));
     border-radius: 10px;
     color: #d4af37 !important;
-    margin: 0 0.25rem;
+    margin: 0 0.12rem;
     border: 1px solid rgba(212,175,55,0.25) !important;
 }
 .mbn-item--cta:hover { background: rgba(212,175,55,0.28) !important; }
