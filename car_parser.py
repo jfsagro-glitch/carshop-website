@@ -867,20 +867,20 @@ def is_live_photo_url(url: str, timeout: float = 2.5) -> bool:
 
 
 def keep_live_record_photos(record: dict, max_checks: int = 1) -> bool:
-    """Keep only image URLs that are still available; return whether any survived."""
+    """Check that a record has live photos without truncating its gallery."""
     images = record.get("images")
     if not isinstance(images, list):
         return is_live_photo_url(str(record.get("photos") or record.get("photo_url") or record.get("image") or ""))
 
-    live_images = []
+    has_live_image = False
     for img in images[:max_checks]:
         url = img.get("url") if isinstance(img, dict) else img
         if not url:
             continue
         if is_live_photo_url(str(url)):
-            live_images.append(img)
-    record["images"] = live_images
-    return bool(live_images)
+            has_live_image = True
+            break
+    return has_live_image
 
 def max_kw_for_hp_limit(max_power_hp: int) -> int:
     if not max_power_hp:
@@ -1580,7 +1580,7 @@ class MyAutoGeParser:
             # Фото — формат: {PHOTO_BASE}{photo}/large/{car_id}_{n}.jpg?v={photo_ver}
             car_id   = item.get("car_id", "")
             photo_p  = item.get("photo", "")  # напр.: "3/4/9/6/6"
-            pic_num  = int(item.get("pic_number") or 1)
+            pic_num  = max(1, int(item.get("pic_number") or item.get("photo_count") or item.get("photos_count") or 1))
             photo_ver = parse_int(item.get("photo_ver") or 0)
             if photo_p and car_id:
                 # Первое фото
@@ -1588,7 +1588,7 @@ class MyAutoGeParser:
                 # Все фото — сохраняем в extra для sync_georgia_stock
                 car.extra["images"] = [
                     {"url": f"{self.PHOTO_BASE}{photo_p}/large/{car_id}_{n}.jpg?v={photo_ver}", "order": n}
-                    for n in range(1, min(pic_num, 12) + 1)
+                    for n in range(1, min(pic_num, 40) + 1)
                 ]
             else:
                 car.photos = ""
