@@ -2,7 +2,7 @@
   "source": "https://carexpo.group/catalog?status=in_stock",
   "pages": 12,
   "total": 136,
-  "updated_at": "2026-07-08T07:35:38+00:00",
+  "updated_at": "2026-07-08T11:31:08+00:00",
   "cars": [
     {
       "id": "carexpo-315",
@@ -1866,8 +1866,8 @@
         "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/254/2934/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260708%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260708T045220Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e80f1b92ff764b972f241c5a89a24183f19b809eb227e01e34e4e964e7c6f27e",
         "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/254/2936/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260708%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260708T045223Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2e5850ea072134311b93087e203a5a55d1bf39cc23396c5e44674bb401631ff3",
         "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/254/2937/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260708%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260708T045226Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d51a9387105dd6135bb219cd5e4c4b82dd2263b7550db53a43663a4de3e2ab97",
-        "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/254/2938/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260701%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260701T081514Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=74c0a48e44d6f4c9fb9606eddd782ce1ef1f138a0b5dc5153ccf61ef247cb362",
-        "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/254/2940/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260701%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260701T081517Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=83ad9f8a83e1ecc5fc2b1cb2ae3db39d24b2b5189c6f2241202f8cb1fd0541b4"
+        "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/254/2938/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260708%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260708T085136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f22c02e065b4b1d1a6aceb7414ce65e093c4d84d91c2e69368983261f47e602f",
+        "https://sfo2.digitaloceanspaces.com/carexpo/production/catalog/offers/254/2940/1220x700.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801NPNF4NHRPV2YQ3U%2F20260708%2Fsfo2%2Fs3%2Faws4_request&X-Amz-Date=20260708T085140Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=06fa635abc8739e60c72e581eef995da958c55bbbf9092351e62e629d4829ac5"
       ],
       "url": "https://carexpo.group/catalog?carId=254"
     },
