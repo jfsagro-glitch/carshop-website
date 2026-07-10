@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -16,6 +17,14 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_BASE_URL = "https://carexpo.group/catalog?status=in_stock"
 START_PAGE = 1
 OUTPUT = ROOT / "data" / "avtostok63_premium.json"
+REQUEST_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+}
 
 
 def text(value: Any) -> str:
@@ -111,16 +120,17 @@ def normalize(car: dict[str, Any]) -> dict[str, Any]:
 
 def fetch_page(page_number: int) -> dict[str, Any]:
     source_url = f"{SOURCE_BASE_URL}&page={page_number}"
-    response = requests.get(
-        source_url,
-        headers={
-            "User-Agent": "Mozilla/5.0 Avtostok63 premium catalog updater",
-            "Accept": "text/html,application/xhtml+xml",
-        },
-        timeout=35,
-    )
-    response.raise_for_status()
-    return page_from_next_data(extract_next_data(response.text), page_number)
+    last_error: Exception | None = None
+    for attempt in range(1, 4):
+        try:
+            response = requests.get(source_url, headers=REQUEST_HEADERS, timeout=35)
+            response.raise_for_status()
+            return page_from_next_data(extract_next_data(response.text), page_number)
+        except (requests.RequestException, ValueError, RuntimeError) as exc:
+            last_error = exc
+            if attempt < 3:
+                time.sleep(attempt * 3)
+    raise RuntimeError(f"Carexpo page {page_number} unavailable after 3 attempts: {last_error}")
 
 
 def fetch() -> dict[str, Any]:

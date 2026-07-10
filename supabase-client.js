@@ -261,18 +261,54 @@ function _normalizeSbCar(row) {
  * @param {object} [filters]  — фильтры для sbQueryCars
  */
 async function sbLoadCarsWithFallback(region, jsonFile, filters = {}) {
-    try {
-        const result = await sbQueryCars({ region, limit: 1000, ...filters });
-        if (result.data && result.data.length > 0) {
-            return { ...result, data: result.data.map(_normalizeSbCar) };
-        }
-        // Если Supabase вернул 0 записей — возможно ещё не заполнен, пробуем JSON
-        throw new Error('Supabase вернул 0 записей');
-    } catch (err) {
-        console.warn(`[Supabase] fallback → ${jsonFile}:`, err.message);
+    async function loadJsonFallback(reason) {
+        if (reason) console.warn(`[Supabase] fallback → ${jsonFile}:`, reason);
         const res = await fetch(jsonFile + '?v=' + Date.now(), { cache: 'no-store' });
         if (!res.ok) throw new Error(`JSON fallback тоже недоступен: ${jsonFile}`);
         const data = await res.json();
         return { data, total: data.length, page: 0, limit: data.length, _source: 'json' };
+    }
+
+    function hasRichLocalCatalog(jsonData, supabaseData) {
+        if (!Array.isArray(jsonData) || !jsonData.length) return false;
+        if (!Array.isArray(supabaseData) || !supabaseData.length) return true;
+        if (jsonData.length > supabaseData.length) return true;
+        if (region === 'georgia' || region === 'korea') {
+            const jsonRich = jsonData.filter(car => (car.month || car.productionDate || car.first_registration || car.year) && (car.power_hp || car.hp || car.power_kw || car.power) && Array.isArray(car.images) && car.images.length).length;
+            const supabaseRich = supabaseData.filter(car => (car.month || car.productionDate || car.first_registration || car.year) && (car.power_hp || car.hp || car.power_kw || car.power) && Array.isArray(car.images) && car.images.length).length;
+            return jsonRich >= 20 && jsonRich > supabaseRich;
+        }
+        return false;
+    }
+
+    if ((!filters || Object.keys(filters).length === 0) && ['georgia', 'europe', 'korea'].includes(region)) {
+        try {
+            const local = await loadJsonFallback('');
+            if (Array.isArray(local.data) && local.data.length > 0) return local;
+        } catch (jsonErr) {
+            console.warn(`[Supabase] local catalog unavailable for ${jsonFile}:`, jsonErr.message);
+        }
+    }
+
+    try {
+        const result = await sbQueryCars({ region, limit: 1000, ...filters });
+        if (result.data && result.data.length > 0) {
+            const supabaseData = result.data.map(_normalizeSbCar);
+            if (!filters || Object.keys(filters).length === 0) {
+                try {
+                    const local = await loadJsonFallback('');
+                    if (hasRichLocalCatalog(local.data, supabaseData)) {
+                        return local;
+                    }
+                } catch (jsonErr) {
+                    console.warn(`[Supabase] JSON richness check skipped for ${jsonFile}:`, jsonErr.message);
+                }
+            }
+            return { ...result, data: supabaseData };
+        }
+        // Если Supabase вернул 0 записей — возможно ещё не заполнен, пробуем JSON
+        throw new Error('Supabase вернул 0 записей');
+    } catch (err) {
+        return loadJsonFallback(err.message);
     }
 }

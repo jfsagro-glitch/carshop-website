@@ -11,11 +11,8 @@ on:
       - '.github/workflows/morning_europe_telegram.yml'
       - 'tools/post_europe_morning_telegram.py'
   schedule:
-    # 09:00 Europe/Moscow = 06:00 UTC. Extra attempts cover GitHub schedule delays.
+    # 09:00 Europe/Moscow = 06:00 UTC.
     - cron: '0 6 * * *'
-    - cron: '15 6 * * *'
-    - cron: '30 6 * * *'
-    - cron: '45 6 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

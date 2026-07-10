@@ -37,9 +37,6 @@ jobs:
       PARSER_PROXY: ${{ secrets.PARSER_PROXY }}
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      TELEGRAM_EUROPE_CHANNEL_ID: ${{ secrets.TELEGRAM_EUROPE_CHANNEL_ID }}
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       MIN_AGE: ${{ github.event.inputs.min_age || '3' }}
       MAX_AGE: ${{ github.event.inputs.max_age || '5' }}
       MAX_POWER_HP: ${{ github.event.inputs.max_power_hp || '160' }}
@@ -61,38 +58,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests beautifulsoup4 pillow
-
-      - name: Refresh Europe prices before Telegram backup
-        run: |
-          node tools/update_europe_turnkey_prices.mjs
-          node tools/build_home_europe_offers.mjs --exclude-history
-
-      - name: Backup publish Europe offer to Telegram
-        run: |
-          HOUR="$(date -u +%H)"
-          if [ "$HOUR" -lt "06" ]; then
-            echo "Before the morning Telegram window, current UTC hour is $HOUR"
-            exit 0
-          fi
-          python tools/post_europe_morning_telegram.py
-
-      - name: Save Europe Telegram history
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cars_europe_new.json data/telegram_europe_history.json data/home_featured_europe.json data/stock_counts.json
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git commit -m "auto: record daily Europe Telegram offer"
-          for attempt in 1 2 3; do
-            git pull --rebase origin main
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            sleep $((attempt * 5))
-          done
-          exit 1
 
       - name: Show parser settings
         run: |
@@ -180,6 +145,7 @@ jobs:
 
       - name: Sync Avtostok63 premium stock
         run: python tools/fetch_carexpo_premium.py
+        continue-on-error: true
 
       - name: Build stock counts
         run: node tools/build_stock_counts.mjs

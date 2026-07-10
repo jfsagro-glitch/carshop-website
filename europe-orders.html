@@ -454,6 +454,42 @@
             border: 1px solid rgba(255,255,255,0.15);
         }
 
+        .preview-nav {
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+            width: 36px;
+            height: 36px;
+            transform: translateY(-50%);
+            border: 1px solid rgba(255,255,255,0.28);
+            border-radius: 50%;
+            background: rgba(10, 18, 33, 0.76);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .preview-nav--prev { left: 10px; }
+        .preview-nav--next { right: 10px; }
+
+        .preview-dots {
+            position: absolute;
+            z-index: 2;
+            bottom: 9px;
+            left: 50%;
+            display: flex;
+            gap: 4px;
+            transform: translateX(-50%);
+        }
+
+        .preview-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.46);
+        }
+
+        .preview-dot.active { background: #facc15; }
+
         .car-year-badge {
             position: absolute;
             top: 10px;
@@ -1161,8 +1197,8 @@
     </div>
 
     <script>
-        let carsData = [];
-        let filteredCars = [];
+        let europeCarsData = [];
+        let europeFilteredCars = [];
         let displayedCount = 24;
         const PAGE_SIZE = 24;
         let currentCarIndex = -1;
@@ -1173,24 +1209,24 @@
             try {
                 const result = await sbLoadCarsWithFallback('europe', './cars_europe_new.json');
                 const filterEligible = rows => (rows || []).filter(isEuropeCarEligible);
-                carsData = filterEligible(result.data);
-                const hasTurnkeyPrices = carsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
-                if ((!carsData.length || !hasTurnkeyPrices) && result._source !== 'json') {
+                europeCarsData = filterEligible(result.data);
+                const hasTurnkeyPrices = europeCarsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
+                if ((!europeCarsData.length || !hasTurnkeyPrices) && result._source !== 'json') {
                     const fallback = await fetch('./cars_europe_new.json?v=' + Date.now(), { cache: 'no-store' });
                     if (fallback.ok) {
                         const fallbackCars = filterEligible(await fallback.json());
                         if (fallbackCars.length && fallbackCars.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0)) {
-                            carsData = fallbackCars;
+                            europeCarsData = fallbackCars;
                         }
                     }
                 }
-                filteredCars = [...carsData];
+                europeFilteredCars = [...europeCarsData];
 
                 // Показываем timestamp обновления
                 const tsEl = document.getElementById('syncTimestamp');
                 if (tsEl) {
                     const now = new Date().toLocaleDateString('ru-RU', {day:'2-digit',month:'2-digit',year:'numeric'});
-                    tsEl.textContent = `Каталог обновлён: ${now} · ${carsData.length} проходных авто с фото`;
+                    tsEl.textContent = `Каталог обновлён: ${now} · ${europeCarsData.length} проходных авто с фото`;
                 }
 
                 initializePage();
@@ -1444,8 +1480,8 @@
 
         // Инициализация страницы
         function initializePage() {
-            sortCarsByPriceAsc(carsData);
-            sortCarsByPriceAsc(filteredCars);
+            sortCarsByPriceAsc(europeCarsData);
+            sortCarsByPriceAsc(europeFilteredCars);
             updateStats();
             populateBrandFilter();
             populateModelFilter();
@@ -1457,14 +1493,14 @@
 
         // Обновление статистики
         function updateStats() {
-            const totalCars = filteredCars.length;
+            const totalCars = europeFilteredCars.length;
             document.getElementById('total-cars').textContent = totalCars;
         }
 
         // Заполнение фильтра марок
         function populateBrandFilter() {
             const brandFilter = document.getElementById('brand-filter');
-            const brands = [...new Set(carsData.map(car => car.brand).filter(Boolean))].sort();
+            const brands = [...new Set(europeCarsData.map(car => car.brand).filter(Boolean))].sort();
             brands.forEach(brand => {
                 const option = document.createElement('option');
                 option.value = brand;
@@ -1490,9 +1526,9 @@
             modelFilter.innerHTML = '<option value="">Все модели</option>';
 
             // Если марка не выбрана, показываем все модели
-            let modelsToShow = carsData;
+            let modelsToShow = europeCarsData;
             if (selectedBrand) {
-                modelsToShow = carsData.filter(car => car.brand === selectedBrand);
+                modelsToShow = europeCarsData.filter(car => car.brand === selectedBrand);
             }
 
             // Получаем уникальные модели
@@ -1506,10 +1542,10 @@
         }
 
         function populateExtraFilters() {
-            populateSelectFromValues('transmission-filter', carsData.map(car => car.transmission).filter(Boolean), 'Любая');
-            populateSelectFromValues('fuel-filter', carsData.map(car => car.fuel_type).filter(Boolean), 'Любой');
+            populateSelectFromValues('transmission-filter', europeCarsData.map(car => car.transmission).filter(Boolean), 'Любая');
+            populateSelectFromValues('fuel-filter', europeCarsData.map(car => car.fuel_type).filter(Boolean), 'Любой');
 
-            const volumes = [...new Set(carsData.map(engineVolumeBucket).filter(Boolean))]
+            const volumes = [...new Set(europeCarsData.map(engineVolumeBucket).filter(Boolean))]
                 .sort((a, b) => Number(a) - Number(b));
             const volumeFilter = document.getElementById('engine-volume-filter');
             if (volumeFilter) {
@@ -1545,7 +1581,7 @@
             const btn = document.getElementById('load-more-btn');
             const cnt = document.getElementById('load-more-count');
             if (!btn) return;
-            const remaining = filteredCars.length - displayedCount;
+            const remaining = europeFilteredCars.length - displayedCount;
             if (remaining > 0) {
                 btn.style.display = 'inline-block';
                 cnt.textContent = `(ещё ${Math.min(remaining, PAGE_SIZE)} из ${remaining})`;
@@ -1556,21 +1592,24 @@
 
         function displayCars() {
             const grid = document.getElementById('cars-grid');
-            if (filteredCars.length === 0) {
+            if (europeFilteredCars.length === 0) {
                 grid.innerHTML = '<div class="no-results">Автомобили не найдены</div>';
                 updateLoadMoreBtn();
                 return;
             }
 
-            const carsToShow = filteredCars.slice(0, displayedCount);
+            const carsToShow = europeFilteredCars.slice(0, displayedCount);
             grid.innerHTML = carsToShow.map((car, index) => {
                 const images = car._filteredImages || filterImages(car.images);
-                const firstImage = images.length > 0 ? images[0].url : '';
                 const imageCount = images.length;
                 car._filteredImages = images;
                 const price = car.price ? `${car.price.toLocaleString('ru-RU')} €` : 'Цена по запросу';
                 // filterImages уже апгрейдил URL — не дублируем
-                const finalImageUrl = firstImage || '';
+                const previewIndex = Math.min(car._previewImageIndex || 0, Math.max(imageCount - 1, 0));
+                const finalImageUrl = imageCount ? images[previewIndex].url : '';
+                const previewDots = imageCount > 1
+                    ? images.slice(0, 8).map((_, dotIndex) => `<span class="preview-dot ${dotIndex === previewIndex ? 'active' : ''}"></span>`).join('')
+                    : '';
                 const turnkeyHtml = getEuropeTurnkeyHtml(car);
                 const engineLiters = inferEngineLiters(car);
                 const engineVolume = engineLiters ? formatEngineVolume(engineLiters) : '';
@@ -1590,10 +1629,12 @@
                     <div class="car-card" data-index="${index}">
                         <div class="${finalImageUrl ? 'car-image loading' : 'car-image img-error'}" role="button" tabindex="0" aria-label="Открыть все фото ${car.brand} ${car.model}" onclick="${imageCount > 0 ? `openImageModal(${index})` : ''}" onkeydown="${imageCount > 0 ? `if(event.key==='Enter'||event.key===' '){event.preventDefault();openImageModal(${index});}` : ''}">
                             ${finalImageUrl
-                                ? `<img src="${finalImageUrl}" alt="${car.brand} ${car.model}" loading="lazy" decoding="async" onload="this.classList.add('loaded');this.parentElement.classList.remove('loading')" onerror="this.parentElement.classList.add('img-error');this.remove()">`
+                                ? `<img class="car-preview-img" src="${finalImageUrl}" alt="${car.brand} ${car.model}" loading="lazy" decoding="async" onload="this.classList.add('loaded');this.parentElement.classList.remove('loading')" onerror="this.parentElement.classList.add('img-error');this.remove()">`
                                 : ''}
-                            ${!finalImageUrl ? '' : ''}
-                            ${imageCount > 0 ? `<div class="image-count"><i class="fas fa-images"></i> ${imageCount}</div>` : ''}
+                            ${imageCount > 1 ? `<button class="preview-nav preview-nav--prev" type="button" aria-label="Предыдущее фото" onclick="changePreviewImage(${index}, -1, event)"><i class="fas fa-chevron-left"></i></button>` : ''}
+                            ${imageCount > 1 ? `<button class="preview-nav preview-nav--next" type="button" aria-label="Следующее фото" onclick="changePreviewImage(${index}, 1, event)"><i class="fas fa-chevron-right"></i></button>` : ''}
+                            ${imageCount > 0 ? `<div class="image-count"><i class="fas fa-images"></i> ${imageCount > 1 ? `${previewIndex + 1}/${imageCount}` : imageCount}</div>` : ''}
+                            ${previewDots ? `<div class="preview-dots">${previewDots}</div>` : ''}
                             ${car.first_registration_year ? `<div class="car-year-badge">${car.first_registration_year}</div>` : ''}
                         </div>
                         <div class="car-info">
@@ -1619,6 +1660,29 @@
                 `;
             }).join('');
             updateLoadMoreBtn();
+        }
+
+        function changePreviewImage(carIndex, direction, event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            const car = europeFilteredCars[carIndex];
+            if (!car) return;
+            const images = car._filteredImages || filterImages(car.images);
+            if (images.length < 2) return;
+
+            const nextIndex = ((car._previewImageIndex || 0) + direction + images.length) % images.length;
+            car._previewImageIndex = nextIndex;
+            const card = document.querySelector(`.car-card[data-index="${carIndex}"]`);
+            if (!card) return;
+            const image = card.querySelector('.car-preview-img');
+            if (image) image.src = images[nextIndex].url;
+            const counter = card.querySelector('.image-count');
+            if (counter) counter.innerHTML = `<i class="fas fa-images"></i> ${nextIndex + 1}/${images.length}`;
+            card.querySelectorAll('.preview-dot').forEach((dot, dotIndex) => {
+                dot.classList.toggle('active', dotIndex === nextIndex);
+            });
         }
 
         function formatEuropeRubPrice(value) {
@@ -1668,7 +1732,7 @@
             const engineVolume = document.getElementById('engine-volume-filter').value;
             const search = (document.getElementById('search-input')?.value || '').trim().toLowerCase();
 
-            filteredCars = carsData.filter(car => {
+            europeFilteredCars = europeCarsData.filter(car => {
                 if (brand && car.brand !== brand) return false;
                 if (model && car.model !== model) return false;
                 if (car.price && (car.price < priceFrom || car.price > priceTo)) return false;
@@ -1682,7 +1746,7 @@
                 }
                 return true;
             });
-            sortCarsByPriceAsc(filteredCars);
+            sortCarsByPriceAsc(europeFilteredCars);
 
             displayedCount = PAGE_SIZE;
             updateStats();
@@ -1696,7 +1760,7 @@
                 transmission: transmission || undefined,
                 fuel: fuel || undefined,
                 engineVolume: engineVolume || undefined
-            }, filteredCars.length);
+            }, europeFilteredCars.length);
         }
 
         // Сброс фильтров
@@ -1712,7 +1776,7 @@
             const si = document.getElementById('search-input');
             if (si) si.value = '';
             populateModelFilter(); // Обновляем список моделей
-            filteredCars = sortCarsByPriceAsc([...carsData]);
+            europeFilteredCars = sortCarsByPriceAsc([...europeCarsData]);
             displayedCount = PAGE_SIZE;
             updateStats();
             displayCars();
@@ -1745,12 +1809,12 @@
         // Открытие модального окна
         function openImageModal(carIndex) {
             currentCarIndex = carIndex;
-            currentImageIndex = 0;
-            const car = filteredCars[carIndex];
+            const car = europeFilteredCars[carIndex];
 
             const images = car._filteredImages || filterImages(car.images);
             if (!images || images.length === 0) return;
             car._filteredImages = images;
+            currentImageIndex = Number.isInteger(car._previewImageIndex) ? car._previewImageIndex : 0;
 
             document.getElementById('modal-title').textContent = `${car.brand} ${car.model}`;
             updateModalImage();
@@ -1765,7 +1829,7 @@
 
         // Обновление изображения в модальном окне
         function updateModalImage() {
-            const car = filteredCars[currentCarIndex];
+            const car = europeFilteredCars[currentCarIndex];
             if (!car) return;
 
             const images = car._filteredImages || filterImages(car.images);
@@ -1830,7 +1894,7 @@
 
         // Обновление миниатюр
         function updateModalThumbnails() {
-            const car = filteredCars[currentCarIndex];
+            const car = europeFilteredCars[currentCarIndex];
             const images = car._filteredImages || filterImages(car.images);
             const thumbnailsContainer = document.getElementById('modal-thumbnails');
 
@@ -1852,8 +1916,8 @@
 
         // Смена изображения
         function changeImage(direction) {
-            const car = filteredCars[currentCarIndex];
-            const images = car.images;
+            const car = europeFilteredCars[currentCarIndex];
+            const images = car._filteredImages || filterImages(car.images);
             currentImageIndex += direction;
 
             if (currentImageIndex < 0) currentImageIndex = images.length - 1;
@@ -1864,7 +1928,7 @@
 
         // Функция добавления в корзину для европейских автомобилей
         function addToCartEurope(carIndex) {
-            const car = filteredCars[carIndex];
+            const car = europeFilteredCars[carIndex];
             if (!car) return;
 
             // Создаем объект для корзины

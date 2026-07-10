@@ -1511,8 +1511,7 @@
                     const fallback = await fetch('./cars_georgia_stock.json?v=georgia-0a516c0-' + Date.now(), { cache: 'no-store' });
                     if (fallback.ok) {
                         const fallbackCars = normalizeAndFilter(await fallback.json());
-                        const fallbackTurnkeyCount = fallbackCars.filter(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0).length;
-                        if (fallbackCars.length >= 20 && fallbackTurnkeyCount > 0) {
+                        if (fallbackCars.length >= 20 && fallbackCars.length > carsData.length) {
                             carsData = fallbackCars;
                         }
                     }

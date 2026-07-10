@@ -596,6 +596,19 @@
             });
         }
 
+        function isKoreaCatalogEligible(car) {
+            if (typeof matchesImportCatalogRule === 'function' && matchesImportCatalogRule(car, 'korea')) return true;
+            if (isElectricKoreaCar(car)) return false;
+            const images = Array.isArray(car.images) ? car.images : (car.image ? [car.image] : []);
+            if (!images.length) return false;
+            const hp = Number(String(car.power_hp || car.hp || '').replace(',', '.').replace(/[^\d.]/g, ''));
+            const kw = Number(String(car.power_kw || car.kw || '').replace(',', '.').replace(/[^\d.]/g, ''));
+            if (!hp && !kw) return false;
+            if (hp && hp > 160) return false;
+            if (!hp && kw && kw > 116) return false;
+            return true;
+        }
+
         // Асинхронная загрузка данных Кореи через Supabase / JSON fallback
         (async function() {
             const loadingIndicator = document.getElementById('koreaLoadingIndicator');
@@ -606,7 +619,7 @@
                 const normalizeAndFilter = rows => (rows || [])
                     .map(_normalizeKoreaCar)
                     .filter(car => !isElectricKoreaCar(car))
-                    .filter(car => typeof matchesImportCatalogRule !== 'function' || matchesImportCatalogRule(car, 'korea'));
+                    .filter(isKoreaCatalogEligible);
                 window.koreaUnder160CarsData = dedupeKoreaCars(normalizeAndFilter(data));
                 const hasTurnkeyPrices = window.koreaUnder160CarsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
                 if ((!window.koreaUnder160CarsData.length || !hasTurnkeyPrices) && result._source !== 'json') {

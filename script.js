@@ -4519,8 +4519,11 @@ function setupKoreaUnder160Section(){
     const dedupedDataSource = dedupeKoreaCars(dataSource);
 
     if (!state.koreaUnder160 || state.koreaUnder160.data.length !== dedupedDataSource.length) {
+        const koreaEligibility = typeof window.isKoreaCatalogEligible === 'function'
+            ? window.isKoreaCatalogEligible
+            : car => matchesImportCatalogRule(car, 'korea');
         state.koreaUnder160 = {
-            data: dedupedDataSource.filter(car => matchesImportCatalogRule(car, 'korea')).map((car, index) => ({
+            data: dedupedDataSource.filter(koreaEligibility).map((car, index) => ({
                 ...car,
                 price: getUnder160PriceValue(car),
                 _order: index

@@ -2680,7 +2680,7 @@ input[type=number] { -moz-appearance: textfield; }
 @media (max-width: 500px) {
     .floating-wa { padding: 0.72rem; border-radius: 50%; bottom: 1.25rem; right: 1rem; }
     .floating-wa__label { display: none; }
-    .back-to-top { bottom: 5.25rem; right: 1rem; }
+    .back-to-top { bottom: 8.5rem; right: 1rem; }
 }
 
 /* ── Scroll-reveal animation ────────────────────────────── */
