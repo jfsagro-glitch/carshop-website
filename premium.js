@@ -93,7 +93,7 @@
     const priceTo = Number($('premiumPriceTo')?.value || 0);
     const transmission = $('premiumTransmission')?.value || '';
     const fuel = $('premiumFuel')?.value || '';
-    const sort = $('premiumSort')?.value || 'price-asc';
+    const sort = $('premiumSort')?.value || 'price-desc';
     const result = premiumCars.filter((car) => {
       if (brand && car.brand !== brand) return false;
       if (model && car.model !== model) return false;
@@ -236,7 +236,7 @@
   function resetFilters() {
     ['premiumSearch', 'premiumPriceFrom', 'premiumPriceTo'].forEach((id) => { if ($(id)) $(id).value = ''; });
     ['premiumBrand', 'premiumModel', 'premiumTransmission', 'premiumFuel'].forEach((id) => { if ($(id)) $(id).value = ''; });
-    if ($('premiumSort')) $('premiumSort').value = 'price-asc';
+    if ($('premiumSort')) $('premiumSort').value = 'price-desc';
     populateModels();
     applyFilters();
   }
