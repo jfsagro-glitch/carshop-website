@@ -1320,8 +1320,15 @@
             return `${liters.toLocaleString('ru-RU', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} л`;
         }
 
-        function sortCarsByPriceAsc(list) {
+        function sortCarsByBrandThenPrice(list) {
             return list.sort((a, b) => {
+                const brandA = String(a.brand || '').trim();
+                const brandB = String(b.brand || '').trim();
+                const rankA = brandA.toLowerCase() === 'audi' ? 0 : 1;
+                const rankB = brandB.toLowerCase() === 'audi' ? 0 : 1;
+                if (rankA !== rankB) return rankA - rankB;
+                const brandCompare = brandA.localeCompare(brandB, 'ru', { sensitivity: 'base' });
+                if (brandCompare !== 0) return brandCompare;
                 const priceA = Number(a.price || 0) || Number.MAX_SAFE_INTEGER;
                 const priceB = Number(b.price || 0) || Number.MAX_SAFE_INTEGER;
                 return priceA - priceB;
@@ -1480,8 +1487,8 @@
 
         // Инициализация страницы
         function initializePage() {
-            sortCarsByPriceAsc(europeCarsData);
-            sortCarsByPriceAsc(europeFilteredCars);
+            sortCarsByBrandThenPrice(europeCarsData);
+            sortCarsByBrandThenPrice(europeFilteredCars);
             updateStats();
             populateBrandFilter();
             populateModelFilter();
@@ -1746,7 +1753,7 @@
                 }
                 return true;
             });
-            sortCarsByPriceAsc(europeFilteredCars);
+            sortCarsByBrandThenPrice(europeFilteredCars);
 
             displayedCount = PAGE_SIZE;
             updateStats();
@@ -1776,7 +1783,7 @@
             const si = document.getElementById('search-input');
             if (si) si.value = '';
             populateModelFilter(); // Обновляем список моделей
-            europeFilteredCars = sortCarsByPriceAsc([...europeCarsData]);
+            europeFilteredCars = sortCarsByBrandThenPrice([...europeCarsData]);
             displayedCount = PAGE_SIZE;
             updateStats();
             displayCars();
