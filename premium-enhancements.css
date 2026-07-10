@@ -1437,7 +1437,8 @@ main, .catalog, .hero, section {
     body { padding-bottom: 68px; }
     /* Push WhatsApp float above bottom nav */
     #whatsappFloatBtn { bottom: 5rem; }
-    #scrollTopBtn { bottom: 5rem; }
+    #scrollTopBtn,
+    #backToTop { display: none !important; }
 }
 .mbn-item {
     flex: 1;
