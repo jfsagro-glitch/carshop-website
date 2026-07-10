@@ -76,15 +76,13 @@
             <div class="container premium-hero__inner">
                 <div>
                     <p class="premium-eyebrow"><i class="fas fa-crown" aria-hidden="true"></i> Premium stock</p>
-                    <h1>Премиальные автомобили со всего мира</h1>
-                    <p>Отдельная подборка новых и премиальных автомобилей в наличии: реальные фото, цена источника и быстрая заявка по конкретному лоту.</p>
+                    <h1>Premium автомобили</h1>
+                    <p>Автомобили в наличии со всего мира.</p>
                     <div class="premium-hero__actions">
                         <a class="btn-primary" href="#premiumCatalog">Смотреть предложения</a>
-                        <a class="btn-secondary" href="https://t.me/expo_mir" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane" aria-hidden="true"></i> Наш канал</a>
                     </div>
                 </div>
                 <div class="premium-hero__panel" aria-label="Premium EXPO MIR">
-                    <img src="images/logo.png" alt="" loading="eager">
                     <strong>EXPO MIR Premium</strong>
                     <span id="premiumHeroCount">Загрузка каталога...</span>
                 </div>
@@ -94,10 +92,48 @@
         <section class="premium-catalog" id="premiumCatalog">
             <div class="container">
                 <div class="premium-catalog__head">
-                    <div>
-                        <h2>Premium предложения</h2>
-                    </div>
+                    <h2>Предложения</h2>
                     <span class="premium-count" id="premiumCount">Загрузка...</span>
+                </div>
+                <div class="premium-filters" aria-label="Фильтры Premium каталога">
+                    <div class="premium-filter premium-filter--search">
+                        <label for="premiumSearch">Поиск</label>
+                        <input id="premiumSearch" type="search" placeholder="Марка, модель, комплектация">
+                    </div>
+                    <div class="premium-filter">
+                        <label for="premiumBrand">Марка</label>
+                        <select id="premiumBrand"><option value="">Все марки</option></select>
+                    </div>
+                    <div class="premium-filter">
+                        <label for="premiumModel">Модель</label>
+                        <select id="premiumModel"><option value="">Все модели</option></select>
+                    </div>
+                    <div class="premium-filter">
+                        <label for="premiumPriceFrom">Цена от</label>
+                        <input id="premiumPriceFrom" type="number" min="0" placeholder="Минимум">
+                    </div>
+                    <div class="premium-filter">
+                        <label for="premiumPriceTo">Цена до</label>
+                        <input id="premiumPriceTo" type="number" min="0" placeholder="Максимум">
+                    </div>
+                    <div class="premium-filter">
+                        <label for="premiumTransmission">Коробка</label>
+                        <select id="premiumTransmission"><option value="">Любая</option></select>
+                    </div>
+                    <div class="premium-filter">
+                        <label for="premiumFuel">Двигатель</label>
+                        <select id="premiumFuel"><option value="">Любой</option></select>
+                    </div>
+                    <div class="premium-filter">
+                        <label for="premiumSort">Сортировка</label>
+                        <select id="premiumSort">
+                            <option value="price-asc">Сначала дешевле</option>
+                            <option value="price-desc">Сначала дороже</option>
+                            <option value="year-desc">Сначала новее</option>
+                        </select>
+                    </div>
+                    <button class="premium-filter__apply" id="premiumApply" type="button">Применить</button>
+                    <button class="premium-filter__reset" id="premiumReset" type="button" aria-label="Сбросить фильтры" title="Сбросить фильтры"><i class="fas fa-rotate-left" aria-hidden="true"></i></button>
                 </div>
                 <div class="premium-grid" id="premiumGrid">
                     <div class="premium-empty">Загружаем Premium-каталог...</div>
@@ -139,10 +175,14 @@
 
     <template id="premiumCardTemplate">
         <article class="premium-card">
-            <a class="premium-card__media" target="_blank" rel="noopener noreferrer">
+            <div class="premium-card__media" role="group" aria-label="Фотографии автомобиля">
                 <img class="premium-card__image" alt="" loading="lazy" decoding="async">
                 <span class="premium-card__badge"></span>
-            </a>
+                <button class="premium-card__gallery-nav premium-card__gallery-nav--prev" type="button" aria-label="Предыдущее фото"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="premium-card__gallery-nav premium-card__gallery-nav--next" type="button" aria-label="Следующее фото"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                <span class="premium-card__photo-count"></span>
+                <span class="premium-card__gallery-dots" aria-hidden="true"></span>
+            </div>
             <div class="premium-card__body">
                 <div class="premium-card__brand"></div>
                 <h3></h3>
