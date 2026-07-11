@@ -1467,8 +1467,6 @@ main, .catalog, .hero, section {
     color: #d4af37;
 }
 .mbn-item:hover i { transform: translateY(-2px); }
-.mbn-item--wa { color: #25d366 !important; }
-.mbn-item--wa:hover { color: #22c55e !important; }
 .mbn-item--premium { color: #facc15 !important; }
 .mbn-item--premium i { color: #facc15 !important; }
 .mbn-item--cta {

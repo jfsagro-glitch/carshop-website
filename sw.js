@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'expo-mir-pwa-v12-premium-tab';
+const CACHE_VERSION = 'expo-mir-pwa-v13-bottom-nav';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -54,7 +54,7 @@ self.addEventListener('fetch', event => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  if (['/script.js', '/styles.css', '/premium-enhancements.css'].includes(url.pathname)) {
+  if (['/script.js', '/styles.css', '/premium-enhancements.css', '/header.js'].includes(url.pathname)) {
     event.respondWith(
       fetch(request, { cache: 'no-store' })
         .then(response => {
