@@ -3748,7 +3748,13 @@ body.premium-page .premium-card:hover { transform: translateY(-3px); box-shadow:
     user-select: none;
 }
 
-.premium-card__image { width: 100%; height: 100%; object-fit: contain; display: block; }
+.premium-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
 
 .premium-card__gallery-nav {
     position: absolute;

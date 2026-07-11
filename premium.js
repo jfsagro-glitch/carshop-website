@@ -150,23 +150,17 @@
       previous.addEventListener('click', () => updateGallery(imageIndex - 1));
       next.addEventListener('click', () => updateGallery(imageIndex + 1));
       let startX = null;
-      media.addEventListener('pointerdown', (event) => { startX = event.clientX; });
+      media.addEventListener('pointerdown', (event) => {
+        if (!event.isPrimary) return;
+        startX = event.clientX;
+      });
       media.addEventListener('pointerup', (event) => {
-        if (startX === null) return;
+        if (!event.isPrimary || startX === null) return;
         const distance = event.clientX - startX;
         if (Math.abs(distance) > 36) updateGallery(imageIndex + (distance < 0 ? 1 : -1));
         startX = null;
       });
       media.addEventListener('pointercancel', () => { startX = null; });
-      media.addEventListener('touchstart', (event) => {
-        startX = event.touches[0]?.clientX ?? null;
-      }, { passive: true });
-      media.addEventListener('touchend', (event) => {
-        if (startX === null) return;
-        const distance = (event.changedTouches[0]?.clientX ?? startX) - startX;
-        if (Math.abs(distance) > 36) updateGallery(imageIndex + (distance < 0 ? 1 : -1));
-        startX = null;
-      }, { passive: true });
     } else {
       previous.hidden = true;
       next.hidden = true;
