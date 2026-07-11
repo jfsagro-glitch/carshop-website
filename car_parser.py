@@ -353,6 +353,7 @@ GEORGIA_POWER_CATALOG = [
     {"brand": "Mitsubishi", "model": "Eclipse Cross", "engine": "1.5", "fuel": "", "hp": 150, "market": "europe"},
     {"brand": "Ford", "model": "Focus", "engine": "1.5", "fuel": "", "hp": 150, "market": "europe"},
     {"brand": "Ford", "model": "Kuga", "engine": "1.5", "fuel": "", "hp": 150, "market": "europe"},
+    {"brand": "Ford", "model": "Kuga", "engine": "2.0", "fuel": "дизель", "hp": 150, "market": "europe"},
     {"brand": "Ford", "model": "EcoSport", "engine": "1.0", "fuel": "", "hp": 125, "market": "europe"},
     {"brand": "Renault", "model": "Duster", "engine": "1.3", "fuel": "", "hp": 130, "market": "europe"},
     {"brand": "Renault", "model": "Arkana", "engine": "1.3", "fuel": "", "hp": 150, "market": "europe"},

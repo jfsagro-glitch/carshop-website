@@ -55,6 +55,7 @@
     {"regions": ["georgia", "europe"], "brand": "Ford", "model": "Focus", "engine": "1.0", "fuel": "Бензин", "hp": 125, "kw": 92},
     {"regions": ["georgia", "europe"], "brand": "Ford", "model": "Focus", "engine": "1.5", "fuel": "Бензин", "hp": 150, "kw": 110},
     {"regions": ["georgia", "europe"], "brand": "Ford", "model": "Kuga", "engine": "1.5", "fuel": "Бензин", "hp": 150, "kw": 110},
+    {"regions": ["europe"], "brand": "Ford", "model": "Kuga", "engine": "2.0", "fuel": "Дизель", "hp": 150, "kw": 110},
     {"regions": ["georgia", "europe"], "brand": "Honda", "model": "CR-V", "engine": "1.5", "fuel": "Бензин", "hp": 150, "kw": 110},
     {"regions": ["georgia", "europe"], "brand": "Honda", "model": "HR-V", "engine": "1.5", "fuel": "Гибрид", "hp": 131, "kw": 96},
     {"regions": ["georgia", "europe"], "brand": "Hyundai", "model": "i30", "engine": "1.5", "fuel": "Бензин", "hp": 110, "kw": 81},
