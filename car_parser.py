@@ -478,7 +478,7 @@ def is_known_over_limit_hybrid(record: dict) -> bool:
             continue
         if rule_model not in model:
             continue
-        if abs(engine - float(rule_engine)) <= 0.11:
+        if abs(engine - float(rule_engine)) <= 0.05:
             return True
     return False
 
@@ -496,7 +496,7 @@ def is_known_disallowed_variant(record: dict) -> bool:
     for rule_brand, rule_model, rule_engine in DISALLOWED_GEORGIA_VARIANTS:
         if brand != rule_brand or rule_model not in model:
             continue
-        if abs(engine - float(rule_engine)) > 0.11:
+        if abs(engine - float(rule_engine)) > 0.05:
             continue
         if market != "europe":
             return True
@@ -658,7 +658,7 @@ def estimate_georgia_catalog_power(record: dict) -> tuple[int, int, str]:
         if not region_match and rule_market != "any" and market not in (rule_market, "unknown"):
             continue
         rule_engine = parse_engine_liters(rule.get("engine"))
-        if rule_engine and engine and abs(rule_engine - engine) > 0.11:
+        if rule_engine and engine and abs(rule_engine - engine) > 0.05:
             continue
         rule_fuel = normalize_model_text(rule.get("fuel"))
         record_fuel_family = fuel_family(fuel)
@@ -1535,6 +1535,13 @@ class MyAutoGeParser:
             car = Car()
             car.brand = normalize_brand(str(item.get("man_name", "")))
             car.model = str(item.get("model_name", ""))
+            raw_trim = str(item.get("car_model") or "")
+            if car.brand.lower() == "buick":
+                buick_text = f"{car.model} {raw_trim}".lower()
+                if "encore" in buick_text and "gx" in buick_text:
+                    car.model = "Encore GX"
+                elif "enclave" in buick_text:
+                    car.model = "Enclave"
             car.year  = parse_int(item.get("prod_year", 0))
             car.extra["prod_month"] = parse_int(item.get("prod_month") or 0)
 
@@ -1564,7 +1571,7 @@ class MyAutoGeParser:
             car.extra["customs_passed"] = bool(item.get("customs_passed"))
             car.extra["location_id"] = parse_int(item.get("location_id") or 0)
             car.extra["parent_loc_id"] = parse_int(item.get("parent_loc_id") or 0)
-            car.extra["trim_name"] = str(item.get("trim_name") or item.get("car_model") or "")
+            car.extra["trim_name"] = str(item.get("trim_name") or raw_trim)
             # hp недоступен в списке — используем engine_volume как запасной индикатор
             car.power        = str(item.get("hp") or "")
 
@@ -1607,13 +1614,15 @@ class MyAutoGeParser:
         cars: List[Car] = []
         seen: set = set()
         man_queries = self.man_ids or [0]
-        per_man_limit = self.max_cars if len(man_queries) == 1 else max(120, (self.max_cars // len(man_queries)) + 1)
+        # Берем сопоставимую выборку по каждой марке: последовательный обход
+        # раньше исчерпывал общий лимит до Buick и остальных марок в конце списка.
+        per_man_limit = self.max_cars if len(man_queries) == 1 else max(1, (self.max_cars + len(man_queries) - 1) // len(man_queries))
 
         for man_id in man_queries:
             page = 1
             collected_for_man = 0
 
-            while len(cars) < self.max_cars and collected_for_man < per_man_limit:
+            while collected_for_man < per_man_limit:
                 params: dict = {
                     "TypeID": 0,
                     "ForRent": 0,

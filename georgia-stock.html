@@ -1419,7 +1419,7 @@
             ['mitsubishi','outlander','2.0','',146], ['mitsubishi','eclipse cross','1.5','',150],
             ['ford','focus','1.5','',150], ['ford','kuga','1.5','',150], ['ford','ecosport','1.0','',125], ['ford','fiesta','1.6','',120],
             ['renault','duster','1.3','',130], ['renault','arkana','1.3','',150],
-            ['buick','encore gx','1.3','',155], ['buick','encore','1.4','',138], ['chevrolet','trailblazer','1.3','',155], ['chevrolet','trax','1.4','',155],
+            ['buick','encore gx','1.3','',155], ['buick','encore','1.4','',138], ['buick','encore','1.3','',155], ['buick','encore','1.2','',137], ['chevrolet','trailblazer','1.3','',155], ['chevrolet','trax','1.4','',155],
             ['mini','cooper','1.5','',134], ['mini','countryman','1.5','',134]
         ];
 
@@ -1443,7 +1443,7 @@
                 if (brand !== ruleBrand) return;
                 if (!model.includes(ruleModel)) return;
                 const engineValue = parseGeorgiaEngine(ruleEngine);
-                if (engine && engineValue && Math.abs(engine - engineValue) > 0.11) return;
+                if (engine && engineValue && Math.abs(engine - engineValue) > 0.05) return;
                 const currentScore = ruleModel.length + (engine && engineValue ? 8 : 0) + (ruleFuel && fuel.includes(ruleFuel) ? 4 : 0);
                 if (currentScore > score) {
                     best = { hp, fuel: ruleFuel };

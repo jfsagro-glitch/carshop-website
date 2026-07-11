@@ -15109,5 +15109,2367 @@
       "KRW": 0.050967,
       "JPY": 0.473
     }
+  },
+  {
+    "id": 140,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 1,
+    "price": 12700,
+    "price_currency": "USD",
+    "mileage": 17000,
+    "engine": "1,4",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 113,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122601116",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_1.jpg?v=2",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_2.jpg?v=2",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_3.jpg?v=2",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_4.jpg?v=2",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_5.jpg?v=2",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_6.jpg?v=2",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_7.jpg?v=2",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_8.jpg?v=2",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_9.jpg?v=2",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_10.jpg?v=2",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/1/0/6/large/122601116_11.jpg?v=2",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 138,
+    "power_kw": 101,
+    "power": "138 л.с. / 101 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1438708,
+    "turnkey_payments_rub": 465066,
+    "customs_value_rub": 973642,
+    "customs_value_eur": 11106.25,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 208645,
+    "customs_duty_eur": 2380,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246297,
+    "georgia_conversion_fee_rub": 19763,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 141,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 12,
+    "price": 9700,
+    "price_currency": "USD",
+    "mileage": 70775,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KL4MMF***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122601242",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_1.jpg?v=7",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_2.jpg?v=7",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_3.jpg?v=7",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_4.jpg?v=7",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_5.jpg?v=7",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_6.jpg?v=7",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_7.jpg?v=7",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_8.jpg?v=7",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_9.jpg?v=7",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_10.jpg?v=7",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_11.jpg?v=7",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_12.jpg?v=7",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_13.jpg?v=7",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/1/0/6/large/122601242_14.jpg?v=7",
+        "order": 14
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea",
+    "turnkey_price_rub": 1189210,
+    "turnkey_payments_rub": 445563,
+    "customs_value_rub": 743648,
+    "customs_value_eur": 8482.73,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 241697,
+    "georgia_conversion_fee_rub": 15164,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 142,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 9,
+    "price": 11700,
+    "price_currency": "USD",
+    "mileage": 26000,
+    "engine": "1,2",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122038414",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_1.jpg?v=20",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_2.jpg?v=20",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_3.jpg?v=20",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_4.jpg?v=20",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_5.jpg?v=20",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_6.jpg?v=20",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_7.jpg?v=20",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_8.jpg?v=20",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_9.jpg?v=20",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_10.jpg?v=20",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_11.jpg?v=20",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_12.jpg?v=20",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_13.jpg?v=20",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/4/8/3/0/large/122038414_14.jpg?v=20",
+        "order": 14
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 137,
+    "power_kw": 101,
+    "power": "137 л.с. / 101 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1330703,
+    "turnkey_payments_rub": 433726,
+    "customs_value_rub": 896977,
+    "customs_value_eur": 10231.74,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 178839,
+    "customs_duty_eur": 2040,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 244763,
+    "georgia_conversion_fee_rub": 18230,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 143,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 4,
+    "price": 17200,
+    "price_currency": "USD",
+    "mileage": 85000,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "essence",
+    "url": "https://myauto.ge/ru/pr/122477246",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/7/7/4/large/122477246_1.jpg?v=1",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/7/7/4/large/122477246_2.jpg?v=1",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/7/7/4/large/122477246_3.jpg?v=1",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/7/7/4/large/122477246_4.jpg?v=1",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/2/7/7/4/large/122477246_5.jpg?v=1",
+        "order": 5
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1784312,
+    "turnkey_payments_rub": 465679,
+    "customs_value_rub": 1318633,
+    "customs_value_eur": 15041.54,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 253196,
+    "georgia_conversion_fee_rub": 26663,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 144,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 11,
+    "price": 15000,
+    "price_currency": "USD",
+    "mileage": 43500,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122146744",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_1.jpg?v=1",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_2.jpg?v=1",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_3.jpg?v=1",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_4.jpg?v=1",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_5.jpg?v=1",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_6.jpg?v=1",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_7.jpg?v=1",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_8.jpg?v=1",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_9.jpg?v=1",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1603660,
+    "turnkey_payments_rub": 453689,
+    "customs_value_rub": 1149971,
+    "customs_value_eur": 13117.62,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249823,
+    "georgia_conversion_fee_rub": 23290,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 145,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 1,
+    "price": 15000,
+    "price_currency": "USD",
+    "mileage": 44500,
+    "engine": "1,2",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122146804",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_1.jpg?v=1",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_2.jpg?v=1",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_3.jpg?v=1",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_4.jpg?v=1",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_5.jpg?v=1",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_6.jpg?v=1",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_7.jpg?v=1",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_8.jpg?v=1",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_9.jpg?v=1",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_10.jpg?v=1",
+        "order": 10
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 137,
+    "power_kw": 101,
+    "power": "137 л.с. / 101 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1588756,
+    "turnkey_payments_rub": 438786,
+    "customs_value_rub": 1149971,
+    "customs_value_eur": 13117.62,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 178839,
+    "customs_duty_eur": 2040,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 249823,
+    "georgia_conversion_fee_rub": 23290,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 146,
+    "brand": "Buick",
+    "model": "Encore GX",
+    "fullName": "Buick Encore GX",
+    "year": 2022,
+    "month": 2,
+    "price": 13100,
+    "price_currency": "USD",
+    "mileage": 50667,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KL4MMD***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "GX (ST)",
+    "url": "https://myauto.ge/ru/pr/121520268",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_1.jpg?v=3",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_2.jpg?v=3",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_3.jpg?v=3",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_4.jpg?v=3",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_5.jpg?v=3",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_6.jpg?v=3",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_7.jpg?v=3",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_8.jpg?v=3",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_9.jpg?v=3",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_10.jpg?v=3",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_11.jpg?v=3",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_12.jpg?v=3",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_13.jpg?v=3",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_14.jpg?v=3",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/2/0/2/5/large/121520268_15.jpg?v=3",
+        "order": 15
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea",
+    "turnkey_price_rub": 1455084,
+    "turnkey_payments_rub": 450776,
+    "customs_value_rub": 1004308,
+    "customs_value_eur": 11456.05,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246910,
+    "georgia_conversion_fee_rub": 20377,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 147,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 8,
+    "price": 12700,
+    "price_currency": "USD",
+    "mileage": 45300,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "St 4x4",
+    "url": "https://myauto.ge/ru/pr/121569848",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_1.jpg?v=7",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_2.jpg?v=7",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_3.jpg?v=7",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_4.jpg?v=7",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_5.jpg?v=7",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_6.jpg?v=7",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_7.jpg?v=7",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_8.jpg?v=7",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_9.jpg?v=7",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/8/9/6/5/large/121569848_10.jpg?v=7",
+        "order": 10
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1423804,
+    "turnkey_payments_rub": 450163,
+    "customs_value_rub": 973642,
+    "customs_value_eur": 11106.25,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246297,
+    "georgia_conversion_fee_rub": 19763,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 148,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 1,
+    "price": 12500,
+    "price_currency": "USD",
+    "mileage": 64000,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KL4MME***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122488625",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_1.jpg?v=6",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_2.jpg?v=6",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_3.jpg?v=6",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_4.jpg?v=6",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_5.jpg?v=6",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_6.jpg?v=6",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_7.jpg?v=6",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_8.jpg?v=6",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_9.jpg?v=6",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/6/8/8/4/large/122488625_10.jpg?v=6",
+        "order": 10
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea",
+    "turnkey_price_rub": 1408165,
+    "turnkey_payments_rub": 449856,
+    "customs_value_rub": 958309,
+    "customs_value_eur": 10931.35,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245990,
+    "georgia_conversion_fee_rub": 19457,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 149,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2023,
+    "month": 4,
+    "price": 17900,
+    "price_currency": "USD",
+    "mileage": 34000,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 113,
+    "parent_loc_id": 1,
+    "trim_name": "ST",
+    "url": "https://myauto.ge/ru/pr/121672208",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/2/2/7/6/large/121672208_9.jpg?v=0",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1839051,
+    "turnkey_payments_rub": 466753,
+    "customs_value_rub": 1372298,
+    "customs_value_eur": 15653.69,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 254270,
+    "georgia_conversion_fee_rub": 27737,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 150,
+    "brand": "Buick",
+    "model": "Encore GX",
+    "fullName": "Buick Encore GX",
+    "year": 2022,
+    "month": 10,
+    "price": 14200,
+    "price_currency": "USD",
+    "mileage": 43200,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KL4MMC***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "GX",
+    "url": "https://myauto.ge/ru/pr/122662352",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_12.jpg?v=0",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_13.jpg?v=0",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_14.jpg?v=0",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/3/2/6/6/large/122662352_15.jpg?v=0",
+        "order": 15
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea",
+    "turnkey_price_rub": 1541101,
+    "turnkey_payments_rub": 452463,
+    "customs_value_rub": 1088639,
+    "customs_value_eur": 12418.01,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248596,
+    "georgia_conversion_fee_rub": 22063,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 151,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 1,
+    "price": 9000,
+    "price_currency": "USD",
+    "mileage": 134000,
+    "engine": "1,4",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122658659",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/5/6/8/5/6/large/122658659_12.jpg?v=0",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 138,
+    "power_kw": 101,
+    "power": "138 л.с. / 101 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1149375,
+    "turnkey_payments_rub": 459393,
+    "customs_value_rub": 689982,
+    "customs_value_eur": 7870.57,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 208645,
+    "customs_duty_eur": 2380,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 240623,
+    "georgia_conversion_fee_rub": 14090,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 152,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2023,
+    "month": 5,
+    "price": 16000,
+    "price_currency": "USD",
+    "mileage": 56000,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122636882",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/6/3/6/large/122636882_12.jpg?v=0",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1690475,
+    "turnkey_payments_rub": 463840,
+    "customs_value_rub": 1226635,
+    "customs_value_eur": 13992.13,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251356,
+    "georgia_conversion_fee_rub": 24823,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 153,
+    "brand": "Buick",
+    "model": "Encore GX",
+    "fullName": "Buick Encore GX",
+    "year": 2023,
+    "month": 5,
+    "price": 16000,
+    "price_currency": "USD",
+    "mileage": 35000,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "Gx",
+    "url": "https://myauto.ge/ru/pr/122401815",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/8/1/0/4/large/122401815_12.jpg?v=0",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1690475,
+    "turnkey_payments_rub": 463840,
+    "customs_value_rub": 1226635,
+    "customs_value_eur": 13992.13,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251356,
+    "georgia_conversion_fee_rub": 24823,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 154,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 9,
+    "price": 13700,
+    "price_currency": "USD",
+    "mileage": 38400,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122622944",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/2/2/6/large/122622944_11.jpg?v=0",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1502002,
+    "turnkey_payments_rub": 451696,
+    "customs_value_rub": 1050306,
+    "customs_value_eur": 11980.76,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247830,
+    "georgia_conversion_fee_rub": 21297,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 155,
+    "brand": "Buick",
+    "model": "Encore GX",
+    "fullName": "Buick Encore GX",
+    "year": 2021,
+    "month": 8,
+    "price": 12500,
+    "price_currency": "USD",
+    "mileage": 130000,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "Gx",
+    "url": "https://myauto.ge/ru/pr/122611907",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_12.jpg?v=0",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_13.jpg?v=0",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/1/1/6/large/122611907_14.jpg?v=0",
+        "order": 14
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1408165,
+    "turnkey_payments_rub": 449856,
+    "customs_value_rub": 958309,
+    "customs_value_eur": 10931.35,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245990,
+    "georgia_conversion_fee_rub": 19457,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 156,
+    "brand": "Buick",
+    "model": "Encore GX",
+    "fullName": "Buick Encore GX",
+    "year": 2022,
+    "month": 11,
+    "price": 13800,
+    "price_currency": "USD",
+    "mileage": 100800,
+    "engine": "1,2",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "GX ST",
+    "url": "https://myauto.ge/ru/pr/122603186",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/3/0/6/large/122603186_1.jpg?v=2",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/3/0/6/large/122603186_2.jpg?v=2",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/3/0/6/large/122603186_3.jpg?v=2",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/3/0/6/large/122603186_4.jpg?v=2",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/3/0/6/large/122603186_5.jpg?v=2",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/3/0/6/large/122603186_6.jpg?v=2",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/3/0/6/large/122603186_7.jpg?v=2",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/1/3/0/6/large/122603186_8.jpg?v=2",
+        "order": 8
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 137,
+    "power_kw": 101,
+    "power": "137 л.с. / 101 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1494919,
+    "turnkey_payments_rub": 436946,
+    "customs_value_rub": 1057973,
+    "customs_value_eur": 12068.21,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 178839,
+    "customs_duty_eur": 2040,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247983,
+    "georgia_conversion_fee_rub": 21450,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 157,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 1,
+    "price": 7900,
+    "price_currency": "USD",
+    "mileage": 93876,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 3,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/121568033",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_1.jpg?v=7",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_2.jpg?v=7",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_3.jpg?v=7",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_4.jpg?v=7",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_5.jpg?v=7",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_6.jpg?v=7",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_7.jpg?v=7",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_8.jpg?v=7",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_9.jpg?v=7",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_10.jpg?v=7",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_11.jpg?v=7",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_12.jpg?v=7",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_13.jpg?v=7",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_14.jpg?v=7",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/3/0/8/6/5/large/121568033_15.jpg?v=7",
+        "order": 15
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1048454,
+    "turnkey_payments_rub": 442803,
+    "customs_value_rub": 605651,
+    "customs_value_eur": 6908.61,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 238937,
+    "georgia_conversion_fee_rub": 12404,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 158,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 11,
+    "price": 13500,
+    "price_currency": "USD",
+    "mileage": 34618,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 39,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122584910",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_1.jpg?v=1",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_2.jpg?v=1",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_3.jpg?v=1",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_4.jpg?v=1",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_5.jpg?v=1",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_6.jpg?v=1",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_7.jpg?v=1",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_8.jpg?v=1",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/9/4/8/5/large/122584910_9.jpg?v=1",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1486363,
+    "turnkey_payments_rub": 451389,
+    "customs_value_rub": 1034973,
+    "customs_value_eur": 11805.86,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247523,
+    "georgia_conversion_fee_rub": 20990,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 159,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2023,
+    "month": 4,
+    "price": 13900,
+    "price_currency": "USD",
+    "mileage": 83200,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "KL4AMC***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 113,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122583392",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_12.jpg?v=0",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_13.jpg?v=0",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_14.jpg?v=0",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/3/8/5/large/122583392_15.jpg?v=0",
+        "order": 15
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea",
+    "turnkey_price_rub": 1517642,
+    "turnkey_payments_rub": 452003,
+    "customs_value_rub": 1065639,
+    "customs_value_eur": 12155.66,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248137,
+    "georgia_conversion_fee_rub": 21603,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 160,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 1,
+    "price": 12500,
+    "price_currency": "USD",
+    "mileage": 61800,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122580113",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/1/0/8/5/large/122580113_11.jpg?v=0",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1408165,
+    "turnkey_payments_rub": 449856,
+    "customs_value_rub": 958309,
+    "customs_value_eur": 10931.35,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 193742,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245990,
+    "georgia_conversion_fee_rub": 19457,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
+  },
+  {
+    "id": 161,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 1,
+    "price": 12200,
+    "price_currency": "USD",
+    "mileage": 16000,
+    "engine": "1,2",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "KL4MMB***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 59,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122570726",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_12.jpg?v=0",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_13.jpg?v=0",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/0/7/5/large/122570726_14.jpg?v=0",
+        "order": 14
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-11",
+    "power_hp": 137,
+    "power_kw": 101,
+    "power": "137 л.с. / 101 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "korea",
+    "turnkey_price_rub": 1369802,
+    "turnkey_payments_rub": 434493,
+    "customs_value_rub": 935309,
+    "customs_value_eur": 10669,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 178839,
+    "customs_duty_eur": 2040,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245530,
+    "georgia_conversion_fee_rub": 18997,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-11",
+    "turnkey_rates_source": "CBR",
+    "turnkey_rates_cbr_date": "11.07.2026",
+    "turnkey_rates": {
+      "USD": 76.6647,
+      "EUR": 87.6661,
+      "GEL": 29.0661,
+      "CNY": 11.3037,
+      "KRW": 0.050967,
+      "JPY": 0.473
+    }
   }
 ]

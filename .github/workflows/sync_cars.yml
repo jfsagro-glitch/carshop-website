@@ -21,7 +21,7 @@ on:
       georgia_max:
         description: 'Сколько объявлений myauto.ge проверить'
         required: true
-        default: '300'
+        default: '1200'
       europe_max:
         description: 'Сколько объявлений AutoScout24 проверить'
         required: true
