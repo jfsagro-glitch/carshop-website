@@ -1031,11 +1031,18 @@
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label>Цена от:</label>
-                    <input type="number" id="price-from" placeholder="Минимум">
+                    <label for="price-currency">Валюта цены:</label>
+                    <select id="price-currency">
+                        <option value="EUR">EUR — цена в Европе</option>
+                        <option value="RUB">RUB — под ключ в РФ</option>
+                    </select>
                 </div>
                 <div class="filter-group">
-                    <label>Цена до:</label>
+                    <label id="price-from-label" for="price-from">Цена от, €:</label>
+                    <input type="number" id="price-from" placeholder="Минимум в €">
+                </div>
+                <div class="filter-group">
+                    <label id="price-to-label" for="price-to">Цена до, €:</label>
                     <input type="number" id="price-to" placeholder="Максимум">
                 </div>
                 <div class="filter-group">
@@ -1494,6 +1501,7 @@
             populateBrandFilter();
             populateModelFilter();
             populateExtraFilters();
+            updatePriceCurrencyLabels();
             displayCars();
             setupFilters();
             setupModal();
@@ -1721,6 +1729,10 @@
         function setupFilters() {
             document.getElementById('apply-filters').addEventListener('click', applyFilters);
             document.getElementById('reset-filters').addEventListener('click', resetFilters);
+            document.getElementById('price-currency').addEventListener('change', () => {
+                updatePriceCurrencyLabels();
+                applyFilters();
+            });
             // Живой поиск по тексту (debounce 250ms)
             const si = document.getElementById('search-input');
             if (si) {
@@ -1728,10 +1740,25 @@
             }
         }
 
+        function updatePriceCurrencyLabels() {
+            const isRub = document.getElementById('price-currency').value === 'RUB';
+            document.getElementById('price-from-label').textContent = isRub ? 'Цена от, ₽:' : 'Цена от, €:';
+            document.getElementById('price-to-label').textContent = isRub ? 'Цена до, ₽:' : 'Цена до, €:';
+            document.getElementById('price-from').placeholder = isRub ? 'Минимум в ₽' : 'Минимум в €';
+            document.getElementById('price-to').placeholder = isRub ? 'Максимум в ₽' : 'Максимум в €';
+        }
+
+        function priceForFilter(car, currency) {
+            return currency === 'RUB'
+                ? Number(car.turnkey_price_rub || 0)
+                : Number(car.price || 0);
+        }
+
         // Применение фильтров
         function applyFilters() {
             const brand = document.getElementById('brand-filter').value;
             const model = document.getElementById('model-filter').value;
+            const priceCurrency = document.getElementById('price-currency').value;
             const priceFrom = parseFloat(document.getElementById('price-from').value) || 0;
             const priceTo = parseFloat(document.getElementById('price-to').value) || Infinity;
             const mileageTo = parseFloat(document.getElementById('mileage-to').value) || Infinity;
@@ -1743,7 +1770,8 @@
             europeFilteredCars = europeCarsData.filter(car => {
                 if (brand && car.brand !== brand) return false;
                 if (model && car.model !== model) return false;
-                if (car.price && (car.price < priceFrom || car.price > priceTo)) return false;
+                const filterPrice = priceForFilter(car, priceCurrency);
+                if ((priceFrom > 0 || isFinite(priceTo)) && (!filterPrice || filterPrice < priceFrom || filterPrice > priceTo)) return false;
                 if (car.mileage && car.mileage > mileageTo) return false;
                 if (transmission && car.transmission !== transmission) return false;
                 if (fuel && car.fuel_type !== fuel) return false;
@@ -1762,6 +1790,7 @@
             sbLogSearch('europe-orders', {
                 brand,
                 model,
+                priceCurrency,
                 priceFrom: priceFrom || undefined,
                 priceTo: isFinite(priceTo) ? priceTo : undefined,
                 mileageTo: isFinite(mileageTo) ? mileageTo : undefined,
@@ -1777,12 +1806,14 @@
             document.getElementById('model-filter').value = '';
             document.getElementById('price-from').value = '';
             document.getElementById('price-to').value = '';
+            document.getElementById('price-currency').value = 'EUR';
             document.getElementById('mileage-to').value = '';
             document.getElementById('transmission-filter').value = '';
             document.getElementById('engine-volume-filter').value = '';
             document.getElementById('fuel-filter').value = '';
             const si = document.getElementById('search-input');
             if (si) si.value = '';
+            updatePriceCurrencyLabels();
             populateModelFilter(); // Обновляем список моделей
             europeFilteredCars = sortCarsByBrandThenPrice([...europeCarsData]);
             displayedCount = PAGE_SIZE;
