@@ -252,8 +252,6 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const payload = await response.json();
       premiumCars = normalize(payload);
-      const label = `${KM.format(premiumCars.length)} автомобилей`;
-      if ($('premiumHeroCount')) $('premiumHeroCount').textContent = `${label} в Premium-каталоге`;
       populateFilters();
       setupFilters();
       applyFilters();
