@@ -273,6 +273,30 @@
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
 
+        .price-currency-toggle {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-width: 140px;
+            overflow: hidden;
+            border: 1px solid #1f2937;
+            border-radius: 4px;
+            background: #111827;
+        }
+
+        .price-currency-toggle__button {
+            min-height: 40px;
+            border: 0;
+            border-right: 1px solid #1f2937;
+            background: transparent;
+            color: #aebbd0;
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .price-currency-toggle__button:last-child { border-right: 0; }
+        .price-currency-toggle__button.is-active { background: rgba(212, 175, 55, 0.18); color: #facc15; }
+
         .filter-btn {
             background: #3b82f6;
             color: #fff;
@@ -875,10 +899,6 @@
                 min-width: 0;
             }
 
-            .catalog-filters .filter-group:first-child {
-                flex-basis: 100%;
-            }
-
             .filter-group label {
                 font-size: 0.76rem;
                 margin-bottom: 0.28rem;
@@ -1014,10 +1034,6 @@
             </div>
 
             <div class="catalog-filters">
-                <div class="filter-group" style="flex:1 1 100%;">
-                    <label>Поиск:</label>
-                    <input type="text" id="search-input" placeholder="BMW 3, Volkswagen Golf…" style="width:100%;">
-                </div>
                 <div class="filter-group">
                     <label>Марка:</label>
                     <select id="brand-filter">
@@ -1031,11 +1047,12 @@
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label for="price-currency">Валюта цены:</label>
-                    <select id="price-currency">
-                        <option value="EUR">EUR — цена в Европе</option>
-                        <option value="RUB">RUB — под ключ в РФ</option>
-                    </select>
+                    <label>Валюта цены:</label>
+                    <div class="price-currency-toggle" role="group" aria-label="Валюта цены">
+                        <button type="button" class="price-currency-toggle__button is-active" data-price-currency="EUR">EUR</button>
+                        <button type="button" class="price-currency-toggle__button" data-price-currency="RUB">RUB</button>
+                    </div>
+                    <input id="price-currency" type="hidden" value="EUR">
                 </div>
                 <div class="filter-group">
                     <label id="price-from-label" for="price-from">Цена от, €:</label>
@@ -1729,15 +1746,20 @@
         function setupFilters() {
             document.getElementById('apply-filters').addEventListener('click', applyFilters);
             document.getElementById('reset-filters').addEventListener('click', resetFilters);
-            document.getElementById('price-currency').addEventListener('change', () => {
-                updatePriceCurrencyLabels();
-                applyFilters();
+            document.querySelectorAll('[data-price-currency]').forEach(button => {
+                button.addEventListener('click', () => {
+                    setPriceCurrency(button.dataset.priceCurrency);
+                    applyFilters();
+                });
             });
-            // Живой поиск по тексту (debounce 250ms)
-            const si = document.getElementById('search-input');
-            if (si) {
-                let t; si.addEventListener('input', () => { clearTimeout(t); t = setTimeout(applyFilters, 250); });
-            }
+        }
+
+        function setPriceCurrency(currency) {
+            document.getElementById('price-currency').value = currency;
+            document.querySelectorAll('[data-price-currency]').forEach(button => {
+                button.classList.toggle('is-active', button.dataset.priceCurrency === currency);
+            });
+            updatePriceCurrencyLabels();
         }
 
         function updatePriceCurrencyLabels() {
@@ -1765,7 +1787,6 @@
             const transmission = document.getElementById('transmission-filter').value;
             const fuel = document.getElementById('fuel-filter').value;
             const engineVolume = document.getElementById('engine-volume-filter').value;
-            const search = (document.getElementById('search-input')?.value || '').trim().toLowerCase();
 
             europeFilteredCars = europeCarsData.filter(car => {
                 if (brand && car.brand !== brand) return false;
@@ -1776,10 +1797,6 @@
                 if (transmission && car.transmission !== transmission) return false;
                 if (fuel && car.fuel_type !== fuel) return false;
                 if (engineVolume && engineVolumeBucket(car) !== engineVolume) return false;
-                if (search) {
-                    const haystack = `${car.brand||''} ${car.model||''} ${car.full_title||''} ${car.fuel_type||''} ${car.transmission||''} ${engineVolumeLabel(engineVolumeBucket(car))} ${car.first_registration||''} ${car.year||''}`.toLowerCase();
-                    if (!haystack.includes(search)) return false;
-                }
                 return true;
             });
             sortCarsByBrandThenPrice(europeFilteredCars);
@@ -1806,13 +1823,11 @@
             document.getElementById('model-filter').value = '';
             document.getElementById('price-from').value = '';
             document.getElementById('price-to').value = '';
-            document.getElementById('price-currency').value = 'EUR';
+            setPriceCurrency('EUR');
             document.getElementById('mileage-to').value = '';
             document.getElementById('transmission-filter').value = '';
             document.getElementById('engine-volume-filter').value = '';
             document.getElementById('fuel-filter').value = '';
-            const si = document.getElementById('search-input');
-            if (si) si.value = '';
             updatePriceCurrencyLabels();
             populateModelFilter(); // Обновляем список моделей
             europeFilteredCars = sortCarsByBrandThenPrice([...europeCarsData]);

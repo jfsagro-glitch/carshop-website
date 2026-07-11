@@ -2216,6 +2216,11 @@ class AutoScout24Parser:
     )
     PRIORITY_BRAND_SEARCHES = (
         ("Skoda", "skoda", 12),
+        ("Peugeot", "peugeot", 16),
+        ("Citroen", "citroen", 16),
+        ("Renault", "renault", 16),
+        ("KIA", "kia", 16),
+        ("Hyundai", "hyundai", 16),
     )
 
     UA_LIST = [
