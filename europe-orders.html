@@ -1224,6 +1224,10 @@
     (() => {
         let europeCarsData = [];
         let europeFilteredCars = [];
+        let europeManifest = null;
+        const loadedEuropeBrandKeys = new Set();
+        const europeGalleryCache = new Map();
+        let isDefaultAudiView = true;
         let displayedCount = 24;
         const PAGE_SIZE = 24;
         let currentCarIndex = -1;
@@ -1232,32 +1236,43 @@
         // Загрузка данных
         async function loadCarsData() {
             try {
-                const result = await sbLoadCarsWithFallback('europe', './cars_europe_new.json');
                 const filterEligible = rows => (rows || []).filter(isEuropeCarEligible);
-                europeCarsData = filterEligible(result.data);
-                const hasTurnkeyPrices = europeCarsData.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0);
-                if ((!europeCarsData.length || !hasTurnkeyPrices) && result._source !== 'json') {
-                    const fallback = await fetch('./cars_europe_new.json?v=' + Date.now(), { cache: 'no-store' });
-                    if (fallback.ok) {
-                        const fallbackCars = filterEligible(await fallback.json());
-                        if (fallbackCars.length && fallbackCars.some(car => Number(car.turnkey_price_rub || car.turnkey_partial_price_rub || 0) > 0)) {
-                            europeCarsData = fallbackCars;
-                        }
-                    }
-                }
+                const response = await fetch('./data/europe_catalog/manifest.json?v=' + Date.now(), { cache: 'no-store' });
+                if (!response.ok) throw new Error(`Europe manifest HTTP ${response.status}`);
+                europeManifest = await response.json();
+                const audi = (europeManifest.brands || []).find(brand => brand.name === 'Audi') || europeManifest.brands?.[0];
+                if (!audi) throw new Error('Europe manifest has no brands');
+                await ensureEuropeBrandLoaded(audi.name, filterEligible);
                 europeFilteredCars = [...europeCarsData];
 
                 // Показываем timestamp обновления
                 const tsEl = document.getElementById('syncTimestamp');
                 if (tsEl) {
                     const now = new Date().toLocaleDateString('ru-RU', {day:'2-digit',month:'2-digit',year:'numeric'});
-                    tsEl.textContent = `Каталог обновлён: ${now} · ${europeCarsData.length} проходных авто с фото`;
+                    tsEl.textContent = `Каталог обновлён: ${now} · ${europeManifest.total} проходных авто с фото`;
                 }
 
                 initializePage();
             } catch (error) {
                 document.getElementById('cars-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных</div>';
             }
+        }
+
+        async function ensureEuropeBrandLoaded(brand, filterEligible) {
+            if (!brand || !europeManifest) return;
+            const entry = europeManifest.brands.find(item => item.name === brand);
+            if (!entry || loadedEuropeBrandKeys.has(entry.key)) return;
+            const response = await fetch(`./data/europe_catalog/${entry.file}?v=${Date.now()}`, { cache: 'no-store' });
+            if (!response.ok) throw new Error(`Europe brand ${brand} HTTP ${response.status}`);
+            const payload = await response.json();
+            const normalize = filterEligible || (rows => (rows || []).filter(isEuropeCarEligible));
+            europeCarsData.push(...normalize(payload.cars));
+            loadedEuropeBrandKeys.add(entry.key);
+        }
+
+        async function ensureAllEuropeBrandsLoaded() {
+            if (!europeManifest) return;
+            await Promise.all(europeManifest.brands.map(brand => ensureEuropeBrandLoaded(brand.name)));
         }
 
         // Функция обновления URL изображения до оптимального размера
@@ -1526,14 +1541,16 @@
 
         // Обновление статистики
         function updateStats() {
-            const totalCars = europeFilteredCars.length;
+            const totalCars = isDefaultAudiView && europeManifest ? europeManifest.total : europeFilteredCars.length;
             document.getElementById('total-cars').textContent = totalCars;
         }
 
         // Заполнение фильтра марок
         function populateBrandFilter() {
             const brandFilter = document.getElementById('brand-filter');
-            const brands = [...new Set(europeCarsData.map(car => car.brand).filter(Boolean))].sort();
+            const brands = europeManifest
+                ? europeManifest.brands.map(brand => brand.name)
+                : [...new Set(europeCarsData.map(car => car.brand).filter(Boolean))].sort();
             brands.forEach(brand => {
                 const option = document.createElement('option');
                 option.value = brand;
@@ -1542,8 +1559,10 @@
             });
 
             // Обновляем модели при изменении марки
-            brandFilter.addEventListener('change', function() {
+            brandFilter.addEventListener('change', async function() {
+                await ensureEuropeBrandLoaded(this.value);
                 populateModelFilter();
+                populateExtraFilters();
                 // Сбрасываем выбор модели при смене марки
                 document.getElementById('model-filter').value = '';
             });
@@ -1559,13 +1578,12 @@
             modelFilter.innerHTML = '<option value="">Все модели</option>';
 
             // Если марка не выбрана, показываем все модели
-            let modelsToShow = europeCarsData;
-            if (selectedBrand) {
-                modelsToShow = europeCarsData.filter(car => car.brand === selectedBrand);
-            }
-
-            // Получаем уникальные модели
-            const models = [...new Set(modelsToShow.map(car => car.model).filter(Boolean))].sort();
+            const manifestBrand = europeManifest?.brands.find(brand => brand.name === selectedBrand);
+            const models = manifestBrand
+                ? manifestBrand.models
+                : europeManifest
+                    ? [...new Set(europeManifest.brands.flatMap(brand => brand.models || []))].sort((a, b) => a.localeCompare(b, 'ru'))
+                    : [...new Set(europeCarsData.map(car => car.model).filter(Boolean))].sort();
             models.forEach(model => {
                 const option = document.createElement('option');
                 option.value = model;
@@ -1575,10 +1593,19 @@
         }
 
         function populateExtraFilters() {
-            populateSelectFromValues('transmission-filter', europeCarsData.map(car => car.transmission).filter(Boolean), 'Любая');
-            populateSelectFromValues('fuel-filter', europeCarsData.map(car => car.fuel_type).filter(Boolean), 'Любой');
+            const manifestFilters = europeManifest?.filters;
+            populateSelectFromValues(
+                'transmission-filter',
+                manifestFilters?.transmissions || europeCarsData.map(car => car.transmission).filter(Boolean),
+                'Любая'
+            );
+            populateSelectFromValues(
+                'fuel-filter',
+                manifestFilters?.fuels || europeCarsData.map(car => car.fuel_type).filter(Boolean),
+                'Любой'
+            );
 
-            const volumes = [...new Set(europeCarsData.map(engineVolumeBucket).filter(Boolean))]
+            const volumes = (manifestFilters?.engine_volumes || [...new Set(europeCarsData.map(engineVolumeBucket).filter(Boolean))])
                 .sort((a, b) => Number(a) - Number(b));
             const volumeFilter = document.getElementById('engine-volume-filter');
             if (volumeFilter) {
@@ -1635,12 +1662,13 @@
             grid.innerHTML = carsToShow.map((car, index) => {
                 const images = car._filteredImages || filterImages(car.images);
                 const imageCount = images.length;
+                const totalImageCount = Number(car.image_count || imageCount);
                 car._filteredImages = images;
                 const price = car.price ? `${car.price.toLocaleString('ru-RU')} €` : 'Цена по запросу';
                 // filterImages уже апгрейдил URL — не дублируем
                 const previewIndex = Math.min(car._previewImageIndex || 0, Math.max(imageCount - 1, 0));
                 const finalImageUrl = imageCount ? images[previewIndex].url : '';
-                const previewDots = imageCount > 1
+                const previewDots = totalImageCount > 1 && imageCount > 1
                     ? images.slice(0, 8).map((_, dotIndex) => `<span class="preview-dot ${dotIndex === previewIndex ? 'active' : ''}"></span>`).join('')
                     : '';
                 const turnkeyHtml = getEuropeTurnkeyHtml(car);
@@ -1664,9 +1692,9 @@
                             ${finalImageUrl
                                 ? `<img class="car-preview-img" src="${finalImageUrl}" alt="${car.brand} ${car.model}" loading="lazy" decoding="async" onload="this.classList.add('loaded');this.parentElement.classList.remove('loading')" onerror="this.parentElement.classList.add('img-error');this.remove()">`
                                 : ''}
-                            ${imageCount > 1 ? `<button class="preview-nav preview-nav--prev" type="button" aria-label="Предыдущее фото" onclick="window.europeCatalogChangePreviewImage(${index}, -1, event)"><i class="fas fa-chevron-left"></i></button>` : ''}
-                            ${imageCount > 1 ? `<button class="preview-nav preview-nav--next" type="button" aria-label="Следующее фото" onclick="window.europeCatalogChangePreviewImage(${index}, 1, event)"><i class="fas fa-chevron-right"></i></button>` : ''}
-                            ${imageCount > 0 ? `<div class="image-count"><i class="fas fa-images"></i> ${imageCount > 1 ? `${previewIndex + 1}/${imageCount}` : imageCount}</div>` : ''}
+                            ${totalImageCount > 1 ? `<button class="preview-nav preview-nav--prev" type="button" aria-label="Предыдущее фото" onclick="window.europeCatalogChangePreviewImage(${index}, -1, event)"><i class="fas fa-chevron-left"></i></button>` : ''}
+                            ${totalImageCount > 1 ? `<button class="preview-nav preview-nav--next" type="button" aria-label="Следующее фото" onclick="window.europeCatalogChangePreviewImage(${index}, 1, event)"><i class="fas fa-chevron-right"></i></button>` : ''}
+                            ${totalImageCount > 0 ? `<div class="image-count"><i class="fas fa-images"></i> ${totalImageCount > 1 ? `${previewIndex + 1}/${totalImageCount}` : totalImageCount}</div>` : ''}
                             ${previewDots ? `<div class="preview-dots">${previewDots}</div>` : ''}
                             ${car.first_registration_year ? `<div class="car-year-badge">${car.first_registration_year}</div>` : ''}
                         </div>
@@ -1695,13 +1723,14 @@
             updateLoadMoreBtn();
         }
 
-        function changePreviewImage(carIndex, direction, event) {
+        async function changePreviewImage(carIndex, direction, event) {
             if (event) {
                 event.preventDefault();
                 event.stopPropagation();
             }
             const car = europeFilteredCars[carIndex];
             if (!car) return;
+            await ensureEuropeCarImages(car);
             const images = car._filteredImages || filterImages(car.images);
             if (images.length < 2) return;
 
@@ -1712,7 +1741,7 @@
             const image = card.querySelector('.car-preview-img');
             if (image) image.src = images[nextIndex].url;
             const counter = card.querySelector('.image-count');
-            if (counter) counter.innerHTML = `<i class="fas fa-images"></i> ${nextIndex + 1}/${images.length}`;
+            if (counter) counter.innerHTML = `<i class="fas fa-images"></i> ${nextIndex + 1}/${Number(car.image_count || images.length)}`;
             card.querySelectorAll('.preview-dot').forEach((dot, dotIndex) => {
                 dot.classList.toggle('active', dotIndex === nextIndex);
             });
@@ -1777,7 +1806,7 @@
         }
 
         // Применение фильтров
-        function applyFilters() {
+        async function applyFilters() {
             const brand = document.getElementById('brand-filter').value;
             const model = document.getElementById('model-filter').value;
             const priceCurrency = document.getElementById('price-currency').value;
@@ -1787,6 +1816,13 @@
             const transmission = document.getElementById('transmission-filter').value;
             const fuel = document.getElementById('fuel-filter').value;
             const engineVolume = document.getElementById('engine-volume-filter').value;
+
+            isDefaultAudiView = false;
+            if (brand) {
+                await ensureEuropeBrandLoaded(brand);
+            } else {
+                await ensureAllEuropeBrandsLoaded();
+            }
 
             europeFilteredCars = europeCarsData.filter(car => {
                 if (brand && car.brand !== brand) return false;
@@ -1830,7 +1866,8 @@
             document.getElementById('fuel-filter').value = '';
             updatePriceCurrencyLabels();
             populateModelFilter(); // Обновляем список моделей
-            europeFilteredCars = sortCarsByBrandThenPrice([...europeCarsData]);
+            isDefaultAudiView = true;
+            europeFilteredCars = sortCarsByBrandThenPrice(europeCarsData.filter(car => car.brand === 'Audi'));
             displayedCount = PAGE_SIZE;
             updateStats();
             displayCars();
@@ -1861,9 +1898,28 @@
         }
 
         // Открытие модального окна
-        function openImageModal(carIndex) {
+        async function ensureEuropeCarImages(car) {
+            if (!car?.details_file || car._detailsLoaded) return;
+            let gallery = europeGalleryCache.get(car.details_file);
+            if (!gallery) {
+                const response = await fetch(`./data/europe_catalog/${car.details_file}?v=${Date.now()}`, { cache: 'no-store' });
+                if (!response.ok) throw new Error(`Europe gallery HTTP ${response.status}`);
+                gallery = await response.json();
+                europeGalleryCache.set(car.details_file, gallery);
+            }
+            const detail = gallery.cars?.[car.id];
+            if (detail?.images?.length) {
+                car.images = detail.images.map((url, index) => ({ url, order: index + 1 }));
+                car._filteredImages = filterImages(car.images);
+            }
+            car._detailsLoaded = true;
+        }
+
+        async function openImageModal(carIndex) {
             currentCarIndex = carIndex;
             const car = europeFilteredCars[carIndex];
+            if (!car) return;
+            await ensureEuropeCarImages(car);
 
             const images = car._filteredImages || filterImages(car.images);
             if (!images || images.length === 0) return;
@@ -1969,8 +2025,10 @@
         }
 
         // Смена изображения
-        function changeImage(direction) {
+        async function changeImage(direction) {
             const car = europeFilteredCars[currentCarIndex];
+            if (!car) return;
+            await ensureEuropeCarImages(car);
             const images = car._filteredImages || filterImages(car.images);
             currentImageIndex += direction;
 
