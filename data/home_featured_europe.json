@@ -1,37 +1,41 @@
 {
-  "generated_at": "2026-07-12T06:49:24.132Z",
+  "generated_at": "2026-07-13T06:58:50.919Z",
   "offers": [
     {
       "channel": "europe_catalog",
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/audi-a4-avant-35-tfsi-s-tronic-navi-pdc-sitzh-elektr-heck-benzin-schwarz-cat_ma9mo1626-83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be",
+      "source_url": "https://www.autoscout24.de/angebote/audi-a4-avant-35-2-0-tfsi-s-tronic-navi+led+el-heckkl-benzin-schwarz-cat_ma9mo1626-0ef463fc-fe3a-4fc4-b92a-21f103fc8a18",
       "title": "Audi A4 2022",
       "year": "2022",
-      "price": "2 743 312 ₽",
-      "base_price": "19 740 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_039af714-31d0-468a-aa29-b8debeebb620.jpg/1024x768.webp",
+      "price": "2 752 969 ₽",
+      "base_price": "19 848 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_96b5b222-4c4a-4b53-991a-a574b7602438.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_039af714-31d0-468a-aa29-b8debeebb620.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_8dfe50db-ae3c-411d-bd34-4a583137c003.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_e799769f-174b-45e5-a71d-fdca3c72be3e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_cad444b9-f002-456c-9afc-7dee737ed80d.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_8cd1028d-126c-43fb-9c12-befb8bbb935f.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_e6612d24-d7e3-4c79-a73c-0dc036ace04e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_0086510d-ea9d-4370-82bf-6c7fefb84d65.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/83b03fd9-cdf1-4cfb-8fb1-f1e9a426b4be_9e684dee-aecd-4c70-9d61-f6ad3345a01f.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_96b5b222-4c4a-4b53-991a-a574b7602438.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_61be7f5c-c9a3-4c73-8184-ed4f88e3d055.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_02881394-d1b8-45fa-a572-b3052a05e2cd.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_6fe5a0ee-22ef-4f6c-93bc-bf5cbfd195ba.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_b5f7de98-a57c-49b1-acd3-d8d5008bdc20.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_0325d120-7a6a-4d85-86d6-e81840751c88.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_3aa944e8-48ee-4df7-aeec-fb4be609f817.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_5339c6bb-10bb-406d-ba4f-692482910791.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_292d412d-73f8-4a75-b5b1-643ffe2f7705.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_aa44fa3a-ec5d-430e-974d-dd2064ca4bc9.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_3f37b209-4dd5-4db6-b606-f2ab82379bc9.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/0ef463fc-fe3a-4fc4-b92a-21f103fc8a18_10a1a5ed-612f-4162-836b-4f8f66404c9d.jpg/1024x768.webp"
       ],
       "details": {
         "engine": "1,984 Бензин",
         "power": "150 л.с. / 110 кВт",
-        "mileage": "54 990 км"
+        "mileage": "54 457 км"
       },
-      "text_excerpt": "Avant 35 TFSI S tronic Navi PDC Sitzh elektr. Heck. Цена в Европе 19 740 €, стоимость под ключ в РФ 2 743 312 ₽.",
+      "text_excerpt": "Avant 35 2.0 TFSI S-TRONIC NAVI+LED+EL.HECKKL. Цена в Европе 19 848 €, стоимость под ключ в РФ 2 752 969 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 100 000 км",
-        "цена в Европе: 19 740 €"
+        "цена в Европе: 19 848 €"
       ]
     },
     {
