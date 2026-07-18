@@ -357,7 +357,7 @@ def main() -> None:
     already_posted = posted_urls(history)
     cycle_urls = set(history["cycle_offer_urls"])
 
-    candidates = [
+    candidates = offers if args.dry_run else [
         offer
         for offer in offers
         if offer["source_url"] in cycle_urls and offer["source_url"] not in already_posted
@@ -382,6 +382,8 @@ def main() -> None:
     print(f"Prepared one Europe offer: {selected['title']} — {selected['price']} ({len(photos)} photos)")
 
     if args.dry_run:
+        print("Caption preview:")
+        print(offer_caption(selected, test=args.test))
         return
 
     channels = all_channel_ids()
