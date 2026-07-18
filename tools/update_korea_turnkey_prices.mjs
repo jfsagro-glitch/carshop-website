@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { calculateCustoms } from '../src/features/customs-calculator/customsCalculator.js';
+import { loadResilientCbrRates } from './cbr_rates.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
@@ -136,8 +137,11 @@ function buildInput(car, rates) {
   };
 }
 
-const { rates, cbrDate } = await loadCbrRates();
 const cars = JSON.parse(await fs.readFile(stockPath, 'utf8'));
+const { rates, cbrDate, source: ratesSource } = await loadResilientCbrRates({
+  fallbackDate: calculationDate,
+  cachedCars: cars,
+});
 const sourceCars = cars.filter((car) => !isElectricCar(car));
 let completeCount = 0;
 
@@ -150,7 +154,7 @@ const updated = sourceCars.map((car) => {
     korea_road_eur: KOREA_ROAD_EUR,
     turnkey_cost_profile: 'korea_plus_georgia_costs',
     turnkey_calculation_date: calculationDate,
-    turnkey_rates_source: 'CBR',
+    turnkey_rates_source: ratesSource,
     turnkey_rates_cbr_date: cbrDate,
     turnkey_rates: {
       USD: Number(rates.USD.toFixed(4)),

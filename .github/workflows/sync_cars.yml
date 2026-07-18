@@ -27,6 +27,12 @@ on:
         required: true
         default: '500'
 
+concurrency:
+  # The morning Telegram workflow also writes catalog JSON files.
+  # One shared queue prevents races between generated catalog commits.
+  group: catalog-data-writer
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -181,14 +187,22 @@ jobs:
           # those independent changes; for generated JSON conflicts, keep the
           # freshly collected catalog from this run.
           for attempt in 1 2 3; do
-            git fetch origin main
+            if ! git fetch origin main; then
+              echo "Fetch failed on publish attempt $attempt."
+              sleep $((attempt * 5))
+              continue
+            fi
             if ! git merge-base --is-ancestor origin/main HEAD; then
-              git merge --no-edit -X ours origin/main
+              if ! git merge --no-edit -X ours origin/main; then
+                echo "Merge failed on publish attempt $attempt; retrying."
+                git merge --abort || true
+                sleep $((attempt * 5))
+                continue
+              fi
             fi
             if git push origin HEAD:main; then
               exit 0
             fi
-            git merge --abort || true
             sleep $((attempt * 5))
           done
           echo "Unable to publish the generated catalog after 3 attempts."

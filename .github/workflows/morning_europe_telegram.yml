@@ -25,7 +25,8 @@ on:
         default: false
 
 concurrency:
-  group: morning-europe-telegram
+  # Share the catalog writer lock with sync_cars.yml.
+  group: catalog-data-writer
   cancel-in-progress: false
 
 jobs:

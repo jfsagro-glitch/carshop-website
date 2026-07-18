@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 import { calculateCustoms } from '../src/features/customs-calculator/customsCalculator.js';
 import { resolveAgeBand } from '../src/features/customs-calculator/age.js';
+import { loadResilientCbrRates } from './cbr_rates.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
@@ -240,11 +241,14 @@ function buildInput(car, rates, whitelist) {
   };
 }
 
-const [{ rates, cbrDate }, cars, passableFilter] = await Promise.all([
-  loadCbrRates(),
+const [cars, passableFilter] = await Promise.all([
   fs.readFile(stockPath, 'utf8').then(JSON.parse),
   fs.readFile(passableFilterPath, 'utf8').then(JSON.parse),
 ]);
+const { rates, cbrDate, source: ratesSource } = await loadResilientCbrRates({
+  fallbackDate: calculationDate,
+  cachedCars: cars,
+});
 
 const whitelist = passableFilter.vehicle_whitelist || [];
 let completeCount = 0;
@@ -269,7 +273,7 @@ const updated = sourceCars.map((car) => {
     europe_road_eur: EUROPE_ROAD_EUR,
     turnkey_cost_profile: 'europe_plus_georgia_costs',
     turnkey_calculation_date: calculationDate,
-    turnkey_rates_source: 'CBR',
+    turnkey_rates_source: ratesSource,
     turnkey_rates_cbr_date: cbrDate,
     turnkey_rates: {
       USD: Number(rates.USD.toFixed(4)),
