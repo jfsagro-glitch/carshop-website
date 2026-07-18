@@ -255,21 +255,26 @@ def download_offer_photos(offer: dict, limit: int = 10) -> list[bytes]:
 
 def offer_caption(offer: dict, test: bool = False) -> str:
     details = offer.get("details") or {}
+    title = html.escape(str(offer["title"]))
+    turnkey_price = html.escape(str(offer["price"]))
+    europe_price = html.escape(str(offer.get("base_price") or "уточняется"))
+    mileage = html.escape(str(details["mileage"]))
+    engine = html.escape(str(details["engine"]))
+    power = html.escape(str(details["power"]))
+    source_url = html.escape(str(offer["source_url"]), quote=True)
     lines = [
-        f"🚘 <b>{html.escape(str(offer['title']))}</b>",
-        f"💰 Под ключ в РФ: <b>{html.escape(str(offer['price']))}</b>",
-        f"🇪🇺 Цена в Европе: {html.escape(str(offer.get('base_price') or 'уточняется'))}",
-        f"🛣 Пробег: {html.escape(str(details['mileage']))}",
-        f"⚙️ Двигатель: {html.escape(str(details['engine']))}",
-        f"🏁 Мощность: {html.escape(str(details['power']))}",
-        f'🔗 <a href="{html.escape(str(offer["source_url"]), quote=True)}">Открыть объявление</a>',
+        f"🚘 <b>{title}</b>",
+        f"<blockquote><b>Под ключ в РФ: {turnkey_price}</b></blockquote>",
+        f"🇪🇺 <b>Цена в Европе:</b> {europe_price}",
         "",
-        f'🌐 <a href="{SITE_URL}">Другие предложения на сайте</a>',
+        f"🛣 <b>Пробег:</b> {mileage}",
+        f"⚙️ <b>Двигатель:</b> {engine}",
+        f"🏁 <b>Мощность:</b> {power}",
         "",
-        "Привезем абсолютно любой автомобиль 🚘 под ваш бюджет 🚕",
+        f'🔗 <a href="{source_url}">Открыть объявление</a> · <a href="{EUROPE_URL}">Каталог Европы</a>',
         "",
-        "📞 Телефон для связи:",
-        CONTACT_PHONE_DISPLAY,
+        "<b>Подберём и привезём автомобиль под ваш бюджет.</b>",
+        f"📞 {CONTACT_PHONE_DISPLAY}",
         f'💬 <a href="{CONTACT_WHATSAPP_URL}">WhatsApp</a> · <a href="{CONTACT_TELEGRAM_URL}">Telegram</a>',
     ]
     return "\n".join(lines)[:1024]
