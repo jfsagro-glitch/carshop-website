@@ -345,7 +345,7 @@ def main() -> None:
     args = parser.parse_args()
 
     history = load_history()
-    if already_published_today(history) and not args.test:
+    if already_published_today(history) and not args.test and not args.dry_run:
         print(f"Europe offer already published today ({moscow_today()}); skipping")
         return
 
