@@ -239,81 +239,85 @@
     "model": "Trailblazer",
     "fullName": "Chevrolet Trailblazer",
     "year": 2023,
-    "month": 3,
-    "price": 14500,
+    "month": 6,
+    "price": 14000,
     "price_currency": "USD",
-    "mileage": 99120,
+    "mileage": 45000,
     "engine": "1,3",
     "fuel_type": "Бензин",
     "transmission": "Автомат",
     "color": "",
     "drive": "4WD",
-    "vin": "KL79MS***********",
+    "vin": "KL79MR***********",
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
-    "location_id": 2,
+    "location_id": 30,
     "parent_loc_id": 1,
-    "trim_name": "ACTIV All-Wheel Drive Automati",
-    "url": "https://myauto.ge/ru/pr/121142426",
+    "trim_name": "LT All-Wheel Drive Automatic",
+    "url": "https://myauto.ge/ru/pr/121731602",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_1.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_1.jpg?v=5",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_2.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_2.jpg?v=5",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_3.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_3.jpg?v=5",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_4.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_4.jpg?v=5",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_5.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_5.jpg?v=5",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_6.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_6.jpg?v=5",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_7.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_7.jpg?v=5",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_8.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_8.jpg?v=5",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_9.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_9.jpg?v=5",
         "order": 9
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_10.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_10.jpg?v=5",
         "order": 10
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_11.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_11.jpg?v=5",
         "order": 11
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_12.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_12.jpg?v=5",
         "order": 12
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_13.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_13.jpg?v=5",
         "order": 13
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/2/4/1/large/121142426_14.jpg?v=6",
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_14.jpg?v=5",
         "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/6/1/3/7/large/121731602_15.jpg?v=5",
+        "order": 15
       }
     ],
     "source": "myauto_ge",
@@ -323,18 +327,18 @@
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
     "source_market": "korea",
-    "turnkey_price_rub": 1593502,
-    "turnkey_payments_rub": 457922,
-    "customs_value_rub": 1135581,
-    "customs_value_eur": 12680.37,
+    "turnkey_price_rub": 1553561,
+    "turnkey_payments_rub": 457138,
+    "customs_value_rub": 1096423,
+    "customs_value_eur": 12243.12,
     "customs_fee_rub": 4924,
     "customs_duty_rub": 197915,
     "customs_duty_eur": 2210,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 249883,
-    "georgia_conversion_fee_rub": 23009,
+    "additional_costs_rub": 249100,
+    "georgia_conversion_fee_rub": 22226,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -357,9 +361,9 @@
     "fullName": "Chevrolet Trailblazer",
     "year": 2023,
     "month": 1,
-    "price": 14900,
+    "price": 16800,
     "price_currency": "USD",
-    "mileage": 35000,
+    "mileage": 58000,
     "engine": "1,3",
     "fuel_type": "Бензин",
     "transmission": "Автомат",
@@ -369,60 +373,72 @@
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
-    "location_id": 113,
+    "location_id": 2,
     "parent_loc_id": 1,
-    "trim_name": "ACTIV All-Wheel Drive Automati",
-    "url": "https://myauto.ge/ru/pr/122391939",
+    "trim_name": "LT All-Wheel Drive Automatic",
+    "url": "https://myauto.ge/ru/pr/122776907",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_1.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_1.jpg?v=1",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_2.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_2.jpg?v=1",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_3.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_3.jpg?v=1",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_4.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_4.jpg?v=1",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_5.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_5.jpg?v=1",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_6.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_6.jpg?v=1",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_7.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_7.jpg?v=1",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_8.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_8.jpg?v=1",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_9.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_9.jpg?v=1",
         "order": 9
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_10.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_10.jpg?v=1",
         "order": 10
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_11.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_11.jpg?v=1",
         "order": 11
       },
       {
-        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_12.jpg?v=2",
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_12.jpg?v=1",
         "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_13.jpg?v=1",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_14.jpg?v=1",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_15.jpg?v=1",
+        "order": 15
       }
     ],
     "source": "myauto_ge",
@@ -432,18 +448,18 @@
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia",
-    "turnkey_price_rub": 1625455,
-    "turnkey_payments_rub": 458548,
-    "customs_value_rub": 1166907,
-    "customs_value_eur": 13030.18,
-    "customs_fee_rub": 4924,
+    "turnkey_price_rub": 1785848,
+    "turnkey_payments_rub": 470141,
+    "customs_value_rub": 1315707,
+    "customs_value_eur": 14691.74,
+    "customs_fee_rub": 13541,
     "customs_duty_rub": 197915,
     "customs_duty_eur": 2210,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 250509,
-    "georgia_conversion_fee_rub": 23636,
+    "additional_costs_rub": 253485,
+    "georgia_conversion_fee_rub": 26612,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -587,9 +603,9 @@
     "fullName": "Chevrolet Trailblazer",
     "year": 2023,
     "month": 1,
-    "price": 16800,
+    "price": 14900,
     "price_currency": "USD",
-    "mileage": 58000,
+    "mileage": 35000,
     "engine": "1,3",
     "fuel_type": "Бензин",
     "transmission": "Автомат",
@@ -599,72 +615,60 @@
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
-    "location_id": 2,
+    "location_id": 113,
     "parent_loc_id": 1,
-    "trim_name": "LT All-Wheel Drive Automatic",
-    "url": "https://myauto.ge/ru/pr/122776907",
+    "trim_name": "ACTIV All-Wheel Drive Automati",
+    "url": "https://myauto.ge/ru/pr/122391939",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_1.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_1.jpg?v=2",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_2.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_2.jpg?v=2",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_3.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_3.jpg?v=2",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_4.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_4.jpg?v=2",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_5.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_5.jpg?v=2",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_6.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_6.jpg?v=2",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_7.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_7.jpg?v=2",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_8.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_8.jpg?v=2",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_9.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_9.jpg?v=2",
         "order": 9
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_10.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_10.jpg?v=2",
         "order": 10
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_11.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_11.jpg?v=2",
         "order": 11
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_12.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/3/9/1/9/3/large/122391939_12.jpg?v=2",
         "order": 12
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_13.jpg?v=1",
-        "order": 13
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_14.jpg?v=1",
-        "order": 14
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/9/6/7/7/large/122776907_15.jpg?v=1",
-        "order": 15
       }
     ],
     "source": "myauto_ge",
@@ -674,18 +678,18 @@
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia",
-    "turnkey_price_rub": 1785848,
-    "turnkey_payments_rub": 470141,
-    "customs_value_rub": 1315707,
-    "customs_value_eur": 14691.74,
-    "customs_fee_rub": 13541,
+    "turnkey_price_rub": 1625455,
+    "turnkey_payments_rub": 458548,
+    "customs_value_rub": 1166907,
+    "customs_value_eur": 13030.18,
+    "customs_fee_rub": 4924,
     "customs_duty_rub": 197915,
     "customs_duty_eur": 2210,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 253485,
-    "georgia_conversion_fee_rub": 26612,
+    "additional_costs_rub": 250509,
+    "georgia_conversion_fee_rub": 23636,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -820,6 +824,127 @@
     "model": "EcoSport",
     "fullName": "Ford EcoSport",
     "year": 2021,
+    "month": 11,
+    "price": 7800,
+    "price_currency": "USD",
+    "mileage": 71000,
+    "engine": "1,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122602313",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_1.jpg?v=7",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_2.jpg?v=7",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_3.jpg?v=7",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_4.jpg?v=7",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_5.jpg?v=7",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_6.jpg?v=7",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_7.jpg?v=7",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_8.jpg?v=7",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_9.jpg?v=7",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_10.jpg?v=7",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_11.jpg?v=7",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_12.jpg?v=7",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_13.jpg?v=7",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_14.jpg?v=7",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/3/2/0/6/large/122602313_15.jpg?v=7",
+        "order": 15
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 123,
+    "power_kw": 92,
+    "power": "123 л.с. / 92 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 994708,
+    "turnkey_payments_rub": 383844,
+    "customs_value_rub": 610864,
+    "customs_value_eur": 6821.17,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 134331,
+    "customs_duty_eur": 1500,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 239388,
+    "georgia_conversion_fee_rub": 12515,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 9,
+    "brand": "Ford",
+    "model": "EcoSport",
+    "fullName": "Ford EcoSport",
+    "year": 2021,
     "month": 12,
     "price": 9200,
     "price_currency": "USD",
@@ -928,7 +1053,7 @@
     }
   },
   {
-    "id": 9,
+    "id": 10,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1045,7 +1170,7 @@
     }
   },
   {
-    "id": 10,
+    "id": 11,
     "brand": "Honda",
     "model": "HR-V",
     "fullName": "Honda HR-V",
@@ -1150,7 +1275,7 @@
     }
   },
   {
-    "id": 11,
+    "id": 12,
     "brand": "Honda",
     "model": "CR-V",
     "fullName": "Honda CR-V",
@@ -1227,7 +1352,106 @@
     }
   },
   {
-    "id": 12,
+    "id": 13,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2023,
+    "month": 4,
+    "price": 10600,
+    "price_currency": "USD",
+    "mileage": 33600,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "5NPLM4AG0PH116249",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 8,
+    "parent_loc_id": 1,
+    "trim_name": "SE 4dr Sedan CVT",
+    "url": "https://myauto.ge/ru/pr/122650883",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_1.jpg?v=3",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_2.jpg?v=3",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_3.jpg?v=3",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_4.jpg?v=3",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_5.jpg?v=3",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_6.jpg?v=3",
+        "order": 6
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "vin_decode": {
+      "vin": "5NPLM4AG0PH116249",
+      "source": "nhtsa_vpic",
+      "year": 2023,
+      "make": "HYUNDAI",
+      "model": "Elantra",
+      "engine_l": 2,
+      "fuel": "Gasoline",
+      "electrification": "",
+      "hp": 147,
+      "kw": 108,
+      "error_code": "0",
+      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
+    },
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "vin:nhtsa",
+    "source_market": "usa",
+    "turnkey_price_rub": 1567639,
+    "turnkey_payments_rub": 737491,
+    "customs_value_rub": 830149,
+    "customs_value_eur": 9269.79,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 243774,
+    "georgia_conversion_fee_rub": 16900,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 14,
     "brand": "Hyundai",
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
@@ -1340,7 +1564,7 @@
     }
   },
   {
-    "id": 13,
+    "id": 15,
     "brand": "Hyundai",
     "model": "Tucson",
     "fullName": "Hyundai Tucson",
@@ -1445,198 +1669,6 @@
     "recycling_fee_rub": 5200,
     "additional_costs_rub": 256618,
     "georgia_conversion_fee_rub": 29744,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 14,
-    "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
-    "year": 2022,
-    "month": 9,
-    "price": 10500,
-    "price_currency": "USD",
-    "mileage": 130000,
-    "engine": "1,6",
-    "fuel_type": "Бензин",
-    "transmission": "Механика",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122739185",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/8/1/9/3/7/large/122739185_1.jpg?v=1",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/1/9/3/7/large/122739185_2.jpg?v=1",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/1/9/3/7/large/122739185_3.jpg?v=1",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/1/9/3/7/large/122739185_4.jpg?v=1",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/1/9/3/7/large/122739185_5.jpg?v=1",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/1/9/3/7/large/122739185_6.jpg?v=1",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/1/9/3/7/large/122739185_7.jpg?v=1",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/1/9/3/7/large/122739185_8.jpg?v=1",
-        "order": 8
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 123,
-    "power_kw": 90,
-    "power": "123 л.с. / 90 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1434275,
-    "turnkey_payments_rub": 611958,
-    "customs_value_rub": 822317,
-    "customs_value_eur": 9182.34,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 358217,
-    "customs_duty_eur": 4000,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 243618,
-    "georgia_conversion_fee_rub": 16744,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 15,
-    "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
-    "year": 2023,
-    "month": 4,
-    "price": 10600,
-    "price_currency": "USD",
-    "mileage": 33600,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "5NPLM4AG0PH116249",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 8,
-    "parent_loc_id": 1,
-    "trim_name": "SE 4dr Sedan CVT",
-    "url": "https://myauto.ge/ru/pr/122650883",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_1.jpg?v=3",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_2.jpg?v=3",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_3.jpg?v=3",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_4.jpg?v=3",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_5.jpg?v=3",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/8/0/5/6/large/122650883_6.jpg?v=3",
-        "order": 6
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "vin_decode": {
-      "vin": "5NPLM4AG0PH116249",
-      "source": "nhtsa_vpic",
-      "year": 2023,
-      "make": "HYUNDAI",
-      "model": "Elantra",
-      "engine_l": 2,
-      "fuel": "Gasoline",
-      "electrification": "",
-      "hp": 147,
-      "kw": 108,
-      "error_code": "0",
-      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
-    },
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "vin:nhtsa",
-    "source_market": "usa",
-    "turnkey_price_rub": 1567639,
-    "turnkey_payments_rub": 737491,
-    "customs_value_rub": 830149,
-    "customs_value_eur": 9269.79,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 243774,
-    "georgia_conversion_fee_rub": 16900,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -3310,72 +3342,80 @@
   {
     "id": 31,
     "brand": "Hyundai",
-    "model": "Elantra",
-    "fullName": "Hyundai Elantra",
+    "model": "kona",
+    "fullName": "Hyundai kona",
     "year": 2022,
     "month": 2,
-    "price": 12600,
+    "price": 10300,
     "price_currency": "USD",
-    "mileage": 27040,
+    "mileage": 67200,
     "engine": "2,0",
     "fuel_type": "Бензин",
-    "transmission": "Автомат",
+    "transmission": "Вариатор",
     "color": "",
-    "drive": "FWD",
+    "drive": "4WD",
     "vin": "",
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
-    "location_id": 30,
+    "location_id": 2,
     "parent_loc_id": 1,
-    "trim_name": "SEL",
-    "url": "https://myauto.ge/ru/pr/121783423",
+    "trim_name": "sel 4x4",
+    "url": "https://myauto.ge/ru/pr/122737124",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_1.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_1.jpg?v=2",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_2.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_2.jpg?v=2",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_3.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_3.jpg?v=2",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_4.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_4.jpg?v=2",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_5.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_5.jpg?v=2",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_6.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_6.jpg?v=2",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_7.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_7.jpg?v=2",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_8.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_8.jpg?v=2",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_9.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_9.jpg?v=2",
         "order": 9
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_10.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_10.jpg?v=2",
         "order": 10
       },
       {
-        "url": "https://static.my.ge/myauto/photos/2/4/3/8/7/large/121783423_11.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_11.jpg?v=2",
         "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_12.jpg?v=2",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/1/7/3/7/large/122737124_13.jpg?v=2",
+        "order": 13
       }
     ],
     "source": "myauto_ge",
@@ -3385,18 +3425,18 @@
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia",
-    "turnkey_price_rub": 1727404,
-    "turnkey_payments_rub": 740623,
-    "customs_value_rub": 986780,
-    "customs_value_eur": 11018.81,
+    "turnkey_price_rub": 1543675,
+    "turnkey_payments_rub": 737021,
+    "customs_value_rub": 806654,
+    "customs_value_eur": 9007.44,
     "customs_fee_rub": 4924,
     "customs_duty_rub": 483593,
     "customs_duty_eur": 5400,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 246907,
-    "georgia_conversion_fee_rub": 20033,
+    "additional_costs_rub": 243304,
+    "georgia_conversion_fee_rub": 16431,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -3418,84 +3458,84 @@
     "model": "Elantra",
     "fullName": "Hyundai Elantra",
     "year": 2022,
-    "month": 12,
-    "price": 14500,
+    "month": 1,
+    "price": 0,
     "price_currency": "USD",
-    "mileage": 40000,
+    "mileage": 89040,
     "engine": "2,0",
     "fuel_type": "Бензин",
-    "transmission": "Вариатор",
+    "transmission": "Автомат",
     "color": "",
     "drive": "FWD",
     "vin": "",
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
-    "location_id": 113,
+    "location_id": 15,
     "parent_loc_id": 1,
-    "trim_name": "Elantra N 285 hp (392 N m).",
-    "url": "https://myauto.ge/ru/pr/122608112",
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/121725368",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_1.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_1.jpg?v=76",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_2.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_2.jpg?v=76",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_3.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_3.jpg?v=76",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_4.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_4.jpg?v=76",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_5.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_5.jpg?v=76",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_6.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_6.jpg?v=76",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_7.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_7.jpg?v=76",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_8.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_8.jpg?v=76",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_9.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_9.jpg?v=76",
         "order": 9
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_10.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_10.jpg?v=76",
         "order": 10
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_11.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_11.jpg?v=76",
         "order": 11
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_12.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_12.jpg?v=76",
         "order": 12
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_13.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_13.jpg?v=76",
         "order": 13
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_14.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_14.jpg?v=76",
         "order": 14
       },
       {
-        "url": "https://static.my.ge/myauto/photos/1/1/8/0/6/large/122608112_15.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/6/3/5/2/7/large/121725368_15.jpg?v=76",
         "order": 15
       }
     ],
@@ -3506,18 +3546,117 @@
     "power": "147 л.с. / 108 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia",
-    "turnkey_price_rub": 1879180,
-    "turnkey_payments_rub": 743599,
-    "customs_value_rub": 1135581,
-    "customs_value_eur": 12680.37,
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 33,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2023,
+    "month": 4,
+    "price": 11000,
+    "price_currency": "USD",
+    "mileage": 83722,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122739941",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_1.jpg?v=2",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_2.jpg?v=2",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_3.jpg?v=2",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_4.jpg?v=2",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_5.jpg?v=2",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_6.jpg?v=2",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_7.jpg?v=2",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_8.jpg?v=2",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/9/9/3/7/large/122739941_9.jpg?v=2",
+        "order": 9
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1599592,
+    "turnkey_payments_rub": 738117,
+    "customs_value_rub": 861475,
+    "customs_value_eur": 9619.59,
     "customs_fee_rub": 4924,
     "customs_duty_rub": 483593,
     "customs_duty_eur": 5400,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 249883,
-    "georgia_conversion_fee_rub": 23009,
+    "additional_costs_rub": 244401,
+    "georgia_conversion_fee_rub": 17527,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -3534,7 +3673,128 @@
     }
   },
   {
-    "id": 33,
+    "id": 34,
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "fullName": "Hyundai Elantra",
+    "year": 2022,
+    "month": 11,
+    "price": 15700,
+    "price_currency": "USD",
+    "mileage": 65000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "Limited 4dr Sedan",
+    "url": "https://myauto.ge/ru/pr/122600444",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_12.jpg?v=0",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_13.jpg?v=0",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_14.jpg?v=0",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/4/4/0/0/6/large/122600444_15.jpg?v=0",
+        "order": 15
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1983656,
+    "turnkey_payments_rub": 754096,
+    "customs_value_rub": 1229560,
+    "customs_value_eur": 13729.78,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251762,
+    "georgia_conversion_fee_rub": 24889,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 35,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -3633,7 +3893,7 @@
     }
   },
   {
-    "id": 34,
+    "id": 36,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3754,7 +4014,7 @@
     }
   },
   {
-    "id": 35,
+    "id": 37,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -3889,7 +4149,7 @@
     }
   },
   {
-    "id": 36,
+    "id": 38,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -4002,7 +4262,7 @@
     }
   },
   {
-    "id": 37,
+    "id": 39,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -4107,7 +4367,7 @@
     }
   },
   {
-    "id": 38,
+    "id": 40,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -4224,7 +4484,366 @@
     }
   },
   {
-    "id": 39,
+    "id": 41,
+    "brand": "KIA",
+    "model": "Forte",
+    "fullName": "KIA Forte",
+    "year": 2022,
+    "month": 5,
+    "price": 11500,
+    "price_currency": "USD",
+    "mileage": 46000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "3KPF24AD5NE497588",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 113,
+    "parent_loc_id": 1,
+    "trim_name": "LXS",
+    "url": "https://myauto.ge/ru/pr/122408109",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_1.jpg?v=1",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_2.jpg?v=1",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_3.jpg?v=1",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_4.jpg?v=1",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_5.jpg?v=1",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_6.jpg?v=1",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_7.jpg?v=1",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_8.jpg?v=1",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_9.jpg?v=1",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_10.jpg?v=1",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_11.jpg?v=1",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_12.jpg?v=1",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_13.jpg?v=1",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/1/8/0/4/large/122408109_14.jpg?v=1",
+        "order": 14
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "vin_decode": {
+      "vin": "3KPF24AD5NE497588",
+      "source": "nhtsa_vpic",
+      "year": 2022,
+      "make": "KIA",
+      "model": "Forte",
+      "engine_l": 2,
+      "fuel": "Gasoline",
+      "electrification": "",
+      "hp": 147,
+      "kw": 108,
+      "error_code": "0",
+      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
+    },
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "vin:nhtsa",
+    "source_market": "unknown",
+    "turnkey_price_rub": 1639533,
+    "turnkey_payments_rub": 738901,
+    "customs_value_rub": 900633,
+    "customs_value_eur": 10056.85,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245184,
+    "georgia_conversion_fee_rub": 18310,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 42,
+    "brand": "KIA",
+    "model": "Seltos",
+    "fullName": "KIA Seltos",
+    "year": 2022,
+    "month": 2,
+    "price": 11500,
+    "price_currency": "USD",
+    "mileage": 83000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": true,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122727587",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_1.jpg?v=8",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_2.jpg?v=8",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_3.jpg?v=8",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_4.jpg?v=8",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_5.jpg?v=8",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_6.jpg?v=8",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_7.jpg?v=8",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_8.jpg?v=8",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_9.jpg?v=8",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_10.jpg?v=8",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_11.jpg?v=8",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_12.jpg?v=8",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_13.jpg?v=8",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_14.jpg?v=8",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/8/5/7/2/7/large/122727587_15.jpg?v=8",
+        "order": 15
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1639533,
+    "turnkey_payments_rub": 738901,
+    "customs_value_rub": 900633,
+    "customs_value_eur": 10056.85,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 245184,
+    "georgia_conversion_fee_rub": 18310,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 43,
+    "brand": "KIA",
+    "model": "Seltos",
+    "fullName": "KIA Seltos",
+    "year": 2023,
+    "month": 7,
+    "price": 0,
+    "price_currency": "USD",
+    "mileage": 67000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "EX",
+    "url": "https://myauto.ge/ru/pr/122716763",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/7/6/1/7/large/122716763_11.jpg?v=0",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 147,
+    "power_kw": 108,
+    "power": "147 л.с. / 108 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 44,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -4345,7 +4964,7 @@
     }
   },
   {
-    "id": 40,
+    "id": 45,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -4462,7 +5081,7 @@
     }
   },
   {
-    "id": 41,
+    "id": 46,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -4569,7 +5188,7 @@
     }
   },
   {
-    "id": 42,
+    "id": 47,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -4686,120 +5305,7 @@
     }
   },
   {
-    "id": 43,
-    "brand": "KIA",
-    "model": "Forte",
-    "fullName": "KIA Forte",
-    "year": 2022,
-    "month": 11,
-    "price": 12500,
-    "price_currency": "USD",
-    "mileage": 85000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "3KPF54***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 14,
-    "parent_loc_id": 1,
-    "trim_name": "GTline",
-    "url": "https://myauto.ge/ru/pr/122791940",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_11.jpg?v=0",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_12.jpg?v=0",
-        "order": 12
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/9/1/9/7/large/122791940_13.jpg?v=0",
-        "order": 13
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1719416,
-    "turnkey_payments_rub": 740467,
-    "customs_value_rub": 978949,
-    "customs_value_eur": 10931.35,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 246750,
-    "georgia_conversion_fee_rub": 19876,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 44,
+    "id": 48,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -4922,7 +5428,7 @@
     }
   },
   {
-    "id": 45,
+    "id": 49,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -5043,7 +5549,7 @@
     }
   },
   {
-    "id": 46,
+    "id": 50,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -5160,7 +5666,7 @@
     }
   },
   {
-    "id": 47,
+    "id": 51,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -5269,7 +5775,7 @@
     }
   },
   {
-    "id": 48,
+    "id": 52,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -5384,7 +5890,7 @@
     }
   },
   {
-    "id": 49,
+    "id": 53,
     "brand": "KIA",
     "model": "Niro",
     "fullName": "KIA Niro",
@@ -5521,7 +6027,7 @@
     }
   },
   {
-    "id": 50,
+    "id": 54,
     "brand": "KIA",
     "model": "Forte",
     "fullName": "KIA Forte",
@@ -5614,7 +6120,7 @@
     }
   },
   {
-    "id": 51,
+    "id": 55,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -5723,7 +6229,7 @@
     }
   },
   {
-    "id": 52,
+    "id": 56,
     "brand": "KIA",
     "model": "Seltos",
     "fullName": "KIA Seltos",
@@ -5836,314 +6342,7 @@
     }
   },
   {
-    "id": 53,
-    "brand": "KIA",
-    "model": "Soul",
-    "fullName": "KIA Soul",
-    "year": 2022,
-    "month": 3,
-    "price": 12800,
-    "price_currency": "USD",
-    "mileage": 51000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "KNDJ23***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122227396",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/9/3/7/2/2/large/122227396_10.jpg?v=0",
-        "order": 10
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "korea",
-    "turnkey_price_rub": 1743380,
-    "turnkey_payments_rub": 740937,
-    "customs_value_rub": 1002444,
-    "customs_value_eur": 11193.71,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 247220,
-    "georgia_conversion_fee_rub": 20346,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 54,
-    "brand": "KIA",
-    "model": "Forte",
-    "fullName": "KIA Forte",
-    "year": 2022,
-    "month": 8,
-    "price": 10500,
-    "price_currency": "USD",
-    "mileage": 93000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 30,
-    "parent_loc_id": 1,
-    "trim_name": "LX",
-    "url": "https://myauto.ge/ru/pr/122783555",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_11.jpg?v=0",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/5/3/8/7/large/122783555_12.jpg?v=0",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1559651,
-    "turnkey_payments_rub": 737334,
-    "customs_value_rub": 822317,
-    "customs_value_eur": 9182.34,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 243618,
-    "georgia_conversion_fee_rub": 16744,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 55,
-    "brand": "KIA",
-    "model": "Forte",
-    "fullName": "KIA Forte",
-    "year": 2023,
-    "month": 4,
-    "price": 13500,
-    "price_currency": "USD",
-    "mileage": 44000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "gt line",
-    "url": "https://myauto.ge/ru/pr/122188036",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_1.jpg?v=8",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_2.jpg?v=8",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_3.jpg?v=8",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_4.jpg?v=8",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_5.jpg?v=8",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_6.jpg?v=8",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_7.jpg?v=8",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_8.jpg?v=8",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/3/0/8/8/1/large/122188036_9.jpg?v=8",
-        "order": 9
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 147,
-    "power_kw": 108,
-    "power": "147 л.с. / 108 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1799298,
-    "turnkey_payments_rub": 742033,
-    "customs_value_rub": 1057265,
-    "customs_value_eur": 11805.86,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 248316,
-    "georgia_conversion_fee_rub": 21443,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 56,
+    "id": 57,
     "brand": "Mazda",
     "model": "CX-30",
     "fullName": "Mazda CX-30",
@@ -6240,7 +6439,7 @@
     }
   },
   {
-    "id": 57,
+    "id": 58,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -6357,7 +6556,7 @@
     }
   },
   {
-    "id": 58,
+    "id": 59,
     "brand": "Mini",
     "model": "Countryman",
     "fullName": "Mini Countryman",
@@ -6466,7 +6665,7 @@
     }
   },
   {
-    "id": 59,
+    "id": 60,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -6583,7 +6782,7 @@
     }
   },
   {
-    "id": 60,
+    "id": 61,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -6706,7 +6905,7 @@
     }
   },
   {
-    "id": 61,
+    "id": 62,
     "brand": "Mini",
     "model": "Countryman",
     "fullName": "Mini Countryman",
@@ -6787,7 +6986,7 @@
     }
   },
   {
-    "id": 62,
+    "id": 63,
     "brand": "Mini",
     "model": "Cooper",
     "fullName": "Mini Cooper",
@@ -6900,7 +7099,7 @@
     }
   },
   {
-    "id": 63,
+    "id": 64,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -6993,7 +7192,7 @@
     }
   },
   {
-    "id": 64,
+    "id": 65,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -7114,107 +7313,107 @@
     }
   },
   {
-    "id": 65,
+    "id": 66,
     "brand": "Mitsubishi",
-    "model": "Outlander Sport",
-    "fullName": "Mitsubishi Outlander Sport",
+    "model": "Eclipse Cross",
+    "fullName": "Mitsubishi Eclipse Cross",
     "year": 2022,
-    "month": 12,
-    "price": 14000,
+    "month": 7,
+    "price": 19900,
     "price_currency": "USD",
-    "mileage": 36000,
-    "engine": "2,0",
+    "mileage": 26600,
+    "engine": "1,5",
     "fuel_type": "Бензин",
     "transmission": "Автомат",
     "color": "",
     "drive": "4WD",
-    "vin": "JA4ARU***********",
+    "vin": "",
     "fuel_type_id": 2,
     "status_id": 1,
     "customs_passed": false,
     "location_id": 15,
     "parent_loc_id": 1,
-    "trim_name": "SE",
-    "url": "https://myauto.ge/ru/pr/122792666",
+    "trim_name": "SEL",
+    "url": "https://myauto.ge/ru/pr/122691275",
     "region": "georgia",
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_1.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_1.jpg?v=5",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_2.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_2.jpg?v=5",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_3.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_3.jpg?v=5",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_4.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_4.jpg?v=5",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_5.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_5.jpg?v=5",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_6.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_6.jpg?v=5",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_7.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_7.jpg?v=5",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_8.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_8.jpg?v=5",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_9.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_9.jpg?v=5",
         "order": 9
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_10.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_10.jpg?v=5",
         "order": 10
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_11.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_11.jpg?v=5",
         "order": 11
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_12.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_12.jpg?v=5",
         "order": 12
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_13.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_13.jpg?v=5",
         "order": 13
       },
       {
-        "url": "https://static.my.ge/myauto/photos/6/6/2/9/7/large/122792666_14.jpg?v=0",
+        "url": "https://static.my.ge/myauto/photos/7/2/1/9/6/large/122691275_14.jpg?v=5",
         "order": 14
       }
     ],
     "source": "myauto_ge",
     "last_seen_at": "2026-07-21",
-    "power_hp": 148,
-    "power_kw": 109,
-    "power": "148 л.с. / 109 кВт",
+    "power_hp": 152,
+    "power_kw": 112,
+    "power": "152 л.с. / 112 кВт",
     "power_source": "catalog:georgia",
-    "source_market": "japan",
-    "turnkey_price_rub": 1839239,
-    "turnkey_payments_rub": 742816,
-    "customs_value_rub": 1096423,
-    "customs_value_eur": 12243.12,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
+    "source_market": "georgia",
+    "turnkey_price_rub": 2063932,
+    "turnkey_payments_rub": 505445,
+    "customs_value_rub": 1558486,
+    "customs_value_eur": 17402.72,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 228363,
+    "customs_duty_eur": 2550,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 249100,
-    "georgia_conversion_fee_rub": 22226,
+    "additional_costs_rub": 258341,
+    "georgia_conversion_fee_rub": 31467,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -7231,7 +7430,340 @@
     }
   },
   {
-    "id": 66,
+    "id": 67,
+    "brand": "Mitsubishi",
+    "model": "Outlander Sport",
+    "fullName": "Mitsubishi Outlander Sport",
+    "year": 2022,
+    "month": 1,
+    "price": 13900,
+    "price_currency": "USD",
+    "mileage": 52107,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "JA4ARU***********",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122283997",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_1.jpg?v=1",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_2.jpg?v=1",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_3.jpg?v=1",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_4.jpg?v=1",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_5.jpg?v=1",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_6.jpg?v=1",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_7.jpg?v=1",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_8.jpg?v=1",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_9.jpg?v=1",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_10.jpg?v=1",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/9/3/8/2/large/122283997_11.jpg?v=1",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 148,
+    "power_kw": 109,
+    "power": "148 л.с. / 109 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "japan",
+    "turnkey_price_rub": 1831251,
+    "turnkey_payments_rub": 742660,
+    "customs_value_rub": 1088591,
+    "customs_value_eur": 12155.67,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248943,
+    "georgia_conversion_fee_rub": 22069,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 68,
+    "brand": "Mitsubishi",
+    "model": "Outlander Sport",
+    "fullName": "Mitsubishi Outlander Sport",
+    "year": 2023,
+    "month": 7,
+    "price": 16500,
+    "price_currency": "USD",
+    "mileage": 24000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 113,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122770514",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_11.jpg?v=0",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 148,
+    "power_kw": 109,
+    "power": "148 л.с. / 109 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 2047561,
+    "turnkey_payments_rub": 755349,
+    "customs_value_rub": 1292212,
+    "customs_value_eur": 14429.39,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 253015,
+    "georgia_conversion_fee_rub": 26142,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 69,
+    "brand": "Mitsubishi",
+    "model": "Outlander Sport",
+    "fullName": "Mitsubishi Outlander Sport",
+    "year": 2022,
+    "month": 3,
+    "price": 0,
+    "price_currency": "USD",
+    "mileage": 67200,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 15,
+    "parent_loc_id": 1,
+    "trim_name": "ES",
+    "url": "https://myauto.ge/ru/pr/122793308",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_7.jpg?v=0",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_8.jpg?v=0",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_9.jpg?v=0",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_10.jpg?v=0",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_11.jpg?v=0",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_12.jpg?v=0",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_13.jpg?v=0",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_14.jpg?v=0",
+        "order": 14
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/3/3/9/7/large/122793308_15.jpg?v=0",
+        "order": 15
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 148,
+    "power_kw": 109,
+    "power": "148 л.с. / 109 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 70,
     "brand": "Mitsubishi",
     "model": "Outlander",
     "fullName": "Mitsubishi Outlander",
@@ -7368,112 +7900,7 @@
     }
   },
   {
-    "id": 67,
-    "brand": "Mitsubishi",
-    "model": "Outlander Sport",
-    "fullName": "Mitsubishi Outlander Sport",
-    "year": 2023,
-    "month": 7,
-    "price": 16500,
-    "price_currency": "USD",
-    "mileage": 24000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 113,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122770514",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/5/0/7/7/large/122770514_11.jpg?v=0",
-        "order": 11
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 148,
-    "power_kw": 109,
-    "power": "148 л.с. / 109 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 2047561,
-    "turnkey_payments_rub": 755349,
-    "customs_value_rub": 1292212,
-    "customs_value_eur": 14429.39,
-    "customs_fee_rub": 13541,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 253015,
-    "georgia_conversion_fee_rub": 26142,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 68,
+    "id": 71,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -7594,7 +8021,7 @@
     }
   },
   {
-    "id": 69,
+    "id": 72,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -7695,7 +8122,7 @@
     }
   },
   {
-    "id": 70,
+    "id": 73,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -7830,7 +8257,7 @@
     }
   },
   {
-    "id": 71,
+    "id": 74,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -7947,7 +8374,7 @@
     }
   },
   {
-    "id": 72,
+    "id": 75,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -8044,7 +8471,7 @@
     }
   },
   {
-    "id": 73,
+    "id": 76,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -8153,7 +8580,7 @@
     }
   },
   {
-    "id": 74,
+    "id": 77,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -8250,7 +8677,7 @@
     }
   },
   {
-    "id": 75,
+    "id": 78,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -8355,7 +8782,7 @@
     }
   },
   {
-    "id": 76,
+    "id": 79,
     "brand": "Mitsubishi",
     "model": "Eclipse Cross",
     "fullName": "Mitsubishi Eclipse Cross",
@@ -8468,7 +8895,7 @@
     }
   },
   {
-    "id": 77,
+    "id": 80,
     "brand": "Nissan",
     "model": "Kicks",
     "fullName": "Nissan Kicks",
@@ -8579,124 +9006,7 @@
     }
   },
   {
-    "id": 78,
-    "brand": "Nissan",
-    "model": "Kicks",
-    "fullName": "Nissan Kicks",
-    "year": 2023,
-    "month": 1,
-    "price": 13300,
-    "price_currency": "USD",
-    "mileage": 65000,
-    "engine": "1,6",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "3N1CP5***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122307844",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_1.jpg?v=3",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_2.jpg?v=3",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_3.jpg?v=3",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_4.jpg?v=3",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_5.jpg?v=3",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_6.jpg?v=3",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_7.jpg?v=3",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_8.jpg?v=3",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_9.jpg?v=3",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_10.jpg?v=3",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_11.jpg?v=3",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_12.jpg?v=3",
-        "order": 12
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_13.jpg?v=3",
-        "order": 13
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/8/7/0/3/large/122307844_14.jpg?v=3",
-        "order": 14
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 122,
-    "power_kw": 90,
-    "power": "122 л.с. / 90 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1657945,
-    "turnkey_payments_rub": 616344,
-    "customs_value_rub": 1041601,
-    "customs_value_eur": 11630.96,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 358217,
-    "customs_duty_eur": 4000,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 248003,
-    "georgia_conversion_fee_rub": 21130,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 79,
+    "id": 81,
     "brand": "Nissan",
     "model": "Sentra",
     "fullName": "Nissan Sentra",
@@ -8817,7 +9127,308 @@
     }
   },
   {
-    "id": 80,
+    "id": 82,
+    "brand": "Nissan",
+    "model": "Sentra",
+    "fullName": "Nissan Sentra",
+    "year": 2022,
+    "month": 1,
+    "price": 15500,
+    "price_currency": "USD",
+    "mileage": 34000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122377368",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_1.jpg?v=2",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_2.jpg?v=2",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_3.jpg?v=2",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_4.jpg?v=2",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_5.jpg?v=2",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_6.jpg?v=2",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_7.jpg?v=2",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_8.jpg?v=2",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_9.jpg?v=2",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_10.jpg?v=2",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_11.jpg?v=2",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_12.jpg?v=2",
+        "order": 12
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 149,
+    "power_kw": 110,
+    "power": "149 л.с. / 110 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1967679,
+    "turnkey_payments_rub": 753783,
+    "customs_value_rub": 1213896,
+    "customs_value_eur": 13554.88,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 251449,
+    "georgia_conversion_fee_rub": 24575,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 83,
+    "brand": "Nissan",
+    "model": "Sentra",
+    "fullName": "Nissan Sentra",
+    "year": 2023,
+    "month": 1,
+    "price": 13900,
+    "price_currency": "USD",
+    "mileage": 10650,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122453804",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/3/5/4/large/122453804_1.jpg?v=0",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/3/5/4/large/122453804_2.jpg?v=0",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/3/5/4/large/122453804_3.jpg?v=0",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/3/5/4/large/122453804_4.jpg?v=0",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/3/5/4/large/122453804_5.jpg?v=0",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/3/5/4/large/122453804_6.jpg?v=0",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/0/8/3/5/4/large/122453804_7.jpg?v=0",
+        "order": 7
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 149,
+    "power_kw": 110,
+    "power": "149 л.с. / 110 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1831251,
+    "turnkey_payments_rub": 742660,
+    "customs_value_rub": 1088591,
+    "customs_value_eur": 12155.67,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 248943,
+    "georgia_conversion_fee_rub": 22069,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 84,
+    "brand": "Nissan",
+    "model": "Kicks",
+    "fullName": "Nissan Kicks",
+    "year": 2023,
+    "month": 6,
+    "price": 0,
+    "price_currency": "USD",
+    "mileage": 76800,
+    "engine": "1,6",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 30,
+    "parent_loc_id": 1,
+    "trim_name": "SR 4dr Front-Wheel Drive CVT",
+    "url": "https://myauto.ge/ru/pr/122567216",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_1.jpg?v=9",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_2.jpg?v=9",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_3.jpg?v=9",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_4.jpg?v=9",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_5.jpg?v=9",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_6.jpg?v=9",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_7.jpg?v=9",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_8.jpg?v=9",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_9.jpg?v=9",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_10.jpg?v=9",
+        "order": 10
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 122,
+    "power_kw": 90,
+    "power": "122 л.с. / 90 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 0,
+    "turnkey_payments_rub": 0,
+    "customs_value_rub": 0,
+    "customs_value_eur": 0,
+    "customs_fee_rub": 0,
+    "customs_duty_rub": 0,
+    "customs_duty_eur": 0,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 0,
+    "additional_costs_rub": 0,
+    "georgia_conversion_fee_rub": 0,
+    "turnkey_calculation_complete": false,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [
+      "Стоимость автомобиля должна быть больше 0."
+    ],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 85,
     "brand": "Nissan",
     "model": "Rogue Sport ",
     "fullName": "Nissan Rogue Sport",
@@ -8938,7 +9549,7 @@
     }
   },
   {
-    "id": 81,
+    "id": 86,
     "brand": "Nissan",
     "model": "Sentra",
     "fullName": "Nissan Sentra",
@@ -9051,7 +9662,7 @@
     }
   },
   {
-    "id": 82,
+    "id": 87,
     "brand": "Nissan",
     "model": "Kicks",
     "fullName": "Nissan Kicks",
@@ -9164,7 +9775,7 @@
     }
   },
   {
-    "id": 83,
+    "id": 88,
     "brand": "Nissan",
     "model": "Kicks",
     "fullName": "Nissan Kicks",
@@ -9249,7 +9860,7 @@
     }
   },
   {
-    "id": 84,
+    "id": 89,
     "brand": "Nissan",
     "model": "Kicks",
     "fullName": "Nissan Kicks",
@@ -9370,110 +9981,7 @@
     }
   },
   {
-    "id": 85,
-    "brand": "Nissan",
-    "model": "Kicks",
-    "fullName": "Nissan Kicks",
-    "year": 2023,
-    "month": 6,
-    "price": 0,
-    "price_currency": "USD",
-    "mileage": 76800,
-    "engine": "1,6",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 30,
-    "parent_loc_id": 1,
-    "trim_name": "SR 4dr Front-Wheel Drive CVT",
-    "url": "https://myauto.ge/ru/pr/122567216",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_1.jpg?v=9",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_2.jpg?v=9",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_3.jpg?v=9",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_4.jpg?v=9",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_5.jpg?v=9",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_6.jpg?v=9",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_7.jpg?v=9",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_8.jpg?v=9",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_9.jpg?v=9",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/2/7/6/5/large/122567216_10.jpg?v=9",
-        "order": 10
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 122,
-    "power_kw": 90,
-    "power": "122 л.с. / 90 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 0,
-    "turnkey_payments_rub": 0,
-    "customs_value_rub": 0,
-    "customs_value_eur": 0,
-    "customs_fee_rub": 0,
-    "customs_duty_rub": 0,
-    "customs_duty_eur": 0,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 0,
-    "additional_costs_rub": 0,
-    "georgia_conversion_fee_rub": 0,
-    "turnkey_calculation_complete": false,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [
-      "Стоимость автомобиля должна быть больше 0."
-    ],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 86,
+    "id": 90,
     "brand": "Nissan",
     "model": "Rogue Sport ",
     "fullName": "Nissan Rogue Sport",
@@ -9594,606 +10102,7 @@
     }
   },
   {
-    "id": 87,
-    "brand": "Nissan",
-    "model": "Sentra",
-    "fullName": "Nissan Sentra",
-    "year": 2022,
-    "month": 1,
-    "price": 15500,
-    "price_currency": "USD",
-    "mileage": 34000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122377368",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_1.jpg?v=2",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_2.jpg?v=2",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_3.jpg?v=2",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_4.jpg?v=2",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_5.jpg?v=2",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_6.jpg?v=2",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_7.jpg?v=2",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_8.jpg?v=2",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_9.jpg?v=2",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_10.jpg?v=2",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_11.jpg?v=2",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/6/3/7/7/3/large/122377368_12.jpg?v=2",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 149,
-    "power_kw": 110,
-    "power": "149 л.с. / 110 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1967679,
-    "turnkey_payments_rub": 753783,
-    "customs_value_rub": 1213896,
-    "customs_value_eur": 13554.88,
-    "customs_fee_rub": 13541,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 251449,
-    "georgia_conversion_fee_rub": 24575,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 88,
-    "brand": "Nissan",
-    "model": "Rogue Sport ",
-    "fullName": "Nissan Rogue Sport",
-    "year": 2022,
-    "month": 11,
-    "price": 17500,
-    "price_currency": "USD",
-    "mileage": 31000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "JN1BJ1CW8NW496605",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "SL 4dr All-Wheel Drive CVT",
-    "url": "https://myauto.ge/ru/pr/122714108",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_1.jpg?v=2",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_2.jpg?v=2",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_3.jpg?v=2",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_4.jpg?v=2",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_5.jpg?v=2",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_6.jpg?v=2",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_7.jpg?v=2",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_8.jpg?v=2",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_9.jpg?v=2",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_10.jpg?v=2",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_11.jpg?v=2",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/1/4/1/7/large/122714108_12.jpg?v=2",
-        "order": 12
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "vin_decode": {
-      "vin": "JN1BJ1CW8NW496605",
-      "source": "nhtsa_vpic",
-      "year": 2022,
-      "make": "NISSAN",
-      "model": "Rogue Sport",
-      "engine_l": 2,
-      "fuel": "Gasoline",
-      "electrification": "",
-      "hp": 0,
-      "kw": 0,
-      "error_code": "0",
-      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
-    },
-    "power_hp": 141,
-    "power_kw": 104,
-    "power": "141 л.с. / 104 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "japan",
-    "turnkey_price_rub": 2127444,
-    "turnkey_payments_rub": 756915,
-    "customs_value_rub": 1370528,
-    "customs_value_eur": 15303.9,
-    "customs_fee_rub": 13541,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 254582,
-    "georgia_conversion_fee_rub": 27708,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 89,
-    "brand": "Nissan",
-    "model": "Kicks",
-    "fullName": "Nissan Kicks",
-    "year": 2023,
-    "month": 4,
-    "price": 11000,
-    "price_currency": "USD",
-    "mileage": 21600,
-    "engine": "1,6",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 3,
-    "parent_loc_id": 1,
-    "trim_name": "SR 4dr Front-Wheel Drive CVT",
-    "url": "https://myauto.ge/ru/pr/122280916",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_1.jpg?v=13",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_2.jpg?v=13",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_3.jpg?v=13",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_4.jpg?v=13",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_5.jpg?v=13",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_6.jpg?v=13",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_7.jpg?v=13",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_8.jpg?v=13",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_9.jpg?v=13",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_10.jpg?v=13",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_11.jpg?v=13",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_12.jpg?v=13",
-        "order": 12
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_13.jpg?v=13",
-        "order": 13
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/9/0/8/2/large/122280916_14.jpg?v=13",
-        "order": 14
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 122,
-    "power_kw": 90,
-    "power": "122 л.с. / 90 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1474216,
-    "turnkey_payments_rub": 612741,
-    "customs_value_rub": 861475,
-    "customs_value_eur": 9619.59,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 358217,
-    "customs_duty_eur": 4000,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 244401,
-    "georgia_conversion_fee_rub": 17527,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 90,
-    "brand": "Nissan",
-    "model": "Sentra",
-    "fullName": "Nissan Sentra",
-    "year": 2023,
-    "month": 3,
-    "price": 13000,
-    "price_currency": "USD",
-    "mileage": 10700,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "FWD",
-    "vin": "3N1AB8DV8PY254092",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 15,
-    "parent_loc_id": 1,
-    "trim_name": "SR Midnight Edition",
-    "url": "https://myauto.ge/ru/pr/122219242",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_1.jpg?v=3",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_2.jpg?v=3",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_3.jpg?v=3",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_4.jpg?v=3",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_5.jpg?v=3",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_6.jpg?v=3",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_7.jpg?v=3",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_8.jpg?v=3",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_9.jpg?v=3",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_10.jpg?v=3",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/4/2/9/1/2/large/122219242_11.jpg?v=3",
-        "order": 11
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "vin_decode": {
-      "vin": "3N1AB8DV8PY254092",
-      "source": "nhtsa_vpic",
-      "year": 2023,
-      "make": "NISSAN",
-      "model": "Sentra",
-      "engine_l": 2,
-      "fuel": "Gasoline",
-      "electrification": "",
-      "hp": 0,
-      "kw": 0,
-      "error_code": "0",
-      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
-    },
-    "power_hp": 149,
-    "power_kw": 110,
-    "power": "149 л.с. / 110 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1759357,
-    "turnkey_payments_rub": 741250,
-    "customs_value_rub": 1018107,
-    "customs_value_eur": 11368.61,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 247533,
-    "georgia_conversion_fee_rub": 20660,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
     "id": 91,
-    "brand": "Nissan",
-    "model": "Kicks",
-    "fullName": "Nissan Kicks",
-    "year": 2023,
-    "month": 1,
-    "price": 12000,
-    "price_currency": "USD",
-    "mileage": 50800,
-    "engine": "1,6",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "FWD",
-    "vin": "3N1CP5CVXPL574179",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/121524506",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_1.jpg?v=7",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_2.jpg?v=7",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_3.jpg?v=7",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_4.jpg?v=7",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_5.jpg?v=7",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_6.jpg?v=7",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_7.jpg?v=7",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_8.jpg?v=7",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_9.jpg?v=7",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_10.jpg?v=7",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_11.jpg?v=7",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_12.jpg?v=7",
-        "order": 12
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_13.jpg?v=7",
-        "order": 13
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/5/4/2/5/large/121524506_14.jpg?v=7",
-        "order": 14
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "vin_decode": {
-      "vin": "3N1CP5CVXPL574179",
-      "source": "nhtsa_vpic",
-      "year": 2023,
-      "make": "NISSAN",
-      "model": "Kicks",
-      "engine_l": 1.6,
-      "fuel": "Gasoline",
-      "electrification": "",
-      "hp": 0,
-      "kw": 0,
-      "error_code": "0",
-      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
-    },
-    "power_hp": 122,
-    "power_kw": 90,
-    "power": "122 л.с. / 90 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1554099,
-    "turnkey_payments_rub": 614308,
-    "customs_value_rub": 939791,
-    "customs_value_eur": 10494.1,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 358217,
-    "customs_duty_eur": 4000,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 245967,
-    "georgia_conversion_fee_rub": 19093,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 92,
     "brand": "Subaru",
     "model": "Crosstrek",
     "fullName": "Subaru Crosstrek",
@@ -10302,7 +10211,7 @@
     }
   },
   {
-    "id": 93,
+    "id": 92,
     "brand": "Subaru",
     "model": "Crosstrek",
     "fullName": "Subaru Crosstrek",
@@ -10423,7 +10332,7 @@
     }
   },
   {
-    "id": 94,
+    "id": 93,
     "brand": "Subaru",
     "model": "Crosstrek",
     "fullName": "Subaru Crosstrek",
@@ -10528,6 +10437,125 @@
     "recycling_fee_rub": 5200,
     "additional_costs_rub": 245184,
     "georgia_conversion_fee_rub": 18310,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 94,
+    "brand": "Subaru",
+    "model": "Crosstrek",
+    "fullName": "Subaru Crosstrek",
+    "year": 2023,
+    "month": 5,
+    "price": 18500,
+    "price_currency": "USD",
+    "mileage": 9000,
+    "engine": "2,0",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "JF2GUADC3RH238969",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122774720",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_1.jpg?v=1",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_2.jpg?v=1",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_3.jpg?v=1",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_4.jpg?v=1",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_5.jpg?v=1",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_6.jpg?v=1",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_7.jpg?v=1",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_8.jpg?v=1",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_9.jpg?v=1",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_10.jpg?v=1",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/2/7/4/7/7/large/122774720_11.jpg?v=1",
+        "order": 11
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "vin_decode": {
+      "vin": "JF2GUADC3RH238969",
+      "source": "nhtsa_vpic",
+      "year": 2024,
+      "make": "SUBARU",
+      "model": "Crosstrek",
+      "engine_l": 2,
+      "fuel": "Gasoline",
+      "electrification": "",
+      "hp": 152,
+      "kw": 112,
+      "error_code": "0",
+      "error_text": "0 - VIN decoded clean. Check Digit (9th position) is correct"
+    },
+    "power_hp": 152,
+    "power_kw": 112,
+    "power": "152 л.с. / 112 кВт",
+    "power_source": "vin:nhtsa",
+    "source_market": "japan",
+    "turnkey_price_rub": 2207326,
+    "turnkey_payments_rub": 758482,
+    "customs_value_rub": 1448844,
+    "customs_value_eur": 16178.41,
+    "customs_fee_rub": 13541,
+    "customs_duty_rub": 483593,
+    "customs_duty_eur": 5400,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 256148,
+    "georgia_conversion_fee_rub": 29274,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -10775,212 +10803,6 @@
   },
   {
     "id": 97,
-    "brand": "Subaru",
-    "model": "Crosstrek",
-    "fullName": "Subaru Crosstrek",
-    "year": 2021,
-    "month": 11,
-    "price": 10900,
-    "price_currency": "USD",
-    "mileage": 47500,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "Premium 4dr All-Wheel Drive CV",
-    "url": "https://myauto.ge/ru/pr/122715257",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_1.jpg?v=2",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_2.jpg?v=2",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_3.jpg?v=2",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_4.jpg?v=2",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_5.jpg?v=2",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_6.jpg?v=2",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_7.jpg?v=2",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_8.jpg?v=2",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_9.jpg?v=2",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_10.jpg?v=2",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_11.jpg?v=2",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_12.jpg?v=2",
-        "order": 12
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/5/2/5/1/7/large/122715257_13.jpg?v=2",
-        "order": 13
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 152,
-    "power_kw": 112,
-    "power": "152 л.с. / 112 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1591604,
-    "turnkey_payments_rub": 737961,
-    "customs_value_rub": 853643,
-    "customs_value_eur": 9532.14,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 244244,
-    "georgia_conversion_fee_rub": 17370,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 98,
-    "brand": "Subaru",
-    "model": "Impreza",
-    "fullName": "Subaru Impreza",
-    "year": 2023,
-    "month": 1,
-    "price": 11200,
-    "price_currency": "USD",
-    "mileage": 58000,
-    "engine": "2,0",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "4S3GKA***********",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122476982",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/7/4/large/122476982_1.jpg?v=2",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/7/4/large/122476982_2.jpg?v=2",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/7/4/large/122476982_3.jpg?v=2",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/7/4/large/122476982_4.jpg?v=2",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/7/4/large/122476982_5.jpg?v=2",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/7/4/large/122476982_6.jpg?v=2",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/7/4/large/122476982_7.jpg?v=2",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/8/9/6/7/4/large/122476982_8.jpg?v=2",
-        "order": 8
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 152,
-    "power_kw": 112,
-    "power": "152 л.с. / 112 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "usa",
-    "turnkey_price_rub": 1615569,
-    "turnkey_payments_rub": 738431,
-    "customs_value_rub": 877138,
-    "customs_value_eur": 9794.49,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 483593,
-    "customs_duty_eur": 5400,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 244714,
-    "georgia_conversion_fee_rub": 17840,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 99,
     "brand": "Toyota",
     "model": "Corolla",
     "fullName": "Toyota Corolla",
@@ -11093,7 +10915,7 @@
     }
   },
   {
-    "id": 100,
+    "id": 98,
     "brand": "Toyota",
     "model": "Corolla",
     "fullName": "Toyota Corolla",
@@ -11210,7 +11032,7 @@
     }
   },
   {
-    "id": 101,
+    "id": 99,
     "brand": "Toyota",
     "model": "Corolla",
     "fullName": "Toyota Corolla",
@@ -11315,7 +11137,7 @@
     }
   },
   {
-    "id": 102,
+    "id": 100,
     "brand": "Toyota",
     "model": "Corolla",
     "fullName": "Toyota Corolla",
@@ -11418,114 +11240,7 @@
     }
   },
   {
-    "id": 103,
-    "brand": "Toyota",
-    "model": "Corolla",
-    "fullName": "Toyota Corolla",
-    "year": 2023,
-    "month": 1,
-    "price": 15800,
-    "price_currency": "USD",
-    "mileage": 53500,
-    "engine": "1,8",
-    "fuel_type": "Гибрид",
-    "transmission": "Робот",
-    "color": "",
-    "drive": "FWD",
-    "vin": "",
-    "fuel_type_id": 6,
-    "status_id": 1,
-    "customs_passed": true,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "SE 4dr Sedan CVT",
-    "url": "https://myauto.ge/ru/pr/120445004",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_1.jpg?v=7",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_2.jpg?v=7",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_3.jpg?v=7",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_4.jpg?v=7",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_5.jpg?v=7",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_6.jpg?v=7",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_7.jpg?v=7",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_8.jpg?v=7",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_9.jpg?v=7",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_10.jpg?v=7",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/0/0/5/4/4/large/120445004_11.jpg?v=7",
-        "order": 11
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 122,
-    "power_kw": 90,
-    "power": "122 л.с. / 90 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1911045,
-    "turnkey_payments_rub": 673654,
-    "customs_value_rub": 1237391,
-    "customs_value_eur": 13817.23,
-    "customs_fee_rub": 13541,
-    "customs_duty_rub": 402994,
-    "customs_duty_eur": 4500,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 251919,
-    "georgia_conversion_fee_rub": 25045,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [
-      "Для гибридов мощность нужно брать из ЭПТС/СБКТС/документов. Не складывай мощности без подтверждения."
-    ],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 104,
+    "id": 101,
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
@@ -11630,7 +11345,7 @@
     }
   },
   {
-    "id": 105,
+    "id": 102,
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
@@ -11737,7 +11452,7 @@
     }
   },
   {
-    "id": 106,
+    "id": 103,
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
@@ -11842,7 +11557,7 @@
     }
   },
   {
-    "id": 107,
+    "id": 104,
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
@@ -11943,7 +11658,7 @@
     }
   },
   {
-    "id": 108,
+    "id": 105,
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
@@ -12056,7 +11771,7 @@
     }
   },
   {
-    "id": 109,
+    "id": 106,
     "brand": "Volkswagen",
     "model": "Jetta",
     "fullName": "Volkswagen Jetta",
@@ -12169,13 +11884,360 @@
     }
   },
   {
+    "id": 107,
+    "brand": "Buick",
+    "model": "Encore GX",
+    "fullName": "Buick Encore GX",
+    "year": 2022,
+    "month": 4,
+    "price": 12900,
+    "price_currency": "USD",
+    "mileage": 73920,
+    "engine": "1,3",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 2,
+    "parent_loc_id": 1,
+    "trim_name": "GX AWD",
+    "url": "https://myauto.ge/ru/pr/122722619",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_1.jpg?v=3",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_2.jpg?v=3",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_3.jpg?v=3",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_4.jpg?v=3",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_5.jpg?v=3",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_6.jpg?v=3",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_7.jpg?v=3",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_8.jpg?v=3",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_9.jpg?v=3",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_10.jpg?v=3",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_11.jpg?v=3",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_12.jpg?v=3",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_13.jpg?v=3",
+        "order": 13
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 155,
+    "power_kw": 114,
+    "power": "155 л.с. / 114 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1465691,
+    "turnkey_payments_rub": 455415,
+    "customs_value_rub": 1010275,
+    "customs_value_eur": 11281.16,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 197915,
+    "customs_duty_eur": 2210,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 247377,
+    "georgia_conversion_fee_rub": 20503,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 108,
+    "brand": "Buick",
+    "model": "Encore",
+    "fullName": "Buick Encore",
+    "year": 2022,
+    "month": 1,
+    "price": 7600,
+    "price_currency": "USD",
+    "mileage": 147000,
+    "engine": "1,4",
+    "fuel_type": "Бензин",
+    "transmission": "Вариатор",
+    "color": "",
+    "drive": "4WD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 13,
+    "parent_loc_id": 1,
+    "trim_name": "",
+    "url": "https://myauto.ge/ru/pr/122783015",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_1.jpg?v=1",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_2.jpg?v=1",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_3.jpg?v=1",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_4.jpg?v=1",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_5.jpg?v=1",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_6.jpg?v=1",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_7.jpg?v=1",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_8.jpg?v=1",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_9.jpg?v=1",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_10.jpg?v=1",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_11.jpg?v=1",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_12.jpg?v=1",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_13.jpg?v=1",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_14.jpg?v=1",
+        "order": 14
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 138,
+    "power_kw": 101,
+    "power": "138 л.с. / 101 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1057539,
+    "turnkey_payments_rub": 462338,
+    "customs_value_rub": 595201,
+    "customs_value_eur": 6646.26,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 213139,
+    "customs_duty_eur": 2380,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 239075,
+    "georgia_conversion_fee_rub": 12201,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
+    "id": 109,
+    "brand": "Buick",
+    "model": "Encore GX",
+    "fullName": "Buick Encore GX",
+    "year": 2023,
+    "month": 7,
+    "price": 12500,
+    "price_currency": "USD",
+    "mileage": 37440,
+    "engine": "1,2",
+    "fuel_type": "Бензин",
+    "transmission": "Автомат",
+    "color": "",
+    "drive": "FWD",
+    "vin": "",
+    "fuel_type_id": 2,
+    "status_id": 1,
+    "customs_passed": false,
+    "location_id": 113,
+    "parent_loc_id": 1,
+    "trim_name": "GX",
+    "url": "https://myauto.ge/ru/pr/122155393",
+    "region": "georgia",
+    "regionCode": "georgia",
+    "images": [
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_1.jpg?v=12",
+        "order": 1
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_2.jpg?v=12",
+        "order": 2
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_3.jpg?v=12",
+        "order": 3
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_4.jpg?v=12",
+        "order": 4
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_5.jpg?v=12",
+        "order": 5
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_6.jpg?v=12",
+        "order": 6
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_7.jpg?v=12",
+        "order": 7
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_8.jpg?v=12",
+        "order": 8
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_9.jpg?v=12",
+        "order": 9
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_10.jpg?v=12",
+        "order": 10
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_11.jpg?v=12",
+        "order": 11
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_12.jpg?v=12",
+        "order": 12
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_13.jpg?v=12",
+        "order": 13
+      },
+      {
+        "url": "https://static.my.ge/myauto/photos/9/3/5/5/1/large/122155393_14.jpg?v=12",
+        "order": 14
+      }
+    ],
+    "source": "myauto_ge",
+    "last_seen_at": "2026-07-21",
+    "power_hp": 137,
+    "power_kw": 101,
+    "power": "137 л.с. / 101 кВт",
+    "power_source": "catalog:georgia",
+    "source_market": "georgia",
+    "turnkey_price_rub": 1418513,
+    "turnkey_payments_rub": 439565,
+    "customs_value_rub": 978949,
+    "customs_value_eur": 10931.35,
+    "customs_fee_rub": 4924,
+    "customs_duty_rub": 182691,
+    "customs_duty_eur": 2040,
+    "excise_rub": 0,
+    "vat_rub": 0,
+    "recycling_fee_rub": 5200,
+    "additional_costs_rub": 246750,
+    "georgia_conversion_fee_rub": 19876,
+    "turnkey_calculation_complete": true,
+    "turnkey_calculation_warnings": [],
+    "turnkey_calculation_errors": [],
+    "turnkey_calculation_date": "2026-07-21",
+    "turnkey_rates_source": "cbr.ru",
+    "turnkey_rates_cbr_date": "21.07.2026",
+    "turnkey_rates": {
+      "USD": 78.3159,
+      "EUR": 89.5542,
+      "GEL": 29.7474,
+      "CNY": 11.5698,
+      "KRW": 0.000053,
+      "JPY": 0.0048
+    }
+  },
+  {
     "id": 110,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
     "year": 2022,
     "month": 11,
-    "price": 15000,
+    "price": 14500,
     "price_currency": "USD",
     "mileage": 43500,
     "engine": "1,3",
@@ -12195,39 +12257,39 @@
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_1.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_1.jpg?v=2",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_2.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_2.jpg?v=2",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_3.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_3.jpg?v=2",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_4.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_4.jpg?v=2",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_5.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_5.jpg?v=2",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_6.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_6.jpg?v=2",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_7.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_7.jpg?v=2",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_8.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_8.jpg?v=2",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_9.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/4/7/6/4/1/large/122146744_9.jpg?v=2",
         "order": 9
       }
     ],
@@ -12238,18 +12300,18 @@
     "power": "155 л.с. / 114 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia",
-    "turnkey_price_rub": 1633443,
-    "turnkey_payments_rub": 458705,
-    "customs_value_rub": 1174739,
-    "customs_value_eur": 13117.63,
+    "turnkey_price_rub": 1593502,
+    "turnkey_payments_rub": 457922,
+    "customs_value_rub": 1135581,
+    "customs_value_eur": 12680.37,
     "customs_fee_rub": 4924,
     "customs_duty_rub": 197915,
     "customs_duty_eur": 2210,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 250666,
-    "georgia_conversion_fee_rub": 23792,
+    "additional_costs_rub": 249883,
+    "georgia_conversion_fee_rub": 23009,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -12272,7 +12334,7 @@
     "fullName": "Buick Encore",
     "year": 2022,
     "month": 1,
-    "price": 15000,
+    "price": 14500,
     "price_currency": "USD",
     "mileage": 44500,
     "engine": "1,2",
@@ -12292,43 +12354,43 @@
     "regionCode": "georgia",
     "images": [
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_1.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_1.jpg?v=2",
         "order": 1
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_2.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_2.jpg?v=2",
         "order": 2
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_3.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_3.jpg?v=2",
         "order": 3
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_4.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_4.jpg?v=2",
         "order": 4
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_5.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_5.jpg?v=2",
         "order": 5
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_6.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_6.jpg?v=2",
         "order": 6
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_7.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_7.jpg?v=2",
         "order": 7
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_8.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_8.jpg?v=2",
         "order": 8
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_9.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_9.jpg?v=2",
         "order": 9
       },
       {
-        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_10.jpg?v=1",
+        "url": "https://static.my.ge/myauto/photos/0/8/6/4/1/large/122146804_10.jpg?v=2",
         "order": 10
       }
     ],
@@ -12339,18 +12401,18 @@
     "power": "137 л.с. / 101 кВт",
     "power_source": "catalog:georgia",
     "source_market": "georgia",
-    "turnkey_price_rub": 1618219,
-    "turnkey_payments_rub": 443481,
-    "customs_value_rub": 1174739,
-    "customs_value_eur": 13117.63,
+    "turnkey_price_rub": 1578278,
+    "turnkey_payments_rub": 442697,
+    "customs_value_rub": 1135581,
+    "customs_value_eur": 12680.37,
     "customs_fee_rub": 4924,
     "customs_duty_rub": 182691,
     "customs_duty_eur": 2040,
     "excise_rub": 0,
     "vat_rub": 0,
     "recycling_fee_rub": 5200,
-    "additional_costs_rub": 250666,
-    "georgia_conversion_fee_rub": 23792,
+    "additional_costs_rub": 249883,
+    "georgia_conversion_fee_rub": 23009,
     "turnkey_calculation_complete": true,
     "turnkey_calculation_warnings": [],
     "turnkey_calculation_errors": [],
@@ -12664,123 +12726,6 @@
   {
     "id": 115,
     "brand": "Buick",
-    "model": "Encore",
-    "fullName": "Buick Encore",
-    "year": 2022,
-    "month": 1,
-    "price": 7800,
-    "price_currency": "USD",
-    "mileage": 147000,
-    "engine": "1,4",
-    "fuel_type": "Бензин",
-    "transmission": "Вариатор",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 13,
-    "parent_loc_id": 1,
-    "trim_name": "",
-    "url": "https://myauto.ge/ru/pr/122783015",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_1.jpg?v=0",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_2.jpg?v=0",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_3.jpg?v=0",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_4.jpg?v=0",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_5.jpg?v=0",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_6.jpg?v=0",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_7.jpg?v=0",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_8.jpg?v=0",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_9.jpg?v=0",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_10.jpg?v=0",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_11.jpg?v=0",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_12.jpg?v=0",
-        "order": 12
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_13.jpg?v=0",
-        "order": 13
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/0/3/8/7/large/122783015_14.jpg?v=0",
-        "order": 14
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 138,
-    "power_kw": 101,
-    "power": "138 л.с. / 101 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1073515,
-    "turnkey_payments_rub": 462651,
-    "customs_value_rub": 610864,
-    "customs_value_eur": 6821.17,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 213139,
-    "customs_duty_eur": 2380,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 239388,
-    "georgia_conversion_fee_rub": 12515,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 116,
-    "brand": "Buick",
     "model": "Encore GX",
     "fullName": "Buick Encore GX",
     "year": 2023,
@@ -12900,7 +12845,7 @@
     }
   },
   {
-    "id": 117,
+    "id": 116,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -12981,120 +12926,7 @@
     }
   },
   {
-    "id": 118,
-    "brand": "Buick",
-    "model": "Encore GX",
-    "fullName": "Buick Encore GX",
-    "year": 2022,
-    "month": 4,
-    "price": 12900,
-    "price_currency": "USD",
-    "mileage": 73920,
-    "engine": "1,3",
-    "fuel_type": "Бензин",
-    "transmission": "Автомат",
-    "color": "",
-    "drive": "4WD",
-    "vin": "",
-    "fuel_type_id": 2,
-    "status_id": 1,
-    "customs_passed": false,
-    "location_id": 2,
-    "parent_loc_id": 1,
-    "trim_name": "GX AWD",
-    "url": "https://myauto.ge/ru/pr/122722619",
-    "region": "georgia",
-    "regionCode": "georgia",
-    "images": [
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_1.jpg?v=3",
-        "order": 1
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_2.jpg?v=3",
-        "order": 2
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_3.jpg?v=3",
-        "order": 3
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_4.jpg?v=3",
-        "order": 4
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_5.jpg?v=3",
-        "order": 5
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_6.jpg?v=3",
-        "order": 6
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_7.jpg?v=3",
-        "order": 7
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_8.jpg?v=3",
-        "order": 8
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_9.jpg?v=3",
-        "order": 9
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_10.jpg?v=3",
-        "order": 10
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_11.jpg?v=3",
-        "order": 11
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_12.jpg?v=3",
-        "order": 12
-      },
-      {
-        "url": "https://static.my.ge/myauto/photos/1/6/2/2/7/large/122722619_13.jpg?v=3",
-        "order": 13
-      }
-    ],
-    "source": "myauto_ge",
-    "last_seen_at": "2026-07-21",
-    "power_hp": 155,
-    "power_kw": 114,
-    "power": "155 л.с. / 114 кВт",
-    "power_source": "catalog:georgia",
-    "source_market": "georgia",
-    "turnkey_price_rub": 1465691,
-    "turnkey_payments_rub": 455415,
-    "customs_value_rub": 1010275,
-    "customs_value_eur": 11281.16,
-    "customs_fee_rub": 4924,
-    "customs_duty_rub": 197915,
-    "customs_duty_eur": 2210,
-    "excise_rub": 0,
-    "vat_rub": 0,
-    "recycling_fee_rub": 5200,
-    "additional_costs_rub": 247377,
-    "georgia_conversion_fee_rub": 20503,
-    "turnkey_calculation_complete": true,
-    "turnkey_calculation_warnings": [],
-    "turnkey_calculation_errors": [],
-    "turnkey_calculation_date": "2026-07-21",
-    "turnkey_rates_source": "cbr.ru",
-    "turnkey_rates_cbr_date": "21.07.2026",
-    "turnkey_rates": {
-      "USD": 78.3159,
-      "EUR": 89.5542,
-      "GEL": 29.7474,
-      "CNY": 11.5698,
-      "KRW": 0.000053,
-      "JPY": 0.0048
-    }
-  },
-  {
-    "id": 119,
+    "id": 117,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -13225,7 +13057,7 @@
     }
   },
   {
-    "id": 120,
+    "id": 118,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -13342,7 +13174,7 @@
     }
   },
   {
-    "id": 121,
+    "id": 119,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -13451,7 +13283,7 @@
     }
   },
   {
-    "id": 122,
+    "id": 120,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -13568,7 +13400,7 @@
     }
   },
   {
-    "id": 123,
+    "id": 121,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -13691,7 +13523,7 @@
     }
   },
   {
-    "id": 124,
+    "id": 122,
     "brand": "Buick",
     "model": "Encore GX",
     "fullName": "Buick Encore GX",
@@ -13802,7 +13634,7 @@
     }
   },
   {
-    "id": 125,
+    "id": 123,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -13903,7 +13735,7 @@
     }
   },
   {
-    "id": 126,
+    "id": 124,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -14000,7 +13832,7 @@
     }
   },
   {
-    "id": 127,
+    "id": 125,
     "brand": "Buick",
     "model": "Encore GX",
     "fullName": "Buick Encore GX",
@@ -14107,7 +13939,7 @@
     }
   },
   {
-    "id": 128,
+    "id": 126,
     "brand": "Buick",
     "model": "Encore GX",
     "fullName": "Buick Encore GX",
@@ -14226,7 +14058,7 @@
     }
   },
   {
-    "id": 129,
+    "id": 127,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -14319,7 +14151,7 @@
     }
   },
   {
-    "id": 130,
+    "id": 128,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -14440,7 +14272,7 @@
     }
   },
   {
-    "id": 131,
+    "id": 129,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
@@ -14561,7 +14393,7 @@
     }
   },
   {
-    "id": 132,
+    "id": 130,
     "brand": "Buick",
     "model": "Encore",
     "fullName": "Buick Encore",
