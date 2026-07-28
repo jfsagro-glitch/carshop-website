@@ -159,9 +159,6 @@ jobs:
       - name: Build stock counts
         run: node tools/build_stock_counts.mjs
 
-      - name: Validate public catalogs
-        run: python car_parser.py --validate-catalogs
-
       - name: Validate SEO metadata and sitemap
         run: |
           python generate_sitemap.py
@@ -186,6 +183,12 @@ jobs:
             COUNT2=$(python -c "import json; data=json.load(open('cars_korea_stock.json')); print(len(data))")
             echo "Korea stock after supplement: $COUNT2 cars"
           fi
+
+      - name: Recalculate and filter Korea turnkey prices
+        run: node tools/update_korea_turnkey_prices.mjs
+
+      - name: Validate all public catalogs before publishing
+        run: python car_parser.py --validate-catalogs
 
       - name: Refresh stock counts after Korea sync
         run: node tools/build_stock_counts.mjs

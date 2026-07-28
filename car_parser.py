@@ -3223,9 +3223,19 @@ def validate_catalog_constraints(filepath: str, min_year_month: int, max_year_mo
 def validate_public_catalogs() -> None:
     validate_catalog_file("cars_europe_new.json", ["external_id", "brand", "model", "price", "images"], min_records=10)
     validate_catalog_file("cars_georgia_stock.json", ["id", "brand", "model", "price", "url", "images"], min_records=20)
+    validate_catalog_file("cars_korea_stock.json", ["external_id", "brand", "model", "price", "images"], min_records=20)
     min_ym, max_ym = month_range_from_age(3, 5)
     validate_catalog_constraints("cars_europe_new.json", min_ym, max_ym, 160, 115)
     validate_catalog_constraints("cars_georgia_stock.json", min_ym, max_ym, 160, 115)
+    with open("cars_korea_stock.json", encoding="utf-8") as f:
+        korea = json.load(f)
+    bad_power = [
+        f"{item.get('brand')} {item.get('model')}"
+        for item in korea
+        if record_power_hp(item) > 160 or record_power_kw(item) > 115
+    ]
+    if bad_power:
+        raise RuntimeError(f"cars_korea_stock.json: мощность выше 160 hp / 115 kW: {'; '.join(bad_power[:5])}")
 
 
 def export_csv(cars: List[Car], filepath: str) -> None:
