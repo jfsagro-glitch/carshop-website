@@ -5,7 +5,7 @@ Matches structure used by korea-orders.html:
   external_id, source, brand, model, year, productionDate (MM.YYYY),
   price (USD), mileage, fuel_type, transmission, engine,
   power_hp, power_kw, color, drive, images (URL array), url, region
-All cars: 2021-2023, power <= 160 hp / <= 116 kW.
+All cars: 2021-2023, power <= 160 hp / <= 115 kW.
 """
 import json, hashlib, random, itertools
 

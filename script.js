@@ -2156,7 +2156,7 @@ function renderPreferentialCars(){
 
     const visibleCars = usaUnder160Cars.filter(car => matchesImportCatalogRule(car));
     if (!visibleCars.length) {
-        container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по условиям 05.2021-05.2023 и до 160 л.с. / 116 кВт</div>';
+        container.innerHTML = '<div class="usa-empty-state">Нет подготовленных предложений по условиям 05.2021-05.2023 и до 160 л.с. / 115 кВт</div>';
         return;
     }
 
@@ -4341,7 +4341,7 @@ function matchesImportCatalogRule(car, region = ''){
     }
     const power = getCatalogPower(car);
     if (power.hp && power.hp > 160) return false;
-    if (power.kw && power.kw > 116 && !power.hp) return false;
+    if (power.kw && power.kw > 115) return false;
     return true;
 }
 

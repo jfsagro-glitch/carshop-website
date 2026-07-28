@@ -3,7 +3,7 @@
   "rule": {
     "age_window": "3-5 years by production/first-registration month",
     "power_limit_hp": 160,
-    "power_limit_kw": 116,
+    "power_limit_kw": 115,
     "current_window_on_2026-05-13": {
       "min_year_month": 202105,
       "max_year_month": 202305
@@ -64,7 +64,6 @@
     {"regions": ["georgia", "europe"], "brand": "Hyundai", "model": "i30", "engine": "1.5", "fuel": "Бензин", "hp": 110, "kw": 81},
     {"regions": ["georgia", "europe"], "brand": "Hyundai", "model": "Tucson", "engine": "1.6", "fuel": "Бензин", "hp": 150, "kw": 110},
     {"regions": ["georgia", "europe"], "brand": "Kia", "model": "Ceed", "engine": "1.0", "fuel": "Бензин", "hp": 120, "kw": 88},
-    {"regions": ["georgia", "europe"], "brand": "Kia", "model": "Ceed", "engine": "1.5", "fuel": "Бензин", "hp": 160, "kw": 116},
     {"regions": ["georgia", "europe"], "brand": "Kia", "model": "Seltos", "engine": "1.6", "fuel": "Бензин", "hp": 123, "kw": 90},
     {"regions": ["georgia", "europe"], "brand": "Kia", "model": "Sportage", "engine": "1.6", "fuel": "Бензин", "hp": 150, "kw": 110},
     {"regions": ["georgia", "europe"], "brand": "Lexus", "model": "UX 250h", "engine": "2.0", "fuel": "Гибрид", "hp": 152, "kw": 112},
@@ -75,7 +74,6 @@
     {"regions": ["georgia", "europe"], "brand": "Mercedes-Benz", "model": "C 180", "engine": "1.5", "fuel": "Бензин", "hp": 156, "kw": 115},
     {"regions": ["georgia", "europe"], "brand": "Mitsubishi", "model": "Outlander", "engine": "2.0", "fuel": "Бензин", "hp": 146, "kw": 107},
     {"regions": ["georgia", "europe"], "brand": "Nissan", "model": "Juke", "engine": "1.0", "fuel": "Бензин", "hp": 114, "kw": 84},
-    {"regions": ["georgia", "europe"], "brand": "Nissan", "model": "Qashqai", "engine": "1.3", "fuel": "Бензин", "hp": 158, "kw": 116},
     {"regions": ["georgia", "europe"], "brand": "Opel", "model": "Astra", "engine": "1.2", "fuel": "Бензин", "hp": 130, "kw": 96},
     {"regions": ["georgia", "europe"], "brand": "Opel", "model": "Corsa", "engine": "1.2", "fuel": "Бензин", "hp": 100, "kw": 74},
     {"regions": ["georgia", "europe"], "brand": "Peugeot", "model": "2008", "engine": "1.2", "fuel": "Бензин", "hp": 130, "kw": 96},
@@ -128,10 +126,8 @@
     {"regions": ["korea"], "brand": "Hyundai", "model": "Casper", "engine": "1.0", "fuel": "Бензин", "hp": 76, "kw": 56},
     {"regions": ["korea"], "brand": "Hyundai", "model": "Kona", "engine": "2.0", "fuel": "Бензин", "hp": 149, "kw": 110},
     {"regions": ["korea"], "brand": "Hyundai", "model": "Kona", "engine": "1.6", "fuel": "Гибрид", "hp": 105, "kw": 77},
-    {"regions": ["korea"], "brand": "Hyundai", "model": "Sonata", "engine": "2.0", "fuel": "Бензин", "hp": 160, "kw": 116},
     {"regions": ["korea"], "brand": "Hyundai", "model": "Venue", "engine": "1.6", "fuel": "Бензин", "hp": 123, "kw": 90},
     {"regions": ["korea"], "brand": "KIA", "model": "K3", "engine": "1.6", "fuel": "Бензин", "hp": 123, "kw": 90},
-    {"regions": ["korea"], "brand": "KIA", "model": "K5", "engine": "2.0", "fuel": "Бензин", "hp": 160, "kw": 116},
     {"regions": ["korea"], "brand": "KIA", "model": "Morning", "engine": "1.0", "fuel": "Бензин", "hp": 76, "kw": 56},
     {"regions": ["korea"], "brand": "KIA", "model": "Ray", "engine": "1.0", "fuel": "Бензин", "hp": 76, "kw": 56},
     {"regions": ["korea"], "brand": "KIA", "model": "Seltos", "engine": "1.6", "fuel": "Бензин", "hp": 123, "kw": 90},

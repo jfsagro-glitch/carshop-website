@@ -1518,7 +1518,7 @@
             const kw = Number(car.power_kw || car.kw || 0);
             if (!hp && !kw) return false;
             if (hp && hp > 160) return false;
-            if (kw && kw > 116 && !hp) return false;
+            if (kw && kw > 115) return false;
             const sourceText = `${car.source || ''} ${car.url || ''}`.toLowerCase();
             if (!sourceText.includes('autoscout24') && !sourceText.includes('mobile.de')) return false;
             car._filteredImages = images;

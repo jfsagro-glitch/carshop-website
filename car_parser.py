@@ -710,7 +710,7 @@ def apply_passable_catalog_record(record: dict, required_region: str = "") -> Op
         return None
     if hp and hp > 160:
         return None
-    if kw and kw > 116 and not hp:
+    if kw and kw > 115:
         return None
     if source.startswith("catalog:"):
         market = source.split(":", 1)[1]
@@ -886,7 +886,7 @@ def keep_live_record_photos(record: dict, max_checks: int = 1) -> bool:
 def max_kw_for_hp_limit(max_power_hp: int) -> int:
     if not max_power_hp:
         return 0
-    return 116 if max_power_hp >= 160 else round(max_power_hp / 1.35962)
+    return min(115, round(max_power_hp / 1.35962))
 
 
 def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, max_power_hp: int = 0,
@@ -933,7 +933,7 @@ def filter_records(records: List[dict], min_year: int = 0, max_year: int = 0, ma
             continue
         if max_power_hp and hp and hp > max_power_hp:
             continue
-        if max_power_kw and kw and kw > max_power_kw and not hp:
+        if max_power_kw and kw and kw > max_power_kw:
             continue
         result.append(record)
     return result
@@ -961,7 +961,7 @@ def filter_cars(cars: List["Car"], min_year: int = 0, max_year: int = 0, max_pow
         if max_power_hp and hp and hp > max_power_hp:
             continue
         kw = parse_int(car.extra.get("power_kw") or 0)
-        if max_power_kw and kw and kw > max_power_kw and not hp:
+        if max_power_kw and kw and kw > max_power_kw:
             continue
         result.append(car)
     return result
@@ -1953,7 +1953,7 @@ class MobileDeParser:
             params["fr"] = f"{yr_from}:{self.max_year or ''}"
         if self.max_power_hp:
             # mobile.de uses kW
-            params["pw"] = f":{round(self.max_power_hp / 1.35962)}"
+            params["pw"] = f":{max_kw_for_hp_limit(self.max_power_hp)}"
         return f"{self.SEARCH_URL}?{urlencode(params)}"
 
     def _get(self, url: str) -> Optional[str]:
@@ -2275,7 +2275,7 @@ class AutoScout24Parser:
         if self.max_year:
             params["fregto"] = self.max_year
         if self.max_power_hp:
-            params["powerto"] = round(self.max_power_hp / 1.35962)
+            params["powerto"] = max_kw_for_hp_limit(self.max_power_hp)
         path = f"{self.SEARCH_URL}/{brand_slug}" if brand_slug else self.SEARCH_URL
         return f"{path}?{urlencode(params)}"
 
@@ -3214,18 +3214,18 @@ def validate_catalog_constraints(filepath: str, min_year_month: int, max_year_mo
             bad.append(f"{item.get('brand')} {item.get('model')}: unknown power")
         elif hp and hp > max_power_hp:
             bad.append(f"{item.get('brand')} {item.get('model')}: {hp} hp")
-        elif kw and kw > max_power_kw and not hp:
+        elif kw and kw > max_power_kw:
             bad.append(f"{item.get('brand')} {item.get('model')}: {kw} kW")
     if bad:
-        raise RuntimeError(f"{filepath}: записи вне условий 05.2021-05.2023, <=160 hp, <=116 kW: {'; '.join(bad[:5])}")
+        raise RuntimeError(f"{filepath}: записи вне условий 05.2021-05.2023, <=160 hp, <=115 kW: {'; '.join(bad[:5])}")
 
 
 def validate_public_catalogs() -> None:
     validate_catalog_file("cars_europe_new.json", ["external_id", "brand", "model", "price", "images"], min_records=10)
     validate_catalog_file("cars_georgia_stock.json", ["id", "brand", "model", "price", "url", "images"], min_records=20)
     min_ym, max_ym = month_range_from_age(3, 5)
-    validate_catalog_constraints("cars_europe_new.json", min_ym, max_ym, 160, 116)
-    validate_catalog_constraints("cars_georgia_stock.json", min_ym, max_ym, 160, 116)
+    validate_catalog_constraints("cars_europe_new.json", min_ym, max_ym, 160, 115)
+    validate_catalog_constraints("cars_georgia_stock.json", min_ym, max_ym, 160, 115)
 
 
 def export_csv(cars: List[Car], filepath: str) -> None:

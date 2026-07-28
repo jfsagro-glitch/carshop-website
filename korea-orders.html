@@ -605,7 +605,7 @@
             const kw = Number(String(car.power_kw || car.kw || '').replace(',', '.').replace(/[^\d.]/g, ''));
             if (!hp && !kw) return false;
             if (hp && hp > 160) return false;
-            if (!hp && kw && kw > 116) return false;
+            if (kw && kw > 115) return false;
             return true;
         }
 

@@ -81,6 +81,12 @@ function hasAutomaticTransmission(car) {
     || transmission.includes('dct');
 }
 
+function hasAllowedPower(car) {
+  const hp = Number(car.power_hp || 0);
+  const kw = Number(car.power_kw || 0);
+  return hp > 0 && kw > 0 && hp <= 160 && kw <= 115;
+}
+
 function engineLabel(car) {
   const cc = Number(car.engine_cc || 0);
   const verified = String(car.engine_source || '').startsWith('autoscout24_');
@@ -154,6 +160,7 @@ for (const target of TARGETS) {
         && Number(car.price || 0) > 0
         && Number(car.turnkey_price_rub || 0) > 0
         && car.turnkey_calculation_complete
+        && hasAllowedPower(car)
         && hasAutomaticTransmission(car)
         && images(car).length > 0;
     })

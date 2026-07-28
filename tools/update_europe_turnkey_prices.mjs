@@ -253,7 +253,10 @@ const { rates, cbrDate, source: ratesSource } = await loadResilientCbrRates({
 const whitelist = passableFilter.vehicle_whitelist || [];
 let completeCount = 0;
 
-const sourceCars = cars.filter((car) => !isElectricCar(car));
+const sourceCars = cars
+  .filter((car) => !isElectricCar(car))
+  .filter((car) => Number(car.power_hp || 0) > 0 && Number(car.power_hp || 0) <= 160)
+  .filter((car) => Number(car.power_kw || 0) > 0 && Number(car.power_kw || 0) <= 115);
 
 const updated = sourceCars.map((car) => {
   const input = buildInput(car, rates, whitelist);

@@ -273,7 +273,7 @@ def matches_passable_catalog(title: str, engine: str, text: str, region: str = "
             continue
         hp = int(rule.get("hp") or 0)
         kw = int(rule.get("kw") or 0)
-        if hp > 160 or (kw > 116 and not hp):
+        if hp > 160 or kw > 115:
             continue
         score = len(model) + (8 if engine_value and rule_engine else 0)
         if score > best_score:
@@ -443,7 +443,7 @@ def build_local_fallback_offer(item: dict, region_label: str, source_label: str,
         return None
     hp = int(float(item.get("power_hp") or 0))
     kw = int(float(item.get("power_kw") or 0))
-    if hp > 160 or (kw > 116 and not hp):
+    if hp > 160 or kw > 115:
         return None
     year = str(item.get("year") or item.get("first_registration_year") or "")
     title = clean_text(f"{item.get('brand', '')} {item.get('model', '')} {year}").strip()
@@ -470,7 +470,7 @@ def build_local_fallback_offer(item: dict, region_label: str, source_label: str,
         ),
         "facts": [
             "проходной возраст 3-5 лет",
-            "до 160 л.с. / 116 кВт",
+            "до 160 л.с. / 115 кВт",
             "доставка и растаможка в РФ",
         ],
         "score": 80 + (local_year_month(item) % 10000),

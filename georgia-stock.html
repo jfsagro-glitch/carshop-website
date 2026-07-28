@@ -1489,7 +1489,7 @@
             const power = parseGeorgiaPower(car);
             if (!power.hp && !power.kw) return false;
             if (power.hp && power.hp > 160) return false;
-            if (power.kw && power.kw > 116 && !power.hp) return false;
+            if (power.kw && power.kw > 115) return false;
             car._powerHp = power.hp;
             car._powerKw = power.kw;
             if (power.fuel) car.fuel_type = power.fuel.charAt(0).toUpperCase() + power.fuel.slice(1);

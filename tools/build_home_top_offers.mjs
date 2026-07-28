@@ -75,7 +75,7 @@ function toOffer(car, source) {
   const base = formatBasePrice(car, source.currency);
   const facts = [
     'проходной возраст 3-5 лет',
-    'до 160 л.с. / 116 кВт',
+    'до 160 л.с. / 115 кВт',
     `под ключ в РФ: ${turnkey}`,
   ];
   if (source.region === 'Европа') facts.push('доставка 3000 € включена');
@@ -108,6 +108,8 @@ for (const source of SOURCES) {
   const filtered = cars
     .filter((car) => car.turnkey_calculation_complete && car.turnkey_price_rub && imageList(car).length)
     .filter((car) => !isElectricCar(car))
+    .filter((car) => Number(car.power_hp || 0) > 0 && Number(car.power_hp || 0) <= 160)
+    .filter((car) => Number(car.power_kw || 0) > 0 && Number(car.power_kw || 0) <= 115)
     .filter((car) => source.region !== 'Грузия' || !isBlockedGeorgia(car))
     .sort((a, b) => score(a, source.region) - score(b, source.region))
     .slice(0, source.region === 'Корея' ? 12 : 8)

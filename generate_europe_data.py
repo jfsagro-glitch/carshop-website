@@ -137,9 +137,9 @@ BRANDS = {
     },
 }
 
-# Keep only models with hp <= 160
+# Keep only models within both customs power limits.
 MODELS_160 = {
-    brand: {m: s for m, s in models.items() if s["hp"] <= 160}
+    brand: {m: s for m, s in models.items() if s["hp"] <= 160 and s["kw"] <= 115}
     for brand, models in BRANDS.items()
 }
 

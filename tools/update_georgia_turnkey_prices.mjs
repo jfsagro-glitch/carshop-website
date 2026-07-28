@@ -146,7 +146,10 @@ const { rates, cbrDate, source: ratesSource } = await loadResilientCbrRates({
   fallbackDate: calculationDate,
   cachedCars: cars,
 });
-const sourceCars = cars.filter((car) => !isElectricCar(car));
+const sourceCars = cars
+  .filter((car) => !isElectricCar(car))
+  .filter((car) => Number(car.power_hp || 0) > 0 && Number(car.power_hp || 0) <= 160)
+  .filter((car) => Number(car.power_kw || 0) > 0 && Number(car.power_kw || 0) <= 115);
 let completeCount = 0;
 
 const updated = sourceCars.map((car) => {

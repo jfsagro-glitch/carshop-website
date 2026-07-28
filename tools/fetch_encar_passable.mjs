@@ -14,10 +14,8 @@ const KOREA_RULES = [
   ['Hyundai', 'Casper', '1.0', 'Бензин', 76, 56, ['캐스퍼']],
   ['Hyundai', 'Kona', '2.0', 'Бензин', 149, 110, ['코나']],
   ['Hyundai', 'Kona', '1.6', 'Гибрид', 105, 77, ['코나']],
-  ['Hyundai', 'Sonata', '2.0', 'Бензин', 160, 116, ['쏘나타']],
   ['Hyundai', 'Venue', '1.6', 'Бензин', 123, 90, ['베뉴']],
   ['KIA', 'K3', '1.6', 'Бензин', 123, 90, ['k3', '케이3']],
-  ['KIA', 'K5', '2.0', 'Бензин', 160, 116, ['k5', '케이5']],
   ['KIA', 'Morning', '1.0', 'Бензин', 76, 56, ['모닝']],
   ['KIA', 'Ray', '1.0', 'Бензин', 76, 56, ['레이']],
   ['KIA', 'Seltos', '1.6', 'Бензин', 123, 90, ['셀토스']],
@@ -298,7 +296,7 @@ for (const row of rows) {
   const images = photoUrls(row);
   if (!images.length) continue;
   const car = transform(row, sourceRule);
-  if (!car.year || !car.month || !car.price_krw || !car.power_hp || car.power_hp > 160) continue;
+  if (!car.year || !car.month || !car.price_krw || !car.power_hp || car.power_hp > 160 || car.power_kw > 115) continue;
   seen.add(String(row.Id));
   cars.push(car);
 }
