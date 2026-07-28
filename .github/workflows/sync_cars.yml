@@ -53,12 +53,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -150,7 +150,7 @@ jobs:
         run: node tools/build_europe_catalog_assets.mjs
 
       - name: Build homepage Europe offers
-        run: node tools/build_home_europe_offers.mjs --exclude-history
+        run: node tools/build_home_europe_offers.mjs
 
       - name: Sync Avtostok63 premium stock
         run: python tools/fetch_carexpo_premium.py
@@ -166,47 +166,6 @@ jobs:
         run: |
           python generate_sitemap.py
           python tools/check_seo.py
-
-      - name: Check for changes
-        id: check_changes
-        run: |
-          git diff --quiet cars_georgia_stock.json cars_europe_new.json data/europe_catalog data/avtostok63_premium.json data/home_featured_europe.json data/stock_counts.json || echo "changed=true" >> $GITHUB_OUTPUT
-
-      - name: Commit and push if changed
-        if: steps.check_changes.outputs.changed == 'true'
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cars_georgia_stock.json cars_europe_new.json data/europe_catalog data/avtostok63_premium.json data/home_featured_europe.json data/stock_counts.json
-          if git diff --cached --quiet; then
-            echo "No catalog changes to commit after staging."
-            exit 0
-          fi
-          git commit -m "auto: sync car catalogs [$(date +'%Y-%m-%d %H:%M UTC')]"
-          # A long sync may finish after a Telegram task has updated main. Merge
-          # those independent changes; for generated JSON conflicts, keep the
-          # freshly collected catalog from this run.
-          for attempt in 1 2 3; do
-            if ! git fetch origin main; then
-              echo "Fetch failed on publish attempt $attempt."
-              sleep $((attempt * 5))
-              continue
-            fi
-            if ! git merge-base --is-ancestor origin/main HEAD; then
-              if ! git merge --no-edit -X ours origin/main; then
-                echo "Merge failed on publish attempt $attempt; retrying."
-                git merge --abort || true
-                sleep $((attempt * 5))
-                continue
-              fi
-            fi
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            sleep $((attempt * 5))
-          done
-          echo "Unable to publish the generated catalog after 3 attempts."
-          exit 1
 
       - name: Sync Korea stock from encar.com
         run: |
@@ -240,13 +199,60 @@ jobs:
       - name: Generate sitemap.xml
         run: python generate_sitemap.py
 
-      - name: Commit Korea + sitemap if changed
+      - name: Publish all generated catalogs atomically
         run: |
-          git config user.name  "github-actions[bot]"
+          set -euo pipefail
+          SNAPSHOT=/tmp/catalog-output.tar
+          PUBLISH_DIR=/tmp/catalog-publish
+          GENERATED_PATHS=(
+            cars_georgia_stock.json
+            cars_europe_new.json
+            cars_korea_stock.json
+            data/europe_catalog
+            data/avtostok63_premium.json
+            data/home_featured_europe.json
+            data/stock_counts.json
+            sitemap.xml
+          )
+
+          tar -cf "$SNAPSHOT" "${GENERATED_PATHS[@]}"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A cars_korea_stock.json data/stock_counts.json sitemap.xml 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "auto: korea stock + sitemap [$(date +'%Y-%m-%d %H:%M UTC')]"
-          git push || true
+
+          for attempt in 1 2 3 4 5; do
+            echo "Atomic publish attempt $attempt"
+            git worktree remove --force "$PUBLISH_DIR" 2>/dev/null || true
+            git worktree prune
+
+            if ! git fetch origin main; then
+              sleep $((attempt * 5))
+              continue
+            fi
+
+            git worktree add --detach "$PUBLISH_DIR" origin/main
+            rm -rf "$PUBLISH_DIR/data/europe_catalog"
+            tar -C "$PUBLISH_DIR" -xf "$SNAPSHOT"
+
+            pushd "$PUBLISH_DIR" >/dev/null
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A "${GENERATED_PATHS[@]}"
+            if git diff --cached --quiet; then
+              echo "No generated catalog changes to publish."
+              popd >/dev/null
+              exit 0
+            fi
+            git commit -m "auto: sync car catalogs [$(date +'%Y-%m-%d %H:%M UTC')]"
+            if git push origin HEAD:main; then
+              popd >/dev/null
+              exit 0
+            fi
+            popd >/dev/null
+            sleep $((attempt * 5))
+          done
+
+          echo "Unable to publish generated catalogs after 5 atomic attempts."
+          exit 1
 
       - name: Notify IndexNow about catalog updates
         continue-on-error: true
