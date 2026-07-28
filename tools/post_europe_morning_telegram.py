@@ -8,6 +8,7 @@ import html
 import io
 import json
 import os
+import re
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -23,7 +24,7 @@ HISTORY_PATH = ROOT / "data" / "telegram_europe_history.json"
 EUROPE_CATALOG_PATH = ROOT / "cars_europe_new.json"
 SITE_URL = "https://cmsauto.store/?source=pwa"
 EUROPE_URL = "https://cmsauto.store/europe-orders.html"
-CONTACT_PHONE_DISPLAY = "+79184140636"
+CONTACT_PHONE_DISPLAY = "+7 918 414 06 36"
 CONTACT_WHATSAPP_URL = "https://wa.me/79184140636"
 CONTACT_TELEGRAM_URL = "https://t.me/expo_mir"
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
@@ -155,6 +156,8 @@ def refresh_offer_from_catalog(offer: dict, catalog_by_url: dict[str, dict]) -> 
         details["mileage"] = f"{round(float(car.get('mileage') or 0)):,}".replace(",", "\u00a0") + " км"
     details["engine"] = engine_label(car)
     details["power"] = power_label(car)
+    details["transmission"] = str(car.get("transmission") or car.get("gearbox") or "уточняется")
+    details["rate_date"] = str(car.get("turnkey_rates_cbr_date") or car.get("turnkey_calculation_date") or "")
     updated["details"] = details
     updated["text_excerpt"] = (
         f"{car.get('full_title') or updated.get('title')}. "
@@ -261,23 +264,32 @@ def offer_caption(offer: dict, test: bool = False) -> str:
     mileage = html.escape(str(details["mileage"]))
     engine = html.escape(str(details["engine"]))
     power = html.escape(str(details["power"]))
+    transmission = html.escape(str(details.get("transmission") or "уточняется"))
+    rate_date = html.escape(str(details.get("rate_date") or "на дату публикации"))
     source_url = html.escape(str(offer["source_url"]), quote=True)
     lines = [
         f"🚘 <b>{title}</b>",
-        f"<blockquote><b>Под ключ в РФ: {turnkey_price}</b></blockquote>",
-        f"🇪🇺 <b>Цена в Европе:</b> {europe_price}",
+        "<blockquote><u><b>СТОИМОСТЬ ПОД КЛЮЧ В РФ</b></u>",
+        f"<b>{turnkey_price}</b></blockquote>",
+        f"<i>Расчёт по курсу ЦБ РФ от {rate_date}</i>",
         "",
-        f"🛣 <b>Пробег:</b> {mileage}",
-        f"⚙️ <b>Двигатель:</b> {engine}",
-        f"🏁 <b>Мощность:</b> {power}",
+        f"🛣 <b>Пробег</b>  {mileage}",
+        f"⚙️ <b>Двигатель</b>  {engine}",
+        f"🏁 <b>Мощность</b>  {power}",
+        f"🤖 <b>Коробка</b>  {transmission}",
+        f"🇪🇺 <i>Цена в Европе: {europe_price}</i>",
         "",
-        f'🔗 <a href="{source_url}">Открыть объявление</a> · <a href="{EUROPE_URL}">Каталог Европы</a>',
+        f'🔗 <a href="{source_url}">Открыть объявление</a>  ·  <a href="{EUROPE_URL}">Каталог Европы</a>',
         "",
-        "<b>Подберём и привезём автомобиль под ваш бюджет.</b>",
-        f"📞 {CONTACT_PHONE_DISPLAY}",
-        f'💬 <a href="{CONTACT_WHATSAPP_URL}">WhatsApp</a> · <a href="{CONTACT_TELEGRAM_URL}">Telegram</a>',
+        "🔥 <b>Подберём и привезём автомобиль под ваш бюджет</b>",
+        f'📲 <a href="{CONTACT_WHATSAPP_URL}"><b>Получить расчёт в WhatsApp</b></a>',
+        f'☎️ {CONTACT_PHONE_DISPLAY}  ·  <a href="{CONTACT_TELEGRAM_URL}">Telegram</a>',
     ]
-    return "\n".join(lines)[:1024]
+    caption = "\n".join(lines)
+    visible_caption = html.unescape(re.sub(r"<[^>]+>", "", caption))
+    if len(visible_caption) > 1024:
+        raise ValueError(f"Telegram caption is too long: {len(visible_caption)} characters")
+    return caption
 
 
 def telegram_request(method: str, **kwargs) -> requests.Response:
@@ -300,6 +312,7 @@ def send_offer_to(chat_id: str, offer: dict, photos: list[bytes], test: bool = F
                 "chat_id": chat_id,
                 "caption": offer_caption(offer, test=test),
                 "parse_mode": "HTML",
+                "show_caption_above_media": "true",
             },
             files={"photo": ("offer.jpg", photos[0], "image/jpeg")},
         )
@@ -316,6 +329,7 @@ def send_offer_to(chat_id: str, offer: dict, photos: list[bytes], test: bool = F
         if index == 0:
             item["caption"] = offer_caption(offer, test=test)
             item["parse_mode"] = "HTML"
+            item["show_caption_above_media"] = True
         media.append(item)
         files[attachment] = (f"offer-{index}.jpg", photo, "image/jpeg")
 
