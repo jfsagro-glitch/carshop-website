@@ -2448,7 +2448,7 @@ async function loadTelegramOffersSection() {
         if (meta) {
             const dt = europePayload.generated_at ? new Date(europePayload.generated_at).toLocaleString('ru-RU') : '';
             const displayedCount = offers.length;
-            meta.textContent = `Подборка обновлена: ${dt || 'сегодня'}. ${displayedCount} топовых предложений из Европы: автомат, пробег до 100 000 км, фото и расчёт под ключ в РФ.`;
+            meta.textContent = `Подборка обновлена: ${dt || 'сегодня'}. ${displayedCount} топовых предложений из Европы: автомат, пробег до 85 000 км, фото и расчёт под ключ в РФ.`;
         }
         if (!offers.length) {
             grid.innerHTML = '<div class="usa-empty-state">Пока нет подходящих предложений</div>';

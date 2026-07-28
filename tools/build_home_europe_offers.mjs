@@ -25,6 +25,7 @@ const TARGETS = [
   { brand: 'Volkswagen', model: /(?:^|\s)T-?Roc(?:\s|$)/i },
   { brand: 'Volkswagen', model: /(?:^|\s)Golf\s+GTE(?:\s|$)/i },
   { brand: 'Volkswagen', model: /(?:^|\s)T6(?:\.1)?\s+Caravelle(?:\s|$)/i },
+  { brand: 'Volkswagen', model: /(?:^|\s)(?:T7\s+Multivan|Multivan\s+T7)(?:\s|$)/i },
   { brand: 'Volkswagen', model: /(?:^|\s)Passat(?:\s|$)/i },
   { brand: 'Opel', model: /(?:^|\s)Mokka(?:\s|$)/i },
   { brand: 'Opel', model: /(?:^|\s)Crossland(?:\s|$)/i },
@@ -129,7 +130,7 @@ function toOffer(car, target) {
       mileage: `${Number(car.mileage).toLocaleString('ru-RU')} км`,
     },
     text_excerpt: `${car.full_title || title}. Цена в Европе ${basePrice}, стоимость под ключ в РФ ${turnkey}.`,
-    facts: ['выгодное предложение', 'пробег до 100 000 км', `цена в Европе: ${basePrice}`],
+    facts: ['выгодное предложение', 'пробег до 85 000 км', `цена в Европе: ${basePrice}`],
   };
 }
 
@@ -156,7 +157,7 @@ for (const target of TARGETS) {
     .filter((car) => {
       const mileage = Number(car.mileage || 0);
       return mileage > 0
-        && mileage <= 100000
+        && mileage <= 85000
         && Number(car.price || 0) > 0
         && Number(car.turnkey_price_rub || 0) > 0
         && car.turnkey_calculation_complete
