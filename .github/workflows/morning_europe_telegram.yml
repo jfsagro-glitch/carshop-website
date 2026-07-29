@@ -40,12 +40,12 @@ jobs:
 
     steps:
       - name: Checkout latest catalog
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -56,6 +56,7 @@ jobs:
         id: publish_window
         run: |
           SHOULD_PUBLISH=false
+          TEST_SEND=false
           if [ "${{ github.event_name }}" = "schedule" ]; then
             SHOULD_PUBLISH=true
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "false" ]; then
@@ -67,10 +68,6 @@ jobs:
             if [[ "${{ github.event.head_commit.message }}" == *"[telegram-test]"* ]]; then
               SHOULD_PUBLISH=true
               TEST_SEND=true
-            fi
-            HOUR="$(date -u +%H)"
-            if [ "$HOUR" = "06" ] || [ "$HOUR" = "07" ]; then
-              SHOULD_PUBLISH=true
             fi
           fi
           echo "publish=$SHOULD_PUBLISH" >> "$GITHUB_OUTPUT"

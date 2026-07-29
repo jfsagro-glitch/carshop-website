@@ -325,11 +325,11 @@ def send_offer_to(chat_id: str, offer: dict, photos: list[bytes], test: bool = F
         item: dict = {
             "type": "photo",
             "media": f"attach://{attachment}",
+            "show_caption_above_media": True,
         }
         if index == 0:
             item["caption"] = offer_caption(offer, test=test)
             item["parse_mode"] = "HTML"
-            item["show_caption_above_media"] = True
         media.append(item)
         files[attachment] = (f"offer-{index}.jpg", photo, "image/jpeg")
 
