@@ -2,8 +2,8 @@ name: Auto-sync car catalogs
 
 on:
   schedule:
-    # 4 раза в день: 08:00, 12:00, 16:00, 20:00 Бишкек (UTC+6)
-    - cron: '0 2,6,10,14 * * *'
+    # 1 раз в день: 08:00 Бишкек (UTC+6)
+    - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
       min_age:
@@ -36,6 +36,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     env:
       MYAUTO_PROXY: ${{ secrets.MYAUTO_PROXY }}
       MOBILEDE_PROXY: ${{ secrets.MOBILEDE_PROXY }}
@@ -63,7 +64,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 pillow
+        run: pip install --quiet --disable-pip-version-check requests beautifulsoup4 pillow
 
       - name: Show parser settings
         run: |
@@ -73,6 +74,7 @@ jobs:
           echo "AUTOSCOUT24_PROXY configured: $([[ -n "$AUTOSCOUT24_PROXY" ]] && echo yes || echo no)"
 
       - name: Sync Georgia stock from myauto.ge
+        timeout-minutes: 30
         run: |
           python car_parser.py \
             --source myauto \
@@ -94,6 +96,7 @@ jobs:
         run: node tools/update_georgia_turnkey_prices.mjs
 
       - name: Sync Europe catalog from AutoScout24
+        timeout-minutes: 35
         run: |
           python car_parser.py \
             --source autoscout24 \
@@ -130,10 +133,12 @@ jobs:
           fi
 
       - name: Remove unavailable Europe listings
+        timeout-minutes: 20
         run: |
           python tools/prune_unavailable_europe.py --input cars_europe_new.json --workers 32 --timeout 8
 
       - name: Enrich AutoScout24 engine displacement from detail pages
+        timeout-minutes: 30
         run: |
           python tools/enrich_autoscout_engine_displacement.py \
             --input cars_europe_new.json \
@@ -153,6 +158,7 @@ jobs:
         run: node tools/build_home_europe_offers.mjs
 
       - name: Sync Avtostok63 premium stock
+        timeout-minutes: 10
         run: python tools/fetch_carexpo_premium.py
         continue-on-error: true
 
@@ -165,6 +171,7 @@ jobs:
           python tools/check_seo.py
 
       - name: Sync Korea stock from encar.com
+        timeout-minutes: 20
         run: |
           python car_parser.py \
             --source encar \
@@ -194,15 +201,18 @@ jobs:
         run: node tools/build_stock_counts.mjs
 
       - name: Sync all catalogs to Supabase
+        timeout-minutes: 15
         run: python import_to_supabase.py || true
 
       - name: Cleanup stale cars in Supabase
+        timeout-minutes: 10
         run: python cleanup_cars.py || echo "Supabase cleanup failed; continuing catalog sync"
 
       - name: Generate sitemap.xml
         run: python generate_sitemap.py
 
       - name: Publish all generated catalogs atomically
+        timeout-minutes: 15
         run: |
           set -euo pipefail
           SNAPSHOT=/tmp/catalog-output.tar
