@@ -8,6 +8,7 @@ const sourcePath = path.join(rootDir, 'cars_europe_new.json');
 const outputPath = path.join(rootDir, 'data', 'home_featured_europe.json');
 const historyPath = path.join(rootDir, 'data', 'telegram_europe_history.json');
 const excludeHistory = process.argv.includes('--exclude-history');
+const MIN_FEATURED_PHOTOS = 7;
 
 const TARGETS = [
   { brand: 'Audi', model: /(?:^|\s)A4(?:\s|$)/i },
@@ -38,14 +39,17 @@ function normalize(value) {
 }
 
 function images(car) {
-  return (Array.isArray(car.images) ? car.images : [])
+  return [...new Set((Array.isArray(car.images) ? car.images : [])
     .map((image) => typeof image === 'string' ? image : image?.url)
-    .filter(Boolean)
+    .filter((url) => typeof url === 'string' && /^https?:\/\//i.test(url)))]
     .slice(0, 12);
 }
 
-async function hasReachableImage(car) {
-  for (const url of images(car).slice(0, 3)) {
+async function hasReachablePhotos(car, minimum = MIN_FEATURED_PHOTOS) {
+  const photoUrls = images(car);
+  let reachable = 0;
+  for (let index = 0; index < photoUrls.length; index += 1) {
+    const url = photoUrls[index];
     try {
       const response = await fetch(url, {
         headers: {
@@ -54,13 +58,16 @@ async function hasReachableImage(car) {
         },
       });
       if (response.ok && String(response.headers.get('content-type') || '').startsWith('image/')) {
+        reachable += 1;
         await response.body?.cancel();
-        return true;
+        if (reachable >= minimum) return true;
+      } else {
+        await response.body?.cancel();
       }
-      await response.body?.cancel();
     } catch {
       // Try the next photo or candidate.
     }
+    if (reachable + (photoUrls.length - index - 1) < minimum) return false;
   }
   return false;
 }
@@ -163,12 +170,12 @@ for (const target of TARGETS) {
         && car.turnkey_calculation_complete
         && hasAllowedPower(car)
         && hasAutomaticTransmission(car)
-        && images(car).length > 0;
+        && images(car).length >= MIN_FEATURED_PHOTOS;
     })
     .sort((a, b) => Number(a.price) - Number(b.price));
   let selected = null;
   for (const candidate of candidates) {
-    if (await hasReachableImage(candidate)) {
+    if (await hasReachablePhotos(candidate)) {
       selected = candidate;
       break;
     }

@@ -23,7 +23,6 @@ OFFERS_PATH = ROOT / "data" / "home_featured_europe.json"
 HISTORY_PATH = ROOT / "data" / "telegram_europe_history.json"
 EUROPE_CATALOG_PATH = ROOT / "cars_europe_new.json"
 SITE_URL = "https://cmsauto.store/?source=pwa"
-EUROPE_URL = "https://cmsauto.store/europe-orders.html"
 CONTACT_PHONE_DISPLAY = "+7 918 414 06 36"
 CONTACT_WHATSAPP_URL = "https://wa.me/79184140636"
 CONTACT_TELEGRAM_URL = "https://t.me/expo_mir"
@@ -292,7 +291,7 @@ def offer_caption(offer: dict, test: bool = False) -> str:
         f"🤖 Коробка: <b>{transmission}</b>",
         f"🇪🇺 Цена в Европе: <i>{europe_price}</i>",
         "",
-        f'🔗 <a href="{source_url}"><b>Открыть объявление</b></a>  ·  <a href="{EUROPE_URL}">Каталог Европы</a>',
+        f'🔗 <a href="{source_url}"><b>Открыть объявление</b></a>  ·  <a href="{SITE_URL}">Подборка автомобилей</a>',
         "",
         "🔥 <b>Подберём автомобиль под ваш бюджет</b>",
         f'📲 <a href="{CONTACT_WHATSAPP_URL}"><b>Рассчитать в WhatsApp</b></a>',
