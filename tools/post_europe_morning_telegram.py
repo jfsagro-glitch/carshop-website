@@ -51,6 +51,8 @@ IMAGE_HEADERS = {
     "Referer": "https://www.autoscout24.de/",
 }
 MOSCOW_TZ = timezone(timedelta(hours=3), "MSK")
+MIN_TELEGRAM_PHOTOS = 7
+MAX_TELEGRAM_PHOTOS = 10
 
 
 def load_offers() -> list[dict]:
@@ -75,6 +77,8 @@ def load_offers() -> list[dict]:
                 any(images),
             )
         ):
+            continue
+        if len(image_urls(offer)) < MIN_TELEGRAM_PHOTOS:
             continue
         valid.append(offer)
     return valid[:10]
@@ -228,7 +232,15 @@ def rebuild_homepage_cycle(history: dict) -> list[dict]:
 
 def image_urls(offer: dict) -> list[str]:
     raw = offer.get("images") or [offer.get("image")]
-    return [str(url) for url in raw if str(url or "").startswith(("https://", "http://"))]
+    urls: list[str] = []
+    seen: set[str] = set()
+    for value in raw:
+        url = str(value or "")
+        if not url.startswith(("https://", "http://")) or url in seen:
+            continue
+        seen.add(url)
+        urls.append(url)
+    return urls
 
 
 def download_photo(url: str) -> bytes | None:
@@ -247,7 +259,7 @@ def download_photo(url: str) -> bytes | None:
     return None
 
 
-def download_offer_photos(offer: dict, limit: int = 10) -> list[bytes]:
+def download_offer_photos(offer: dict, limit: int = MAX_TELEGRAM_PHOTOS) -> list[bytes]:
     photos = []
     for url in image_urls(offer)[:limit]:
         photo = download_photo(url)
@@ -305,18 +317,11 @@ def telegram_request(method: str, **kwargs) -> requests.Response:
 
 def send_offer_to(chat_id: str, offer: dict, photos: list[bytes], test: bool = False) -> None:
     """Send one offer (photos + caption) to a single chat/channel."""
-    if len(photos) == 1:
-        telegram_request(
-            "sendPhoto",
-            data={
-                "chat_id": chat_id,
-                "caption": offer_caption(offer, test=test),
-                "parse_mode": "HTML",
-                "show_caption_above_media": "true",
-            },
-            files={"photo": ("offer.jpg", photos[0], "image/jpeg")},
+    if len(photos) < MIN_TELEGRAM_PHOTOS:
+        raise ValueError(
+            f"Refusing to publish an offer with {len(photos)} photo(s); "
+            f"minimum is {MIN_TELEGRAM_PHOTOS}"
         )
-        return
 
     media = []
     files = {}
@@ -383,15 +388,31 @@ def main() -> None:
     selected = None
     photos = []
     for offer in candidates:
-        downloaded = download_offer_photos(offer, limit=10)
-        if downloaded:
+        available_urls = image_urls(offer)
+        if len(available_urls) < MIN_TELEGRAM_PHOTOS:
+            print(
+                f"Skipped with only {len(available_urls)} photo URL(s), "
+                f"minimum is {MIN_TELEGRAM_PHOTOS}: {offer.get('title')}",
+                file=sys.stderr,
+            )
+            continue
+
+        downloaded = download_offer_photos(offer, limit=MAX_TELEGRAM_PHOTOS)
+        if len(downloaded) >= MIN_TELEGRAM_PHOTOS:
             selected = refresh_offer_from_catalog(offer, catalog_by_url)
             photos = downloaded
             break
-        print(f"Skipped without reachable photo: {offer.get('title')}", file=sys.stderr)
+        print(
+            f"Skipped with only {len(downloaded)} reachable photo(s), "
+            f"minimum is {MIN_TELEGRAM_PHOTOS}: {offer.get('title')}",
+            file=sys.stderr,
+        )
 
-    if selected is None or not photos:
-        raise RuntimeError("No unpublished Europe offer with a reachable photo")
+    if selected is None or len(photos) < MIN_TELEGRAM_PHOTOS:
+        raise RuntimeError(
+            "No unpublished Europe offer with at least "
+            f"{MIN_TELEGRAM_PHOTOS} reachable photos"
+        )
 
     print(f"Prepared one Europe offer: {selected['title']} — {selected['price']} ({len(photos)} photos)")
 
