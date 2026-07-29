@@ -6,14 +6,19 @@ on:
     - cron: '*/15 * * * *'
   workflow_dispatch: {}
 
+concurrency:
+  group: notify-leads
+  cancel-in-progress: false
+
 jobs:
   notify:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     env:
-      SUPABASE_URL:        ${{ secrets.SUPABASE_URL }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-      TELEGRAM_BOT_TOKEN:  ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      TELEGRAM_CHAT_ID:    ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
     steps:
       - name: Checkout repository
@@ -21,13 +26,10 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
+      # Python 3 уже предустановлен на ubuntu-latest — setup-python не нужен
       - name: Install dependencies
-        run: pip install requests
+        run: pip install --quiet --disable-pip-version-check requests
 
       - name: Notify new leads
+        timeout-minutes: 3
         run: python notify_leads.py
