@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T15:42:19.032Z",
+  "generated_at": "2026-07-30T03:48:19.685Z",
   "offers": [
     {
       "channel": "europe_catalog",
@@ -80,32 +80,36 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/audi-q3-advanced-35-tfsi-gebraucht-s-line-nav-pro-virt-benzin-grau-cat_ma9mo19715-3d359429-9795-413f-9a8c-4b572408df2f",
-      "title": "Audi Q3 2021",
-      "year": "2021",
-      "price": "2 540 654 ₽",
-      "base_price": "19 500 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_71da5f30-cc16-46b7-8725-44ec9f2085b0.jpg/1024x768.webp",
+      "source_url": "https://www.autoscout24.de/angebote/audi-q3-35-1-5-tfsi-s-tronic-navi-led-1hd-spur-benzin-silber-cat_ma9mo19715-ad084cab-6a40-4d34-99db-0ce3862d6533",
+      "title": "Audi Q3 2022",
+      "year": "2022",
+      "price": "2 853 485 ₽",
+      "base_price": "22 900 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_2fcf85db-548f-4e22-8738-ba7533da18b8.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_71da5f30-cc16-46b7-8725-44ec9f2085b0.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_f608995e-d293-4019-8ba9-1ba4cbaaf165.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_a36c700e-9dee-4506-832c-5b9d4c8f3444.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_b550c926-d08d-42c3-a04c-4d7089dbd8a9.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_9895f671-b902-4fd7-912d-1c646350658a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_29561fbc-be05-4d2f-9c99-cb22b4a686a9.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_599a6a83-3295-4174-8cb0-ac6f3e5d9a91.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/3d359429-9795-413f-9a8c-4b572408df2f_cbd0f152-7ebd-4531-aeba-fd6311e75471.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_2fcf85db-548f-4e22-8738-ba7533da18b8.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_7ea70ecc-09bb-4fa2-88bf-c2bcfe05aeb3.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_3cb238b6-29a5-411d-92a2-d3de800fd525.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_230902b9-bf33-4f39-af93-0cb88b888376.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_7aef2785-be02-45b3-9b71-023f60f5f29f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_2305f529-2571-487a-8bfe-4958aea4da2c.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_a385b9d2-b300-48f1-98cb-6fd9bb0b9b55.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_21a8af2d-31bd-4665-84df-c7ef885a94fe.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_2cdb6287-eae7-40dd-afe7-339605d7807e.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_56f8c81f-0e11-443b-94b1-c90c36f53e9e.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_3345b908-7350-450f-8216-9539149ff5b6.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ad084cab-6a40-4d34-99db-0ce3862d6533_4bfb99af-c90e-4909-b8bb-e5607bc450ef.jpg/1024x768.webp"
       ],
       "details": {
         "engine": "1,498 Бензин",
         "power": "150 л.с. / 110 кВт",
-        "mileage": "31 148 км"
+        "mileage": "64 091 км"
       },
-      "text_excerpt": "advanced 35 TFSI (Gebraucht) S-LINE, NAV PRO, VIRT. Цена в Европе 19 500 €, стоимость под ключ в РФ 2 540 654 ₽.",
+      "text_excerpt": "35 1.5 TFSI S-Tronic*Navi*LED*1HD*Spur*. Цена в Европе 22 900 €, стоимость под ключ в РФ 2 853 485 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 19 500 €"
+        "цена в Европе: 22 900 €"
       ]
     },
     {
@@ -409,25 +413,25 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/smyle/details/78b62edf-b028-4f1f-8c17-c3c5587b7646/",
+      "source_url": "https://www.autoscout24.de/angebote/volkswagen-arteon-r-line-ehybrid-nav-matrix-applink-acc-pdc-winter-elektro-benzin-blau-cat_ma74mo74550-fb6a6238-97eb-481a-9fdb-a2e6913581b1",
       "title": "Volkswagen Arteon 2022",
       "year": "2022",
       "price": "3 067 713 ₽",
       "base_price": "25 400 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_2159eb3a-0cab-40dc-a27c-d914ef1523bc.jpg/1024x768.webp",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_9fc36f7d-935b-4516-9a89-eafd6ed60036.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_2159eb3a-0cab-40dc-a27c-d914ef1523bc.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_2908fed9-9c2f-4655-83c5-469fb1e2e231.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_a029dac4-625e-4571-97c9-f42d0dbd438f.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_86b7bc38-8d8c-41ad-8199-fcdc956176fc.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_b81a6521-fd11-46b5-afcd-14144b1ec9bb.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_c7e5a579-1a97-4fd2-99c4-c3b81d04489b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_52d68b03-08c3-4ca0-a46c-4b7ea3b3f33f.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_94b2f688-c4bb-4d7c-8d21-ea30ccbd710a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_c6d27bea-f7c0-4907-bd1f-690c9635e0d6.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_54f5a579-68b1-4650-94cd-dbd4aeed99f6.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_0325b5e7-1660-4d40-bcf8-4225bbfdbfb5.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/78b62edf-b028-4f1f-8c17-c3c5587b7646_cca70e7c-d5b8-4ef9-a562-5b79e7b5b9cb.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_9fc36f7d-935b-4516-9a89-eafd6ed60036.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_b552400f-b677-4729-8602-9697550aa24c.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_67c6d30e-54d1-4642-b43e-67ff235a3019.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_daead802-258a-4bb8-8d13-060c951451ac.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_1c11f86f-01f8-40c8-b900-b0b55ecf4f97.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_ec15504a-db21-4239-be1f-e0f0cc76c567.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_4c376e66-5b92-4118-9e95-a3814dcec86b.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_359c50b9-471c-472a-a5d2-91a7538cc267.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_18207c19-968b-46f4-962b-95bca2dfad27.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_4db600b0-8e19-4ee1-a2fa-ac763e3c9741.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_e6a86654-e548-411c-a62b-ec62f9085c2d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/fb6a6238-97eb-481a-9fdb-a2e6913581b1_5368731e-dfe4-43ee-bcaf-f2a598fe68d4.jpg/1024x768.webp"
       ],
       "details": {
         "engine": "1,395 Elektro/Benzin",
