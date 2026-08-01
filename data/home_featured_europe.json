@@ -1,41 +1,40 @@
 {
-  "generated_at": "2026-08-01T03:55:19.961Z",
+  "generated_at": "2026-08-01T06:46:47.353Z",
   "offers": [
     {
       "channel": "europe_catalog",
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/audi-a4-30-tdi-sitzheizung-vorn-diesel-grau-cat_ma9gr1626ge134va134mt177tr118-f91205ae-a1af-4b10-9a62-37d3d90a66fd",
+      "source_url": "https://www.autoscout24.de/angebote/audi-a4-avant-35-2-0-tfsi-s-tronic-navi-tempomat-shz-benzin-schwarz-cat_ma9gr1626ge134va134mt179tr479950-e9221e70-89d5-4871-8495-db16e664b544",
       "title": "Audi A4 2022",
       "year": "2022",
-      "price": "2 804 175 ₽",
-      "base_price": "19 350 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_ebd97501-454a-4ffd-8f57-8aeffed5fecf.jpg/1024x768.webp",
+      "price": "2 836 019 ₽",
+      "base_price": "19 650 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_f576d33b-580a-4a1d-b865-97cdeeb85ca2.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_ebd97501-454a-4ffd-8f57-8aeffed5fecf.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_b31565b6-780a-4cf6-8b22-1cb234d3f956.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_ee6111f8-1994-42f8-9dc1-369290b0d540.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_dd7132e1-f88e-42fc-b0e8-bf6078c370b0.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_9bef1fee-fe8b-46f3-b002-85218279689d.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_66e1dea4-0206-47a6-97e9-722a9cd4b8db.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_aa6bda66-1a85-457f-8209-e563f43d9123.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_9b9c61e0-7dab-42f6-8c58-aef9d90243aa.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_9871fcb3-8e8e-4ba7-a3cc-331127dae9bb.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_0e2554b1-683b-4996-bc00-d66df7e0bdba.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_3fccdcbb-a412-47f8-b4a8-d62d88284bda.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/f91205ae-a1af-4b10-9a62-37d3d90a66fd_d2ac634a-1f46-4791-be1a-1c7d6f46ba4d.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_f576d33b-580a-4a1d-b865-97cdeeb85ca2.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_3fb6fdf9-ce7e-4411-abda-7553794018a0.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_30fc2b0b-db45-4db9-94bf-6c8e3c96d9e7.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_54edd018-e927-4815-8a95-4847751c8202.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_1d197a96-48ba-4316-9b19-18c98226d079.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_6cdef325-42f2-4781-8ed9-a8075c8114f7.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_cf30d01e-5370-43b6-9797-9289f52bc90c.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_d85d0712-dd53-4dda-af89-ff81ab641ca1.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_f55e25c4-d751-45d6-9989-9a42b3776c6d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_59020a55-20ea-431a-8389-b91fe2cc75c8.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/e9221e70-89d5-4871-8495-db16e664b544_901858fa-1f8f-4df1-b54f-db83dc587ab2.jpg/1024x768.webp"
       ],
       "details": {
-        "engine": "1,968 Дизель",
-        "power": "136 л.с. / 100 кВт",
-        "mileage": "82 067 км"
+        "engine": "1,984 Бензин",
+        "power": "150 л.с. / 110 кВт",
+        "mileage": "51 270 км"
       },
-      "text_excerpt": "30 TDI Sitzheizung vorn. Цена в Европе 19 350 €, стоимость под ключ в РФ 2 804 175 ₽.",
+      "text_excerpt": "Avant 35 2.0 TFSI S-Tronic Navi Tempomat SHZ. Цена в Европе 19 650 €, стоимость под ключ в РФ 2 836 019 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 19 350 €"
+        "цена в Европе: 19 650 €"
       ]
     },
     {
