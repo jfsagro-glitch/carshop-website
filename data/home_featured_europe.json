@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T03:52:23.750Z",
+  "generated_at": "2026-08-16T06:18:26.228Z",
   "offers": [
     {
       "channel": "europe_catalog",
@@ -112,31 +112,36 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/bmw-3er-d-touring-2-0-110-kw-inkl-haustuerlieferung-diesel-schwarz-cat_ma13gr100038ge28va106mt117tr479990-e09406ed-7f39-4129-95df-7e78c7ef9e7a",
-      "title": "BMW 318 2023",
-      "year": "2023",
-      "price": "2 954 842 ₽",
-      "base_price": "19 000 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/e09406ed-7f39-4129-95df-7e78c7ef9e7a_117f1481-f840-4df8-a0ad-c7732cc6961e.jpg/1024x768.webp",
+      "source_url": "https://www.autoscout24.de/angebote/bmw-3er-d-touring-1-hand-8fach-pano-bmwscheckheft-diesel-grau-cat_ma13gr100038ge28va106mt117tr196-024e9596-86f7-4ba2-b663-95593d632742",
+      "title": "BMW 318 2022",
+      "year": "2022",
+      "price": "3 201 513 ₽",
+      "base_price": "21 480 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_b05b32a3-6bda-4ef3-857d-7c54fecd23ec.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/e09406ed-7f39-4129-95df-7e78c7ef9e7a_117f1481-f840-4df8-a0ad-c7732cc6961e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/e09406ed-7f39-4129-95df-7e78c7ef9e7a_154c712a-4f91-40e3-96ec-7feac9d159a4.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/e09406ed-7f39-4129-95df-7e78c7ef9e7a_52ac0588-7e4f-4d8c-9278-ef0a5fb302e1.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/e09406ed-7f39-4129-95df-7e78c7ef9e7a_19006718-d336-4781-b7c7-751d735fcb93.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/e09406ed-7f39-4129-95df-7e78c7ef9e7a_39dec339-f367-4c79-9d56-c1a041ecb98f.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/e09406ed-7f39-4129-95df-7e78c7ef9e7a_da195bfd-cf0a-4c9b-bf4e-6323e2d297d0.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/e09406ed-7f39-4129-95df-7e78c7ef9e7a_f3d6914b-2570-4716-95de-d4d2e9245b0a.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_b05b32a3-6bda-4ef3-857d-7c54fecd23ec.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_c88e11d0-de6c-427e-8343-29bf26fd804d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_f8989eda-0aa4-4409-b1a5-1587bd06a20d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_cbfa71f8-4368-4628-af6a-7167c5166530.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_190575ca-8aed-480e-8ed0-efdc1f03b5c5.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_d199265b-6d89-4d66-a0b6-819f82e19929.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_515c4ffa-756b-41fb-b501-08965e89526a.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_33d3c33a-2e57-4ba2-8362-c0de8716fe01.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_18e6b420-eee0-4f04-8765-3b27e7c58066.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_acc912f8-df23-45da-9caf-e5fb8eaacad7.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_2e28e904-8d49-4015-86dc-e57b05a5d191.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/024e9596-86f7-4ba2-b663-95593d632742_ce387bce-7533-4095-8f4d-8369a32ac423.jpg/1024x768.webp"
       ],
       "details": {
         "engine": "1,995 Дизель",
         "power": "150 л.с. / 110 кВт",
-        "mileage": "30 289 км"
+        "mileage": "83 270 км"
       },
-      "text_excerpt": "d Touring 2.0 110 kW inkl. Haustürlieferung. Цена в Европе 19 000 €, стоимость под ключ в РФ 2 954 842 ₽.",
+      "text_excerpt": "d Touring *1.HAND*8FACH*PANO*BMWSCHECKHEFT*. Цена в Европе 21 480 €, стоимость под ключ в РФ 3 201 513 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 19 000 €"
+        "цена в Европе: 21 480 €"
       ]
     },
     {
@@ -144,36 +149,36 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/bmw-2er-d-active-tourer-advantage-navi-led-parkas-dab-diesel-weiss-cat_ma13gr100098ge351va426mt711tr290-60b93528-a6c2-4395-832e-ae9bcf6b957e",
+      "source_url": "https://www.autoscout24.de/angebote/bmw-2er-advantage-automatik-led-navi-diesel-grau-cat_ma13gr100098ge351va427mt711tr290-2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3",
       "title": "BMW 216 2021",
       "year": "2021",
-      "price": "2 368 246 ₽",
-      "base_price": "15 890 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_5397d59e-ca18-4b3a-8ade-4bfc6dfa5ae5.jpg/1024x768.webp",
+      "price": "2 477 656 ₽",
+      "base_price": "16 990 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_1bf5127c-2201-4f97-9c65-34048cf27ad2.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_5397d59e-ca18-4b3a-8ade-4bfc6dfa5ae5.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_42265b27-8cb8-45a3-92e5-6c9b6a24866e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_2a70d08a-a6fb-42d3-b57d-4fbda2bb0680.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_45067a29-d7d1-4f8b-9b29-fce901b25d59.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_97e4c6f5-75fc-4365-b5a4-56797d091b34.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_ffc9b0d5-849b-4ec0-bac4-44ee83d387e8.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_9b691d05-ae9a-4ab3-b79f-abb60e9c872d.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_776d171b-725e-4940-bcf9-06253978f68e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_1f438261-4f7d-4ff0-90d1-9c66f2c8487a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_3fd1300d-8e71-41cb-9fdb-b6ddc4ec8335.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_83d49962-0ff1-46a3-8d12-2822a19bba94.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/60b93528-a6c2-4395-832e-ae9bcf6b957e_ea25655d-d1e5-4f44-8948-9ffbb84d8e87.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_1bf5127c-2201-4f97-9c65-34048cf27ad2.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_ab6dcb83-b4d2-4700-8275-5f96414902ae.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_8f9a440c-0024-45c0-89f0-dc16ea4df36c.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_7956cacf-bc42-44f5-9fc4-9c27101bc651.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_63727af7-408b-4abe-952d-f00767dd7dd8.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_2e21009d-6833-4f59-ab33-f0b1e8474249.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_30ee918f-b8ce-4063-ba0a-3dd5381f8629.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_4f05c42e-abb1-4599-9705-ea90661fcd4d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_767b4968-59e5-42a3-b727-7de7398fa252.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_28773db7-183d-492b-8f32-d7ea2ad25e40.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_7b4f633a-dc91-45e3-9df9-1d58bf6acd24.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/2c83b0ad-4fbc-43c6-b6d9-122e7383d8e3_ea4056c1-cd39-48bd-bab3-0cbac1ec47ee.jpg/1024x768.webp"
       ],
       "details": {
         "engine": "1,496 Дизель",
         "power": "116 л.с. / 85 кВт",
-        "mileage": "84 291 км"
+        "mileage": "79 395 км"
       },
-      "text_excerpt": "d Active Tourer Advantage Navi.LED.ParkAs.DAB. Цена в Европе 15 890 €, стоимость под ключ в РФ 2 368 246 ₽.",
+      "text_excerpt": "/ADVANTAGE/AUTOMATIK/LED/NAVI. Цена в Европе 16 990 €, стоимость под ключ в РФ 2 477 656 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 15 890 €"
+        "цена в Европе: 16 990 €"
       ]
     },
     {
@@ -181,31 +186,32 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/bmw-x1-xdrive25e-advantage-shz-pano-led-klima-nav-haustuer-elektro-benzin-grau-cat_ma13gr19242ge42mt319tr1017-9694b0ad-14e4-48e9-9088-bbde2918e5dd",
-      "title": "BMW X1 2022",
-      "year": "2022",
-      "price": "2 469 202 ₽",
-      "base_price": "16 900 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/9694b0ad-14e4-48e9-9088-bbde2918e5dd_61843409-3a1a-44e7-ad58-3230c7cd12ab.jpg/1024x768.webp",
+      "source_url": "https://www.autoscout24.de/angebote/bmw-x1-bmw-x1-xdrive25e-advantage-bmw-garantie-05-27-elektro-benzin-schwarz-cat_ma13gr19242ge42mt319tr1017-6e33a063-35fd-4910-b61a-993ff4f2ac03",
+      "title": "BMW X1 2021",
+      "year": "2021",
+      "price": "2 673 104 ₽",
+      "base_price": "18 950 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_4ec9eb4c-afcf-4b4e-92f7-13e4c44acbbf.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/9694b0ad-14e4-48e9-9088-bbde2918e5dd_61843409-3a1a-44e7-ad58-3230c7cd12ab.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/9694b0ad-14e4-48e9-9088-bbde2918e5dd_e032499c-dacd-4094-8402-21dc670ee2ac.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/9694b0ad-14e4-48e9-9088-bbde2918e5dd_137ef1e7-7b0c-43b2-8040-29717fdbfd25.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/9694b0ad-14e4-48e9-9088-bbde2918e5dd_c3d186b7-7036-4333-a549-cd4ca8c49ed7.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/9694b0ad-14e4-48e9-9088-bbde2918e5dd_b388af0f-4483-49ff-a967-3a7c37ac90f3.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/9694b0ad-14e4-48e9-9088-bbde2918e5dd_d2bfb4bb-ccc7-4f23-b1e4-d7cc5d23ce03.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/9694b0ad-14e4-48e9-9088-bbde2918e5dd_4f8ba834-80e5-449f-b120-cee16f6cd570.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_4ec9eb4c-afcf-4b4e-92f7-13e4c44acbbf.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_6c9e2f88-0f52-45b1-8dca-3df81ae0e1b5.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_63e89d7c-d315-4ee0-9fc7-865495271aac.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_14de247e-6207-4090-b9b1-c8bab08a87bc.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_909d8059-0dd6-490e-b459-8de549257cb5.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_3e93f6cc-f012-469c-b250-74d7f97a5fa2.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_214ef850-4239-49f1-ac8e-6fc8e800259f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/6e33a063-35fd-4910-b61a-993ff4f2ac03_ef12841e-133e-451f-9ac8-ea84113ce9b0.jpg/1024x768.webp"
       ],
       "details": {
         "engine": "1,499 Elektro/Benzin",
         "power": "125 л.с. / 92 кВт",
-        "mileage": "66 991 км"
+        "mileage": "76 000 км"
       },
-      "text_excerpt": "xDrive25e Advantage SHz/Pano/LED/Klima/Nav/Haustür. Цена в Европе 16 900 €, стоимость под ключ в РФ 2 469 202 ₽.",
+      "text_excerpt": "BMW X1 xDrive25e Advantage | BMW Garantie 05/27 |. Цена в Европе 18 950 €, стоимость под ключ в РФ 2 673 104 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 16 900 €"
+        "цена в Европе: 18 950 €"
       ]
     },
     {
@@ -213,36 +219,36 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/bmw-x2-sdrive-18-i-advantage-plus-dab-hifi-lm-18-benzin-schwarz-cat_ma13gr74769ge51mt374tr1029-532b2d56-4d89-4a42-b848-5e60f0df2259",
+      "source_url": "https://www.autoscout24.de/angebote/bmw-x2-xdrive25e-advantage-steptronic-aut-klimaaut-elektro-benzin-schwarz-cat_ma13gr74769ge51mt378tr1019-74ccafff-54e1-4d09-a327-b905f4f2130d",
       "title": "BMW X2 2022",
       "year": "2022",
-      "price": "2 867 060 ₽",
-      "base_price": "20 900 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_361a89fe-0228-4a81-a4bd-3a2a634dbf2b.jpg/1024x768.webp",
+      "price": "2 873 027 ₽",
+      "base_price": "20 960 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_e9c8666f-d3ad-4f50-97ed-657eb3aa928d.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_361a89fe-0228-4a81-a4bd-3a2a634dbf2b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_425a4666-ad87-470a-bd32-7f664c744d18.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_fa249c23-353f-48ed-9a1f-930ab11c7ebf.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_9526c60a-c220-4cc1-9a78-73159cd5b925.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_f61808f1-da23-4cb6-9f7d-aef567455f9a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_50e408a9-1460-4946-9a51-c5fe1a7b2744.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_b30f1cea-0865-4402-90db-d59256fc5460.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_1b5cf489-ceb8-4907-8a86-5e5d70c25dbb.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_ea9edef1-2427-4852-a4ae-ca8f89cd8902.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_ae86c364-0742-4407-ab76-d62398a87917.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_a7dfcd57-8aee-484e-b0c1-d9af165b4db9.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/532b2d56-4d89-4a42-b848-5e60f0df2259_3c7b6e52-6474-4a6c-a852-6ad4a7130357.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_e9c8666f-d3ad-4f50-97ed-657eb3aa928d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_5a3ab4f8-257d-4776-a1ca-8e36522f35f3.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_bc061d48-eb45-41ed-9122-df59015c05d3.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_a5b4f2bf-d344-46e5-8bd3-12cbd4e4c2ce.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_84db5cd3-6671-4ddb-8722-93da63929e1b.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_7df6ced4-d592-4b90-96ff-0825a4c467b0.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_e53fa97a-2647-4547-b547-f4a33111d51e.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_56f72bf9-2167-4659-b22d-45bbd6553f24.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_cd72d58e-bf50-4fc4-8b7b-302a277de0f8.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_a2258699-542f-41a1-b372-1c7b4e47bfae.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_b34f900e-34b4-4f93-9ef6-c1280fdf3eb2.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/74ccafff-54e1-4d09-a327-b905f4f2130d_c1af3602-45d4-432e-9977-2c2f7e79feac.jpg/1024x768.webp"
       ],
       "details": {
-        "engine": "1,499 Бензин",
-        "power": "136 л.с. / 100 кВт",
-        "mileage": "59 367 км"
+        "engine": "1,499 Elektro/Benzin",
+        "power": "125 л.с. / 92 кВт",
+        "mileage": "75 873 км"
       },
-      "text_excerpt": "sDrive 18 i Advantage Plus*DAB*HiFi*LM 18\". Цена в Европе 20 900 €, стоимость под ключ в РФ 2 867 060 ₽.",
+      "text_excerpt": "xDrive25e Advantage Steptronic Aut. Klimaaut.. Цена в Европе 20 960 €, стоимость под ключ в РФ 2 873 027 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 20 900 €"
+        "цена в Европе: 20 960 €"
       ]
     },
     {
@@ -250,36 +256,36 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/mercedes-benz-c-klasse-coupe-+-garantie-benzin-blau-cat_ma47gr100056ge12va119mt292tr480497-0a6eea86-59e3-492a-b1ab-415119ec4d5b",
+      "source_url": "https://www.autoscout24.de/angebote/mercedes-benz-c-klasse-c-180-amg-line-aut-navi-tempo-led-cam-shz-benzin-weiss-cat_ma47gr100056ge12va119mt292tr1149-ef259fc5-3b69-4f63-a3af-aec877ddb91e",
       "title": "Mercedes-Benz C 180 2021",
       "year": "2021",
-      "price": "3 467 444 ₽",
-      "base_price": "26 890 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_4d458aa2-ed75-4f5a-81fd-ddb8e300126e.jpg/1024x768.webp",
+      "price": "3 696 212 ₽",
+      "base_price": "29 190 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_8e79a06d-1794-42bb-ab39-a42dd3178e95.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_4d458aa2-ed75-4f5a-81fd-ddb8e300126e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_4e782a32-ab09-498f-a145-a76e1613db25.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_ff11c24e-e170-4d4e-bac2-102448ba06f6.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_1fb6f1bb-188c-484a-9f03-ece271b4ade4.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_a9e0ce9c-5382-46eb-bc35-4f8347c0f31b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_c888aefc-54e8-429b-bb1c-5e9e8b72855e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_8da875e1-6e8f-4039-85bb-d2cf56571da2.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_2cabe441-79fe-465f-9147-6dcf9b2c44af.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_fd672df5-da47-4cf8-9374-32f9d1f1a551.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_678e9a6f-074b-4507-8f69-47efe89b906e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_2c90a207-f99d-4121-a721-bb12111f3798.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/0a6eea86-59e3-492a-b1ab-415119ec4d5b_e4040a56-cefc-4a72-a24c-c7f9e21db088.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_8e79a06d-1794-42bb-ab39-a42dd3178e95.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_8a47e0fd-9163-4d21-9f48-39acf167b0e5.png/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_a904a3ca-8181-4ad9-acd3-98a6a3195453.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_bb768372-0b3d-475b-8dd7-ec588035c90b.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_416f36f4-5e13-4a0b-b5dd-2e1453261042.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_2b22b11f-f346-4df4-81e8-965a23a39c66.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_8555072a-09a0-4672-a6ef-907ea2072894.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_fe947f4d-eac4-495c-9892-6779d41dedc9.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_aff677ec-07b6-4c43-acda-1fe46b03fc85.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_8e9f4c13-f5ba-47f2-bc48-64c32b1d282f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_042072e4-7f46-4cad-9ab8-9ba4932d825a.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/ef259fc5-3b69-4f63-a3af-aec877ddb91e_ff2b320c-c2a9-4b80-8656-e4187e60d2cd.jpg/1024x768.webp"
       ],
       "details": {
         "engine": "1,497 Бензин",
         "power": "156 л.с. / 115 кВт",
-        "mileage": "46 000 км"
+        "mileage": "67 919 км"
       },
-      "text_excerpt": "Coupe + GARANTIE. Цена в Европе 26 890 €, стоимость под ключ в РФ 3 467 444 ₽.",
+      "text_excerpt": "C 180 AMG Line Aut.*NAVI*TEMPO*LED*CAM*SHZ*. Цена в Европе 29 190 €, стоимость под ключ в РФ 3 696 212 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 26 890 €"
+        "цена в Европе: 29 190 €"
       ]
     },
     {
@@ -324,36 +330,36 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/mercedes-benz-gla-d-progressive-business-paket-shz-tempomat-diesel-schwarz-cat_ma47gr100102ge572mt979tr665-de94069c-f168-426e-b8f2-7fb36cdef287",
-      "title": "Mercedes-Benz GLA 180 2022",
+      "source_url": "https://www.autoscout24.de/angebote/mercedes-benz-gla-d-8g-dct-1te-hand-acc-kamera-diesel-grau-cat_ma47gr100102ge572mt980tr7478-9ea5464d-7974-4f3a-ad46-60b3e8727912",
+      "title": "Mercedes-Benz GLA 200 2022",
       "year": "2022",
-      "price": "3 434 945 ₽",
-      "base_price": "23 946 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_d54c2a0a-c014-4df6-99c2-96a4a5bb2582.jpg/1024x768.webp",
+      "price": "3 604 283 ₽",
+      "base_price": "25 599 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_84763c35-7dba-41c8-8171-fab602583a1d.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_d54c2a0a-c014-4df6-99c2-96a4a5bb2582.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_0a3a4b3f-9764-487b-aa09-caa8b61e9565.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_be50f6c6-6d19-420e-aba9-2b6312607def.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_86ebaae0-2e24-419d-8bfb-20f02ab6422d.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_3bf03e98-bdcf-4767-981f-449590165aa8.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_601e4718-76d8-4d5a-bd9e-69b11cef751e.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_75a138d8-185e-4e72-864e-8b4acb542a00.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_27c6374d-c2b7-4368-83d6-ae9b89edf948.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_06b2d817-ce0c-4041-be13-095d87437998.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_45acf043-d3d9-4682-a769-3addb028540d.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_141055ea-e9b5-4c3f-8b81-f1bb866b1f31.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/de94069c-f168-426e-b8f2-7fb36cdef287_291d55a3-f858-43e1-b9f2-d84fb558613d.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_84763c35-7dba-41c8-8171-fab602583a1d.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_c690a18c-88c2-486d-b599-db1987bc10c2.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_7fa96b67-ef36-4a25-a09a-3605c65636e8.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_7f0967ad-2f70-4250-a9e9-bc5dfd88ea1a.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_fe89a13d-0509-4ba3-9d68-14553fe18f77.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_74361688-aa84-4ca6-b283-f7f9594c9fd6.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_054741ed-0eaf-400d-a0d3-90cc48d6c629.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_2206697c-3546-46e8-be15-054ef6ae98da.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_f6d74bb3-a6c5-4462-bf92-696adbbf7059.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_23617211-5150-4b48-bfc0-d61a64975fd6.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_85637574-9306-4851-b985-b634dc8783c3.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/9ea5464d-7974-4f3a-ad46-60b3e8727912_89e24a82-354a-41d2-a118-28819f85e4d3.jpg/1024x768.webp"
       ],
       "details": {
         "engine": "1,95 Дизель",
-        "power": "116 л.с. / 85 кВт",
-        "mileage": "62 409 км"
+        "power": "150 л.с. / 110 кВт",
+        "mileage": "78 227 км"
       },
-      "text_excerpt": "d Progressive Business-Paket|SHZ|Tempomat. Цена в Европе 23 946 €, стоимость под ключ в РФ 3 434 945 ₽.",
+      "text_excerpt": "d 8G-DCT *1te Hand*ACC*KAMERA*. Цена в Европе 25 599 €, стоимость под ключ в РФ 3 604 283 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 23 946 €"
+        "цена в Европе: 25 599 €"
       ]
     },
     {
@@ -435,36 +441,36 @@
       "region": "Европа",
       "source": "AutoScout24",
       "source_type": "europe_catalog",
-      "source_url": "https://www.autoscout24.de/angebote/volkswagen-t-roc-sport-1-5-tsi-110-kw-dsg-acc-led-navi-benzin-blau-cat_ma74gr74667ge311va3307mt674tr7125-93ac7a8b-b479-4802-bf77-1b45975d73bb",
+      "source_url": "https://www.autoscout24.de/angebote/volkswagen-t-roc-2-0-tdi-sport-ahk-acc-dab+-diesel-grau-cat_ma74gr74667ge311va3307mt676tr7125-b98a88ce-d5bd-451f-ab78-1cf238aa55a6",
       "title": "Volkswagen T-Roc 2021",
       "year": "2021",
-      "price": "2 637 131 ₽",
-      "base_price": "18 590 €",
-      "image": "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_68899acf-ddda-481e-a015-2a1b7b324ae3.jpg/1024x768.webp",
+      "price": "2 989 508 ₽",
+      "base_price": "19 420 €",
+      "image": "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_a4669e86-e1f9-4ff9-a8fe-b91c42cb6932.jpg/1024x768.webp",
       "images": [
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_68899acf-ddda-481e-a015-2a1b7b324ae3.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_8c317694-2c7f-4bff-ba5a-7e959d1cd727.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_3a70b3c7-e342-4447-950d-21a2c9cd5c1b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_060d70ce-daa8-4efa-a314-86bc5e07170a.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_1ee4a105-7d25-4d77-a4b9-2cfc55590e0c.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_250b6a64-5b55-4318-b619-2392af88aab0.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_9fe5aac2-38a0-4a91-9bf2-843698d81d09.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_5ede2a4c-3cde-4a00-ae65-6c3e104e549b.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_0a24b74c-db26-4648-92b6-d39cc6263017.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_effc7789-94bf-4256-add3-0085755f6083.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_0fd13e5d-7c55-4f87-bcd3-5bc4f9e86137.jpg/1024x768.webp",
-        "https://prod.pictures.autoscout24.net/listing-images/93ac7a8b-b479-4802-bf77-1b45975d73bb_20446def-88df-4891-a91c-c8dbb68b6195.jpg/1024x768.webp"
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_a4669e86-e1f9-4ff9-a8fe-b91c42cb6932.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_c8daafd4-9646-4d6f-bb95-cec979083429.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_c523c7f0-cde7-49da-9442-60285d299ff3.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_210dca56-c819-4147-8343-e66fbc58a34f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_21475d35-b5c3-4fb5-9e5d-ab885cf390c3.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_31442dd2-6a6f-4bec-a68a-c94ad3a3bc05.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_a77f32ae-b146-47b1-8cb5-5e0e5dae49d9.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_29827186-ca9e-4b34-95d4-0edb802b5adc.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_cc25d656-30b1-4664-bf61-a78cea0d443f.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_52e00308-d8fd-45d1-bef1-e50de8953417.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_3651a3b7-ff37-44e2-87b6-2a63dc97e779.jpg/1024x768.webp",
+        "https://prod.pictures.autoscout24.net/listing-images/b98a88ce-d5bd-451f-ab78-1cf238aa55a6_7684a245-0d2a-48af-be89-7a5c160ddcb0.jpg/1024x768.webp"
       ],
       "details": {
-        "engine": "1,498 Бензин",
+        "engine": "1,968 Дизель",
         "power": "150 л.с. / 110 кВт",
-        "mileage": "82 905 км"
+        "mileage": "59 694 км"
       },
-      "text_excerpt": "Sport 1.5 TSI 110 kW DSG ACC LED NAVI. Цена в Европе 18 590 €, стоимость под ключ в РФ 2 637 131 ₽.",
+      "text_excerpt": "2.0 TDI Sport AHK ACC DAB+. Цена в Европе 19 420 €, стоимость под ключ в РФ 2 989 508 ₽.",
       "facts": [
         "выгодное предложение",
         "пробег до 85 000 км",
-        "цена в Европе: 18 590 €"
+        "цена в Европе: 19 420 €"
       ]
     },
     {
