@@ -11,8 +11,12 @@ on:
       - '.github/workflows/morning_europe_telegram.yml'
       - 'tools/post_europe_morning_telegram.py'
   schedule:
-    # 09:00 Europe/Moscow = 06:00 UTC.
-    - cron: '0 6 * * *'
+    # Staggered morning retries avoid GitHub's heavily loaded top-of-hour queue.
+    # 05:47, 06:17 and 06:47 UTC = 08:47, 09:17 and 09:47 Europe/Moscow.
+    # Publication history and shared concurrency prevent duplicate posts.
+    - cron: '47 5 * * *'
+    - cron: '17 6 * * *'
+    - cron: '47 6 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -58,7 +62,12 @@ jobs:
           SHOULD_PUBLISH=false
           TEST_SEND=false
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            SHOULD_PUBLISH=true
+            MOSCOW_HOUR=$(TZ=Europe/Moscow date +%H)
+            if [ "$MOSCOW_HOUR" -ge 8 ] && [ "$MOSCOW_HOUR" -lt 11 ]; then
+              SHOULD_PUBLISH=true
+            else
+              echo "Scheduled run arrived outside the 08:00-10:59 Moscow publish window; skipping"
+            fi
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "false" ]; then
             SHOULD_PUBLISH=true
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.test_send }}" = "true" ]; then
