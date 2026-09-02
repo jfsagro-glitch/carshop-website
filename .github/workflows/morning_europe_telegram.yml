@@ -109,6 +109,7 @@ jobs:
             exit 0
           fi
           git commit -m "auto: record daily Europe Telegram offer"
+          git restore --worktree -- cars_europe_new.json data/home_featured_europe.json data/stock_counts.json
           for attempt in 1 2 3; do
             git pull --rebase origin main
             if git push origin HEAD:main; then
