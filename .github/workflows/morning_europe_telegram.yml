@@ -17,6 +17,11 @@ on:
     - cron: '47 5 * * *'
     - cron: '17 6 * * *'
     - cron: '47 6 * * *'
+  workflow_run:
+    workflows:
+      - Auto-sync car catalogs
+    types:
+      - completed
   workflow_dispatch:
     inputs:
       dry_run:
@@ -61,12 +66,17 @@ jobs:
         run: |
           SHOULD_PUBLISH=false
           TEST_SEND=false
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_run" ]; then
             MOSCOW_HOUR=$(TZ=Europe/Moscow date +%H)
-            if [ "$MOSCOW_HOUR" -ge 8 ] && [ "$MOSCOW_HOUR" -lt 11 ]; then
+            UPSTREAM_OK=true
+            if [ "${{ github.event_name }}" = "workflow_run" ] && [ "${{ github.event.workflow_run.conclusion }}" != "success" ]; then
+              UPSTREAM_OK=false
+              echo "Catalog synchronization did not succeed; skipping Telegram publication"
+            fi
+            if [ "$UPSTREAM_OK" = "true" ] && [ "$MOSCOW_HOUR" -ge 8 ] && [ "$MOSCOW_HOUR" -lt 13 ]; then
               SHOULD_PUBLISH=true
             else
-              echo "Scheduled run arrived outside the 08:00-10:59 Moscow publish window; skipping"
+              echo "Automatic run arrived outside the 08:00-12:59 Moscow publish window; skipping"
             fi
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "false" ]; then
             SHOULD_PUBLISH=true
